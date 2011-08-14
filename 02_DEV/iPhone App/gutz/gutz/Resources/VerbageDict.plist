@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>01_AuxVerb</key>
+	<array>
+		<string>can</string>
+		<string>must</string>
+		<string>have to</string>
+		<string>need to</string>
+		<string>just have to</string>
+		<string>just need to</string>
+		<string>might be able to</string>
+		<string>can try to</string>
+	</array>
+	<key>02_ActVerb</key>
+	<array>
+		<string>polarize</string>
+		<string>ionize</string>
+		<string>inverse</string>
+		<string>recalibrate</string>
+		<string>re-initialize</string>
+		<string>stabilize</string>
+		<string>destabilize</string>
+		<string>modify</string>
+		<string>reconfigure</string>
+		<string>enhance</string>
+		<string>align</string>
+		<string>reverse</string>
+		<string>re-align</string>
+		<string>adjust</string>
+		<string>regulate</string>
+		<string>modulate</string>
+		<string>remodulate</string>
+		<string>bypass</string>
+		<string>re-route</string>
+		<string>purge</string>
+		<string>reset</string>
+		<string>invert</string>
+		<string>revert</string>
+	</array>
+	<key>03_Subject</key>
+	<array>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string></string>
+		<string>the resonant frequency field of</string>
+		<string>the energy degradation of</string>
+		<string>the polarity of</string>
+		<string>the sub-atomic resonance of</string>
+		<string>the positronic charge</string>
+		<string>the anti-matter stream</string>
+		<string>the power flow</string>
+		<string>phase-modulated chronoton</string>
+		<string>neutrinos</string>
+		<string>tachyon</string>
+		<string>graviton</string>
+		<string>chronoton</string>
+		<string>dechyon</string>
+		<string>verteron</string>
+		<string>soloton</string>
+	</array>
+	<key>04_Dative</key>
+	<array>
+		<string>a neutrino detector</string>
+		<string>the tachyon emitters</string>
+		<string>the main deflector</string>
+		<string>the plasma injectors</string>
+		<string>the shield generators</string>
+		<string>the transporter beam</string>
+		<string>the transporter buffers</string>
+		<string>the port nacelle</string>
+		<string>the holo emitters</string>
+		<string>the tractor beam</string>
+		<string>the tractor beam generators</string>
+		<string>a tractor beam generator</string>
+		<string>the subspace senor array</string>
+		<string>a subspace transmitter</string>
+		<string>the impulse engines</string>
+		<string>the anti-matter injectors</string>
+		<string>the dilithium crystals</string>
+		<string>a portable signal enhancer</string>
+		<string>the isolinear data chips</string>
+		<string>the primary power relays</string>
+		<string>the secondary power relays</string>
+		<string>the anti-matter injectors</string>
+		<string>the force field generators</string>
+		<string>the matter-energy converters</string>
+		<string>the biofilters</string>
+		<string>the annular confinement beam</string>
+		<string>the sensor arrays</string>
+		<string>a photon torpedo</string>
+		<string>a photon torpedo guidance system</string>
+		<string>the dilithium matrix</string>
+		<string>the isolinear processors</string>
+		<string>the optronic relays</string>
+		<string>a polaron beam</string>
+		<string>the plasma coils</string>
+	</array>
+	<key>05_TransVerb</key>
+	<array>
+		<string>force</string>
+		<string>detect</string>
+		<string>prevent</string>
+		<string>stop</string>
+		<string>start</string>
+		<string>induce</string>
+		<string>correct</string>
+		<string>counteract</string>
+		<string>stabilize</string>
+		<string>destabilize</string>
+		<string>initiate</string>
+		<string>reveal</string>
+		<string>produce</string>
+		<string>manipulate</string>
+		<string>control</string>
+		<string>dissipate</string>
+		<string>re-initialize</string>
+		<string>create</string>
+		<string>shut down</string>
+		<string>contain</string>
+		<string>generate enough power in</string>
+		<string>generate more power to</string>
+	</array>
+	<key>06_AdjNoun</key>
+	<array>
+		<string>a feedback loop</string>
+		<string>a chronoton particle leak</string>
+		<string>a breach</string>
+		<string>a temporal flux</string>
+		<string>a phase differential</string>
+		<string>a phased carrier wave</string>
+		<string>a graviton wave</string>
+		<string>a field inversion</string>
+		<string>a tachyon burst</string>
+		<string>a cascading failure</string>
+		<string>a chain reaction</string>
+		<string>localized harmonic interference</string>
+		<string>the quantum filament alignment</string>
+		<string>the nucleogenic decay</string>
+		<string>a subspace frequency carrier wave</string>
+		<string>a dampening field</string>
+	</array>
+	<key>07_Preposition</key>
+	<array>
+		<string>in</string>
+		<string>in</string>
+		<string>to</string>
+	</array>
+	<key>08_LocNoun</key>
+	<array>
+		<string>holodeck projectors</string>
+		<string>warp reactor</string>
+		<string>warp core</string>
+		<string>warp nacelle</string>
+		<string>plasma conduits</string>
+		<string>primary phaser banks</string>
+		<string>lateral phaser banks</string>
+		<string>hull plating</string>
+		<string>ship&apos;s computer banks</string>
+		<string>transporter beam</string>
+		<string>food replicators</string>
+		<string>phase inducers</string>
+		<string>shuttle bay</string>
+		<string>cargo bay</string>
+		<string>dilithium crystal chamber</string>
+		<string>structural integrity</string>
+		<string>primary power systems</string>
+		<string>approaching spacial anomaly</string>
+		<string>phase transition coils</string>
+		<string>sub-space bubble</string>
+		<string>life support systems</string>
+		<string>multi-phasic shielding</string>
+		<string>gravometric vortex</string>
+		<string>antimatter injectors</string>
+		<string>nucleocentric containment matrix</string>
+		<string>static dampening field</string>
+		<string>warp field alignment</string>
+		<string>singularity</string>
+		<string>plasma coils</string>
+	</array>
+	<key>09_SupVerb</key>
+	<array>
+		<string>the flow of</string>
+		<string>the emission of</string>
+	</array>
+	<key>10_SupNoun</key>
+	<array>
+		<string>s</string>
+		<string> particles</string>
+	</array>
+	<key>11_Adposition</key>
+	<array>
+		<string>to</string>
+		<string>from</string>
+	</array>
+</dict>
+</plist>

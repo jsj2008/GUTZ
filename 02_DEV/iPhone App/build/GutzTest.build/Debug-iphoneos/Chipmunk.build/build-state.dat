@@ -1,0 +1,1572 @@
+TChipmunk
+v3
+r1
+cCheck dependencies
+cProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch.gch Chipmunk/Chipmunk-Prefix.pch normal armv6 c com.apple.compilers.llvmgcc42
+cProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch.gch Chipmunk/Chipmunk-Prefix.pch normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpConstraint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpConstraint.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceComponent.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceComponent.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceHash.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceHash.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/chipmunk.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/chipmunk.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpDampedSpring.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedSpring.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpDampedRotarySpring.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpGrooveJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGrooveJoint.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpGearJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGearJoint.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPivotJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPivotJoint.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpRatchetJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRatchetJoint.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPinJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPinJoint.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpRotaryLimitJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSlideJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSlideJoint.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSimpleMotor.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSimpleMotor.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpArbiter.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArbiter.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpArray.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArray.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpBody.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBody.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpBB.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBB.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpCollision.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpCollision.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPolyShape.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpPolyShape.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpShape.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpShape.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpace.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpace.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceQuery.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceQuery.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceStep.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceStep.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpVect.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpVect.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/chipmunk.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/chipmunk.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpHashSet.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpHashSet.c normal armv6 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpConstraint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpConstraint.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpDampedRotarySpring.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpDampedSpring.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedSpring.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpGrooveJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGrooveJoint.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPinJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPinJoint.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPivotJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPivotJoint.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpRatchetJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRatchetJoint.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpGearJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGearJoint.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSimpleMotor.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSimpleMotor.c normal armv7 c com.apple.compilers.llvmgcc42
+cLibtool /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/libChipmunk.a normal armv6
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSlideJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSlideJoint.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpRotaryLimitJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpArbiter.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArbiter.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpArray.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArray.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpBody.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBody.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpBB.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBB.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpCollision.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpCollision.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPolyShape.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpPolyShape.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpHashSet.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpHashSet.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpShape.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpShape.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpace.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpace.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceQuery.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceQuery.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceHash.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceHash.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceComponent.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceComponent.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpVect.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpVect.c normal armv7 c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceStep.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceStep.c normal armv7 c com.apple.compilers.llvmgcc42
+cLibtool /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/libChipmunk.a normal armv7
+cCreateUniversalBinary /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/libChipmunk.a normal "armv6 armv7"
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk
+c000000004E272CD90000000000000110
+t1311190233
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h
+c000000004D93E05100000000000022F0
+t1301536849
+s8944
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004D93E1E60000000000001466
+t1301537254
+s5222
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/include/TargetConditionals.h
+c000000004D4F74C200000000000031E9
+t1297052866
+s12777
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/include/assert.h
+c000000004D4F6E900000000000000F6E
+t1297051280
+s3950
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/include/math.h
+c000000004D4F6E4300000000000004F1
+t1297051203
+s1265
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/include/stdio.h
+c000000004D4F6E910000000000004763
+t1297051281
+s18275
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/include/stdlib.h
+c000000004D4F6E9100000000000030A7
+t1297051281
+s12455
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/usr/include/string.h
+c000000004D4F6E910000000000001A3A
+t1297051281
+s6714
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/usr/llvm-gcc-4.2/lib/gcc/arm-apple-darwin10/4.2.1/include/float.h
+c000000004D93D9890000000000001538
+t1301535113
+s5432
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/usr/llvm-gcc-4.2/lib/gcc/arm-apple-darwin10/4.2.1/include/stdarg.h
+c000000004D93D98900000000000010DD
+t1301535113
+s4317
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Chipmunk-Prefix.pch
+c000000004E33C588000000000000009A
+t1312015752
+s154
+i<Foundation/Foundation.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/chipmunk.h
+c000000004E33C5880000000000001293
+t1312015752
+s4755
+i"chipmunk_types.h"
+i"cpVect.h"
+i"cpBB.h"
+i"cpArray.h"
+i"cpHashSet.h"
+i"cpSpaceHash.h"
+i"cpBody.h"
+i"cpShape.h"
+i"cpPolyShape.h"
+i"cpArbiter.h"
+i"cpCollision.h"
+i"constraints/cpConstraint.h"
+i"cpSpace.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/chipmunk_ffi.h
+c000000004E33C588000000000000058C
+t1312015752
+s1420
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/chipmunk_private.h
+c000000004E33C58800000000000006A6
+t1312015752
+s1702
+i"chipmunk.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/chipmunk_types.h
+c000000004E33C5880000000000000AF4
+t1312015752
+s2804
+i"TargetConditionals.h"
+i<CoreGraphics/CGGeometry.h>
+i<ApplicationServices/ApplicationServices.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/chipmunk_unsafe.h
+c000000004E33C5880000000000000874
+t1312015752
+s2164
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/constraints/cpConstraint.h
+c000000004E33C5880000000000000DBB
+t1312015752
+s3515
+i"cpPinJoint.h"
+i"cpSlideJoint.h"
+i"cpPivotJoint.h"
+i"cpGrooveJoint.h"
+i"cpDampedSpring.h"
+i"cpDampedRotarySpring.h"
+i"cpRotaryLimitJoint.h"
+i"cpRatchetJoint.h"
+i"cpGearJoint.h"
+i"cpSimpleMotor.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/constraints/cpDampedRotarySpring.h
+c000000004E33C58800000000000008AE
+t1312015752
+s2222
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/constraints/cpDampedSpring.h
+c000000004E33C5880000000000000956
+t1312015752
+s2390
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/constraints/cpGearJoint.h
+c000000004E33C58800000000000006DB
+t1312015752
+s1755
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/constraints/cpGrooveJoint.h
+c000000004E33C58800000000000007E2
+t1312015752
+s2018
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/constraints/cpPinJoint.h
+c000000004E33C58800000000000006E9
+t1312015752
+s1769
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/constraints/cpPivotJoint.h
+c000000004E33C58800000000000006F2
+t1312015752
+s1778
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/constraints/cpRatchetJoint.h
+c000000004E33C58800000000000006FC
+t1312015752
+s1788
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/constraints/cpRotaryLimitJoint.h
+c000000004E33C58800000000000006BF
+t1312015752
+s1727
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/constraints/cpSimpleMotor.h
+c000000004E33C5880000000000000620
+t1312015752
+s1568
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/constraints/cpSlideJoint.h
+c000000004E33C5880000000000000774
+t1312015752
+s1908
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/constraints/util.h
+c000000004E33C588000000000000111A
+t1312015752
+s4378
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/cpArbiter.h
+c000000004E33C58800000000000018CC
+t1312015752
+s6348
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/cpArray.h
+c000000004E33C5880000000000000760
+t1312015752
+s1888
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/cpBB.h
+c000000004E33C58800000000000008D1
+t1312015752
+s2257
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/cpBody.h
+c000000004E33C5880000000000001CD7
+t1312015752
+s7383
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/cpCollision.h
+c000000004E33C5880000000000000592
+t1312015752
+s1426
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/cpHashSet.h
+c000000004E33C5880000000000000DB9
+t1312015752
+s3513
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/cpPolyShape.h
+c000000004E33C5880000000000000D90
+t1312015752
+s3472
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/cpShape.h
+c000000004E33C58800000000000016F4
+t1312015752
+s5876
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/cpSpace.h
+c000000004E33C5880000000000001F56
+t1312015752
+s8022
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/cpSpaceHash.h
+c000000004E33C588000000000000128A
+t1312015752
+s4746
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmunk/cpVect.h
+c000000004E33C58800000000000016B2
+t1312015752
+s5810
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/chipmunk.c
+c000000004E33C5880000000000000F0F
+t1312015752
+s3855
+i<stdlib.h>
+i<stdio.h>
+i<math.h>
+i"chipmunk.h"
+i"chipmunk_ffi.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpConstraint.c
+c000000004E33C58800000000000006EC
+t1312015752
+s1772
+i<stdlib.h>
+i"chipmunk_private.h"
+i"util.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c
+c000000004E33C5880000000000000D83
+t1312015752
+s3459
+i<stdlib.h>
+i<math.h>
+i"chipmunk_private.h"
+i"util.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedSpring.c
+c000000004E33C5880000000000000EBA
+t1312015752
+s3770
+i<stdlib.h>
+i<math.h>
+i"chipmunk_private.h"
+i"util.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGearJoint.c
+c000000004E33C5880000000000000CF1
+t1312015752
+s3313
+i<stdlib.h>
+i"chipmunk_private.h"
+i"util.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGrooveJoint.c
+c000000004E33C5880000000000001282
+t1312015752
+s4738
+i<stdlib.h>
+i"chipmunk_private.h"
+i"util.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPinJoint.c
+c000000004E33C5880000000000000DD7
+t1312015752
+s3543
+i<stdlib.h>
+i"chipmunk_private.h"
+i"util.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPivotJoint.c
+c000000004E33C5880000000000000D68
+t1312015752
+s3432
+i<stdlib.h>
+i"chipmunk_private.h"
+i"util.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRatchetJoint.c
+c000000004E33C5880000000000000DF6
+t1312015752
+s3574
+i<stdlib.h>
+i<math.h>
+i"chipmunk_private.h"
+i"util.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.c
+c000000004E33C5880000000000000D43
+t1312015752
+s3395
+i<stdlib.h>
+i"chipmunk_private.h"
+i"util.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSimpleMotor.c
+c000000004E33C5880000000000000A8E
+t1312015752
+s2702
+i<stdlib.h>
+i"chipmunk_private.h"
+i"util.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSlideJoint.c
+c000000004E33C5880000000000000EE6
+t1312015752
+s3814
+i<stdlib.h>
+i"chipmunk_private.h"
+i"util.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArbiter.c
+c000000004E33C5880000000000001C30
+t1312015752
+s7216
+i<stdlib.h>
+i"chipmunk_private.h"
+i"util.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArray.c
+c000000004E33C5880000000000000BAC
+t1312015752
+s2988
+i<stdlib.h>
+i<string.h>
+i"chipmunk_private.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBB.c
+c000000004E33C5880000000000000696
+t1312015752
+s1686
+i<math.h>
+i<stdlib.h>
+i"chipmunk.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBody.c
+c000000004E33C58800000000000012D2
+t1312015752
+s4818
+i<stdlib.h>
+i<float.h>
+i<stdarg.h>
+i"chipmunk_private.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpCollision.c
+c000000004E33C5880000000000002F27
+t1312015752
+s12071
+i<stdlib.h>
+i<math.h>
+i"chipmunk_private.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpHashSet.c
+c000000004E33C5880000000000001697
+t1312015752
+s5783
+i<stdlib.h>
+i<assert.h>
+i"chipmunk_private.h"
+i"prime.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpPolyShape.c
+c000000004E33C5880000000000001873
+t1312015752
+s6259
+i<stdlib.h>
+i"chipmunk_private.h"
+i"chipmunk_unsafe.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpShape.c
+c000000004E33C5880000000000002628
+t1312015752
+s9768
+i<stdlib.h>
+i<stdio.h>
+i<math.h>
+i"chipmunk_private.h"
+i"chipmunk_unsafe.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpace.c
+c000000004E33C5880000000000003778
+t1312015752
+s14200
+i<stdlib.h>
+i<string.h>
+i<math.h>
+i"chipmunk_private.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceComponent.c
+c000000004E33C5880000000000002133
+t1312015752
+s8499
+i<stdlib.h>
+i"chipmunk_private.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceHash.c
+c000000004E33C5880000000000003475
+t1312015752
+s13429
+i<math.h>
+i<stdlib.h>
+i"chipmunk_private.h"
+i"prime.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceQuery.c
+c000000004E33C5880000000000001B50
+t1312015752
+s6992
+i<stdlib.h>
+i"chipmunk_private.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceStep.c
+c000000004E33C5880000000000003114
+t1312015752
+s12564
+i<stdlib.h>
+i<math.h>
+i"chipmunk_private.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpVect.c
+c000000004E33C58800000000000007B7
+t1312015752
+s1975
+i<stdio.h>
+i<math.h>
+i"chipmunk.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/prime.h
+c000000004E33C58800000000000006E8
+t1312015752
+s1768
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/libChipmunk.a
+t1312027281
+s987472
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/Chipmunk.LinkFileList
+c000000004E33F28C0000000000000DB4
+t1312027276
+s3508
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/chipmunk.o
+t1312027278
+s33852
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpArbiter.o
+t1312027278
+s24824
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpArray.o
+t1312027278
+s7128
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpBB.o
+t1312027278
+s4720
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpBody.o
+t1312027278
+s19188
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpCollision.o
+t1312027278
+s28512
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpConstraint.o
+t1312027278
+s8136
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpDampedRotarySpring.o
+t1312027278
+s11932
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpDampedSpring.o
+t1312027278
+s18528
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpGearJoint.o
+t1312027278
+s13888
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpGrooveJoint.o
+t1312027278
+s23784
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpHashSet.o
+t1312027278
+s11716
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPinJoint.o
+t1312027278
+s19196
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPivotJoint.o
+t1312027278
+s20556
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPolyShape.o
+t1312027278
+s23320
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpRatchetJoint.o
+t1312027278
+s13344
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpRotaryLimitJoint.o
+t1312027278
+s13156
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpShape.o
+t1312027278
+s32236
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSimpleMotor.o
+t1312027278
+s12216
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSlideJoint.o
+t1312027278
+s19236
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpace.o
+t1312027278
+s29336
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceComponent.o
+t1312027278
+s20012
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceHash.o
+t1312027279
+s26776
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceQuery.o
+t1312027279
+s17764
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceStep.o
+t1312027279
+s22828
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpVect.o
+t1312027279
+s6564
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/libChipmunk.a
+t1312027279
+s491752
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/Chipmunk.LinkFileList
+c000000004E33F28C0000000000000DB4
+t1312027276
+s3508
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/chipmunk.o
+t1312027279
+s33348
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpArbiter.o
+t1312027279
+s25540
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpArray.o
+t1312027279
+s7440
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpBB.o
+t1312027279
+s4696
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpBody.o
+t1312027279
+s19376
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpCollision.o
+t1312027279
+s29212
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpConstraint.o
+t1312027279
+s8132
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpDampedRotarySpring.o
+t1312027279
+s11932
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpDampedSpring.o
+t1312027279
+s18584
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpGearJoint.o
+t1312027279
+s13816
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpGrooveJoint.o
+t1312027279
+s23328
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpHashSet.o
+t1312027279
+s12212
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPinJoint.o
+t1312027279
+s19336
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPivotJoint.o
+t1312027279
+s20044
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPolyShape.o
+t1312027279
+s23748
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpRatchetJoint.o
+t1312027279
+s13372
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpRotaryLimitJoint.o
+t1312027279
+s13092
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpShape.o
+t1312027280
+s31896
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSimpleMotor.o
+t1312027279
+s12152
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSlideJoint.o
+t1312027279
+s19220
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpace.o
+t1312027280
+s29948
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceComponent.o
+t1312027280
+s20668
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceHash.o
+t1312027280
+s27368
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceQuery.o
+t1312027280
+s18132
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceStep.o
+t1312027280
+s23684
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpVect.o
+t1312027280
+s6384
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/libChipmunk.a
+t1312027280
+s495672
+
+N/var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch.gch
+t1312027276
+s1290468
+
+N/var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch.gch
+t1312027276
+s794852
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/chipmunk.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpConstraint.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedSpring.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGearJoint.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGrooveJoint.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPinJoint.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPivotJoint.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRatchetJoint.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSimpleMotor.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSlideJoint.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArbiter.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArray.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBB.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBody.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpCollision.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpHashSet.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpPolyShape.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpShape.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpace.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceComponent.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceHash.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceQuery.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceStep.c
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpVect.c
+r0
+
+CCheck dependencies
+r0
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesd8b8765d30e5b341^0bcf575e30e5b341^---0#1#0#--18"Check dependencies
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/chipmunk.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/chipmunk.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720077.676910
+e333720078.179260
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/chipmunk.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/chipmunk.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/chipmunk.cca6fad0d2ae4b341^ce1c3a0e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/chipmunk.c0000000000000000^1692"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/chipmunk.o Chipmunk/Sources/src/chipmunk.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/chipmunk.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/chipmunk.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpArbiter.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArbiter.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.268532
+e333720078.428804
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpArbiter.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArbiter.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArbiter.cc1e2440e2ae4b341^4cc66d0e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArbiter.c0000000000000000^1696"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpArbiter.o Chipmunk/Sources/src/cpArbiter.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArbiter.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpArbiter.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpArray.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArray.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.279545
+e333720078.389159
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpArray.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArray.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArray.c5fb4470e2ae4b341^e09e630e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArray.c0000000000000000^1688"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpArray.o Chipmunk/Sources/src/cpArray.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArray.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpArray.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpBB.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBB.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.281595
+e333720078.380975
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpBB.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBB.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBB.cfc36480e2ae4b341^1e87610e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@92"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBB.c0000000000000000^1676"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpBB.o Chipmunk/Sources/src/cpBB.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBB.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpBB.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpBody.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBody.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.302911
+e333720078.439694
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpBody.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBody.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBody.cefa84d0e2ae4b341^5393700e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBody.c0000000000000000^1684"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpBody.o Chipmunk/Sources/src/cpBody.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBody.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpBody.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpCollision.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpCollision.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.356339
+e333720078.569833
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpCollision.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpCollision.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpCollision.c575d5b0e2ae4b341^af415f0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpCollision.c0000000000000000^1704"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpCollision.o Chipmunk/Sources/src/cpCollision.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpCollision.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpCollision.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpConstraint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpConstraint.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720077.755662
+e333720078.116098
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpConstraint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpConstraint.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpConstraint.c4da3c10d2ae4b341^16143a0e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@112"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpConstraint.c0000000000000000^1732"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpConstraint.o Chipmunk/Sources/src/constraints/cpConstraint.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpConstraint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpConstraint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpDampedRotarySpring.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720077.676794
+e333720078.111242
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpDampedRotarySpring.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c9065ad0d2ae4b341^f1103a0e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c0000000000000000^1764"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpDampedRotarySpring.o Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpDampedRotarySpring.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpDampedSpring.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedSpring.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720077.676798
+e333720078.129681
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpDampedSpring.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedSpring.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedSpring.c8d62ad0d2ae4b341^bd183a0e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@114"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedSpring.c0000000000000000^1740"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpDampedSpring.o Chipmunk/Sources/src/constraints/cpDampedSpring.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedSpring.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpDampedSpring.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpGearJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGearJoint.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.099066
+e333720078.240066
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpGearJoint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGearJoint.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGearJoint.c6a85190e2ae4b341^71743d0e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@111"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGearJoint.c0000000000000000^1728"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpGearJoint.o Chipmunk/Sources/src/constraints/cpGearJoint.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGearJoint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpGearJoint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpGrooveJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGrooveJoint.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.108638
+e333720078.280363
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpGrooveJoint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGrooveJoint.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection105"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGrooveJoint.c4ef21b0e2ae4b341^bdc5470e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGrooveJoint.c0000000000000000^1736"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpGrooveJoint.o Chipmunk/Sources/src/constraints/cpGrooveJoint.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGrooveJoint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpGrooveJoint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpHashSet.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpHashSet.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.382225
+e333720078.509114
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpHashSet.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpHashSet.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpHashSet.c5611620e2ae4b341^465e820e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpHashSet.c0000000000000000^1696"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpHashSet.o Chipmunk/Sources/src/cpHashSet.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpHashSet.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpHashSet.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPinJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPinJoint.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.112520
+e333720078.267356
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPinJoint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPinJoint.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPinJoint.ce0111d0e2ae4b341^6171440e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPinJoint.c0000000000000000^1724"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPinJoint.o Chipmunk/Sources/src/constraints/cpPinJoint.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPinJoint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPinJoint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPivotJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPivotJoint.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.117318
+e333720078.278257
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPivotJoint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPivotJoint.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPivotJoint.cc6311e0e2ae4b341^323b470e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@112"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPivotJoint.c0000000000000000^1732"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPivotJoint.o Chipmunk/Sources/src/constraints/cpPivotJoint.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPivotJoint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPivotJoint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPolyShape.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpPolyShape.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.390394
+e333720078.580826
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPolyShape.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpPolyShape.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpPolyShape.c5726640e2ae4b341^ad4d5f0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpPolyShape.c0000000000000000^1704"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPolyShape.o Chipmunk/Sources/src/cpPolyShape.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpPolyShape.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpPolyShape.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpRatchetJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRatchetJoint.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.130953
+e333720078.263646
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpRatchetJoint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRatchetJoint.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRatchetJoint.cd6aa210e2ae4b341^527d430e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@114"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRatchetJoint.c0000000000000000^1740"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpRatchetJoint.o Chipmunk/Sources/src/constraints/cpRatchetJoint.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRatchetJoint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpRatchetJoint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpRotaryLimitJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.180566
+e333720078.301702
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpRotaryLimitJoint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection110"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.ce9632e0e2ae4b341^ef3c4d0e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@118"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.c0000000000000000^1756"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpRotaryLimitJoint.o Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpRotaryLimitJoint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpShape.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpShape.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.410767
+e333720078.621819
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpShape.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpShape.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpShape.ce44a690e2ae4b341^c45f5f0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpShape.c0000000000000000^1688"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpShape.o Chipmunk/Sources/src/cpShape.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpShape.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpShape.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSimpleMotor.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSimpleMotor.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.241292
+e333720078.355109
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSimpleMotor.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSimpleMotor.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection105"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSimpleMotor.cc4e83d0e2ae4b341^92e75a0e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSimpleMotor.c0000000000000000^1736"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSimpleMotor.o Chipmunk/Sources/src/constraints/cpSimpleMotor.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSimpleMotor.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSimpleMotor.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSlideJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSlideJoint.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.264885
+e333720078.409541
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSlideJoint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSlideJoint.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSlideJoint.c26ff430e2ae4b341^f5d6680e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@112"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSlideJoint.c0000000000000000^1732"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSlideJoint.o Chipmunk/Sources/src/constraints/cpSlideJoint.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSlideJoint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSlideJoint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpace.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpace.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.430034
+e333720078.613879
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpace.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpace.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpace.ca0366e0e2ae4b341^105a5f0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpace.c0000000000000000^1688"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpace.o Chipmunk/Sources/src/cpSpace.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpace.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpace.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceComponent.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceComponent.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720078.440894
+e333720078.589050
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceComponent.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceComponent.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceComponent.cecfb700e2ae4b341^e3545f0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@104"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceComponent.c0000000000000000^1724"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceComponent.o Chipmunk/Sources/src/cpSpaceComponent.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceComponent.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceComponent.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceHash.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceHash.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720079.267353
+e333720079.433706
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceHash.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceHash.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceHash.ce6af440f2ae4b341^b3066f0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceHash.c0000000000000000^1704"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceHash.o Chipmunk/Sources/src/cpSpaceHash.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceHash.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceHash.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceQuery.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceQuery.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720079.286296
+e333720079.413563
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceQuery.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceQuery.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceQuery.c2979490f2ae4b341^dfde690f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceQuery.c0000000000000000^1708"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceQuery.o Chipmunk/Sources/src/cpSpaceQuery.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceQuery.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceQuery.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceStep.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceStep.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720079.373775
+e333720079.522638
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceStep.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceStep.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceStep.c23d95f0f2ae4b341^9e09910f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceStep.c0000000000000000^1704"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceStep.o Chipmunk/Sources/src/cpSpaceStep.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceStep.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpSpaceStep.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpVect.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpVect.c normal armv6 c com.apple.compilers.llvmgcc42
+s333720079.373778
+e333720079.465488
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpVect.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpVect.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpVect.c1fda5f0f2ae4b341^282a770f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpVect.c0000000000000000^1684"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpVect.o Chipmunk/Sources/src/cpVect.c normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpVect.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/cpVect.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/chipmunk.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/chipmunk.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.374795
+e333720079.555400
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/chipmunk.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/chipmunk.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/chipmunk.c880f600f2ae4b341^9c15910f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/chipmunk.c0000000000000000^1692"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/chipmunk.o Chipmunk/Sources/src/chipmunk.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/chipmunk.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/chipmunk.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpArbiter.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArbiter.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.754770
+e333720079.935716
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpArbiter.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArbiter.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArbiter.c9758c10f2ae4b341^6893ef0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArbiter.c0000000000000000^1696"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpArbiter.o Chipmunk/Sources/src/cpArbiter.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArbiter.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpArbiter.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpArray.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArray.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.754773
+e333720079.914056
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpArray.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArray.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArray.c8658c10f2ae4b341^a0fce90f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArray.c0000000000000000^1688"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpArray.o Chipmunk/Sources/src/cpArray.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpArray.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpArray.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpBB.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBB.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.754837
+e333720079.914189
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpBB.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBB.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBB.c0b7cc10f2ae4b341^850aea0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@92"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBB.c0000000000000000^1676"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpBB.o Chipmunk/Sources/src/cpBB.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBB.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpBB.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpBody.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBody.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.755394
+e333720079.928798
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpBody.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBody.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBody.ca583c10f2ae4b341^50c5ed0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBody.c0000000000000000^1684"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpBody.o Chipmunk/Sources/src/cpBody.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpBody.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpBody.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpCollision.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpCollision.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.772255
+e333720079.991128
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpCollision.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpCollision.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpCollision.cedd3c50f2ae4b341^7fc2fd0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpCollision.c0000000000000000^1704"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpCollision.o Chipmunk/Sources/src/cpCollision.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpCollision.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpCollision.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpConstraint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpConstraint.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.414536
+e333720079.555388
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpConstraint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpConstraint.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpConstraint.c7d3e6a0f2ae4b341^b91a910f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@112"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpConstraint.c0000000000000000^1732"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpConstraint.o Chipmunk/Sources/src/constraints/cpConstraint.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpConstraint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpConstraint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpDampedRotarySpring.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.414544
+e333720079.617785
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpDampedRotarySpring.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedRotarySpring.ce23e6a0f2ae4b341^61359e0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c0000000000000000^1764"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpDampedRotarySpring.o Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedRotarySpring.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpDampedRotarySpring.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpDampedSpring.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedSpring.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.434965
+e333720079.617819
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpDampedSpring.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedSpring.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedSpring.ccd786f0f2ae4b341^24289e0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@114"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedSpring.c0000000000000000^1740"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpDampedSpring.o Chipmunk/Sources/src/constraints/cpDampedSpring.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpDampedSpring.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpDampedSpring.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpGearJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGearJoint.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.466793
+e333720079.618000
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpGearJoint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGearJoint.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection103"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGearJoint.cebab770f2ae4b341^a7409e0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@111"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGearJoint.c0000000000000000^1728"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpGearJoint.o Chipmunk/Sources/src/constraints/cpGearJoint.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGearJoint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpGearJoint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpGrooveJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGrooveJoint.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.474548
+e333720079.753366
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpGrooveJoint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGrooveJoint.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection105"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGrooveJoint.c47e6790f2ae4b341^fddcc00f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGrooveJoint.c0000000000000000^1736"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpGrooveJoint.o Chipmunk/Sources/src/constraints/cpGrooveJoint.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpGrooveJoint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpGrooveJoint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpHashSet.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpHashSet.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.772831
+e333720079.914150
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpHashSet.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpHashSet.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpHashSet.c80f0c50f2ae4b341^4206ea0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@97"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpHashSet.c0000000000000000^1696"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpHashSet.o Chipmunk/Sources/src/cpHashSet.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpHashSet.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpHashSet.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPinJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPinJoint.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.618321
+e333720079.771084
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPinJoint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPinJoint.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPinJoint.cec6a9e0f2ae4b341^9468c50f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPinJoint.c0000000000000000^1724"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPinJoint.o Chipmunk/Sources/src/constraints/cpPinJoint.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPinJoint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPinJoint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPivotJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPivotJoint.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.618404
+e333720079.771058
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPivotJoint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPivotJoint.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPivotJoint.cce6d9e0f2ae4b341^4563c50f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@112"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPivotJoint.c0000000000000000^1732"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPivotJoint.o Chipmunk/Sources/src/constraints/cpPivotJoint.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpPivotJoint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPivotJoint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPolyShape.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpPolyShape.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.797011
+e333720079.986263
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPolyShape.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpPolyShape.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpPolyShape.c9a26cc0f2ae4b341^d385fc0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpPolyShape.c0000000000000000^1704"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPolyShape.o Chipmunk/Sources/src/cpPolyShape.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpPolyShape.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpPolyShape.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpRatchetJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRatchetJoint.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.618686
+e333720079.753396
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpRatchetJoint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRatchetJoint.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRatchetJoint.cb18b9e0f2ae4b341^54e4c00f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@114"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRatchetJoint.c0000000000000000^1740"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpRatchetJoint.o Chipmunk/Sources/src/constraints/cpRatchetJoint.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRatchetJoint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpRatchetJoint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpRotaryLimitJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.619053
+e333720079.753331
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpRotaryLimitJoint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection110"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.cc39a9e0f2ae4b341^e9d5c00f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@118"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.c0000000000000000^1756"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpRotaryLimitJoint.o Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpRotaryLimitJoint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpRotaryLimitJoint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpShape.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpShape.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.824391
+e333720080.069196
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpShape.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpShape.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpShape.c4d2dd30f2ae4b341^fcc411102ae4b341^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpShape.c0000000000000000^1688"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpShape.o Chipmunk/Sources/src/cpShape.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpShape.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpShape.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSimpleMotor.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSimpleMotor.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.619126
+e333720079.753445
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSimpleMotor.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSimpleMotor.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection105"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSimpleMotor.cdca09e0f2ae4b341^79ebc00f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSimpleMotor.c0000000000000000^1736"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSimpleMotor.o Chipmunk/Sources/src/constraints/cpSimpleMotor.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSimpleMotor.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSimpleMotor.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSlideJoint.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSlideJoint.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.657827
+e333720079.795761
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSlideJoint.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSlideJoint.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection104"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSlideJoint.cb893a80f2ae4b341^89b6cb0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@112"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSlideJoint.c0000000000000000^1732"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSlideJoint.o Chipmunk/Sources/src/constraints/cpSlideJoint.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/constraints/cpSlideJoint.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSlideJoint.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpace.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpace.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.915539
+e333720080.121026
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpace.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpace.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpace.c2481ea0f2ae4b341^5dfb1e102ae4b341^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpace.c0000000000000000^1688"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpace.o Chipmunk/Sources/src/cpSpace.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpace.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpace.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceComponent.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceComponent.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.915760
+e333720080.098207
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceComponent.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceComponent.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceComponent.c118dea0f2ae4b341^892519102ae4b341^---0#0#0#-19%DVTDocumentLocation2@104"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceComponent.c0000000000000000^1724"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceComponent.o Chipmunk/Sources/src/cpSpaceComponent.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceComponent.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceComponent.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceHash.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceHash.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.916864
+e333720080.123013
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceHash.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceHash.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceHash.cf222eb0f2ae4b341^d07f1f102ae4b341^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceHash.c0000000000000000^1704"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceHash.o Chipmunk/Sources/src/cpSpaceHash.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceHash.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceHash.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceQuery.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceQuery.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.930025
+e333720080.117779
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceQuery.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceQuery.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceQuery.c193aee0f2ae4b341^8fab1d102ae4b341^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceQuery.c0000000000000000^1708"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceQuery.o Chipmunk/Sources/src/cpSpaceQuery.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceQuery.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceQuery.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceStep.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceStep.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.936997
+e333720080.121561
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceStep.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceStep.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceStep.c3f01f00f2ae4b341^761c1f102ae4b341^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceStep.c0000000000000000^1704"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceStep.o Chipmunk/Sources/src/cpSpaceStep.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpSpaceStep.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpSpaceStep.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpVect.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpVect.c normal armv7 c com.apple.compilers.llvmgcc42
+s333720079.987502
+e333720080.117740
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpVect.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpVect.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpVect.ceaecfc0f2ae4b341^cb2c1e102ae4b341^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpVect.c0000000000000000^1684"CompileC build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpVect.o Chipmunk/Sources/src/cpVect.c normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/src/cpVect.c -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/cpVect.o
+
+CCreateUniversalBinary /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/libChipmunk.a normal "armv6 armv7"
+s333720080.804712
+e333720081.168266
+r1
+xCreateUniversalBinary
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/libChipmunk.a
+xnormal
+xarmv6 armv7
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection107"Create universal binary /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/libChipmunk.adf18ce102ae4b341^8e1e2b112ae4b341^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/libChipmunk.a0000204d2205f041^692"CreateUniversalBinary build/Debug-iphoneos/libChipmunk.a normal "armv6 armv7"    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool -static /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/libChipmunk.a /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/libChipmunk.a -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/libChipmunk.a
+
+CLibtool /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/libChipmunk.a normal armv6
+s333720079.618065
+e333720079.753407
+r1
+xLibtool
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/libChipmunk.a
+xnormal
+xarmv6
+o/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"Libtool build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/libChipmunk.a normal armv6e15d9e0f2ae4b341^53e8c00f2ae4b341^-129"/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#0#--874"Libtool build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/libChipmunk.a normal armv6    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool -static -arch_only armv6 -syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -L/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -filelist /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/Chipmunk.LinkFileList -ObjC -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv6/libChipmunk.a
+
+CLibtool /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/libChipmunk.a normal armv7
+s333720080.124313
+e333720080.802434
+r1
+xLibtool
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/libChipmunk.a
+xnormal
+xarmv7
+o/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"Libtool build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/libChipmunk.a normal armv79fe71f102ae4b341^ff76cd102ae4b341^-129"/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#0#--874"Libtool build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/libChipmunk.a normal armv7    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool -static -arch_only armv7 -syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -L/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -filelist /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/Chipmunk.LinkFileList -ObjC -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Objects-normal/armv7/libChipmunk.a
+
+CProcessPCH /Users/Gullinbursti/Library/Developer/Xcode/DerivedData/iOSGutzProjs-hlayvwldngcgihdtcuwcklpvmhbh/Index/PrecompiledHeaders/Chipmunk-Prefix-ayrdukorurfwepdhcuvtvcdvnvcs_ast/Chipmunk-Prefix.pch.pth Chipmunk/Chipmunk-Prefix.pch normal armv7 c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /Users/Gullinbursti/Library/Developer/Xcode/DerivedData/iOSGutzProjs-hlayvwldngcgihdtcuwcklpvmhbh/Index/PrecompiledHeaders/Chipmunk-Prefix-fclxaiktbnfzghgjsnhehxeooyam_ast/Chipmunk-Prefix.pch.pth Chipmunk/Chipmunk-Prefix.pch normal armv6 c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch.gch Chipmunk/Chipmunk-Prefix.pch normal armv7 c com.apple.compilers.llvmgcc42
+s333720076.713626
+e333720077.754041
+r1
+xProcessPCH
+x/var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch.gch
+xChipmunk/Chipmunk-Prefix.pch
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"Precompile Chipmunk/Chipmunk-Prefix.pch79ceb60c2ae4b341^7008c10d2ae4b341^---0#0#0#-19%DVTDocumentLocation2@93"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Chipmunk-Prefix.pch0000000000000000^1642"ProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch.gch Chipmunk/Chipmunk-Prefix.pch normal armv7 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c-header -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Chipmunk-Prefix.pch -o /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-cgtlyqgtkppggagtxekkwqclyyxn/Chipmunk-Prefix.pch.gch
+
+CProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch.gch Chipmunk/Chipmunk-Prefix.pch normal armv6 c com.apple.compilers.llvmgcc42
+s333720076.713023
+e333720077.675366
+r1
+xProcessPCH
+x/var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch.gch
+xChipmunk/Chipmunk-Prefix.pch
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"Precompile Chipmunk/Chipmunk-Prefix.pch69abb60c2ae4b341^32e4ac0d2ae4b341^---0#0#0#-19%DVTDocumentLocation2@93"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Chipmunk-Prefix.pch0000000000000000^1642"ProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch.gch Chipmunk/Chipmunk-Prefix.pch normal armv6 c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x c-header -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/Chipmunk.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Sources/include/chipmonk -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/Chipmunk.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/Chipmunk/Chipmunk-Prefix.pch -o /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Chipmunk-Prefix-eyobajrcfzeivtcxibergrzkiakm/Chipmunk-Prefix.pch.gch
+

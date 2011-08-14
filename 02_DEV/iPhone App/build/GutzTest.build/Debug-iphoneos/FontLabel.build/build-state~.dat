@@ -1,0 +1,407 @@
+TFontLabel
+v3
+r1
+cCheck dependencies
+cProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-avoefsfgpvvjssayqvkivmqrejwh/FontLabel-Prefix.pch.gch FontLabel/FontLabel-Prefix.pch normal armv6 objective-c com.apple.compilers.llvmgcc42
+cProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-fbryjdvlolsdztbgsdnuealkncos/FontLabel-Prefix.pch.gch FontLabel/FontLabel-Prefix.pch normal armv7 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabelStringDrawing.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.m normal armv7 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabel.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.m normal armv6 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabelStringDrawing.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.m normal armv6 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontManager.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.m normal armv6 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZAttributedString.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.m normal armv6 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZFont.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.m normal armv6 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabel.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.m normal armv7 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontManager.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.m normal armv7 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZAttributedString.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.m normal armv7 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZFont.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.m normal armv7 objective-c com.apple.compilers.llvmgcc42
+cLibtool /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/libFontLabel.a normal armv6
+cLibtool /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/libFontLabel.a normal armv7
+cCreateUniversalBinary /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/libFontLabel.a normal "armv6 armv7"
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk
+c000000004E272CD90000000000000110
+t1311190233
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.h
+c000000004D93E05100000000000004FE
+t1301536849
+s1278
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004D93E1E60000000000001466
+t1301537254
+s5222
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004D99FA7C0000000000000AA1
+t1301936764
+s2721
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/FontLabel-Prefix.pch
+c000000004E33C588000000000000009C
+t1312015752
+s156
+i<Foundation/Foundation.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.h
+c000000004E33C58800000000000006FD
+t1312015752
+s1789
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.m
+c000000004E33C5880000000000001AF7
+t1312015752
+s6903
+i"FontLabel.h"
+i"FontManager.h"
+i"FontLabelStringDrawing.h"
+i"ZFont.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.h
+c000000004E33C5880000000000000F44
+t1312015752
+s3908
+i<UIKit/UIKit.h>
+i"ZAttributedString.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.m
+c000000004E33C5880000000000008454
+t1312015752
+s33876
+i"FontLabelStringDrawing.h"
+i"ZFont.h"
+i"ZAttributedStringPrivate.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.h
+c000000004E33C5880000000000000CEB
+t1312015752
+s3307
+i<Foundation/Foundation.h>
+i<CoreGraphics/CoreGraphics.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.m
+c000000004E33C5880000000000000D75
+t1312015752
+s3445
+i"FontManager.h"
+i"ZFont.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.h
+c000000004E33C5880000000000000C27
+t1312015752
+s3111
+i<Foundation/Foundation.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.m
+c000000004E33C5880000000000005547
+t1312015752
+s21831
+i"ZAttributedString.h"
+i"ZAttributedStringPrivate.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedStringPrivate.h
+c000000004E33C58800000000000002D2
+t1312015752
+s722
+i<Foundation/Foundation.h>
+i"ZAttributedString.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.h
+c000000004E33C5880000000000000664
+t1312015752
+s1636
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.m
+c000000004E33C5880000000000001324
+t1312015752
+s4900
+i"ZFont.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/libFontLabel.a
+t2
+s0
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabel.LinkFileList
+c000000004E33F28C00000000000002B1
+t1312027276
+s689
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabel.o
+t2
+s0
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabelStringDrawing.o
+t2
+s0
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontManager.o
+t2
+s0
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZAttributedString.o
+t2
+s0
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZFont.o
+t2
+s0
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/libFontLabel.a
+t2
+s0
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabel.LinkFileList
+c000000004E33F28C00000000000002B1
+t1312027276
+s689
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabel.o
+t2
+s0
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabelStringDrawing.o
+t2
+s0
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontManager.o
+t2
+s0
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZAttributedString.o
+t2
+s0
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZFont.o
+t2
+s0
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/libFontLabel.a
+t2
+s0
+
+N/var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-avoefsfgpvvjssayqvkivmqrejwh/FontLabel-Prefix.pch.gch
+t1311294658
+s5585672
+
+N/var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-fbryjdvlolsdztbgsdnuealkncos/FontLabel-Prefix.pch.gch
+t1311294658
+s6073096
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.m
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.m
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.m
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.m
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.m
+r0
+
+CCheck dependencies
+r0
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciese965ec0b2ae4b341^fa256e0c2ae4b341^---0#1#0#--18"Check dependencies
+
+CCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabel.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.m normal armv6 objective-c com.apple.compilers.llvmgcc42
+s333720078.493925
+e333720078.756753
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabel.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.mbaa07e0e2ae4b341^dc655f0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.m0000000000000000^1702"CompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabel.o FontLabel/Sources/FontLabel.m normal armv6 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/FontLabel.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-avoefsfgpvvjssayqvkivmqrejwh/FontLabel-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.m -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabel.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabelStringDrawing.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.m normal armv6 objective-c com.apple.compilers.llvmgcc42
+s333720078.510343
+e333720079.372461
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabelStringDrawing.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.me0d5820e2ae4b341^c37e5f0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.m0000000000000000^1754"CompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabelStringDrawing.o FontLabel/Sources/FontLabelStringDrawing.m normal armv6 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/FontLabel.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-avoefsfgpvvjssayqvkivmqrejwh/FontLabel-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.m -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabelStringDrawing.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontManager.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.m normal armv6 objective-c com.apple.compilers.llvmgcc42
+s333720078.571433
+e333720079.265884
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontManager.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.mde75920e2ae4b341^a06b5f0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.m0000000000000000^1710"CompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontManager.o FontLabel/Sources/FontManager.m normal armv6 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/FontLabel.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-avoefsfgpvvjssayqvkivmqrejwh/FontLabel-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.m -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontManager.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZAttributedString.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.m normal armv6 objective-c com.apple.compilers.llvmgcc42
+s333720078.582069
+e333720079.412734
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZAttributedString.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.mab25950e2ae4b341^b0ab690f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.m0000000000000000^1734"CompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZAttributedString.o FontLabel/Sources/ZAttributedString.m normal armv6 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/FontLabel.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-avoefsfgpvvjssayqvkivmqrejwh/FontLabel-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.m -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZAttributedString.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZFont.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.m normal armv6 objective-c com.apple.compilers.llvmgcc42
+s333720078.590300
+e333720079.285051
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZFont.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection82"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.m0839970e2ae4b341^53755f0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@90"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.m0000000000000000^1686"CompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZFont.o FontLabel/Sources/ZFont.m normal armv6 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/FontLabel.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-avoefsfgpvvjssayqvkivmqrejwh/FontLabel-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.m -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZFont.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabel.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.m normal armv7 objective-c com.apple.compilers.llvmgcc42
+s333720078.615058
+e333720079.373625
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabel.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.m48899d0e2ae4b341^22a75f0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.m0000000000000000^1702"CompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabel.o FontLabel/Sources/FontLabel.m normal armv7 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/FontLabel.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-fbryjdvlolsdztbgsdnuealkncos/FontLabel-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabel.m -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabel.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabelStringDrawing.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.m normal armv7 objective-c com.apple.compilers.llvmgcc42
+s333720078.452890
+e333720079.373192
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabelStringDrawing.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.m3413740e2ae4b341^b1865f0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.m0000000000000000^1754"CompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabelStringDrawing.o FontLabel/Sources/FontLabelStringDrawing.m normal armv7 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/FontLabel.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-fbryjdvlolsdztbgsdnuealkncos/FontLabel-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontLabelStringDrawing.m -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabelStringDrawing.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontManager.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.m normal armv7 objective-c com.apple.compilers.llvmgcc42
+s333720078.623069
+e333720079.266181
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontManager.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.mdba79f0e2ae4b341^4c6f5f0f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.m0000000000000000^1710"CompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontManager.o FontLabel/Sources/FontManager.m normal armv7 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/FontLabel.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-fbryjdvlolsdztbgsdnuealkncos/FontLabel-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/FontManager.m -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontManager.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZAttributedString.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.m normal armv7 objective-c com.apple.compilers.llvmgcc42
+s333720078.757989
+e333720079.412737
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZAttributedString.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.m2330c20e2ae4b341^5fb6690f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.m0000000000000000^1734"CompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZAttributedString.o FontLabel/Sources/ZAttributedString.m normal armv7 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/FontLabel.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-fbryjdvlolsdztbgsdnuealkncos/FontLabel-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZAttributedString.m -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZAttributedString.o
+
+CCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZFont.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.m normal armv7 objective-c com.apple.compilers.llvmgcc42
+s333720079.267169
+e333720079.473235
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZFont.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection82"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.me291440f2ae4b341^5985790f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@90"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.m0000000000000000^1686"CompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZFont.o FontLabel/Sources/ZFont.m normal armv7 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/FontLabel.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-fbryjdvlolsdztbgsdnuealkncos/FontLabel-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources/ZFont.m -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZFont.o
+
+CCreateUniversalBinary /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/libFontLabel.a normal "armv6 armv7"
+s333720079.754775
+e333720079.823089
+r1
+xCreateUniversalBinary
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/libFontLabel.a
+xnormal
+xarmv6 armv7
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Create universal binary /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/libFontLabel.a2250c10f2ae4b341^fab4d20f2ae4b341^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/libFontLabel.a0000204d2205f041^698"CreateUniversalBinary build/Debug-iphoneos/libFontLabel.a normal "armv6 armv7"    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool -static /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/libFontLabel.a /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/libFontLabel.a -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/libFontLabel.a
+
+CLibtool /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/libFontLabel.a normal armv6
+s333720079.413996
+e333720079.617816
+r1
+xLibtool
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/libFontLabel.a
+xnormal
+xarmv6
+o/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Libtool build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/libFontLabel.a normal armv61e166a0f2ae4b341^213c9e0f2ae4b341^-129"/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#0#--880"Libtool build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/libFontLabel.a normal armv6    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool -static -arch_only armv6 -syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -L/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -filelist /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabel.LinkFileList -ObjC -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/libFontLabel.a
+
+CLibtool /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/libFontLabel.a normal armv7
+s333720079.618039
+e333720079.656597
+r1
+xLibtool
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/libFontLabel.a
+xnormal
+xarmv7
+o/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Libtool build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/libFontLabel.a normal armv7da539e0f2ae4b341^4816a80f2ae4b341^-129"/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#0#--880"Libtool build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/libFontLabel.a normal armv7    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool -static -arch_only armv7 -syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -L/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -filelist /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabel.LinkFileList -ObjC -o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/libFontLabel.a
+
+CProcessPCH /Users/Gullinbursti/Library/Developer/Xcode/DerivedData/iOSGutzProjs-hlayvwldngcgihdtcuwcklpvmhbh/Index/PrecompiledHeaders/FontLabel-Prefix-fzefyszcpdzbsvditifizcyspwnn_ast/FontLabel-Prefix.pch.pth FontLabel/FontLabel-Prefix.pch normal armv7 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /Users/Gullinbursti/Library/Developer/Xcode/DerivedData/iOSGutzProjs-hlayvwldngcgihdtcuwcklpvmhbh/Index/PrecompiledHeaders/FontLabel-Prefix-geheeghjbafmlfcvahsgmgdsmfwx_ast/FontLabel-Prefix.pch.pth FontLabel/FontLabel-Prefix.pch normal armv6 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-avoefsfgpvvjssayqvkivmqrejwh/FontLabel-Prefix.pch.gch FontLabel/FontLabel-Prefix.pch normal armv6 objective-c com.apple.compilers.llvmgcc42
+s333720076.441061
+e333720078.492468
+r1
+xProcessPCH
+x/var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-avoefsfgpvvjssayqvkivmqrejwh/FontLabel-Prefix.pch.gch
+xFontLabel/FontLabel-Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile FontLabel/FontLabel-Prefix.pchc408710c2ae4b341^fd117e0e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/FontLabel-Prefix.pch0000000000000000^1658"ProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-avoefsfgpvvjssayqvkivmqrejwh/FontLabel-Prefix.pch.gch FontLabel/FontLabel-Prefix.pch normal armv6 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/FontLabel.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources/armv6 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/FontLabel-Prefix.pch -o /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-avoefsfgpvvjssayqvkivmqrejwh/FontLabel-Prefix.pch.gch
+
+CProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-fbryjdvlolsdztbgsdnuealkncos/FontLabel-Prefix.pch.gch FontLabel/FontLabel-Prefix.pch normal armv7 objective-c com.apple.compilers.llvmgcc42
+s333720076.441275
+e333720078.451452
+r1
+xProcessPCH
+x/var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-fbryjdvlolsdztbgsdnuealkncos/FontLabel-Prefix.pch.gch
+xFontLabel/FontLabel-Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile FontLabel/FontLabel-Prefix.pch9417710c2ae4b341^c591730e2ae4b341^---0#0#0#-19%DVTDocumentLocation2@95"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/FontLabel-Prefix.pch0000000000000000^1658"ProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-fbryjdvlolsdztbgsdnuealkncos/FontLabel-Prefix.pch.gch FontLabel/FontLabel-Prefix.pch normal armv7 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk -gdwarf-2 -mthumb -miphoneos-version-min=4.0 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/FontLabel.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources/armv7 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/GutzTest.build/Debug-iphoneos/FontLabel.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphoneos -c /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/FontLabel/FontLabel-Prefix.pch -o /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-fbryjdvlolsdztbgsdnuealkncos/FontLabel-Prefix.pch.gch
+
