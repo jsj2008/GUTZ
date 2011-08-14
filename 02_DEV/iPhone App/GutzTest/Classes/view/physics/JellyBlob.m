@@ -11,6 +11,7 @@
 
 @synthesize control = _control;//, chipmunkObjects = _chipmunkObjects;
 @synthesize chipmunkObjects;
+@synthesize posPt;
 
 -(id)initWithPos:(cpVect)pos radius:(cpFloat)radius count:(int)count; {
 	
@@ -19,6 +20,7 @@
 		chipmunkObjects = set;
 		
 		_count = count;
+		posPt = CGPointMake(pos.x, pos.y);
 		
 		_rate = 5.0;
 		_torque = 50000.0;
@@ -87,7 +89,7 @@
 		
 		
 		
-		for(int i=0; i<count; i++){
+		for (int i=0; i<count; i++) {
 			ChipmunkBody *a = [bodies objectAtIndex:i];
 			ChipmunkBody *b = [bodies objectAtIndex:(i + 1) % count];
 			//[set addObject:[ChipmunkSlideJoint slideJointWithBodyA:a bodyB:b anchr1:cpvzero anchr2:cpvzero min:0 max:edgeDistance * 1.1]];
@@ -98,10 +100,26 @@
 		
 		_motor = [ChipmunkSimpleMotor simpleMotorWithBodyA:_centralBody bodyB:[ChipmunkBody staticBody] rate:0];
 		[set addObject:_motor];
-		_motor.maxForce = 0;
+		_motor.maxForce = 4;
+		_motor.rate = -2;
 		
 		
 		
+		for (int i=0; i<count; i++) {
+			cpVect slope = cpvforangle((cpFloat)i / (cpFloat)count * 2.0 * M_PI);
+			cpVect posMult = cpvmult(slope, radius * 0.9);
+			
+			ChipmunkBody *body = [ChipmunkBody bodyWithMass:edgeMass andMoment:INFINITY];
+			body.pos = cpvadd(pos, posMult);
+			[set addObject:body];
+			
+			ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:(CCRANDOM_0_1() * 4) + 2 offset:cpvzero];
+			shape.layers = GRABABLE_LAYER;
+			[set addObject:shape];
+			
+			
+			[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:body bodyB:_centralBody anchr1:cpvzero anchr2:cpvzero restLength:0 stiffness:3 damping:0]];
+		}
 	}
 	
 	return (self);
@@ -116,6 +134,7 @@
 
 -(void)draw {
 	cpVect center = _centralBody.pos;
+	posPt = _centralBody.pos;
 	
 	cpVect verts[_count];
 	//for (int j=0; j<3; j++) {
@@ -153,8 +172,11 @@
 	
 	ChipmunkBody *body = [_edgeBodies objectAtIndex:index];
 	
-	[_centralBody applyImpulse:cpvmult(cpv(f, f), 3) offset:cpvzero];
-	[body applyImpulse:cpv(f, f) offset:body.pos];
+	[_centralBody applyImpulse:cpvmult(cpv(f * CCRANDOM_MINUS1_1(), f * CCRANDOM_MINUS1_1()), 16) offset:cpvzero];
+	[body applyImpulse:cpv(f, f) offset:_centralBody.pos];
+	
+	
+	//posPt = cpvadd(_centralBody.pos, cpv((CCRANDOM_0_1() * 2) - 1, (CCRANDOM_0_1() * 2) - 1));
 }
 
 -(void)pop {

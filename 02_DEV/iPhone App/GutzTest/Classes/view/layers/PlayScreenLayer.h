@@ -29,6 +29,8 @@
 #define BLOB_RADIUS 48
 #define BLOB_SEGS 48
 
+#define BLOB_X 192
+#define BLOB_Y 160
 
 
 
@@ -52,6 +54,10 @@
 	CCSprite *hudStarsSprite;
 	CCSprite *scoreDisplaySprite;
 	CCSprite *timeDisplaySprite;
+	
+	
+	CCSprite *lEyeSprite;
+	CCSprite *rEyeSprite;
 	
 	CGPoint gibPos;
 	

@@ -15,6 +15,7 @@
 	ChipmunkBody *_centralBody;
 	
 	NSArray *_edgeBodies;
+	CGPoint posPt;
 	
 	ChipmunkSimpleMotor *_motor;
 	cpFloat _rate, _torque;
@@ -25,8 +26,9 @@
 	BOOL isPopped;
 }
 
-@property(nonatomic, assign) cpFloat control;
-@property(nonatomic, readonly) NSSet *chipmunkObjects;
+@property (nonatomic, assign) cpFloat control;
+@property (nonatomic, readonly) NSSet *chipmunkObjects;
+@property (nonatomic) CGPoint posPt;
 
 -(id)initWithPos:(cpVect)pos radius:(cpFloat)radius count:(int)count;
 -(void)wiggleWithForce:(int)index force:(cpFloat)f;

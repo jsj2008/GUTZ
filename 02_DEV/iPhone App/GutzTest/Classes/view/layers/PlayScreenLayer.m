@@ -83,7 +83,7 @@ static NSString *borderType = @"borderType";
 
 - (void)physProvoker:(id)sender {
 	[self schedule:@selector(physicsStepper:) interval:(1.0f / 60.0f)];
-	[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.5f)];
+	[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
 }
 
 
@@ -155,8 +155,19 @@ static NSString *borderType = @"borderType";
 	[_space add:goalTarget2];
 	[self addChild:goalTarget2._sprite];
 	
-	_blob = [[JellyBlob alloc] initWithPos:cpv(192, 160) radius:BLOB_RADIUS count:BLOB_SEGS];
+	_blob = [[JellyBlob alloc] initWithPos:cpv(BLOB_X, BLOB_Y) radius:BLOB_RADIUS count:BLOB_SEGS];
 	[_space add:_blob];
+	
+	
+	
+	lEyeSprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
+	[lEyeSprite setPosition:cpv(BLOB_X - 8, BLOB_Y - 24)];
+	[self addChild:lEyeSprite];
+	
+	
+	rEyeSprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
+	[rEyeSprite setPosition:cpv(BLOB_X + 8, BLOB_Y - 24)];
+	[self addChild:rEyeSprite];
 	
 	
 	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:[GoalTarget class] begin:@selector(beginGoalCollision:space:) preSolve:@selector(preSolveGoalCollision:space:) postSolve:@selector(postSolveGoalCollision:space:) separate:@selector(separateGoalCollision:space:)];
@@ -312,6 +323,8 @@ static NSString *borderType = @"borderType";
 	[super draw];
 	[_blob draw];
 	
+	[lEyeSprite setPosition:cpv([_blob posPt].x - 12, [_blob posPt].y + 24)];
+	[rEyeSprite setPosition:cpv([_blob posPt].x + 12, [_blob posPt].y + 24)];
 	
 	
 	for (int i=0; i<[arrGibs count]; i++) {

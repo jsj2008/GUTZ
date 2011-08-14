@@ -21,7 +21,7 @@
 		<key>Chipmunk.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
@@ -35,7 +35,7 @@
 		<key>CocosDenshion.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<true/>
+			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
