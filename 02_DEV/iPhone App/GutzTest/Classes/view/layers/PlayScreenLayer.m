@@ -69,22 +69,6 @@ static NSString *borderType = @"borderType";
 		 
 		[[SimpleAudioEngine sharedEngine] preloadEffect:@"debug_finger.wav"];
 		
-//		particles = [[CCParticleExplosion alloc] init];
-//		particles = [[CCParticleFire alloc] init];
-//		particles = [[CCParticleFireworks alloc] init];
-//		particles = [[CCParticleFlower alloc] init];
-//		particles = [[CCParticleGalaxy alloc] init];
-//
-//		 particles = [[CCParticleMeteor alloc] init];
-//		particles = [[CCParticleRain alloc] init];
-//		particles = [[CCParticleSmoke alloc] init];
-//		particles = [[CCParticleSnow alloc] init];
-//		particles = [[CCParticleSpiral alloc] init];
-//		particles = [[CCParticleSun alloc] init];
-//		
-//		particles.texture = [[CCTextureCache sharedTextureCache] addImage:@"debug_node-02.png"];
-//		particles.position = ccp(160, 240);
-//		[self addChild:particles];
 	
 	
 		 [self chipmunkSetup];
@@ -160,7 +144,6 @@ static NSString *borderType = @"borderType";
 	arrTargets = [[NSMutableArray alloc] initWithCapacity:2];
 	[arrTargets addObject:@"NO"];
 	[arrTargets addObject:@"NO"];
-	//[arrTargets addObject:@"NO"];
 	
 	goalTarget1 = [[GoalTarget alloc] initAtPos:ccp(150, 420)];
 	goalTarget1.ind = 0;
@@ -172,72 +155,13 @@ static NSString *borderType = @"borderType";
 	[_space add:goalTarget2];
 	[self addChild:goalTarget2._sprite];
 	
-	//goalTarget3 = [[GoalTarget alloc] initAtPos:ccp(240, 160)];
-	//goalTarget3.ind = 2;
-	//[_space add:goalTarget3];
-	//[self addChild:goalTarget3._sprite];
-		
 	_blob = [[JellyBlob alloc] initWithPos:cpv(192, 160) radius:BLOB_RADIUS count:BLOB_SEGS];
 	[_space add:_blob];
-	
-//	ChipmunkBody *derpBody = [ChipmunkBody bodyWithMass:1 andMoment:INFINITY];
-//	cpVect vt[BLOB_SEGS];
-//	
-//	for(int i=0; i<BLOB_SEGS; i++){
-//		cpVect slope = cpvforangle(((cpFloat)BLOB_SEGS - i) / (cpFloat)BLOB_SEGS * 2.0 * M_PI);
-//		cpVect posMult = cpvmult(slope, BLOB_RADIUS * 0.5);
-//		
-//		vt[i] = cpvadd(posMult, cpv(100, 300));
-//		NSLog(@"vt[%d]: (%f, %f)", i, vt[i].x, vt[i].y);
-//	}
-//		
-//	ChipmunkShape *derp = [_space add:[ChipmunkPolyShape polyWithBody:derpBody count:BLOB_SEGS verts:vt offset:cpvzero]];
-	
-	
-	 
-	
-//	cpShapePointQuery(<#cpShape *shape#>, <#cpVect p#>)
-	
-	/*{ // box
-	 cpFloat width = 128;
-	 cpFloat height = 32;
-	 
-	 ChipmunkBody *body = [ChipmunkBody bodyWithMass:INFINITY andMoment:INFINITY];
-	 body.pos = cpv(192, 280);
-	 body.angle = CC_DEGREES_TO_RADIANS(55);
-	 
-	 CCSprite *sprite = [CCSprite spriteWithFile:@"debug_staticBody-128x32.jpg"];
-	 [sprite setPosition:body.pos];
-	 [sprite setRotation:-55];
-	 [sprite setScaleX:1.0f];
-	 [sprite setScaleY:1.0f];
-	 [self addChild:sprite];
-	 
-	 ChipmunkStaticPolyShape *shape = [_space add:[ChipmunkStaticPolyShape boxWithBody:body width:width height:height]];
-	 shape.friction = 0.9;
-	 shape.elasticity = 0.1;
-	 shape.data = sprite;
-	 }*/
-	
-	
-	/*{ // Add a box
-	 cpFloat mass = 5;
-	 cpFloat width = 16;
-	 cpFloat height = 128;
-	 
-	 ChipmunkBody *body = [_space add:[ChipmunkBody bodyWithMass:mass andMoment:cpMomentForBox(mass, width, height)]];
-	 body.pos = cpv(192, 260);
-	 
-	 ChipmunkShape *shape = [_space add:[ChipmunkPolyShape boxWithBody:body width:width height:height]];
-	 shape.friction = 0.7;
-	 shape.collisionType = goalType;
-	 }*/
 	
 	
 	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:[GoalTarget class] begin:@selector(beginGoalCollision:space:) preSolve:@selector(preSolveGoalCollision:space:) postSolve:@selector(postSolveGoalCollision:space:) separate:@selector(separateGoalCollision:space:)];
 	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:borderType begin:@selector(beginWallCollision:space:) preSolve:@selector(preSolveWallCollision:space:) postSolve:@selector(postSolveWallCollision:space:) separate:@selector(separateWallCollision:space:)];
 	
-	//[self scheduleUpdate];
 }
 
 
@@ -268,42 +192,13 @@ static NSString *borderType = @"borderType";
 	
 	//NSLog(@"0:[%@] 1:[%@] 2:[%@]", [arrTargets objectAtIndex:0], [arrTargets objectAtIndex:1], [arrTargets objectAtIndex:2]);
 	
-//	if ([[arrTargets objectAtIndex:0] isEqualToString:@"YES"] && [[arrTargets objectAtIndex:1] isEqualToString:@"YES"] && [[arrTargets objectAtIndex:2] isEqualToString:@"YES"]) {
-//		NSLog(@"GOAL!!!!");
-//		[_blob pop];
-//		
-//		//return (YES);
-//	}
-	
-	//if (_cntTargets == 3)
-	//	NSLog(@"GOAL!!!!");
-	
-	
-	// When we created the collision shape for the FallingButton,
-	// we set the data pointer to point at the FallingButton it was associated with.
-	//FallingButton *fb = buttonShape.data;
-	
-	// Increment the touchedShapes counter on the FallingButton object.
-	// We'll decrement this in the separate callback.
-	// If the counter is 0, then you know you aren't touching anything.
-	// You can use this technique in platformer games to track if the player is in the air on not.
-	//fb.touchedShapes++;
-	
-	
-	// begin and pre-solve callbacks MUST return a boolean.
-	// Returning false from a begin callback ignores a collision permanently.
-	// Returning false from a pre-solve callback ignores the collision for just one frame.
-	// See the documentation on collision handlers for more information.
 	return (NO);
 }
 
 
 
 
-
-
-- (BOOL)preSolveGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	
+- (BOOL)preSolveGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {	
 	NSLog(@"preSolveCollision");
 	
 	return (YES);
@@ -378,25 +273,30 @@ static NSString *borderType = @"borderType";
 -(void)addGib:(id)sender {
 	
 	cpFloat mass = CCRANDOM_0_1() * 2;
-	float f = (CCRANDOM_0_1() * 32.0f) - 64.0f;
+	float fx = (CCRANDOM_0_1() * 32.0f) + 64.0f;
+	float fy = (CCRANDOM_0_1() * 32.0f) + 64.0f;
+	
+	if (gibPos.x < 100)
+		fx *= -1;
 	
 	ChipmunkBody *body = [_space add:[ChipmunkBody bodyWithMass:mass andMoment:INFINITY]];
 	body.pos = cpv(gibPos.x, gibPos.y);
-	[body applyImpulse:cpvmult(cpv(f, f), 3) offset:cpvzero];
+	[body applyImpulse:cpvmult(cpv(fx, fy), 3) offset:cpvzero];
+	
 	
 	ChipmunkShape *shape = [_space add:[ChipmunkCircleShape circleWithBody:body radius:CCRANDOM_0_1() * 5 offset:cpvzero]];
-	shape.friction = 0.125;
-	shape.elasticity = 0.5;
+	shape.friction = 0.25;
+	shape.elasticity = 0.875;
 	
 	[arrGibs addObject:shape];
 }
 
 - (void)separateWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
 	
 	//NSLog(@"separateWallCollision: [%d]", _cntTargets);
 	
-	if (CCRANDOM_0_1() > 0.75) {
+	if (CCRANDOM_0_1() > 0.875) {
 		gibPos = CGPointMake(blobShape.body.pos.x, blobShape.body.pos.y);
 		[self performSelector:@selector(addGib:) withObject:nil afterDelay:0.05];
 	}
