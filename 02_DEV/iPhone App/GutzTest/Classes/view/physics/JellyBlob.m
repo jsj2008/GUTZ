@@ -193,6 +193,11 @@
 	
 }
 
+
+-(void)destroy {
+	
+}
+
 - (void)dealloc {
 	[_centralBody release];
 	

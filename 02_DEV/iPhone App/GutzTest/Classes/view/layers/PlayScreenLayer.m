@@ -51,9 +51,10 @@ static NSString *borderType = @"borderType";
 
 
 @synthesize score_amt;
-
-
 @synthesize ctrl = _ctrl;
+
+@synthesize splatExploAction;
+@synthesize splatDripsAction;
 
 
 
@@ -69,7 +70,7 @@ static NSString *borderType = @"borderType";
 		 
 		[[SimpleAudioEngine sharedEngine] preloadEffect:@"debug_finger.wav"];
 		
-	
+		 isCleared = NO;
 	
 		 [self chipmunkSetup];
 		 [self scaffoldHUD];
@@ -82,7 +83,7 @@ static NSString *borderType = @"borderType";
 
 
 - (void)physProvoker:(id)sender {
-	[self schedule:@selector(physicsStepper:) interval:(1.0f / 60.0f)];
+	[self schedule:@selector(physicsStepper:)];
 	[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
 }
 
@@ -136,8 +137,7 @@ static NSString *borderType = @"borderType";
 	_multiGrab = [[ChipmunkMultiGrab alloc] initForSpace:_space withSmoothing:cpfpow(0.8, 60.0) withGrabForce:30000];
 	_multiGrab.layers = GRABABLE_LAYER;
 	
-	ChipmunkDebugNode *debugNode = [ChipmunkDebugNode debugNodeForSpace:_space];
-	//[self addChild:debugNode];
+	//[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space] z:100];
 	
 	arrGibs = [[NSMutableArray alloc] init];
 	
@@ -158,8 +158,6 @@ static NSString *borderType = @"borderType";
 	_blob = [[JellyBlob alloc] initWithPos:cpv(BLOB_X, BLOB_Y) radius:BLOB_RADIUS count:BLOB_SEGS];
 	[_space add:_blob];
 	
-	
-	
 	lEyeSprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
 	[lEyeSprite setPosition:cpv(BLOB_X - 8, BLOB_Y - 24)];
 	[self addChild:lEyeSprite];
@@ -172,15 +170,12 @@ static NSString *borderType = @"borderType";
 	
 	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:[GoalTarget class] begin:@selector(beginGoalCollision:space:) preSolve:@selector(preSolveGoalCollision:space:) postSolve:@selector(postSolveGoalCollision:space:) separate:@selector(separateGoalCollision:space:)];
 	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:borderType begin:@selector(beginWallCollision:space:) preSolve:@selector(preSolveWallCollision:space:) postSolve:@selector(postSolveWallCollision:space:) separate:@selector(separateWallCollision:space:)];
-	
 }
 
 
 - (BOOL)beginGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
 	
-	
-	_cntTargets++;
 	//NSLog(@"beginCollision: [%d]", _cntTargets);
 	
 	
@@ -231,15 +226,17 @@ static NSString *borderType = @"borderType";
 - (void)separateGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
 	
-	_cntTargets--;
+	
 	//NSLog(@"separateCollision: [%d]", _cntTargets);
 	
 	if ([[arrTargets objectAtIndex:0] isEqualToString:@"YES"] && [[arrTargets objectAtIndex:1] isEqualToString:@"YES"]) {
 		NSLog(@"GOAL!!!!");
-		[_blob pop];
+		//[_blob pop];
+		isCleared = YES;
 		self.isTouchEnabled = NO;
-		[self unschedule:@selector(physicsStepper:)];
-		[self performSelector:@selector(clearArena:) withObject:self afterDelay:0.33];
+		[_space removeCollisionHandlerForTypeA:[JellyBlob class] andB:[GoalTarget class]];
+		[_space addPostStepCallback:self selector:@selector(clearArena:) key:_blob];
+		//[self performSelector:@selector(clearArena:) withObject:self afterDelay:0.33];
 	}
 
 	
@@ -250,6 +247,30 @@ static NSString *borderType = @"borderType";
 }
 
 
+- (void)clearArena:(id)sender {
+	NSLog(@"///////[clearArena]////////");
+	
+	//[self removeChild:lEyeSprite cleanup:NO];
+	//[self removeChild:rEyeSprite cleanup:NO];
+	
+	//[self unschedule:@selector(physicsStepper:)];
+	//[_space remove:_blob];
+	//[_space remove:goalTarget1];
+	//[_space remove:goalTarget2];
+	
+	//[_space addPostStepRemoval:goalTarget1];
+	//[_space addPostStepRemoval:goalTarget2];
+	//[_space addPostStepRemoval:_blob];
+	
+	
+	for (int i=0; i<((int)CCRANDOM_0_1()*16)+32; i++) {
+		[self addGib:nil];
+	}
+	
+	
+	//[self onLevelComplete:self];
+	
+}
 
 
 - (BOOL)beginWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
@@ -302,6 +323,25 @@ static NSString *borderType = @"borderType";
 	[arrGibs addObject:shape];
 }
 
+
+-(void)addGib2 {
+	
+	cpFloat mass = CCRANDOM_0_1() * 2;
+	float fx = (CCRANDOM_0_1() * 32.0f) + 64.0f;
+	float fy = (CCRANDOM_0_1() * 32.0f) + 64.0f;
+	
+	ChipmunkBody *body = [_space add:[ChipmunkBody bodyWithMass:mass andMoment:INFINITY]];
+	body.pos = cpv(gibPos.x, gibPos.y);
+	[body applyImpulse:cpvmult(cpv(fx, fy), 3) offset:cpvzero];
+	
+	
+	ChipmunkShape *shape = [_space add:[ChipmunkCircleShape circleWithBody:body radius:(CCRANDOM_0_1() * 10) + 5 offset:cpvzero]];
+	shape.friction = 0.25;
+	shape.elasticity = 0.875;
+	
+	[arrGibs addObject:shape];
+}
+
 - (void)separateWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
 	
@@ -321,10 +361,15 @@ static NSString *borderType = @"borderType";
 	//NSLog(@"///////[DRAW]////////");
 	
 	[super draw];
-	[_blob draw];
 	
-	[lEyeSprite setPosition:cpv([_blob posPt].x - 12, [_blob posPt].y + 24)];
-	[rEyeSprite setPosition:cpv([_blob posPt].x + 12, [_blob posPt].y + 24)];
+	if (!isCleared) {
+		[_blob draw];
+		
+			
+	} else {
+		
+	}
+	
 	
 	
 	for (int i=0; i<[arrGibs count]; i++) {
@@ -334,18 +379,6 @@ static NSString *borderType = @"borderType";
 	
 }
 
-- (void)clearArena:(id)sender {
-	NSLog(@"///////[clearArena]////////");
-	
-	[_space removeCollisionHandlerForTypeA:[JellyBlob class] andB:[GoalTarget class]];
-	
-	//[_space remove:_blob];
-	//[_space remove:goalTarget1];
-	
-	
-	[self onLevelComplete:self];
-	
-}
 
 -(void) mobWiggler:(id)sender {
 	
@@ -396,6 +429,9 @@ static NSString *borderType = @"borderType";
 - (void) dealloc {
     //NSLog(@"PlayScreenLayer.()");
     
+	self.splatDripsAction = nil;
+	self.splatExploAction = nil;
+	
 	// in case you have something to dealloc, do it in this method
 	[_space release];
 	[_multiGrab release];
@@ -428,6 +464,9 @@ static NSString *borderType = @"borderType";
 		}
 	}
 	
+	[lEyeSprite setPosition:cpv([_blob posPt].x - 12, [_blob posPt].y + 24)];
+	[rEyeSprite setPosition:cpv([_blob posPt].x + 12, [_blob posPt].y + 24)];
+
 }
 
 

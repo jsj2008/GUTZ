@@ -4,9 +4,9 @@ r1
 cCheck dependencies
 cProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ffyiuioaoftfwsepagmqoaegggos/CocosDenshion-Prefix.pch.gch CocosDenshion/CocosDenshion-Prefix.pch normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDOpenALSupport.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDOpenALSupport.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/SimpleAudioEngine.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CocosDenshion.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/SimpleAudioEngine.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cLibtool "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/libCocosDenshion.a" normal i386
 
 N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk
@@ -163,7 +163,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciese736d905acf7b341^5caeda05acf7b341^---0#1#0#--18"Check dependencies
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesb4c76fe1a8f8b341^225471e1a8f8b341^---0#1#0#--18"Check dependencies
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 s334953452.791034

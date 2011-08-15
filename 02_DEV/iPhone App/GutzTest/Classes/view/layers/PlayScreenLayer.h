@@ -75,8 +75,8 @@
     
 	CCMenuItemImage *btnPauseToggle;
     
-    int score_amt;
-	
+	int score_amt;
+	BOOL isCleared;
 	
 	int _cnt;
 	cpFloat _edgeRad;
@@ -92,14 +92,17 @@
 	
 	//NSSet *_cpObjs;
 	
-	
+	CCAction *splatExploAction;
+	CCAction *splatDripsAction;
 	
 
 	
 }
 
 @property (nonatomic, readwrite) int score_amt;
-@property(nonatomic, assign) cpFloat ctrl;
+@property (nonatomic, assign) cpFloat ctrl;
+@property (nonatomic, retain) CCAction *splatExploAction;
+@property (nonatomic, retain) CCAction *splatDripsAction;
 
 
 -(void) onBackMenu:(id)sender;
