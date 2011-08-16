@@ -27,7 +27,7 @@
 
 
 #define BLOB_RADIUS 48
-#define BLOB_SEGS 48
+#define BLOB_SEGS 24
 
 #define BLOB_X 192
 #define BLOB_Y 160
@@ -58,6 +58,8 @@
 	
 	CCSprite *lEyeSprite;
 	CCSprite *rEyeSprite;
+	
+	CCSprite *creatureSprite;
 	
 	CGPoint gibPos;
 	

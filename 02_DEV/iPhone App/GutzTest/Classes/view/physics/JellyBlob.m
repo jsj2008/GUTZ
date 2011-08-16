@@ -142,7 +142,9 @@
 		for (int i=0; i<_count; i++) {
 			//cpVect v = cpvadd([[_edgeBodies objectAtIndex:i] pos], cpv(0, -64 + (j * 64)));
 			cpVect v = [[_edgeBodies objectAtIndex:i] pos];
-			verts[i] = cpvadd(v, cpvmult(cpvnormalize(cpvsub(v, center)), _edgeRadius));
+			verts[i] = cpvadd(v, cpvmult(cpvnormalize(cpvsub(v, center)), _edgeRadius * 0.85));
+			
+			ccDrawQuadBezier(cpvadd(verts[i], _centralBody.pos), cpvmult(cpvadd(verts[i], _centralBody.pos), 2), cpvadd(verts[(i % _count) + 1], _centralBody.pos), 4);
 		}
 	//}
 	

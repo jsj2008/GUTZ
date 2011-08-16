@@ -512,6 +512,7 @@
 		4CB2BB0513CD561F006F9F89 /* DeaunayUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2BB0413CD561F006F9F89 /* DeaunayUtils.m */; };
 		4CB2BB0813CD5630006F9F89 /* VoronoiUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2BB0713CD562F006F9F89 /* VoronoiUtils.m */; };
 		4CB2BB0B13CD56A0006F9F89 /* GaussUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2BB0A13CD56A0006F9F89 /* GaussUtils.m */; };
+		4CB2C43513FA21F2005C708A /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB2C43413FA21F2005C708A /* test.png */; };
 		4CC18FB813B0202600CE8974 /* button_moreInfo_Active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC18FAC13B0202600CE8974 /* button_moreInfo_Active.png */; };
 		4CC18FB913B0202600CE8974 /* button_moreInfo_nonActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC18FAD13B0202600CE8974 /* button_moreInfo_nonActive.png */; };
 		4CC18FBA13B0202600CE8974 /* button_options_Active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC18FAE13B0202600CE8974 /* button_options_Active.png */; };
@@ -1141,6 +1142,7 @@
 		4CB2BB0713CD562F006F9F89 /* VoronoiUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoronoiUtils.m; sourceTree = "<group>"; };
 		4CB2BB0913CD569F006F9F89 /* GaussUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaussUtils.h; sourceTree = "<group>"; };
 		4CB2BB0A13CD56A0006F9F89 /* GaussUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaussUtils.m; sourceTree = "<group>"; };
+		4CB2C43413FA21F2005C708A /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test.png; path = Resources/test.png; sourceTree = "<group>"; };
 		4CC18FAC13B0202600CE8974 /* button_moreInfo_Active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_moreInfo_Active.png; path = Resources/button_moreInfo_Active.png; sourceTree = "<group>"; };
 		4CC18FAD13B0202600CE8974 /* button_moreInfo_nonActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_moreInfo_nonActive.png; path = Resources/button_moreInfo_nonActive.png; sourceTree = "<group>"; };
 		4CC18FAE13B0202600CE8974 /* button_options_Active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_options_Active.png; path = Resources/button_options_Active.png; sourceTree = "<group>"; };
@@ -2501,6 +2503,7 @@
 		4CD6FA7213BC62B90070B5C1 /* Creature Segments */ = {
 			isa = PBXGroup;
 			children = (
+				4CB2C43413FA21F2005C708A /* test.png */,
 				4CD6FA7313BC62C70070B5C1 /* Level 01 */,
 			);
 			name = "Creature Segments";
@@ -3182,6 +3185,7 @@
 				4CF7952213F34C0800CD5535 /* LevelData.plist in Resources */,
 				4C2B84C513F6FA9700656BC5 /* debug_finger.wav in Resources */,
 				4C2B84C613F6FA9700656BC5 /* debug_redmag.wav in Resources */,
+				4CB2C43513FA21F2005C708A /* test.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

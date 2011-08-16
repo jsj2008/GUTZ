@@ -194,6 +194,11 @@ static NSString *borderType = @"borderType";
 	_blob = [[JellyBlob alloc] initWithPos:cpv(BLOB_X, BLOB_Y) radius:BLOB_RADIUS count:BLOB_SEGS];
 	[_space add:_blob];
 	
+	creatureSprite = [CCSprite spriteWithFile:@"test.png"];
+	[creatureSprite setPosition:ccp(BLOB_X, BLOB_Y)];
+	[creatureSprite setScale:0.33f];
+	[self addChild:creatureSprite];
+	
 	lEyeSprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
 	[lEyeSprite setPosition:cpv(BLOB_X - 8, BLOB_Y - 24)];
 	[self addChild:lEyeSprite];
@@ -549,6 +554,8 @@ static NSString *borderType = @"borderType";
 			[_space remove:shape];
 		}
 	}
+	
+	[creatureSprite setPosition:[_blob posPt]];
 	
 	[lEyeSprite setPosition:cpv([_blob posPt].x - 12, [_blob posPt].y + 24)];
 	[rEyeSprite setPosition:cpv([_blob posPt].x + 12, [_blob posPt].y + 24)];

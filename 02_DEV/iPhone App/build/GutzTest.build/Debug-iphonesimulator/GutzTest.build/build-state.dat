@@ -4,130 +4,130 @@ r1
 cCheck dependencies
 cProcessInfoPlistFile "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/Info.plist" GutzTest/Resources/Info.plist
 cProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch.gch GutzTest/Prefix.pch normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AppDelegate.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/uikit/AppDelegate.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/DigitUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/DigitUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/main.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/main.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PhysicsItemVO.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/vo/PhysicsItemVO.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/JellyBlob.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/BasePhysicsSprite.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/BasePhysicsSprite.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ConfigMenuLayer.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/ConfigMenuLayer.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/BaseScreenLayer.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/BaseScreenLayer.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/MainMenuScreenLayer.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/MainMenuScreenLayer.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelSelectScreenLayer.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/LevelSelectScreenLayer.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlPagesMenuSprite.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/LvlPagesMenuSprite.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ElapsedTimeSprite.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/ElapsedTimeSprite.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlStarSprite.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/LvlStarSprite.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/SettingsPlistParser.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/delegate/SettingsPlistParser.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/BaseScreenLayer.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/BaseScreenLayer.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelCompleteScreenLayer.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PlayScreenLayer.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/PlayScreenLayer.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/MainMenuScreenLayer.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/MainMenuScreenLayer.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ScreenManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/ScreenManager.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlPagesMenuSprite.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/LvlPagesMenuSprite.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AppDelegate.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/uikit/AppDelegate.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/RootViewController.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/uikit/RootViewController.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/BtnAnimateActions.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/actions/BtnAnimateActions.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ScoreSprite.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/ScoreSprite.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ScreenManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/ScreenManager.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlBtnSprite.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/LvlBtnSprite.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ConfigMenuLayer.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/ConfigMenuLayer.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ScoreSprite.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/ScoreSprite.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PlayStatsModel.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/PlayStatsModel.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ElapsedTimeSprite.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/ElapsedTimeSprite.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AlgebraUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/AlgebraUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlStarSprite.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/LvlStarSprite.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AchievementsPlistParser.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/delegate/AchievementsPlistParser.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/BasePlistParser.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/delegate/BasePlistParser.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/SettingsPlistParser.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/delegate/SettingsPlistParser.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/TimeUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/TimeUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/DigitUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/DigitUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/DataTypeUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/DataTypeUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GameOverScreenLayer.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/GameOverScreenLayer.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/TimeUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/TimeUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlStarVO.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/vo/LvlStarVO.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelStatsVO.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/vo/LevelStatsVO.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/SettingsItmVO.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/vo/SettingsItmVO.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/CreatureNodeVO.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/vo/CreatureNodeVO.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/SegNodeSprite.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/SegNodeSprite.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/VertexUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/VertexUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/RandUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/RandUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/BezierUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/BezierUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/SegNodeSprite.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/SegNodeSprite.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GeomUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/GeomUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/CreatureNodeVO.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/vo/CreatureNodeVO.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/SettingsItmVO.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/vo/SettingsItmVO.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/VertexUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/VertexUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/BezierUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/BezierUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/VoronoiUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/VoronoiUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/DeaunayUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/DeaunayUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/VisceraVO.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/vo/VisceraVO.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ChipmunkDebugNode.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/ChipmunkDebugNode.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/BasePhysicsObject.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/BasePhysicsObject.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GoalTarget.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/GoalTarget.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GaussUtils.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/utils/GaussUtils.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/VisceraVO.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/vo/VisceraVO.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PhysicsItemVO.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/vo/PhysicsItemVO.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ChipmunkDebugNode.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/ChipmunkDebugNode.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/JellyBlob.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GoalTarget.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/GoalTarget.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/BasePhysicsObject.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/BasePhysicsObject.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/BasePhysicsSprite.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/BasePhysicsSprite.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelDataPlistParser.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/model/delegate/LevelDataPlistParser.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/BreakGibs.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/BreakGibs.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cLd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/GutzTest" normal i386
 cGenerateDSYMFile "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app.dSYM" "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/GutzTest"
-cCpResource GutzTest/Resources/fps_images.png build/Debug-iphonesimulator/GutzTest.app/fps_images.png
 cCpResource GutzTest/Resources/Default.png build/Debug-iphonesimulator/GutzTest.app/Default.png
-cCpResource GutzTest/Resources/Icon-72.png build/Debug-iphonesimulator/GutzTest.app/Icon-72.png
+cCpResource GutzTest/Resources/fps_images.png build/Debug-iphonesimulator/GutzTest.app/fps_images.png
 cCpResource GutzTest/Resources/Icon-Small-50.png build/Debug-iphonesimulator/GutzTest.app/Icon-Small-50.png
-cCpResource GutzTest/Resources/Icon.png build/Debug-iphonesimulator/GutzTest.app/Icon.png
-cCpResource GutzTest/Resources/Icon-Small@2x.png build/Debug-iphonesimulator/GutzTest.app/Icon-Small@2x.png
 cCpResource GutzTest/Resources/Icon-Small.png build/Debug-iphonesimulator/GutzTest.app/Icon-Small.png
+cCpResource GutzTest/Resources/Icon-72.png build/Debug-iphonesimulator/GutzTest.app/Icon-72.png
+cCpResource GutzTest/Resources/Icon-Small@2x.png build/Debug-iphonesimulator/GutzTest.app/Icon-Small@2x.png
+cCpResource GutzTest/Resources/Icon.png build/Debug-iphonesimulator/GutzTest.app/Icon.png
 cCpResource GutzTest/Resources/Icon@2x.png build/Debug-iphonesimulator/GutzTest.app/Icon@2x.png
 cCpResource GutzTest/Resources/iTunesArtwork build/Debug-iphonesimulator/GutzTest.app/iTunesArtwork
 cCpResource GutzTest/Resources/grossini_dance_atlas.png build/Debug-iphonesimulator/GutzTest.app/grossini_dance_atlas.png
 cCpResource GutzTest/Resources/HUD_starA.png build/Debug-iphonesimulator/GutzTest.app/HUD_starA.png
-cCpResource GutzTest/Resources/background_main.jpg build/Debug-iphonesimulator/GutzTest.app/background_main.jpg
 cCpResource GutzTest/Resources/HUD_starB.png build/Debug-iphonesimulator/GutzTest.app/HUD_starB.png
+cCpResource GutzTest/Resources/background_main.jpg build/Debug-iphonesimulator/GutzTest.app/background_main.jpg
 cCpResource GutzTest/Resources/optionsButton_Active.png build/Debug-iphonesimulator/GutzTest.app/optionsButton_Active.png
-cCpResource GutzTest/Resources/playButton_Active.png build/Debug-iphonesimulator/GutzTest.app/playButton_Active.png
 cCpResource GutzTest/Resources/optionsButton_nonActive.png build/Debug-iphonesimulator/GutzTest.app/optionsButton_nonActive.png
+cCpResource GutzTest/Resources/playButton_Active.png build/Debug-iphonesimulator/GutzTest.app/playButton_Active.png
 cCpResource GutzTest/Resources/playButton_nonActive.png build/Debug-iphonesimulator/GutzTest.app/playButton_nonActive.png
 cCpResource GutzTest/Resources/HUD_pauseButton_Active.png build/Debug-iphonesimulator/GutzTest.app/HUD_pauseButton_Active.png
 cCpResource GutzTest/Resources/HUD_pauseButton_nonActive.png build/Debug-iphonesimulator/GutzTest.app/HUD_pauseButton_nonActive.png
 cCpResource GutzTest/Resources/button_moreInfo_nonActive.png build/Debug-iphonesimulator/GutzTest.app/button_moreInfo_nonActive.png
-cCpResource GutzTest/Resources/button_options_Active.png build/Debug-iphonesimulator/GutzTest.app/button_options_Active.png
 cCpResource GutzTest/Resources/button_moreInfo_Active.png build/Debug-iphonesimulator/GutzTest.app/button_moreInfo_Active.png
-cCpResource GutzTest/Resources/button_options_nonActive.png build/Debug-iphonesimulator/GutzTest.app/button_options_nonActive.png
+cCpResource GutzTest/Resources/button_options_Active.png build/Debug-iphonesimulator/GutzTest.app/button_options_Active.png
 cCpResource GutzTest/Resources/button_pushNotificationOFF_Active.png build/Debug-iphonesimulator/GutzTest.app/button_pushNotificationOFF_Active.png
+cCpResource GutzTest/Resources/button_options_nonActive.png build/Debug-iphonesimulator/GutzTest.app/button_options_nonActive.png
 cCpResource GutzTest/Resources/button_pushNotificationOFF_nonActive.png build/Debug-iphonesimulator/GutzTest.app/button_pushNotificationOFF_nonActive.png
 cCpResource GutzTest/Resources/button_pushNotificationON_Active.png build/Debug-iphonesimulator/GutzTest.app/button_pushNotificationON_Active.png
 cCpResource GutzTest/Resources/button_pushNotificationON_nonActive.png build/Debug-iphonesimulator/GutzTest.app/button_pushNotificationON_nonActive.png
-cCpResource GutzTest/Resources/button_soundOff_nonActive.png build/Debug-iphonesimulator/GutzTest.app/button_soundOff_nonActive.png
 cCpResource GutzTest/Resources/button_soundOff_Active.png build/Debug-iphonesimulator/GutzTest.app/button_soundOff_Active.png
-cCpResource GutzTest/Resources/button_soundOn_nonActive.png build/Debug-iphonesimulator/GutzTest.app/button_soundOn_nonActive.png
-cCpResource GutzTest/Resources/levelStar_Left.png build/Debug-iphonesimulator/GutzTest.app/levelStar_Left.png
 cCpResource GutzTest/Resources/button_soundOn_Active.png build/Debug-iphonesimulator/GutzTest.app/button_soundOn_Active.png
+cCpResource GutzTest/Resources/button_soundOn_nonActive.png build/Debug-iphonesimulator/GutzTest.app/button_soundOn_nonActive.png
+cCpResource GutzTest/Resources/button_soundOff_nonActive.png build/Debug-iphonesimulator/GutzTest.app/button_soundOff_nonActive.png
+cCpResource GutzTest/Resources/levelStar_Left.png build/Debug-iphonesimulator/GutzTest.app/levelStar_Left.png
 cCpResource GutzTest/Resources/levelStar_Middle.png build/Debug-iphonesimulator/GutzTest.app/levelStar_Middle.png
-cCpResource GutzTest/Resources/levelStar_Right.png build/Debug-iphonesimulator/GutzTest.app/levelStar_Right.png
-cCpResource GutzTest/Resources/pagination_nonActive.png build/Debug-iphonesimulator/GutzTest.app/pagination_nonActive.png
 cCpResource GutzTest/Resources/paginationActive.png build/Debug-iphonesimulator/GutzTest.app/paginationActive.png
+cCpResource GutzTest/Resources/pagination_nonActive.png build/Debug-iphonesimulator/GutzTest.app/pagination_nonActive.png
+cCpResource GutzTest/Resources/levelStar_Right.png build/Debug-iphonesimulator/GutzTest.app/levelStar_Right.png
 cCpResource GutzTest/Resources/buttonLocked_Active.png build/Debug-iphonesimulator/GutzTest.app/buttonLocked_Active.png
-cCpResource GutzTest/Resources/button_nextLevel_Active.png build/Debug-iphonesimulator/GutzTest.app/button_nextLevel_Active.png
 cCpResource GutzTest/Resources/buttonLocked_nonActive.png build/Debug-iphonesimulator/GutzTest.app/buttonLocked_nonActive.png
+cCpResource GutzTest/Resources/button_nextLevel_Active.png build/Debug-iphonesimulator/GutzTest.app/button_nextLevel_Active.png
 cCpResource GutzTest/Resources/button_nextLevel_nonActive.png build/Debug-iphonesimulator/GutzTest.app/button_nextLevel_nonActive.png
 cCpResource GutzTest/Resources/divider.png build/Debug-iphonesimulator/GutzTest.app/divider.png
 cCpResource GutzTest/Resources/postGame_starA.png build/Debug-iphonesimulator/GutzTest.app/postGame_starA.png
-cCpResource GutzTest/Resources/buttonUnlocked_Active.png build/Debug-iphonesimulator/GutzTest.app/buttonUnlocked_Active.png
-cCpResource GutzTest/Resources/buttonUnlocked_nonActive.png build/Debug-iphonesimulator/GutzTest.app/buttonUnlocked_nonActive.png
 cCpResource GutzTest/Resources/postGame_starB.png build/Debug-iphonesimulator/GutzTest.app/postGame_starB.png
+cCpResource GutzTest/Resources/buttonUnlocked_nonActive.png build/Debug-iphonesimulator/GutzTest.app/buttonUnlocked_nonActive.png
+cCpResource GutzTest/Resources/buttonUnlocked_Active.png build/Debug-iphonesimulator/GutzTest.app/buttonUnlocked_Active.png
 cCopyPlistFile "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/Achievements.plist" GutzTest/Resources/Achievements.plist
 cCopyPlistFile "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/VerbageDict.plist" GutzTest/Resources/VerbageDict.plist
 cCopyPlistFile "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/Settings.plist" GutzTest/Resources/Settings.plist
 cCopyPlistFile "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/Data.plist" GutzTest/Resources/Data.plist
 cCpResource GutzTest/Resources/scoreDigits_spritemap.png build/Debug-iphonesimulator/GutzTest.app/scoreDigits_spritemap.png
-cCpResource GutzTest/Resources/background_main-hd.jpg build/Debug-iphonesimulator/GutzTest.app/background_main-hd.jpg
-cCpResource GutzTest/Resources/hudStars_spritemap.png build/Debug-iphonesimulator/GutzTest.app/hudStars_spritemap.png
 cCpResource GutzTest/Resources/timeDigits_spritemap.png build/Debug-iphonesimulator/GutzTest.app/timeDigits_spritemap.png
+cCpResource GutzTest/Resources/hudStars_spritemap.png build/Debug-iphonesimulator/GutzTest.app/hudStars_spritemap.png
 cCpResource GutzTest/Resources/HUD_footerBG.png build/Debug-iphonesimulator/GutzTest.app/HUD_footerBG.png
+cCpResource GutzTest/Resources/background_main-hd.jpg build/Debug-iphonesimulator/GutzTest.app/background_main-hd.jpg
 cCpResource GutzTest/Resources/HUD_starA-hd.png build/Debug-iphonesimulator/GutzTest.app/HUD_starA-hd.png
 cCpResource GutzTest/Resources/HUD_starB-hd.png build/Debug-iphonesimulator/GutzTest.app/HUD_starB-hd.png
 cCpResource GutzTest/Resources/HUD_footerBG-hd.png build/Debug-iphonesimulator/GutzTest.app/HUD_footerBG-hd.png
 cCpResource GutzTest/Resources/playButton_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/playButton_nonActive-hd.png
 cCpResource GutzTest/Resources/playButton_Active-hd.png build/Debug-iphonesimulator/GutzTest.app/playButton_Active-hd.png
 cCpResource GutzTest/Resources/optionsButton_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/optionsButton_nonActive-hd.png
-cCpResource GutzTest/Resources/background_default-hd.jpg build/Debug-iphonesimulator/GutzTest.app/background_default-hd.jpg
-cCpResource GutzTest/Resources/buttonLocked_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/buttonLocked_nonActive-hd.png
 cCpResource GutzTest/Resources/optionsButton_Active-hd.png build/Debug-iphonesimulator/GutzTest.app/optionsButton_Active-hd.png
+cCpResource GutzTest/Resources/background_default-hd.jpg build/Debug-iphonesimulator/GutzTest.app/background_default-hd.jpg
 cCpResource GutzTest/Resources/buttonLocked_Active-hd.png build/Debug-iphonesimulator/GutzTest.app/buttonLocked_Active-hd.png
+cCpResource GutzTest/Resources/buttonLocked_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/buttonLocked_nonActive-hd.png
 cCpResource GutzTest/Resources/levelStar_Right-hd.png build/Debug-iphonesimulator/GutzTest.app/levelStar_Right-hd.png
 cCpResource GutzTest/Resources/levelStar_Middle-hd.png build/Debug-iphonesimulator/GutzTest.app/levelStar_Middle-hd.png
-cCpResource GutzTest/Resources/pagination_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/pagination_nonActive-hd.png
-cCpResource GutzTest/Resources/levelStar_Left-hd.png build/Debug-iphonesimulator/GutzTest.app/levelStar_Left-hd.png
-cCpResource GutzTest/Resources/HUD_pauseButton_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/HUD_pauseButton_nonActive-hd.png
 cCpResource GutzTest/Resources/paginationActive-hd.png build/Debug-iphonesimulator/GutzTest.app/paginationActive-hd.png
+cCpResource GutzTest/Resources/levelStar_Left-hd.png build/Debug-iphonesimulator/GutzTest.app/levelStar_Left-hd.png
+cCpResource GutzTest/Resources/pagination_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/pagination_nonActive-hd.png
 cCpResource GutzTest/Resources/HUD_pauseButton_Active-hd.png build/Debug-iphonesimulator/GutzTest.app/HUD_pauseButton_Active-hd.png
+cCpResource GutzTest/Resources/HUD_pauseButton_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/HUD_pauseButton_nonActive-hd.png
 cCpResource GutzTest/Resources/button_soundOff_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/button_soundOff_nonActive-hd.png
 cCpResource GutzTest/Resources/button_soundOff_Active-hd.png build/Debug-iphonesimulator/GutzTest.app/button_soundOff_Active-hd.png
 cCpResource GutzTest/Resources/button_soundOn_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/button_soundOn_nonActive-hd.png
-cCpResource GutzTest/Resources/button_pushNotificationOFF_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/button_pushNotificationOFF_nonActive-hd.png
 cCpResource GutzTest/Resources/button_soundOn_Active-hd.png build/Debug-iphonesimulator/GutzTest.app/button_soundOn_Active-hd.png
+cCpResource GutzTest/Resources/button_pushNotificationOFF_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/button_pushNotificationOFF_nonActive-hd.png
 cCpResource GutzTest/Resources/button_pushNotificationOFF_Active-hd.png build/Debug-iphonesimulator/GutzTest.app/button_pushNotificationOFF_Active-hd.png
 cCpResource GutzTest/Resources/button_pushNotificationON_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/button_pushNotificationON_nonActive-hd.png
 cCpResource GutzTest/Resources/button_pushNotificationON_Active-hd.png build/Debug-iphonesimulator/GutzTest.app/button_pushNotificationON_Active-hd.png
@@ -137,65 +137,66 @@ cCpResource GutzTest/Resources/button_options_nonActive-hd.png build/Debug-iphon
 cCpResource GutzTest/Resources/button_options_Active-hd.png build/Debug-iphonesimulator/GutzTest.app/button_options_Active-hd.png
 cCpResource GutzTest/Resources/button_nextLevel_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/button_nextLevel_nonActive-hd.png
 cCpResource GutzTest/Resources/button_nextLevel_Active-hd.png build/Debug-iphonesimulator/GutzTest.app/button_nextLevel_Active-hd.png
+cCpResource GutzTest/Resources/postGame_starB-hd.png build/Debug-iphonesimulator/GutzTest.app/postGame_starB-hd.png
 cCpResource GutzTest/Resources/postGame_starA-hd.png build/Debug-iphonesimulator/GutzTest.app/postGame_starA-hd.png
 cCpResource GutzTest/Resources/divider-hd.png build/Debug-iphonesimulator/GutzTest.app/divider-hd.png
-cCpResource GutzTest/Resources/postGame_starB-hd.png build/Debug-iphonesimulator/GutzTest.app/postGame_starB-hd.png
 cCpResource GutzTest/Resources/postGame_title_great-hd.png build/Debug-iphonesimulator/GutzTest.app/postGame_title_great-hd.png
 cCpResource GutzTest/Resources/background_default.jpg build/Debug-iphonesimulator/GutzTest.app/background_default.jpg
 cCpResource GutzTest/Resources/buttonUnlocked_Active-hd.png build/Debug-iphonesimulator/GutzTest.app/buttonUnlocked_Active-hd.png
-cCpResource GutzTest/Resources/buttonUnlocked_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/buttonUnlocked_nonActive-hd.png
-cCpResource GutzTest/Resources/digitsLvlSelect_spritemap.png build/Debug-iphonesimulator/GutzTest.app/digitsLvlSelect_spritemap.png
 cCpResource GutzTest/Resources/digitsLvlSelect_spritemap-hd.png build/Debug-iphonesimulator/GutzTest.app/digitsLvlSelect_spritemap-hd.png
-cCpResource GutzTest/Resources/timeDigits_spritemap-hd.png build/Debug-iphonesimulator/GutzTest.app/timeDigits_spritemap-hd.png
+cCpResource GutzTest/Resources/buttonUnlocked_nonActive-hd.png build/Debug-iphonesimulator/GutzTest.app/buttonUnlocked_nonActive-hd.png
 cCpResource GutzTest/Resources/scoreDigits_spritemap-hd.png build/Debug-iphonesimulator/GutzTest.app/scoreDigits_spritemap-hd.png
-cCpResource GutzTest/Resources/hudStars_spritemap-hd.png build/Debug-iphonesimulator/GutzTest.app/hudStars_spritemap-hd.png
-cCpResource GutzTest/Resources/seg__01_01-hd.png build/Debug-iphonesimulator/GutzTest.app/seg__01_01-hd.png
-cCpResource GutzTest/Resources/seg__01_01.png build/Debug-iphonesimulator/GutzTest.app/seg__01_01.png
+cCpResource GutzTest/Resources/digitsLvlSelect_spritemap.png build/Debug-iphonesimulator/GutzTest.app/digitsLvlSelect_spritemap.png
+cCpResource GutzTest/Resources/timeDigits_spritemap-hd.png build/Debug-iphonesimulator/GutzTest.app/timeDigits_spritemap-hd.png
 cCpResource GutzTest/Resources/seg__01_02-hd.png build/Debug-iphonesimulator/GutzTest.app/seg__01_02-hd.png
-cCpResource GutzTest/Resources/seg__01_03-hd.png build/Debug-iphonesimulator/GutzTest.app/seg__01_03-hd.png
-cCpResource GutzTest/Resources/seg__01_04-hd.png build/Debug-iphonesimulator/GutzTest.app/seg__01_04-hd.png
+cCpResource GutzTest/Resources/seg__01_01-hd.png build/Debug-iphonesimulator/GutzTest.app/seg__01_01-hd.png
+cCpResource GutzTest/Resources/hudStars_spritemap-hd.png build/Debug-iphonesimulator/GutzTest.app/hudStars_spritemap-hd.png
+cCpResource GutzTest/Resources/seg__01_01.png build/Debug-iphonesimulator/GutzTest.app/seg__01_01.png
 cCpResource GutzTest/Resources/seg__01_02.png build/Debug-iphonesimulator/GutzTest.app/seg__01_02.png
+cCpResource GutzTest/Resources/seg__01_03-hd.png build/Debug-iphonesimulator/GutzTest.app/seg__01_03-hd.png
 cCpResource GutzTest/Resources/seg__01_03.png build/Debug-iphonesimulator/GutzTest.app/seg__01_03.png
+cCpResource GutzTest/Resources/seg__01_04-hd.png build/Debug-iphonesimulator/GutzTest.app/seg__01_04-hd.png
 cCpResource GutzTest/Resources/seg__01_04.png build/Debug-iphonesimulator/GutzTest.app/seg__01_04.png
-cCpResource GutzTest/Resources/seg__01_05-hd.png build/Debug-iphonesimulator/GutzTest.app/seg__01_05-hd.png
 cCpResource GutzTest/Resources/seg__01_05.png build/Debug-iphonesimulator/GutzTest.app/seg__01_05.png
-cCpResource GutzTest/Resources/seg__01_06-hd.png build/Debug-iphonesimulator/GutzTest.app/seg__01_06-hd.png
 cCpResource GutzTest/Resources/seg__01_06.png build/Debug-iphonesimulator/GutzTest.app/seg__01_06.png
-cCpResource GutzTest/Resources/seg__01_07.png build/Debug-iphonesimulator/GutzTest.app/seg__01_07.png
 cCpResource GutzTest/Resources/seg__01_07-hd.png build/Debug-iphonesimulator/GutzTest.app/seg__01_07-hd.png
+cCpResource GutzTest/Resources/seg__01_05-hd.png build/Debug-iphonesimulator/GutzTest.app/seg__01_05-hd.png
+cCpResource GutzTest/Resources/seg__01_06-hd.png build/Debug-iphonesimulator/GutzTest.app/seg__01_06-hd.png
+cCpResource GutzTest/Resources/seg__01_07.png build/Debug-iphonesimulator/GutzTest.app/seg__01_07.png
 cCpResource GutzTest/Resources/seg__01_08-hd.png build/Debug-iphonesimulator/GutzTest.app/seg__01_08-hd.png
+cCpResource GutzTest/Resources/lvlSelectDigit_1.png build/Debug-iphonesimulator/GutzTest.app/lvlSelectDigit_1.png
 cCpResource GutzTest/Resources/seg__01_08.png build/Debug-iphonesimulator/GutzTest.app/seg__01_08.png
 cCpResource GutzTest/Resources/lvlSelectDigit_0.png build/Debug-iphonesimulator/GutzTest.app/lvlSelectDigit_0.png
 cCpResource GutzTest/Resources/lvlSelectDigit_2.png build/Debug-iphonesimulator/GutzTest.app/lvlSelectDigit_2.png
 cCpResource GutzTest/Resources/lvlSelectDigit_3.png build/Debug-iphonesimulator/GutzTest.app/lvlSelectDigit_3.png
-cCpResource GutzTest/Resources/lvlSelectDigit_1.png build/Debug-iphonesimulator/GutzTest.app/lvlSelectDigit_1.png
-cCpResource GutzTest/Resources/lvlSelectDigit_5.png build/Debug-iphonesimulator/GutzTest.app/lvlSelectDigit_5.png
 cCpResource GutzTest/Resources/lvlSelectDigit_4.png build/Debug-iphonesimulator/GutzTest.app/lvlSelectDigit_4.png
+cCpResource GutzTest/Resources/lvlSelectDigit_5.png build/Debug-iphonesimulator/GutzTest.app/lvlSelectDigit_5.png
 cCpResource GutzTest/Resources/lvlSelectDigit_6.png build/Debug-iphonesimulator/GutzTest.app/lvlSelectDigit_6.png
 cCpResource GutzTest/Resources/lvlSelectDigit_7.png build/Debug-iphonesimulator/GutzTest.app/lvlSelectDigit_7.png
-cCpResource GutzTest/Resources/lvlSelectDigit_8.png build/Debug-iphonesimulator/GutzTest.app/lvlSelectDigit_8.png
-cCpResource GutzTest/Resources/lvlSelectDigit_9.png build/Debug-iphonesimulator/GutzTest.app/lvlSelectDigit_9.png
 cCpResource GutzTest/debugging_headers build/Debug-iphonesimulator/GutzTest.app/debugging_headers
+cCpResource GutzTest/Resources/lvlSelectDigit_9.png build/Debug-iphonesimulator/GutzTest.app/lvlSelectDigit_9.png
 cCpResource GutzTest/Resources/debug_node-00.png build/Debug-iphonesimulator/GutzTest.app/debug_node-00.png
 cCpResource GutzTest/Resources/debug_node-01.png build/Debug-iphonesimulator/GutzTest.app/debug_node-01.png
-cCpResource GutzTest/Resources/debug_node-02.png build/Debug-iphonesimulator/GutzTest.app/debug_node-02.png
 cCpResource GutzTest/Resources/debug_node-00-hd.png build/Debug-iphonesimulator/GutzTest.app/debug_node-00-hd.png
-cCpResource GutzTest/Resources/debug_node-02-hd.png build/Debug-iphonesimulator/GutzTest.app/debug_node-02-hd.png
+cCpResource GutzTest/Resources/lvlSelectDigit_8.png build/Debug-iphonesimulator/GutzTest.app/lvlSelectDigit_8.png
+cCpResource GutzTest/Resources/debug_node-02.png build/Debug-iphonesimulator/GutzTest.app/debug_node-02.png
 cCpResource GutzTest/Resources/debug_node-01-hd.png build/Debug-iphonesimulator/GutzTest.app/debug_node-01-hd.png
-cCpResource GutzTest/Resources/background_white-hd.jpg build/Debug-iphonesimulator/GutzTest.app/background_white-hd.jpg
 cCpResource GutzTest/Resources/fps_images-color.png build/Debug-iphonesimulator/GutzTest.app/fps_images-color.png
-cCpResource GutzTest/Chipmunk/Docs/chipmunk-docs.html build/Debug-iphonesimulator/GutzTest.app/chipmunk-docs.html
+cCpResource GutzTest/Resources/debug_node-02-hd.png build/Debug-iphonesimulator/GutzTest.app/debug_node-02-hd.png
 cCpResource GutzTest/Resources/background_white.jpg build/Debug-iphonesimulator/GutzTest.app/background_white.jpg
+cCpResource GutzTest/Resources/background_white-hd.jpg build/Debug-iphonesimulator/GutzTest.app/background_white-hd.jpg
+cCpResource GutzTest/Chipmunk/Docs/chipmunk-docs.html build/Debug-iphonesimulator/GutzTest.app/chipmunk-docs.html
 cCpResource GutzTest/Chipmunk/Docs/LICENSE.txt build/Debug-iphonesimulator/GutzTest.app/LICENSE.txt
 cCpResource GutzTest/Chipmunk/Docs/LICENSE_Chipmunk.txt build/Debug-iphonesimulator/GutzTest.app/LICENSE_Chipmunk.txt
-cCpResource GutzTest/Chipmunk/Docs/README.txt build/Debug-iphonesimulator/GutzTest.app/README.txt
-cCpResource GutzTest/Resources/debug_staticBody-128x8-hd.jpg build/Debug-iphonesimulator/GutzTest.app/debug_staticBody-128x8-hd.jpg
-cCpResource GutzTest/Resources/debug_staticBody-128x8.jpg build/Debug-iphonesimulator/GutzTest.app/debug_staticBody-128x8.jpg
 cCpResource GutzTest/Resources/debug_staticBody-128x32.jpg build/Debug-iphonesimulator/GutzTest.app/debug_staticBody-128x32.jpg
-cCpResource GutzTest/Resources/debug_finger.wav build/Debug-iphonesimulator/GutzTest.app/debug_finger.wav
+cCpResource GutzTest/Chipmunk/Docs/README.txt build/Debug-iphonesimulator/GutzTest.app/README.txt
+cCpResource GutzTest/Resources/debug_staticBody-128x8.jpg build/Debug-iphonesimulator/GutzTest.app/debug_staticBody-128x8.jpg
+cCpResource GutzTest/Resources/debug_staticBody-128x8-hd.jpg build/Debug-iphonesimulator/GutzTest.app/debug_staticBody-128x8-hd.jpg
 cCpResource GutzTest/Resources/debug_staticBody-320x16-hd.jpg build/Debug-iphonesimulator/GutzTest.app/debug_staticBody-320x16-hd.jpg
 cCpResource GutzTest/Resources/debug_staticBody-320x16.jpg build/Debug-iphonesimulator/GutzTest.app/debug_staticBody-320x16.jpg
 cCopyPlistFile "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/LevelData.plist" GutzTest/Resources/LevelData.plist
+cCpResource GutzTest/Resources/debug_finger.wav build/Debug-iphonesimulator/GutzTest.app/debug_finger.wav
+cCpResource GutzTest/Resources/test.png build/Debug-iphonesimulator/GutzTest.app/test.png
 cCpResource GutzTest/Resources/debug_redmag.wav build/Debug-iphonesimulator/GutzTest.app/debug_redmag.wav
 cTouch "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app"
 
@@ -5227,9 +5228,9 @@ i"LevelSelectScreenLayer.h"
 i"LevelCompleteScreenLayer.h"
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/ScreenManager.m
-c000000004E49D14100000000000009A0
-t1313460545
-s2464
+c000000004E49DDC700000000000009D4
+t1313463751
+s2516
 i"ScreenManager.h"
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/actions/BtnAnimateActions.h
@@ -5344,9 +5345,9 @@ i"BtnAnimateActions.h"
 i"DigitUtils.h"
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/PlayScreenLayer.h
-c000000004E49BDB80000000000000B13
-t1313455544
-s2835
+c000000004E49EAAF0000000000000B30
+t1313467055
+s2864
 i"cocos2d.h"
 i"ObjectiveChipmunk.h"
 i"JellyBlob.h"
@@ -5359,9 +5360,9 @@ i"PlayStatsModel.h"
 i"CCParticleSystem.h"
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/PlayScreenLayer.m
-c000000004E49D34B000000000000473F
-t1313461067
-s18239
+c000000004E49EB91000000000000472B
+t1313467281
+s18219
 i"GameConfig.h"
 i"ChipmunkDebugNode.h"
 i"PlayScreenLayer.h"
@@ -5442,9 +5443,9 @@ i<Foundation/Foundation.h>
 i"ObjectiveChipmunk.h"
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m
-c000000004E49AAC900000000000018B8
-t1313450697
-s6328
+c000000004E49FEF90000000000001962
+t1313472249
+s6498
 i"JellyBlob.h"
 i"ChipmunkDebugNode.h"
 
@@ -6263,6 +6264,11 @@ c000000004E3ECFBB00000000000009AC
 t1312739259
 s2476
 
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Resources/test.png
+c000000004E49EA140000000000007ED0
+t1313466900
+s32464
+
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Resources/timeDigits_spritemap-hd.png
 c000000004E3ECFBB0000000000010BB6
 t1312739259
@@ -6285,11 +6291,11 @@ s484
 i<UIKit/UIKit.h>
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app
-t1313460626
-s5134
+t1313472251
+s5168
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app.dSYM
-t1313460626
+t1313472251
 s136
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/Achievements.plist
@@ -6305,8 +6311,8 @@ t1312739266
 s30635
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/GutzTest
-t1313460626
-s1799036
+t1313472250
+s1799176
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/HUD_footerBG-hd.png
 t1312739266
@@ -6876,6 +6882,10 @@ N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-ipho
 t1312739266
 s2476
 
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/test.png
+t1313467186
+s32464
+
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/timeDigits_spritemap-hd.png
 t1312739266
 s68534
@@ -6903,7 +6913,7 @@ t1313172468
 s12740
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AppDelegate.o
-t1313460572
+t1313467184
 s60440
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/BasePhysicsObject.o
@@ -6963,7 +6973,7 @@ t1313172468
 s34652
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GameOverScreenLayer.o
-t1313460572
+t1313467184
 s10508
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GaussUtils.o
@@ -6984,11 +6994,11 @@ t1313214080
 s7258
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/JellyBlob.o
-t1313450697
-s39052
+t1313472250
+s40148
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelCompleteScreenLayer.o
-t1313460572
+t1313467184
 s19416
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelDataPlistParser.o
@@ -7004,7 +7014,7 @@ t1313172468
 s7952
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlBtnSprite.o
-t1313460572
+t1313467184
 s13712
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlPagesMenuSprite.o
@@ -7028,8 +7038,8 @@ t1313172468
 s24944
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PlayScreenLayer.o
-t1313460626
-s131080
+t1313467282
+s132184
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PlayStatsModel.o
 t1313172468
@@ -7048,7 +7058,7 @@ t1313172468
 s23660
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ScreenManager.o
-t1313460572
+t1313467184
 s48604
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/SegNodeSprite.o
@@ -11208,7 +11218,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies45ba2bdc0bfab341^454633dc0bfab341^---0#1#0#--18"Check dependencies
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies1ccd397d47fab341^f702637d47fab341^---0#1#0#--18"Check dependencies
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AchievementsPlistParser.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/model/delegate/AchievementsPlistParser.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 s334189231.691378
@@ -11302,8 +11312,8 @@ xcom.apple.compilers.llvmgcc42
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/uikit/AppDelegate.m83f6baadcaecb341^779fefadcaecb341^---0#0#0#-19%DVTDocumentLocation2@130"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/uikit/AppDelegate.m0000000000000000^2019"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AppDelegate.o GutzTest/Classes/view/uikit/AppDelegate.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-frxihibxloyvmygqwzocuazhlowd/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/uikit/AppDelegate.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AppDelegate.o"
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AppDelegate.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/uikit/AppDelegate.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-s335153371.410590
-e335153372.237338
+s335159983.094590
+e335159984.458458
 r1
 xCompileC
 xbuild/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AppDelegate.o
@@ -11312,7 +11322,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/uikit/AppDelegate.me63e69db08fab341^0dc23cdc08fab341^---0#0#0#-19%DVTDocumentLocation2@122"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/uikit/AppDelegate.m0000000000000000^1955"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AppDelegate.o GutzTest/Classes/view/uikit/AppDelegate.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/uikit/AppDelegate.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AppDelegate.o"
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/uikit/AppDelegate.m7c5f18af22fab341^946875b022fab341^---0#0#0#-19%DVTDocumentLocation2@122"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/uikit/AppDelegate.m0000000000000000^1955"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AppDelegate.o GutzTest/Classes/view/uikit/AppDelegate.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/uikit/AppDelegate.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AppDelegate.o"
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/AppDelegate.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/GutzTest/Classes/view/uikit/AppDelegate.m normal i386 objective-c com.apple.compilers.llvmgcc42
 s333747127.066684
@@ -11786,8 +11796,8 @@ xcom.apple.compilers.llvmgcc42
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection129"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/GameOverScreenLayer.m145fc1adcaecb341^39b4e8adcaecb341^---0#0#0#-19%DVTDocumentLocation2@139"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/GameOverScreenLayer.m0000000000000000^2053"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GameOverScreenLayer.o GutzTest/Classes/view/layers/GameOverScreenLayer.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-frxihibxloyvmygqwzocuazhlowd/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/GameOverScreenLayer.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GameOverScreenLayer.o"
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GameOverScreenLayer.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/GameOverScreenLayer.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-s335153372.239642
-e335153372.349055
+s335159983.100886
+e335159984.458472
 r1
 xCompileC
 xbuild/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GameOverScreenLayer.o
@@ -11796,7 +11806,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection121"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/GameOverScreenLayer.m5d6d3ddc08fab341^3ca359dc08fab341^---0#0#0#-19%DVTDocumentLocation2@131"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/layers/GameOverScreenLayer.m0000000000000000^1989"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GameOverScreenLayer.o GutzTest/Classes/view/layers/GameOverScreenLayer.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/GameOverScreenLayer.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GameOverScreenLayer.o"
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection121"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/GameOverScreenLayer.m70ec19af22fab341^097175b022fab341^---0#0#0#-19%DVTDocumentLocation2@131"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/layers/GameOverScreenLayer.m0000000000000000^1989"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GameOverScreenLayer.o GutzTest/Classes/view/layers/GameOverScreenLayer.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/GameOverScreenLayer.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GameOverScreenLayer.o"
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GameOverScreenLayer.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/GutzTest/Classes/view/layers/GameOverScreenLayer.m normal i386 objective-c com.apple.compilers.llvmgcc42
 s333747127.070294
@@ -11903,8 +11913,8 @@ xcom.apple.compilers.llvmgcc42
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection113"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/GoalTarget.m95666b74a3f5b341^aa499c74a3f5b341^---0#0#0#-19%DVTDocumentLocation2@123"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/physics/GoalTarget.m0000000000000000^1955"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GoalTarget.o GutzTest/Classes/view/physics/GoalTarget.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/GoalTarget.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GoalTarget.o"
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/JellyBlob.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-s335143497.707320
-e335143497.874620
+s335165049.907571
+e335165050.571433
 r1
 xCompileC
 xbuild/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/JellyBlob.o
@@ -11914,8 +11924,8 @@ xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
 o/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m: In function '-[JellyBlob pulsate:]':
-o/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m:199: warning: unused variable 'offset'
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m967bb549e2f9b341^4fe6df49e2f9b341^-287"/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m: In function '-[JellyBlob pulsate:]':/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m:199: warning: unused variable 'offset'1(21%IDEActivityLogMessage2@24"Unused variable 'offset'-335143497#143#144#-1#-23%DVTTextDocumentLocation3@122"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/physics/JellyBlob.m0000000000000000^198#18446744073709551615#198#18446744073709551615#18446744073709551615#0#19"Unused variable '*'--0#0#0#-19%DVTDocumentLocation4@122"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/physics/JellyBlob.m0000000000000000^1951"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/JellyBlob.o GutzTest/Classes/view/physics/JellyBlob.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/JellyBlob.o"
+o/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m:201: warning: unused variable 'offset'
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m4a7ae87936fab341^f180927a36fab341^-287"/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m: In function '-[JellyBlob pulsate:]':/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m:201: warning: unused variable 'offset'1(21%IDEActivityLogMessage2@24"Unused variable 'offset'-335165050#143#144#-1#-23%DVTTextDocumentLocation3@122"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/physics/JellyBlob.m0000000000000000^200#18446744073709551615#200#18446744073709551615#18446744073709551615#0#19"Unused variable '*'--0#0#0#-19%DVTDocumentLocation4@122"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/physics/JellyBlob.m0000000000000000^1951"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/JellyBlob.o GutzTest/Classes/view/physics/JellyBlob.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/physics/JellyBlob.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/JellyBlob.o"
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelCompleteScreenLayer.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 s334285485.731060
@@ -11931,8 +11941,8 @@ xcom.apple.compilers.llvmgcc42
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection134"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m0d38bbadcaecb341^9887e4adcaecb341^---0#0#0#-19%DVTDocumentLocation2@144"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m0000000000000000^2073"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelCompleteScreenLayer.o GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-frxihibxloyvmygqwzocuazhlowd/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelCompleteScreenLayer.o"
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelCompleteScreenLayer.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-s335153371.409511
-e335153372.236136
+s335159983.094484
+e335159984.458437
 r1
 xCompileC
 xbuild/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelCompleteScreenLayer.o
@@ -11941,7 +11951,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection126"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m95f468db08fab341^1f803cdc08fab341^---0#0#0#-19%DVTDocumentLocation2@136"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m0000000000000000^2009"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelCompleteScreenLayer.o GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelCompleteScreenLayer.o"
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection126"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m365818af22fab341^a46c75b022fab341^---0#0#0#-19%DVTDocumentLocation2@136"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m0000000000000000^2009"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelCompleteScreenLayer.o GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelCompleteScreenLayer.o"
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LevelCompleteScreenLayer.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/GutzTest/Classes/view/layers/LevelCompleteScreenLayer.m normal i386 objective-c com.apple.compilers.llvmgcc42
 s333747127.065434
@@ -12061,8 +12071,8 @@ xcom.apple.compilers.llvmgcc42
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/sprites/LvlBtnSprite.madbdbbadcaecb341^772ceaadcaecb341^---0#0#0#-19%DVTDocumentLocation2@133"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/sprites/LvlBtnSprite.m0000000000000000^2027"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlBtnSprite.o GutzTest/Classes/view/sprites/LvlBtnSprite.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-frxihibxloyvmygqwzocuazhlowd/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/sprites/LvlBtnSprite.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlBtnSprite.o"
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlBtnSprite.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/LvlBtnSprite.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-s335153372.237426
-e335153372.354233
+s335159983.095917
+e335159984.458466
 r1
 xCompileC
 xbuild/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlBtnSprite.o
@@ -12071,7 +12081,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection115"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/LvlBtnSprite.m65e03cdc08fab341^6dae5adc08fab341^---0#0#0#-19%DVTDocumentLocation2@125"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/sprites/LvlBtnSprite.m0000000000000000^1963"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlBtnSprite.o GutzTest/Classes/view/sprites/LvlBtnSprite.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/LvlBtnSprite.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlBtnSprite.o"
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection115"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/LvlBtnSprite.m79ad18af22fab341^715975b022fab341^---0#0#0#-19%DVTDocumentLocation2@125"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/sprites/LvlBtnSprite.m0000000000000000^1963"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlBtnSprite.o GutzTest/Classes/view/sprites/LvlBtnSprite.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/sprites/LvlBtnSprite.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlBtnSprite.o"
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/LvlBtnSprite.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/GutzTest/Classes/view/sprites/LvlBtnSprite.m normal i386 objective-c com.apple.compilers.llvmgcc42
 s333747127.065151
@@ -12311,8 +12321,8 @@ o/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection125"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m80d8c2f0ddecb341^aa9e40f1ddecb341^-2687"/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m: In function 'eachShapeHash':/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m:50: warning: unused variable 'body'/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m: In function '-[PlayScreenLayer chipmunkSetup]':/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m:239: warning: unused variable 'orgPt'/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m:235: warning: unused variable 'nodeFacScale'/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m:232: warning: unused variable 'nodeFric'/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m:231: warning: unused variable 'nodeRes'/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m:230: warning: unused variable 'nodeShapeRadius'/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m:229: warning: unused variable 'nodeMass'/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m:224: warning: unused variable 'totNodeLvls'/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m: In function '-[PlayScreenLayer generateSoftBodyAt:radius:segments:]':/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m:302: warning: assignment makes integer from pointer without a cast/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m:428: warning: assignment from incompatible pointer type/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m:431: warning: passing argument 2 of 'cpSpaceAddConstraint' from incompatible pointer type/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m: In function '-[PlayScreenLayer ccTouchesBegan:withEvent:]':/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m:688: warning: unused variable 'isTouched'12(21%IDEActivityLogMessage2@22"Unused variable 'body'-334290417#148#154#-1#-23%DVTTextDocumentLocation3@135"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^49#18446744073709551615#49#18446744073709551615#18446744073709551615#0#19"Unused variable '*'--2@23"Unused variable 'orgPt'-334290417#469#156#-1#-3@135"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^238#18446744073709551615#238#18446744073709551615#18446744073709551615#0#19"Unused variable '*'--2@30"Unused variable 'nodeFacScale'-334290417#625#163#-1#-3@135"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^234#18446744073709551615#234#18446744073709551615#18446744073709551615#0#19"Unused variable '*'--2@26"Unused variable 'nodeFric'-334290417#788#159#-1#-3@135"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^231#18446744073709551615#231#18446744073709551615#18446744073709551615#0#19"Unused variable '*'--2@25"Unused variable 'nodeRes'-334290417#947#158#-1#-3@135"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^230#18446744073709551615#230#18446744073709551615#18446744073709551615#0#19"Unused variable '*'--2@33"Unused variable 'nodeShapeRadius'-334290417#1105#166#-1#-3@135"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^229#18446744073709551615#229#18446744073709551615#18446744073709551615#0#19"Unused variable '*'--2@26"Unused variable 'nodeMass'-334290417#1271#159#-1#-3@135"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^228#18446744073709551615#228#18446744073709551615#18446744073709551615#0#19"Unused variable '*'--2@29"Unused variable 'totNodeLvls'-334290417#1430#162#-1#-3@135"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^223#18446744073709551615#223#18446744073709551615#18446744073709551615#0#19"Unused variable '*'--2@52"Assignment makes integer from pointer without a cast-334290417#1781#185#-1#-3@135"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^301#18446744073709551615#301#18446744073709551615#18446744073709551615#0#20"LLVM GCC 4.2 Warning--2@41"Assignment from incompatible pointer type-334290417#1966#174#-1#-3@135"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^427#18446744073709551615#427#18446744073709551615#18446744073709551615#0#41"Assignment from incompatible pointer type--2@75"Passing argument 2 of 'cpSpaceAddConstraint' from incompatible pointer type-334290417#2140#208#-1#-3@135"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^430#18446744073709551615#430#18446744073709551615#18446744073709551615#0#56"Passing argument * of '*' from incompatible pointer type--2@27"Unused variable 'isTouched'-334290417#2527#160#-1#-3@135"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^687#18446744073709551615#687#18446744073709551615#18446744073709551615#0#19"Unused variable '*'--0#0#0#-19%DVTDocumentLocation4@135"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^2037"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PlayScreenLayer.o GutzTest/Classes/view/layers/PlayScreenLayer.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-frxihibxloyvmygqwzocuazhlowd/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PlayScreenLayer.o"
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PlayScreenLayer.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/PlayScreenLayer.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-s335154140.268246
-e335154140.554512
+s335160081.722100
+e335160082.027244
 r1
 xCompileC
 xbuild/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PlayScreenLayer.o
@@ -12321,9 +12331,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-o/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/PlayScreenLayer.m: In function '-[PlayScreenLayer postSolveWallCollision:space:]':
-o/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/PlayScreenLayer.m:384: warning: unused variable 'impulse'
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection117"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/PlayScreenLayer.m99d444dc0bfab341^95f38ddc0bfab341^-325"/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/PlayScreenLayer.m: In function '-[PlayScreenLayer postSolveWallCollision:space:]':/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/PlayScreenLayer.m:384: warning: unused variable 'impulse'1(21%IDEActivityLogMessage2@25"Unused variable 'impulse'-335154140#175#150#-1#-23%DVTTextDocumentLocation3@127"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^383#18446744073709551615#383#18446744073709551615#18446744073709551615#0#19"Unused variable '*'--0#0#0#-19%DVTDocumentLocation4@127"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^1973"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PlayScreenLayer.o GutzTest/Classes/view/layers/PlayScreenLayer.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/PlayScreenLayer.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PlayScreenLayer.o"
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection117"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/PlayScreenLayer.mebffb81123fab341^7bf8061223fab341^---0#0#0#-19%DVTDocumentLocation2@127"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/layers/PlayScreenLayer.m0000000000000000^1973"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PlayScreenLayer.o GutzTest/Classes/view/layers/PlayScreenLayer.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/layers/PlayScreenLayer.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PlayScreenLayer.o"
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/PlayScreenLayer.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/GutzTest/Classes/view/layers/PlayScreenLayer.m normal i386 objective-c com.apple.compilers.llvmgcc42
 s333774200.775214
@@ -12513,8 +12521,8 @@ xcom.apple.compilers.llvmgcc42
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection116"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/ScreenManager.med65bbadcaecb341^da02eeadcaecb341^---0#0#0#-19%DVTDocumentLocation2@126"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/GutzTest/Classes/view/ScreenManager.m0000000000000000^2015"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ScreenManager.o GutzTest/Classes/view/ScreenManager.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-frxihibxloyvmygqwzocuazhlowd/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/GutzTest/Classes/view/ScreenManager.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ScreenManager.o"
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ScreenManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/ScreenManager.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-s335153371.409201
-e335153372.236962
+s335159983.095712
+e335159984.458451
 r1
 xCompileC
 xbuild/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ScreenManager.o
@@ -12523,7 +12531,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/ScreenManager.m00e468db08fab341^a8aa3cdc08fab341^---0#0#0#-19%DVTDocumentLocation2@118"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/ScreenManager.m0000000000000000^1951"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ScreenManager.o GutzTest/Classes/view/ScreenManager.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/ScreenManager.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ScreenManager.o"
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/ScreenManager.m5a9d18af22fab341^aa6375b022fab341^---0#0#0#-19%DVTDocumentLocation2@118"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/GutzTest/Classes/view/ScreenManager.m0000000000000000^1951"CompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ScreenManager.o GutzTest/Classes/view/ScreenManager.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/GutzTest.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Prefix-extxmtpwtqsjlwcouaozeyxmwdsb/Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Classes/view/ScreenManager.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ScreenManager.o"
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/ScreenManager.o /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/GutzTest/Classes/view/ScreenManager.m normal i386 objective-c com.apple.compilers.llvmgcc42
 s333747127.066696
@@ -15049,6 +15057,15 @@ xGutzTest/Resources/seg__01_08.png
 xbuild/Debug-iphonesimulator/GutzTest.app/seg__01_08.png
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection60"Copy build/Debug-iphonesimulator/GutzTest.app/seg__01_08.png4bae1a1e08e4b341^9b8e1c1e08e4b341^---0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphonesimulator/GutzTest.app/seg__01_08.png0000204d2205f041^560"CpResource GutzTest/Resources/seg__01_08.png build/Debug-iphonesimulator/GutzTest.app/seg__01_08.png    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/GutzTest/Resources/seg__01_08.png /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphonesimulator/GutzTest.app
 
+CCpResource GutzTest/Resources/test.png build/Debug-iphonesimulator/GutzTest.app/test.png
+s335159986.359539
+e335159986.409302
+r1
+xCpResource
+xGutzTest/Resources/test.png
+xbuild/Debug-iphonesimulator/GutzTest.app/test.png
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Copy build/Debug-iphonesimulator/GutzTest.app/test.pngfa4462b222fab341^69c868b222fab341^---0#0#0#-19%DVTDocumentLocation2@130"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/build/Debug-iphonesimulator/GutzTest.app/test.png0000204d2205f041^590"CpResource GutzTest/Resources/test.png build/Debug-iphonesimulator/GutzTest.app/test.png    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Resources/test.png" "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app"
+
 CCpResource GutzTest/Resources/timeDigits_spritemap-hd.png build/Debug-iphonesimulator/GutzTest.app/timeDigits_spritemap-hd.png
 s333711390.085515
 e333711390.093891
@@ -15086,13 +15103,13 @@ x/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/De
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection127"Generating /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator/GutzTest.app.dSYM9e3fadf1ddecb341^5dfaf7f1ddecb341^---0#0#0#-19%DVTDocumentLocation2@135"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone%20App/iOS/build/Debug-iphonesimulator/GutzTest.app.dSYM/0000000000000000^601"GenerateDSYMFile build/Debug-iphonesimulator/GutzTest.app.dSYM build/Debug-iphonesimulator/GutzTest.app/GutzTest    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator/GutzTest.app/GutzTest" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator/GutzTest.app.dSYM"
 
 CGenerateDSYMFile "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app.dSYM" "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/GutzTest"
-s335154140.684542
-e335154140.828575
+s335165051.002034
+e335165051.325031
 r1
 xGenerateDSYMFile
 x/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app.dSYM
 x/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/GutzTest
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection119"Generating /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app.dSYM7b4dafdc0bfab341^611cd4dc0bfab341^---0#0#0#-19%DVTDocumentLocation2@127"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/build/Debug-iphonesimulator/GutzTest.app.dSYM/0000000000000000^577"GenerateDSYMFile build/Debug-iphonesimulator/GutzTest.app.dSYM build/Debug-iphonesimulator/GutzTest.app/GutzTest    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/GutzTest" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app.dSYM"
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection119"Generating /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app.dSYMc993007b36fab341^5034537b36fab341^---0#0#0#-19%DVTDocumentLocation2@127"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/build/Debug-iphonesimulator/GutzTest.app.dSYM/0000000000000000^577"GenerateDSYMFile build/Debug-iphonesimulator/GutzTest.app.dSYM build/Debug-iphonesimulator/GutzTest.app/GutzTest    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/GutzTest" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app.dSYM"
 
 CGenerateDSYMFile /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphonesimulator/GutzTest.app.dSYM /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphonesimulator/GutzTest.app/GutzTest
 s333774201.098886
@@ -15114,14 +15131,14 @@ xi386
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection125"Link /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator/GutzTest.app/GutzTest9d1141f1ddecb341^07b2aaf1ddecb341^---0#0#0#--1286"Ld build/Debug-iphonesimulator/GutzTest.app/GutzTest normal i386    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-g++-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk "-L/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator" -filelist "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GutzTest.LinkFileList" -mmacosx-version-min=10.6 -lz -Xlinker -objc_abi_version -Xlinker 2 -framework QuartzCore -framework OpenGLES -framework OpenAL -framework AudioToolbox -framework AVFoundation -framework UIKit -framework Foundation -framework CoreGraphics -lChipmunk -lBox2D -lCocos2D -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator/GutzTest.app/GutzTest"
 
 CLd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/GutzTest" normal i386
-s335154140.555693
-e335154140.683367
+s335165050.572564
+e335165051.000804
 r1
 xLd
 x/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/GutzTest
 xnormal
 xi386
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection117"Link /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/GutzTest7d598edc0bfab341^4af0aedc0bfab341^---0#0#0#--1363"Ld build/Debug-iphonesimulator/GutzTest.app/GutzTest normal i386    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk "-L/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" "-L/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Chipmunk/Sources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -filelist "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GutzTest.LinkFileList" -mmacosx-version-min=10.6 -lz -Xlinker -objc_abi_version -Xlinker 2 -framework QuartzCore -framework OpenGLES -framework OpenAL -framework AudioToolbox -framework AVFoundation -framework UIKit -framework Foundation -framework CoreGraphics -lCocos2D -lCocosDenshion -lObjectiveChipmunk-iPhone -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/GutzTest"
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection117"Link /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/GutzTeste3a6927a36fab341^4c34007b36fab341^---0#0#0#--1363"Ld build/Debug-iphonesimulator/GutzTest.app/GutzTest normal i386    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk "-L/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" "-L/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/GutzTest/Chipmunk/Sources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -filelist "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/GutzTest.build/Objects-normal/i386/GutzTest.LinkFileList" -mmacosx-version-min=10.6 -lz -Xlinker -objc_abi_version -Xlinker 2 -framework QuartzCore -framework OpenGLES -framework OpenAL -framework AudioToolbox -framework AVFoundation -framework UIKit -framework Foundation -framework CoreGraphics -lCocos2D -lCocosDenshion -lObjectiveChipmunk-iPhone -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app/GutzTest"
 
 CLd /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphonesimulator/GutzTest.app/GutzTest normal i386
 s333774200.991912
@@ -15227,12 +15244,12 @@ x/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/De
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection117"Touch /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator/GutzTest.appec33fff1ddecb341^aad305f2ddecb341^---0#0#0#--394"Touch build/Debug-iphonesimulator/GutzTest.app    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iOS/iPhone App/iOS/build/Debug-iphonesimulator/GutzTest.app"
 
 CTouch "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app"
-s335154140.855974
-e335154140.863441
+s335165051.352293
+e335165051.359564
 r1
 xTouch
 x/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection109"Touch /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app6230dbdc0bfab341^780adddc0bfab341^---0#0#0#--378"Touch build/Debug-iphonesimulator/GutzTest.app    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app"
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection109"Touch /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app033f5a7b36fab341^310c5c7b36fab341^---0#0#0#--378"Touch build/Debug-iphonesimulator/GutzTest.app    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/GutzTest.app"
 
 CTouch /Volumes/Skuld/labor/clients/sThompkins/gutz/iOS/build/Debug-iphonesimulator/GutzTest.app
 s333774201.279752
