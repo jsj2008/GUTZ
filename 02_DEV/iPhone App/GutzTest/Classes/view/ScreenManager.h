@@ -20,10 +20,10 @@
 }
 
 +(void) goMenu;
-+(void) goPlay;
++(void) goPlay:(int)lvl;
 +(void) goConfig;
 +(void) goLevelSelect;
-+(void) goLevelComplete;
++(void) goLevelComplete:(int)lvl;
 +(void) goGameOver;
 
 @end

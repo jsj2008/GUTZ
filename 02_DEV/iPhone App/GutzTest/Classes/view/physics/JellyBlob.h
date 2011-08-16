@@ -33,6 +33,7 @@
 -(id)initWithPos:(cpVect)pos radius:(cpFloat)radius count:(int)count;
 -(void)wiggleWithForce:(int)index force:(cpFloat)f;
 -(void)pop;
+-(void)pulsate:(CGPoint)pos;
 
 -(void)draw;
 

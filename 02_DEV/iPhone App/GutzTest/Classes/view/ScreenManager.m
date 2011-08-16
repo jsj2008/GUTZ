@@ -39,37 +39,38 @@ Class nextTransition() {
 +(void) goMenu {
     NSLog(@"ScreenManager.goMenu()");
     
-	CCLayer *layer = [MainMenuScreenLayer node];
-	[ScreenManager go: layer];
+	CCLayer *layer = [[MainMenuScreenLayer alloc] init];
+	[ScreenManager go:layer];
 }
 
 +(void) goConfig {
     NSLog(@"ScreenManager.goConfig()");
     
-	CCLayer *layer = [ConfigMenuLayer node];
-	[ScreenManager go: layer];
+	CCLayer *layer = [[ConfigMenuLayer alloc] init];
+	[ScreenManager go:layer];
 }
 
 +(void) goLevelSelect {
     NSLog(@"ScreenManager.goLevelSelect()");
     
-	CCLayer *layer = [LevelSelectScreenLayer node];
-	[ScreenManager go: layer];
+	CCLayer *layer = [[LevelSelectScreenLayer alloc] init];
+	[ScreenManager go:layer];
 }
 
-+(void) goPlay {
++(void) goPlay:(int)lvl {
     NSLog(@"ScreenManager.goPlay()");
     
-	CCLayer *layer = [PlayScreenLayer node];
-	[ScreenManager go: layer];
+	CCLayer *layer = [[PlayScreenLayer alloc] initWithLevel:lvl];
+	//CCLayer *layer = [[PlayScreenLayer alloc] init];
+	[ScreenManager go:layer];
 }
 
 
-+(void) goLevelComplete {
++(void) goLevelComplete:(int)lvl {
     NSLog(@"ScreenManager.goLevelComplete()");
     
-	CCLayer *layer = [LevelCompleteScreenLayer node];
-	[ScreenManager go: layer];
+	CCLayer *layer = [[LevelCompleteScreenLayer alloc] initWithLevel:lvl];
+	[ScreenManager go:layer];
 }
 
 +(void) goGameOver {
@@ -98,6 +99,7 @@ Class nextTransition() {
 	if ([director runningScene]) {
         [director replaceScene:newScene];
 		//[director replaceScene:[transition transitionWithDuration:TRANSITION_DURATION scene:newScene]];
+		
 	}else {
 		[director runWithScene:newScene];		
 	}

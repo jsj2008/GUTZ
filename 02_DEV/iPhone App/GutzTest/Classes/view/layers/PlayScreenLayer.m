@@ -57,25 +57,33 @@ static NSString *borderType = @"borderType";
 @synthesize splatDripsAction;
 
 
+-(id)initWithLevel:(int)lvl {
+	NSLog(@"%@.initWithLevel(%d)", [self class], lvl);
+	
+	indLvl = lvl;
+	return ([self init]);
+}
+
+
 
 -(id) init {
-    NSLog(@"%@.init()", [self class]);
-    
-    if ((self = [super initWithColor:ccc4(255, 255, 255, 255)])) {
-    
-		 self.isTouchEnabled = YES;
-		 self.isAccelerometerEnabled = YES;
-		 
-		 _cnt = 32;
-		 
+	NSLog(@"%@.init()", [self class]);
+	
+	if ((self = [super initWithColor:ccc4(255, 255, 255, 255)])) {
+		
+		self.isTouchEnabled = YES;
+		self.isAccelerometerEnabled = YES;
+		
+		_cnt = 32;
+		
 		[[SimpleAudioEngine sharedEngine] preloadEffect:@"debug_finger.wav"];
 		
-		 isCleared = NO;
-	
-		 [self chipmunkSetup];
-		 [self scaffoldHUD];
-		 [self performSelector:@selector(physProvoker:) withObject:self afterDelay:0.33f];
-	 }
+		isCleared = NO;
+		
+		[self chipmunkSetup];
+		[self scaffoldHUD];
+		[self performSelector:@selector(physProvoker:) withObject:self afterDelay:0.33f];
+	}
 	
 	return (self);
 }
@@ -114,7 +122,7 @@ static NSString *borderType = @"borderType";
 	
 	if (kShowDebugMenus)
 		[self debuggingSetup];
-		
+	
 	
 }
 
@@ -145,12 +153,40 @@ static NSString *borderType = @"borderType";
 	[arrTargets addObject:@"NO"];
 	[arrTargets addObject:@"NO"];
 	
-	goalTarget1 = [[GoalTarget alloc] initAtPos:ccp(150, 420)];
+	CGPoint goal1Pos;
+	CGPoint goal2Pos;
+	
+	switch (indLvl) {
+			
+		case 1:
+			goal1Pos = CGPointMake(150, 380);
+			goal2Pos = CGPointMake(150, 160);
+			break;
+			
+		case 2:
+			goal1Pos = CGPointMake(64, 260);
+			goal2Pos = CGPointMake(260, 260);
+			break;
+			
+		case 3:
+			goal1Pos = CGPointMake(64, 400);
+			goal2Pos = CGPointMake(300, 64);
+			break;
+			
+		default:
+			goal1Pos = CGPointMake(150, 380);
+			goal2Pos = CGPointMake(150, 160);
+			indLvl = 1;
+			break;
+	}
+	
+	
+	goalTarget1 = [[GoalTarget alloc] initAtPos:goal1Pos];
 	goalTarget1.ind = 0;
 	[_space add:goalTarget1];
 	[self addChild:goalTarget1._sprite];
 	
-	goalTarget2 = [[GoalTarget alloc] initAtPos:ccp(150, 128)];
+	goalTarget2 = [[GoalTarget alloc] initAtPos:goal2Pos];
 	goalTarget2.ind = 1;
 	[_space add:goalTarget2];
 	[self addChild:goalTarget2._sprite];
@@ -238,7 +274,7 @@ static NSString *borderType = @"borderType";
 		[_space addPostStepCallback:self selector:@selector(clearArena:) key:_blob];
 		//[self performSelector:@selector(clearArena:) withObject:self afterDelay:0.33];
 	}
-
+	
 	
 	
 	GoalTarget *trg = target.data;
@@ -267,7 +303,57 @@ static NSString *borderType = @"borderType";
 		[self addGib:nil];
 	}
 	
+	id dieAction = [CCScaleTo actionWithDuration:0.01f scale:0.0f];
 	
+	CCSprite *derpSprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
+	[derpSprite setScale:0.25f];
+	[derpSprite setPosition:gibPos];
+	[self addChild:derpSprite];
+	
+	id scaleAction = [CCScaleTo actionWithDuration:0.33f scale:17.0f];
+	id centerAction = [CCMoveTo actionWithDuration:0.5f position:ccp((CCRANDOM_0_1() * 64) + 128, (CCRANDOM_0_1() * 200) + 160)];
+	id moveAction = [CCMoveBy actionWithDuration:0.5f position:ccp(0, -((CCRANDOM_0_1() * 32) + 160))];
+	[derpSprite runAction:[CCEaseIn actionWithAction:[scaleAction copy] rate:0.2f]];
+	[derpSprite runAction:[CCSequence actions:[CCEaseIn actionWithAction:[centerAction copy] rate:0.2f], [CCEaseOut actionWithAction:[moveAction copy] rate:0.33f], [dieAction copy], nil]];
+	
+	
+	CCSprite *derp2Sprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
+	[derp2Sprite setScale:0.25f];
+	[derp2Sprite setPosition:gibPos];
+	[self addChild:derp2Sprite];
+	
+	id scale2Action = [CCScaleTo actionWithDuration:0.33f scale:14.0f];
+	id center2Action = [CCMoveTo actionWithDuration:0.5f position:ccp((CCRANDOM_0_1() * 64) + 128, 260)];
+	id move2Action = [CCMoveBy actionWithDuration:0.5f position:ccp(0, -((CCRANDOM_0_1() * 32) + 128))];
+	[derp2Sprite runAction:[CCEaseElasticInOut actionWithAction:[scale2Action copy] period:0.5f]];
+	[derp2Sprite runAction:[CCSequence actions:[CCEaseIn actionWithAction:[center2Action copy] rate:0.5f], [CCEaseOut actionWithAction:[move2Action copy] rate:0.25f], [dieAction copy], nil]];
+	
+	CCSprite *derp3Sprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
+	[derp3Sprite setScale:0.25f];
+	[derp3Sprite setPosition:gibPos];
+	[self addChild:derp3Sprite];
+	
+	id scale3Action = [CCScaleTo actionWithDuration:0.25f scale:13.5f];
+	id center3Action = [CCMoveTo actionWithDuration:0.5f position:ccp((CCRANDOM_0_1() * 64) + 64, (CCRANDOM_0_1() * 64) + 300)];
+	id move3Action = [CCMoveBy actionWithDuration:0.5f position:ccp(0, -((CCRANDOM_0_1() * 32) + 160))];
+	[derp3Sprite runAction:[CCEaseIn actionWithAction:[scale3Action copy] rate:0.9f]];
+	[derp3Sprite runAction:[CCSequence actions:[CCEaseIn actionWithAction:[center3Action copy] rate:0.25f], [CCEaseOut actionWithAction:[move3Action copy] rate:0.2f], [dieAction copy], nil]];
+	
+	
+	CCSprite *derp4Sprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
+	[derp4Sprite setScale:0.25f];
+	[derp4Sprite setPosition:gibPos];
+	[self addChild:derp4Sprite];
+	
+	id scale4Action = [CCScaleTo actionWithDuration:0.3f scale:13.0f];
+	id center4Action = [CCMoveTo actionWithDuration:0.5f position:ccp(220, (CCRANDOM_0_1() * 64) + 300)];
+	id move4Action = [CCMoveBy actionWithDuration:0.5f position:ccp(0, -((CCRANDOM_0_1() * 32) + 128))];
+	[derp4Sprite runAction:[CCEaseElasticInOut actionWithAction:[scale4Action copy] period:0.7f]];
+	[derp4Sprite runAction:[CCSequence actions:[CCEaseIn actionWithAction:[center4Action copy] rate:0.33f], [CCEaseOut actionWithAction:[move4Action copy] rate:0.25f], [dieAction copy], nil]];
+	
+	
+	
+	[self performSelector:@selector(onLevelComplete:) withObject:self afterDelay:2];
 	//[self onLevelComplete:self];
 	
 }
@@ -296,7 +382,7 @@ static NSString *borderType = @"borderType";
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
 	
 	// force of the colliding bodies
-	cpFloat impulse = cpvlength(cpArbiterTotalImpulse(arbiter));
+	//cpFloat impulse = cpvlength(cpArbiterTotalImpulse(arbiter));
 	
 	//NSLog(@"postSolveWallCollision:[%f] (%@)", impulse, blobShape.collisionType);
 }
@@ -365,7 +451,7 @@ static NSString *borderType = @"borderType";
 	if (!isCleared) {
 		[_blob draw];
 		
-			
+		
 	} else {
 		
 	}
@@ -389,35 +475,35 @@ static NSString *borderType = @"borderType";
 }
 
 -(void) onBackMenu:(id)sender {
-    NSLog(@"PlayScreenLayer.onBackMenu()");
-    
+	NSLog(@"PlayScreenLayer.onBackMenu()");
+	
 	[ScreenManager goLevelSelect];
 }
 
 
 -(void) onLevelComplete:(id)sender {
-    NSLog(@"PlayScreenLayer.onLevelComplete()");
-    
-	[ScreenManager goLevelComplete];
+	NSLog(@"PlayScreenLayer.onLevelComplete()");
+	
+	[ScreenManager goLevelComplete:indLvl];
 }
 
 
 -(void) onGameOver:(id)sender {
-    NSLog(@"PlayScreenLayer.onGameOver()");
-    
+	NSLog(@"PlayScreenLayer.onGameOver()");
+	
 	[ScreenManager goGameOver];
 }
 
 
 -(void) onPlayPauseToggle:(id)sender {
-    NSLog(@"PlayScreenLayer.onPlayPauseToggle(%d)", [sender selectedIndex]);
+	NSLog(@"PlayScreenLayer.onPlayPauseToggle(%d)", [sender selectedIndex]);
 	
 	
 	if ([sender selectedIndex] == 1) {
 		self.isTouchEnabled = NO;
 		[self unschedule:@selector(physicsStepper:)];
 		[[NSNotificationCenter defaultCenter] postNotificationName:@"GameplayPauseToggle" object:[NSNumber numberWithBool:YES]];
-	
+		
 	} else {
 		self.isTouchEnabled = YES;
 		[self schedule:@selector(physicsStepper:) interval:(1.0f / 60.0f)];
@@ -427,8 +513,8 @@ static NSString *borderType = @"borderType";
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc {
-    //NSLog(@"PlayScreenLayer.()");
-    
+	//NSLog(@"PlayScreenLayer.()");
+	
 	self.splatDripsAction = nil;
 	self.splatExploAction = nil;
 	
@@ -441,15 +527,15 @@ static NSString *borderType = @"borderType";
 }
 
 -(void) onEnter {
-    //NSLog(@"PlayScreenLayer.onEnter()");
-    
+	//NSLog(@"PlayScreenLayer.onEnter()");
+	
 	[super onEnter];
 	[[UIAccelerometer sharedAccelerometer] setUpdateInterval:(1.0 / 60)];
 }
 
 -(void) physicsStepper: (ccTime) dt {
 	//NSLog(@"PlayScreenLayer.physicsStepper(%0.000000f)", [[CCDirector sharedDirector] getFPS]);
-    
+	
 	[_space step:1.0 / 60.0];
 	[_blob draw];
 	
@@ -466,7 +552,7 @@ static NSString *borderType = @"borderType";
 	
 	[lEyeSprite setPosition:cpv([_blob posPt].x - 12, [_blob posPt].y + 24)];
 	[rEyeSprite setPosition:cpv([_blob posPt].x + 12, [_blob posPt].y + 24)];
-
+	
 }
 
 
@@ -492,8 +578,8 @@ TouchLocation(UITouch *touch) {
 }
 
 - (void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {	
-    //NSLog(@"PlayScreenLayer.accelerometer()");
-    
+	//NSLog(@"PlayScreenLayer.accelerometer()");
+	
 	static float prevX=0, prevY=0;
 	
 #define kFilterFactor 0.05f

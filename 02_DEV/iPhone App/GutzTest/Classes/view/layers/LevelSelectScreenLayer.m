@@ -155,7 +155,7 @@
 -(void) onLevelSelect:(id)sender {
     NSLog(@"LevelSelectScreenLayer.onLevelSelect()");
     
-    [ScreenManager goPlay];
+	[ScreenManager goPlay:1];
 }
 
 

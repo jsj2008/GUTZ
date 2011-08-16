@@ -43,7 +43,7 @@
 -(void) onSelected:(id)sender {
     NSLog(@"LevelSelectScreenLayer.onSelected()");
     
-    [ScreenManager goPlay];
+	[ScreenManager goPlay:iLvlIndex];
 }
 	
 @end

@@ -95,6 +95,9 @@
 	CCAction *splatExploAction;
 	CCAction *splatDripsAction;
 	
+	
+	int indLvl;
+	
 
 	
 }
@@ -104,6 +107,8 @@
 @property (nonatomic, retain) CCAction *splatExploAction;
 @property (nonatomic, retain) CCAction *splatDripsAction;
 
+
+-(id)initWithLevel:(int)lvl;
 
 -(void) onBackMenu:(id)sender;
 -(void) onLevelComplete:(id)sender;

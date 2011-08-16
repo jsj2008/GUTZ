@@ -154,7 +154,7 @@
 		
 	//ChipmunkDebugDrawPolygon(_count, verts, LAColor(0, 1), LAColor(0, 0));
 	
-	glEnable(GL_POINT_SMOOTH);
+	//glEnable(GL_POINT_SMOOTH);
 	glEnable(GL_LINE_SMOOTH);
 	
 	glColor4f(0.40f, 0.80f, 0.87f, 1.00f);
@@ -181,18 +181,33 @@
 
 -(void)pop {
 	
-	if (!isPopped) {
+	//if (!isPopped) {
 		
 		isPopped = YES;
 	
 		for (int i=0; i<_count; i++) {
 			ChipmunkBody *body = [_edgeBodies objectAtIndex:i];
-			[body applyImpulse:cpv(64, 64) offset:_centralBody.pos];
+			[body applyImpulse:cpv(64, 64) offset:cpvzero];
 		}
-	}
+	//}
 	
 }
 
+
+-(void)pulsate:(CGPoint)pos {
+	
+	cpVect offset = cpvsub(pos, _centralBody.pos);
+	NSLog(@"pulsate.(%f, %f)", pos.x, pos.y);
+	
+	
+	for (int i=0; i<_count; i++) {
+		cpVect slope = cpvforangle(((cpFloat)_count - i) / (cpFloat)_count * 2.0 * M_PI);
+		
+		ChipmunkBody *body = [_edgeBodies objectAtIndex:i];
+		[body applyImpulse:cpvmult(slope, 20) offset:cpvzero];
+	}
+	
+}
 
 -(void)destroy {
 	

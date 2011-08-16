@@ -15,8 +15,11 @@
 
 @interface LevelCompleteScreenLayer : BaseScreenLayer {
     
+	int indLvl;
 }
 
+
+-(id)initWithLevel:(int)lvl;
 -(void) onBackMenu:(id)sender;
 -(void) onNextLevel:(id)sender;
 

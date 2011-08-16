@@ -13,6 +13,13 @@
 
 @implementation LevelCompleteScreenLayer
 
+-(id)initWithLevel:(int)lvl {
+	
+	indLvl = lvl;
+	
+	return ([self init]);
+}
+
 -(id) init {
     NSLog(@"LevelCompleteScreenLayer.init()");
     
@@ -54,7 +61,7 @@
 
 -(void) onNextLevel:(id)sender { 
     NSLog(@"LevelCompleteScreenLayer.onNextLevel()");
-	[ScreenManager goPlay];
+	[ScreenManager goPlay:++indLvl];
 }
 
 -(void) onBackMenu:(id)sender {
