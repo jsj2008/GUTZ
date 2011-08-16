@@ -105,21 +105,21 @@
 		
 		
 		
-		for (int i=0; i<count; i++) {
-			cpVect slope = cpvforangle((cpFloat)i / (cpFloat)count * 2.0 * M_PI);
-			cpVect posMult = cpvmult(slope, radius * 0.9);
-			
-			ChipmunkBody *body = [ChipmunkBody bodyWithMass:edgeMass andMoment:INFINITY];
-			body.pos = cpvadd(pos, posMult);
-			[set addObject:body];
-			
-			ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:(CCRANDOM_0_1() * 4) + 2 offset:cpvzero];
-			shape.layers = GRABABLE_LAYER;
-			[set addObject:shape];
-			
-			
-			[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:body bodyB:_centralBody anchr1:cpvzero anchr2:cpvzero restLength:0 stiffness:3 damping:0]];
-		}
+//		for (int i=0; i<count; i++) {
+//			cpVect slope = cpvforangle((cpFloat)i / (cpFloat)count * 2.0 * M_PI);
+//			cpVect posMult = cpvmult(slope, radius * 1.3);
+//			
+//			ChipmunkBody *body = [ChipmunkBody bodyWithMass:edgeMass andMoment:INFINITY];
+//			body.pos = cpvadd(pos, posMult);
+//			[set addObject:body];
+//			
+//			ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:(CCRANDOM_0_1() * 4) + 6 offset:cpvzero];
+//			shape.layers = GRABABLE_LAYER;
+//			[set addObject:shape];
+//			
+//			
+//			[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:body bodyB:_centralBody anchr1:cpvzero anchr2:cpvzero restLength:0 stiffness:3 damping:0]];
+//		}
 	}
 	
 	return (self);
@@ -144,7 +144,7 @@
 			cpVect v = [[_edgeBodies objectAtIndex:i] pos];
 			verts[i] = cpvadd(v, cpvmult(cpvnormalize(cpvsub(v, center)), _edgeRadius * 0.85));
 			
-			ccDrawQuadBezier(cpvadd(verts[i], _centralBody.pos), cpvmult(cpvadd(verts[i], _centralBody.pos), 2), cpvadd(verts[(i % _count) + 1], _centralBody.pos), 4);
+			//ccDrawQuadBezier(cpvadd(verts[i], _centralBody.pos), cpvmult(cpvadd(verts[i], _centralBody.pos), 2), cpvadd(verts[(i % _count) + 1], _centralBody.pos), 4);
 		}
 	//}
 	
@@ -159,12 +159,13 @@
 	//glEnable(GL_POINT_SMOOTH);
 	glEnable(GL_LINE_SMOOTH);
 	
-	glColor4f(0.40f, 0.80f, 0.87f, 1.00f);
+	//glColor4f(0.40f, 0.80f, 0.87f, 1.00f);
+	glColor4f(0.0f, 0.1f, 0.6f, 1.00f);
 	ccDrawPoly(verts, _count, YES);
 	
-	glLineWidth(3.0f);
-	glColor4f(0.00f, 0.00f, 0.00f, 1.00f);
-	ccDrawPoly(verts, _count, NO);
+	//glLineWidth(3.0f);
+	//glColor4f(0.00f, 0.00f, 0.00f, 1.00f);
+	//ccDrawPoly(verts, _count, NO);
 	
 	//ccDrawCircle(_centralBody.pos, 64, _centralBody.angle, 64, NO);
 }

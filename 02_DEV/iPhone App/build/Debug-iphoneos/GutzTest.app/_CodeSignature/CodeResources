@@ -6,11 +6,11 @@
 	<dict>
 		<key>.svn/all-wcprops</key>
 		<data>
-		qOEcMYXyex9vUZPQlEkNeWGqpvg=
+		B3bnffJs4PWoEmqidaVazfEtN40=
 		</data>
 		<key>.svn/entries</key>
 		<data>
-		Tl4EHTNR0Enf4h/JhdIVD16Ngs4=
+		nALSUlRUeqUpc/9vMTFpTczZM8A=
 		</data>
 		<key>.svn/prop-base/Achievements.plist.svn-base</key>
 		<data>
@@ -598,7 +598,7 @@
 		</data>
 		<key>.svn/text-base/GutzTest.svn-base</key>
 		<data>
-		hzffvJuq4Y/EKwDx0S4GrbpEfzM=
+		UT59JrtDDQ1B2ZA0lOtk84BTV88=
 		</data>
 		<key>.svn/text-base/HUD_footerBG-hd.png.svn-base</key>
 		<data>
@@ -1755,6 +1755,10 @@
 		<key>seg__01_08.png</key>
 		<data>
 		nJqfAmgaMqbiC0ylwvcyHglUZX8=
+		</data>
+		<key>test.png</key>
+		<data>
+		vtA69TRx1hYAzwH9LB/NaFC6OmI=
 		</data>
 		<key>timeDigits_spritemap-hd.png</key>
 		<data>

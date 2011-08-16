@@ -87,7 +87,8 @@ drawCircleShape(cpBody *body, cpCircleShape *circle) {
 		glScalef(circle->r, circle->r, 1.0f);
 		
 		glColor4f(LINE_COLOR, 1.0f);
-		glDrawArrays(GL_LINE_STRIP, 0, circleVAR_count);
+		//glDrawArrays(GL_LINE_STRIP, 0, circleVAR_count);
+		glDrawArrays(GL_TRIANGLE_FAN, 0, circleVAR_count);
 	} glPopMatrix();
 }
 

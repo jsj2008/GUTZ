@@ -4,16 +4,16 @@ r1
 cCheck dependencies
 cProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-attzjqlsnsvbeshkqngarmldotjm/FontLabel-Prefix.pch.gch FontLabel/FontLabel-Prefix.pch normal armv7 objective-c com.apple.compilers.llvmgcc42
 cProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-clwaugweoplgipanqttsdohsoylo/FontLabel-Prefix.pch.gch FontLabel/FontLabel-Prefix.pch normal armv6 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabel.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabel.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabelStringDrawing.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabelStringDrawing.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontManager.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZAttributedString.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZAttributedString.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabelStringDrawing.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabelStringDrawing.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZFont.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZFont.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZAttributedString.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZAttributedString.m" normal armv6 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/ZAttributedString.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZAttributedString.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/FontLabel.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabel.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabelStringDrawing.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabelStringDrawing.m" normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabel.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabel.m" normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontManager.m" normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZFont.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZFont.m" normal armv6 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/ZAttributedString.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZAttributedString.m" normal armv6 objective-c com.apple.compilers.llvmgcc42
 cLibtool "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv7/libFontLabel.a" normal armv7
 cLibtool "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/libFontLabel.a" normal armv6
 cCreateUniversalBinary "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphoneos/libFontLabel.a" normal "armv6 armv7"
@@ -378,7 +378,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies95b5d9a722fab341^4a983da822fab341^---0#1#0#--18"Check dependencies
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies7714bf25e4fab341^a86e5a26e4fab341^---0#1#0#--18"Check dependencies
 
 CCompileC build/GutzTest.build/Debug-iphoneos/FontLabel.build/Objects-normal/armv6/FontLabel.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabel.m" normal armv6 objective-c com.apple.compilers.llvmgcc42
 s334878331.448849

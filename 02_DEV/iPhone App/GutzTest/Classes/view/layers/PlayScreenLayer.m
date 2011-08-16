@@ -145,7 +145,7 @@ static NSString *borderType = @"borderType";
 	_multiGrab = [[ChipmunkMultiGrab alloc] initForSpace:_space withSmoothing:cpfpow(0.8, 60.0) withGrabForce:30000];
 	_multiGrab.layers = GRABABLE_LAYER;
 	
-	//[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space] z:100];
+	[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space] z:100];
 	
 	arrGibs = [[NSMutableArray alloc] init];
 	
@@ -197,7 +197,7 @@ static NSString *borderType = @"borderType";
 	creatureSprite = [CCSprite spriteWithFile:@"test.png"];
 	[creatureSprite setPosition:ccp(BLOB_X, BLOB_Y)];
 	[creatureSprite setScale:0.33f];
-	[self addChild:creatureSprite];
+	//[self addChild:creatureSprite];
 	
 	lEyeSprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
 	[lEyeSprite setPosition:cpv(BLOB_X - 8, BLOB_Y - 24)];
@@ -555,7 +555,7 @@ static NSString *borderType = @"borderType";
 		}
 	}
 	
-	[creatureSprite setPosition:[_blob posPt]];
+	//[creatureSprite setPosition:[_blob posPt]];
 	
 	[lEyeSprite setPosition:cpv([_blob posPt].x - 12, [_blob posPt].y + 24)];
 	[rEyeSprite setPosition:cpv([_blob posPt].x + 12, [_blob posPt].y + 24)];
