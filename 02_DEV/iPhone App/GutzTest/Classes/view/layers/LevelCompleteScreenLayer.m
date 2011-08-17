@@ -65,15 +65,14 @@ static NSString *borderType = @"borderType";
     
 	float delayTime = 0.3f;
 	
+	CCMenuItemImage *btnReplayLevel = [CCMenuItemImage itemFromNormalImage:@"btn_replay.png" selectedImage:@"btn_replayActive.png" target:self selector:@selector(onReplayLevel:)];
+	
 	CCMenuItemImage *btnNextLevel = [CCMenuItemImage itemFromNormalImage:@"btn_next.png" selectedImage:@"btn_nextActive.png" target:self selector:@selector(onNextLevel:)];
 	[btnNextLevel setScale:0.0f];
-	
-	CCMenuItemImage *btnReplayLevel = [CCMenuItemImage itemFromNormalImage:@"btn_replay.png" selectedImage:@"btn_replayActive.png" target:self selector:@selector(onReplayLevel:)];
 	
 	CCMenu *menu = [CCMenu menuWithItems:btnReplayLevel, btnNextLevel, nil];
 	CCAction *action = [CCSequence actions:[CCDelayTime actionWithDuration:delayTime], [CCScaleTo actionWithDuration:0.5f scale:1.0f], nil];
    
-	[btnReplayLevel runAction:action];
 	delayTime += 0.1f;
 	[btnNextLevel runAction:action];
 	
@@ -87,7 +86,7 @@ static NSString *borderType = @"borderType";
 
 -(void) onNextLevel:(id)sender { 
     NSLog(@"LevelCompleteScreenLayer.onNextLevel()");
-	[ScreenManager goPlay:indLvl++];
+	[ScreenManager goPlay:++indLvl];
 }
 
 -(void) onReplayLevel:(id)sender { 

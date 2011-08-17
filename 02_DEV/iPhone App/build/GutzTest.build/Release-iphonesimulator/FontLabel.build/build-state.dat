@@ -1,0 +1,260 @@
+TFontLabel
+v3
+r1
+cCheck dependencies
+cProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-ebwvsouvqmwduqcywkhicpvdiwuj/FontLabel-Prefix.pch.gch FontLabel/FontLabel-Prefix.pch normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontLabel.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabel.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/ZAttributedString.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZAttributedString.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontManager.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/ZFont.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZFont.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontLabelStringDrawing.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabelStringDrawing.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cLibtool "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator/libFontLabel.a" normal i386
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk
+c000000004E272D280000000000000110
+t1311190312
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.h
+c000000004D93DEF900000000000004FE
+t1301536505
+s1278
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004D93DFDD0000000000001466
+t1301536733
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004D93ECBE0000000000000AA1
+t1301540030
+s2721
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/FontLabel-Prefix.pch
+c000000004E3ECFB9000000000000009C
+t1312739257
+s156
+i<Foundation/Foundation.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabel.h
+c000000004E2D8E0300000000000006FD
+t1311608323
+s1789
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabel.m
+c000000004E2D8E030000000000001AF7
+t1311608323
+s6903
+i"FontLabel.h"
+i"FontManager.h"
+i"FontLabelStringDrawing.h"
+i"ZFont.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabelStringDrawing.h
+c000000004E2D8E030000000000000F44
+t1311608323
+s3908
+i<UIKit/UIKit.h>
+i"ZAttributedString.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabelStringDrawing.m
+c000000004E2D8E030000000000008454
+t1311608323
+s33876
+i"FontLabelStringDrawing.h"
+i"ZFont.h"
+i"ZAttributedStringPrivate.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontManager.h
+c000000004E2D8E030000000000000CEB
+t1311608323
+s3307
+i<Foundation/Foundation.h>
+i<CoreGraphics/CoreGraphics.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontManager.m
+c000000004E2D8E030000000000000D75
+t1311608323
+s3445
+i"FontManager.h"
+i"ZFont.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZAttributedString.h
+c000000004E2D8E030000000000000C27
+t1311608323
+s3111
+i<Foundation/Foundation.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZAttributedString.m
+c000000004E2D8E030000000000005589
+t1311608323
+s21897
+i"ZAttributedString.h"
+i"ZAttributedStringPrivate.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZAttributedStringPrivate.h
+c000000004E2D8E0300000000000002D2
+t1311608323
+s722
+i<Foundation/Foundation.h>
+i"ZAttributedString.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZFont.h
+c000000004E2D8E030000000000000664
+t1311608323
+s1636
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZFont.m
+c000000004E2D8E030000000000001324
+t1311608323
+s4900
+i"ZFont.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontLabel.LinkFileList
+c000000004E485E87000000000000031F
+t1313365639
+s799
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontLabel.o
+t1313365642
+s54528
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontLabelStringDrawing.o
+t1313365642
+s64944
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontManager.o
+t1313365642
+s15164
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/ZAttributedString.o
+t1313365642
+s79668
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/ZFont.o
+t1313365642
+s21100
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator/libFontLabel.a
+t1313365642
+s237384
+
+N/var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-ebwvsouvqmwduqcywkhicpvdiwuj/FontLabel-Prefix.pch.gch
+t1313365641
+s8367952
+
+CBuild AST from "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabel.m"
+r0
+
+CBuild AST from "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabelStringDrawing.m"
+r0
+
+CBuild AST from "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontManager.m"
+r0
+
+CBuild AST from "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZAttributedString.m"
+r0
+
+CBuild AST from "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZFont.m"
+r0
+
+CCheck dependencies
+r0
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesc007d713e6f9b341^fd101f14e6f9b341^---0#1#0#--18"Check dependencies
+
+CCompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontLabel.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabel.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+s335058441.712740
+e335058442.514010
+r1
+xCompileC
+xbuild/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontLabel.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabel.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabel.me59ab60996f8b341^3e95830a96f8b341^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/FontLabel/Sources/FontLabel.m0000000000000000^2059"CompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontLabel.o FontLabel/Sources/FontLabel.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -DNDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/FontLabel.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/FontLabel/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator" -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-ebwvsouvqmwduqcywkhicpvdiwuj/FontLabel-Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabel.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontLabel.o"
+
+CCompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontLabelStringDrawing.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabelStringDrawing.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+s335058441.712978
+e335058442.657563
+r1
+xCompileC
+xbuild/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontLabelStringDrawing.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabelStringDrawing.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection113"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabelStringDrawing.mc2a6b60996f8b341^fb59a80a96f8b341^---0#0#0#-19%DVTDocumentLocation2@123"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/FontLabel/Sources/FontLabelStringDrawing.m0000000000000000^2111"CompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontLabelStringDrawing.o FontLabel/Sources/FontLabelStringDrawing.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -DNDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/FontLabel.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/FontLabel/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator" -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-ebwvsouvqmwduqcywkhicpvdiwuj/FontLabel-Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontLabelStringDrawing.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontLabelStringDrawing.o"
+
+CCompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontManager.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+s335058441.712997
+e335058442.480440
+r1
+xCompileC
+xbuild/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontManager.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontManager.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontManager.m47afb60996f8b341^670c7b0a96f8b341^---0#0#0#-19%DVTDocumentLocation2@112"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/FontLabel/Sources/FontManager.m0000000000000000^2067"CompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontManager.o FontLabel/Sources/FontManager.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -DNDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/FontLabel.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/FontLabel/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator" -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-ebwvsouvqmwduqcywkhicpvdiwuj/FontLabel-Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/FontManager.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontManager.o"
+
+CCompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/ZAttributedString.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZAttributedString.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+s335058441.713001
+e335058442.081502
+r1
+xCompileC
+xbuild/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/ZAttributedString.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZAttributedString.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZAttributedString.m82adb60996f8b341^cfdb140a96f8b341^---0#0#0#-19%DVTDocumentLocation2@118"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/FontLabel/Sources/ZAttributedString.m0000000000000000^2091"CompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/ZAttributedString.o FontLabel/Sources/ZAttributedString.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -DNDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/FontLabel.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/FontLabel/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator" -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-ebwvsouvqmwduqcywkhicpvdiwuj/FontLabel-Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZAttributedString.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/ZAttributedString.o"
+
+CCompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/ZFont.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZFont.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+s335058441.713005
+e335058442.481608
+r1
+xCompileC
+xbuild/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/ZFont.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZFont.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection96"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZFont.mf4a6b60996f8b341^f6447b0a96f8b341^---0#0#0#-19%DVTDocumentLocation2@106"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/FontLabel/Sources/ZFont.m0000000000000000^2043"CompileC build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/ZFont.o FontLabel/Sources/ZFont.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -DNDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/FontLabel.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/FontLabel/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator" -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-ebwvsouvqmwduqcywkhicpvdiwuj/FontLabel-Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/Sources/ZFont.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/ZFont.o"
+
+CLibtool "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator/libFontLabel.a" normal i386
+s335058442.658727
+e335058442.693318
+r1
+xLibtool
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator/libFontLabel.a
+xnormal
+xi386
+o/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection64"Libtool build/Release-iphonesimulator/libFontLabel.a normal i386a7b2a80a96f8b341^ed7eb10a96f8b341^-136"/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#0#--900"Libtool build/Release-iphonesimulator/libFontLabel.a normal i386    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool -static -arch_only i386 -syslibroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk "-L/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator" -filelist "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/Objects-normal/i386/FontLabel.LinkFileList" -ObjC -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator/libFontLabel.a"
+
+CProcessPCH /Users/Gullinbursti/Library/Developer/Xcode/DerivedData/iOSGutzProjs-aqwjtesxmdaoskcfttynkvktxrfz/Index/PrecompiledHeaders/FontLabel-Prefix-dhrqruefyvbyflghxqbjybrdznso_ast/FontLabel-Prefix.pch.pth FontLabel/FontLabel-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-ebwvsouvqmwduqcywkhicpvdiwuj/FontLabel-Prefix.pch.gch FontLabel/FontLabel-Prefix.pch normal i386 objective-c com.apple.compilers.llvmgcc42
+s335058440.024426
+e335058441.711506
+r1
+xProcessPCH
+x/var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-ebwvsouvqmwduqcywkhicpvdiwuj/FontLabel-Prefix.pch.gch
+xFontLabel/FontLabel-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection41"Precompile FontLabel/FontLabel-Prefix.pch465e060896f8b341^4225b60996f8b341^---0#0#0#-19%DVTDocumentLocation2@111"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/FontLabel/FontLabel-Prefix.pch0000000000000000^1983"ProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-ebwvsouvqmwduqcywkhicpvdiwuj/FontLabel-Prefix.pch.gch FontLabel/FontLabel-Prefix.pch normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -DNDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/FontLabel.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/FontLabel/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Release-iphonesimulator/FontLabel.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Release-iphonesimulator" -DNS_BLOCK_ASSERTIONS=1 -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/FontLabel/FontLabel-Prefix.pch" -o /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/FontLabel-Prefix-ebwvsouvqmwduqcywkhicpvdiwuj/FontLabel-Prefix.pch.gch
+
