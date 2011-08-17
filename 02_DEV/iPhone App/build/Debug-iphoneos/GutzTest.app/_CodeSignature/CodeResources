@@ -6,11 +6,11 @@
 	<dict>
 		<key>.svn/all-wcprops</key>
 		<data>
-		wwqX+Ym3MAA9qkpLFVOr4g8OzmE=
+		8rLzvWTyKQbYYiUWik+6dOtFi+4=
 		</data>
 		<key>.svn/entries</key>
 		<data>
-		krPRiFD9geMqqF1K6ZP2PsX8Sis=
+		F0dK7jNj9fKq3CvNbPMyK4NrMYA=
 		</data>
 		<key>.svn/prop-base/Achievements.plist.svn-base</key>
 		<data>
@@ -133,6 +133,22 @@
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
 		</data>
 		<key>.svn/prop-base/background_white.jpg.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/blocker-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/blocker.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/blocker_B_-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/blocker_B_.png.svn-base</key>
 		<data>
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
 		</data>
@@ -786,7 +802,7 @@
 		</data>
 		<key>.svn/text-base/GutzTest.svn-base</key>
 		<data>
-		efBgItS0v3HGV/v+xoID7Nm/jvQ=
+		7CqPxBVfDyjhCA1fJWADAcad9yQ=
 		</data>
 		<key>.svn/text-base/HUD_footerBG-hd.png.svn-base</key>
 		<data>
@@ -907,6 +923,22 @@
 		<key>.svn/text-base/background_white.jpg.svn-base</key>
 		<data>
 		MClh3zkDaPp5n0GUb9OEwJWXqFc=
+		</data>
+		<key>.svn/text-base/blocker-hd.png.svn-base</key>
+		<data>
+		J3F18NJLo7mYCUa3vPPjGMLflbI=
+		</data>
+		<key>.svn/text-base/blocker.png.svn-base</key>
+		<data>
+		tf5GA/n7NaWKjtL9+sEu5t2C7OU=
+		</data>
+		<key>.svn/text-base/blocker_B_-hd.png.svn-base</key>
+		<data>
+		/1DReyiOtCWiEV4bpz7KFq3z0Uw=
+		</data>
+		<key>.svn/text-base/blocker_B_.png.svn-base</key>
+		<data>
+		fGRAaClr7MgHQXNCTk2cqURaVtU=
 		</data>
 		<key>.svn/text-base/btn_Settings-hd.png.svn-base</key>
 		<data>
@@ -1554,11 +1586,11 @@
 		</data>
 		<key>Default.png</key>
 		<data>
-		tCAAHw5d0ndTHlV+bSdpJcscSYA=
+		BvyKKO28jiHAzvOQpn8Z2oqemk4=
 		</data>
 		<key>Default@2x.png</key>
 		<data>
-		/UISFbnK6TJa0MeOW/vV3aGV+I4=
+		gYn+tBGRYma5LB8LXLay2aJPvdo=
 		</data>
 		<key>HUD_footerBG-hd.png</key>
 		<data>
@@ -1602,27 +1634,27 @@
 		</data>
 		<key>Icon-72.png</key>
 		<data>
-		otsl7eF+NyXfrFajjvbTDOsIeYw=
+		4P8hoApnjV5ftHAXvnnZKMCLnAw=
 		</data>
 		<key>Icon-Small-50.png</key>
 		<data>
-		1EuToLtaS36jZ510hRq+4dJoizo=
+		MepIQMUpZZnARX8CN4arz+y2u9s=
 		</data>
 		<key>Icon-Small.png</key>
 		<data>
-		Qkb8QSLM7kn2yzKN1SpMXf+xp7o=
+		6X9vI2q9JOIG9HRxe3WGtkQocRk=
 		</data>
 		<key>Icon-Small@2x.png</key>
 		<data>
-		s4C4PKUDFTpp4e2WehXEkH72G4k=
+		l8OYw1kqbQatBeITykBZFCDD/dE=
 		</data>
 		<key>Icon.png</key>
 		<data>
-		cODJO6cTrEqY5vjnAPr/De4TwnY=
+		6DV2fucUrbQZi4uwrOtHO1P6CrI=
 		</data>
 		<key>Icon@2x.png</key>
 		<data>
-		74yQRJR78jAy2hMmGflCwzOHKU4=
+		4sTxf9+rt8V/oK1sduSjlTGD704=
 		</data>
 		<key>LICENSE.txt</key>
 		<data>
@@ -1662,11 +1694,11 @@
 		</data>
 		<key>background_main-hd.jpg</key>
 		<data>
-		FZ534Tgg6pkUniTj+luHcqJy1g8=
+		UiYUwFwb0dDl9GG5rLC5Y2x1jvc=
 		</data>
 		<key>background_main.jpg</key>
 		<data>
-		2oy/io22hest6Tj3jhKdP/qbVQU=
+		pinclUzwCvSHFqqjtJhRsy/uMJM=
 		</data>
 		<key>background_play.jpg</key>
 		<data>
@@ -2315,6 +2347,14 @@
 		<key>seg__01_08.png</key>
 		<data>
 		nJqfAmgaMqbiC0ylwvcyHglUZX8=
+		</data>
+		<key>splash_bg-hd.png</key>
+		<data>
+		gYn+tBGRYma5LB8LXLay2aJPvdo=
+		</data>
+		<key>splash_bg.png</key>
+		<data>
+		BvyKKO28jiHAzvOQpn8Z2oqemk4=
 		</data>
 		<key>target.png</key>
 		<data>

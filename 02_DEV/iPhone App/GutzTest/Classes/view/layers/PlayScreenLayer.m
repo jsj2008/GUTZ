@@ -70,7 +70,7 @@ static NSString *borderType = @"borderType";
 	NSLog(@"%@.init()", [self class]);
 	
 	//if ((self = [super initWithBackround:@"background_play.jpg"])) {
-	if ((self = [super initWithColor:ccc4(231, 68, 68, 255)])) {
+	if ((self = [super initWithColor:ccc4(233, 86, 86, 255)])) {
 		
 		self.isTouchEnabled = YES;
 		self.isAccelerometerEnabled = YES;
@@ -369,6 +369,18 @@ static NSString *borderType = @"borderType";
 		[self addGib:nil];
 	}
 	
+	
+	id eyeAction = [CCMoveTo actionWithDuration:0.33f position:ccp((CCRANDOM_0_1() * 200) + 64, (CCRANDOM_0_1() * 360) + 64)];
+	id mouthActon = [CCMoveTo actionWithDuration:0.33f position:ccp((CCRANDOM_0_1() * 200) + 64, -((CCRANDOM_0_1() * 300) + 64))];
+	[eyeSprite runAction:[CCEaseIn actionWithAction:[eyeAction copy] rate:0.9f]];
+	[mouthSprite runAction:[CCEaseIn actionWithAction:[mouthActon copy] rate:0.2f]];
+	
+	[self removeChild:goalTarget1._sprite cleanup:NO];
+	[self removeChild:goalTarget2._sprite cleanup:NO];
+	
+	
+	
+	
 	id dieAction = [CCScaleTo actionWithDuration:0.01f scale:0.0f];
 	
 	CCSprite *derpSprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
@@ -419,7 +431,8 @@ static NSString *borderType = @"borderType";
 	
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95];
 	[[SimpleAudioEngine sharedEngine] playEffect:@"debug_redmag.wav"];
-	[self setColor:ccc3(0, 0, 0)];
+	
+	[self schedule:@selector(flashBG) interval:0.1];
 	
 	[self performSelector:@selector(onLevelComplete:) withObject:self afterDelay:1];
 	//[self onLevelComplete:self];
@@ -644,8 +657,10 @@ static NSString *borderType = @"borderType";
 	
 	//[creatureSprite setPosition:[_blob posPt]];
 	
-	[eyeSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y + 24)];
-	[mouthSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y - 24)];
+	if (!isCleared) {
+		[eyeSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y + 24)];
+		[mouthSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y - 24)];
+	}
 }
 
 
@@ -725,6 +740,23 @@ TouchLocation(UITouch *touch) {
 -(void) onResetArea:(id)sender {
 	
 	
+}
+
+
+-(void)flashBG {
+	
+	if (bg_cnt % 2 == 0)
+		[self setColor:ccc3(229, 220, 7)];
+	
+	else
+		[self setColor:ccc3(233, 86, 86)];
+	
+	
+	bg_cnt++;
+	
+	
+	if (bg_cnt >= 9)
+		[self unschedule:@selector(flashBG)];
 }
 
 

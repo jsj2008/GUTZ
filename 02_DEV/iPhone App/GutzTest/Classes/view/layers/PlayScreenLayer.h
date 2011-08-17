@@ -100,6 +100,7 @@
 	
 	int indLvl;
 	
+	int bg_cnt;
 
 	
 }
@@ -137,7 +138,7 @@
 -(void) mobWiggler:(id)sender;
 - (void)clearArena:(id)sender;
 -(void)addGib:(id)sender;
--(void)changeBGColor:(ccColor3B)color;
+-(void)flashBG;
 
 
 
