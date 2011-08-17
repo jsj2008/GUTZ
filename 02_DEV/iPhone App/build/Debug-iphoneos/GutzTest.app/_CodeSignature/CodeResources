@@ -6,11 +6,11 @@
 	<dict>
 		<key>.svn/all-wcprops</key>
 		<data>
-		B3bnffJs4PWoEmqidaVazfEtN40=
+		MeLv9wHO9C0Sf4NVptOrXS9zkOs=
 		</data>
 		<key>.svn/entries</key>
 		<data>
-		nALSUlRUeqUpc/9vMTFpTczZM8A=
+		IUuIAX6rUPFyH1dlmqchBvegEYI=
 		</data>
 		<key>.svn/prop-base/Achievements.plist.svn-base</key>
 		<data>
@@ -598,7 +598,7 @@
 		</data>
 		<key>.svn/text-base/GutzTest.svn-base</key>
 		<data>
-		UT59JrtDDQ1B2ZA0lOtk84BTV88=
+		JjJPbQAxXsI7XenB0UoHn5lf8yY=
 		</data>
 		<key>.svn/text-base/HUD_footerBG-hd.png.svn-base</key>
 		<data>
@@ -1186,7 +1186,11 @@
 		</data>
 		<key>Default.png</key>
 		<data>
-		GMnDY+7MpXsYdu29GbRE4rbJ1RM=
+		tCAAHw5d0ndTHlV+bSdpJcscSYA=
+		</data>
+		<key>Default@2x.png</key>
+		<data>
+		/UISFbnK6TJa0MeOW/vV3aGV+I4=
 		</data>
 		<key>HUD_footerBG-hd.png</key>
 		<data>
@@ -1230,27 +1234,27 @@
 		</data>
 		<key>Icon-72.png</key>
 		<data>
-		zq+xjjwZvNdJ7UTdi45880bbTgk=
+		otsl7eF+NyXfrFajjvbTDOsIeYw=
 		</data>
 		<key>Icon-Small-50.png</key>
 		<data>
-		I3heJBZgS3Tt3eiz+ojLPu2Xkio=
+		1EuToLtaS36jZ510hRq+4dJoizo=
 		</data>
 		<key>Icon-Small.png</key>
 		<data>
-		aLRZEJagacvgKgCBeoUcYxATatc=
+		Qkb8QSLM7kn2yzKN1SpMXf+xp7o=
 		</data>
 		<key>Icon-Small@2x.png</key>
 		<data>
-		pNXzmdNkbjee/jV/4lmVUonH5Ic=
+		s4C4PKUDFTpp4e2WehXEkH72G4k=
 		</data>
 		<key>Icon.png</key>
 		<data>
-		vXVKVH+Wgg4QpjKFwBxIIdlE6ps=
+		cODJO6cTrEqY5vjnAPr/De4TwnY=
 		</data>
 		<key>Icon@2x.png</key>
 		<data>
-		2cQwcj4VIP/rRJdUoMqmQHzdKwQ=
+		74yQRJR78jAy2hMmGflCwzOHKU4=
 		</data>
 		<key>LICENSE.txt</key>
 		<data>
@@ -1290,11 +1294,15 @@
 		</data>
 		<key>background_main-hd.jpg</key>
 		<data>
-		bS3/K7oFpYzxPgEw8ugdolFoJGo=
+		FZ534Tgg6pkUniTj+luHcqJy1g8=
 		</data>
 		<key>background_main.jpg</key>
 		<data>
-		wgoeOV9/Pcf0XWjrKuIPQ1QanhQ=
+		2oy/io22hest6Tj3jhKdP/qbVQU=
+		</data>
+		<key>background_play.jpg</key>
+		<data>
+		U8xr5TouJC8BRHzDu2xriAHvKrg=
 		</data>
 		<key>background_white-hd.jpg</key>
 		<data>
@@ -1303,6 +1311,102 @@
 		<key>background_white.jpg</key>
 		<data>
 		MClh3zkDaPp5n0GUb9OEwJWXqFc=
+		</data>
+		<key>btn_Settings-hd.png</key>
+		<data>
+		rvGZXRY3IZF+IatiRE5emuQBWoY=
+		</data>
+		<key>btn_about-hd.png</key>
+		<data>
+		v2Xkw5yiDbdHKJpLeCJ4PUfcvGU=
+		</data>
+		<key>btn_about.png</key>
+		<data>
+		y1rgrOy22WvHwTOwbh6lx9oaLuI=
+		</data>
+		<key>btn_aboutActive-hd.png</key>
+		<data>
+		MD26b0fP0VgWcttA8h4gG6dds70=
+		</data>
+		<key>btn_aboutActive.png</key>
+		<data>
+		j45gqIJTGwQxm/FEGZXKqoGODvA=
+		</data>
+		<key>btn_next-hd.png</key>
+		<data>
+		/7II5KuzZcsdq/a7SG+VnxOqGuY=
+		</data>
+		<key>btn_next.png</key>
+		<data>
+		fQS0Tw3j89+N6iL5Zi14omtSBVI=
+		</data>
+		<key>btn_nextActive-hd.png</key>
+		<data>
+		jGd3ggy6VcMsqaIqedJmMnvNcz8=
+		</data>
+		<key>btn_nextActive.png</key>
+		<data>
+		6Wo7r+JYm7FCiZm6kl7U9XIiSws=
+		</data>
+		<key>btn_play-hd.png</key>
+		<data>
+		cxqB8Q3j+WNbZ1PBvuEXe5Z8yw8=
+		</data>
+		<key>btn_play.png</key>
+		<data>
+		w77szhHzxRCvnM5I8zjABxZin10=
+		</data>
+		<key>btn_playActive-hd.png</key>
+		<data>
+		C4BSpcLVosDToFWcPqnPq7NzFAs=
+		</data>
+		<key>btn_playActive.png</key>
+		<data>
+		nwCBsSnUBD7mJ67cuA7Izb/tfFY=
+		</data>
+		<key>btn_replay-hd.png</key>
+		<data>
+		EFdgVFBWuAGaqAouTO4eMe2nwd0=
+		</data>
+		<key>btn_replay.png</key>
+		<data>
+		vmgb5S9i1vRBhnhqjg3JahEQzLI=
+		</data>
+		<key>btn_replayActive-hd.png</key>
+		<data>
+		5j8MLa0kRUlHBaF+TVWrV6WM7jI=
+		</data>
+		<key>btn_replayActive.png</key>
+		<data>
+		zQJ1PkpNY8AQDtNErSKDfnKfWYs=
+		</data>
+		<key>btn_settings.png</key>
+		<data>
+		MxX2fulDK66bkPTvoMJqqi/NT74=
+		</data>
+		<key>btn_settingsActive-hd.png</key>
+		<data>
+		td4BLy/4xJS/WCjnw2BZ3LmBmTk=
+		</data>
+		<key>btn_settingsActive.png</key>
+		<data>
+		625Kkr27ExhAA+ZtQEIMAUpsTxc=
+		</data>
+		<key>btn_store-hd.png</key>
+		<data>
+		uMRXeh4bSar/AxObv6zeUOzXEJI=
+		</data>
+		<key>btn_store.png</key>
+		<data>
+		MpYFSiOtEKulkR7kTPgR5upJUrk=
+		</data>
+		<key>btn_storeActive-hd.png</key>
+		<data>
+		QdparOw4MYb4nCA1sENnhtMPuPM=
+		</data>
+		<key>btn_storeActive.png</key>
+		<data>
+		SdCFn4I/d6+bsZNuEgEaM0t7EJY=
 		</data>
 		<key>buttonLocked_Active-hd.png</key>
 		<data>
@@ -1528,6 +1632,10 @@
 		<data>
 		0Ehu7Oa6miEqjDo2gYVqC6ezzqc=
 		</data>
+		<key>eye.png</key>
+		<data>
+		c7/30PZlRFFW6oqRbgBVjDthcj0=
+		</data>
 		<key>fps_images-color.png</key>
 		<data>
 		bRGKQgEsBRv6I+j4yz9sYJsJI1A=
@@ -1540,6 +1648,22 @@
 		<data>
 		Z7fMiCSEyRoHVReAtHaivn7YQCw=
 		</data>
+		<key>gut_bits01.png</key>
+		<data>
+		T3JwwSQhrnYRssMGmXmjri0L1dU=
+		</data>
+		<key>gut_bits02.png</key>
+		<data>
+		L3GuQhr3S0eQ4dpsDz53UeeJeDs=
+		</data>
+		<key>gut_bits03.png</key>
+		<data>
+		T3JwwSQhrnYRssMGmXmjri0L1dU=
+		</data>
+		<key>gut_bits04.png</key>
+		<data>
+		L3GuQhr3S0eQ4dpsDz53UeeJeDs=
+		</data>
 		<key>hudStars_spritemap-hd.png</key>
 		<data>
 		wvcvClLBH413bhT6hHHE6LzTWWc=
@@ -1551,6 +1675,54 @@
 		<key>iTunesArtwork</key>
 		<data>
 		aUHj5b3DvHdve2xdq/f8Xa45Noo=
+		</data>
+		<key>letter_a-hd.png</key>
+		<data>
+		QKZaSqr8SrvjpZs8Umd0SVaZlaM=
+		</data>
+		<key>letter_a.png</key>
+		<data>
+		07CZqAAfdzOPCpi1dvsSq7bX/Ho=
+		</data>
+		<key>letter_e-hd.png</key>
+		<data>
+		vhxR+9myxjoiS5ZPmXIMABiqgHI=
+		</data>
+		<key>letter_e.png</key>
+		<data>
+		xko/X6uqHQnfmmfsrvZWed7vajQ=
+		</data>
+		<key>letter_exPoint-hd.png</key>
+		<data>
+		VyQXJza9GjwRTUA3FE9xId+dN/I=
+		</data>
+		<key>letter_exPoint.png</key>
+		<data>
+		YQ9wWDw4Wx7inLS39IawPspnT9g=
+		</data>
+		<key>letter_g-hd.png</key>
+		<data>
+		E5UxbXErnXcJgIP6mmv+1sOiY4Q=
+		</data>
+		<key>letter_g.png</key>
+		<data>
+		iY/6tAcKn8YbbhXE2zv2EPc5nDE=
+		</data>
+		<key>letter_r-hd.png</key>
+		<data>
+		D+hQfbJYBQAStbViLfxP011daZk=
+		</data>
+		<key>letter_r.png</key>
+		<data>
+		9pYwPljRZOQJv96pOn/maF1Bkds=
+		</data>
+		<key>letter_t-hd.png</key>
+		<data>
+		LaMpp1BLusLQuQEVkKNm6wi8K5k=
+		</data>
+		<key>letter_t.png</key>
+		<data>
+		Qi4XkcQmaTsSzHezR7f85fc+bO0=
 		</data>
 		<key>levelStar_Left-hd.png</key>
 		<data>
@@ -1615,6 +1787,10 @@
 		<key>lvlSelectDigit_9.png</key>
 		<data>
 		KpG5ODbEPisSU+/FiSSd4Gq4YM0=
+		</data>
+		<key>mouth.png</key>
+		<data>
+		wIsS/zC/MZRZJ2doLFI/trZm2fc=
 		</data>
 		<key>optionsButton_Active-hd.png</key>
 		<data>
@@ -1755,6 +1931,10 @@
 		<key>seg__01_08.png</key>
 		<data>
 		nJqfAmgaMqbiC0ylwvcyHglUZX8=
+		</data>
+		<key>target.png</key>
+		<data>
+		w+yCUSzIHoZ2xs173WPwZPpC61c=
 		</data>
 		<key>test.png</key>
 		<data>

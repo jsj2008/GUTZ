@@ -13,15 +13,29 @@
 #import "BaseScreenLayer.h"
 #import "PlayScreenLayer.h"
 
+#import "ObjectiveChipmunk.h"
+#import "JellyBlob.h"
+
 @interface LevelCompleteScreenLayer : BaseScreenLayer {
     
 	int indLvl;
+	
+	
+	ChipmunkSpace *_space;
+	JellyBlob *_accBlob1;
+	JellyBlob *_accBlob2;
+	JellyBlob *_accBlob3;
 }
 
 
 -(id)initWithLevel:(int)lvl;
 -(void) onBackMenu:(id)sender;
+-(void) onReplayLevel:(id)sender;
 -(void) onNextLevel:(id)sender;
+
+
+-(void) physicsStepper:(ccTime)dt;
+-(void) mobWiggler:(id)sender;
 
 
 @end

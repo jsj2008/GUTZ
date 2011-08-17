@@ -69,7 +69,8 @@ static NSString *borderType = @"borderType";
 -(id) init {
 	NSLog(@"%@.init()", [self class]);
 	
-	if ((self = [super initWithColor:ccc4(255, 255, 255, 255)])) {
+	//if ((self = [super initWithBackround:@"background_play.jpg"])) {
+	if ((self = [super initWithColor:ccc4(231, 68, 68, 255)])) {
 		
 		self.isTouchEnabled = YES;
 		self.isAccelerometerEnabled = YES;
@@ -79,6 +80,8 @@ static NSString *borderType = @"borderType";
 		[[SimpleAudioEngine sharedEngine] preloadEffect:@"debug_finger.wav"];
 		
 		isCleared = NO;
+		
+		arrTouchedEdge = [[NSMutableArray alloc] init];
 		
 		[self chipmunkSetup];
 		[self scaffoldHUD];
@@ -108,16 +111,16 @@ static NSString *borderType = @"borderType";
 	[self addChild: mnuPlayPause];
 	
 	hudStarsSprite = [[LvlStarSprite alloc] init];
-	[hudStarsSprite setPosition:ccp(28, 32)];
+	[hudStarsSprite setPosition:ccp(130, 50)];
 	[self addChild:hudStarsSprite];
 	
-	scoreDisplaySprite = [[ScoreSprite alloc] init];
-	[scoreDisplaySprite setPosition:ccp(55, 450)];
-	[self addChild:scoreDisplaySprite];
+	//scoreDisplaySprite = [[ScoreSprite alloc] init];
+	//[scoreDisplaySprite setPosition:ccp(55, 450)];
+	//[self addChild:scoreDisplaySprite];
 	
-	timeDisplaySprite = [[ElapsedTimeSprite alloc] init];
-	[timeDisplaySprite setPosition:ccp(250, 32)];
-	[self addChild:timeDisplaySprite];
+	//timeDisplaySprite = [[ElapsedTimeSprite alloc] init];
+	//[timeDisplaySprite setPosition:ccp(250, 32)];
+	//[self addChild:timeDisplaySprite];
 	
 	
 	if (kShowDebugMenus)
@@ -145,9 +148,10 @@ static NSString *borderType = @"borderType";
 	_multiGrab = [[ChipmunkMultiGrab alloc] initForSpace:_space withSmoothing:cpfpow(0.8, 60.0) withGrabForce:30000];
 	_multiGrab.layers = GRABABLE_LAYER;
 	
-	[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space] z:100];
+	[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space]];
 	
-	arrGibs = [[NSMutableArray alloc] init];
+	arrGibsShape = [[NSMutableArray alloc] init];
+	arrGibsSprite = [[NSMutableArray alloc] init];
 	
 	arrTargets = [[NSMutableArray alloc] initWithCapacity:2];
 	[arrTargets addObject:@"NO"];
@@ -159,8 +163,8 @@ static NSString *borderType = @"borderType";
 	switch (indLvl) {
 			
 		case 1:
-			goal1Pos = CGPointMake(150, 380);
-			goal2Pos = CGPointMake(150, 160);
+			goal1Pos = CGPointMake(32, 400);
+			goal2Pos = CGPointMake(280, 64);
 			break;
 			
 		case 2:
@@ -169,8 +173,8 @@ static NSString *borderType = @"borderType";
 			break;
 			
 		case 3:
-			goal1Pos = CGPointMake(64, 400);
-			goal2Pos = CGPointMake(300, 64);
+			goal1Pos = CGPointMake(150, 380);
+			goal2Pos = CGPointMake(150, 160);
 			break;
 			
 		default:
@@ -199,14 +203,16 @@ static NSString *borderType = @"borderType";
 	[creatureSprite setScale:0.33f];
 	//[self addChild:creatureSprite];
 	
-	lEyeSprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
-	[lEyeSprite setPosition:cpv(BLOB_X - 8, BLOB_Y - 24)];
-	[self addChild:lEyeSprite];
+	eyeSprite = [CCSprite spriteWithFile:@"eye.png"];
+	[eyeSprite setPosition:cpv(BLOB_X, BLOB_Y - 24)];
+	[eyeSprite setScale:0.33f];
+	[self addChild:eyeSprite];
 	
 	
-	rEyeSprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
-	[rEyeSprite setPosition:cpv(BLOB_X + 8, BLOB_Y - 24)];
-	[self addChild:rEyeSprite];
+	mouthSprite = [CCSprite spriteWithFile:@"mouth.png"];
+	[mouthSprite setPosition:cpv(BLOB_X, BLOB_Y + 24)];
+	[mouthSprite setScale:0.33f];
+	[self addChild:mouthSprite];
 	
 	
 	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:[GoalTarget class] begin:@selector(beginGoalCollision:space:) preSolve:@selector(preSolveGoalCollision:space:) postSolve:@selector(postSolveGoalCollision:space:) separate:@selector(separateGoalCollision:space:)];
@@ -271,7 +277,9 @@ static NSString *borderType = @"borderType";
 	//NSLog(@"separateCollision: [%d]", _cntTargets);
 	
 	if ([[arrTargets objectAtIndex:0] isEqualToString:@"YES"] && [[arrTargets objectAtIndex:1] isEqualToString:@"YES"]) {
-		NSLog(@"GOAL!!!!");
+		NSLog(@"GOAL!!!! [%d]", [arrTouchedEdge count]);
+		
+		//for (int i=0; i<[arrTouchedEdge count]; i++) 
 		//[_blob pop];
 		isCleared = YES;
 		self.isTouchEnabled = NO;
@@ -395,23 +403,32 @@ static NSString *borderType = @"borderType";
 
 -(void)addGib:(id)sender {
 	
-	cpFloat mass = CCRANDOM_0_1() * 2;
 	float fx = (CCRANDOM_0_1() * 32.0f) + 64.0f;
 	float fy = (CCRANDOM_0_1() * 32.0f) + 64.0f;
+	
+	float rad = (CCRANDOM_0_1() * 4) + 1;
+	
+	CCSprite *sprite = [CCSprite spriteWithFile:[NSString stringWithFormat:@"gut_bits0%d.png", (int)rad]];
+	[sprite setScale:0.2f];
+	[sprite setPosition:gibPos];
+	[self addChild:sprite];
 	
 	if (gibPos.x < 100)
 		fx *= -1;
 	
-	ChipmunkBody *body = [_space add:[ChipmunkBody bodyWithMass:mass andMoment:INFINITY]];
+	ChipmunkBody *body = [_space add:[ChipmunkBody bodyWithMass:rad * 0.5f andMoment:INFINITY]];
 	body.pos = cpv(gibPos.x, gibPos.y);
+	[body setTorque:CCRANDOM_0_1() * 16.0f];
 	[body applyImpulse:cpvmult(cpv(fx, fy), 3) offset:cpvzero];
 	
 	
-	ChipmunkShape *shape = [_space add:[ChipmunkCircleShape circleWithBody:body radius:CCRANDOM_0_1() * 5 offset:cpvzero]];
+	
+	ChipmunkShape *shape = [_space add:[ChipmunkCircleShape circleWithBody:body radius:rad offset:cpvzero]];
 	shape.friction = 0.25;
 	shape.elasticity = 0.875;
 	
-	[arrGibs addObject:shape];
+	[arrGibsShape addObject:shape];
+	[arrGibsSprite addObject:sprite];
 }
 
 
@@ -421,8 +438,14 @@ static NSString *borderType = @"borderType";
 	float fx = (CCRANDOM_0_1() * 32.0f) + 64.0f;
 	float fy = (CCRANDOM_0_1() * 32.0f) + 64.0f;
 	
+	CCSprite *sprite = [CCSprite spriteWithFile:[NSString stringWithFormat:@"gut_bits0%d.png", ((int)(CCRANDOM_0_1() * 4) + 1)]];
+	[sprite setScale:0.2f];
+	[sprite setPosition:gibPos];
+	[self addChild:sprite];
+	
 	ChipmunkBody *body = [_space add:[ChipmunkBody bodyWithMass:mass andMoment:INFINITY]];
 	body.pos = cpv(gibPos.x, gibPos.y);
+	[body setTorque:CCRANDOM_0_1() * 16.0f];
 	[body applyImpulse:cpvmult(cpv(fx, fy), 3) offset:cpvzero];
 	
 	
@@ -430,7 +453,8 @@ static NSString *borderType = @"borderType";
 	shape.friction = 0.25;
 	shape.elasticity = 0.875;
 	
-	[arrGibs addObject:shape];
+	[arrGibsShape addObject:shape];
+	[arrGibsSprite addObject:sprite];
 }
 
 - (void)separateWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
@@ -463,10 +487,10 @@ static NSString *borderType = @"borderType";
 	
 	
 	
-	for (int i=0; i<[arrGibs count]; i++) {
-		ChipmunkShape *shape = (ChipmunkShape *)[arrGibs objectAtIndex:i];
-		ccDrawCircle(shape.body.pos, 3, 360, 4, NO);
-	}
+	//for (int i=0; i<[arrGibs count]; i++) {
+	//	ChipmunkShape *shape = (ChipmunkShape *)[arrGibs objectAtIndex:i];
+	//	ccDrawCircle(shape.body.pos, 3, 360, 4, NO);
+	//}
 	
 }
 
@@ -545,21 +569,28 @@ static NSString *borderType = @"borderType";
 	[_blob draw];
 	
 	
-	for (int i=0; i<[arrGibs count]; i++) {
-		ChipmunkShape *shape = (ChipmunkShape *)[arrGibs objectAtIndex:i];
+	for (int i=0; i<[arrGibsShape count]; i++) {
+		ChipmunkShape *shape = (ChipmunkShape *)[arrGibsShape objectAtIndex:i];
+		CCSprite *sprite = (CCSprite *)[arrGibsSprite objectAtIndex:i];
+		
+		
+		[sprite setPosition:shape.body.pos];
+		[sprite setRotation:CC_RADIANS_TO_DEGREES(-shape.body.angle)];
 		
 		if (shape.body.pos.y <= 16){
-			[arrGibs removeObjectAtIndex:i];
+			[arrGibsShape removeObjectAtIndex:i];
+			[arrGibsSprite removeObjectAtIndex:i];
+			
 			[_space remove:shape.body];
 			[_space remove:shape];
+			[self removeChild:sprite cleanup:NO];
 		}
 	}
 	
 	//[creatureSprite setPosition:[_blob posPt]];
 	
-	[lEyeSprite setPosition:cpv([_blob posPt].x - 12, [_blob posPt].y + 24)];
-	[rEyeSprite setPosition:cpv([_blob posPt].x + 12, [_blob posPt].y + 24)];
-	
+	[eyeSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y + 24)];
+	[mouthSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y - 24)];
 }
 
 
@@ -569,19 +600,41 @@ TouchLocation(UITouch *touch) {
 }
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event; {
-	for(UITouch *touch in touches) 
+	for(UITouch *touch in touches) {
 		[_multiGrab beginLocation:TouchLocation(touch)];
-	
+		
+		int ind = [_blob bodyIndexAt:TouchLocation(touch)];
+		
+		if (ind >= 0) {
+			//NSLog(@"PlayScreenLayer.ccTouchesBegan(%d)", ind);
+			[arrTouchedEdge addObject:[NSString stringWithFormat:@"E_%d", ind]];
+		}
+	}
 }
 
 - (void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event; {
-	for(UITouch *touch in touches) 
+	for(UITouch *touch in touches) {
 		[_multiGrab updateLocation:TouchLocation(touch)];
+	}
 }
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event; {
-	for(UITouch *touch in touches) 
+	for(UITouch *touch in touches) {
 		[_multiGrab endLocation:TouchLocation(touch)];
+		
+		
+		int ind = [_blob bodyIndexAt:TouchLocation(touch)];
+		
+		//if (ind >= 0) {
+		//NSLog(@"PlayScreenLayer.ccTouchesEnded(%d)", ind);
+			
+			for (int i=0; i<[arrTouchedEdge count]; i++) {
+				if ([[arrTouchedEdge objectAtIndex:i] isEqualToString:[NSString stringWithFormat:@"E_%d", ind]]) {
+					[arrTouchedEdge removeObjectAtIndex:i];
+				}
+			}
+		//}
+	}
 }
 
 - (void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {	

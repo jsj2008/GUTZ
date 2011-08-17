@@ -14,6 +14,9 @@
 
 #import "ScreenManager.h"
 
+#import "ObjectiveChipmunk.h"
+#import "JellyBlob.h"
+
 
 #define kLVL_NUM_SCALE_MULT 0.4f
 
@@ -22,6 +25,12 @@
 	CCSpriteBatchNode *digitBatchSprite;
 	
 	CGPoint digitSize;
+	
+	ChipmunkSpace *_space;
+	JellyBlob *_accBlob1;
+	JellyBlob *_accBlob2;
+	JellyBlob *_accBlob3;
+	JellyBlob *_accBlob4;
 	
     
 }
@@ -34,5 +43,7 @@
 
 + (void) onPageChange:(int)ind;
 
+-(void) physicsStepper:(ccTime)dt;
+-(void) mobWiggler:(id)sender;
 
 @end

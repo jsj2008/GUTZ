@@ -40,8 +40,6 @@
 	
 	CGPoint *lastTouch;
 	
-	//cpSpace *space;
-	
 	ChipmunkSpace *_space;
 	ChipmunkMultiGrab *_multiGrab;
 	JellyBlob *_blob;
@@ -56,8 +54,8 @@
 	CCSprite *timeDisplaySprite;
 	
 	
-	CCSprite *lEyeSprite;
-	CCSprite *rEyeSprite;
+	CCSprite *eyeSprite;
+	CCSprite *mouthSprite;
 	
 	CCSprite *creatureSprite;
 	
@@ -65,7 +63,9 @@
 	
 	CCParticleSystemPoint *particles;
 	NSMutableArray *arrTargets;
-	NSMutableArray *arrGibs;
+	NSMutableArray *arrGibsShape;
+	NSMutableArray *arrGibsSprite;
+	NSMutableArray *arrTouchedEdge;
 	
 	CCSprite *axisSprite;
 	cpBody *axisBody;

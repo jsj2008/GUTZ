@@ -17,6 +17,8 @@
 	NSArray *_edgeBodies;
 	CGPoint posPt;
 	
+	NSMutableArray *bodies;
+	
 	ChipmunkSimpleMotor *_motor;
 	cpFloat _rate, _torque;
 	cpFloat _control;
@@ -34,6 +36,8 @@
 -(void)wiggleWithForce:(int)index force:(cpFloat)f;
 -(void)pop;
 -(void)pulsate:(CGPoint)pos;
+-(ChipmunkBody *)touchedBodyAt:(CGPoint)pos;
+-(int)bodyIndexAt:(CGPoint)pos;
 
 -(void)draw;
 

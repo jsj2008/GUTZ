@@ -21,16 +21,16 @@
 		_body = [[ChipmunkBody alloc] initWithMass:1 andMoment:INFINITY];
 		_body.pos = pos;
 		
-		_shape = [ChipmunkStaticCircleShape circleWithBody:_body radius:16.0f offset:cpvzero];
+		_shape = [ChipmunkStaticCircleShape circleWithBody:_body radius:RADIUS offset:cpvzero];
 		_shape.elasticity = 0.0f;
 		_shape.friction = 0.0f;		
 		_shape.collisionType = [GoalTarget class];
 		_shape.data = self;
 		
 		
-		_sprite = [CCSprite spriteWithFile:@"debug_node-00.png"];
+		_sprite = [CCSprite spriteWithFile:@"target.png"];
 		[_sprite setPosition:pos];
-		[_sprite setScale:4.0];
+		[_sprite setScale:0.33];
 		
 		
 		chipmunkObjects = [ChipmunkObjectFlatten(_shape, nil) retain];

@@ -31,7 +31,7 @@
 		
 		int zPos = 0;
 		
-		for (int i=0; i<4; i++) {
+		for (int i=0; i<3; i++) {
 			NSNumber *ind = [[NSNumber alloc] initWithInt:i];
 			NSNumber *isFilled = [[NSNumber alloc] initWithInt:0];;
 			CGPoint ptPos = CGPointMake(i * starSize.x, 0);
@@ -61,7 +61,7 @@
 		}
 		
 		[self addChild:starsBatchSprite z:0 tag:666];
-		[self schedule: @selector(frameAnimator:) interval:((CCRANDOM_0_1() * 0.5f) - 0.25f) + 0.25f];
+		//[self schedule: @selector(frameAnimator:) interval:((CCRANDOM_0_1() * 0.5f) - 0.25f) + 0.25f];
 		
 	}
 	

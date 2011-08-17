@@ -42,7 +42,7 @@
 		
 		//[_polyVerts initWithArray: vt];
 		
-		//ChipmunkShape *centralShape = [ChipmunkPolyShape polyWithBody:_centralBody count:count verts:vt offset:cpvzero];		
+		//ChipmunkShape *centralShape = [ChipmunkPolyShape polyWithBody:_centralBody count:count verts:vt offset:cpvzero];
 		ChipmunkShape *centralShape = [ChipmunkCircleShape circleWithBody:_centralBody radius:radius offset:cpvzero];
 		[set addObject:centralShape];
 		centralShape.group = self;
@@ -54,11 +54,11 @@
 		cpFloat edgeDistance = 2.0 * radius * cpfsin(M_PI / (cpFloat)count);
 		_edgeRadius = edgeDistance * 1.5;
 		
-		//cpFloat squishCoef = 0.7;
+		cpFloat squishCoef = 0.7;
 		cpFloat springStiffness = 40;
 		cpFloat springDamping = 1;
 		
-		NSMutableArray *bodies = [[NSMutableArray alloc] initWithCapacity:count];
+		bodies = [[NSMutableArray alloc] initWithCapacity:count];
 		_edgeBodies = bodies;
 		
 		for(int i=0; i<count; i++){
@@ -78,7 +78,7 @@
 			shape.layers = GRABABLE_LAYER;
 			shape.collisionType = [JellyBlob class];
 			
-			//[set addObject:[ChipmunkSlideJoint slideJointWithBodyA:_centralBody bodyB:body anchr1:offset anchr2:cpvzero min:0 max:radius*squishCoef]];
+			//[set addObject:[ChipmunkSlideJoint slideJointWithBodyA:_centralBody bodyB:body anchr1:cpvzero anchr2:cpvzero min:0 max:radius*squishCoef]];
 			
 			cpVect springOffset = cpvmult(slope, radius + _edgeRadius);
 			[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:_centralBody bodyB:body anchr1:springOffset anchr2:cpvzero restLength:0 stiffness:springStiffness damping:springDamping]];
@@ -125,6 +125,43 @@
 	return (self);
 }
 
+
+-(ChipmunkBody *)touchedBodyAt:(CGPoint)pos {
+	
+	ChipmunkBody *body;
+	
+	
+	for (int i=0; i<[bodies count]; i++) {
+		body = [bodies objectAtIndex:i];
+		if (cpvnear(body.pos, pos, 15)) {
+			
+			NSLog(@"JellyBlob.body[%d]", i);
+			
+			return (body);
+		}
+	}
+	
+	
+	return (body);
+}
+
+
+-(int)bodyIndexAt:(CGPoint)pos {
+	
+	for (int i=0; i<[bodies count]; i++) {
+		ChipmunkBody *body = [bodies objectAtIndex:i];
+		if (cpvnear(body.pos, pos, 15)) {
+			
+			NSLog(@"JellyBlob.bodyIndexAt[%d]", i);
+			
+			return (i);
+		}
+	}
+	
+	
+	return (-1);
+}
+
 -(void)setControl:(cpFloat)value {
 	_motor.maxForce = (value == 0.0 ? 0.0 : _torque);
 	_motor.rate = _rate*value;
@@ -159,8 +196,8 @@
 	//glEnable(GL_POINT_SMOOTH);
 	glEnable(GL_LINE_SMOOTH);
 	
-	//glColor4f(0.40f, 0.80f, 0.87f, 1.00f);
-	glColor4f(0.0f, 0.1f, 0.6f, 1.00f);
+	glColor4f(0.40f, 0.85f, 1.00f, 1.00f);
+	//glColor4f(0.0f, 0.1f, 0.6f, 1.00f);
 	ccDrawPoly(verts, _count, YES);
 	
 	//glLineWidth(3.0f);

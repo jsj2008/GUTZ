@@ -12,9 +12,13 @@
 
 #import "LevelSelectScreenLayer.h"
 #import "LvlPagesMenuSprite.h"
+#import "ChipmunkDebugNode.h"
 
 #import "DigitUtils.h"
+#import "RandUtils.h"
 
+
+static NSString *borderType = @"borderType";
 
 
 @implementation LevelSelectScreenLayer
@@ -22,9 +26,10 @@
 
 -(id) init {
     NSLog(@"%@.init()", [self class]);
-    
+   CGSize wins = [[CCDirector sharedDirector] winSize];
+	
 	//self = [super init];
-	self = [super initWithBackround:@"background_default.jpg"];
+	self = [super initWithBackround:@"background_main.jpg"];
     
     //CCSprite *bg = [CCSprite spriteWithFile: @"background_default.jpg"];
 	//bg.position = ccp(160, 240);
@@ -34,6 +39,31 @@
 	digitSize = CGPointMake(22, 32);
 	
 	
+	cpInitChipmunk();
+	
+	_space = [[ChipmunkSpace alloc] init];
+	_space.gravity = cpv(0, 0);
+	
+	[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space]];
+	
+	CGRect rect = CGRectMake(0, 0, wins.width, wins.height);
+	[_space addBounds:rect thickness:532 elasticity:1 friction:1 layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:borderType];
+	
+	
+	_accBlob1 = [[JellyBlob alloc] initWithPos:cpv(64, 100) radius:32 count:16];
+	[_space add:_accBlob1];
+	
+	_accBlob2 = [[JellyBlob alloc] initWithPos:cpv(160, 120) radius:16 count:8];
+	[_space add:_accBlob2];
+	
+	_accBlob3 = [[JellyBlob alloc] initWithPos:cpv(240, 240) radius:24 count:12];
+	[_space add:_accBlob3];
+	
+	_accBlob4 = [[JellyBlob alloc] initWithPos:cpv(240, 32) radius:8 count:8];
+	[_space add:_accBlob4];
+	
+	[self schedule:@selector(physicsStepper:)];
+	[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
 	/*
 	 AchievementsPlistParser* plistAchievments = [[AchievementsPlistParser alloc] init];
 	 NSLog(@"plistAchievments.dicTopLvl:[%d]", [plistAchievments arrItmEntries]);
@@ -161,5 +191,41 @@
 
 +(void) onPageChange:(int)ind {
     NSLog(@"LevelSelectScreenLayer.onPageChange(%d)", ind);
+}
+
+
+-(void) physicsStepper: (ccTime) dt {
+	//NSLog(@"PlayScreenLayer.physicsStepper(%0.000000f)", [[CCDirector sharedDirector] getFPS]);
+	
+	[_space step:1.0 / 60.0];
+	[_accBlob1 draw];
+}
+
+
+-(void) mobWiggler:(id)sender {
+	
+	cpFloat maxForce = 4.0f;
+	
+	cpFloat rndForce = CCRANDOM_0_1() * maxForce;
+	
+	
+	switch (((int)CCRANDOM_0_1() * 4)) {
+		case 0:
+			[_accBlob1 wiggleWithForce:[[RandUtils singleton]randIndex:32] force:rndForce];
+			break;
+			
+		case 1:
+			[_accBlob2 wiggleWithForce:[[RandUtils singleton]randIndex:16] force:rndForce];
+			break;
+			
+		case 2:
+			[_accBlob3 wiggleWithForce:[[RandUtils singleton]randIndex:24] force:rndForce];
+			break;
+			
+		case 3:
+			[_accBlob4 wiggleWithForce:[[RandUtils singleton]randIndex:8] force:rndForce];
+			break;
+	}
+	
 }
 @end

@@ -12,7 +12,7 @@
 #import "ObjectiveChipmunk.h"
 
 //#define LINE_COLOR 0.0f, 0.0f, 0.0f
-#define LINE_COLOR 0.0f, 0.1f, 0.6f
+#define LINE_COLOR 0.0f, 0.86f, 1.0f
 
 
 @interface ChipmunkDebugNode : CCNode {

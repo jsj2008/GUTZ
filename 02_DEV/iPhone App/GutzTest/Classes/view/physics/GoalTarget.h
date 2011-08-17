@@ -13,6 +13,7 @@
 
 #import "BasePhysicsSprite.h"
 
+#define RADIUS 12.0f
 
 @interface GoalTarget : BasePhysicsSprite <ChipmunkObject> {
 	
