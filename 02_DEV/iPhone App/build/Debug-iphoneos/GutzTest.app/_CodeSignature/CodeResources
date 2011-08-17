@@ -6,15 +6,11 @@
 	<dict>
 		<key>.svn/all-wcprops</key>
 		<data>
-		MeLv9wHO9C0Sf4NVptOrXS9zkOs=
+		wwqX+Ym3MAA9qkpLFVOr4g8OzmE=
 		</data>
 		<key>.svn/entries</key>
 		<data>
-		IUuIAX6rUPFyH1dlmqchBvegEYI=
-		</data>
-		<key>.svn/lock</key>
-		<data>
-		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+		krPRiFD9geMqqF1K6ZP2PsX8Sis=
 		</data>
 		<key>.svn/prop-base/Achievements.plist.svn-base</key>
 		<data>
@@ -29,6 +25,10 @@
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
 		</data>
 		<key>.svn/prop-base/Default.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/Default@2x.png.svn-base</key>
 		<data>
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
 		</data>
@@ -124,11 +124,111 @@
 		<data>
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
 		</data>
+		<key>.svn/prop-base/background_play.jpg.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
 		<key>.svn/prop-base/background_white-hd.jpg.svn-base</key>
 		<data>
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
 		</data>
 		<key>.svn/prop-base/background_white.jpg.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_Settings-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_about-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_about.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_aboutActive-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_aboutActive.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_next-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_next.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_nextActive-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_nextActive.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_play-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_play.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_playActive-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_playActive.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_replay-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_replay.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_replayActive-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_replayActive.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_settings.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_settingsActive-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_settingsActive.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_store-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_store.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_storeActive-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/btn_storeActive.png.svn-base</key>
 		<data>
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
 		</data>
@@ -348,6 +448,10 @@
 		<data>
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
 		</data>
+		<key>.svn/prop-base/eye.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
 		<key>.svn/prop-base/fps_images-color.png.svn-base</key>
 		<data>
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
@@ -360,6 +464,22 @@
 		<data>
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
 		</data>
+		<key>.svn/prop-base/gut_bits01.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/gut_bits02.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/gut_bits03.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/gut_bits04.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
 		<key>.svn/prop-base/hudStars_spritemap-hd.png.svn-base</key>
 		<data>
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
@@ -369,6 +489,54 @@
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
 		</data>
 		<key>.svn/prop-base/iTunesArtwork.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/letter_a-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/letter_a.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/letter_e-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/letter_e.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/letter_exPoint-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/letter_exPoint.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/letter_g-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/letter_g.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/letter_r-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/letter_r.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/letter_t-hd.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/letter_t.png.svn-base</key>
 		<data>
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
 		</data>
@@ -433,6 +601,10 @@
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
 		</data>
 		<key>.svn/prop-base/lvlSelectDigit_9.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/mouth.png.svn-base</key>
 		<data>
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
 		</data>
@@ -576,6 +748,14 @@
 		<data>
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
 		</data>
+		<key>.svn/prop-base/target.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
+		<key>.svn/prop-base/test.png.svn-base</key>
+		<data>
+		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
+		</data>
 		<key>.svn/prop-base/timeDigits_spritemap-hd.png.svn-base</key>
 		<data>
 		oChJQ/jd/mnO7JCDPmbZa99Kl/A=
@@ -598,11 +778,15 @@
 		</data>
 		<key>.svn/text-base/Default.png.svn-base</key>
 		<data>
-		GMnDY+7MpXsYdu29GbRE4rbJ1RM=
+		tCAAHw5d0ndTHlV+bSdpJcscSYA=
+		</data>
+		<key>.svn/text-base/Default@2x.png.svn-base</key>
+		<data>
+		/UISFbnK6TJa0MeOW/vV3aGV+I4=
 		</data>
 		<key>.svn/text-base/GutzTest.svn-base</key>
 		<data>
-		JjJPbQAxXsI7XenB0UoHn5lf8yY=
+		efBgItS0v3HGV/v+xoID7Nm/jvQ=
 		</data>
 		<key>.svn/text-base/HUD_footerBG-hd.png.svn-base</key>
 		<data>
@@ -646,27 +830,27 @@
 		</data>
 		<key>.svn/text-base/Icon-72.png.svn-base</key>
 		<data>
-		zq+xjjwZvNdJ7UTdi45880bbTgk=
+		otsl7eF+NyXfrFajjvbTDOsIeYw=
 		</data>
 		<key>.svn/text-base/Icon-Small-50.png.svn-base</key>
 		<data>
-		I3heJBZgS3Tt3eiz+ojLPu2Xkio=
+		1EuToLtaS36jZ510hRq+4dJoizo=
 		</data>
 		<key>.svn/text-base/Icon-Small.png.svn-base</key>
 		<data>
-		aLRZEJagacvgKgCBeoUcYxATatc=
+		Qkb8QSLM7kn2yzKN1SpMXf+xp7o=
 		</data>
 		<key>.svn/text-base/Icon-Small@2x.png.svn-base</key>
 		<data>
-		pNXzmdNkbjee/jV/4lmVUonH5Ic=
+		s4C4PKUDFTpp4e2WehXEkH72G4k=
 		</data>
 		<key>.svn/text-base/Icon.png.svn-base</key>
 		<data>
-		vXVKVH+Wgg4QpjKFwBxIIdlE6ps=
+		cODJO6cTrEqY5vjnAPr/De4TwnY=
 		</data>
 		<key>.svn/text-base/Icon@2x.png.svn-base</key>
 		<data>
-		2cQwcj4VIP/rRJdUoMqmQHzdKwQ=
+		74yQRJR78jAy2hMmGflCwzOHKU4=
 		</data>
 		<key>.svn/text-base/LICENSE.txt.svn-base</key>
 		<data>
@@ -706,11 +890,15 @@
 		</data>
 		<key>.svn/text-base/background_main-hd.jpg.svn-base</key>
 		<data>
-		bS3/K7oFpYzxPgEw8ugdolFoJGo=
+		FZ534Tgg6pkUniTj+luHcqJy1g8=
 		</data>
 		<key>.svn/text-base/background_main.jpg.svn-base</key>
 		<data>
-		wgoeOV9/Pcf0XWjrKuIPQ1QanhQ=
+		2oy/io22hest6Tj3jhKdP/qbVQU=
+		</data>
+		<key>.svn/text-base/background_play.jpg.svn-base</key>
+		<data>
+		U8xr5TouJC8BRHzDu2xriAHvKrg=
 		</data>
 		<key>.svn/text-base/background_white-hd.jpg.svn-base</key>
 		<data>
@@ -719,6 +907,102 @@
 		<key>.svn/text-base/background_white.jpg.svn-base</key>
 		<data>
 		MClh3zkDaPp5n0GUb9OEwJWXqFc=
+		</data>
+		<key>.svn/text-base/btn_Settings-hd.png.svn-base</key>
+		<data>
+		rvGZXRY3IZF+IatiRE5emuQBWoY=
+		</data>
+		<key>.svn/text-base/btn_about-hd.png.svn-base</key>
+		<data>
+		v2Xkw5yiDbdHKJpLeCJ4PUfcvGU=
+		</data>
+		<key>.svn/text-base/btn_about.png.svn-base</key>
+		<data>
+		y1rgrOy22WvHwTOwbh6lx9oaLuI=
+		</data>
+		<key>.svn/text-base/btn_aboutActive-hd.png.svn-base</key>
+		<data>
+		MD26b0fP0VgWcttA8h4gG6dds70=
+		</data>
+		<key>.svn/text-base/btn_aboutActive.png.svn-base</key>
+		<data>
+		j45gqIJTGwQxm/FEGZXKqoGODvA=
+		</data>
+		<key>.svn/text-base/btn_next-hd.png.svn-base</key>
+		<data>
+		/7II5KuzZcsdq/a7SG+VnxOqGuY=
+		</data>
+		<key>.svn/text-base/btn_next.png.svn-base</key>
+		<data>
+		fQS0Tw3j89+N6iL5Zi14omtSBVI=
+		</data>
+		<key>.svn/text-base/btn_nextActive-hd.png.svn-base</key>
+		<data>
+		jGd3ggy6VcMsqaIqedJmMnvNcz8=
+		</data>
+		<key>.svn/text-base/btn_nextActive.png.svn-base</key>
+		<data>
+		6Wo7r+JYm7FCiZm6kl7U9XIiSws=
+		</data>
+		<key>.svn/text-base/btn_play-hd.png.svn-base</key>
+		<data>
+		cxqB8Q3j+WNbZ1PBvuEXe5Z8yw8=
+		</data>
+		<key>.svn/text-base/btn_play.png.svn-base</key>
+		<data>
+		w77szhHzxRCvnM5I8zjABxZin10=
+		</data>
+		<key>.svn/text-base/btn_playActive-hd.png.svn-base</key>
+		<data>
+		C4BSpcLVosDToFWcPqnPq7NzFAs=
+		</data>
+		<key>.svn/text-base/btn_playActive.png.svn-base</key>
+		<data>
+		nwCBsSnUBD7mJ67cuA7Izb/tfFY=
+		</data>
+		<key>.svn/text-base/btn_replay-hd.png.svn-base</key>
+		<data>
+		EFdgVFBWuAGaqAouTO4eMe2nwd0=
+		</data>
+		<key>.svn/text-base/btn_replay.png.svn-base</key>
+		<data>
+		vmgb5S9i1vRBhnhqjg3JahEQzLI=
+		</data>
+		<key>.svn/text-base/btn_replayActive-hd.png.svn-base</key>
+		<data>
+		5j8MLa0kRUlHBaF+TVWrV6WM7jI=
+		</data>
+		<key>.svn/text-base/btn_replayActive.png.svn-base</key>
+		<data>
+		zQJ1PkpNY8AQDtNErSKDfnKfWYs=
+		</data>
+		<key>.svn/text-base/btn_settings.png.svn-base</key>
+		<data>
+		MxX2fulDK66bkPTvoMJqqi/NT74=
+		</data>
+		<key>.svn/text-base/btn_settingsActive-hd.png.svn-base</key>
+		<data>
+		td4BLy/4xJS/WCjnw2BZ3LmBmTk=
+		</data>
+		<key>.svn/text-base/btn_settingsActive.png.svn-base</key>
+		<data>
+		625Kkr27ExhAA+ZtQEIMAUpsTxc=
+		</data>
+		<key>.svn/text-base/btn_store-hd.png.svn-base</key>
+		<data>
+		uMRXeh4bSar/AxObv6zeUOzXEJI=
+		</data>
+		<key>.svn/text-base/btn_store.png.svn-base</key>
+		<data>
+		MpYFSiOtEKulkR7kTPgR5upJUrk=
+		</data>
+		<key>.svn/text-base/btn_storeActive-hd.png.svn-base</key>
+		<data>
+		QdparOw4MYb4nCA1sENnhtMPuPM=
+		</data>
+		<key>.svn/text-base/btn_storeActive.png.svn-base</key>
+		<data>
+		SdCFn4I/d6+bsZNuEgEaM0t7EJY=
 		</data>
 		<key>.svn/text-base/buttonLocked_Active-hd.png.svn-base</key>
 		<data>
@@ -944,6 +1228,10 @@
 		<data>
 		0Ehu7Oa6miEqjDo2gYVqC6ezzqc=
 		</data>
+		<key>.svn/text-base/eye.png.svn-base</key>
+		<data>
+		c7/30PZlRFFW6oqRbgBVjDthcj0=
+		</data>
 		<key>.svn/text-base/fps_images-color.png.svn-base</key>
 		<data>
 		bRGKQgEsBRv6I+j4yz9sYJsJI1A=
@@ -956,6 +1244,22 @@
 		<data>
 		Z7fMiCSEyRoHVReAtHaivn7YQCw=
 		</data>
+		<key>.svn/text-base/gut_bits01.png.svn-base</key>
+		<data>
+		T3JwwSQhrnYRssMGmXmjri0L1dU=
+		</data>
+		<key>.svn/text-base/gut_bits02.png.svn-base</key>
+		<data>
+		L3GuQhr3S0eQ4dpsDz53UeeJeDs=
+		</data>
+		<key>.svn/text-base/gut_bits03.png.svn-base</key>
+		<data>
+		T3JwwSQhrnYRssMGmXmjri0L1dU=
+		</data>
+		<key>.svn/text-base/gut_bits04.png.svn-base</key>
+		<data>
+		L3GuQhr3S0eQ4dpsDz53UeeJeDs=
+		</data>
 		<key>.svn/text-base/hudStars_spritemap-hd.png.svn-base</key>
 		<data>
 		wvcvClLBH413bhT6hHHE6LzTWWc=
@@ -967,6 +1271,54 @@
 		<key>.svn/text-base/iTunesArtwork.svn-base</key>
 		<data>
 		aUHj5b3DvHdve2xdq/f8Xa45Noo=
+		</data>
+		<key>.svn/text-base/letter_a-hd.png.svn-base</key>
+		<data>
+		QKZaSqr8SrvjpZs8Umd0SVaZlaM=
+		</data>
+		<key>.svn/text-base/letter_a.png.svn-base</key>
+		<data>
+		07CZqAAfdzOPCpi1dvsSq7bX/Ho=
+		</data>
+		<key>.svn/text-base/letter_e-hd.png.svn-base</key>
+		<data>
+		vhxR+9myxjoiS5ZPmXIMABiqgHI=
+		</data>
+		<key>.svn/text-base/letter_e.png.svn-base</key>
+		<data>
+		xko/X6uqHQnfmmfsrvZWed7vajQ=
+		</data>
+		<key>.svn/text-base/letter_exPoint-hd.png.svn-base</key>
+		<data>
+		VyQXJza9GjwRTUA3FE9xId+dN/I=
+		</data>
+		<key>.svn/text-base/letter_exPoint.png.svn-base</key>
+		<data>
+		YQ9wWDw4Wx7inLS39IawPspnT9g=
+		</data>
+		<key>.svn/text-base/letter_g-hd.png.svn-base</key>
+		<data>
+		E5UxbXErnXcJgIP6mmv+1sOiY4Q=
+		</data>
+		<key>.svn/text-base/letter_g.png.svn-base</key>
+		<data>
+		iY/6tAcKn8YbbhXE2zv2EPc5nDE=
+		</data>
+		<key>.svn/text-base/letter_r-hd.png.svn-base</key>
+		<data>
+		D+hQfbJYBQAStbViLfxP011daZk=
+		</data>
+		<key>.svn/text-base/letter_r.png.svn-base</key>
+		<data>
+		9pYwPljRZOQJv96pOn/maF1Bkds=
+		</data>
+		<key>.svn/text-base/letter_t-hd.png.svn-base</key>
+		<data>
+		LaMpp1BLusLQuQEVkKNm6wi8K5k=
+		</data>
+		<key>.svn/text-base/letter_t.png.svn-base</key>
+		<data>
+		Qi4XkcQmaTsSzHezR7f85fc+bO0=
 		</data>
 		<key>.svn/text-base/levelStar_Left-hd.png.svn-base</key>
 		<data>
@@ -1031,6 +1383,10 @@
 		<key>.svn/text-base/lvlSelectDigit_9.png.svn-base</key>
 		<data>
 		KpG5ODbEPisSU+/FiSSd4Gq4YM0=
+		</data>
+		<key>.svn/text-base/mouth.png.svn-base</key>
+		<data>
+		wIsS/zC/MZRZJ2doLFI/trZm2fc=
 		</data>
 		<key>.svn/text-base/optionsButton_Active-hd.png.svn-base</key>
 		<data>
@@ -1172,6 +1528,14 @@
 		<data>
 		nJqfAmgaMqbiC0ylwvcyHglUZX8=
 		</data>
+		<key>.svn/text-base/target.png.svn-base</key>
+		<data>
+		w+yCUSzIHoZ2xs173WPwZPpC61c=
+		</data>
+		<key>.svn/text-base/test.png.svn-base</key>
+		<data>
+		vtA69TRx1hYAzwH9LB/NaFC6OmI=
+		</data>
 		<key>.svn/text-base/timeDigits_spritemap-hd.png.svn-base</key>
 		<data>
 		d9X7nu1j3htFZ5bi31lb89iCmtg=
@@ -1179,42 +1543,6 @@
 		<key>.svn/text-base/timeDigits_spritemap.png.svn-base</key>
 		<data>
 		8qljya6jfgisPdSOImugH+OBSoQ=
-		</data>
-		<key>.svn/tmp/text-base/Default.png.svn-base</key>
-		<data>
-		tCAAHw5d0ndTHlV+bSdpJcscSYA=
-		</data>
-		<key>.svn/tmp/text-base/GutzTest.svn-base</key>
-		<data>
-		efBgItS0v3HGV/v+xoID7Nm/jvQ=
-		</data>
-		<key>.svn/tmp/text-base/Icon-72.png.svn-base</key>
-		<data>
-		otsl7eF+NyXfrFajjvbTDOsIeYw=
-		</data>
-		<key>.svn/tmp/text-base/Icon-Small-50.png.svn-base</key>
-		<data>
-		1EuToLtaS36jZ510hRq+4dJoizo=
-		</data>
-		<key>.svn/tmp/text-base/Icon-Small.png.svn-base</key>
-		<data>
-		Qkb8QSLM7kn2yzKN1SpMXf+xp7o=
-		</data>
-		<key>.svn/tmp/text-base/Icon-Small@2x.png.svn-base</key>
-		<data>
-		s4C4PKUDFTpp4e2WehXEkH72G4k=
-		</data>
-		<key>.svn/tmp/text-base/Icon.png.svn-base</key>
-		<data>
-		cODJO6cTrEqY5vjnAPr/De4TwnY=
-		</data>
-		<key>.svn/tmp/text-base/Icon@2x.png.svn-base</key>
-		<data>
-		74yQRJR78jAy2hMmGflCwzOHKU4=
-		</data>
-		<key>.svn/tmp/text-base/background_main.jpg.svn-base</key>
-		<data>
-		2oy/io22hest6Tj3jhKdP/qbVQU=
 		</data>
 		<key>Achievements.plist</key>
 		<data>
@@ -1351,6 +1679,22 @@
 		<key>background_white.jpg</key>
 		<data>
 		MClh3zkDaPp5n0GUb9OEwJWXqFc=
+		</data>
+		<key>blocker-hd.png</key>
+		<data>
+		J3F18NJLo7mYCUa3vPPjGMLflbI=
+		</data>
+		<key>blocker.png</key>
+		<data>
+		tf5GA/n7NaWKjtL9+sEu5t2C7OU=
+		</data>
+		<key>blocker_B_-hd.png</key>
+		<data>
+		/1DReyiOtCWiEV4bpz7KFq3z0Uw=
+		</data>
+		<key>blocker_B_.png</key>
+		<data>
+		fGRAaClr7MgHQXNCTk2cqURaVtU=
 		</data>
 		<key>btn_Settings-hd.png</key>
 		<data>

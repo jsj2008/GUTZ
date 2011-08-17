@@ -110,9 +110,9 @@ static NSString *borderType = @"borderType";
 	[mnuPlayPause alignItemsVerticallyWithPadding: 20.0f];
 	[self addChild: mnuPlayPause];
 	
-	hudStarsSprite = [[LvlStarSprite alloc] init];
-	[hudStarsSprite setPosition:ccp(130, 50)];
-	[self addChild:hudStarsSprite];
+	//hudStarsSprite = [[LvlStarSprite alloc] init];
+	//[hudStarsSprite setPosition:ccp(130, 50)];
+	//[self addChild:hudStarsSprite];
 	
 	//scoreDisplaySprite = [[ScoreSprite alloc] init];
 	//[scoreDisplaySprite setPosition:ccp(55, 450)];
@@ -148,7 +148,7 @@ static NSString *borderType = @"borderType";
 	_multiGrab = [[ChipmunkMultiGrab alloc] initForSpace:_space withSmoothing:cpfpow(0.8, 60.0) withGrabForce:30000];
 	_multiGrab.layers = GRABABLE_LAYER;
 	
-	[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space]];
+	[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space] z:0 tag:666];
 	
 	arrGibsShape = [[NSMutableArray alloc] init];
 	arrGibsSprite = [[NSMutableArray alloc] init];
@@ -163,23 +163,23 @@ static NSString *borderType = @"borderType";
 	switch (indLvl) {
 			
 		case 1:
-			goal1Pos = CGPointMake(32, 400);
-			goal2Pos = CGPointMake(280, 64);
+			goal1Pos = CGPointMake(32, 420);
+			goal2Pos = CGPointMake(280, 50);
 			break;
 			
 		case 2:
-			goal1Pos = CGPointMake(64, 260);
-			goal2Pos = CGPointMake(260, 260);
+			goal1Pos = CGPointMake(32, 400);
+			goal2Pos = CGPointMake(32, 50);
 			break;
 			
 		case 3:
-			goal1Pos = CGPointMake(150, 380);
-			goal2Pos = CGPointMake(150, 160);
+			goal1Pos = CGPointMake(160, 420);
+			goal2Pos = CGPointMake(160, 50);
 			break;
 			
 		default:
-			goal1Pos = CGPointMake(150, 380);
-			goal2Pos = CGPointMake(150, 160);
+			goal1Pos = CGPointMake(32, 420);
+			goal2Pos = CGPointMake(280, 50);
 			indLvl = 1;
 			break;
 	}
@@ -194,6 +194,57 @@ static NSString *borderType = @"borderType";
 	goalTarget2.ind = 1;
 	[_space add:goalTarget2];
 	[self addChild:goalTarget2._sprite];
+	
+	
+	cpFloat width = 194;
+	cpFloat height = 39;
+	
+	
+	if (indLvl == 2) {
+		width = 194;
+		height = 39;
+		
+		ChipmunkBody *body = [ChipmunkBody bodyWithMass:INFINITY andMoment:INFINITY];
+		body.pos = cpv(100, 280);
+		
+		CCSprite *sprite = [CCSprite spriteWithFile:@"blocker.png"];
+		[sprite setPosition:body.pos];
+		[self addChild:sprite];
+		
+		ChipmunkStaticPolyShape *shape = [_space add:[ChipmunkStaticPolyShape boxWithBody:body width:width height:height]];
+		shape.friction = 0.9;
+		shape.elasticity = 0.1;
+		shape.data = sprite;
+		
+	} else if (indLvl == 3) {
+		width = 108;
+		height = 39;
+		
+		ChipmunkBody *body1 = [ChipmunkBody bodyWithMass:INFINITY andMoment:INFINITY];
+		body1.pos = cpv(160, 320);
+		
+		CCSprite *sprite1 = [CCSprite spriteWithFile:@"blocker_B_.png"];
+		[sprite1 setPosition:body1.pos];
+		[self addChild:sprite1];
+		
+		ChipmunkStaticPolyShape *shape1 = [_space add:[ChipmunkStaticPolyShape boxWithBody:body1 width:width height:height]];
+		shape1.friction = 0.9;
+		shape1.elasticity = 0.1;
+		shape1.data = sprite1;
+		
+		
+		ChipmunkBody *body2 = [ChipmunkBody bodyWithMass:INFINITY andMoment:INFINITY];
+		body2.pos = cpv(160, 140);
+		
+		CCSprite *sprite2 = [CCSprite spriteWithFile:@"blocker_B_.png"];
+		[sprite2 setPosition:body2.pos];
+		[self addChild:sprite2];
+		
+		ChipmunkStaticPolyShape *shape2 = [_space add:[ChipmunkStaticPolyShape boxWithBody:body2 width:width height:height]];
+		shape2.friction = 0.9;
+		shape2.elasticity = 0.1;
+		shape2.data = sprite2;
+	}
 	
 	_blob = [[JellyBlob alloc] initWithPos:cpv(BLOB_X, BLOB_Y) radius:BLOB_RADIUS count:BLOB_SEGS];
 	[_space add:_blob];
@@ -311,6 +362,8 @@ static NSString *borderType = @"borderType";
 	//[_space addPostStepRemoval:goalTarget2];
 	//[_space addPostStepRemoval:_blob];
 	
+	[self removeChildByTag:666 cleanup:NO];
+	
 	
 	for (int i=0; i<((int)CCRANDOM_0_1()*16)+32; i++) {
 		[self addGib:nil];
@@ -364,9 +417,11 @@ static NSString *borderType = @"borderType";
 	[derp4Sprite runAction:[CCEaseElasticInOut actionWithAction:[scale4Action copy] period:0.7f]];
 	[derp4Sprite runAction:[CCSequence actions:[CCEaseIn actionWithAction:[center4Action copy] rate:0.33f], [CCEaseOut actionWithAction:[move4Action copy] rate:0.25f], [dieAction copy], nil]];
 	
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"debug_redmag.wav"];
+	[self setColor:ccc3(0, 0, 0)];
 	
-	
-	[self performSelector:@selector(onLevelComplete:) withObject:self afterDelay:2];
+	[self performSelector:@selector(onLevelComplete:) withObject:self afterDelay:1];
 	//[self onLevelComplete:self];
 	
 }
@@ -416,7 +471,7 @@ static NSString *borderType = @"borderType";
 	if (gibPos.x < 100)
 		fx *= -1;
 	
-	ChipmunkBody *body = [_space add:[ChipmunkBody bodyWithMass:rad * 0.5f andMoment:INFINITY]];
+	ChipmunkBody *body = [_space add:[ChipmunkBody bodyWithMass:rad * 0.33f andMoment:INFINITY]];
 	body.pos = cpv(gibPos.x, gibPos.y);
 	[body setTorque:CCRANDOM_0_1() * 16.0f];
 	[body applyImpulse:cpvmult(cpv(fx, fy), 3) offset:cpvzero];
@@ -575,7 +630,7 @@ static NSString *borderType = @"borderType";
 		
 		
 		[sprite setPosition:shape.body.pos];
-		[sprite setRotation:CC_RADIANS_TO_DEGREES(-shape.body.angle)];
+		[sprite setRotation:-shape.body.angle];
 		
 		if (shape.body.pos.y <= 16){
 			[arrGibsShape removeObjectAtIndex:i];

@@ -598,6 +598,10 @@
 		4CEA238F13FB5C21009D1198 /* letter_t-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA238D13FB5C21009D1198 /* letter_t-hd.png */; };
 		4CEA239013FB5C21009D1198 /* letter_t.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA238E13FB5C21009D1198 /* letter_t.png */; };
 		4CEA239213FB5D18009D1198 /* btn_replayActive-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA239113FB5D18009D1198 /* btn_replayActive-hd.png */; };
+		4CEA239713FB76BC009D1198 /* blocker_B_-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA239313FB76BC009D1198 /* blocker_B_-hd.png */; };
+		4CEA239813FB76BC009D1198 /* blocker_B_.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA239413FB76BC009D1198 /* blocker_B_.png */; };
+		4CEA239913FB76BC009D1198 /* blocker-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA239513FB76BC009D1198 /* blocker-hd.png */; };
+		4CEA239A13FB76BC009D1198 /* blocker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA239613FB76BC009D1198 /* blocker.png */; };
 		4CF7952213F34C0800CD5535 /* LevelData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CF7952113F34C0800CD5535 /* LevelData.plist */; };
 		4CF7952613F378DA00CD5535 /* LevelDataPlistParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF7952413F378DA00CD5535 /* LevelDataPlistParser.h */; };
 		4CF7952713F378DA00CD5535 /* LevelDataPlistParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7952513F378DA00CD5535 /* LevelDataPlistParser.m */; };
@@ -1274,6 +1278,10 @@
 		4CEA238D13FB5C21009D1198 /* letter_t-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "letter_t-hd.png"; path = "Resources/letter_t-hd.png"; sourceTree = "<group>"; };
 		4CEA238E13FB5C21009D1198 /* letter_t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter_t.png; path = Resources/letter_t.png; sourceTree = "<group>"; };
 		4CEA239113FB5D18009D1198 /* btn_replayActive-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_replayActive-hd.png"; path = "Resources/btn_replayActive-hd.png"; sourceTree = "<group>"; };
+		4CEA239313FB76BC009D1198 /* blocker_B_-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blocker_B_-hd.png"; path = "Resources/blocker_B_-hd.png"; sourceTree = "<group>"; };
+		4CEA239413FB76BC009D1198 /* blocker_B_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker_B_.png; path = Resources/blocker_B_.png; sourceTree = "<group>"; };
+		4CEA239513FB76BC009D1198 /* blocker-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blocker-hd.png"; path = "Resources/blocker-hd.png"; sourceTree = "<group>"; };
+		4CEA239613FB76BC009D1198 /* blocker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.png; path = Resources/blocker.png; sourceTree = "<group>"; };
 		4CF7952113F34C0800CD5535 /* LevelData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LevelData.plist; path = Resources/LevelData.plist; sourceTree = "<group>"; };
 		4CF7952413F378DA00CD5535 /* LevelDataPlistParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelDataPlistParser.h; sourceTree = "<group>"; };
 		4CF7952513F378DA00CD5535 /* LevelDataPlistParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelDataPlistParser.m; sourceTree = "<group>"; };
@@ -2669,6 +2677,10 @@
 		4CEA230213FAF669009D1198 /* Arena Stuff */ = {
 			isa = PBXGroup;
 			children = (
+				4CEA239313FB76BC009D1198 /* blocker_B_-hd.png */,
+				4CEA239413FB76BC009D1198 /* blocker_B_.png */,
+				4CEA239513FB76BC009D1198 /* blocker-hd.png */,
+				4CEA239613FB76BC009D1198 /* blocker.png */,
 				4CEA230313FAF682009D1198 /* target.png */,
 			);
 			name = "Arena Stuff";
@@ -3306,6 +3318,10 @@
 				4CEA238F13FB5C21009D1198 /* letter_t-hd.png in Resources */,
 				4CEA239013FB5C21009D1198 /* letter_t.png in Resources */,
 				4CEA239213FB5D18009D1198 /* btn_replayActive-hd.png in Resources */,
+				4CEA239713FB76BC009D1198 /* blocker_B_-hd.png in Resources */,
+				4CEA239813FB76BC009D1198 /* blocker_B_.png in Resources */,
+				4CEA239913FB76BC009D1198 /* blocker-hd.png in Resources */,
+				4CEA239A13FB76BC009D1198 /* blocker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

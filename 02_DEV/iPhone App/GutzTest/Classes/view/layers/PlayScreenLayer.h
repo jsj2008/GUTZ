@@ -30,7 +30,7 @@
 #define BLOB_SEGS 24
 
 #define BLOB_X 192
-#define BLOB_Y 160
+#define BLOB_Y 200
 
 
 
@@ -137,6 +137,8 @@
 -(void) mobWiggler:(id)sender;
 - (void)clearArena:(id)sender;
 -(void)addGib:(id)sender;
+-(void)changeBGColor:(ccColor3B)color;
+
 
 
 @end

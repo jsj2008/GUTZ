@@ -4,16 +4,16 @@ r1
 cCheck dependencies
 cProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-dfpgkpwtvfxwpnciautikiuplzua/CocosDenshion-Prefix.pch.gch CocosDenshion/CocosDenshion-Prefix.pch normal armv7 objective-c com.apple.compilers.llvmgcc42
 cProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-dnnnktoqmmyyoqftwdviufnrkopr/CocosDenshion-Prefix.pch.gch CocosDenshion/CocosDenshion-Prefix.pch normal armv6 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv7/CDAudioManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv7/CDOpenALSupport.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDOpenALSupport.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv7/CocosDenshion.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CocosDenshion.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv7/SimpleAudioEngine.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/SimpleAudioEngine.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv6/CocosDenshion.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CocosDenshion.m" normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv6/CDAudioManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m" normal armv6 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv6/CDOpenALSupport.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDOpenALSupport.m" normal armv6 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv6/SimpleAudioEngine.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/SimpleAudioEngine.m" normal armv6 objective-c com.apple.compilers.llvmgcc42
-cLibtool "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv7/libCocosDenshion.a" normal armv7
+cCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv7/CDAudioManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv6/CDOpenALSupport.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDOpenALSupport.m" normal armv6 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv7/CDOpenALSupport.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDOpenALSupport.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv6/CocosDenshion.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CocosDenshion.m" normal armv6 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv7/SimpleAudioEngine.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/SimpleAudioEngine.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv7/CocosDenshion.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CocosDenshion.m" normal armv7 objective-c com.apple.compilers.llvmgcc42
 cLibtool "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv6/libCocosDenshion.a" normal armv6
+cLibtool "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv7/libCocosDenshion.a" normal armv7
 cCreateUniversalBinary "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphoneos/libCocosDenshion.a" normal "armv6 armv7"
 
 N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.3.sdk
@@ -203,7 +203,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies0133533e64fbb341^6e69553e64fbb341^---0#1#0#--18"Check dependencies
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies836ca9f78cfbb341^e319acf78cfbb341^---0#1#0#--18"Check dependencies
 
 CCompileC build/GutzTest.build/Debug-iphoneos/CocosDenshion.build/Objects-normal/armv6/CDAudioManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m" normal armv6 objective-c com.apple.compilers.llvmgcc42
 s334953499.284516

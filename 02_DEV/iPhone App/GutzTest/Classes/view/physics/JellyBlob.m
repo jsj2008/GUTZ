@@ -13,7 +13,7 @@
 @synthesize chipmunkObjects;
 @synthesize posPt;
 
--(id)initWithPos:(cpVect)pos radius:(cpFloat)radius count:(int)count; {
+-(id)initWithPos:(cpVect)pos radius:(cpFloat)radius count:(int)count {
 	
 	if ((self = [super init])) {
 		NSMutableSet *set = [NSMutableSet set];
@@ -25,7 +25,7 @@
 		_rate = 5.0;
 		_torque = 50000.0;
 		
-		cpFloat centralMass = 0.5;
+		cpFloat centralMass = 1.5;
 		
 		_centralBody = [ChipmunkBody bodyWithMass:centralMass andMoment:cpMomentForCircle(centralMass, 0, radius, cpvzero)];
 		[set addObject:_centralBody];
@@ -107,13 +107,13 @@
 		
 //		for (int i=0; i<count; i++) {
 //			cpVect slope = cpvforangle((cpFloat)i / (cpFloat)count * 2.0 * M_PI);
-//			cpVect posMult = cpvmult(slope, radius * 1.3);
+//			cpVect posMult = cpvmult(slope, radius * 0.5);
 //			
 //			ChipmunkBody *body = [ChipmunkBody bodyWithMass:edgeMass andMoment:INFINITY];
 //			body.pos = cpvadd(pos, posMult);
 //			[set addObject:body];
 //			
-//			ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:(CCRANDOM_0_1() * 4) + 6 offset:cpvzero];
+//			ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:(CCRANDOM_0_1() * 3) + 1 offset:cpvzero];
 //			shape.layers = GRABABLE_LAYER;
 //			[set addObject:shape];
 //			
