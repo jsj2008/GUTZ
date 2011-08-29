@@ -9,6 +9,8 @@
 #import "ScreenManager.h"
 #import "SimpleAudioEngine.h"
 
+#import "GameConfig.h"
+
 #define TRANSITION_DURATION (1.2f)
 
 static int sceneIdx=0;
@@ -39,7 +41,8 @@ Class nextTransition() {
 
 +(void) goMenu {
     NSLog(@"ScreenManager.goMenu()");
-    
+   
+	[[SimpleAudioEngine sharedEngine] setMute:kMutedSounds];
 	
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.67];
 	[[SimpleAudioEngine sharedEngine] playEffect:@"bootUp.wav"];

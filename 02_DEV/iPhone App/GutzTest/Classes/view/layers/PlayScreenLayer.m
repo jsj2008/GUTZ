@@ -27,22 +27,6 @@
 #import "CDAudioManager.h"
 #import "CocosDenshion.h"
 
-void eachShape (void *ptr, void *unused) {
-	
-	cpShape *shape = (cpShape *)ptr;
-	CCSprite *sprite = shape->data;
-	
-	if (sprite) {
-		cpBody *body = shape->body;
-		
-		[sprite setPosition: body->p];
-		body->p = [sprite position];
-		
-		[sprite setRotation: (float) CC_RADIANS_TO_DEGREES(-body->a)];
-		cpBodySetAngle(body, -CC_DEGREES_TO_RADIANS([sprite rotation]));
-		
-	}
-}
 
 
 static NSString *borderType = @"borderType";
@@ -69,8 +53,8 @@ static NSString *borderType = @"borderType";
 -(id) init {
 	NSLog(@"%@.init()", [self class]);
 	
-	//if ((self = [super initWithBackround:@"background_play.jpg"])) {
-	if ((self = [super initWithColor:ccc4(233, 86, 86, 255)])) {
+	//if ((self = [super initWithColor:ccc4(233, 86, 86, 255)])) {
+	if ((self = [super initWithColor:ccc4(233, 255, 255, 255)])) {
 		[[SimpleAudioEngine sharedEngine] preloadEffect:@"splatter.wav"];
 		[[SimpleAudioEngine sharedEngine] preloadEffect:@"collision.wav"];
 		[[SimpleAudioEngine sharedEngine] preloadEffect:@"stretch.wav"];

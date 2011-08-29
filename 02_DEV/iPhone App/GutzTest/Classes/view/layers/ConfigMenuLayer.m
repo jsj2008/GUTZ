@@ -7,44 +7,52 @@
 //
 
 #import "GameConsts.h"
+#import "GameConfig.h"
 
 #import "ConfigMenuLayer.h"
+#import "GameSettingsModel.h"
+
+#import "SimpleAudioEngine.h"
 
 
 @implementation ConfigMenuLayer
 
 -(id) init {
-	NSLog(@"%s.init()", [self class]);
+	NSLog(@"%@.init()", [self class]);
 	
-	//self = [super init];
-	self = [super initWithBackround:@"background_default.png"];
+	self = [super initWithBackround:@"bg_menu.png"];
 	
 	if (!self)
 		return (nil);
-    
-    //CCSprite *bg = [CCSprite spriteWithFile: @"background_default.jpg"];
-	//bg.position = ccp(160, 240);
-    //[self addChild: bg z:0];
-    
-    float delayTime = 0.3f;
-    
-    CCMenuItemImage *backButton = [CCMenuItemImage itemFromNormalImage:@"button_options_nonActive.png" selectedImage:@"button_options_Active.png" target:self selector:@selector(onBackMenu:)];
-    
-    CCMenu *backMenu = [CCMenu menuWithItems:backButton, nil];
-    backMenu.position = ccp(35, 440);
-    [self addChild:backMenu z:2];
-
-    CCMenuItemImage *soundsOnButton = [CCMenuItemImage itemFromNormalImage:@"button_soundOn_nonActive.png" selectedImage:@"button_soundOn_Active.png" target:nil selector:nil];
-    CCMenuItemImage *soundsOffButton = [CCMenuItemImage itemFromNormalImage:@"button_soundOff_nonActive.png" selectedImage:@"button_soundOff_Active.png" target:nil selector:nil];
-    soundsToggleButton = [CCMenuItemToggle itemWithTarget:self selector:@selector(onSoundsToggle:) items:soundsOnButton, soundsOffButton, nil];
-    
-    CCMenuItemImage *pushesOnButton = [CCMenuItemImage itemFromNormalImage:@"button_pushNotificationON_nonActive.png" selectedImage:@"button_pushNotificationON_Active.png" target:nil selector:nil];
-    CCMenuItemImage *pushesOffButton = [CCMenuItemImage itemFromNormalImage:@"button_pushNotificationOFF_nonActive.png" selectedImage:@"button_pushNotificationOFF_Active.png" target:nil selector:nil];
-    pushesToggleButton = [CCMenuItemToggle itemWithTarget:self selector:@selector(onPushesToggle:) items:pushesOnButton, pushesOffButton, nil];
-    
-    CCMenuItemImage *infoButton = [CCMenuItemImage itemFromNormalImage:@"button_moreInfo_nonActive.png" selectedImage:@"button_moreInfo_Active.png" target:self selector:@selector(onInfo:)];
 	
-    CCMenu *optionsMenu = [CCMenu menuWithItems:soundsToggleButton, pushesToggleButton, infoButton, nil];
+	//CCSprite *bg = [CCSprite spriteWithFile: @"background_default.jpg"];
+	//bg.position = ccp(160, 240);
+	//[self addChild: bg z:0];
+	
+	float delayTime = 0.3f;
+	
+	CCMenuItemImage *backButton = [CCMenuItemImage itemFromNormalImage:@"button_options_nonActive.png" selectedImage:@"button_options_Active.png" target:self selector:@selector(onBackMenu:)];
+	
+	CCMenu *backMenu = [CCMenu menuWithItems:backButton, nil];
+	backMenu.position = ccp(35, 440);
+	[self addChild:backMenu z:2];
+
+	CCMenuItemImage *soundsOnButton = [CCMenuItemImage itemFromNormalImage:@"button_soundOn_nonActive.png" selectedImage:@"button_soundOn_Active.png" target:nil selector:nil];
+	CCMenuItemImage *soundsOffButton = [CCMenuItemImage itemFromNormalImage:@"button_soundOff_nonActive.png" selectedImage:@"button_soundOff_Active.png" target:nil selector:nil];
+	
+	if ((BOOL)kMutedSounds)
+		soundsToggleButton = [CCMenuItemToggle itemWithTarget:self selector:@selector(onSoundsToggle:) items:soundsOffButton, soundsOnButton, nil];
+	
+	else
+		soundsToggleButton = [CCMenuItemToggle itemWithTarget:self selector:@selector(onSoundsToggle:) items:soundsOnButton, soundsOffButton, nil];
+	
+	CCMenuItemImage *pushesOnButton = [CCMenuItemImage itemFromNormalImage:@"button_pushNotificationON_nonActive.png" selectedImage:@"button_pushNotificationON_Active.png" target:nil selector:nil];
+	CCMenuItemImage *pushesOffButton = [CCMenuItemImage itemFromNormalImage:@"button_pushNotificationOFF_nonActive.png" selectedImage:@"button_pushNotificationOFF_Active.png" target:nil selector:nil];
+	pushesToggleButton = [CCMenuItemToggle itemWithTarget:self selector:@selector(onPushesToggle:) items:pushesOnButton, pushesOffButton, nil];
+	
+	CCMenuItemImage *infoButton = [CCMenuItemImage itemFromNormalImage:@"button_moreInfo_nonActive.png" selectedImage:@"button_moreInfo_Active.png" target:self selector:@selector(onInfo:)];
+	
+	CCMenu *optionsMenu = [CCMenu menuWithItems:soundsToggleButton, pushesToggleButton, infoButton, nil];
 	
 	for (CCMenuItem *itm in [optionsMenu children]) {
 		itm.scale = 0.0f;
@@ -57,9 +65,9 @@
 		[itm runAction: action];
 	}
 	
-    optionsMenu.position = ccp(160, 240);
-    [optionsMenu alignItemsVerticallyWithPadding: 95.0f];
-    [self addChild:optionsMenu z: 2];
+	optionsMenu.position = ccp(160, 240);
+	[optionsMenu alignItemsVerticallyWithPadding: 95.0f];
+	[self addChild:optionsMenu z: 2];
 	
 	
 	[self procureSettings];
@@ -109,7 +117,7 @@
 }
 
 -(void) onInfo:(id)sender {
-    NSLog(@"-/> %@.%@() </-", [self class], @"onInfo");
+	NSLog(@"-/> %@.%@() </-", [self class], @"onInfo");
 	
 	[[CCDirector sharedDirector] pause];
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString: [plistSettings urlMoreInfo]]];
@@ -117,28 +125,35 @@
 
 
 -(void) onPushesToggle:(id)sender {
-    CCMenuItemToggle *toggleBtn = (CCMenuItemToggle *)sender;
+	
+	CCMenuItemToggle *toggleBtn = (CCMenuItemToggle *)sender;
+	BOOL isEnabled;
 	
 	if (toggleBtn.selectedIndex == 0)
-		[plistSettings writeBoolByKey:@"Pushes Enabled" val:YES];//[[plistSettings dicTopLvl] setValue:[NSNumber numberWithBool:YES] forKey:@"Pushes Enabled"];
+		isEnabled = YES;
 	
 	else
-		[plistSettings writeBoolByKey:@"Pushes Enabled" val:NO];//[[plistSettings dicTopLvl] setValue:[NSNumber numberWithBool:NO] forKey:@"Pushes Enabled"];
+		isEnabled = NO;
 	
-	
-	//NSLog(@"-/> %@.%@(%@) [%d] </-", [self class], @"onPushesToggle", [[plistSettings dicTopLvl] objectForKey:@"Pushes Enabled"], toggleBtn.selectedIndex);
+	[plistSettings writeBoolByKey:@"Pushes Enabled" val:isEnabled];//[[plistSettings dicTopLvl] setValue:[NSNumber numberWithBool:YES] forKey:@"Pushes Enabled"];
+	NSLog(@"-/> %@.%@ [%d] </-", [self class], @"onPushesToggle", isEnabled);
 }
 
 -(void) onSoundsToggle:(id)sender {
 	
 	CCMenuItemToggle *toggleBtn = (CCMenuItemToggle *)sender;
+	BOOL isEnabled;
 	
 	if (toggleBtn.selectedIndex == 0)
-		[plistSettings writeBoolByKey:@"Sounds Enabled" val:YES];//[[plistSettings dicTopLvl] setValue:[NSNumber numberWithBool:YES] forKey:@"Pushes Enabled"];
-		 
-	else
-		[plistSettings writeBoolByKey:@"Sounds Enabled" val:NO];//[[plistSettings dicTopLvl] setValue:[NSNumber numberWithBool:YES] forKey:@"Pushes Enabled"];
+		isEnabled = YES;
 	
+	else
+		isEnabled = NO;
+	
+	[[SimpleAudioEngine sharedEngine] setMute:!isEnabled];
+	[plistSettings writeBoolByKey:@"Sounds Enabled" val:isEnabled];//[[plistSettings dicTopLvl] setValue:[NSNumber numberWithBool:YES] forKey:@"Pushes Enabled"];
+	
+	NSLog(@"-/> %@.%@ [%d] </-", [self class], @"onSoundsToggle", isEnabled);
 	//NSLog(@"-/> %@.%@(%@) [%d] </-", [self class], @"onSoundsToggle", [[plistSettings dicTopLvl] objectForKey:@"Sounds Enabled"], toggleBtn.selectedIndex);
 }
 
