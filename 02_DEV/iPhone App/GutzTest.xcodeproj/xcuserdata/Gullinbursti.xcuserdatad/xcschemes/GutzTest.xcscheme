@@ -70,7 +70,8 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Ad Hoc"
+      customArchiveName = "GutzTest"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

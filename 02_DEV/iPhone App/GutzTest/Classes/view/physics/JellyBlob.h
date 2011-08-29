@@ -26,11 +26,19 @@
 	NSSet *chipmunkObjects;
 	
 	BOOL isPopped;
+	
+	float rFillColor;
+	float gFillColor;
+	float bFillColor;
+	
 }
 
 @property (nonatomic, assign) cpFloat control;
 @property (nonatomic, readonly) NSSet *chipmunkObjects;
 @property (nonatomic) CGPoint posPt;
+@property (nonatomic) float rFillColor;
+@property (nonatomic) float gFillColor;
+@property (nonatomic) float bFillColor;
 
 -(id)initWithPos:(cpVect)pos radius:(cpFloat)radius count:(int)count;
 -(void)wiggleWithForce:(int)index force:(cpFloat)f;

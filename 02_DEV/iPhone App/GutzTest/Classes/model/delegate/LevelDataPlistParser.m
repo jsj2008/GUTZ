@@ -11,27 +11,25 @@
 
 @implementation LevelDataPlistParser
 
-@synthesize arrScoreAmt;
-@synthesize arrGoalCoords;
+@synthesize arrWallData;
+@synthesize arrGoalData;
 
 
 -(id)init {
-	
-	if ((self = [self initWithFile])) {
-		
-		arrScoreAmt = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"Scores"]];
-		
-	}
-	
 	return (self);
 }
 				 
 				 
--(id) initWithFile {
-	NSLog(@"-/> %@.%@(\"%@\") </-", [self class], @"initWithFile", @"LevelData");
-	 
-	// invoke inherited
-	return ([super initWithFile:@"Settings" path:@""]);
-}
+-(id) initWithLevel:(int)ind {
+	NSLog(@"-/> %@.%@(\"%@\") </-", [self class], @"initWithFile", @"LevelObjects");
 	
+	if ((self = [super initWithFile:[NSString stringWithFormat:@"LevelData_0%d", ind] path:@""])) {
+		
+		arrWallData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"walls"]];
+		arrGoalData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"goals"]];
+	}
+	
+	return (self);
+}
+
 @end

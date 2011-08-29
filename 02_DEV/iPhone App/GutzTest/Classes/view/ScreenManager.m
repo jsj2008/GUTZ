@@ -7,6 +7,7 @@
 //
 
 #import "ScreenManager.h"
+#import "SimpleAudioEngine.h"
 
 #define TRANSITION_DURATION (1.2f)
 
@@ -39,6 +40,16 @@ Class nextTransition() {
 +(void) goMenu {
     NSLog(@"ScreenManager.goMenu()");
     
+	
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.67];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"bootUp.wav"];
+	
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.75];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"menuGUTZ.wav"];
+	
+	[[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:1.5f];
+	[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"UI_loop.wav" loop:YES];
+	
 	CCLayer *layer = [[MainMenuScreenLayer alloc] init];
 	[ScreenManager go:layer];
 }

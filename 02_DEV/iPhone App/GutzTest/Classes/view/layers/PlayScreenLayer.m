@@ -71,19 +71,29 @@ static NSString *borderType = @"borderType";
 	
 	//if ((self = [super initWithBackround:@"background_play.jpg"])) {
 	if ((self = [super initWithColor:ccc4(233, 86, 86, 255)])) {
+		[[SimpleAudioEngine sharedEngine] preloadEffect:@"splatter.wav"];
+		[[SimpleAudioEngine sharedEngine] preloadEffect:@"collision.wav"];
+		[[SimpleAudioEngine sharedEngine] preloadEffect:@"stretch.wav"];
+		[[SimpleAudioEngine sharedEngine] preloadEffect:@"tensionSplatter.wav"];
 		
 		self.isTouchEnabled = YES;
 		self.isAccelerometerEnabled = YES;
 		
+		
+		
+		NSLog(@"walls:%@", plistLvlData.arrWallData);
+		NSLog(@"goals:%@", plistLvlData.arrGoalData);
+		
+		[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95];
+		//[[SimpleAudioEngine sharedEngine] playEffect:@"debug_healmag.wav"];
+		
 		_cnt = 32;
-		
-		[[SimpleAudioEngine sharedEngine] preloadEffect:@"debug_finger.wav"];
-		
 		isCleared = NO;
 		
 		arrTouchedEdge = [[NSMutableArray alloc] init];
 		
 		[self chipmunkSetup];
+		[self buildLvlObjs];
 		[self scaffoldHUD];
 		[self performSelector:@selector(physProvoker:) withObject:self afterDelay:0.33f];
 	}
@@ -99,28 +109,91 @@ static NSString *borderType = @"borderType";
 }
 
 
+-(void)buildLvlObjs {
+	
+	//plistLvlData = [[LevelDataPlistParser alloc] init];
+	plistLvlData = [[LevelDataPlistParser alloc] initWithLevel:indLvl];
+	
+	//NSDictionary *dictGoal1 = [NSDictionary dictionaryWithObject:[plistLvlData.arrGoalData objectAtIndex:0] forKey:nil];
+	
+	
+	NSLog(@"goals:[%@]", plistLvlData.arrGoalData);
+	NSLog(@"walls:[%@]", plistLvlData.arrWallData);
+	
+	int ind = 0;
+	
+	for (NSDictionary *dictGoal in plistLvlData.arrGoalData) {
+		CGPoint goalPos = CGPointMake([[dictGoal objectForKey:@"x"] floatValue], [[dictGoal objectForKey:@"y"] floatValue]);
+		//NSLog(@"[%d]: [%@]-(%f, %f)", ind, [dictGoal objectForKey:@"x"], goalPos.x, goalPos.y);
+		
+		if (ind == 0) {
+			goalTarget1 = [[GoalTarget alloc] initAtPos:goalPos];
+			goalTarget1.ind = ind;
+			[_space add:goalTarget1];
+			[self addChild:goalTarget1._sprite];		
+			
+		} else {
+			goalTarget2 = [[GoalTarget alloc] initAtPos:goalPos];
+			goalTarget2.ind = ind;
+			[_space add:goalTarget2];
+			[self addChild:goalTarget2._sprite];
+		}
+		
+		ind++;
+	}
+	
+	
+	cpFloat width;
+	cpFloat height;
+	
+	
+	for (NSDictionary *dictWall in plistLvlData.arrWallData) {
+		NSString *strWall = [[NSString alloc] init];
+		
+		int wallType = [[dictWall objectForKey:@"id"] intValue];
+		CGPoint wallPos = CGPointMake([[dictWall objectForKey:@"x"] floatValue], [[dictWall objectForKey:@"y"] floatValue]);
+		cpFloat frict = [[dictWall objectForKey:@"frict"] floatValue];
+		cpFloat bounce = [[dictWall objectForKey:@"bounce"] floatValue];
+		
+		
+		if (wallType == 1) {
+			width = 194;
+			height = 39;
+			strWall =  [NSString stringWithString:@"blocker.png"];
+			
+		} else {
+			width = 108;
+			height = 39;
+			strWall =  [NSString stringWithString:@"blocker_B_.png"];
+		}
+		
+		//NSLog(@"[%d]: [%@]-(%f, %f) // [%f, %f]", ind, [dictWall objectForKey:@"x"], wallPos.x, wallPos.y, frict, bounce);
+		
+		ChipmunkBody *body = [ChipmunkBody bodyWithMass:INFINITY andMoment:INFINITY];
+		body.pos = wallPos;
+		
+		CCSprite *sprite = [CCSprite spriteWithFile:@"blocker.png"];
+		[sprite setPosition:body.pos];
+		[self addChild:sprite];
+		
+		
+		ChipmunkStaticPolyShape *shape = [_space add:[ChipmunkStaticPolyShape boxWithBody:body width:width height:height]];
+		shape.friction = frict;
+		shape.elasticity = bounce;
+		shape.data = sprite;
+	}
+}
+
 -(void) scaffoldHUD {
 	
-	CCMenuItemImage *btnPause = [CCMenuItemImage itemFromNormalImage:@"HUD_pauseButton_nonActive.png" selectedImage:@"HUD_pauseButton_Active.png" target:nil selector:nil];
-	CCMenuItemImage *btnPlay = [CCMenuItemImage itemFromNormalImage:@"HUD_pauseButton_nonActive.png" selectedImage:@"HUD_pauseButton_Active.png" target:nil selector:nil];
+	CCMenuItemImage *btnPause = [CCMenuItemImage itemFromNormalImage:@"btn_pause.png" selectedImage:@"btn_pauseActive.png" target:nil selector:nil];
+	CCMenuItemImage *btnPlay = [CCMenuItemImage itemFromNormalImage:@"btn_pause.png" selectedImage:@"btn_pauseActive.png" target:nil selector:nil];
 	btnPlayPauseToggle = [CCMenuItemToggle itemWithTarget:self selector:@selector(onPlayPauseToggle:) items:btnPause, btnPlay, nil];
 	CCMenu *mnuPlayPause = [CCMenu menuWithItems: btnPlayPauseToggle, nil];
 	
 	mnuPlayPause.position = ccp(280, 440);
 	[mnuPlayPause alignItemsVerticallyWithPadding: 20.0f];
 	[self addChild: mnuPlayPause];
-	
-	//hudStarsSprite = [[LvlStarSprite alloc] init];
-	//[hudStarsSprite setPosition:ccp(130, 50)];
-	//[self addChild:hudStarsSprite];
-	
-	//scoreDisplaySprite = [[ScoreSprite alloc] init];
-	//[scoreDisplaySprite setPosition:ccp(55, 450)];
-	//[self addChild:scoreDisplaySprite];
-	
-	//timeDisplaySprite = [[ElapsedTimeSprite alloc] init];
-	//[timeDisplaySprite setPosition:ccp(250, 32)];
-	//[self addChild:timeDisplaySprite];
 	
 	
 	if (kShowDebugMenus)
@@ -148,7 +221,7 @@ static NSString *borderType = @"borderType";
 	_multiGrab = [[ChipmunkMultiGrab alloc] initForSpace:_space withSmoothing:cpfpow(0.8, 60.0) withGrabForce:30000];
 	_multiGrab.layers = GRABABLE_LAYER;
 	
-	[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space] z:0 tag:666];
+	//[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space] z:0 tag:666];
 	
 	arrGibsShape = [[NSMutableArray alloc] init];
 	arrGibsSprite = [[NSMutableArray alloc] init];
@@ -157,94 +230,6 @@ static NSString *borderType = @"borderType";
 	[arrTargets addObject:@"NO"];
 	[arrTargets addObject:@"NO"];
 	
-	CGPoint goal1Pos;
-	CGPoint goal2Pos;
-	
-	switch (indLvl) {
-			
-		case 1:
-			goal1Pos = CGPointMake(32, 420);
-			goal2Pos = CGPointMake(280, 50);
-			break;
-			
-		case 2:
-			goal1Pos = CGPointMake(32, 400);
-			goal2Pos = CGPointMake(32, 50);
-			break;
-			
-		case 3:
-			goal1Pos = CGPointMake(160, 420);
-			goal2Pos = CGPointMake(160, 50);
-			break;
-			
-		default:
-			goal1Pos = CGPointMake(32, 420);
-			goal2Pos = CGPointMake(280, 50);
-			indLvl = 1;
-			break;
-	}
-	
-	
-	goalTarget1 = [[GoalTarget alloc] initAtPos:goal1Pos];
-	goalTarget1.ind = 0;
-	[_space add:goalTarget1];
-	[self addChild:goalTarget1._sprite];
-	
-	goalTarget2 = [[GoalTarget alloc] initAtPos:goal2Pos];
-	goalTarget2.ind = 1;
-	[_space add:goalTarget2];
-	[self addChild:goalTarget2._sprite];
-	
-	
-	cpFloat width = 194;
-	cpFloat height = 39;
-	
-	
-	if (indLvl == 2) {
-		width = 194;
-		height = 39;
-		
-		ChipmunkBody *body = [ChipmunkBody bodyWithMass:INFINITY andMoment:INFINITY];
-		body.pos = cpv(100, 280);
-		
-		CCSprite *sprite = [CCSprite spriteWithFile:@"blocker.png"];
-		[sprite setPosition:body.pos];
-		[self addChild:sprite];
-		
-		ChipmunkStaticPolyShape *shape = [_space add:[ChipmunkStaticPolyShape boxWithBody:body width:width height:height]];
-		shape.friction = 0.9;
-		shape.elasticity = 0.1;
-		shape.data = sprite;
-		
-	} else if (indLvl == 3) {
-		width = 108;
-		height = 39;
-		
-		ChipmunkBody *body1 = [ChipmunkBody bodyWithMass:INFINITY andMoment:INFINITY];
-		body1.pos = cpv(160, 320);
-		
-		CCSprite *sprite1 = [CCSprite spriteWithFile:@"blocker_B_.png"];
-		[sprite1 setPosition:body1.pos];
-		[self addChild:sprite1];
-		
-		ChipmunkStaticPolyShape *shape1 = [_space add:[ChipmunkStaticPolyShape boxWithBody:body1 width:width height:height]];
-		shape1.friction = 0.9;
-		shape1.elasticity = 0.1;
-		shape1.data = sprite1;
-		
-		
-		ChipmunkBody *body2 = [ChipmunkBody bodyWithMass:INFINITY andMoment:INFINITY];
-		body2.pos = cpv(160, 140);
-		
-		CCSprite *sprite2 = [CCSprite spriteWithFile:@"blocker_B_.png"];
-		[sprite2 setPosition:body2.pos];
-		[self addChild:sprite2];
-		
-		ChipmunkStaticPolyShape *shape2 = [_space add:[ChipmunkStaticPolyShape boxWithBody:body2 width:width height:height]];
-		shape2.friction = 0.9;
-		shape2.elasticity = 0.1;
-		shape2.data = sprite2;
-	}
 	
 	_blob = [[JellyBlob alloc] initWithPos:cpv(BLOB_X, BLOB_Y) radius:BLOB_RADIUS count:BLOB_SEGS];
 	[_space add:_blob];
@@ -260,9 +245,9 @@ static NSString *borderType = @"borderType";
 	[self addChild:eyeSprite];
 	
 	
-	mouthSprite = [CCSprite spriteWithFile:@"mouth.png"];
+	mouthSprite = [CCSprite spriteWithFile:@"smile.png"];
 	[mouthSprite setPosition:cpv(BLOB_X, BLOB_Y + 24)];
-	[mouthSprite setScale:0.33f];
+	//[mouthSprite setScale:0.33f];
 	[self addChild:mouthSprite];
 	
 	
@@ -378,59 +363,47 @@ static NSString *borderType = @"borderType";
 	[self removeChild:goalTarget1._sprite cleanup:NO];
 	[self removeChild:goalTarget2._sprite cleanup:NO];
 	
+	NSMutableArray *arrSplatter = [[NSMutableArray alloc] init];
 	
+	for (int i=0; i<3; i++) {
+		for (int j=1; j<=8; j++) {
+			
+			NSString *strColor = [NSString alloc];
+			
+			if (i == 0)
+				strColor = [NSString stringWithString:@"YELLOW"];
+			
+			else if (i == 1)
+				strColor = [NSString stringWithString:@"RED"];
+			
+			else
+				strColor = [NSString stringWithString:@"BLUE"];
+			
+			[arrSplatter addObject:[CCSprite spriteWithFile:[NSString stringWithFormat:@"spermSplatter%@_0%d.png", strColor, j]]];
+		}
+	}
+
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.67];
+	float delayTime = 0.0f;
 	
+	for (int i=0; i<[arrSplatter count]; i++) {
+		
+		CCSprite *sprite = [arrSplatter objectAtIndex:i];		
+		[sprite setPosition:ccp(160, 240)];
+		[sprite setScale:0.0f];
+		[self addChild:sprite];
+		[sprite runAction:[CCSequence actions:[CCDelayTime actionWithDuration:delayTime], [CCScaleTo actionWithDuration:0.2 scale:1 + (CCRANDOM_0_1() * 2)], [CCEaseIn actionWithAction:[CCMoveBy actionWithDuration:0.2f position:ccp((CCRANDOM_0_1() * 320) - 160, (CCRANDOM_0_1() * 480) - 240)] rate:0.5f], nil]];
+		delayTime += 0.025f;
+		
+		if (i % 2 == 0)
+			[[SimpleAudioEngine sharedEngine] playEffect:@"tensionSplatter.wav"];
+		
+		else
+			[[SimpleAudioEngine sharedEngine] playEffect:@"splatter.wav"];
+	}
 	
-	id dieAction = [CCScaleTo actionWithDuration:0.01f scale:0.0f];
-	
-	CCSprite *derpSprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
-	[derpSprite setScale:0.25f];
-	[derpSprite setPosition:gibPos];
-	[self addChild:derpSprite];
-	
-	id scaleAction = [CCScaleTo actionWithDuration:0.33f scale:17.0f];
-	id centerAction = [CCMoveTo actionWithDuration:0.5f position:ccp((CCRANDOM_0_1() * 64) + 128, (CCRANDOM_0_1() * 200) + 160)];
-	id moveAction = [CCMoveBy actionWithDuration:0.5f position:ccp(0, -((CCRANDOM_0_1() * 32) + 160))];
-	[derpSprite runAction:[CCEaseIn actionWithAction:[scaleAction copy] rate:0.2f]];
-	[derpSprite runAction:[CCSequence actions:[CCEaseIn actionWithAction:[centerAction copy] rate:0.2f], [CCEaseOut actionWithAction:[moveAction copy] rate:0.33f], [dieAction copy], nil]];
-	
-	
-	CCSprite *derp2Sprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
-	[derp2Sprite setScale:0.25f];
-	[derp2Sprite setPosition:gibPos];
-	[self addChild:derp2Sprite];
-	
-	id scale2Action = [CCScaleTo actionWithDuration:0.33f scale:14.0f];
-	id center2Action = [CCMoveTo actionWithDuration:0.5f position:ccp((CCRANDOM_0_1() * 64) + 128, 260)];
-	id move2Action = [CCMoveBy actionWithDuration:0.5f position:ccp(0, -((CCRANDOM_0_1() * 32) + 128))];
-	[derp2Sprite runAction:[CCEaseElasticInOut actionWithAction:[scale2Action copy] period:0.5f]];
-	[derp2Sprite runAction:[CCSequence actions:[CCEaseIn actionWithAction:[center2Action copy] rate:0.5f], [CCEaseOut actionWithAction:[move2Action copy] rate:0.25f], [dieAction copy], nil]];
-	
-	CCSprite *derp3Sprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
-	[derp3Sprite setScale:0.25f];
-	[derp3Sprite setPosition:gibPos];
-	[self addChild:derp3Sprite];
-	
-	id scale3Action = [CCScaleTo actionWithDuration:0.25f scale:13.5f];
-	id center3Action = [CCMoveTo actionWithDuration:0.5f position:ccp((CCRANDOM_0_1() * 64) + 64, (CCRANDOM_0_1() * 64) + 300)];
-	id move3Action = [CCMoveBy actionWithDuration:0.5f position:ccp(0, -((CCRANDOM_0_1() * 32) + 160))];
-	[derp3Sprite runAction:[CCEaseIn actionWithAction:[scale3Action copy] rate:0.9f]];
-	[derp3Sprite runAction:[CCSequence actions:[CCEaseIn actionWithAction:[center3Action copy] rate:0.25f], [CCEaseOut actionWithAction:[move3Action copy] rate:0.2f], [dieAction copy], nil]];
-	
-	
-	CCSprite *derp4Sprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
-	[derp4Sprite setScale:0.25f];
-	[derp4Sprite setPosition:gibPos];
-	[self addChild:derp4Sprite];
-	
-	id scale4Action = [CCScaleTo actionWithDuration:0.3f scale:13.0f];
-	id center4Action = [CCMoveTo actionWithDuration:0.5f position:ccp(220, (CCRANDOM_0_1() * 64) + 300)];
-	id move4Action = [CCMoveBy actionWithDuration:0.5f position:ccp(0, -((CCRANDOM_0_1() * 32) + 128))];
-	[derp4Sprite runAction:[CCEaseElasticInOut actionWithAction:[scale4Action copy] period:0.7f]];
-	[derp4Sprite runAction:[CCSequence actions:[CCEaseIn actionWithAction:[center4Action copy] rate:0.33f], [CCEaseOut actionWithAction:[move4Action copy] rate:0.25f], [dieAction copy], nil]];
-	
+		
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95];
-	[[SimpleAudioEngine sharedEngine] playEffect:@"debug_redmag.wav"];
 	
 	[self schedule:@selector(flashBG) interval:0.1];
 	
@@ -536,7 +509,7 @@ static NSString *borderType = @"borderType";
 	}
 	
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.25];
-	[[SimpleAudioEngine sharedEngine] playEffect:@"debug_finger.wav"];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"collision.wav"];
 }
 
 
@@ -634,7 +607,6 @@ static NSString *borderType = @"borderType";
 	//NSLog(@"PlayScreenLayer.physicsStepper(%0.000000f)", [[CCDirector sharedDirector] getFPS]);
 	
 	[_space step:1.0 / 60.0];
-	[_blob draw];
 	
 	
 	for (int i=0; i<[arrGibsShape count]; i++) {
@@ -755,7 +727,7 @@ TouchLocation(UITouch *touch) {
 	bg_cnt++;
 	
 	
-	if (bg_cnt >= 9)
+	if (bg_cnt >= 16)
 		[self unschedule:@selector(flashBG)];
 }
 

@@ -28,9 +28,8 @@
 		_shape.data = self;
 		
 		
-		_sprite = [CCSprite spriteWithFile:@"target.png"];
+		_sprite = [CCSprite spriteWithFile:@"inGamePin.png"];
 		[_sprite setPosition:pos];
-		[_sprite setScale:0.33];
 		
 		
 		chipmunkObjects = [ChipmunkObjectFlatten(_shape, nil) retain];

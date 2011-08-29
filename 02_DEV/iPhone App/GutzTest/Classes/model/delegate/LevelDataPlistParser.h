@@ -13,16 +13,16 @@
 
 @interface LevelDataPlistParser : BasePlistParser {
     
-	NSArray *arrScoreAmt;
-	NSArray *arrGoalCoords;
+	NSArray *arrWallData;
+	NSArray *arrGoalData;
 	
 }
 
 
-@property (nonatomic, retain) NSArray *arrScoreAmt;
-@property (nonatomic, retain) NSArray *arrGoalCoords;
+@property (nonatomic, retain) NSArray *arrWallData;
+@property (nonatomic, retain) NSArray *arrGoalData;
 
 -(id) init;
--(id) initWithFile;
+-(id) initWithLevel:(int)ind;
 
 @end

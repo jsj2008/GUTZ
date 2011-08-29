@@ -163,6 +163,9 @@
 	// Removes the startup flicker
 	[self removeStartupFlicker];
 	
+	if (![director enableRetinaDisplay:YES])
+		CCLOG(@"Retina Display Not supported");
+	
 	// Run the intro Scene
 	[ScreenManager goMenu];
 	//[[CCDirector sharedDirector] runWithScene: [HelloWorldLayer scene]];

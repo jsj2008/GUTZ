@@ -11,7 +11,7 @@
 #import "cocos2d.h"
 #import "ObjectiveChipmunk.h"
 
-//#define LINE_COLOR 0.0f, 0.0f, 0.0f
+//#define LINE_COLOR 0.5f, 0.8f, 0.0f
 #define LINE_COLOR 0.0f, 0.86f, 1.0f
 
 

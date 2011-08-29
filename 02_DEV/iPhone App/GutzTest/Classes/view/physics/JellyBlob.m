@@ -12,6 +12,9 @@
 @synthesize control = _control;//, chipmunkObjects = _chipmunkObjects;
 @synthesize chipmunkObjects;
 @synthesize posPt;
+@synthesize rFillColor;
+@synthesize gFillColor;
+@synthesize bFillColor;
 
 -(id)initWithPos:(cpVect)pos radius:(cpFloat)radius count:(int)count {
 	
@@ -21,6 +24,17 @@
 		
 		_count = count;
 		posPt = CGPointMake(pos.x, pos.y);
+		
+		// blue
+		rFillColor = 0.0f;
+		gFillColor = 0.86f;
+		bFillColor = 1.0f;
+		
+		
+		// red
+		//rFillColor = 1.0f;
+		//gFillColor = 0.37f;
+		//bFillColor = 0.37f;
 		
 		_rate = 5.0;
 		_torque = 50000.0;
@@ -37,7 +51,7 @@
 			cpVect posMult = cpvmult(slope, radius);
 			
 			vt[i] = cpvadd(posMult, cpvzero);
-			NSLog(@"vt[%d]: (%f, %f)", i, vt[i].x, vt[i].y);
+			//NSLog(@"vt[%d]: (%f, %f)", i, vt[i].x, vt[i].y);
 		}
 		
 		//[_polyVerts initWithArray: vt];
@@ -54,7 +68,7 @@
 		cpFloat edgeDistance = 2.0 * radius * cpfsin(M_PI / (cpFloat)count);
 		_edgeRadius = edgeDistance * 1.5;
 		
-		cpFloat squishCoef = 0.7;
+		//cpFloat squishCoef = 0.7;
 		cpFloat springStiffness = 40;
 		cpFloat springDamping = 1;
 		
@@ -70,6 +84,7 @@
 			
 			[bodies addObject:body];
 			
+			//ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:_edgeRadius * ((CCRANDOM_0_1() * 1) + 0.5) offset:cpvzero];
 			ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:_edgeRadius offset:cpvzero];
 			[set addObject:shape];
 			shape.elasticity = EDGE_BOUNCE;
@@ -135,7 +150,7 @@
 		body = [bodies objectAtIndex:i];
 		if (cpvnear(body.pos, pos, 15)) {
 			
-			NSLog(@"JellyBlob.body[%d]", i);
+			//NSLog(@"JellyBlob.body[%d]", i);
 			
 			return (body);
 		}
@@ -152,7 +167,7 @@
 		ChipmunkBody *body = [bodies objectAtIndex:i];
 		if (cpvnear(body.pos, pos, 15)) {
 			
-			NSLog(@"JellyBlob.bodyIndexAt[%d]", i);
+			//NSLog(@"JellyBlob.bodyIndexAt[%d]", i);
 			
 			return (i);
 		}
@@ -181,6 +196,8 @@
 			cpVect v = [[_edgeBodies objectAtIndex:i] pos];
 			verts[i] = cpvadd(v, cpvmult(cpvnormalize(cpvsub(v, center)), _edgeRadius * 0.85));
 			
+			glColor4f(rFillColor, gFillColor, bFillColor, 1.00f);
+			ccDrawCircle(v, _edgeRadius, 360, 16, NO);
 			//ccDrawQuadBezier(cpvadd(verts[i], _centralBody.pos), cpvmult(cpvadd(verts[i], _centralBody.pos), 2), cpvadd(verts[(i % _count) + 1], _centralBody.pos), 4);
 		}
 	//}
@@ -196,15 +213,16 @@
 	//glEnable(GL_POINT_SMOOTH);
 	glEnable(GL_LINE_SMOOTH);
 	
-	glColor4f(0.40f, 0.85f, 1.00f, 1.00f);
-	//glColor4f(0.0f, 0.1f, 0.6f, 1.00f);
+	glColor4f(rFillColor, gFillColor, bFillColor, 1.00f);
 	ccDrawPoly(verts, _count, YES);
 	
 	//glLineWidth(3.0f);
 	//glColor4f(0.00f, 0.00f, 0.00f, 1.00f);
 	//ccDrawPoly(verts, _count, NO);
 	
-	//ccDrawCircle(_centralBody.pos, 64, _centralBody.angle, 64, NO);
+	//glLineWidth(3.0f);
+	//glColor4f(0.00f, 0.00f, 0.00f, 1.00f);
+	//ccDrawCircle(_centralBody.pos, 128, 360, 64, NO);
 }
 
 

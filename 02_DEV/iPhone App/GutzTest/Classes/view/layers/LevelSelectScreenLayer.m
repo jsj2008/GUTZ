@@ -17,6 +17,8 @@
 #import "DigitUtils.h"
 #import "RandUtils.h"
 
+#import "SimpleAudioEngine.h"
+
 
 static NSString *borderType = @"borderType";
 
@@ -28,8 +30,11 @@ static NSString *borderType = @"borderType";
     NSLog(@"%@.init()", [self class]);
    CGSize wins = [[CCDirector sharedDirector] winSize];
 	
+	[[SimpleAudioEngine sharedEngine] preloadEffect:@"buttonSound.wav"];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:@"levelSelect.wav"];
+	
 	//self = [super init];
-	self = [super initWithBackround:@"background_main.jpg"];
+	self = [super initWithBackround:@"bg_menu.png"];
     
     //CCSprite *bg = [CCSprite spriteWithFile: @"background_default.jpg"];
 	//bg.position = ccp(160, 240);
@@ -44,22 +49,22 @@ static NSString *borderType = @"borderType";
 	_space = [[ChipmunkSpace alloc] init];
 	_space.gravity = cpv(0, 0);
 	
-	[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space]];
+	//[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space]];
 	
 	CGRect rect = CGRectMake(0, 0, wins.width, wins.height);
 	[_space addBounds:rect thickness:532 elasticity:1 friction:1 layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:borderType];
 	
 	
-	_accBlob1 = [[JellyBlob alloc] initWithPos:cpv(64, 100) radius:32 count:16];
+	_accBlob1 = [[JellyBlob alloc] initWithPos:cpv(164, 100) radius:32 count:16];
 	[_space add:_accBlob1];
 	
 	_accBlob2 = [[JellyBlob alloc] initWithPos:cpv(160, 120) radius:16 count:8];
 	[_space add:_accBlob2];
 	
-	_accBlob3 = [[JellyBlob alloc] initWithPos:cpv(240, 240) radius:24 count:12];
+	_accBlob3 = [[JellyBlob alloc] initWithPos:cpv(140, 210) radius:24 count:12];
 	[_space add:_accBlob3];
 	
-	_accBlob4 = [[JellyBlob alloc] initWithPos:cpv(240, 32) radius:8 count:8];
+	_accBlob4 = [[JellyBlob alloc] initWithPos:cpv(140, 332) radius:8 count:8];
 	[_space add:_accBlob4];
 	
 	[self schedule:@selector(physicsStepper:)];
@@ -84,13 +89,13 @@ static NSString *borderType = @"borderType";
     
     NSMutableArray *level_arr = [[NSMutableArray alloc] init];
     
-    for (int i=0; i<36; i++) {
+    for (int i=0; i<12; i++) {
         
-		if (i >= 7)
-            isLocked = YES;
+		if (i > 2)
+			isLocked = YES;
         
 		else
-            isLocked = NO;
+			isLocked = NO;
         
 		
 		CCMenuItemImage *btnLvlItm = [self makeBtn:i locked:isLocked];
@@ -129,7 +134,7 @@ static NSString *borderType = @"borderType";
 	
 	else {
 		
-		btnLevel = [LvlBtnSprite itemFromNormalImage:@"buttonUnlocked_nonActive.png" selectedImage:@"buttonUnlocked_Active.png" target:self selector:@selector(onLevelSelect:)];
+		btnLevel = [LvlBtnSprite itemFromNormalImage:@"btn_lvlUnlocked.png" selectedImage:@"btn_lvlUnlockedActive.png" target:self selector:@selector(onLevelSelect:)];
 		
 		CCSprite *indHolderSprite = [CCSprite node];
 		[indHolderSprite setScale:kLVL_NUM_SCALE_MULT * [[CCDirector sharedDirector]contentScaleFactor]];
@@ -179,12 +184,17 @@ static NSString *borderType = @"borderType";
 -(void) onBackMenu:(id)sender {
     NSLog(@"LevelSelectScreenLayer.onBackMenu()");
     
+	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
     [ScreenManager goMenu];
 }
 
 -(void) onLevelSelect:(id)sender {
     NSLog(@"LevelSelectScreenLayer.onLevelSelect()");
     
+	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
+	
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.25f];
+	 [[SimpleAudioEngine sharedEngine] playEffect:@"levelSelect.wav"];
 	[ScreenManager goPlay:1];
 }
 
@@ -198,7 +208,27 @@ static NSString *borderType = @"borderType";
 	//NSLog(@"PlayScreenLayer.physicsStepper(%0.000000f)", [[CCDirector sharedDirector] getFPS]);
 	
 	[_space step:1.0 / 60.0];
+}
+
+-(void) draw {
+	//NSLog(@"///////[DRAW]////////");
+	
+	[super draw];
+	
+	
 	[_accBlob1 draw];
+	[_accBlob2 draw];
+	[_accBlob3 draw];
+	[_accBlob4 draw];
+	
+	
+	
+	
+	//for (int i=0; i<[arrGibs count]; i++) {
+	//	ChipmunkShape *shape = (ChipmunkShape *)[arrGibs objectAtIndex:i];
+	//	ccDrawCircle(shape.body.pos, 3, 360, 4, NO);
+	//}
+	
 }
 
 

@@ -3,9 +3,9 @@ v3
 r1
 cCheck dependencies
 cProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ffyiuioaoftfwsepagmqoaegggos/CocosDenshion-Prefix.pch.gch CocosDenshion/CocosDenshion-Prefix.pch normal i386 objective-c com.apple.compilers.llvmgcc42
-cCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CocosDenshion.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDOpenALSupport.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDOpenALSupport.m" normal i386 objective-c com.apple.compilers.llvmgcc42
+cCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/SimpleAudioEngine.m" normal i386 objective-c com.apple.compilers.llvmgcc42
 cLibtool "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/libCocosDenshion.a" normal i386
 
@@ -50,41 +50,41 @@ t1301536612
 s8005
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/CocosDenshion-Prefix.pch
-c000000004E3ECFB900000000000000A4
-t1312739257
+c000000004E4C220400000000000000A4
+t1313612292
 s164
 i<Foundation/Foundation.h>
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.h
-c000000004E2D8E03000000000000251D
-t1311608323
+c000000004E4C2204000000000000251D
+t1313612292
 s9501
 i"CocosDenshion.h"
 i<AVFoundation/AVFoundation.h>
 i"CDXMacOSXSupport.h"
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m
-c000000004E2D8E030000000000006865
-t1311608323
+c000000004E4C22040000000000006865
+t1313612292
 s26725
 i"CDAudioManager.h"
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDConfig.h
-c000000004E2D8E030000000000000A9A
-t1311608323
+c000000004E4C22040000000000000A9A
+t1313612292
 s2714
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDOpenALSupport.h
-c000000004E2D8E030000000000000CF9
-t1311608323
+c000000004E4C22040000000000000CF9
+t1313612292
 s3321
 i<OpenAL/al.h>
 i<OpenAL/alc.h>
 i<CoreFoundation/CFURL.h>
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDOpenALSupport.m
-c000000004E2D8E030000000000002602
-t1311608323
+c000000004E4C22040000000000002602
+t1313612292
 s9730
 i"CDOpenALSupport.h"
 i"CocosDenshion.h"
@@ -92,8 +92,8 @@ i<AudioToolbox/AudioToolbox.h>
 i<AudioToolbox/ExtendedAudioFile.h>
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CocosDenshion.h
-c000000004E2D8E030000000000003924
-t1311608323
+c000000004E4C22040000000000003924
+t1313612292
 s14628
 i<OpenAL/al.h>
 i<OpenAL/alc.h>
@@ -103,46 +103,46 @@ i"CDConfig.h"
 i"CDOpenALSupport.h"
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CocosDenshion.m
-c000000004E2D8E03000000000000B37C
-t1311608323
+c000000004E4C2204000000000000B37C
+t1313612292
 s45948
 i"CocosDenshion.h"
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/SimpleAudioEngine.h
-c000000004E2D8E030000000000000EE0
-t1311608323
+c000000004E4C22040000000000000EE0
+t1313612292
 s3808
 i"CDAudioManager.h"
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/SimpleAudioEngine.m
-c000000004E2D8E03000000000000139B
-t1311608323
+c000000004E4C2204000000000000139B
+t1313612292
 s5019
 i"SimpleAudioEngine.h"
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/libCocosDenshion.a
-t1313260653
+t1313615877
 s270584
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o
-t1313260652
+t1313615877
 s90792
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDOpenALSupport.o
-t1313260652
+t1313615877
 s8264
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.LinkFileList
-c000000004E46C46C000000000000028F
-t1313260652
+c000000004E4C3005000000000000028F
+t1313615877
 s655
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.o
-t1313260653
+t1313615877
 s131372
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o
-t1313260652
+t1313615877
 s32992
 
 N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/StaticAnalyzer/normal/i386/CDAudioManager.plist
@@ -161,13 +161,113 @@ N/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.b
 t2
 s0
 
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/CocosDenshion-Prefix.pch
+c000000004E4C220400000000000000A4
+t1313612292
+s164
+i<Foundation/Foundation.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDAudioManager.h
+c000000004E4C2204000000000000251D
+t1313612292
+s9501
+i"CocosDenshion.h"
+i<AVFoundation/AVFoundation.h>
+i"CDXMacOSXSupport.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDAudioManager.m
+c000000004E4C22040000000000006865
+t1313612292
+s26725
+i"CDAudioManager.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDConfig.h
+c000000004E4C22040000000000000A9A
+t1313612292
+s2714
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDOpenALSupport.h
+c000000004E4C22040000000000000CF9
+t1313612292
+s3321
+i<OpenAL/al.h>
+i<OpenAL/alc.h>
+i<CoreFoundation/CFURL.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDOpenALSupport.m
+c000000004E4C22040000000000002602
+t1313612292
+s9730
+i"CDOpenALSupport.h"
+i"CocosDenshion.h"
+i<AudioToolbox/AudioToolbox.h>
+i<AudioToolbox/ExtendedAudioFile.h>
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CocosDenshion.h
+c000000004E4C22040000000000003924
+t1313612292
+s14628
+i<OpenAL/al.h>
+i<OpenAL/alc.h>
+i<AudioToolbox/AudioToolbox.h>
+i<Foundation/Foundation.h>
+i"CDConfig.h"
+i"CDOpenALSupport.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CocosDenshion.m
+c000000004E4C2204000000000000B37C
+t1313612292
+s45948
+i"CocosDenshion.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/SimpleAudioEngine.h
+c000000004E4C22040000000000000EE0
+t1313612292
+s3808
+i"CDAudioManager.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/SimpleAudioEngine.m
+c000000004E4C2204000000000000139B
+t1313612292
+s5019
+i"SimpleAudioEngine.h"
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator/libCocosDenshion.a
+t1313612297
+s270584
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o
+t1313612305
+s90792
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDOpenALSupport.o
+t1313612305
+s8264
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.LinkFileList
+c000000004E4C2C1100000000000002AF
+t1313614865
+s687
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.o
+t1313612305
+s131372
+
+N/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o
+t1313612305
+s32992
+
 N/var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ejksyrghczwhkmgnvqtcxeymkxqm/CocosDenshion-Prefix.pch.pth
 t2
 s0
 
 N/var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ffyiuioaoftfwsepagmqoaegggos/CocosDenshion-Prefix.pch.gch
-t1313260652
+t1313615731
 s8654672
+
+N/var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-haylvkeptbqpvpdrayeeoqwfylgn/CocosDenshion-Prefix.pch.gch
+t2
+s0
 
 CAnalyze "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m"
 s335144386.594957
@@ -213,13 +313,25 @@ r0
 CBuild AST from "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/SimpleAudioEngine.m"
 r0
 
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDAudioManager.m
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDOpenALSupport.m
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CocosDenshion.m
+r0
+
+CBuild AST from /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/SimpleAudioEngine.m
+r0
+
 CCheck dependencies
 r0
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies8f17524d51fcb341^e083734d51fcb341^---0#1#0#--18"Check dependencies
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies5f44b7c04cfdb341^580304c14cfdb341^---0#1#0#--18"Check dependencies
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-s334953452.791034
-e334953452.980820
+s335308677.352961
+e335308677.689776
 r1
 xCompileC
 xbuild/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o
@@ -228,11 +340,24 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection109"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m3d9ecaecfbf6b341^5d16fbecfbf6b341^---0#0#0#-19%DVTDocumentLocation2@119"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/CocosDenshion/Sources/CDAudioManager.m0000000000000000^2084"CompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o CocosDenshion/Sources/CDAudioManager.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/CocosDenshion.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/CocosDenshion/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ffyiuioaoftfwsepagmqoaegggos/CocosDenshion-Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o"
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection109"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m936f5a8567fcb341^9198b08567fcb341^---0#0#0#-19%DVTDocumentLocation2@119"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/CocosDenshion/Sources/CDAudioManager.m0000000000000000^2084"CompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o CocosDenshion/Sources/CDAudioManager.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/CocosDenshion.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/CocosDenshion/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ffyiuioaoftfwsepagmqoaegggos/CocosDenshion-Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDAudioManager.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o"
+
+CCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDAudioManager.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s335307667.024594
+e335307668.163676
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDAudioManager.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection117"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDAudioManager.m4163069363fcb341^4be5299463fcb341^---0#0#0#-19%DVTDocumentLocation2@125"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDAudioManager.m0000000000000000^2138"CompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o CocosDenshion/Sources/CDAudioManager.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/CocosDenshion.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources/i386 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-haylvkeptbqpvpdrayeeoqwfylgn/CocosDenshion-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDAudioManager.m -o /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDAudioManager.o
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDOpenALSupport.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDOpenALSupport.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-s334953452.791260
-e334953452.857455
+s335308677.353868
+e335308677.456365
 r1
 xCompileC
 xbuild/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDOpenALSupport.o
@@ -241,11 +366,24 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection110"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDOpenALSupport.m2fa5caecfbf6b341^5281dbecfbf6b341^---0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/CocosDenshion/Sources/CDOpenALSupport.m0000000000000000^2088"CompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDOpenALSupport.o CocosDenshion/Sources/CDOpenALSupport.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/CocosDenshion.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/CocosDenshion/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ffyiuioaoftfwsepagmqoaegggos/CocosDenshion-Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDOpenALSupport.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDOpenALSupport.o"
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection110"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDOpenALSupport.m68af5a8567fcb341^babd748567fcb341^---0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/CocosDenshion/Sources/CDOpenALSupport.m0000000000000000^2088"CompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDOpenALSupport.o CocosDenshion/Sources/CDOpenALSupport.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/CocosDenshion.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/CocosDenshion/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ffyiuioaoftfwsepagmqoaegggos/CocosDenshion-Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CDOpenALSupport.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDOpenALSupport.o"
+
+CCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDOpenALSupport.o /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDOpenALSupport.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s335307667.024618
+e335307667.562523
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDOpenALSupport.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDOpenALSupport.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDOpenALSupport.me36c069363fcb341^0c01909363fcb341^---0#0#0#-19%DVTDocumentLocation2@126"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDOpenALSupport.m0000000000000000^2142"CompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDOpenALSupport.o CocosDenshion/Sources/CDOpenALSupport.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/CocosDenshion.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources/i386 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-haylvkeptbqpvpdrayeeoqwfylgn/CocosDenshion-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CDOpenALSupport.m -o /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CDOpenALSupport.o
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CocosDenshion.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-s334953452.791262
-e334953453.008591
+s335308677.353871
+e335308677.689756
 r1
 xCompileC
 xbuild/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.o
@@ -254,11 +392,24 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CocosDenshion.meca4caecfbf6b341^4d3202edfbf6b341^---0#0#0#-19%DVTDocumentLocation2@118"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/CocosDenshion/Sources/CocosDenshion.m0000000000000000^2080"CompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.o CocosDenshion/Sources/CocosDenshion.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/CocosDenshion.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/CocosDenshion/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ffyiuioaoftfwsepagmqoaegggos/CocosDenshion-Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CocosDenshion.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.o"
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CocosDenshion.m21b05a8567fcb341^7992b08567fcb341^---0#0#0#-19%DVTDocumentLocation2@118"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/CocosDenshion/Sources/CocosDenshion.m0000000000000000^2080"CompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.o CocosDenshion/Sources/CocosDenshion.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/CocosDenshion.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/CocosDenshion/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ffyiuioaoftfwsepagmqoaegggos/CocosDenshion-Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/CocosDenshion.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.o"
+
+CCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.o /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CocosDenshion.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s335307667.024621
+e335307667.681538
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CocosDenshion.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection116"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CocosDenshion.mbd6d069363fcb341^1479ae9363fcb341^---0#0#0#-19%DVTDocumentLocation2@124"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CocosDenshion.m0000000000000000^2134"CompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.o CocosDenshion/Sources/CocosDenshion.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/CocosDenshion.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources/i386 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-haylvkeptbqpvpdrayeeoqwfylgn/CocosDenshion-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/CocosDenshion.m -o /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.o
 
 CCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/SimpleAudioEngine.m" normal i386 objective-c com.apple.compilers.llvmgcc42
-s334953452.791268
-e334953452.934594
+s335308677.463383
+e335308677.668096
 r1
 xCompileC
 xbuild/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o
@@ -267,20 +418,47 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/SimpleAudioEngine.m9babcaecfbf6b341^e640efecfbf6b341^---0#0#0#-19%DVTDocumentLocation2@122"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/CocosDenshion/Sources/SimpleAudioEngine.m0000000000000000^2096"CompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o CocosDenshion/Sources/SimpleAudioEngine.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/CocosDenshion.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/CocosDenshion/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ffyiuioaoftfwsepagmqoaegggos/CocosDenshion-Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/SimpleAudioEngine.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o"
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/SimpleAudioEngine.m8788778567fcb341^1408ab8567fcb341^---0#0#0#-19%DVTDocumentLocation2@122"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/CocosDenshion/Sources/SimpleAudioEngine.m0000000000000000^2096"CompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o CocosDenshion/Sources/SimpleAudioEngine.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/CocosDenshion.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/CocosDenshion/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ffyiuioaoftfwsepagmqoaegggos/CocosDenshion-Prefix.pch -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/Sources/SimpleAudioEngine.m" -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o"
+
+CCompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/SimpleAudioEngine.m normal i386 objective-c com.apple.compilers.llvmgcc42
+s335307667.024634
+e335307668.091712
+r1
+xCompileC
+xbuild/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/SimpleAudioEngine.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"Compile /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/SimpleAudioEngine.m5e64069363fcb341^6475179463fcb341^---0#0#0#-19%DVTDocumentLocation2@128"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/SimpleAudioEngine.m0000000000000000^2150"CompileC build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o CocosDenshion/Sources/SimpleAudioEngine.m normal i386 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/CocosDenshion.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources/i386 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator -include /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-haylvkeptbqpvpdrayeeoqwfylgn/CocosDenshion-Prefix.pch -c /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources/SimpleAudioEngine.m -o /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/SimpleAudioEngine.o
 
 CLibtool "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/libCocosDenshion.a" normal i386
-s334953453.010028
-e334953453.078699
+s335308677.690943
+e335308677.718829
 r1
 xLibtool
 x/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/libCocosDenshion.a
 xnormal
 xi386
 o/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
-lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Libtool build/Debug-iphonesimulator/libCocosDenshion.a normal i38662a102edfbf6b341^af2514edfbf6b341^-136"/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#0#--908"Libtool build/Debug-iphonesimulator/libCocosDenshion.a normal i386    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool -static -arch_only i386 -syslibroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk "-L/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -filelist "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.LinkFileList" -ObjC -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/libCocosDenshion.a"
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Libtool build/Debug-iphonesimulator/libCocosDenshion.a normal i38662f8b08567fcb341^b405b88567fcb341^-136"/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#0#--908"Libtool build/Debug-iphonesimulator/libCocosDenshion.a normal i386    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool -static -arch_only i386 -syslibroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk "-L/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -filelist "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.LinkFileList" -ObjC -o "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/libCocosDenshion.a"
+
+CLibtool /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator/libCocosDenshion.a normal i386
+s335307668.164845
+e335307668.497846
+r1
+xLibtool
+x/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator/libCocosDenshion.a
+xnormal
+xi386
+o/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC 
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Libtool build/Debug-iphonesimulator/libCocosDenshion.a normal i386f2422a9463fcb341^60767f9463fcb341^-136"/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool: -dynamic not specified the following flags are invalid: -ObjC -0#0#0#--932"Libtool build/Debug-iphonesimulator/libCocosDenshion.a normal i386    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/libtool -static -arch_only i386 -syslibroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -L/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator -filelist /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/Objects-normal/i386/CocosDenshion.LinkFileList -ObjC -o /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator/libCocosDenshion.a
 
 CProcessPCH /Users/Gullinbursti/Library/Developer/Xcode/DerivedData/iOSGutzProjs-aqwjtesxmdaoskcfttynkvktxrfz/Index/PrecompiledHeaders/CocosDenshion-Prefix-bxjqnjqkcjcndpgwvnnzmminhrwe_ast/CocosDenshion-Prefix.pch.pth CocosDenshion/CocosDenshion-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /Users/Gullinbursti/Library/Developer/Xcode/DerivedData/iOSGutzProjs-domzgonzelhwwzcvoubkdverlblp/Index/PrecompiledHeaders/CocosDenshion-Prefix-fzdpzljnsqcqpjefwyatltjrubwf_ast/CocosDenshion-Prefix.pch.pth CocosDenshion/CocosDenshion-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
 r0
 
 CProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ejksyrghczwhkmgnvqtcxeymkxqm/CocosDenshion-Prefix.pch.pth CocosDenshion/CocosDenshion-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.analyzer
@@ -308,4 +486,17 @@ xi386
 xobjective-c
 xcom.apple.compilers.llvmgcc42
 lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection49"Precompile CocosDenshion/CocosDenshion-Prefix.pch42434becfbf6b341^931acaecfbf6b341^---0#0#0#-19%DVTDocumentLocation2@119"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone%20App/CocosDenshion/CocosDenshion-Prefix.pch0000000000000000^2000"ProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ffyiuioaoftfwsepagmqoaegggos/CocosDenshion-Prefix.pch.gch CocosDenshion/CocosDenshion-Prefix.pch normal i386 objective-c com.apple.compilers.llvmgcc42    cd "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/CocosDenshion.hmap" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator/include" -I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone -IApp/CocosDenshion/Sources "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources/i386" "-I/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources" "-F/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/build/Debug-iphonesimulator" -c "/Volumes/Skuld/labor/clients/sThompkins/gutz/02_DEV/iPhone App/CocosDenshion/CocosDenshion-Prefix.pch" -o /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-ffyiuioaoftfwsepagmqoaegggos/CocosDenshion-Prefix.pch.gch
+
+CProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-haylvkeptbqpvpdrayeeoqwfylgn/CocosDenshion-Prefix.pch.gch CocosDenshion/CocosDenshion-Prefix.pch normal i386 objective-c com.apple.compilers.llvmgcc42
+s335307665.720338
+e335307667.023447
+r1
+xProcessPCH
+x/var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-haylvkeptbqpvpdrayeeoqwfylgn/CocosDenshion-Prefix.pch.gch
+xCocosDenshion/CocosDenshion-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvmgcc42
+lSLF03#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection49"Precompile CocosDenshion/CocosDenshion-Prefix.pchf585b89163fcb341^1900069363fcb341^---0#0#0#-19%DVTDocumentLocation2@125"file://localhost/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/CocosDenshion-Prefix.pch0000000000000000^2048"ProcessPCH /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-haylvkeptbqpvpdrayeeoqwfylgn/CocosDenshion-Prefix.pch.gch CocosDenshion/CocosDenshion-Prefix.pch normal i386 objective-c com.apple.compilers.llvmgcc42    cd /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/llvm-gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -DDEBUG -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.3.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40000 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/CocosDenshion.hmap -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator/include -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/Sources -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources/i386 -I/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/GutzTest.build/Debug-iphonesimulator/CocosDenshion.build/DerivedSources -F/Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/build/Debug-iphonesimulator -c /Volumes/Skuld/labor/clients/sThompkins/gutz/04_BACKUP/20110817/131811/CocosDenshion/CocosDenshion-Prefix.pch -o /var/folders/Zt/Ztdzxm52GUyTZ208TeHQ5k+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CocosDenshion-Prefix-haylvkeptbqpvpdrayeeoqwfylgn/CocosDenshion-Prefix.pch.gch
 

@@ -17,7 +17,7 @@
 	NSLog(@"%s.init()", [self class]);
 	
 	//self = [super init];
-	self = [super initWithBackround:@"background_default.jpg"];
+	self = [super initWithBackround:@"background_default.png"];
 	
 	if (!self)
 		return (nil);

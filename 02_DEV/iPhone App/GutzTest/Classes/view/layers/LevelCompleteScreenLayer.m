@@ -11,6 +11,7 @@
 #import "ChipmunkDebugNode.h"
 
 #import "RandUtils.h"
+#import "SimpleAudioEngine.h"
 
 
 static NSString *borderType = @"borderType";
@@ -29,8 +30,15 @@ static NSString *borderType = @"borderType";
     NSLog(@"LevelCompleteScreenLayer.init()");
     CGSize wins = [[CCDirector sharedDirector] winSize];
 	
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.85f];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:@"buttonSound.wav"];
+	
+	[[SimpleAudioEngine sharedEngine] playEffect:@"greatJob.wav"];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"afterSplatter.wav"];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"postGameEffect01.wav"];
+	
 	//self = [super init];
-	self = [super initWithBackround:@"background_main.jpg"];
+	self = [super initWithBackround:@"bg_menu.png"];
 	
 	NSDate *unixTime = [[NSDate alloc] initWithTimeIntervalSince1970:0];
 	NSLog(@":::::::::::::[%d]:::::::::::::", unixTime);
@@ -45,58 +53,192 @@ static NSString *borderType = @"borderType";
 	_space = [[ChipmunkSpace alloc] init];
 	_space.gravity = cpv(0, 0);
 	
-	[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space]];
+	//[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space]];
 	
 	CGRect rect = CGRectMake(0, 0, wins.width, wins.height);
 	[_space addBounds:rect thickness:532 elasticity:1 friction:1 layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:borderType];
 	
 	
-	_accBlob1 = [[JellyBlob alloc] initWithPos:cpv(64, 100) radius:32 count:16];
+	_accBlob1 = [[JellyBlob alloc] initWithPos:cpv(164, 100) radius:32 count:16];
 	[_space add:_accBlob1];
 	
 	_accBlob2 = [[JellyBlob alloc] initWithPos:cpv(160, 120) radius:16 count:8];
 	[_space add:_accBlob2];
 	
-	_accBlob3 = [[JellyBlob alloc] initWithPos:cpv(240, 240) radius:24 count:12];
+	_accBlob3 = [[JellyBlob alloc] initWithPos:cpv(20, 110) radius:24 count:12];
 	[_space add:_accBlob3];
+
 	
 	[self schedule:@selector(physicsStepper:)];
 	[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
     
-	float delayTime = 0.3f;
+	float delayTime = 0.0f;
+	
+	
+	CCSprite *gSprite = [CCSprite spriteWithFile:@"letter_g.png"];
+	[gSprite setPosition:ccp(60, 380)];
+	[gSprite setScale:0.0f];
+	[self addChild:gSprite];
+	
+	CCSprite *rSprite = [CCSprite spriteWithFile:@"letter_r.png"];
+	[rSprite setScale:0.0f];
+	[rSprite setPosition:ccp(100, 380)];
+	[self addChild:rSprite];
+	
+	CCSprite *eSprite = [CCSprite spriteWithFile:@"letter_e.png"];
+	[eSprite setScale:0.0f];
+	[eSprite setPosition:ccp(140, 380)];
+	[self addChild:eSprite];
+	
+	CCSprite *aSprite = [CCSprite spriteWithFile:@"letter_a.png"];
+	[aSprite setScale:0.0f];
+	[aSprite setPosition:ccp(180, 380)];
+	[self addChild:aSprite];
+	
+	CCSprite *tSprite = [CCSprite spriteWithFile:@"letter_t.png"];
+	[tSprite setScale:0.0f];
+	[tSprite setPosition:ccp(220, 380)];
+	[self addChild:tSprite];
+	
+	CCSprite *xSprite = [CCSprite spriteWithFile:@"letter_exPoint.png"];
+	[xSprite setScale:0.0f];
+	[xSprite setPosition:ccp(250, 380)];
+	[self addChild:xSprite];
+	
+	
+	arrLetterSprite = [[NSMutableArray alloc] initWithObjects:gSprite, rSprite, eSprite, aSprite, tSprite, xSprite, nil];
+	
+	
+	for (int i=0; i<[arrLetterSprite count]; i++) {
+		
+		CCSprite *sprite = [arrLetterSprite objectAtIndex:i];
+		CCAction *action = [CCSequence actions:[CCDelayTime actionWithDuration: delayTime], [CCScaleTo actionWithDuration:0.1f scale:1.0], nil];
+		
+		delayTime += 0.025f;
+		delayTime *= 0.98;
+		[sprite runAction: action];
+	}
+	
+	[self performSelector:@selector(letterWiggleProvoker:) withObject:nil afterDelay:0.2];
+	
+	
+	
+	CCSprite *star1 = [CCSprite spriteWithFile:@"lvlstar_big.png"];
+	[star1 setScale:0.0f];
+	[star1 setPosition:ccp(80, 320)];
+	[self addChild:star1];
+	
+	CCSprite *star2 = [CCSprite spriteWithFile:@"lvlstar_big.png"];
+	[star2 setPosition:ccp(160, 320)];
+	[star2 setScale:0.0f];
+	[self addChild:star2];
+	
+	CCSprite *star3 = [CCSprite spriteWithFile:@"lvlstar_big.png"];
+	[star3 setPosition:ccp(240, 320)];
+	[star3 setScale:0.0f];
+	[self addChild:star3];
+	
+	arrStarSprite = [[NSMutableArray alloc] initWithObjects:star1, star2, star3, nil];
+	
+	delayTime += 0.2f;
+	for (int i=0; i<[arrStarSprite count]; i++) {
+		CCSprite *sprite = [arrStarSprite objectAtIndex:i];
+		CCAction *action = [CCSequence actions:[CCDelayTime actionWithDuration: delayTime], [CCScaleTo actionWithDuration:0.1f scale:1.0], nil];
+		
+		delayTime += 0.05f;
+		[sprite runAction: action];
+	}
+	
+	[self performSelector:@selector(starWiggleProvoker:) withObject:nil afterDelay:0.5];
 	
 	CCMenuItemImage *btnReplayLevel = [CCMenuItemImage itemFromNormalImage:@"btn_replay.png" selectedImage:@"btn_replayActive.png" target:self selector:@selector(onReplayLevel:)];
+	//[btnReplayLevel setScale:0.0f];
 	
 	CCMenuItemImage *btnNextLevel = [CCMenuItemImage itemFromNormalImage:@"btn_next.png" selectedImage:@"btn_nextActive.png" target:self selector:@selector(onNextLevel:)];
-	[btnNextLevel setScale:0.0f];
+	//[btnNextLevel setScale:0.0f];
 	
 	CCMenu *menu = [CCMenu menuWithItems:btnReplayLevel, btnNextLevel, nil];
-	CCAction *action = [CCSequence actions:[CCDelayTime actionWithDuration:delayTime], [CCScaleTo actionWithDuration:0.5f scale:1.0f], nil];
-   
-	delayTime += 0.1f;
-	[btnNextLevel runAction:action];
+	//CCAction *action = [CCSequence actions:[CCDelayTime actionWithDuration:delayTime], [CCScaleTo actionWithDuration:0.5f scale:1.0f], nil];
 	
-	menu.position = ccp(160, 250);
-	[menu alignItemsVerticallyWithPadding:100.0f];
+	CCAction *action = [CCSequence actions:[CCMoveBy actionWithDuration:0.2f position:ccp(0, 160)], nil];
+   
+	//[btnReplayLevel runAction:[action copy]];
+	//[btnNextLevel runAction:[action copy]];
+	
+	menu.position = ccp(160, 0);
+	[menu alignItemsVerticallyWithPadding:50.0f];
+	[menu runAction:action];
+	
+	//[menu alignItemsVerticallyWithPadding:115.0f];
 	[self addChild:menu z:2];
 	
 		
 	return (self);
 }
 
+
+-(void)letterWiggleProvoker:(id)sender {
+	[self schedule:@selector(letterWiggler:) interval:0.1f];
+}
+
+
+-(void)starWiggleProvoker:(id)sender {
+	[self schedule:@selector(starWiggler:) interval:0.15f];
+}
+
 -(void) onNextLevel:(id)sender { 
     NSLog(@"LevelCompleteScreenLayer.onNextLevel()");
+	
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95f];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
 	[ScreenManager goPlay:++indLvl];
 }
 
 -(void) onReplayLevel:(id)sender { 
 	NSLog(@"LevelCompleteScreenLayer.onReplayLevel()");
+	
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95f];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
 	[ScreenManager goPlay:indLvl];
 }
 
 -(void) onBackMenu:(id)sender {
     NSLog(@"LevelCompleteScreenLayer.onBackMenu()");
+	
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95f];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
 	[ScreenManager goMenu];
+}
+
+
+-(void)letterWiggler:(id)sender {
+	
+	cpVect pos = cpv(65, 380);
+	
+	for (int i=0; i<[arrLetterSprite count]; i++) {
+		
+		CCSprite *sprite = [arrLetterSprite objectAtIndex:i];
+		[sprite setPosition:cpvadd(pos, cpv((CCRANDOM_0_1() * 2) - 1, (CCRANDOM_0_1() * 2) - 1))];
+		
+		[sprite runAction:[CCScaleTo actionWithDuration:0.1f scale:(CCRANDOM_0_1() * 0.25) + 0.875]];
+		pos = cpvadd(pos, cpv(40, 0));
+	}
+}
+
+
+
+-(void)starWiggler:(id)sender {
+	
+	cpVect pos = cpv(80, 320);
+	
+	for (int i=0; i<[arrStarSprite count]; i++) {
+		
+		CCSprite *sprite = [arrStarSprite objectAtIndex:i];
+		[sprite setPosition:cpvadd(pos, cpv((CCRANDOM_0_1() * 2) - 1, (CCRANDOM_0_1() * 2) - 1))];
+		
+		[sprite runAction:[CCScaleTo actionWithDuration:0.1f scale:(CCRANDOM_0_1() * 0.25) + 0.875]];
+		pos = cpvadd(pos, cpv(80, 0));
+	}
 }
 
 
@@ -104,14 +246,31 @@ static NSString *borderType = @"borderType";
 	//NSLog(@"PlayScreenLayer.physicsStepper(%0.000000f)", [[CCDirector sharedDirector] getFPS]);
 	
 	[_space step:1.0 / 60.0];
-	[_accBlob1 draw];
 }
 
+-(void) draw {
+	//NSLog(@"///////[DRAW]////////");
+	
+	[super draw];
+	
+	
+	[_accBlob1 draw];
+	[_accBlob2 draw];
+	[_accBlob3 draw];
+	
+	
+	
+	
+	//for (int i=0; i<[arrGibs count]; i++) {
+	//	ChipmunkShape *shape = (ChipmunkShape *)[arrGibs objectAtIndex:i];
+	//	ccDrawCircle(shape.body.pos, 3, 360, 4, NO);
+	//}
+	
+}
 
 -(void) mobWiggler:(id)sender {
 	
 	cpFloat maxForce = 4.0f;
-	
 	cpFloat rndForce = CCRANDOM_0_1() * maxForce;
 	
 	

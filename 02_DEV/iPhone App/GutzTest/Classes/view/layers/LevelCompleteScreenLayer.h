@@ -25,6 +25,10 @@
 	JellyBlob *_accBlob1;
 	JellyBlob *_accBlob2;
 	JellyBlob *_accBlob3;
+	
+	
+	NSMutableArray *arrLetterSprite;
+	NSMutableArray *arrStarSprite;
 }
 
 
@@ -35,7 +39,11 @@
 
 
 -(void) physicsStepper:(ccTime)dt;
+-(void)letterWiggleProvoker:(id)sender;
+-(void)starWiggleProvoker:(id)sender;
 -(void) mobWiggler:(id)sender;
+-(void)letterWiggler:(id)sender;
+-(void)starWiggler:(id)sender;
 
 
 @end

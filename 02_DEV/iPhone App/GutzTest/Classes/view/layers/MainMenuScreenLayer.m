@@ -16,6 +16,8 @@
 #import "DigitUtils.h"
 #import "RandUtils.h"
 
+#import "SimpleAudioEngine.h"
+
 
 static NSString *borderType = @"borderType";
 
@@ -25,30 +27,36 @@ static NSString *borderType = @"borderType";
     NSLog(@"MainMenuScreenLayer.init()");
     CGSize wins = [[CCDirector sharedDirector] winSize];
 	//self = [super init];
-	self = [super initWithBackround:@"background_main.jpg"];
+	self = [super initWithBackround:@"bg_menu.png"];
 	float delayTime = 0.3f;
+	
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:@"buttonSound.wav"];
 	
 	cpInitChipmunk();
 	
 	_space = [[ChipmunkSpace alloc] init];
 	_space.gravity = cpv(0, 0);
 	
-	[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space]];
+	//[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space]];
 	
 	CGRect rect = CGRectMake(0, 0, wins.width, wins.height);
 	[_space addBounds:rect thickness:532 elasticity:1 friction:1 layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:borderType];
 	
 	
-	_accBlob1 = [[JellyBlob alloc] initWithPos:cpv(64, 100) radius:32 count:16];
+	_accBlob1 = [[JellyBlob alloc] initWithPos:cpv(164, 100) radius:32 count:16];
+	_accBlob1.rFillColor = 1.0f;
+	_accBlob1.gFillColor = 0.37f;
+	_accBlob1.bFillColor = 0.37f;
 	[_space add:_accBlob1];
 	
 	_accBlob2 = [[JellyBlob alloc] initWithPos:cpv(160, 120) radius:16 count:8];
 	[_space add:_accBlob2];
 	
-	_accBlob3 = [[JellyBlob alloc] initWithPos:cpv(240, 240) radius:24 count:12];
+	_accBlob3 = [[JellyBlob alloc] initWithPos:cpv(140, 210) radius:24 count:12];
 	[_space add:_accBlob3];
 	
-	_accBlob4 = [[JellyBlob alloc] initWithPos:cpv(240, 32) radius:8 count:8];
+	_accBlob4 = [[JellyBlob alloc] initWithPos:cpv(40, 232) radius:8 count:8];
 	[_space add:_accBlob4];
 	
 	[self schedule:@selector(physicsStepper:)];
@@ -87,22 +95,32 @@ static NSString *borderType = @"borderType";
 
 -(void) onNewGame:(id)sender{ 
      NSLog(@"MainMenuScreenLayer.onNewGame()");
+	
+	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
     [ScreenManager goLevelSelect];
 }
 
 
 -(void) onStore:(id)sender {
 	NSLog(@"MainMenuScreenLayer.onStore()");
+	
+	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
 	//[ScreenManager goConfig];
 }
 
 -(void) onAbout:(id)sender {
 	NSLog(@"MainMenuScreenLayer.onAbout()");
+	
+	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
 	//[ScreenManager goConfig];
 }
 
 -(void) onConfig:(id)sender {
     NSLog(@"MainMenuScreenLayer.onConfig()");
+	
+	
+	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
+	
 	[ScreenManager goConfig];
 }
 
@@ -117,7 +135,6 @@ static NSString *borderType = @"borderType";
 	//NSLog(@"PlayScreenLayer.physicsStepper(%0.000000f)", [[CCDirector sharedDirector] getFPS]);
 	
 	[_space step:1.0 / 60.0];
-	[_accBlob1 draw];
 }
 
 
@@ -147,6 +164,29 @@ static NSString *borderType = @"borderType";
 	}
 	
 }
+
+
+-(void) draw {
+	//NSLog(@"///////[DRAW]////////");
+	
+	[super draw];
+	
+	
+	[_accBlob1 draw];
+	[_accBlob2 draw];
+	[_accBlob3 draw];
+	[_accBlob4 draw];
+		
+		
+	
+	
+	//for (int i=0; i<[arrGibs count]; i++) {
+	//	ChipmunkShape *shape = (ChipmunkShape *)[arrGibs objectAtIndex:i];
+	//	ccDrawCircle(shape.body.pos, 3, 360, 4, NO);
+	//}
+	
+}
+
 @end
 
 

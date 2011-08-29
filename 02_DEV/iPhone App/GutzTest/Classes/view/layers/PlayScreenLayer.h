@@ -21,6 +21,8 @@
 
 #import "CCParticleSystem.h"
 
+#import "LevelDataPlistParser.h"
+
 
 #define PHYSICS_STEP_INC 2
 #define PI 3.1415926536
@@ -101,6 +103,9 @@
 	int indLvl;
 	
 	int bg_cnt;
+	
+	
+	LevelDataPlistParser *plistLvlData;
 
 	
 }
@@ -122,6 +127,8 @@
 -(void) scaffoldHUD;
 -(void) debuggingSetup;
 -(void) onResetArea:(id)sender;
+
+-(void) buildLvlObjs;
 
 - (BOOL)beginGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
 - (BOOL)preSolveGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace* )space;

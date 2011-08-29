@@ -201,7 +201,8 @@ void ccDrawCircle( CGPoint center, float r, float a, NSUInteger segs, BOOL drawL
 	glDisableClientState(GL_COLOR_ARRAY);
 	
 	glVertexPointer(2, GL_FLOAT, 0, vertices);	
-	glDrawArrays(GL_LINE_STRIP, 0, (GLsizei) segs+additionalSegment);
+	//glDrawArrays(GL_LINE_STRIP, 0, (GLsizei) segs+additionalSegment);
+	glDrawArrays(GL_TRIANGLE_FAN, 0, (GLsizei) segs+additionalSegment);
 	
 	// restore default state
 	glEnableClientState(GL_COLOR_ARRAY);
