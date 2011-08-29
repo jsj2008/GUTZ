@@ -1,0 +1,939 @@
+//
+//  PlayScreenLayer.m
+//  GutzTest
+//
+//  Created by Gullinbursti on 06/16/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import "GameConfig.h"
+
+#import "PlayScreenLayer.h"
+
+#import "LvlStarSprite.h"
+#import "ScoreSprite.h"
+#import "ElapsedTimeSprite.h"
+#import "SegNodeSprite.h"
+
+
+#import "CreatureNodeVO.h"
+
+//#import "CreatureConsts.h"
+#import "RandUtils.h"
+
+
+void eachShape (void *ptr, void *unused) {
+	
+	cpShape *shape = (cpShape *)ptr;
+	CCSprite *sprite = shape->data;
+	
+	if (sprite) {
+		cpBody *body = shape->body;
+		
+		
+		// TIP: cocos2d and chipmunk uses the same struct to store it's position
+		// chipmunk uses: cpVect, and cocos2d uses CGPoint but in reality the are the same
+		// since v0.7.1 you can mix them if you want.		
+		[sprite setPosition: body->p];
+		body->p = [sprite position];
+		
+		[sprite setRotation: (float) CC_RADIANS_TO_DEGREES(-body->a)];
+		cpBodySetAngle(body, -CC_DEGREES_TO_RADIANS([sprite rotation]));
+		
+	}
+}
+
+void eachShapeHash (void *ptr, void *unused) {
+	
+	cpShape *shape = (cpShape *)ptr;
+	cpBody *body = shape->body;
+	
+	//cpBody *body = (cpBody *)ptr;
+	//CCSprite *sprite = shape->data;
+	
+	body->p = cpv(400, 32);
+	
+	NSLog(@"PlayScreenLayer.eachShapeHash(%@)", @"");
+	
+	//if (sprite) {
+	//	cpBody *body = shape->body;
+		
+		// TIP: cocos2d and chipmunk uses the same struct to store it's position
+		// chipmunk uses: cpVect, and cocos2d uses CGPoint but in reality the are the same
+		// since v0.7.1 you can mix them if you want.		
+	//	[sprite setPosition: body->p];
+	//	[sprite setRotation: (float) CC_RADIANS_TO_DEGREES(-body->a)];
+	//}
+}
+
+
+@implementation PlayScreenLayer
+
+
+@synthesize score_amt;
+@synthesize segAngInc;
+@synthesize segLenRadius;
+@synthesize arrCreatureVO;
+
+-(id) init {
+    NSLog(@"%@.init()", [self class]);
+    
+    if (self = [super init]) { //[super initWithColor:ccc4(255, 255, 255, 255)])) {
+		//[super init];
+		
+		[self setColor:ccc3(255, 255, 255)];
+		
+		CCSprite *bg = [CCSprite spriteWithFile: @"background_white.jpg"];
+		bg.position = ccp(160, 240);
+		//[self addChild:bg z:0];
+		
+		self.isTouchEnabled = YES;
+		self.isAccelerometerEnabled = YES;
+			
+		segHolderSprite = [CCSprite node];
+		[self addChild:segHolderSprite z:1];
+			
+		[self chipmunkSetup];
+		[self scaffoldHUD];
+			
+		[self schedule:@selector(physicsStepper:) interval:(1.0f / 60.0f)];
+	}
+	
+	
+	return (self);
+}
+
+-(void) scaffoldHUD {
+	
+	CCMenuItemImage *btnPause = [CCMenuItemImage itemFromNormalImage:@"HUD_pauseButton_nonActive.png" selectedImage:@"HUD_pauseButton_Active.png" target:nil selector:nil];
+    CCMenuItemImage *btnPlay = [CCMenuItemImage itemFromNormalImage:@"HUD_pauseButton_nonActive.png" selectedImage:@"HUD_pauseButton_Active.png" target:nil selector:nil];
+    btnPlayPauseToggle = [CCMenuItemToggle itemWithTarget:self selector:@selector(onPlayPauseToggle:) items:btnPause, btnPlay, nil];
+	CCMenu *mnuPlayPause = [CCMenu menuWithItems: btnPlayPauseToggle, nil];
+	
+	mnuPlayPause.position = ccp(280, 440);
+	[mnuPlayPause alignItemsVerticallyWithPadding: 20.0f];
+	[self addChild: mnuPlayPause];
+	
+	hudStarsSprite = [[LvlStarSprite alloc] init];
+	[hudStarsSprite setPosition:ccp(28, 32)];
+	[self addChild:hudStarsSprite];
+	
+	scoreDisplaySprite = [[ScoreSprite alloc] init];
+	[scoreDisplaySprite setPosition:ccp(55, 450)];
+	[self addChild:scoreDisplaySprite];
+	
+	timeDisplaySprite = [[ElapsedTimeSprite alloc] init];
+	[timeDisplaySprite setPosition:ccp(250, 32)];
+	[self addChild:timeDisplaySprite];
+	
+	
+	if (kShowDebugMenus)
+		[self debuggingSetup];
+		
+	
+}
+
+-(void) chipmunkSetup {
+	
+	CGSize wins = [[CCDirector sharedDirector] winSize];
+	
+	cpInitChipmunk();
+	
+	space = cpSpaceNew();
+	cpSpaceResizeStaticHash(space, 400.0f, 40);
+	cpSpaceResizeActiveHash(space, 100, 600);
+	
+	space->gravity = ccp(0, 0);
+	space->elasticIterations = 16;//space->iterations;
+	
+	//cpBody *
+	
+	
+	cpBody *boundsBody = cpBodyNew(INFINITY, INFINITY);
+	cpShape *boundsShape;
+	
+	// bottom
+	boundsShape = cpSegmentShapeNew(boundsBody, cpvzero, ccp(wins.width, 0), 0.0f);
+	boundsShape->e = 1.0f; boundsShape->u = 1.0f;
+	cpSpaceAddStaticShape(space, boundsShape);
+	
+	// top
+	boundsShape = cpSegmentShapeNew(boundsBody, ccp(0, wins.height), ccp(wins.width, wins.height), 0.0f);
+	boundsShape->e = 1.0f; boundsShape->u = 1.0f;
+	cpSpaceAddStaticShape(space, boundsShape);
+	
+	// left
+	boundsShape = cpSegmentShapeNew(boundsBody, cpvzero, ccp(0, wins.height), 0.0f);
+	boundsShape->e = 1.0f; boundsShape->u = 1.0f;
+	cpSpaceAddStaticShape(space, boundsShape);
+	
+	// right
+	boundsShape = cpSegmentShapeNew(boundsBody, ccp(wins.width, 0), ccp(wins.width, wins.height), 0.0f);
+	boundsShape->e = 1.0f; boundsShape->u = 1.0f;
+	cpSpaceAddStaticShape(space, boundsShape);
+	
+	
+	
+	// center anchor
+	cpBody *anchorBody = cpBodyNew(INFINITY, INFINITY);
+	cpShape *anchorShape = cpSegmentShapeNew(anchorBody, cpvzero, ccp(wins.width * 0.5f, wins.height * 0.5f),0.0f);
+	anchorBody->p = cpv(wins.width * 0.5f, wins.height * 0.5f);
+	
+	cpSpaceAddStaticShape(space, anchorShape);
+	
+	
+	
+	int totNodeLvls = 1;
+	
+	int segTotalNodes = 12;
+	segAngInc = 360 / segTotalNodes;
+	
+	float nodeMass = 0.125f;
+	float nodeShapeRadius = 8.0f;
+	float nodeRes = 0.1f;
+	float nodeFric = 0.01f;
+	
+	
+	float nodeFacScale = 2.5f;
+	float multEndoRadius = nodeFacScale + 0.0f;
+	float multExoRadius = nodeFacScale + 0.25f;
+	
+	float nodeEndoRadius = 48.0f + (nodeShapeRadius * multEndoRadius);
+	float nodeExoRadius = 16.0f + (nodeShapeRadius * multExoRadius);
+	
+	float nodeEndoDiameter = (2.0f * nodeEndoRadius) * PI;
+	float nodeExoDiameter = (2.0f * (nodeEndoRadius + nodeExoRadius)) * PI;
+	
+	float nodeEndoDist = nodeEndoDiameter / segTotalNodes;
+	float nodeExoDist = nodeExoDiameter / segTotalNodes;
+	
+	CGPoint spokeSpringVals = CGPointMake(8.0f, 0.2f);
+	CGPoint crossSpringVals = CGPointMake(32.0f, 0.15f); 
+	CGPoint perimSpringVals = CGPointMake(2.5f, 0.95f);
+	
+	
+	//>CGPoint spokeSpringVals = CGPointMake(8.0f, 0.85f);
+	//>CGPoint crossSpringVals = CGPointMake(32.0f, 0.125f); 
+	//>CGPoint perimSpringVals = CGPointMake(2.5f, 0.9f);
+	//CGPoint diagSpringVals = CGPointMake(2.0f, 0.1f);
+	
+	
+			
+	arrCreatureVO = [[NSMutableArray alloc] init];
+	CGPoint orgPt = CGPointMake(160, 180);
+	CGPoint pos = orgPt;
+	
+	axisSprite = [CCSprite spriteWithFile:@"debug_node-00.png"];
+	[axisSprite setPosition:orgPt];
+	[axisSprite setScale:1.0f];
+	[segHolderSprite addChild:axisSprite];
+	
+	axisBody = cpBodyNew(1.0f, INFINITY);
+	axisBody->p = cpv(pos.x, pos.y);
+	cpSpaceAddBody(space, axisBody);
+	
+	cpShape *axisShape = cpCircleShapeNew(axisBody, nodeShapeRadius * 2.0f, cpvzero);
+	axisShape->e = nodeRes;
+	axisShape->u = nodeFric;
+	axisShape->data = axisSprite;
+	axisShape->collision_type = 1;
+	cpSpaceAddShape(space, axisShape);
+	
+	//																								 anch_1	 anch_2   len   str   damp
+	cpConstraint *anchorConstraint = cpDampedSpringNew(anchorBody, axisBody, cpvzero, cpvzero, 3.0f, 2.0f, 2.33f);
+	cpSpaceAddConstraint(space, anchorConstraint);
+	
+	[arrCreatureVO addObject:[CreatureNodeVO initWithData:-1 angPos:-360.0f nodeSprite:axisSprite body:axisBody shape:axisShape pos:pos]];
+	
+		
+	
+	int ind = 1;
+	for (int j=0; j<totNodeLvls; j++) {
+		for (int i=0; i<360; i+=segAngInc) {
+			
+			int node_id = i + (j * 1000);
+			CCSprite *segSprite = [CCSprite spriteWithFile:[NSString stringWithFormat:@"debug_node-0%d.png", j + 1]];
+			
+			CGFloat segScaleFac;
+			CGFloat segModulus;
+			
+			
+			if (i % ((int)segAngInc * 3) != 0) {
+				segLenRadius = nodeEndoRadius;
+				segScaleFac = nodeFacScale;
+			
+			} else {
+				segLenRadius = nodeEndoRadius + nodeExoRadius;
+				segScaleFac = nodeFacScale * 0.85f;
+				
+			}
+			
+			pos.x = orgPt.x + sinf(CC_DEGREES_TO_RADIANS(i)) * segLenRadius;
+			pos.y = orgPt.y + cosf(CC_DEGREES_TO_RADIANS(i)) * segLenRadius;
+			
+			[segSprite setPosition:pos];
+			[segSprite setScale:segScaleFac * 2.0f];
+			[segSprite setOpacity:100.0f];
+			[segSprite setTag:node_id];
+			[segHolderSprite addChild:segSprite];
+			
+			cpBody *segBody = cpBodyNew(nodeMass, INFINITY);
+			segBody->p = cpv(pos.x, pos.y);
+			cpBodySetVelLimit(segBody, 512.0f);
+			cpSpaceAddBody(space, segBody);
+			
+			cpShape *segShape = cpCircleShapeNew(segBody, nodeShapeRadius * nodeFacScale, cpvzero);
+			segShape->e = nodeRes;
+			segShape->u = nodeFric;
+			segShape->data = segSprite;
+			segShape->collision_type = 1;
+			cpSpaceAddShape(space, segShape);
+			
+			
+			cpBody *bodyCrossSup;
+			cpBody *bodyCrossSub;
+			
+			cpConstraint *springSupCrossNode;
+			cpConstraint *springSubCrossNode;
+			
+			float angSup = -360.0f;
+			float angSub = -360.0f;
+			
+			if (ind >= (int)(segTotalNodes * 0.5f)) {
+				
+				angSup = (int)((i - 180.0f) + (segAngInc * 1)) % 360;
+				angSub = (int)((i - 180.0f) - (segAngInc * 1)) % 360;
+				
+				if (angSup < 0.0f)
+					angSup = 360.0f + angSup;
+				
+				if (angSub < 0.0f)
+					angSub = 360.0f + angSub;
+				
+				
+			} else if (i >= 180) {
+				angSup = (int)((i - 180.0f)) % 360;
+				angSub = (int)((i - 180.0f)) % 360;
+			}
+			
+			NSLog(@"[:::::::::::::::::}} SUP_ANG:[%3.5f] // SUB_ANG:[%3.5f] {{:::::::::::::::::]", angSup, angSub);
+			
+			if (angSup != -360.0f && angSub != -360.0f) {
+				
+				bodyCrossSup = [self findBodyByAngle:angSup];
+				bodyCrossSub = [self findBodyByAngle:angSub];
+				
+				NSLog(@"j:[%d] i:[%d] ind:[%d] node_id:[%d] pos:[%f, %f]", j, i, ind, node_id, pos.x, pos.y);
+				
+				if (bodyCrossSup) {
+					springSupCrossNode = cpDampedSpringNew(segBody, bodyCrossSup, cpvzero, cpvzero, 8.0f + [self calcPtDistance:NO ratio:1.0f pt1:segBody->p pt2:bodyCrossSup->p], crossSpringVals.x * (1.0f + CCRANDOM_0_1()), crossSpringVals.y);
+					cpSpaceAddConstraint(space, springSupCrossNode);
+				}
+				
+				if (bodyCrossSub) {
+					springSubCrossNode = cpDampedSpringNew(segBody, bodyCrossSub, cpvzero, cpvzero, 68.0f + [self calcPtDistance:NO ratio:1.0f pt1:segBody->p pt2:bodyCrossSup->p], crossSpringVals.x * (1.0f + CCRANDOM_0_1()), crossSpringVals.y);
+					cpSpaceAddConstraint(space, springSubCrossNode);
+				}
+			}
+			
+			[arrCreatureVO addObject:[CreatureNodeVO initWithData:node_id angPos:i nodeSprite:segSprite body:segBody shape:segShape pos:pos]];
+			cpConstraint *rSpring;
+			
+			//NSLog(@"j:[%d] i:[%d] ind:[%d] node_id:[%d] pos:[%f, %f]", j, i, ind, node_id, pos.x, pos.y);
+			
+			segModulus = i % ((int)segAngInc);
+			
+//			// make connect w/ center
+//			if (j == 0) {
+//				rSpring = cpDampedSpringNew(segBody, axisBody, cpvzero, cpvzero, segLenRadius, spokeSpringVals.x, spokeSpringVals.y);
+//				
+//				if (i % (segAngInc * 6) == 0)
+//					rSpring = cpDampedSpringNew(segBody, axisBody, cpvzero, cpvzero, segLenRadius, spokeSpringVals.x * 1.67f, spokeSpringVals.y * 2.0f);
+//				
+//				cpSpaceAddConstraint(space, rSpring);
+			
+			
+			
+			
+			
+			
+			
+			// make connect w/ perim nodes
+			if (j == 0) {
+				rSpring = cpDampedSpringNew(segBody, axisBody, cpvzero, cpvzero, 32.0f, perimSpringVals.x, perimSpringVals.y);
+				
+				//if (i % ((int)segAngInc * 4) == 0)
+				//	rSpring = cpDampedSpringNew(segBody, axisBody, cpvzero, cpvzero, segLenRadius, spokeSpringVals.x * 1.67f, spokeSpringVals.y * 2.0f);
+				
+				cpSpaceAddConstraint(space, rSpring);
+				
+				
+				
+				
+				
+			// make connect on outer/inner nodes
+			} //else {
+//				cpBody *innerBody;
+//				
+//				innerBody = [self findBodyByIndex:node_id - (j * 1000)];
+//				
+//				rSpring = cpDampedSpringNew(segBody, innerBody, cpvzero, cpvzero, ((j * nodeEndoRadius) + (nodeExoRadius * multExoRadius)), crossSpringVals.x, crossSpringVals.y);
+//				cpSpaceAddConstraint(space, rSpring);
+//				
+//				
+//				// bind outer/inner on diag
+//				if (i < (360 - segAngInc)) {
+//					innerBody = [self findBodyByIndex:(node_id - (j * 1000)) + 1];
+//					rSpring = cpDampedSpringNew(segBody, innerBody, cpvzero, cpvzero, 64, diagSpringVals.x, diagSpringVals.y);
+//					cpSpaceAddConstraint(space, rSpring);
+//				
+//				} else if (i == (360 - segAngInc)) {
+//					innerBody = [(CreatureNodeVO *)[arrCreatureVO objectAtIndex:1] body];
+//					rSpring = cpDampedSpringNew(segBody, innerBody, cpvzero, cpvzero, 64, diagSpringVals.x, diagSpringVals.y);
+//					cpSpaceAddConstraint(space, rSpring);
+//					
+//					ccDrawLine(ccp(segBody->p.x, segBody->p.y), ccp(innerBody->p.x, innerBody->p.y));
+//				}
+//			}
+			
+			// make connect w/ current/prev
+			if (i > 0) {
+				//NSLog(@" --BINDING PREV->CURRENT");
+				
+				cpConstraint *dSpring = cpDampedSpringNew(segBody, [(CreatureNodeVO *)[arrCreatureVO objectAtIndex:ind - 1] body], cpvzero, cpvzero, nodeEndoDist + (j * nodeExoDist), perimSpringVals.x, perimSpringVals.y);
+				cpSpaceAddConstraint(space, dSpring);
+				
+				//cpConstraint *dLimit = cpRotaryLimitJointNew(segBody, [(CreatureNodeVO *)[arrCreatureVO objectAtIndex:ind] body], CC_DEGREES_TO_RADIANS(0), CC_DEGREES_TO_RADIANS(30));
+				//cpSpaceAddConstraint(space, dLimit);
+				
+				//ccDrawLine(ccp(pos.x, pos.y), ccp([(CreatureNodeVO *)[arrCreatureVO objectAtIndex:ind - 1] body]->p.x, [(CreatureNodeVO *)[arrCreatureVO objectAtIndex:ind - 1] body]->p.y));
+			
+			} if (ind % segTotalNodes == 0 && ind > 0) {
+				cpConstraint *dSpring = cpDampedSpringNew(segBody, [(CreatureNodeVO *)[arrCreatureVO objectAtIndex:(j * segTotalNodes) + 1] body], cpvzero, cpvzero, 32 + (j * 16), perimSpringVals.x, perimSpringVals.y);
+				cpSpaceAddConstraint(space, dSpring);
+			}
+			
+			ind++;
+		}
+	}
+	
+	NSLog(@"Color:[%@]", @"derp");
+	
+	[self draw];
+	[self schedule: @selector(wiggler:) interval:((CCRANDOM_0_1() * 1.5f) - 0.25f) + 0.5f];
+	// NSLog(@"::::::::]]]]]]]]]]] frame:[%@] boundingBox:[%.0f, %.0f]- )", [segHolderSprite displayedFrame], [segHolderSprite boundingBox].size.width, [segHolderSprite boundingBox].size.height);
+}
+
+
+
+-(void) draw {
+	
+	//ccColor4B fillColor = ccc4(0.0f, 0.5f, 0.25f, 1.0f);
+	//CGSize wins = [[CCDirector sharedDirector] winSize];
+	//CGPoint centerPos = CGPointMake(wins.width * 0.5f, wins.height * 0.5f);
+	
+	//glEnable(GL_POINT_SMOOTH);
+	//glEnable(GL_LINE_SMOOTH);
+		
+	
+	cpBody *currBody;
+	cpBody *nextBody;
+	
+	float ctrlOffset = 12.0f;
+	float ctrlSegsTot = 16.0f;
+	float ctrlRadius = ctrlOffset + segLenRadius;
+	
+	CGPoint ptCtrlPos;
+	
+	for (int i=1; i<[arrCreatureVO count]; i++) {
+		
+		//CCSprite *sprite = (CCSprite *)[segHolderSprite getChildByTag:(i * segAngInc)];
+		
+		//CreatureNodeVO *vo = (CreatureNodeVO *)[arrCreatureVO objectAtIndex:i];
+		
+		//NSLog(@"::::::::]]]]]]]]]]] i:[%d] sprite:[%@]- )", i, [segHolderSprite getChildByTag:(i * segAngInc)]);
+		
+		//cpSpaceRemoveShape(space, vo.shape);
+		//vo.shape->body->p = cpv([sprite position].x + centerPos.x, [sprite position].y + centerPos.y);		
+		//vo.sprite = sprite;
+		//cpSpaceAddShape(space, vo.shape);
+		
+		currBody = [(CreatureNodeVO *)[arrCreatureVO objectAtIndex:i] body];
+		
+		if (i >= 1 && i < [arrCreatureVO count] - 1)
+			nextBody = [(CreatureNodeVO *)[arrCreatureVO objectAtIndex:i+1] body];
+		
+		
+		
+		if (i == [arrCreatureVO count] - 1)
+			nextBody = [(CreatureNodeVO *)[arrCreatureVO objectAtIndex:1] body];
+		
+		//if (i < [arrCreatureVO count] * 1.0f) {
+			ptCtrlPos = CGPointMake([axisSprite position].x + sinf(CC_DEGREES_TO_RADIANS(((segAngInc * 0.5f) + (i - 1) * segAngInc))) * ctrlRadius, [axisSprite position].y + cosf(CC_DEGREES_TO_RADIANS(((segAngInc * 0.5f) + (i - 1) * segAngInc))) * ctrlRadius);
+		
+		
+		// perim conns
+		glColor4f(0.0f, 0.67f, 0.5f, 0.375f);
+		glLineWidth(0.5f);
+		ccDrawLine(currBody->p, nextBody->p);
+		
+		
+		glColor4f(0.5f, 0.33f, 0.67f, 0.125f);
+		glLineWidth(1.25f);
+		ccDrawQuadBezier(currBody->p, ccpMult(ptCtrlPos, 1.125f), nextBody->p, ctrlSegsTot);
+		//ccDrawCubicBezier(currBody->p, ccpMult(ptCtrlPos, 0.85f), cpvmult(nextBody->p, 0.5f), nextBody->p, ctrlSegsTot);
+														 //}
+														 //
+		
+		
+		// cross conns
+		glLineWidth(1.0f);
+		glColor4f(0.75f, 0.33f, 0.0f, 0.33f);
+		ccDrawLine(currBody->p, [self findBodyByAngle:(int)(180.0f + (i * segAngInc)) % 360]->p);
+		
+		//cpVect currBodyWorldPt = cpBodyLocal2World(currBody, currBody->p);
+		//cpVect nextBodyWorldPt = cpBodyLocal2World(nextBody, nextBody->p);
+		
+	}
+	
+	
+	//ccDrawLine(currBody->p, ;
+	//ccDrawLine(currBody->p, nextBody->p);
+
+	
+	//[self floodFillAtPos:CGPointMake(160.f, 220.0f) fillColor:fillColor borderColor:lineColor];
+}
+
+
+-(cpBody *) findBodyByIndex:(int)ind {
+	//NSLog(@"%@.findBodyByIndex(%d)", [self class], ind);
+	
+	for (int i=0; i<[arrCreatureVO count]; i++) {
+		CreatureNodeVO *vo = (CreatureNodeVO *)[arrCreatureVO objectAtIndex:i];
+		
+		if (vo.ind == ind)
+			return (vo.body);
+	}
+	
+	return (nil);
+}
+
+
+-(cpBody *) findBodyByAngle:(float)ang {
+	//NSLog(@"%@.findBodyByAngle(%f)", [self class], ang);
+	
+	for (int i=0; i<[arrCreatureVO count]; i++) {
+		CreatureNodeVO *vo = (CreatureNodeVO *)[arrCreatureVO objectAtIndex:i];
+		
+		if (vo.ang == ang)
+			return (vo.body);
+	}
+	
+	return (nil);
+}
+
+
++(CreatureNodeVO *)findVOBySprite:(CCSprite *)sprite {
+	
+//	for (int i=0; i<[SegNodeSprite ]; i++) {
+//		CreatureNodeVO *vo = (CreatureNodeVO *)[arrCreatureVO objectAtIndex:i];
+//		
+//		if (vo.ang == ang)
+//			return (vo);
+//	}
+	
+	
+	return (nil);
+}
+
+-(float) calcPtDistance:(BOOL)isABS ratio:(float)rat pt1:(cpVect)p1 pt2:(cpVect)p2  {
+	
+	
+	float dist = cpvdist(p2, p1);
+	
+	if (isABS && dist < 0)
+		dist *= -1;
+	
+	dist *= rat;
+	
+	NSLog(@"%@.calcPtDistance.dist(%f)", [self class], dist);
+	
+	return (dist);
+}
+
+
+-(void) wiggler:(id)sender {
+	
+	CGFloat maxVelocity = 0.0f;
+	CGFloat maxForce = 32.0f;
+	CGFloat maxTorq = 16.0f;
+		
+	int ind = [[RandUtils singleton]randIndex:[arrCreatureVO count]];
+	CreatureNodeVO *vo = (CreatureNodeVO *)[arrCreatureVO objectAtIndex:ind];
+	cpBody *body = [vo body];
+	
+	float rndForce = ((CCRANDOM_0_1() * maxForce) + (maxForce * -0.5f));
+	
+	
+	NSLog(@"PlayScreenLayer.wiggler(rndForce:[%f] ang:[%f, %f]) [%f]", rndForce, body->a, [[vo sprite] rotation], [segHolderSprite rotation]);
+	
+	body->v = cpv((CCRANDOM_0_1() * maxVelocity) + (maxVelocity * -0.5), (CCRANDOM_0_1() * maxVelocity) + (maxVelocity * -0.5));
+	body->f = cpv((CCRANDOM_0_1() * maxForce) + (maxForce * -0.5), (CCRANDOM_0_1() * maxForce) + (maxForce * -0.5));
+	body->t = (CCRANDOM_0_1() * maxTorq);
+	
+	cpBodyApplyImpulse(body, cpvzero, cpv(rndForce, rndForce));
+	//cpBodyApplyForce(body, cpvzero, cpv(rndForce, rndForce));
+	
+}
+
+-(void) derpSelector:(id)sender {
+	//int ind = 1;
+	
+	//cpSpaceEachBody(space, &reposBody, nil);
+}
+
+-(void) onBackMenu:(id)sender {
+    NSLog(@"PlayScreenLayer.onBackMenu()");
+    
+	[ScreenManager goLevelSelect];
+}
+
+
+-(void) onLevelComplete:(id)sender {
+    NSLog(@"PlayScreenLayer.onLevelComplete()");
+    
+	[ScreenManager goLevelComplete];
+}
+
+
+-(void) onGameOver:(id)sender {
+    NSLog(@"PlayScreenLayer.onGameOver()");
+    
+	[ScreenManager goGameOver];
+}
+
+
+-(void) onPlayPauseToggle:(id)sender {
+    NSLog(@"PlayScreenLayer.onPlayPauseToggle(%d)", [sender selectedIndex]);
+	
+	
+	if ([sender selectedIndex] == 1) {
+		self.isTouchEnabled = NO;
+		[self unschedule:@selector(physicsStepper:)];
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"GameplayPauseToggle" object:[NSNumber numberWithBool:YES]];
+	
+	} else {
+		self.isTouchEnabled = YES;
+		[self schedule:@selector(physicsStepper:) interval:(1.0f / 60.0f)];
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"GameplayPauseToggle" object:[NSNumber numberWithBool:NO]];
+	}
+}
+
+// on "dealloc" you need to release all your retained objects
+- (void) dealloc {
+    //NSLog(@"PlayScreenLayer.()");
+    
+	// in case you have something to dealloc, do it in this method
+	cpSpaceFree(space);
+	space = NULL;
+	
+	// don't forget to call "super dealloc"
+	[super dealloc];
+}
+
+-(void) onEnter {
+    //NSLog(@"PlayScreenLayer.onEnter()");
+    
+	[super onEnter];
+	[[UIAccelerometer sharedAccelerometer] setUpdateInterval:(1.0 / 60)];
+}
+
+-(void) physicsStepper: (ccTime) dt {
+	//NSLog(@"PlayScreenLayer.physicsStepper(%0.000000f)", [[CCDirector sharedDirector] getFPS]);
+    
+	for (int i=0; i<PHYSICS_STEP_INC; i++)
+		cpSpaceStep(space, dt / (CGFloat)PHYSICS_STEP_INC);
+	
+	cpSpaceHashEach(space->activeShapes, &eachShape, nil);
+	cpSpaceHashEach(space->staticShapes, &eachShape, nil);
+}
+
+
+-(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+	NSLog(@"PlayScreenLayer.ccTouchesBegan()");
+	
+	CGSize wins = [[CCDirector sharedDirector] winSize];
+	
+	for (UITouch *touch in touches) {
+			CGPoint touchPt = [touch locationInView: [touch view]];
+			touchPt = [[CCDirector sharedDirector] convertToGL: touchPt];
+			touchPt.x = (int)touchPt.x;
+			touchPt.y = (int)touchPt.y;
+			
+		for (int i=0; i<[arrCreatureVO count]; i++) {
+			
+			cpBody *body = [(CreatureNodeVO *)[arrCreatureVO objectAtIndex:i] body];
+			//cpBodyApplyForce(body, cpvclamp(ccpMult(ccpSub(axisBody->p, touchPt), 0.67f), 3.33f), cpvzero);
+			//cpBodyApplyForce(body, cpvclamp(cpvmult(ccpSub(touchPt, body->p), 0.125f), 18.0f));
+			cpBodyApplyImpulse(body, cpvclamp(ccpMult(ccpSub(body->p, touchPt), 0.125f), 1.0f), cpvzero);
+		}
+	}
+}
+
+- (void) ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+	// NSLog(@"PlayScreenLayer.ccTouchesMoved()");
+    
+	CGSize wins = [[CCDirector sharedDirector] winSize];
+	
+	
+    for (UITouch *touch in touches) {
+		 CGPoint touchPt = [touch locationInView: [touch view]];
+		 touchPt = [[CCDirector sharedDirector] convertToGL: touchPt];
+		 touchPt.x = (int)touchPt.x;
+		 touchPt.y = (int)touchPt.y;
+		 
+		 
+				   
+		//NSLog(@"PlayScreenLayer.ccTouchesMoved( -rect:[%f, %f] touchPt:[%.0f, %.0f]- )", [segHolderSprite contentSizeInPixels].width, [segHolderSprite contentSizeInPixels].height, touchPt.x, touchPt.y);
+		
+		CGPoint rectTouchArea = CGPointMake(4.0f, 4.0f);
+		
+		
+		for (int i=0; i<[arrCreatureVO count]; i++) {
+			CCSprite *sprite = [(CreatureNodeVO *)[arrCreatureVO objectAtIndex:i] sprite];
+			cpBody *body = [(CreatureNodeVO *)[arrCreatureVO objectAtIndex:i] body];
+			
+			//NSLog(@"PlayScreenLayer.ccTouchesMoved( -contentSize:[%.0f, %.0f]- )", [sprite contentSize].width, [sprite contentSize].height);
+			
+			BOOL isBody = NO;
+			CGRect rectBounds = CGRectMake(CGRectGetMinX([sprite boundingBox]) - rectTouchArea.x, CGRectGetMinY([sprite boundingBox]) - rectTouchArea.x, CGRectGetWidth([sprite boundingBox]) + rectTouchArea.y, CGRectGetHeight([sprite boundingBox]) + rectTouchArea.y);
+			
+			
+			if (CGRectContainsPoint(rectBounds, touchPt)) {
+				isBody = YES;
+				[sprite setPosition:touchPt];
+				body->p = cpv(touchPt.x, touchPt.y);
+			}
+			
+			CGFloat opAngle = (PI * 0.5f) + cpvtoangle(ccpSub(touchPt, ccp(wins.width * 0.5f, wins.height * 0.5f)));
+			CGFloat opForce = cpvdist(cpv(wins.width * 0.5f, wins.height * 0.5f), body->p);
+			
+			//NSLog(@"Touch:[%f][%f]", CC_RADIANS_TO_DEGREES(opAngle), opForce);
+			
+			//if (!isBody) {
+				//cpBodyApplyImpulse(body, cpvclamp(ccpMult(axisBody->p, -opForce * 0.125f), -opAngle), cpvzero);
+				//cpBodyApplyForce(body, cpvzero, cpvmult(cpv(opForce, opForce), 0.33f));
+				//8}
+		}
+		
+		
+        //NSLog(@"Touch:[%f][%f]", location.x, location.y);
+        
+        //[seg01Sprite setPosition:location];
+        //seg01Body->p = cpv(location.x, location.y);
+        
+    }
+}
+
+
+- (void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    //NSLog(@"PlayScreenLayer.(ccTouchesEnded)");
+    
+	score_amt = (int)(CCRANDOM_0_1() * 32);
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"ScoreChanged" object:[[NSNumber alloc] initWithInt:score_amt]];
+	[[PlayStatsModel singleton] incScore:score_amt];
+}
+
+- (void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {	
+    //NSLog(@"PlayScreenLayer.accelerometer()");
+    
+	static float prevX=0, prevY=0;
+	
+#define kFilterFactor 0.05f
+	
+	float accelX = (float)(acceleration.x * kFilterFactor + (1 - kFilterFactor) * prevX);
+	float accelY = (float)(acceleration.y * kFilterFactor + (1 - kFilterFactor) * prevY);
+	
+	prevX = accelX;
+	prevY = accelY;
+	
+	space->gravity = ccpMult(ccp(accelX, accelY), 32);
+}
+
+
+-(void) debuggingSetup {
+	CCMenuItemFont *reset = [CCMenuItemFont itemFromString:@"reset" target:self selector: @selector(onResetArea:)];
+	CCMenuItemFont *levelComplete = [CCMenuItemFont itemFromString:@"win" target:self selector: @selector(onLevelComplete:)];
+	CCMenuItemFont *gameOver = [CCMenuItemFont itemFromString:@"end" target:self selector: @selector(onGameOver:)];
+	CCMenu *mnuDebug = [CCMenu menuWithItems: reset, levelComplete, gameOver, nil];
+	
+	mnuDebug.position = ccp(160, 150);
+	[mnuDebug alignItemsVerticallyWithPadding: 20.0f];
+	[self addChild: mnuDebug];
+}
+
+
+
+-(void) onResetArea:(id)sender {
+	
+	
+}
+
+
+
+
+
+//
+//-(ccColor4F) rgbaPixelAtPos:(CGPoint)pos {
+//	
+//	ccColor4F floatColor;
+//	//////Test Pixel
+//	CGImageRef handRef = CGImageCreateWithImageInRect([segHolderSprite CGImage], CGRectMake(pos.x, pos.y, 1, 1));
+//	
+//	unsigned char *rawData = malloc(4);
+//	
+//		// same as 1,1,
+//	CGContextRef context = CGBitmapContextCreate(rawData, CGImageGetWidth(handRef), CGImageGetHeight(handRef), CGImageGetBitsPerComponent(handRef), CGImageGetBytesPerRow(handRef), CGImageGetColorSpace(handRef), kCGImageAlphaPremultipliedLast);
+//	CGContextDrawImage(context, CGRectMake(0,0,1,1), handRef);
+//	NSLog(@"rgba values at touch point %f %f = %u %u %u %u", pos.x, pos.y, rawData[0], rawData[1], rawData[2], rawData[3]);
+//	
+//	// do something with the raw data
+//	
+//	CGContextRelease(context);
+//	free (rawData); 
+//	
+//	//End Test Pixel
+//	
+//	
+//
+//	
+//	return (floatColor);
+//	
+//}
+
+//
+//- (UIColor*) getPixelColorAtLocation:(CGPoint)point {
+//	UIColor* color = nil;
+//	//CGImageRef inImage = self.image.CGImage;
+//	
+//	CGImageRef inImage = [[CCDirector sharedDirector]
+//	
+//	// Create off screen bitmap context to draw the image into. Format ARGB is 4 bytes for each pixel: Alpa, Red, Green, Blue
+//	CGContextRef cgctx = [self createARGBBitmapContextFromImage:inImage];
+//	if (cgctx == NULL) { return nil; /* error */ }
+//	
+//	size_t w = CGImageGetWidth(inImage);
+//	size_t h = CGImageGetHeight(inImage);
+//	CGRect rect = {{0,0},{w,h}}; 
+//	
+//	// Draw the image to the bitmap context. Once we draw, the memory
+//	// allocated for the context for rendering will then contain the
+//	// raw image data in the specified color space.
+//	CGContextDrawImage(cgctx, rect, inImage); 
+//	
+//	// Now we can get a pointer to the image data associated with the bitmap
+//	// context.
+//	unsigned char* data = CGBitmapContextGetData (cgctx);
+//	if (data != NULL) {
+//		//offset locates the pixel in the data from x,y.
+//		//4 for 4 bytes of data per pixel, w is width of one row of data.
+//		int offset = 4*((w*round(point.y))+round(point.x));
+//		int alpha =  data[offset];
+//		int red = data[offset+1];
+//		int green = data[offset+2];
+//		int blue = data[offset+3];
+//		NSLog(@"offset: %i colors: RGB A %i %i %i  %i",offset,red,green,blue,alpha);
+//		color = [UIColor colorWithRed:(red/255.0f) green:(green/255.0f) blue:(blue/255.0f) alpha:(alpha/255.0f)];
+//	}
+//	
+//	// When finished, release the context
+//	CGContextRelease(cgctx);
+//	// Free image data memory for the context
+//	if (data) { free(data); }
+//	
+//	return color;
+//}
+//
+//
+//- (CGContextRef) createARGBBitmapContextFromImage:(CGImageRef) inImage {
+//	
+//	CGContextRef    context = NULL;
+//	CGColorSpaceRef colorSpace;
+//	void *          bitmapData;
+//	int             bitmapByteCount;
+//	int             bitmapBytesPerRow;
+//	
+//	// Get image width, height. We'll use the entire image.
+//	size_t pixelsWide = CGImageGetWidth(inImage);
+//	size_t pixelsHigh = CGImageGetHeight(inImage);
+//	
+//	// Declare the number of bytes per row. Each pixel in the bitmap in this
+//	// example is represented by 4 bytes; 8 bits each of red, green, blue, and
+//	// alpha.
+//	bitmapBytesPerRow   = (pixelsWide * 4);
+//	bitmapByteCount     = (bitmapBytesPerRow * pixelsHigh);
+//	
+//	// Use the generic RGB color space.
+//	colorSpace = CGColorSpaceCreateDeviceRGB();
+//	
+//	if (colorSpace == NULL) {
+//		NSLog ("Error allocation color space %s", @"");
+//		return NULL;
+//	}
+//	
+//	// Allocate memory for image data. This is the destination in memory
+//	// where any drawing to the bitmap context will be rendered.
+//	bitmapData = malloc( bitmapByteCount );
+//	if (bitmapData == NULL) {
+//		fprintf (stderr, "Memory not allocated!");
+//		CGColorSpaceRelease( colorSpace );
+//		return NULL;
+//	}
+//	
+//	// Create the bitmap context. We want pre-multiplied ARGB, 8-bits
+//	// per component. Regardless of what the source image format is
+//	// (CMYK, Grayscale, and so on) it will be converted over to the format
+//	// specified here by CGBitmapContextCreate.
+//	context = CGBitmapContextCreate (bitmapData,
+//												pixelsWide,
+//												pixelsHigh,
+//												8,      // bits per component
+//												bitmapBytesPerRow,
+//												colorSpace,
+//												kCGImageAlphaPremultipliedFirst);
+//	if (context == NULL) {
+//		free (bitmapData);
+//		fprintf (stderr, "Context not created!");
+//	}
+//	
+//	// Make sure and release colorspace before returning
+//	CGColorSpaceRelease( colorSpace );
+//	
+//	return context;
+//}
+//
+
+
+-(void)floodFillAtPos:(CGPoint)pos fillColor:(ccColor4B)fill borderColor:(ccColor4B)border {
+	
+	//GLubyte glColorByte;
+	//glReadPixels(pos.x, pos.y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, &glColorByte[0]);
+	//NSLog ("COLOR:[%@]", &posColor);
+	
+	
+	//float bColorTot = border.r + border.g + border.b + border.a;
+	//float pColorTot = posColor.r + posColor.g + posColor.b + posColor.a;
+	
+	
+	
+	
+	
+	//	if (bColorTot != pColorTot) { // sample pixel color
+	//		[self floodFillAtPos:pos fillColor:fill borderColor:border];
+	//		[self floodFillAtPos:CGPointMake(pos.x - 1, pos.y) fillColor:fill borderColor:border];
+	//		[self floodFillAtPos:CGPointMake(pos.x + 1, pos.y) fillColor:fill borderColor:border];
+	//		[self floodFillAtPos:CGPointMake(pos.x, pos.y - 1) fillColor:fill borderColor:border];
+	//		[self floodFillAtPos:CGPointMake(pos.x, pos.y + 1) fillColor:fill borderColor:border];
+	//	}
+}
+@end
