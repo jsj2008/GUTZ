@@ -207,7 +207,7 @@ static NSString *borderType = @"borderType";
 	_multiGrab = [[ChipmunkMultiGrab alloc] initForSpace:_space withSmoothing:cpfpow(0.8, 60.0) withGrabForce:30000];
 	_multiGrab.layers = GRABABLE_LAYER;
 	
-	//[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space] z:0 tag:666];
+	[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space] z:0 tag:666];
 	
 	arrGibsShape = [[NSMutableArray alloc] init];
 	arrGibsSprite = [[NSMutableArray alloc] init];

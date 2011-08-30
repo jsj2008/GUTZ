@@ -423,6 +423,8 @@
 		4C8C84B7140CBDEE00CEDDA0 /* CreatureData_01.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C8C84B6140CBDEE00CEDDA0 /* CreatureData_01.plist */; };
 		4C8C84BA140CBE7400CEDDA0 /* CreatureDataPlistParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C8C84B8140CBE7400CEDDA0 /* CreatureDataPlistParser.h */; };
 		4C8C84BB140CBE7400CEDDA0 /* CreatureDataPlistParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C84B9140CBE7400CEDDA0 /* CreatureDataPlistParser.m */; };
+		4C8C84C2140CEF6E00CEDDA0 /* CreatureData_02.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C8C84C0140CEF6E00CEDDA0 /* CreatureData_02.plist */; };
+		4C8C84C3140CEF6E00CEDDA0 /* CreatureData_03.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C8C84C1140CEF6E00CEDDA0 /* CreatureData_03.plist */; };
 		4C8CC93813FD3E1D00A4492B /* UI_loop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C8CC93313FD3E1D00A4492B /* UI_loop.wav */; };
 		4C8CC93913FD3E1D00A4492B /* menuGUTZ.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C8CC93413FD3E1D00A4492B /* menuGUTZ.wav */; };
 		4C8CC93A13FD3E1D00A4492B /* bootUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C8CC93513FD3E1D00A4492B /* bootUp.wav */; };
@@ -1013,6 +1015,8 @@
 		4C8C84B6140CBDEE00CEDDA0 /* CreatureData_01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CreatureData_01.plist; path = Resources/CreatureData_01.plist; sourceTree = "<group>"; };
 		4C8C84B8140CBE7400CEDDA0 /* CreatureDataPlistParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureDataPlistParser.h; sourceTree = "<group>"; };
 		4C8C84B9140CBE7400CEDDA0 /* CreatureDataPlistParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureDataPlistParser.m; sourceTree = "<group>"; };
+		4C8C84C0140CEF6E00CEDDA0 /* CreatureData_02.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CreatureData_02.plist; path = Resources/CreatureData_02.plist; sourceTree = "<group>"; };
+		4C8C84C1140CEF6E00CEDDA0 /* CreatureData_03.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CreatureData_03.plist; path = Resources/CreatureData_03.plist; sourceTree = "<group>"; };
 		4C8CC93313FD3E1D00A4492B /* UI_loop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = UI_loop.wav; path = Resources/UI_loop.wav; sourceTree = "<group>"; };
 		4C8CC93413FD3E1D00A4492B /* menuGUTZ.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = menuGUTZ.wav; path = Resources/menuGUTZ.wav; sourceTree = "<group>"; };
 		4C8CC93513FD3E1D00A4492B /* bootUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bootUp.wav; path = Resources/bootUp.wav; sourceTree = "<group>"; };
@@ -1919,6 +1923,8 @@
 			isa = PBXGroup;
 			children = (
 				4C8C84B6140CBDEE00CEDDA0 /* CreatureData_01.plist */,
+				4C8C84C0140CEF6E00CEDDA0 /* CreatureData_02.plist */,
+				4C8C84C1140CEF6E00CEDDA0 /* CreatureData_03.plist */,
 			);
 			name = "Creature Data";
 			sourceTree = "<group>";
@@ -2827,6 +2833,8 @@
 				4C8911A7140C50A60014C1D8 /* LICENSE_Chipmunk.txt in Resources */,
 				4C8911A8140C50A60014C1D8 /* README.txt in Resources */,
 				4C8C84B7140CBDEE00CEDDA0 /* CreatureData_01.plist in Resources */,
+				4C8C84C2140CEF6E00CEDDA0 /* CreatureData_02.plist in Resources */,
+				4C8C84C3140CEF6E00CEDDA0 /* CreatureData_03.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

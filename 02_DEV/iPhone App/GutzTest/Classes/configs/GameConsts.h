@@ -14,12 +14,16 @@
 #import "ObjectiveChipmunk.h"
 
 #define MENU_BG_ASSET @"bg_menu.png"
+#define MENU_INTRO_DELAY 0.33f
 
 static const cpVect LVL_MENU_DIM = {3, 4};
 static const ccColor3B ARENA_BG = {233, 86, 86};
 
 static const ccColor3B BLOB_FILL = {0, 223, 255};
-#define MENU_INTRO_DELAY 0.33f
+
+
+
+
 
 
 #endif

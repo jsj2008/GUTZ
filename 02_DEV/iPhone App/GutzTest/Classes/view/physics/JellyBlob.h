@@ -11,6 +11,9 @@
 
 #define CENTRAL_MASS 1.5f
 
+#define SQUISH_COEFF 0.7f
+#define SPRING_STR 40.0f
+#define SPRING_DAMP 0.1f
 
 
 @interface JellyBlob : NSObject <ChipmunkObject> {
@@ -26,13 +29,11 @@
 	
 	NSMutableArray *bodies;
 	
+	NSMutableSet *set;
+	
 	
 	CreatureDataPlistParser *_plistViscera;
 	NSArray *_arrViscera;
-	
-	ChipmunkSimpleMotor *_motor;
-	cpFloat _rate, _torque;
-	cpFloat _control;
 	
 	NSSet *chipmunkObjects;
 	
@@ -44,7 +45,6 @@
 	
 }
 
-@property (nonatomic, assign) cpFloat control;
 @property (nonatomic, readonly) NSSet *chipmunkObjects;
 @property (nonatomic) CGPoint posPt;
 @property (nonatomic) float rFillColor;
@@ -54,10 +54,13 @@
 -(id)initWithPos:(cpVect)pos radius:(cpFloat)radius count:(int)count;
 -(id)initWithLvl:(int)lvl atPos:(cpVect)pos;
 
+-(void)constructCenter;
+-(void)constructEdges;
 
 -(void)wiggleWithForce:(int)index force:(cpFloat)f;
 -(void)pop;
 -(void)pulsate:(CGPoint)pos;
+
 -(ChipmunkBody *)touchedBodyAt:(CGPoint)pos;
 -(int)bodyIndexAt:(CGPoint)pos;
 
