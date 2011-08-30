@@ -216,8 +216,8 @@ static NSString *borderType = @"borderType";
 	[arrTargets addObject:@"NO"];
 	[arrTargets addObject:@"NO"];
 	
-	
-	_blob = [[JellyBlob alloc] initWithPos:cpv(BLOB_X, BLOB_Y) radius:BLOB_RADIUS count:BLOB_SEGS];
+	_blob = [[JellyBlob alloc] initWithLvl:indLvl atPos:cpv(BLOB_X, BLOB_Y)];
+	//_blob = [[JellyBlob alloc] initWithPos:cpv(BLOB_X, BLOB_Y) radius:BLOB_RADIUS count:BLOB_SEGS];
 	[_space add:_blob];
 	
 	creatureSprite = [CCSprite spriteWithFile:@"test.png"];

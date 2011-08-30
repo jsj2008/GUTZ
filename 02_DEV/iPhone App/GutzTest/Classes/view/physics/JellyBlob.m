@@ -2,6 +2,10 @@
 
 #import "ChipmunkDebugNode.h"
 
+#import "CreatureDataPlistParser.h"
+
+#import "GameConsts.h"
+
 //@interface JellyBlob()
 //@property(nonatomic, readwrite) NSSet *chipmunkObjects;
 //@end
@@ -16,6 +20,132 @@
 @synthesize gFillColor;
 @synthesize bFillColor;
 
+
+-(id)initWithLvl:(int)lvl atPos:(cpVect)pos {
+	if ((self = [super init])) {
+		
+		NSMutableSet *set = [NSMutableSet set];
+		chipmunkObjects = set;
+		
+		posPt = CGPointMake(pos.x, pos.y);
+		
+		_plistViscera = [[CreatureDataPlistParser alloc] initWithLevel:lvl];
+		_ptSize = cpv(_plistViscera.width, _plistViscera.height);
+		_count = [_plistViscera.arrCircles count];
+		
+		NSLog(@"%@.initWithLvl(%d) [%f, %f] // [%f, %f]{%d}", [self class], lvl, pos.x, pos.y, _ptSize.x, _ptSize.y, _count);
+		
+		
+		_arrViscera = [[NSArray alloc] init];
+		
+		for (NSDictionary *dictCircle in _plistViscera.arrCircles) {
+			[_arrViscera arrayByAddingObject:dictCircle];
+		}
+		
+		
+		
+		
+		int radius = 128;//_ptSize.y;
+		_centralBody = [ChipmunkBody bodyWithMass:CENTRAL_MASS andMoment:cpMomentForCircle(CENTRAL_MASS, 0, radius, cpvzero)];
+		[set addObject:_centralBody];
+		_centralBody.pos = posPt;
+		
+		
+		cpVect vt[_count];
+		for(int i=0; i<_count; i++){
+			cpVect slope = cpvforangle(((cpFloat)_count - i) / (cpFloat)_count * 2.0 * M_PI);
+			cpVect posMult = cpvmult(slope, radius);
+			
+			vt[i] = cpvadd(posMult, cpvzero);
+			//NSLog(@"vt[%d]: (%f, %f)", i, vt[i].x, vt[i].y);
+		}
+		
+		
+		//ChipmunkShape *centralShape = [ChipmunkPolyShape polyWithBody:_centralBody count:count verts:vt offset:cpvzero];
+		ChipmunkShape *centralShape = [ChipmunkCircleShape circleWithBody:_centralBody radius:radius offset:cpvzero];
+		[set addObject:centralShape];
+		centralShape.group = self;
+		centralShape.layers = GRABABLE_LAYER;
+		centralShape.collisionType = [JellyBlob class];
+		
+		
+		cpFloat edgeMass = 1.0f / _count;
+		cpFloat edgeDistance = 2.0f * radius * cpfsin(M_PI / (cpFloat)_count);
+		_edgeRadius = edgeDistance * 1.5f;
+		
+		//cpFloat squishCoef = 0.7;
+		cpFloat springStiffness = 40.0f;
+		cpFloat springDamping = 1.0f;
+		
+		bodies = [[NSMutableArray alloc] initWithCapacity:_count];
+		_edgeBodies = bodies;
+		
+		for(int i=0; i<_count; i++){
+			cpVect slope = cpvforangle((cpFloat)i / (cpFloat)_count * 2.0 * M_PI);
+			cpVect posMult = cpvmult(slope, radius);
+			
+			ChipmunkBody *body = [ChipmunkBody bodyWithMass:edgeMass andMoment:INFINITY];
+			body.pos = cpvadd(pos, posMult);
+			
+			[bodies addObject:body];
+			
+			//ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:_edgeRadius * ((CCRANDOM_0_1() * 1) + 0.5) offset:cpvzero];
+			ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:_edgeRadius offset:cpvzero];
+			[set addObject:shape];
+			shape.elasticity = EDGE_BOUNCE;
+			shape.friction = EDGE_FRICTION;
+			shape.group = self;
+			shape.layers = GRABABLE_LAYER;
+			shape.collisionType = [JellyBlob class];
+			
+			//[set addObject:[ChipmunkSlideJoint slideJointWithBodyA:_centralBody bodyB:body anchr1:cpvzero anchr2:cpvzero min:0 max:radius*squishCoef]];
+			
+			cpVect springOffset = cpvmult(slope, radius + _edgeRadius);
+			[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:_centralBody bodyB:body anchr1:springOffset anchr2:cpvzero restLength:0 stiffness:springStiffness damping:springDamping]];
+		}
+		
+		[set addObjectsFromArray:bodies];
+		
+		
+		
+		
+		for (int i=0; i<_count; i++) {
+			ChipmunkBody *a = [bodies objectAtIndex:i];
+			ChipmunkBody *b = [bodies objectAtIndex:(i + 1) % _count];
+			//[set addObject:[ChipmunkSlideJoint slideJointWithBodyA:a bodyB:b anchr1:cpvzero anchr2:cpvzero min:0 max:edgeDistance * 1.1]];
+			
+			// add'l
+			[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:a bodyB:b anchr1:cpvzero anchr2:cpvzero restLength:0 stiffness:springStiffness damping:springDamping]];
+		}
+		
+		_motor = [ChipmunkSimpleMotor simpleMotorWithBodyA:_centralBody bodyB:[ChipmunkBody staticBody] rate:0];
+		[set addObject:_motor];
+		_motor.maxForce = 4;
+		_motor.rate = -2;
+		
+		
+		
+		//		for (int i=0; i<count; i++) {
+		//			cpVect slope = cpvforangle((cpFloat)i / (cpFloat)count * 2.0 * M_PI);
+		//			cpVect posMult = cpvmult(slope, radius * 0.5);
+		//			
+		//			ChipmunkBody *body = [ChipmunkBody bodyWithMass:edgeMass andMoment:INFINITY];
+		//			body.pos = cpvadd(pos, posMult);
+		//			[set addObject:body];
+		//			
+		//			ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:(CCRANDOM_0_1() * 3) + 1 offset:cpvzero];
+		//			shape.layers = GRABABLE_LAYER;
+		//			[set addObject:shape];
+		//			
+		//			
+		//			[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:body bodyB:_centralBody anchr1:cpvzero anchr2:cpvzero restLength:0 stiffness:3 damping:0]];
+		//		}
+	}
+	
+	return (self);
+}
+
+
 -(id)initWithPos:(cpVect)pos radius:(cpFloat)radius count:(int)count {
 	
 	if ((self = [super init])) {
@@ -25,16 +155,20 @@
 		_count = count;
 		posPt = CGPointMake(pos.x, pos.y);
 		
-		// blue
-		rFillColor = 0.0f;
-		gFillColor = 0.86f;
-		bFillColor = 1.0f;
+	
 		
 		
 		// red
 		//rFillColor = 1.0f;
 		//gFillColor = 0.37f;
 		//bFillColor = 0.37f;
+		
+		
+		_arrViscera = [[NSArray alloc] init];
+		_plistViscera = [[CreatureDataPlistParser alloc] initWithLevel:count];
+		for (NSDictionary *dictCircle in _plistViscera.arrCircles) {
+			[_arrViscera arrayByAddingObject:dictCircle];
+		}
 		
 		_rate = 5.0;
 		_torque = 50000.0;
@@ -140,7 +274,6 @@
 	return (self);
 }
 
-
 -(ChipmunkBody *)touchedBodyAt:(CGPoint)pos {
 	
 	ChipmunkBody *body;
@@ -196,7 +329,7 @@
 			cpVect v = [[_edgeBodies objectAtIndex:i] pos];
 			verts[i] = cpvadd(v, cpvmult(cpvnormalize(cpvsub(v, center)), _edgeRadius * 0.85));
 			
-			glColor4f(rFillColor, gFillColor, bFillColor, 1.00f);
+			glColor4f(BLOB_FILL.r / 256, BLOB_FILL.g / 256, BLOB_FILL.b / 256, 1.00f);
 			ccDrawCircle(v, _edgeRadius, 360, 16, NO);
 			//ccDrawQuadBezier(cpvadd(verts[i], _centralBody.pos), cpvmult(cpvadd(verts[i], _centralBody.pos), 2), cpvadd(verts[(i % _count) + 1], _centralBody.pos), 4);
 		}
@@ -213,7 +346,7 @@
 	//glEnable(GL_POINT_SMOOTH);
 	glEnable(GL_LINE_SMOOTH);
 	
-	glColor4f(rFillColor, gFillColor, bFillColor, 1.00f);
+	glColor4f(BLOB_FILL.r / 256, BLOB_FILL.g / 256, BLOB_FILL.b / 256, 1.00f);
 	ccDrawPoly(verts, _count, YES);
 	
 	//glLineWidth(3.0f);

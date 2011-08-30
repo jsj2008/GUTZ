@@ -18,7 +18,7 @@
 static const cpVect LVL_MENU_DIM = {3, 4};
 static const ccColor3B ARENA_BG = {233, 86, 86};
 
-
+static const ccColor3B BLOB_FILL = {0, 223, 255};
 #define MENU_INTRO_DELAY 0.33f
 
 
@@ -55,3 +55,14 @@ enum {
 
 #endif
 */
+
+
+// blue
+//rFillColor = 0.00000f;
+//gFillColor = 0.87451f;
+//bFillColor = 1.00000f;
+
+// red
+//rFillColor = 1.0f;
+//gFillColor = 0.37f;
+//bFillColor = 0.37f;

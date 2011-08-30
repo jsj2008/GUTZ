@@ -11,6 +11,7 @@
 #ifndef __CREATURE_CONSTS_H
 #define __CREATURE_CONSTS_H
 
+#import "cocos2d.h"
 
 //
 // Wiggler Settings:

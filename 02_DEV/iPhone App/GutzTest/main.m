@@ -10,11 +10,12 @@
 
 int main(int argc, char *argv[]) {
     
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    int retVal = UIApplicationMain(argc, argv, nil, @"AppDelegate");
+	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+	int retVal = UIApplicationMain(argc, argv, nil, @"AppDelegate");
 	
 	NSString *logPath = @"/path/to/log/file.log"; freopen([logPath fileSystemRepresentation], "a", stderr); 
 	
-    [pool release];
-    return retVal;
+	[pool release];
+	
+	return retVal;
 }

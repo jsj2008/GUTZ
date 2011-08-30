@@ -22,7 +22,6 @@
 @property (nonatomic, retain) NSArray *arrWallData;
 @property (nonatomic, retain) NSArray *arrGoalData;
 
--(id) init;
 -(id) initWithLevel:(int)ind;
 
 @end

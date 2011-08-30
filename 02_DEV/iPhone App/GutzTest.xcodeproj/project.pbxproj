@@ -420,6 +420,9 @@
 		4C8911C8140C50A60014C1D8 /* ChipmunkSpace.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C8911A1140C50A60014C1D8 /* ChipmunkSpace.h */; };
 		4C8911C9140C50A60014C1D8 /* libObjectiveChipmunk-iPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C8911A2140C50A60014C1D8 /* libObjectiveChipmunk-iPhone.a */; };
 		4C8911CA140C50A60014C1D8 /* ObjectiveChipmunk.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C8911A3140C50A60014C1D8 /* ObjectiveChipmunk.h */; };
+		4C8C84B7140CBDEE00CEDDA0 /* CreatureData_01.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C8C84B6140CBDEE00CEDDA0 /* CreatureData_01.plist */; };
+		4C8C84BA140CBE7400CEDDA0 /* CreatureDataPlistParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C8C84B8140CBE7400CEDDA0 /* CreatureDataPlistParser.h */; };
+		4C8C84BB140CBE7400CEDDA0 /* CreatureDataPlistParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C84B9140CBE7400CEDDA0 /* CreatureDataPlistParser.m */; };
 		4C8CC93813FD3E1D00A4492B /* UI_loop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C8CC93313FD3E1D00A4492B /* UI_loop.wav */; };
 		4C8CC93913FD3E1D00A4492B /* menuGUTZ.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C8CC93413FD3E1D00A4492B /* menuGUTZ.wav */; };
 		4C8CC93A13FD3E1D00A4492B /* bootUp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C8CC93513FD3E1D00A4492B /* bootUp.wav */; };
@@ -1007,6 +1010,9 @@
 		4C8911A1140C50A60014C1D8 /* ChipmunkSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChipmunkSpace.h; sourceTree = "<group>"; };
 		4C8911A2140C50A60014C1D8 /* libObjectiveChipmunk-iPhone.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libObjectiveChipmunk-iPhone.a"; sourceTree = "<group>"; };
 		4C8911A3140C50A60014C1D8 /* ObjectiveChipmunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveChipmunk.h; sourceTree = "<group>"; };
+		4C8C84B6140CBDEE00CEDDA0 /* CreatureData_01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CreatureData_01.plist; path = Resources/CreatureData_01.plist; sourceTree = "<group>"; };
+		4C8C84B8140CBE7400CEDDA0 /* CreatureDataPlistParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureDataPlistParser.h; sourceTree = "<group>"; };
+		4C8C84B9140CBE7400CEDDA0 /* CreatureDataPlistParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureDataPlistParser.m; sourceTree = "<group>"; };
 		4C8CC93313FD3E1D00A4492B /* UI_loop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = UI_loop.wav; path = Resources/UI_loop.wav; sourceTree = "<group>"; };
 		4C8CC93413FD3E1D00A4492B /* menuGUTZ.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = menuGUTZ.wav; path = Resources/menuGUTZ.wav; sourceTree = "<group>"; };
 		4C8CC93513FD3E1D00A4492B /* bootUp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bootUp.wav; path = Resources/bootUp.wav; sourceTree = "<group>"; };
@@ -1295,10 +1301,12 @@
 				4C10663F13C3ED9B009FD4D6 /* BasePlistParser.m */,
 				4C10663C13C3ED9B009FD4D6 /* AchievementsPlistParser.h */,
 				4C10663D13C3ED9B009FD4D6 /* AchievementsPlistParser.m */,
-				4C10664013C3ED9B009FD4D6 /* SettingsPlistParser.h */,
-				4C10664113C3ED9B009FD4D6 /* SettingsPlistParser.m */,
+				4C8C84B8140CBE7400CEDDA0 /* CreatureDataPlistParser.h */,
+				4C8C84B9140CBE7400CEDDA0 /* CreatureDataPlistParser.m */,
 				4CF7952413F378DA00CD5535 /* LevelDataPlistParser.h */,
 				4CF7952513F378DA00CD5535 /* LevelDataPlistParser.m */,
+				4C10664013C3ED9B009FD4D6 /* SettingsPlistParser.h */,
+				4C10664113C3ED9B009FD4D6 /* SettingsPlistParser.m */,
 			);
 			path = delegate;
 			sourceTree = "<group>";
@@ -1907,6 +1915,14 @@
 			path = constraints;
 			sourceTree = "<group>";
 		};
+		4C8C84B4140CBDCA00CEDDA0 /* Creature Data */ = {
+			isa = PBXGroup;
+			children = (
+				4C8C84B6140CBDEE00CEDDA0 /* CreatureData_01.plist */,
+			);
+			name = "Creature Data";
+			sourceTree = "<group>";
+		};
 		4CC3AB5313BD86A400AA130E /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -2327,6 +2343,7 @@
 		4CEA230213FAF669009D1198 /* Arena Stuff */ = {
 			isa = PBXGroup;
 			children = (
+				4C8C84B4140CBDCA00CEDDA0 /* Creature Data */,
 				4C3CB34B140716FB0049D4C4 /* Level Assets */,
 				4C3CB349140716EE0049D4C4 /* Level Design */,
 			);
@@ -2497,6 +2514,7 @@
 				4C8911C8140C50A60014C1D8 /* ChipmunkSpace.h in Headers */,
 				4C8911CA140C50A60014C1D8 /* ObjectiveChipmunk.h in Headers */,
 				4C3F27F5140C58CE00D8B959 /* GameSettingsModel.h in Headers */,
+				4C8C84BA140CBE7400CEDDA0 /* CreatureDataPlistParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2808,6 +2826,7 @@
 				4C8911A6140C50A60014C1D8 /* LICENSE.txt in Resources */,
 				4C8911A7140C50A60014C1D8 /* LICENSE_Chipmunk.txt in Resources */,
 				4C8911A8140C50A60014C1D8 /* README.txt in Resources */,
+				4C8C84B7140CBDEE00CEDDA0 /* CreatureData_01.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2959,6 +2978,7 @@
 				4C891172140C48300014C1D8 /* CJSONScanner.m in Sources */,
 				4C891174140C48300014C1D8 /* CJSONSerializer.m in Sources */,
 				4C3F27F6140C58CE00D8B959 /* GameSettingsModel.m in Sources */,
+				4C8C84BB140CBE7400CEDDA0 /* CreatureDataPlistParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

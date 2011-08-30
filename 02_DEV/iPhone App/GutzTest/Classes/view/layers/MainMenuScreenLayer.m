@@ -48,6 +48,7 @@ static NSString *borderType = @"borderType";
 		
 		
 		_accBlob1 = [[JellyBlob alloc] initWithPos:cpv(164, 100) radius:32 count:16];
+		_accBlob1 = [[JellyBlob alloc] initWithPos:cpv(164, 100) radius:32 count:16];
 		_accBlob1.rFillColor = 1.0f;
 		_accBlob1.gFillColor = 0.37f;
 		_accBlob1.bFillColor = 0.37f;

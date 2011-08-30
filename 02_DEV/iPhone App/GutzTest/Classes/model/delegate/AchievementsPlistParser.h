@@ -20,7 +20,6 @@
 	int iTime;
 }
 
--(id)init;
 -(id)initWithFile;
 
 @property (nonatomic, readwrite) int iTimestamp;

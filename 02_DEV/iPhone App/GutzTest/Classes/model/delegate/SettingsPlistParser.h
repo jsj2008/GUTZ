@@ -25,7 +25,6 @@
 	
 }
 
--(id) init;
 -(id) initWithFile;
 
 

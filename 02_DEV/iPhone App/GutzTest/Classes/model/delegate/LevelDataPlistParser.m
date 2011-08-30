@@ -16,6 +16,11 @@
 
 
 -(id)init {
+	NSLog(@"-/> %@.init%@ </-", [self class], @".()");
+	
+	if (!(self = [super init]))
+		return (nil);
+	
 	return (self);
 }
 				 
