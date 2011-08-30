@@ -13,6 +13,7 @@
 #import "RandUtils.h"
 #import "SimpleAudioEngine.h"
 
+#import "GameConsts.h"
 
 static NSString *borderType = @"borderType";
 
@@ -27,8 +28,14 @@ static NSString *borderType = @"borderType";
 }
 
 -(id) init {
-    NSLog(@"LevelCompleteScreenLayer.init()");
-    CGSize wins = [[CCDirector sharedDirector] winSize];
+	NSLog(@"LevelCompleteScreenLayer.init()");
+	
+	self = [super initWithBackround:MENU_BG_ASSET];
+	
+	if (!self)
+		return (nil);
+	
+	CGSize wins = [[CCDirector sharedDirector] winSize];
 	
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.85f];
 	[[SimpleAudioEngine sharedEngine] preloadEffect:@"buttonSound.wav"];
@@ -37,16 +44,9 @@ static NSString *borderType = @"borderType";
 	[[SimpleAudioEngine sharedEngine] playEffect:@"afterSplatter.wav"];
 	[[SimpleAudioEngine sharedEngine] playEffect:@"postGameEffect01.wav"];
 	
-	//self = [super init];
-	self = [super initWithBackround:@"bg_menu.png"];
 	
 	NSDate *unixTime = [[NSDate alloc] initWithTimeIntervalSince1970:0];
 	NSLog(@":::::::::::::[%d]:::::::::::::", unixTime);
-    
-    //CCSprite *bg = [CCSprite spriteWithFile: @"background_static.jpg"];
-	//bg.position = ccp(160, 240);
-    //[self addChild: bg z:0];
-	
 	
 	cpInitChipmunk();
 	
@@ -71,7 +71,7 @@ static NSString *borderType = @"borderType";
 	
 	[self schedule:@selector(physicsStepper:)];
 	[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
-    
+	
 	float delayTime = 0.0f;
 	
 	
@@ -187,7 +187,7 @@ static NSString *borderType = @"borderType";
 }
 
 -(void) onNextLevel:(id)sender { 
-    NSLog(@"LevelCompleteScreenLayer.onNextLevel()");
+	NSLog(@"LevelCompleteScreenLayer.onNextLevel()");
 	
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95f];
 	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
@@ -203,7 +203,7 @@ static NSString *borderType = @"borderType";
 }
 
 -(void) onBackMenu:(id)sender {
-    NSLog(@"LevelCompleteScreenLayer.onBackMenu()");
+	NSLog(@"LevelCompleteScreenLayer.onBackMenu()");
 	
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95f];
 	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
@@ -306,8 +306,8 @@ static NSString *borderType = @"borderType";
  
  // Write the XML data to the file.
  status = CFURLWriteDataAndPropertiesToResource (
- @"Achievements.plist",                  // URL to use
- xmlData,                  // data to write
+ @"Achievements.plist",				  // URL to use
+ xmlData,				  // data to write
  NULL,
  &errorCode);
  

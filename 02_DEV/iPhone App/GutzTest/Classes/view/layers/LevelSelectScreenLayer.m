@@ -6,6 +6,9 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+
+#import "GameConsts.h"
+
 #import "CCDirector.h"
 
 #import "AchievementsPlistParser.h"
@@ -105,7 +108,7 @@ static NSString *borderType = @"borderType";
     }
     
     
-    LvlPagesMenuSprite *levelMenu = [LvlPagesMenuSprite menuWithArray:level_arr cols:3 rows:4 position:CGPointMake(70.f, 380.f) padding:CGPointMake(90.f, 80.f)];
+    LvlPagesMenuSprite *levelMenu = [LvlPagesMenuSprite menuWithArray:level_arr cols:LVL_MENU_DIM.x rows:LVL_MENU_DIM.y position:CGPointMake(70.f, 380.f) padding:CGPointMake(90.f, 80.f)];
     [self addChild:levelMenu z:2];
     
 	if (kShowDebugMenus) {

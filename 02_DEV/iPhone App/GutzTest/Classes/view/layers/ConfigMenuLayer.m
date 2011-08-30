@@ -20,23 +20,29 @@
 -(id) init {
 	NSLog(@"%@.init()", [self class]);
 	
-	self = [super initWithBackround:@"bg_menu.png"];
+	if ((self = [super initWithBackround:MENU_BG_ASSET])) {
+		
+		CCMenu *optionsMenu = [self scaffoldMenu];
+		optionsMenu.position = ccp(160, 240);
+		[optionsMenu alignItemsVerticallyWithPadding: 95.0f];
+		[self addChild:optionsMenu z: 2];
+		
+		
+		[self introMenu:optionsMenu];
+		[self procureSettings];
+	}
 	
-	if (!self)
-		return (nil);
-	
-	//CCSprite *bg = [CCSprite spriteWithFile: @"background_default.jpg"];
-	//bg.position = ccp(160, 240);
-	//[self addChild: bg z:0];
-	
-	float delayTime = 0.3f;
+	return (self);
+}
+
+- (CCMenu *)scaffoldMenu {
 	
 	CCMenuItemImage *backButton = [CCMenuItemImage itemFromNormalImage:@"button_options_nonActive.png" selectedImage:@"button_options_Active.png" target:self selector:@selector(onBackMenu:)];
 	
 	CCMenu *backMenu = [CCMenu menuWithItems:backButton, nil];
 	backMenu.position = ccp(35, 440);
 	[self addChild:backMenu z:2];
-
+	
 	CCMenuItemImage *soundsOnButton = [CCMenuItemImage itemFromNormalImage:@"button_soundOn_nonActive.png" selectedImage:@"button_soundOn_Active.png" target:nil selector:nil];
 	CCMenuItemImage *soundsOffButton = [CCMenuItemImage itemFromNormalImage:@"button_soundOff_nonActive.png" selectedImage:@"button_soundOff_Active.png" target:nil selector:nil];
 	
@@ -52,30 +58,26 @@
 	
 	CCMenuItemImage *infoButton = [CCMenuItemImage itemFromNormalImage:@"button_moreInfo_nonActive.png" selectedImage:@"button_moreInfo_Active.png" target:self selector:@selector(onInfo:)];
 	
-	CCMenu *optionsMenu = [CCMenu menuWithItems:soundsToggleButton, pushesToggleButton, infoButton, nil];
+	return ([CCMenu menuWithItems:soundsToggleButton, pushesToggleButton, infoButton, nil]);
 	
-	for (CCMenuItem *itm in [optionsMenu children]) {
+}
+
+
+-(void)introMenu:(CCMenu *)menu {
+	
+	float delayTime = 0.33f;
+	
+	for (CCMenuItem *itm in [menu children]) {
 		itm.scale = 0.0f;
 		
 		CCAction *action = [CCSequence actions: 
-			[CCDelayTime actionWithDuration: delayTime], 
-			[CCScaleTo actionWithDuration:0.5F scale:1.0], nil];
+								  [CCDelayTime actionWithDuration: delayTime], 
+								  [CCScaleTo actionWithDuration:0.5f scale:1.0], nil];
 		
 		delayTime += 0.2f;
 		[itm runAction: action];
 	}
-	
-	optionsMenu.position = ccp(160, 240);
-	[optionsMenu alignItemsVerticallyWithPadding: 95.0f];
-	[self addChild:optionsMenu z: 2];
-	
-	
-	[self procureSettings];
-	
-	
-	return (self);
 }
-
 
 -(void) procureSettings {
 	

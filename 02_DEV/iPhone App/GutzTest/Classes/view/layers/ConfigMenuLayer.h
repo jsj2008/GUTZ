@@ -21,6 +21,8 @@
 }
 
 -(void) procureSettings;
+- (CCMenu *)scaffoldMenu;
+-(void)introMenu:(CCMenu *)menu;
 
 -(void) onBackMenu: (id) sender;
 -(void) onInfo: (id) sender;

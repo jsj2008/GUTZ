@@ -80,9 +80,8 @@
 	CCMenuItemImage *btnPauseToggle;
     
 	int score_amt;
-	BOOL isCleared;
+	BOOL _isCleared;
 	
-	int _cnt;
 	cpFloat _edgeRad;
 	int _cntTargets;
 	
@@ -90,9 +89,9 @@
 	NSArray *_edgeBodies;
 	
 	//cpSimpleMotor *_motor;
-	cpSimpleMotor *_motor;
-	cpFloat _rate, _torq;
-	cpFloat _ctrl;
+	//cpSimpleMotor *_motor;
+	//cpFloat _rate, _torq;
+	//cpFloat _ctrl;
 	
 	//NSSet *_cpObjs;
 	
@@ -128,6 +127,7 @@
 -(void) debuggingSetup;
 -(void) onResetArea:(id)sender;
 
+- (void)setupSFX;
 -(void) buildLvlObjs;
 
 - (BOOL)beginGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;

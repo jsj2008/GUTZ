@@ -7,6 +7,8 @@
 //
 
 #import "GameConfig.h"
+#import "GameConsts.h"
+
 #import "ChipmunkDebugNode.h"
 #import "PlayScreenLayer.h"
 
@@ -53,26 +55,19 @@ static NSString *borderType = @"borderType";
 -(id) init {
 	NSLog(@"%@.init()", [self class]);
 	
-	//if ((self = [super initWithColor:ccc4(233, 86, 86, 255)])) {
-	if ((self = [super initWithColor:ccc4(233, 255, 255, 255)])) {
-		[[SimpleAudioEngine sharedEngine] preloadEffect:@"splatter.wav"];
-		[[SimpleAudioEngine sharedEngine] preloadEffect:@"collision.wav"];
-		[[SimpleAudioEngine sharedEngine] preloadEffect:@"stretch.wav"];
-		[[SimpleAudioEngine sharedEngine] preloadEffect:@"tensionSplatter.wav"];
+	if ((self = [super initWithColor:ccc4(ARENA_BG.r, ARENA_BG.g, ARENA_BG.b, 255)])) {
+		
 		
 		self.isTouchEnabled = YES;
 		self.isAccelerometerEnabled = YES;
 		
+		[self setupSFX];
 		
 		
-		NSLog(@"walls:%@", plistLvlData.arrWallData);
-		NSLog(@"goals:%@", plistLvlData.arrGoalData);
-		
-		[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95];
 		//[[SimpleAudioEngine sharedEngine] playEffect:@"debug_healmag.wav"];
 		
-		_cnt = 32;
-		isCleared = NO;
+		//_cnt = 32;
+		_isCleared = NO;
 		
 		arrTouchedEdge = [[NSMutableArray alloc] init];
 		
@@ -85,7 +80,14 @@ static NSString *borderType = @"borderType";
 	return (self);
 }
 
-
+- (void)setupSFX {
+	[[SimpleAudioEngine sharedEngine] preloadEffect:@"splatter.wav"];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:@"collision.wav"];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:@"stretch.wav"];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:@"tensionSplatter.wav"];
+	
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95];
+}
 
 - (void)physProvoker:(id)sender {
 	[self schedule:@selector(physicsStepper:)];
@@ -301,7 +303,7 @@ static NSString *borderType = @"borderType";
 		
 		//for (int i=0; i<[arrTouchedEdge count]; i++) 
 		//[_blob pop];
-		isCleared = YES;
+		_isCleared = YES;
 		self.isTouchEnabled = NO;
 		[_space removeCollisionHandlerForTypeA:[JellyBlob class] andB:[GoalTarget class]];
 		[_space addPostStepCallback:self selector:@selector(clearArena:) key:_blob];
@@ -502,7 +504,7 @@ static NSString *borderType = @"borderType";
 	
 	[super draw];
 	
-	if (!isCleared) {
+	if (!_isCleared) {
 		[_blob draw];
 		
 		
@@ -613,7 +615,7 @@ static NSString *borderType = @"borderType";
 	
 	//[creatureSprite setPosition:[_blob posPt]];
 	
-	if (!isCleared) {
+	if (!_isCleared) {
 		[eyeSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y + 24)];
 		[mouthSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y - 24)];
 	}

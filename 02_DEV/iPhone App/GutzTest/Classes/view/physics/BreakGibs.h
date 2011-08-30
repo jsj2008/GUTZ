@@ -11,7 +11,10 @@
 #import "ObjectiveChipmunk.h"
 
 @interface BreakGibs : NSObject <ChipmunkObject> {
-    
+	
+	NSSet *chipmunkObjects;
 }
+
+@property (nonatomic, readonly) NSSet *chipmunkObjects;
 
 @end

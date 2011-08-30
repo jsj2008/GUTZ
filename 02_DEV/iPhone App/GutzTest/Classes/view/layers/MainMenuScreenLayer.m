@@ -9,6 +9,7 @@
 
 
 #import "GameConfig.h"
+#import "GameConsts.h"
 #import "MainMenuScreenLayer.h"
 #import "BtnAnimateActions.h"
 #import "ChipmunkDebugNode.h"
@@ -25,72 +26,76 @@ static NSString *borderType = @"borderType";
 
 -(id) init {
     NSLog(@"MainMenuScreenLayer.init()");
-    CGSize wins = [[CCDirector sharedDirector] winSize];
-	//self = [super init];
-	self = [super initWithBackround:@"bg_menu.png"];
-	float delayTime = 0.3f;
+   
 	
-	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95];
-	[[SimpleAudioEngine sharedEngine] preloadEffect:@"buttonSound.wav"];
-	
-	cpInitChipmunk();
-	
-	_space = [[ChipmunkSpace alloc] init];
-	_space.gravity = cpv(0, 0);
-	
-	//[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space]];
-	
-	CGRect rect = CGRectMake(0, 0, wins.width, wins.height);
-	[_space addBounds:rect thickness:532 elasticity:1 friction:1 layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:borderType];
-	
-	
-	_accBlob1 = [[JellyBlob alloc] initWithPos:cpv(164, 100) radius:32 count:16];
-	_accBlob1.rFillColor = 1.0f;
-	_accBlob1.gFillColor = 0.37f;
-	_accBlob1.bFillColor = 0.37f;
-	[_space add:_accBlob1];
-	
-	_accBlob2 = [[JellyBlob alloc] initWithPos:cpv(160, 120) radius:16 count:8];
-	[_space add:_accBlob2];
-	
-	_accBlob3 = [[JellyBlob alloc] initWithPos:cpv(140, 210) radius:24 count:12];
-	[_space add:_accBlob3];
-	
-	_accBlob4 = [[JellyBlob alloc] initWithPos:cpv(40, 232) radius:8 count:8];
-	[_space add:_accBlob4];
-	
-	[self schedule:@selector(physicsStepper:)];
-	[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
-	
-	CCMenuItemImage *btnStartNew = [CCMenuItemImage itemFromNormalImage:@"btn_play.png" selectedImage:@"btn_playActive.png" target:self selector:@selector(onNewGame:)];
-	CCMenuItemImage *btnStore = [CCMenuItemImage itemFromNormalImage:@"btn_store.png" selectedImage:@"btn_storeActive.png" target:self selector:@selector(onStore:)];
-	CCMenuItemImage *btnAbout = [CCMenuItemImage itemFromNormalImage:@"btn_about.png" selectedImage:@"btn_aboutActive.png" target:self selector:@selector(onAbout:)];
-	CCMenuItemImage *btnSettings = [CCMenuItemImage itemFromNormalImage:@"btn_settings.png" selectedImage:@"btn_SettingsActive.png" target:self selector:@selector(onConfig:)];
-    
-    CCMenu *configMenu = [CCMenu menuWithItems:btnSettings, nil];
-    configMenu.position = ccp(273, 440);
-    [self addChild:configMenu z:2];
-    
-	CCMenu *startMenu = [CCMenu menuWithItems:btnStartNew, btnStore, btnAbout, nil];
-	
-	for (CCSprite *each in [startMenu children]) {
-		each.scaleX = 0.0f;
-		each.scaleY = 0.0f;
+	if ((self = [super initWithBackround:MENU_BG_ASSET])) {
 		
-		CCAction *action = [
-            CCSequence actions: [CCDelayTime actionWithDuration: delayTime], 
-            [CCScaleTo actionWithDuration:0.5F scale:1.0], 
-         nil];
+		CGSize wins = [[CCDirector sharedDirector] winSize];
+		float delayTime = 0.3f;
 		
-		delayTime += 0.2f;
-		[each runAction: action];
+		[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95];
+		[[SimpleAudioEngine sharedEngine] preloadEffect:@"buttonSound.wav"];
+		
+		cpInitChipmunk();
+		
+		_space = [[ChipmunkSpace alloc] init];
+		_space.gravity = cpv(0, 0);
+		
+		//[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space]];
+		
+		CGRect rect = CGRectMake(0, 0, wins.width, wins.height);
+		[_space addBounds:rect thickness:532 elasticity:1 friction:1 layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:borderType];
+		
+		
+		_accBlob1 = [[JellyBlob alloc] initWithPos:cpv(164, 100) radius:32 count:16];
+		_accBlob1.rFillColor = 1.0f;
+		_accBlob1.gFillColor = 0.37f;
+		_accBlob1.bFillColor = 0.37f;
+		[_space add:_accBlob1];
+		
+		_accBlob2 = [[JellyBlob alloc] initWithPos:cpv(160, 120) radius:16 count:8];
+		[_space add:_accBlob2];
+		
+		_accBlob3 = [[JellyBlob alloc] initWithPos:cpv(140, 210) radius:24 count:12];
+		[_space add:_accBlob3];
+		
+		_accBlob4 = [[JellyBlob alloc] initWithPos:cpv(40, 232) radius:8 count:8];
+		[_space add:_accBlob4];
+		
+		[self schedule:@selector(physicsStepper:)];
+		[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
+		
+		CCMenuItemImage *btnStartNew = [CCMenuItemImage itemFromNormalImage:@"btn_play.png" selectedImage:@"btn_playActive.png" target:self selector:@selector(onNewGame:)];
+		CCMenuItemImage *btnStore = [CCMenuItemImage itemFromNormalImage:@"btn_store.png" selectedImage:@"btn_storeActive.png" target:self selector:@selector(onStore:)];
+		CCMenuItemImage *btnAbout = [CCMenuItemImage itemFromNormalImage:@"btn_about.png" selectedImage:@"btn_aboutActive.png" target:self selector:@selector(onAbout:)];
+		CCMenuItemImage *btnSettings = [CCMenuItemImage itemFromNormalImage:@"btn_settings.png" selectedImage:@"btn_SettingsActive.png" target:self selector:@selector(onConfig:)];
+		 
+		 CCMenu *configMenu = [CCMenu menuWithItems:btnSettings, nil];
+		 configMenu.position = ccp(273, 440);
+		 [self addChild:configMenu z:2];
+		 
+		CCMenu *startMenu = [CCMenu menuWithItems:btnStartNew, btnStore, btnAbout, nil];
+		
+		for (CCSprite *each in [startMenu children]) {
+			each.scaleX = 0.0f;
+			each.scaleY = 0.0f;
+			
+			CCAction *action = [
+					CCSequence actions: [CCDelayTime actionWithDuration: delayTime], 
+					[CCScaleTo actionWithDuration:0.5F scale:1.0], 
+				nil];
+			
+			delayTime += 0.2f;
+			[each runAction: action];
+		}
+		
+		startMenu.position = ccp(160, 200);
+		[startMenu alignItemsVerticallyWithPadding: 120.0f];
+		[self addChild:startMenu z: 2];
+	
 	}
 	
-	startMenu.position = ccp(160, 200);
-	[startMenu alignItemsVerticallyWithPadding: 120.0f];
-	[self addChild:startMenu z: 2];
-	
-	return self;
+	return (self);
 }
 
 -(void) onNewGame:(id)sender{ 

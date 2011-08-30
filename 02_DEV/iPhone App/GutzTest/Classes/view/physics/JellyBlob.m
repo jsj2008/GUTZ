@@ -254,7 +254,7 @@
 
 -(void)pulsate:(CGPoint)pos {
 	
-	cpVect offset = cpvsub(pos, _centralBody.pos);
+	//cpVect offset = cpvsub(pos, _centralBody.pos);
 	NSLog(@"pulsate.(%f, %f)", pos.x, pos.y);
 	
 	

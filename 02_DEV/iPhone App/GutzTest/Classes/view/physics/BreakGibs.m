@@ -11,4 +11,20 @@
 
 @implementation BreakGibs
 
+@synthesize chipmunkObjects;
+
+-(id)init {
+	
+	if ((self = [super init])) {
+		//NSMutableSet *set = [NSMutableSet set];
+	}
+	
+	return (self);
+}
+
+
+- (void)dealloc {
+	[super dealloc];
+}
+
 @end

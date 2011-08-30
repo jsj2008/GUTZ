@@ -10,14 +10,39 @@
 #ifndef __GAME_CONSTS_H
 #define __GAME_CONSTS_H
 
+#import "cocos2d.h"
+#import "ObjectiveChipmunk.h"
+
+#define MENU_BG_ASSET @"bg_menu.png"
+
+static const cpVect LVL_MENU_DIM = {3, 4};
+static const ccColor3B ARENA_BG = {233, 86, 86};
 
 
-#define LVL_MENU_TOT 36
-#define LVL_MENU_COLS 3
-#define LVL_MENU_ROWS 4
-#define LVL_BTN_PADDING 0.2f
+#define MENU_INTRO_DELAY 0.33f
 
 
+#endif
+
+/*
+typedef struct derpStruct {
+	NSUInteger num, max;
+	id *arr;
+} derpStruct;
+
+typedef enum {
+	kDerp1, 
+	kDerp2
+} derpEnum;
+
+
+enum {
+	kDERP_1 = 1,
+	kDERP_2 = 2,
+};
+
+
+*/
 
 
 
@@ -27,6 +52,6 @@
 
 #elif __arm__
 #define GAME_AUTOROTATION kGameAutorotationNone
-*/
 
 #endif
+*/
