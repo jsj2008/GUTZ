@@ -478,25 +478,22 @@
 			
 			private function writeCircles():String {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
-				trace ("[:_:] Application.writeCircles("+(_bodyPartVO_arr[0].length + _bodyPartVO_arr[1].length + _bodyPartVO_arr[2].length)+") [:_:]");
+				trace ("[:_:] Application.writeCircles("+(_bodyPartVO_arr.length)+") [:_:]");
 				
 				var str:String = PlistConsts.CIRCLE_PREGRP;
 				var vo_arr:Array;
 				var vo:CircleVO;
 				
 				for (var i:Number=0; i<_bodyPartVO_arr.length; i++) {
-					vo_arr = _bodyPartVO_arr[i] as Array;
+					vo = _bodyPartVO_arr[i] as CircleVO;
 					
-					for (var j:int=0; j<vo_arr.length; j++) {
-						vo = vo_arr[j] as CircleVO;
-						
-						str += PlistConsts.CIRCLE_PRETAG + String(vo.ind);
-						str += PlistConsts.CIRCLE_TYPE + String(vo.type);
-						str += PlistConsts.CIRCLE_POS_X + String(vo.pos_pt.x);
-						str += PlistConsts.CIRCLE_POS_Y + String(vo.pos_pt.y);
-						str += PlistConsts.CIRCLE_RADIUS + String(vo.radius);
-						str += PlistConsts.CIRCLE_POSTTAG;
-					}
+					str += PlistConsts.CIRCLE_PRETAG + String(vo.ind);
+					str += PlistConsts.CIRCLE_TYPE + String(vo.type);
+					str += PlistConsts.CIRCLE_POS_X + String(vo.pos_pt.x);
+					str += PlistConsts.CIRCLE_POS_Y + String(vo.pos_pt.y);
+					str += PlistConsts.CIRCLE_RADIUS + String(vo.radius);
+					str += PlistConsts.CIRCLE_POSTTAG;
+				
 				}
 				
 				return (str + PlistConsts.CIRCLE_POSTGRP);
