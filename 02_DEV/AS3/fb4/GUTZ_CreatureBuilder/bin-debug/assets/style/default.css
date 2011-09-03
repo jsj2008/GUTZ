@@ -1,0 +1,46 @@
+/* CSS file */
+
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/halo";
+
+/*------------------------------------------------------------------------------ Fonts */
+/*------------------------------------------------------------------------------ Global */
+
+
+
+@import /**/
+@media /**/
+@font-face /**/
+
+
+/*
+s|WindowedApplication {
+	background-color: #2e333f;
+}
+*/
+
+
+
+s|Label {
+	font-size: 10;
+}
+
+s|Panel {
+	background-alpha: 0;
+}
+
+
+s|Panel #titleDisplay {
+	text-align: center;
+	font-size: 12;
+	header-height: 16;
+}
+
+
+s|RadioButton {
+	font-size: 10;
+}
+
+
+/*------------------------------------------------------------------------------ Text */
+/*------------------------------------------------------------------------------ Application */
