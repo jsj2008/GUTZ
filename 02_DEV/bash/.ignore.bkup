@@ -1,3 +1,5 @@
 .svn*
 .DS_Store
 ._*
+03_DEPLOY
+04_BACKUP

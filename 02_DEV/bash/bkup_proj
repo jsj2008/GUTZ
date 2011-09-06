@@ -11,7 +11,7 @@
 #
 #     Copies the iOS project to a backup directory corresponding to 
 #     the current timestamp & optionally creates a tarball of it.
-# 
+#     [ g ]   Ignore git files.
 #     [ t ]   Generate a tarball of the backup.
 #     [ d ]   Remove the copied contents after archival.
 
@@ -27,31 +27,27 @@
 # [=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=]
 
 # -[ usage error ]-
-usage_msg=`echo "USAGE:"; echo "bkup_proj [ t [ d ] ]"; echo "bkup_proj -td"`
+usage_msg=`echo "USAGE:"; echo "bkup_proj [ g ] [ t [ d ] ]"; echo "bkup_proj -td"`
 # [=-=-=-=-=-=-=-=-=-=-=-=-=-=-=]
 
 
 
 # -[ project attribs ]-
-proj_name="GutzTest"
+proj_name="GUTZ"
 proj_root="`dirname $0`/../.."
-proj_src="${proj_root}/02_DEV/iPhone App"
-bkup_path="${proj_root}/04_BACKUP"
-scripts_path="${proj_root}/02_DEV/scripts"
-assets_path="${proj_root}/01_ASSETS"
+ignore_path="02_DEV/bash/.ignore.bkup"
+bkup_path="04_BACKUP"
 # [=-=-=-=-=-=-=-=-=-=-=-=-=-=-=]
 
 
 #-- printf "proj_name:[%s]\n" $proj_name
 #-- printf "proj_root:[%s]\n" $proj_root
-#-- printf "proj_src:[%s]\n" $proj_src
+#-- printf "ignore_path:[%s]\n" $ignore_path
 #-- printf "bkup_path:[%s]\n" $bkup_path
-#-- printf "scripts_path:[%s]\n" $scripts_path
-#-- printf "assets_path:[%s]\n" $assets_path
-
 
 # -[ option flags ]-
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-\_
+g_flag=false #-- git
 t_flag=false #-- tarball
 d_flag=false #-- delete
 # -=-=-=-=-=-=-=-=-=-=-=-=-/⁻
@@ -59,8 +55,13 @@ d_flag=false #-- delete
 
 # \\ [ option parser ]\_
 # \\~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~\_
-while getopts 'td' OPTION; do #-//> there's a '-t'
+while getopts 'gtd' OPTION; do #-//> there's a '-t'
 	case $OPTION in #-/> set flag based on char
+		
+		g) # )-/> passed in '-g'
+			g_flag=true
+			;;
+		
 		
 		t) # )-/> passed in '-t'
 			t_flag=true
@@ -93,9 +94,15 @@ ts=$(echo "${date_dir}_${time_dir}")
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-\_
 echo $'\ec' #-- clear stdout
 
-printf "Moving into project sources... [%s/]\n" "${proj_src}"
-cd "${proj_src}" #-- change to the proj's top-lvl
+# current dir not script's, change over
+if [ `pwd` != `dirname $0` ]; then
+	cd `dirname $0`; fi
 
+#-- printf "Moving into project sources... [%s/]\n" "${proj_src}"
+#-- cd "${proj_src}" #-- change to the proj's top-lvl
+
+printf "Moving into project root... [%s/]\n" "${proj_root}"
+cd "${proj_root}"
 
 if [ ! -d $bkup_path ]; then #))-\> create top-lvl backup dir
 	printf "Creating top-lvl backup dir... [%s/]\n" $bkup_path
@@ -106,16 +113,19 @@ if [ ! -d $bkup_path/$date_dir ]; then #))-\> create the date dir if needed
 	mkdir "${bkup_path}/${date_dir}"; fi
 # -=-=-=-=-=-=-=-=-=-=-=-=-/⁻
 
-
-
 # -[ backup init ]-
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-\_
 printf "Creating time dir... [%s/]\n" $time_dir
 mkdir "${bkup_path}/${date_dir}/${time_dir}" #-- create the time dir
 
+
+if $g_flag ; then
+	ignore_path="02_DEV/bash/.ignore_git.bkup"; fi
+	
+
+
 printf "Copying project contents... "
-rsync -h -v -r --exclude-from "${scripts_path}/.ignore.bkup" . "${bkup_path}/${date_dir}/${time_dir}" #-- use rsync to copy, preserving ts / recurse & exclude any svn meta data w/ verbose
-rsync -h -v -r --exclude-from "${scripts_path}/.ignore.bkup" "${assets_path}" "${bkup_path}/${date_dir}/${time_dir}" #-- use rsync to copy, preserving ts / recurse & exclude any svn meta data w/ verbose
+rsync -h -v -r --exclude-from "${ignore_path}" . "${bkup_path}/${date_dir}/${time_dir}" #-- use rsync to copy, preserving ts / recurse & exclude any svn meta data w/ verbose
 # -=-=-=-=-=-=-=-=-=-=-=-=-/⁻
 
 

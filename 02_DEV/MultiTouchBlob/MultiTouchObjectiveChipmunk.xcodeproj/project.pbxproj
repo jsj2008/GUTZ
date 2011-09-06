@@ -885,6 +885,9 @@
 /* Begin PBXProject section */
 		D3F5610C13DCDF6900D3CA33 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = D3F5610F13DCDF6900D3CA33 /* Build configuration list for PBXProject "MultiTouchObjectiveChipmunk" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
