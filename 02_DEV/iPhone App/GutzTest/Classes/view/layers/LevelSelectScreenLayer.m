@@ -30,7 +30,7 @@ static NSString *borderType = @"borderType";
 
 
 -(id) init {
-    NSLog(@"%@.init()", [self class]);
+	NSLog(@"%@.init()", [self class]);
    CGSize wins = [[CCDirector sharedDirector] winSize];
 	
 	[[SimpleAudioEngine sharedEngine] preloadEffect:@"buttonSound.wav"];
@@ -38,10 +38,10 @@ static NSString *borderType = @"borderType";
 	
 	//self = [super init];
 	self = [super initWithBackround:@"bg_menu.png"];
-    
-    //CCSprite *bg = [CCSprite spriteWithFile: @"background_default.jpg"];
+	
+	//CCSprite *bg = [CCSprite spriteWithFile: @"background_default.jpg"];
 	//bg.position = ccp(160, 240);
-    //[self addChild: bg z:0];
+	//[self addChild: bg z:0];
 	
 	
 	digitSize = CGPointMake(22, 32);
@@ -86,32 +86,32 @@ static NSString *borderType = @"borderType";
 	self.isTouchEnabled = YES;
 	
 	//digitBatchSprite = [CCSpriteBatchNode batchNodeWithFile:@"digitsLvlSelect_spritemap.png" capacity:100];
-    //[self addChild:digitBatchSprite];
+	//[self addChild:digitBatchSprite];
 
-    bool isLocked = NO;
-    
-    
-    NSMutableArray *level_arr = [[NSMutableArray alloc] init];
-    
-    for (int i=0; i<12; i++) {
-        
+	bool isLocked = NO;
+	
+	
+	NSMutableArray *level_arr = [[NSMutableArray alloc] init];
+	
+	for (int i=0; i<12; i++) {
+		
 		if (i >= kLastLevel)
 			isLocked = YES;
-        
+		
 		else
 			isLocked = NO;
-        
+		
 		
 		CCMenuItemImage *btnLvlItm = [self makeBtn:i locked:isLocked];
 		
 		
-        [level_arr addObject:btnLvlItm];
-    }
-    
-    
-    LvlPagesMenuSprite *levelMenu = [LvlPagesMenuSprite menuWithArray:level_arr cols:LVL_MENU_DIM.x rows:LVL_MENU_DIM.y position:CGPointMake(70.f, 380.f) padding:CGPointMake(90.f, 80.f)];
-    [self addChild:levelMenu z:2];
-    
+		[level_arr addObject:btnLvlItm];
+	}
+	
+	
+	LvlPagesMenuSprite *levelMenu = [LvlPagesMenuSprite menuWithArray:level_arr cols:LVL_MENU_DIM.x rows:LVL_MENU_DIM.y position:CGPointMake(70.f, 380.f) padding:CGPointMake(90.f, 80.f)];
+	[self addChild:levelMenu z:2];
+	
 	if (kShowDebugMenus) {
 		CCMenuItemImage *backButton = [CCMenuItemImage itemFromNormalImage:@"button_options_nonActive.png" selectedImage:@"button_options_Active.png" target:self selector:@selector(onBackMenu:)];
 		CCMenu *backMenu = [CCMenu menuWithItems:backButton, nil];
@@ -130,7 +130,7 @@ static NSString *borderType = @"borderType";
 	int onesDigit = [[DigitUtils singleton]ones:ind + 1];
 	
 	//int row = ind / 3;
-    //int col = ind % 3;
+	//int col = ind % 3;
 	
 	if (isLocked) {
 		//btnLevel = [[LvlBtnSprite alloc] initWithLevelIndex:ind locked:isLocked normal:@"buttonLocked_nonActive.png" selected:@"buttonLocked_nonActive.png"];
@@ -189,17 +189,14 @@ static NSString *borderType = @"borderType";
 
 
 -(void) onBackMenu:(id)sender {
-    NSLog(@"LevelSelectScreenLayer.onBackMenu()");
-    
+	NSLog(@"LevelSelectScreenLayer.onBackMenu()");
+	
 	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
-    [ScreenManager goMenu];
+	[ScreenManager goMenu];
 }
 
 -(void) onLevelSelect:(id)sender {
-    NSLog(@"LevelSelectScreenLayer.onLevelSelect(%d)", ((LvlBtnSprite *)sender).iLvlIndex);
-    
-	
-	//LvlBtnSprite *lvlBtn = (LvlBtnSprite *)sender;
+	NSLog(@"LevelSelectScreenLayer.onLevelSelect(%d)", ((LvlBtnSprite *)sender).iLvlIndex);
 	
 	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
 	
@@ -210,7 +207,7 @@ static NSString *borderType = @"borderType";
 
 
 +(void) onPageChange:(int)ind {
-    NSLog(@"LevelSelectScreenLayer.onPageChange(%d)", ind);
+	NSLog(@"LevelSelectScreenLayer.onPageChange(%d)", ind);
 }
 
 

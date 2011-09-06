@@ -10,7 +10,9 @@
 #import "ObjectiveChipmunk.h"
 #import "JellyBlob.h"
 #import "GoalTarget.h"
-#import "StarTarget.h"
+#import "BonusTarget.h"
+#import "StarGoalTarget.h"
+
 #import "AlgebraUtils.h"
 #import "GameConfig.h"
 
@@ -50,8 +52,8 @@
 	GoalTarget *goalTarget2;
 	GoalTarget *goalTarget3;
 	
-	StarTarget *starTarget1;
-	StarTarget *starTarget2;
+	StarGoalTarget *_starGoalTarget;
+	BonusTarget *_bonusTarget;
 	
 	
 	CCSprite *hudStarsSprite;
@@ -135,14 +137,13 @@
 
 
 
-- (BOOL)beginStarCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
-//- (void)postSolveStarCollision:(cpArbiter *)arbiter space:(ChipmunkSpace* )space;
-- (void)separateStarCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
+- (BOOL)beginBonusCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
+- (void)separateBonusCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
 
+- (BOOL)beginStarGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
+- (void)separateStarGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
 
 - (BOOL)beginGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
-- (BOOL)preSolveGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace* )space;
-- (void)postSolveGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace* )space;
 - (void)separateGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
 
 

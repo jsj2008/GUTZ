@@ -94,7 +94,7 @@ static NSString *borderType = @"borderType";
 
 - (void)physProvoker:(id)sender {
 	[self schedule:@selector(physicsStepper:)];
-	//[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
+	[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
 }
 
 
@@ -168,6 +168,25 @@ static NSString *borderType = @"borderType";
 		shape.elasticity = bounce;
 		shape.data = sprite;
 	}
+	
+	
+	
+	arrTargets = [[NSMutableArray alloc] initWithCapacity:2];
+	[arrTargets addObject:@"NO"];
+	[arrTargets addObject:@"NO"];
+	[arrTargets addObject:@"NO"];
+	
+	
+	_starGoalTarget = [[StarGoalTarget alloc] initAtPos:cpv((CCRANDOM_0_1() * 280) + 16, (CCRANDOM_0_1() * 400) + 32)];
+	_starGoalTarget.ind = 2;
+	[_space add:_starGoalTarget];
+	[self addChild:_starGoalTarget._sprite];
+	
+	
+	_bonusTarget = [[BonusTarget alloc] initAtPos:cpv(32, 200)];
+	_bonusTarget.ind = 0;
+	[_space add:_bonusTarget];
+	[self addChild:_bonusTarget._sprite];
 }
 
 -(void) scaffoldHUD {
@@ -212,15 +231,6 @@ static NSString *borderType = @"borderType";
 	arrGibsShape = [[NSMutableArray alloc] init];
 	arrGibsSprite = [[NSMutableArray alloc] init];
 	
-	arrTargets = [[NSMutableArray alloc] initWithCapacity:2];
-	[arrTargets addObject:@"NO"];
-	[arrTargets addObject:@"NO"];
-	
-	
-	starTarget1 = [[StarTarget alloc] initAtPos:cpv(32, 200)];
-	starTarget1.ind = 0;
-	[_space add:starTarget1];
-	[self addChild:starTarget1._sprite];
 	
 	//_blob = [[JellyBlob alloc] initWithLvl:indLvl atPos:cpv(BLOB_X, BLOB_Y)];
 	_blob = [[JellyBlob alloc] initWithPos:cpv(BLOB_X, BLOB_Y) radius:BLOB_RADIUS count:BLOB_SEGS];
@@ -243,8 +253,9 @@ static NSString *borderType = @"borderType";
 	[self addChild:mouthSprite];
 	
 	
-	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:[StarTarget class] begin:@selector(beginStarCollision:space:) preSolve:nil postSolve:nil separate:@selector(separateStarCollision:space:)];
-	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:[GoalTarget class] begin:@selector(beginGoalCollision:space:) preSolve:@selector(preSolveGoalCollision:space:) postSolve:@selector(postSolveGoalCollision:space:) separate:@selector(separateGoalCollision:space:)];
+	//[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:[BonusTarget class] begin:@selector(beginBonusCollision:space:) preSolve:nil postSolve:nil separate:@selector(separateBonusCollision:space:)];
+	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:[StarGoalTarget class] begin:@selector(beginStarGoalCollision:space:) preSolve:nil postSolve:nil separate:@selector(separateStarGoalCollision:space:)];
+	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:[GoalTarget class] begin:@selector(beginGoalCollision:space:) preSolve:nil postSolve:nil separate:@selector(separateGoalCollision:space:)];
 	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:borderType begin:@selector(beginWallCollision:space:) preSolve:@selector(preSolveWallCollision:space:) postSolve:@selector(postSolveWallCollision:space:) separate:@selector(separateWallCollision:space:)];
 }
 
@@ -278,39 +289,29 @@ static NSString *borderType = @"borderType";
 	return (NO);
 }
 
-- (BOOL)preSolveGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {	
-	NSLog(@"preSolveCollision");
-	
-	return (YES);
-}
-
-- (void)postSolveGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	
-	// skip the later collisions
-	//if (!cpArbiterIsFirstContact(arbiter)) 
-	//	return;
-	
-	// force of the colliding bodies
-	cpFloat impulse = cpvlength(cpArbiterTotalImpulse(arbiter));
-	
-	NSLog(@"postSolveCollision:[%d] [%f]", _cntTargets, impulse);
-}
-
-
 - (void)separateGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
-	
-	
-	//NSLog(@"separateCollision: [%d]", _cntTargets);
+	//NSLog(@"separateGoalCollision: [%d]", _cntTargets);
 	
 	if ([[arrTargets objectAtIndex:0] isEqualToString:@"YES"] && [[arrTargets objectAtIndex:1] isEqualToString:@"YES"]) {
-		NSLog(@"GOAL!!!! [%d]", [arrTouchedEdge count]);
+		NSLog(@"GOAL! [%d]", [arrTouchedEdge count]);
 		
 		_isCleared = YES;
 		self.isTouchEnabled = NO;
+		
+		if (_starGoalTarget.isCovered) {
+			NSLog(@"¡¡¡BONUS PTS!!!");
+			
+			[_space removeCollisionHandlerForTypeA:[JellyBlob class] andB:[StarGoalTarget class]];
+			
+			score_amt = 50;
+			[[NSNotificationCenter defaultCenter] postNotificationName:@"ScoreChanged" object:[[NSNumber alloc] initWithInt:score_amt]];
+			[[PlayStatsModel singleton] incScore:score_amt];
+		}
+		
+		
 		[_space removeCollisionHandlerForTypeA:[JellyBlob class] andB:[GoalTarget class]];
 		[_space addPostStepCallback:self selector:@selector(clearArena:) key:_blob];
-		//[self performSelector:@selector(clearArena:) withObject:self afterDelay:0.33];
 	}
 	
 	GoalTarget *trg = target.data;
@@ -319,15 +320,39 @@ static NSString *borderType = @"borderType";
 }
 
 
-#pragma mark StarCollisionHandlers
+#pragma mark StarGoalCollisionHandlers
 
-- (BOOL)beginStarCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
+- (BOOL)beginStarGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
 	
-	NSLog(@"%@.beginStarCollision()", [self class]);
+	NSLog(@"%@.beginStarGoalCollision()", [self class]);
 	
 	
-	StarTarget *trg = target.data;
+	StarGoalTarget *trg = target.data;
+	[trg updateCovered:YES];
+	trg.isCleared = YES;
+	
+	return (NO);
+}
+
+- (void)separateStarGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
+	NSLog(@"%@.separateStarGoalCollision()", [self class]);
+	
+	StarGoalTarget *trg = target.data;	
+	[trg updateCovered:NO];
+}
+
+
+
+#pragma mark BonusCollisionHandlers
+
+- (BOOL)beginBonusCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
+	NSLog(@"%@.beginBonusCollision()", [self class]);
+	
+	
+	BonusTarget *trg = target.data;
 	trg.isCleared = YES;
 	[trg updateCovered:YES];
 	
@@ -342,17 +367,19 @@ static NSString *borderType = @"borderType";
 	return (NO);
 }
 
-- (void)separateStarCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
+- (void)separateBonusCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
-	NSLog(@"%@.separateStarCollision()", [self class]);
+	NSLog(@"%@.separateBonusCollision()", [self class]);
 	
-	StarTarget *trg = target.data;	
+	BonusTarget *trg = target.data;	
 	[trg updateCovered:YES];
 	
 	
-	[_space removeCollisionHandlerForTypeA:[JellyBlob class] andB:[StarTarget class]];
+	[_space removeCollisionHandlerForTypeA:[JellyBlob class] andB:[BonusTarget class]];
 	//[_space addPostStepRemoval:trg];
 }
+
+
 
 
 
@@ -431,6 +458,8 @@ static NSString *borderType = @"borderType";
 	
 	[self removeChild:goalTarget1._sprite cleanup:NO];
 	[self removeChild:goalTarget2._sprite cleanup:NO];
+	[self removeChild:_starGoalTarget._sprite cleanup:NO];
+	[self removeChild:_bonusTarget._sprite cleanup:NO];
 	
 	NSMutableArray *arrSplatter = [[NSMutableArray alloc] init];
 	

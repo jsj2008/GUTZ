@@ -23,10 +23,9 @@
 	if ((self = [super initWithBackround:MENU_BG_ASSET])) {
 		
 		CCMenu *optionsMenu = [self scaffoldMenu];
-		optionsMenu.position = ccp(160, 240);
-		[optionsMenu alignItemsVerticallyWithPadding: 95.0f];
+		optionsMenu.position = ccp(160, 220);
+		[optionsMenu alignItemsVerticallyWithPadding: 48.0f];
 		[self addChild:optionsMenu z: 2];
-		
 		
 		[self introMenu:optionsMenu];
 		[self procureSettings];
@@ -70,9 +69,7 @@
 	for (CCMenuItem *itm in [menu children]) {
 		itm.scale = 0.0f;
 		
-		CCAction *action = [CCSequence actions: 
-								  [CCDelayTime actionWithDuration: delayTime], 
-								  [CCScaleTo actionWithDuration:0.5f scale:1.0], nil];
+		CCAction *action = [CCSequence actions:[CCDelayTime actionWithDuration: delayTime], [CCScaleTo actionWithDuration:0.5f scale:1.0], nil];
 		
 		delayTime += 0.2f;
 		[itm runAction: action];
@@ -108,8 +105,6 @@
 		soundsToggleButton.selectedIndex = 1;
 	
 	//NSLog(@"[soundsToggleButton selectedItem]:(%@, %d)", [soundsToggleButton selectedItem], [soundsToggleButton selectedIndex]);
-	
-	
 	//[plistSettings writeNumberByKey:@"Played Timestamp" val:[[CCDirector sharedDirector] startTime]];//[[plistSettings dicTopLvl] setValue:[NSNumber numberWithBool:YES] forKey:@"Pushes Enabled"];
 }
 

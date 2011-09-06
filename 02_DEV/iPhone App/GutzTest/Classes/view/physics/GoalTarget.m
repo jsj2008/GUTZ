@@ -14,14 +14,15 @@
 @synthesize isCovered;
 @synthesize isCleared;
 
+
+
 -(id)initAtPos:(CGPoint)pos {
-	
 	if ((self = [super init])) {
 		
 		_body = [[ChipmunkBody alloc] initWithMass:1 andMoment:INFINITY];
 		_body.pos = pos;
 		
-		_shape = [ChipmunkStaticCircleShape circleWithBody:_body radius:RADIUS offset:cpvzero];
+		_shape = [ChipmunkStaticCircleShape circleWithBody:_body radius:GOAL_RADIUS offset:cpvzero];
 		_shape.elasticity = 0.0f;
 		_shape.friction = 0.0f;		
 		_shape.collisionType = [GoalTarget class];
@@ -35,9 +36,7 @@
 		chipmunkObjects = [ChipmunkObjectFlatten(_shape, nil) retain];
 	}
 	
-	
 	return (self);
-
 }
 
 
