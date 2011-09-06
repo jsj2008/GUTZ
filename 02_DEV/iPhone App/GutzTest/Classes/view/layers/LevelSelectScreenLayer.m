@@ -57,7 +57,7 @@ static NSString *borderType = @"borderType";
 	CGRect rect = CGRectMake(0, 0, wins.width, wins.height);
 	[_space addBounds:rect thickness:532 elasticity:1 friction:1 layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:borderType];
 	
-	
+	/*
 	_accBlob1 = [[JellyBlob alloc] initWithPos:cpv(164, 100) radius:32 count:16];
 	[_space add:_accBlob1];
 	
@@ -72,6 +72,7 @@ static NSString *borderType = @"borderType";
 	
 	[self schedule:@selector(physicsStepper:)];
 	[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
+	 */
 	/*
 	 AchievementsPlistParser* plistAchievments = [[AchievementsPlistParser alloc] init];
 	 NSLog(@"plistAchievments.dicTopLvl:[%d]", [plistAchievments arrItmEntries]);
@@ -94,7 +95,7 @@ static NSString *borderType = @"borderType";
     
     for (int i=0; i<12; i++) {
         
-		if (i > 2)
+		if (i >= kLastLevel)
 			isLocked = YES;
         
 		else
@@ -131,13 +132,16 @@ static NSString *borderType = @"borderType";
 	//int row = ind / 3;
     //int col = ind % 3;
 	
-	
-	if (isLocked)
+	if (isLocked) {
+		//btnLevel = [[LvlBtnSprite alloc] initWithLevelIndex:ind locked:isLocked normal:@"buttonLocked_nonActive.png" selected:@"buttonLocked_nonActive.png"];
 		btnLevel = [LvlBtnSprite itemFromNormalImage:@"buttonLocked_nonActive.png" selectedImage:@"buttonLocked_nonActive.png" target:self selector:nil];
-	
-	else {
-		
+
+	} else {
+		//btnLevel = [[LvlBtnSprite alloc] initWithLevelIndex:ind locked:isLocked normal:@"btn_lvlUnlocked.png" selected:@"btn_lvlUnlockedActive.png"];
 		btnLevel = [LvlBtnSprite itemFromNormalImage:@"btn_lvlUnlocked.png" selectedImage:@"btn_lvlUnlockedActive.png" target:self selector:@selector(onLevelSelect:)];
+		
+		
+		btnLevel.iLvlIndex = ind + 1;
 		
 		CCSprite *indHolderSprite = [CCSprite node];
 		[indHolderSprite setScale:kLVL_NUM_SCALE_MULT * [[CCDirector sharedDirector]contentScaleFactor]];
@@ -192,13 +196,16 @@ static NSString *borderType = @"borderType";
 }
 
 -(void) onLevelSelect:(id)sender {
-    NSLog(@"LevelSelectScreenLayer.onLevelSelect()");
+    NSLog(@"LevelSelectScreenLayer.onLevelSelect(%d)", ((LvlBtnSprite *)sender).iLvlIndex);
     
+	
+	//LvlBtnSprite *lvlBtn = (LvlBtnSprite *)sender;
+	
 	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
 	
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.25f];
-	 [[SimpleAudioEngine sharedEngine] playEffect:@"levelSelect.wav"];
-	[ScreenManager goPlay:1];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"levelSelect.wav"];
+	[ScreenManager goPlay:((LvlBtnSprite *)sender).iLvlIndex];
 }
 
 

@@ -32,11 +32,11 @@
 		
 		strResourcePath = [filepath stringByAppendingString:@"/"];
 		strResourceFile = filename;
-		NSLog(@"  -/> %@.strResourceFile:[\"%@\"], type:[%@]) </-", [self class], strResourceFile, RESRC_TYPE);	
+		//NSLog(@"  -/> %@.strResourceFile:[\"%@\"], type:[%@]) </-", [self class], strResourceFile, RESRC_TYPE);	
 		
 		strFullPath = [[NSBundle mainBundle] pathForResource:strResourceFile ofType:RESRC_TYPE];
 		//strFullPath = [[strResourcePath stringByAppendingString:strResourceFile] stringByAppendingPathExtension:RESRC_TYPE];
-		NSLog(@"-/> %@.strFullPath:[%@]) </-", [self class], strFullPath);	
+		//NSLog(@"-/> %@.strFullPath:[%@]) </-", [self class], strFullPath);	
 		
 		dicTopLvl = [[NSMutableDictionary alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:strResourceFile ofType:RESRC_TYPE]];
 		//NSLog(@"-/> %@.dicTopLvl:[%@]) </-", [self class], [dicTopLvl allKeys]);	

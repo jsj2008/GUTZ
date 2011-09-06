@@ -10,6 +10,7 @@
 #define EDGE_FRICTION 0.1f
 
 #define CENTRAL_MASS 1.5f
+#define CENTRAL_RADIUS 16.0f
 
 #define SQUISH_COEFF 0.7f
 #define SPRING_STR 40.0f
@@ -17,31 +18,36 @@
 
 
 @interface JellyBlob : NSObject <ChipmunkObject> {
-	int _count;
-	cpFloat _edgeRadius;
-	
-	cpVect _ptSize;
-	
-	ChipmunkBody *_centralBody;
-	
-	NSArray *_edgeBodies;
-	CGPoint posPt;
-	
-	NSMutableArray *bodies;
-	
-	NSMutableSet *set;
-	
-	
-	CreatureDataPlistParser *_plistViscera;
-	NSArray *_arrViscera;
 	
 	NSSet *chipmunkObjects;
+	NSMutableSet *set;
+	
+	CreatureDataPlistParser *_plistCreatureData;
+	CGPoint posPt;
+	cpFloat _radius;
+	cpFloat _edgeRadius;
+	cpVect _ptSize;
+	cpVect _ctrPt;
+	
+	
+	ChipmunkBody *_centralBody;
+	NSArray *_arrParts;
+	NSArray *_arrClamps;
+	NSArray *_edgeBodies;
+
+	NSMutableArray *bodies;
+	NSMutableArray *_arrSupportBodies;
+	NSMutableArray *_arrContourBodies;
 	
 	BOOL isPopped;
 	
 	float rFillColor;
 	float gFillColor;
 	float bFillColor;
+	
+	int totBodies;
+	int totSBodies;
+	int totCBodies;
 	
 }
 

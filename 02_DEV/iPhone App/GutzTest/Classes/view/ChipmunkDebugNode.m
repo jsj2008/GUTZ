@@ -87,8 +87,8 @@ drawCircleShape(cpBody *body, cpCircleShape *circle) {
 		glScalef(circle->r, circle->r, 1.0f);
 		
 		glColor4f(LINE_COLOR, 1.0f);
-		//glDrawArrays(GL_LINE_STRIP, 0, circleVAR_count);
-		glDrawArrays(GL_TRIANGLE_FAN, 0, circleVAR_count);
+		//glDrawArrays(GL_LINE_STRIP, 0, circleVAR_count); // outlines
+		glDrawArrays(GL_TRIANGLE_FAN, 0, circleVAR_count); // filled
 	} glPopMatrix();
 }
 
@@ -310,7 +310,8 @@ drawConstraint(cpConstraint *constraint, void *unused) {
 	glLineWidth(3.0f);
 	cpSpaceEachShape(space.space, drawShape, NULL);
 	
-	glColor4f(0.5f, 1.0f, 0.5f, 1.0f);
+	//glLineWidth(1.0f);
+	//glColor4f(0.5f, 1.0f, 0.5f, 1.0f);
 	//cpSpaceEachConstraint(space.space, drawConstraint, NULL);
 	
 	glEnableClientState(GL_COLOR_ARRAY);

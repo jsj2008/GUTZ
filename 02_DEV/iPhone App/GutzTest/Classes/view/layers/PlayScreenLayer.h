@@ -10,7 +10,7 @@
 #import "ObjectiveChipmunk.h"
 #import "JellyBlob.h"
 #import "GoalTarget.h"
-
+#import "StarTarget.h"
 #import "AlgebraUtils.h"
 #import "GameConfig.h"
 
@@ -49,6 +49,9 @@
 	GoalTarget *goalTarget1;
 	GoalTarget *goalTarget2;
 	GoalTarget *goalTarget3;
+	
+	StarTarget *starTarget1;
+	StarTarget *starTarget2;
 	
 	
 	CCSprite *hudStarsSprite;
@@ -129,6 +132,13 @@
 
 - (void)setupSFX;
 -(void) buildLvlObjs;
+
+
+
+- (BOOL)beginStarCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
+//- (void)postSolveStarCollision:(cpArbiter *)arbiter space:(ChipmunkSpace* )space;
+- (void)separateStarCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
+
 
 - (BOOL)beginGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
 - (BOOL)preSolveGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace* )space;

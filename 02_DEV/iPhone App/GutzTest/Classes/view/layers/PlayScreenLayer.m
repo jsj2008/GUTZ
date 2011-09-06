@@ -21,7 +21,6 @@
 #import "CreatureNodeVO.h"
 #import "VisceraVO.h"
 
-//#import "CreatureConsts.h"
 #import "RandUtils.h"
 #import "GoalTarget.h"
 
@@ -47,6 +46,10 @@ static NSString *borderType = @"borderType";
 	NSLog(@"%@.initWithLevel(%d)", [self class], lvl);
 	
 	indLvl = lvl;
+	
+	if (indLvl > kLastLevel)
+		indLvl = 1;
+	
 	return ([self init]);
 }
 
@@ -91,17 +94,13 @@ static NSString *borderType = @"borderType";
 
 - (void)physProvoker:(id)sender {
 	[self schedule:@selector(physicsStepper:)];
-	[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
+	//[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
 }
 
 
 -(void)buildLvlObjs {
 	
-	//plistLvlData = [[LevelDataPlistParser alloc] init];
 	plistLvlData = [[LevelDataPlistParser alloc] initWithLevel:indLvl];
-	
-	//NSDictionary *dictGoal1 = [NSDictionary dictionaryWithObject:[plistLvlData.arrGoalData objectAtIndex:0] forKey:nil];
-	
 	
 	NSLog(@"goals:[%@]", plistLvlData.arrGoalData);
 	NSLog(@"walls:[%@]", plistLvlData.arrWallData);
@@ -132,33 +131,34 @@ static NSString *borderType = @"borderType";
 	cpFloat width;
 	cpFloat height;
 	
-	
+	ind = 0;
 	for (NSDictionary *dictWall in plistLvlData.arrWallData) {
 		NSString *strWall = [[NSString alloc] init];
 		
-		int wallType = [[dictWall objectForKey:@"id"] intValue];
+		int wallType = [[dictWall objectForKey:@"type"] intValue];
 		CGPoint wallPos = CGPointMake([[dictWall objectForKey:@"x"] floatValue], [[dictWall objectForKey:@"y"] floatValue]);
 		cpFloat frict = [[dictWall objectForKey:@"frict"] floatValue];
 		cpFloat bounce = [[dictWall objectForKey:@"bounce"] floatValue];
 		
 		
-		if (wallType == 1) {
-			width = 194;
-			height = 39;
-			strWall =  [NSString stringWithString:@"blocker.png"];
-			
-		} else {
-			width = 108;
-			height = 39;
-			strWall =  [NSString stringWithString:@"blocker_B_.png"];
+		switch (wallType) {
+			case 1:
+				width = 108;
+				height = 39;
+				strWall =  [NSString stringWithString:@"blocker_B_.png"];
+				break;
+				
+			case 2:
+				width = 194;
+				height = 39;
+				strWall =  [NSString stringWithString:@"blocker.png"];
+				break;
 		}
-		
-		//NSLog(@"[%d]: [%@]-(%f, %f) // [%f, %f]", ind, [dictWall objectForKey:@"x"], wallPos.x, wallPos.y, frict, bounce);
 		
 		ChipmunkBody *body = [ChipmunkBody bodyWithMass:INFINITY andMoment:INFINITY];
 		body.pos = wallPos;
 		
-		CCSprite *sprite = [CCSprite spriteWithFile:@"blocker.png"];
+		CCSprite *sprite = [CCSprite spriteWithFile:strWall];
 		[sprite setPosition:body.pos];
 		[self addChild:sprite];
 		
@@ -197,7 +197,7 @@ static NSString *borderType = @"borderType";
 	cpInitChipmunk();
 	
 	_space = [[ChipmunkSpace alloc] init];
-	_space.gravity = cpv(0, -16);
+	_space.gravity = cpv(0, 0);
 	
 	
 	CGRect rect = CGRectMake(0, 0, wins.width, wins.height);
@@ -207,7 +207,7 @@ static NSString *borderType = @"borderType";
 	_multiGrab = [[ChipmunkMultiGrab alloc] initForSpace:_space withSmoothing:cpfpow(0.8, 60.0) withGrabForce:30000];
 	_multiGrab.layers = GRABABLE_LAYER;
 	
-	[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space] z:0 tag:666];
+	//[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space] z:0 tag:666];
 	
 	arrGibsShape = [[NSMutableArray alloc] init];
 	arrGibsSprite = [[NSMutableArray alloc] init];
@@ -216,8 +216,14 @@ static NSString *borderType = @"borderType";
 	[arrTargets addObject:@"NO"];
 	[arrTargets addObject:@"NO"];
 	
-	_blob = [[JellyBlob alloc] initWithLvl:indLvl atPos:cpv(BLOB_X, BLOB_Y)];
-	//_blob = [[JellyBlob alloc] initWithPos:cpv(BLOB_X, BLOB_Y) radius:BLOB_RADIUS count:BLOB_SEGS];
+	
+	starTarget1 = [[StarTarget alloc] initAtPos:cpv(32, 200)];
+	starTarget1.ind = 0;
+	[_space add:starTarget1];
+	[self addChild:starTarget1._sprite];
+	
+	//_blob = [[JellyBlob alloc] initWithLvl:indLvl atPos:cpv(BLOB_X, BLOB_Y)];
+	_blob = [[JellyBlob alloc] initWithPos:cpv(BLOB_X, BLOB_Y) radius:BLOB_RADIUS count:BLOB_SEGS];
 	[_space add:_blob];
 	
 	creatureSprite = [CCSprite spriteWithFile:@"test.png"];
@@ -237,10 +243,12 @@ static NSString *borderType = @"borderType";
 	[self addChild:mouthSprite];
 	
 	
+	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:[StarTarget class] begin:@selector(beginStarCollision:space:) preSolve:nil postSolve:nil separate:@selector(separateStarCollision:space:)];
 	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:[GoalTarget class] begin:@selector(beginGoalCollision:space:) preSolve:@selector(preSolveGoalCollision:space:) postSolve:@selector(postSolveGoalCollision:space:) separate:@selector(separateGoalCollision:space:)];
 	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:borderType begin:@selector(beginWallCollision:space:) preSolve:@selector(preSolveWallCollision:space:) postSolve:@selector(postSolveWallCollision:space:) separate:@selector(separateWallCollision:space:)];
 }
 
+#pragma mark GoalCollisionHandlers
 
 - (BOOL)beginGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
@@ -270,9 +278,6 @@ static NSString *borderType = @"borderType";
 	return (NO);
 }
 
-
-
-
 - (BOOL)preSolveGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {	
 	NSLog(@"preSolveCollision");
 	
@@ -301,8 +306,6 @@ static NSString *borderType = @"borderType";
 	if ([[arrTargets objectAtIndex:0] isEqualToString:@"YES"] && [[arrTargets objectAtIndex:1] isEqualToString:@"YES"]) {
 		NSLog(@"GOAL!!!! [%d]", [arrTouchedEdge count]);
 		
-		//for (int i=0; i<[arrTouchedEdge count]; i++) 
-		//[_blob pop];
 		_isCleared = YES;
 		self.isTouchEnabled = NO;
 		[_space removeCollisionHandlerForTypeA:[JellyBlob class] andB:[GoalTarget class]];
@@ -310,11 +313,91 @@ static NSString *borderType = @"borderType";
 		//[self performSelector:@selector(clearArena:) withObject:self afterDelay:0.33];
 	}
 	
-	
-	
 	GoalTarget *trg = target.data;
 	[trg updateCovered:NO];
 	[arrTargets replaceObjectAtIndex:trg.ind withObject:@"NO"];
+}
+
+
+#pragma mark StarCollisionHandlers
+
+- (BOOL)beginStarCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
+	
+	NSLog(@"%@.beginStarCollision()", [self class]);
+	
+	
+	StarTarget *trg = target.data;
+	trg.isCleared = YES;
+	[trg updateCovered:YES];
+	
+	score_amt = (int)(2 * 32);
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"ScoreChanged" object:[[NSNumber alloc] initWithInt:score_amt]];
+	[[PlayStatsModel singleton] incScore:score_amt];
+	
+	
+	
+	//NSLog(@"0:[%@] 1:[%@] 2:[%@]", [arrTargets objectAtIndex:0], [arrTargets objectAtIndex:1], [arrTargets objectAtIndex:2]);
+	
+	return (NO);
+}
+
+- (void)separateStarCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
+	NSLog(@"%@.separateStarCollision()", [self class]);
+	
+	StarTarget *trg = target.data;	
+	[trg updateCovered:YES];
+	
+	
+	[_space removeCollisionHandlerForTypeA:[JellyBlob class] andB:[StarTarget class]];
+	//[_space addPostStepRemoval:trg];
+}
+
+
+
+#pragma mark WallCollisionHandlers
+
+- (BOOL)beginWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
+	
+	//NSLog(@"beginWallCollision");
+	return (YES);
+}
+
+- (BOOL)preSolveWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
+	
+	//NSLog(@"preSolveWallCollision");
+	
+	return (YES);
+}
+
+- (void)postSolveWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
+	
+	// skip the later collisions
+	if (!cpArbiterIsFirstContact(arbiter))
+		return;
+	
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
+	
+	// force of the colliding bodies
+	//cpFloat impulse = cpvlength(cpArbiterTotalImpulse(arbiter));
+	
+	//NSLog(@"postSolveWallCollision:[%f] (%@)", impulse, blobShape.collisionType);
+}
+
+- (void)separateWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
+	
+	//NSLog(@"separateWallCollision: [%d]", _cntTargets);
+	
+	if (CCRANDOM_0_1() > 0.875) {
+		gibPos = CGPointMake(blobShape.body.pos.x, blobShape.body.pos.y);
+		[self performSelector:@selector(addGib:) withObject:nil afterDelay:0.05];
+	}
+	
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.25];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"collision.wav"];
 }
 
 
@@ -368,7 +451,7 @@ static NSString *borderType = @"borderType";
 			[arrSplatter addObject:[CCSprite spriteWithFile:[NSString stringWithFormat:@"spermSplatter%@_0%d.png", strColor, j]]];
 		}
 	}
-
+	
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.67];
 	float delayTime = 0.0f;
 	
@@ -388,7 +471,7 @@ static NSString *borderType = @"borderType";
 			[[SimpleAudioEngine sharedEngine] playEffect:@"splatter.wav"];
 	}
 	
-		
+	
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95];
 	
 	[self schedule:@selector(flashBG) interval:0.1];
@@ -396,35 +479,6 @@ static NSString *borderType = @"borderType";
 	[self performSelector:@selector(onLevelComplete:) withObject:self afterDelay:1];
 	//[self onLevelComplete:self];
 	
-}
-
-
-- (BOOL)beginWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
-	
-	//NSLog(@"beginWallCollision");
-	return (YES);
-}
-
-- (BOOL)preSolveWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	
-	//NSLog(@"preSolveWallCollision");
-	
-	return (YES);
-}
-
-- (void)postSolveWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	
-	// skip the later collisions
-	if (!cpArbiterIsFirstContact(arbiter))
-		return;
-	
-	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
-	
-	// force of the colliding bodies
-	//cpFloat impulse = cpvlength(cpArbiterTotalImpulse(arbiter));
-	
-	//NSLog(@"postSolveWallCollision:[%f] (%@)", impulse, blobShape.collisionType);
 }
 
 
@@ -459,6 +513,8 @@ static NSString *borderType = @"borderType";
 }
 
 
+
+
 -(void)addGib2 {
 	
 	cpFloat mass = CCRANDOM_0_1() * 2;
@@ -483,21 +539,6 @@ static NSString *borderType = @"borderType";
 	[arrGibsShape addObject:shape];
 	[arrGibsSprite addObject:sprite];
 }
-
-- (void)separateWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
-	
-	//NSLog(@"separateWallCollision: [%d]", _cntTargets);
-	
-	if (CCRANDOM_0_1() > 0.875) {
-		gibPos = CGPointMake(blobShape.body.pos.x, blobShape.body.pos.y);
-		[self performSelector:@selector(addGib:) withObject:nil afterDelay:0.05];
-	}
-	
-	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.25];
-	[[SimpleAudioEngine sharedEngine] playEffect:@"collision.wav"];
-}
-
 
 -(void) draw {
 	//NSLog(@"///////[DRAW]////////");
@@ -529,6 +570,10 @@ static NSString *borderType = @"borderType";
 	cpFloat rndForce = CCRANDOM_0_1() * maxForce;
 	[_blob wiggleWithForce:[[RandUtils singleton]randIndex:BLOB_SEGS] force:rndForce];
 }
+
+
+
+#pragma mark MenuNav
 
 -(void) onBackMenu:(id)sender {
 	NSLog(@"PlayScreenLayer.onBackMenu()");

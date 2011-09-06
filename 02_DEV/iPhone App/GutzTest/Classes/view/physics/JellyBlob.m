@@ -17,6 +17,7 @@
 
 
 -(id)initWithLvl:(int)lvl atPos:(cpVect)pos {
+	
 	if ((self = [super init])) {
 		
 		set = [NSMutableSet set];
@@ -24,83 +25,148 @@
 		
 		posPt = CGPointMake(pos.x, pos.y);
 		
-		_plistViscera = [[CreatureDataPlistParser alloc] initWithLevel:lvl];
-		_ptSize = cpv(_plistViscera.width, _plistViscera.height);
-		_count = [_plistViscera.arrCircles count];
 		
-		NSLog(@"%@.initWithLvl(%d) [%f, %f] // [%f, %f]{%d}", [self class], lvl, pos.x, pos.y, _ptSize.x, _ptSize.y, _count);
+		_plistCreatureData = [[CreatureDataPlistParser alloc] initWithLevel:lvl];
+		_arrParts = [[NSArray alloc] initWithArray:_plistCreatureData.arrParts];
+		_arrClamps = [[NSArray alloc] initWithArray:_plistCreatureData.arrClamps];
 		
+		totBodies = [_arrParts count];
+		cpVect vt[totBodies];
 		
-		_arrViscera = [[NSArray alloc] initWithArray:_plistViscera.arrCircles];
+		int xTot = 0;
+		int yTot = 0;
 		
+		NSLog(@"%@.initWithLvl(%d) [%f, %f] // {%d}", [self class], lvl, pos.x, pos.y, totBodies);
 		
-		bodies = [[NSMutableArray alloc] initWithCapacity:_count];
+		for(int q=0; q<totBodies; q++) {
+			NSDictionary *dict = [_arrParts objectAtIndex:q];
+			vt[q] = cpv([[dict objectForKey:@"x"] intValue], [[dict objectForKey:@"y"] intValue]);
+			
+			
+			xTot += [[dict objectForKey:@"x"] intValue];
+			yTot += [[dict objectForKey:@"y"] intValue];
+			
+			if ([[NSNumber alloc] initWithInt:[[dict objectForKey:@"type"] intValue]] == [NSNumber numberWithInt:0]) {
+				[_arrSupportBodies addObject:dict];
+				totSBodies++;
+				
+			} else {
+				[_arrContourBodies addObject:dict];
+				totCBodies++;
+			}
+		}
+		
+		_ctrPt = cpv(xTot / totBodies, yTot / totBodies);
+		NSLog(@"CENTER:[%f, %f]", _ctrPt.x, _ctrPt.y);
+		
+		totSBodies = [_arrSupportBodies count];
+		totCBodies = [_arrContourBodies count];
+		
+
+		_centralBody = [ChipmunkBody bodyWithMass:CENTRAL_MASS andMoment:cpMomentForCircle(CENTRAL_MASS, 0, CENTRAL_RADIUS, cpvzero)];
+		[set addObject:_centralBody];
+		_centralBody.pos = posPt;
+		
+		ChipmunkShape *centralShape = [ChipmunkCircleShape circleWithBody:_centralBody radius:CENTRAL_RADIUS offset:cpvzero];
+		[set addObject:centralShape];
+		centralShape.group = self;
+		centralShape.layers = GRABABLE_LAYER;
+		centralShape.collisionType = [JellyBlob class];
+		
+	
+		bodies = [[NSMutableArray alloc] initWithCapacity:totBodies];
 		_edgeBodies = bodies;
 		
 		
-		cpFloat mass = 1.0f / _count;
-		
-		
-		for(int i=0; i<_count; i++){
-			NSDictionary *dict = [_arrViscera objectAtIndex:i];
+		for(int i=0; i<[_arrParts count]; i++) {
+			NSDictionary *dict = [_arrParts objectAtIndex:i];
 			
-			cpVect vecPos = cpv([[dict objectForKey:@"x"] intValue], [[dict objectForKey:@"y"] intValue]);
 			int radius = [[dict objectForKey:@"radius"] intValue];
+			cpVect vecPos = cpv([[dict objectForKey:@"x"] intValue], [[dict objectForKey:@"y"] intValue]);
+			cpVect vecOffsetCenter = cpvsub(vecPos, _ctrPt);
+			cpVect slope = cpvnormalize(vecOffsetCenter);
 			
-			//NSLog(@"%d) [%f, %f] // (%d)", i, vecPos.x, vecPos.y, radius);
+			cpVect vecOffsetPos = cpvadd(posPt, vecOffsetCenter);
 			
-			ChipmunkBody *body = [ChipmunkBody bodyWithMass:mass andMoment:INFINITY];
-			body.pos = cpvadd(posPt, vecPos);
-			
+			ChipmunkBody *body = [ChipmunkBody bodyWithMass:(1.0f / totBodies) andMoment:INFINITY];
+			body.pos = vecOffsetPos;
+			body.data = [[NSNumber alloc] initWithInt:[[dict objectForKey:@"type"] intValue]];
 			[bodies addObject:body];
 			
-			
 			ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:radius offset:cpvzero];
+			[set addObject:shape];
 			shape.elasticity = EDGE_BOUNCE;
 			shape.friction = EDGE_FRICTION;
 			shape.group = self;
 			shape.layers = GRABABLE_LAYER;
 			shape.collisionType = [JellyBlob class];
 			
-			[set addObject:shape];
 			
-			//	[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:[bodies objectAtIndex:0] bodyB:body anchr1:vecPos anchr2:cpvzero restLength:0 stiffness:SPRING_STR damping:SPRING_DAMP]];
+			switch ([[dict objectForKey:@"type"] intValue]) {
+				case 0:
+					[_arrSupportBodies addObject:body];
+					cpVect springOffset = cpvmult(slope, CENTRAL_RADIUS + radius * 2);
+					[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:_centralBody bodyB:body anchr1:springOffset anchr2:cpvzero restLength:0 stiffness:SPRING_STR damping:SPRING_DAMP]];
+					//[set addObject:[ChipmunkPinJoint pinJointWithBodyA:_centralBody bodyB:body anchr1:_centralBody.pos anchr2:body.pos]];
+					break;
+					
+				case 1:
+					break;
+					
+				case 3:
+					[_arrContourBodies addObject:body];
+					break;
+			}
+			
+			
+			if ([[dict objectForKey:@"type"] intValue] == 0) {
+				NSLog(@"PART[%d] /> TYPE:[%d] @ [%f, %f] // SLOPE{%f, %f}", i, [[dict objectForKey:@"type"] intValue], body.pos.x, body.pos.y, slope.x, slope.y);
+				
+			}
+			
+			
+			//NSLog(@"PART[%d] /> RAD:[%d] @ [%f, %f] // SLOPE{%f, %f}", i, radius, body.pos.x, body.pos.y, slope.x, slope.y);
 		}
 		
 		[set addObjectsFromArray:bodies];
-		
-		
-		
-		
-		for (int i=0; i<_count; i++) {
-			ChipmunkBody *a = [bodies objectAtIndex:i];
-			ChipmunkBody *b = [bodies objectAtIndex:(i + 1) % _count];
 			
-			cpFloat dist = cpvdist(a.pos, b.pos);
+		
+		for (int i=0; i<[_arrClamps count]; i++) {
+			NSDictionary *dict = [_arrClamps objectAtIndex:i];
 			
-			NSLog(@"DIST:[%f]", dist);
+			float stiff = (float)[[dict objectForKey:@"str"] floatValue];
+			float dampn = (float)[[dict objectForKey:@"damp"] floatValue];
 			
-			// add'l
-			[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:a bodyB:b anchr1:cpvzero anchr2:cpvzero restLength:dist * 0.8f stiffness:SPRING_STR damping:SPRING_DAMP]];
-			//[set addObject:[ChipmunkPinJoint pinJointWithBodyA:a bodyB:b anchr1:cpvzero anchr2:cpvzero]];
-			[set addObject:[ChipmunkSlideJoint slideJointWithBodyA:a bodyB:b anchr1:cpvzero anchr2:cpvzero min:0 max:dist]];
+			//NSLog(@"CLAMP:[%d] BODIES[%d]<>[%d] // STR:[%f] DAMP:[%f]", i, [[dict objectForKey:@"body1"] intValue], [[dict objectForKey:@"body2"] intValue], stiff, dampn);
+			
+			ChipmunkBody *a = [bodies objectAtIndex:[[dict objectForKey:@"body1"] intValue]];
+			ChipmunkBody *b = [bodies objectAtIndex:[[dict objectForKey:@"body2"] intValue]];
+			
+			if (a && b) {
+				[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:a bodyB:b anchr1:cpvzero anchr2:cpvzero restLength:cpvdist(a.pos, b.pos) stiffness:stiff damping:dampn]];
+				//[set addObject:[ChipmunkSlideJoint slideJointWithBodyA:a bodyB:b anchr1:cpvzero anchr2:cpvzero min:0 max:cpvdist(a.pos, b.pos)]];
+										 
+			}
 		}
-		
 	}
 	
 	return (self);
 }
 
 -(id)initWithPos:(cpVect)pos radius:(cpFloat)radius count:(int)count {
+	NSLog(@"%@.initWithPos(%f, %d)", [self class], radius, count);
 	
 	if ((self = [super init])) {
 		set = [NSMutableSet set];
 		chipmunkObjects = set;
 		
-		_count = count;
-		posPt = CGPointMake(pos.x, pos.y);
+		totCBodies = 0;
+		totSBodies = 0;
+		totBodies = 0;
 		
-	
+		posPt = CGPointMake(pos.x, pos.y);
+		totBodies = count;
+		_radius = radius;
 		
 		[self constructCenter];
 		[self constructEdges];
@@ -110,19 +176,18 @@
 }
 
 
+
 -(void)constructCenter {
 	
-	int radius = 128;
-	
-	_centralBody = [ChipmunkBody bodyWithMass:CENTRAL_MASS andMoment:cpMomentForCircle(CENTRAL_MASS, 0, radius, cpvzero)];
+	_centralBody = [ChipmunkBody bodyWithMass:CENTRAL_MASS andMoment:cpMomentForCircle(CENTRAL_MASS, 0, _radius, cpvzero)];
 	[set addObject:_centralBody];
 	_centralBody.pos = posPt;
 	
 	
-	cpVect vt[_count];
-	for(int i=0; i<_count; i++){
-		cpVect slope = cpvforangle(((cpFloat)_count - i) / (cpFloat)_count * 2.0 * M_PI);
-		cpVect posMult = cpvmult(slope, radius);
+	cpVect vt[totBodies];
+	for(int i=0; i<totBodies; i++){
+		cpVect slope = cpvforangle(((cpFloat)totBodies - i) / (cpFloat)totBodies * 2.0 * M_PI);
+		cpVect posMult = cpvmult(slope, _radius);
 		
 		vt[i] = cpvadd(posMult, cpvzero);
 		//NSLog(@"vt[%d]: (%f, %f)", i, vt[i].x, vt[i].y);
@@ -130,7 +195,7 @@
 	
 	
 	//ChipmunkShape *centralShape = [ChipmunkPolyShape polyWithBody:_centralBody count:count verts:vt offset:cpvzero];
-	ChipmunkShape *centralShape = [ChipmunkCircleShape circleWithBody:_centralBody radius:radius offset:cpvzero];
+	ChipmunkShape *centralShape = [ChipmunkCircleShape circleWithBody:_centralBody radius:_radius offset:cpvzero];
 	[set addObject:centralShape];
 	centralShape.group = self;
 	centralShape.layers = GRABABLE_LAYER;
@@ -139,25 +204,22 @@
 	
 }
 
-
 -(void)constructEdges {
 	
-	int radius = 128;
-	
-	cpFloat edgeMass = 1.0f / _count;
-	cpFloat edgeDistance = 2.0f * radius * cpfsin(M_PI / (cpFloat)_count);
+	cpFloat edgeMass = 1.0f / totBodies;
+	cpFloat edgeDistance = 2.0f * _radius * cpfsin(M_PI / (cpFloat)totBodies);
 	_edgeRadius = edgeDistance * 1.5f;
 	
 	//cpFloat squishCoef = 0.7;
 	cpFloat springStiffness = 40.0f;
 	cpFloat springDamping = 1.0f;
 	
-	bodies = [[NSMutableArray alloc] initWithCapacity:_count];
+	bodies = [[NSMutableArray alloc] initWithCapacity:totBodies];
 	_edgeBodies = bodies;
 	
-	for(int i=0; i<_count; i++){
-		cpVect slope = cpvforangle((cpFloat)i / (cpFloat)_count * 2.0 * M_PI);
-		cpVect posMult = cpvmult(slope, radius);
+	for(int i=0; i<totBodies; i++){
+		cpVect slope = cpvforangle((cpFloat)i / (cpFloat)totBodies * 2.0 * M_PI);
+		cpVect posMult = cpvmult(slope, _radius);
 		
 		ChipmunkBody *body = [ChipmunkBody bodyWithMass:edgeMass andMoment:INFINITY];
 		body.pos = cpvadd(posPt, posMult);
@@ -175,7 +237,7 @@
 		
 		//[set addObject:[ChipmunkSlideJoint slideJointWithBodyA:_centralBody bodyB:body anchr1:cpvzero anchr2:cpvzero min:0 max:radius*squishCoef]];
 		
-		cpVect springOffset = cpvmult(slope, radius + _edgeRadius);
+		cpVect springOffset = cpvmult(slope, _radius + _edgeRadius);
 		[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:_centralBody bodyB:body anchr1:springOffset anchr2:cpvzero restLength:0 stiffness:springStiffness damping:springDamping]];
 	}
 	
@@ -184,9 +246,9 @@
 	
 	
 	
-	for (int i=0; i<_count; i++) {
+	for (int i=0; i<totBodies; i++) {
 		ChipmunkBody *a = [bodies objectAtIndex:i];
-		ChipmunkBody *b = [bodies objectAtIndex:(i + 1) % _count];
+		ChipmunkBody *b = [bodies objectAtIndex:(i + 1) % totBodies];
 		//[set addObject:[ChipmunkSlideJoint slideJointWithBodyA:a bodyB:b anchr1:cpvzero anchr2:cpvzero min:0 max:edgeDistance * 1.1]];
 		
 		// add'l
@@ -196,19 +258,29 @@
 }
 
 
+-(ChipmunkBody *)findByID:(int)val {
+	//NSLog(@"%@.findInnerNode(%d)", [self class], ind);
+	
+	for (int i=0; i<[_arrParts count]; i++) {
+		NSDictionary *dict = [_arrParts objectAtIndex:i];
+		
+		if ((int)[dict objectForKey:@"id"] == val)
+			return ([_edgeBodies objectAtIndex:i]);
+	}
+	
+	return (nil);
+}
+
+
 
 
 -(ChipmunkBody *)touchedBodyAt:(CGPoint)pos {
-	
 	ChipmunkBody *body;
 	
 	
-	for (int i=0; i<[bodies count]; i++) {
-		body = [bodies objectAtIndex:i];
+	for (int i=0; i<[_arrParts count]; i++) {
+		body = [_arrParts objectAtIndex:i];
 		if (cpvnear(body.pos, pos, 15)) {
-			
-			//NSLog(@"JellyBlob.body[%d]", i);
-			
 			return (body);
 		}
 	}
@@ -220,8 +292,9 @@
 
 -(int)bodyIndexAt:(CGPoint)pos {
 	
-	for (int i=0; i<[bodies count]; i++) {
-		ChipmunkBody *body = [bodies objectAtIndex:i];
+	for (int i=0; i<[_edgeBodies count]; i++) {
+		ChipmunkBody *body = [_edgeBodies objectAtIndex:i];
+		
 		if (cpvnear(body.pos, pos, 15)) {
 			
 			//NSLog(@"JellyBlob.bodyIndexAt[%d]", i);
@@ -238,9 +311,8 @@
 	cpVect center = _centralBody.pos;
 	posPt = _centralBody.pos;
 	
-	cpVect verts[_count];
-	
-	for (int i=0; i<_count; i++) {
+	cpVect verts[totBodies];
+	for (int i=0; i<[_edgeBodies count]; i++) {
 		cpVect v = [[_edgeBodies objectAtIndex:i] pos];
 		verts[i] = cpvadd(v, cpvmult(cpvnormalize(cpvsub(v, center)), _edgeRadius * 0.85));
 		
@@ -254,12 +326,11 @@
 	glEnable(GL_LINE_SMOOTH);
 	
 	glColor4f(0.00f, 0.87, 1.00f, 1.00f);
-	ccDrawPoly(verts, _count, YES);
+	ccDrawPoly(verts, totBodies, YES);
 	
 	glLineWidth(1.0f);
 	glColor4f(0.00f, 0.00f, 0.00f, 1.00f);
-	ccDrawPoly(verts, _count, NO);
-	
+	ccDrawPoly(verts, totBodies, NO);
 }
 
 
@@ -280,7 +351,7 @@
 		
 		isPopped = YES;
 	
-		for (int i=0; i<_count; i++) {
+		for (int i=0; i<totBodies; i++) {
 			ChipmunkBody *body = [_edgeBodies objectAtIndex:i];
 			[body applyImpulse:cpv(64, 64) offset:cpvzero];
 		}
@@ -295,18 +366,19 @@
 	NSLog(@"pulsate.(%f, %f)", pos.x, pos.y);
 	
 	
-	for (int i=0; i<_count; i++) {
-		cpVect slope = cpvforangle(((cpFloat)_count - i) / (cpFloat)_count * 2.0 * M_PI);
+	for (int i=0; i<totBodies; i++) {
+		cpVect slope = cpvforangle(((cpFloat)totBodies - i) / (cpFloat)totBodies * 2.0 * M_PI);
 		
 		ChipmunkBody *body = [_edgeBodies objectAtIndex:i];
 		[body applyImpulse:cpvmult(slope, 20) offset:cpvzero];
 	}
-	
 }
-
+		
+	
 -(void)destroy {
-	
+											  
 }
+	
 
 - (void)dealloc {
 	[_centralBody release];

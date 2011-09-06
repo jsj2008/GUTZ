@@ -51,7 +51,7 @@ Class nextTransition() {
 	[[SimpleAudioEngine sharedEngine] playEffect:@"menuGUTZ.wav"];
 	
 	[[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:1.5f];
-	[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"UI_loop.wav" loop:YES];
+	[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"bgm_play-01.mp3" loop:YES];
 	
 	CCLayer *layer = [[MainMenuScreenLayer alloc] init];
 	[ScreenManager go:layer];

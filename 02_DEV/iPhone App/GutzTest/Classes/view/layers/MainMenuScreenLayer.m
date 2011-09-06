@@ -47,7 +47,8 @@ static NSString *borderType = @"borderType";
 		[_space addBounds:rect thickness:532 elasticity:1 friction:1 layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:borderType];
 		
 		
-		_accBlob1 = [[JellyBlob alloc] initWithPos:cpv(164, 100) radius:32 count:16];
+		/*
+		 _accBlob1 = [[JellyBlob alloc] initWithPos:cpv(164, 100) radius:32 count:16];
 		_accBlob1.rFillColor = 1.0f;
 		_accBlob1.gFillColor = 0.37f;
 		_accBlob1.bFillColor = 0.37f;
@@ -64,6 +65,7 @@ static NSString *borderType = @"borderType";
 		
 		[self schedule:@selector(physicsStepper:)];
 		[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
+		*/
 		
 		CCMenuItemImage *btnStartNew = [CCMenuItemImage itemFromNormalImage:@"btn_play.png" selectedImage:@"btn_playActive.png" target:self selector:@selector(onNewGame:)];
 		CCMenuItemImage *btnStore = [CCMenuItemImage itemFromNormalImage:@"btn_store.png" selectedImage:@"btn_storeActive.png" target:self selector:@selector(onStore:)];

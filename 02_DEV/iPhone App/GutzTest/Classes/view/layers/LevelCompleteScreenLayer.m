@@ -58,7 +58,7 @@ static NSString *borderType = @"borderType";
 	CGRect rect = CGRectMake(0, 0, wins.width, wins.height);
 	[_space addBounds:rect thickness:532 elasticity:1 friction:1 layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:borderType];
 	
-	
+	/*
 	_accBlob1 = [[JellyBlob alloc] initWithPos:cpv(164, 100) radius:32 count:16];
 	[_space add:_accBlob1];
 	
@@ -71,7 +71,7 @@ static NSString *borderType = @"borderType";
 	
 	[self schedule:@selector(physicsStepper:)];
 	[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
-	
+	*/	
 	float delayTime = 0.0f;
 	
 	
@@ -191,6 +191,7 @@ static NSString *borderType = @"borderType";
 	
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95f];
 	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
+	
 	[ScreenManager goPlay:++indLvl];
 }
 

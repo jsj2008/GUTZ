@@ -2,50 +2,40 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>walls</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>0</integer>
+			<key>type</key>
+			<integer>1</integer>
+			<key>x</key>
+			<integer>156</integer>
+			<key>y</key>
+			<integer>291</integer>
+			<key>friction</key>
+			<real>0.5</real>
+			<key>bounce</key>
+			<real>0.1</real>
+		</dict>
+	</array>
 	<key>goals</key>
 	<array>
 		<dict>
 			<key>id</key>
+			<integer>0</integer>
+			<key>x</key>
+			<integer>158</integer>
+			<key>y</key>
+			<integer>454</integer>
+		</dict>
+		<dict>
+			<key>id</key>
 			<integer>1</integer>
 			<key>x</key>
-			<integer>280</integer>
+			<integer>158</integer>
 			<key>y</key>
-			<integer>50</integer>
-		</dict>
-		<dict>
-			<key>id</key>
-			<integer>2</integer>
-			<key>x</key>
-			<integer>32</integer>
-			<key>y</key>
-			<integer>420</integer>
-		</dict>
-	</array>
-	<key>walls</key>
-	<array>
-		<dict>
-			<key>bounce</key>
-			<real>0.1</real>
-			<key>frict</key>
-			<real>0.9</real>
-			<key>id</key>
-			<integer>2</integer>
-			<key>x</key>
-			<integer>160</integer>
-			<key>y</key>
-			<integer>320</integer>
-		</dict>
-		<dict>
-			<key>bounce</key>
-			<real>0.1</real>
-			<key>frict</key>
-			<real>0.9</real>
-			<key>id</key>
-			<integer>2</integer>
-			<key>x</key>
-			<integer>160</integer>
-			<key>y</key>
-			<integer>140</integer>
+			<integer>26</integer>
 		</dict>
 	</array>
 </dict>

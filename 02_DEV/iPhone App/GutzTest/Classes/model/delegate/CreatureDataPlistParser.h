@@ -10,21 +10,15 @@
 
 @interface CreatureDataPlistParser : BasePlistParser {
 	
-	NSArray *arrCircles;
-	NSArray *arrJoints;
+	NSArray *arrParts;
+	NSArray *arrClamps;
 	
-	CGPoint *ptSize;
-	
-	int width;
-	int height;
 }
 
 -(id) initWithLevel:(int)ind;
 
-@property (nonatomic, retain) NSArray *arrCircles;
-@property (nonatomic, retain) NSArray *arrJoints;
+@property (nonatomic, retain) NSArray *arrParts;
+@property (nonatomic, retain) NSArray *arrClamps;
 
-@property (nonatomic) int width;
-@property (nonatomic) int height;
 
 @end

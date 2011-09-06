@@ -10,8 +10,8 @@
 
 @implementation CreatureDataPlistParser
 
-@synthesize arrCircles, arrJoints;
-@synthesize width, height;
+@synthesize arrParts, arrClamps;
+//@synthesize width, height;
 
 - (id)init {
 	NSLog(@"-/> %@.init%@ </-", [self class], @".()");
@@ -24,15 +24,13 @@
 
 
 -(id)initWithLevel:(int)ind {
-	NSLog(@"-/> %@.%@(\"%d\") </-", [self class], @"initWithLevel", ind);
+	//NSLog(@"-/> %@.%@(\"%d\") </-", [self class], @"initWithLevel", ind);
 	
 	if ((self = [super initWithFile:[NSString stringWithFormat:@"CreatureData_0%d", ind] path:@""])) {
+		arrParts = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"parts"]];
+		arrClamps = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"clamps"]];
 		
-		arrCircles = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"circles"]];
-		arrJoints = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"joints"]];
-		
-		width = [[(NSDictionary *)[[super dicTopLvl] objectForKey:@"size"] objectForKey:@"width"] intValue];
-		height = [[(NSDictionary *)[[super dicTopLvl] objectForKey:@"size"] objectForKey:@"height"] intValue];
+		//NSLog(@"-/> %@.initWithLevel(\"%d\") [%@]\n\n\n[%@] </-", [self class], ind, arrParts, arrClamps);
 	}
 	
 	return (self);

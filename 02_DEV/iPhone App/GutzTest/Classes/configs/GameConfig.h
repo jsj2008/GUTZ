@@ -22,6 +22,7 @@
 
 #define kShowDebugMenus 0
 #define kMutedSounds 1
+#define kLastLevel 4
 
 //
 // Define here the type of autorotation that you want for your game

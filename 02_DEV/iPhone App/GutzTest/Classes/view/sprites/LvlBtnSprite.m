@@ -25,23 +25,31 @@
 
 -(id) initWithLevelIndex:(int)lvl locked:(BOOL)locked normal:(NSString*)normal selected:(NSString*)selected {
 	
-	if ((self = [super init])) {
-		iLvlIndex = lvl;
-		isLocked = locked;
+	if (locked) {
+		if ((self = [super initFromNormalImage:normal selectedImage:selected disabledImage:normal target:self selector:nil])) {
+			
+			iLvlIndex = lvl;
+			isLocked = locked;
 		
-		if (locked)
-			[super initFromNormalImage:normal selectedImage:selected disabledImage:normal target:self selector:nil];
+		//if (locked)
+		//	[super initFromNormalImage:normal selectedImage:selected disabledImage:normal target:self selector:nil];
 		
-		else
-			//[super itemFromNormalImage:normal selectedImage:selected target:self selector:nil];
-			[super initFromNormalImage:normal selectedImage:selected disabledImage:normal target:self selector:@selector(onSelected:)];
+		}
+	} else {
+		//[super itemFromNormalImage:normal selectedImage:selected target:self selector:nil];
+		if ((self = [super initFromNormalImage:normal selectedImage:selected disabledImage:normal target:self selector:nil])) {
+			
+			iLvlIndex = lvl;
+			isLocked = locked;
+			
+		}
 	}
 	
 	return (self);
 }
 
 -(void) onSelected:(id)sender {
-    NSLog(@"LevelSelectScreenLayer.onSelected()");
+    NSLog(@"LvlBtnSprite.onSelected(%d)", iLvlIndex);
     
 	[ScreenManager goPlay:iLvlIndex];
 }
