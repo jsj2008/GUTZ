@@ -1,1 +1,0 @@
-﻿package {		import flash.display.MovieClip;	import flash.geom.Point;		public class GoalVO {				public var id:int;		public var asset_mc:MovieClip;		public var pos_pt:Point;		public function GoalVO(i:int, asset:MovieClip, pos:Point) {			id = i;			asset_mc = asset;			pos_pt = new Point(pos.x, pos.y);		}	}	}

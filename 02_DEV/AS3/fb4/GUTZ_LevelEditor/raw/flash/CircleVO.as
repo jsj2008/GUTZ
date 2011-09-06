@@ -1,1 +1,0 @@
-﻿package  {		import flash.geom.Point;		public class CircleVO {				public var id:int;		public var pos_pt:Point;		public var radius:Number;				public function CircleVO(i:int, pos:Point, rad:Number) {			id = i;			pos_pt = new Point(pos.x, pos.y);			radius = rad;		}	}}
