@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<project name="Build Project" basedir="." default="Purge SWFs from libs folder">
+
+	<!-- Define variables/paths used in this build script -->
+	<property file="./build.properties" />
+	
+	<!-- SDK path properties - sdk_dir is defined in user properties-->
+	<property name="mxmlc" value="${sdk_dir}/lib/mxmlc.jar" />
+	<property name="adt" value="${sdk_dir}/lib/adt.jar" />
+
+	
+	<path id="flextasks.classpath">
+		<fileset dir="${FLEX_HOME}/ant/lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	<!-- <typedef resource="flexTasks.tasks" classpathref="flextasks.classpath" /> -->
+	
+	
+	<!--
+	<property name="proj_name" value="GUTZ_GameDesigner" />
+	<property name="proj_pkg" value="com.sparklemountain.gutz.designer" />
+	-->
+	
+	
+	
+	<target name="Purge SWFs from libs folder">
+		<echo>Removing all SWFs from the the /libs dir...</echo>
+		<delete includeemptydirs="true">
+			<fileset dir="${libs_dir}" includes="**/*.swf" />
+		</delete>
+	</target>
+
+</project>

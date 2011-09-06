@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- -=[ START OF CREATURE BUILDER UI ]=- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+<s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				   xmlns:s="library://ns.adobe.com/flex/spark" 
+				   xmlns:mx="library://ns.adobe.com/flex/mx" 
+				   
+				   initialize="uponInit(event)" 
+				   creationComplete="uponCreation(event)" 
+				   addedToStage="uponStageAdoption(event)" 
+				   width="100%" height="100%">
+
+	
+	<!-- -=[ MXML SCRIPT ]=- -->
+	<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+	<fx:Script>
+		<![CDATA[
+			// *~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~._
+			// *~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~._
+			
+			import cc.gullinbursti.converts.Angle;
+			import cc.gullinbursti.lang.Strings;
+			
+			import com.sparklemountain.gutz.designer.ComponentConsts;
+			import com.sparklemountain.gutz.designer.CreatureConsts;
+			import com.sparklemountain.gutz.designer.EditorConsts;
+			import com.sparklemountain.gutz.designer.FileIOConsts;
+			import com.sparklemountain.gutz.designer.model.vo.AbstractBodyVO;
+			import com.sparklemountain.gutz.designer.model.vo.ActionVO;
+			import com.sparklemountain.gutz.designer.model.vo.BodyPartVO;
+			import com.sparklemountain.gutz.designer.model.vo.HistoryVO;
+			import com.sparklemountain.gutz.designer.model.vo.SpringClampVO;
+			
+			import mx.core.IVisualElement;
+			import mx.events.FlexEvent;
+			import mx.events.ItemClickEvent;
+			import mx.graphics.SolidColor;
+			import mx.graphics.SolidColorStroke;
+			
+			import spark.primitives.Ellipse;
+			import spark.primitives.Line;
+			//]~=~=~=~=~=~=~=~=~=~=~=~=~=~[]~=~=~=~=~=~=~=~=~=~=~=~=~=~[
+			
+			
+			//] UI PROPERTIES ]>
+			//]=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~.
+			private var _historyVO:HistoryVO;
+			
+			private var _supportPart_tot:int;
+			private var _visceraPart_tot:int;
+			private var _contourPart_tot:int;
+			
+			
+			private var _bodyPartVO_arr:Array;
+			private var _clampVO_arr:Array;
+			
+			private var _bodyUI_arr:Array;
+			private var _clampUI_arr:Array;
+			
+			private var _plist_str:String;
+			private var _lvl_ind:int;
+			
+			private var _plist_fileRef:FileReference;
+			
+			
+			public static const UI_TITLE:String = "GUTZ Creature Builder";
+			//[¡]~=~=~=~=~=~=~=~=~=~=~=~=~=~[!]~=~=~=~=~=~=~=~=~=~=~=~=~=~[¡].
+			
+			
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*/
+			//* *\[ UI EVENT HANDLERS ]/*
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
+			
+			private function uponInit(e:FlexEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".uponInit() [:_:]");
+				
+				_historyVO = new HistoryVO();
+				_lvl_ind = 1;
+				
+				this.flush();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function uponCreation(e:FlexEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".uponCreation("+e.toString()+") [:_:]");
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function uponStageAdoption(e:Event):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".uponAdoption("+e.toString()+") [:_:]");
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*/
+			//* *\[ MXML UI HANDLERS ]/*
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
+			
+			
+			private function hdlRadiusSlider_Change(e:Event):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".hdlRadiusSlider_Change("+e.toString()+") [:_:]");				
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlSavePlistBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlSavePlistBtn_Click() [:_:]");
+				
+				this.writePlist();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function hdlCanvas_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlCanvas_Click("+new Point(e.localX, e.localY)+") [:_:]");
+				
+				this.addNextPart(new Point(e.localX, e.localY));
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function hdlUndo_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlUndo_Click() [:_:]");
+				
+				
+				var actionVO:ActionVO = _historyVO.undo();
+				var aPartVO:AbstractBodyVO = actionVO.vo;
+				var ui:IVisualElement = actionVO.vo.ui;
+				
+				var partVO:BodyPartVO;
+				var clampVO:SpringClampVO;
+				
+				switch (actionVO.type_str) {
+					
+					case EditorConsts.PART_ACTION:
+						_bodyPartVO_arr.pop();
+						ctnCanvas.removeElement(_bodyUI_arr.pop());
+						
+						break;
+					
+					case EditorConsts.CLAMP_ACTION:
+						_clampVO_arr.pop();
+						ctnCanvas.removeElement(_clampUI_arr.pop());
+						break;
+				}
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function hdlClearCanvas_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlClearCanvas_Click() [:_:]");
+				
+				while (ctnCanvas.numElements > 0) {
+				for (var i:Number=0; i<ctnCanvas.numElements; i++)
+				ctnCanvas.removeElement(ctnCanvas.getElementAt(i) as IVisualElement);
+				}
+				
+				this.flush();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*/
+			//* *\[ ELEMENT UI HANDLERS ]/*
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
+			
+			private function hdlCloseGroup_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlCloseGroup_Click() [:_:]");
+				
+				this.bindParts(this.findOccurance(CreatureConsts.CONTOUR_PART, true), this.findOccurance(CreatureConsts.CONTOUR_PART, false), (Math.random() * 62) + 2, Math.random());
+				this.bindParts(this.findOccurance(CreatureConsts.SUPPORT_PART, true), this.findOccurance(CreatureConsts.SUPPORT_PART, false), (Math.random() * 62) + 2, Math.random());
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function hdlCanvasMouse_Move(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlCanvasMouse_Move("+new Point(e.localX, e.localY)+") [:_:]");
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function hdlPartType_Change(e:ItemClickEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlPartType_Change("+rGrpPartTypes.selectedValue+") [:_:]");
+				
+				var type_id:int;
+				
+				switch (String(rGrpPartTypes.selectedValue)) {
+					
+					case CreatureConsts.SUPPORT_PART:
+						type_id = 0;
+						break;
+					
+					case CreatureConsts.VISCERAL_PART:
+						type_id = 1;
+						break;
+					
+					case CreatureConsts.CONTOUR_PART:
+						type_id = 2;
+						break;
+				}
+				
+				_historyVO.stepSelect(type_id);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*/
+			//* *\[ ELEMENT UI HANDLERS ]/*
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
+			
+			
+			private function hdlClamp_MouseClick(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlClamp_MouseClick() [:_:]");
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*/
+			//* *\[ WORKER METHODS ]/*
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
+			
+			
+			private function bindParts(ind1:int, ind2:int, strength:Number, damping:Number):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".bindParts("+ind1+", "+ind2+" // ["+strength+", "+damping+"]) [:_:]");
+				
+				if (ind1 == ind2)
+					return;
+				
+				
+				
+				var pos1_pt:Point = (_bodyPartVO_arr[ind1] as BodyPartVO).pos_pt;
+				var pos2_pt:Point = (_bodyPartVO_arr[ind2] as BodyPartVO).pos_pt;
+				
+				var ang:Number = Number(Angle.radiansToDegrees(Math.atan2(pos2_pt.y - pos1_pt.y, pos2_pt.x - pos1_pt.x)).toFixed(4));
+				
+				var line:Line = new Line();
+				line.addEventListener(MouseEvent.MOUSE_DOWN, hdlClamp_MouseClick);
+				line.stroke = new SolidColorStroke(0xff0000, 1);
+				line.width = Point.distance(pos1_pt, pos2_pt);
+				line.x = pos1_pt.x;
+				line.y = pos1_pt.y;
+				line.rotation = ang;
+				
+				
+				var clampVO:SpringClampVO = new SpringClampVO(_clampVO_arr.length, -1, CreatureConsts.SPRING_CLAMP, ind1, ind2, new Point(), new Point(), strength, damping, line)
+				
+				_clampVO_arr.push(clampVO);
+				_clampUI_arr.push(line);
+				
+				ctnCanvas.addElement(line);
+				
+				
+				// add to plist
+				this.updPlistContent();
+				
+				trace ("\t~// Added clamp #"+(_clampVO_arr.length-1)+" L:"+Number(Point.distance(pos1_pt, pos2_pt).toFixed(4))+" A:"+ang);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function findOccurance(type:String, isFirst:Boolean=true):int {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".findOccurance("+isFirst+") [:_:]");
+				
+				
+				var i:Number;
+				var ind:int = 0;
+				var vo:BodyPartVO;
+				
+				if (isFirst) {
+					for (i=0; i<_bodyPartVO_arr.length; i++) {
+						vo = _bodyPartVO_arr[i] as BodyPartVO;
+						//trace ("\t~//-> _bodyPartVO_arr["+i+"] = \'"+vo.type+"\'");
+						
+						if (vo.type == type) {
+							ind = i;
+							break;
+						}
+					}
+					
+				} else {
+					for (i=_bodyPartVO_arr.length-1; i>=0; i--) {
+						vo = _bodyPartVO_arr[i] as BodyPartVO;
+						//trace ("\t~//<- _bodyPartVO_arr["+i+"] = \'"+vo.type+"\'");
+						
+						if (vo.type == type) {
+							ind = i;
+							break;
+						}
+					}
+				}
+				
+				
+				return (ind);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function writePlist():void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writePlist(["+(FileIOConsts.DIR_PATHNAME + "\\" + FileIOConsts.FILE_PATHNAME)+"]["+File.documentsDirectory.resolvePath(FileIOConsts.DIR_PATHNAME + "\\" + FileIOConsts.FILE_PATHNAME)+"]) [:_:]");
+				
+				_plist_fileRef.save(_plist_str, FileIOConsts.CREATURE_PLIST_NAME + String(Strings.prependZeroes(String(_lvl_ind) + FileIOConsts.PLIST_EXT, int(_lvl_ind < 10))));
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function flush():void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".flush() [:_:]");
+				
+				_bodyPartVO_arr = new Array();
+				_clampVO_arr = new Array();
+				
+				_bodyUI_arr = new Array();
+				_clampUI_arr = new Array();
+				
+				_historyVO.reset(0);
+				_supportPart_tot = 0;
+				_visceraPart_tot = 0;
+				_contourPart_tot = 0;
+				
+				
+				_plist_str = "";
+				txtPlistOutput.text = "";
+				
+				sldRadius.value = 16;
+				rGrpPartTypes.selectedValue = CreatureConsts.SUPPORT_PART;
+				
+				btnClearCanvas.enabled = false;
+				btnClosePath.enabled = false;
+				
+				this.updPlistContent();
+				
+				_plist_fileRef = new FileReference();
+				_plist_fileRef = File.documentsDirectory.resolvePath(FileIOConsts.DIR_PATHNAME + "\\" + FileIOConsts.FILE_PATHNAME);
+				_plist_fileRef.addEventListener(Event.CANCEL, function(e:Event):void {
+					trace("File save select canceled.");
+					_plist_fileRef = null;
+				});
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
+			
+			
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*/
+			//* *\[ CALCULATOR METHODS ]/*
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
+			
+			
+			private function calcShortestDist(pos:Point):Number {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".calcShortestDist("+pos+") [:_:]");
+				
+				var test:Number = 0;
+				var test_vo:BodyPartVO = _bodyPartVO_arr[0] as BodyPartVO;
+				
+				
+				var lowest:Number = Point.distance(pos, test_vo.pos_pt);
+				
+				for (var i:Number=1; i<_bodyPartVO_arr.length; i++) {
+					test_vo = _bodyPartVO_arr[i] as BodyPartVO;
+					test = Point.distance(pos, test_vo.pos_pt);
+					
+					trace ("\t~// CHECKING DISTANCE--> (TEST:["+test+"] LOWEST:["+lowest+"] {"+(test < lowest)+"})");
+					
+					if (test <= lowest)
+						lowest = test;
+				}
+				
+				
+				return (lowest);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function findNearestSupportVO(from_vo:BodyPartVO):BodyPartVO {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".findNearestSupport("+from_vo.pos_pt+") [:_:]");
+				
+				var lowest_ind:int = 0;
+				var tst_vo:BodyPartVO = _bodyPartVO_arr[lowest_ind] as BodyPartVO;
+				var lowest_dist:int = Point.distance(from_vo.pos_pt, tst_vo.pos_pt) << 0;
+				var tst_dist:int = Point.distance(from_vo.pos_pt, tst_vo.pos_pt) << 0;
+				
+				for (var i:Number=0; i<_bodyPartVO_arr.length-1; i++) {
+					
+					if (tst_vo.type == CreatureConsts.SUPPORT_PART) {
+						
+						tst_vo = _bodyPartVO_arr[i] as BodyPartVO;
+						tst_dist = Point.distance(from_vo.pos_pt, tst_vo.pos_pt);
+						
+						trace ("\t~// LOW.CHK:["+i+"]: |["+lowest_dist+">-<"+tst_dist+"]|)");
+						
+						if (tst_dist < lowest_dist) {
+							lowest_dist = tst_dist;
+							lowest_ind = i;
+						}
+					}
+				}
+				
+				
+				return (_bodyPartVO_arr[lowest_ind] as BodyPartVO);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
+			
+			
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*/
+			//* *\[ DISPLAY METHODS ]/*
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
+			
+			
+			private function addNextPart(coords:Point):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".addNextPart("+coords+" // {"+_historyVO.nextSelect_type+"}) [:_:]");
+				
+				var rad:int = sldRadius.value;
+				var pos_pt:Point = coords.subtract(new Point(rad, rad));
+				
+				var vo:BodyPartVO;
+				var dist:Number;
+				
+				// check for out of range
+				if (_bodyPartVO_arr.length > 0) {
+					vo = _bodyPartVO_arr[0] as BodyPartVO;
+					dist = this.calcShortestDist(coords);
+					
+					trace ("\t dist:["+dist+"/]");
+					
+					// check for overlapping
+					for (var i:Number=0; i<_bodyPartVO_arr.length; i++) {
+						vo = _bodyPartVO_arr[i] as BodyPartVO;
+						
+						//trace ("\t ~OVERLAP// ["+i+"] dist:["+Point.distance(coords, vo.pos_pt)+"] vs ["+(vo.radius+rad)+"]");
+						if (dist < vo.radius + rad)
+							return;
+						
+						//if (dist > vo.radius + rad + CreatureConsts.MAX_PART_DIST)
+						//	return;
+					}
+				}
+				
+				var ellipse:Ellipse = new Ellipse();
+					ellipse.stroke = new SolidColorStroke(CreatureConsts.PART_COLORS[_historyVO.nextSelect_type]);
+					ellipse.fill = new SolidColor(CreatureConsts.PART_COLORS[_historyVO.nextSelect_type], 0.5);
+					ellipse.x = pos_pt.x;
+					ellipse.y = pos_pt.y;
+					ellipse.width = rad * 2;
+					ellipse.height = rad * 2;
+				
+				ctnCanvas.addElement(ellipse);
+				_bodyUI_arr.push(ellipse);
+				
+				var partVO:BodyPartVO = new BodyPartVO(_bodyPartVO_arr.length, _historyVO.nextSelect_type, CreatureConsts.PART_NAMES[_historyVO.nextSelect_type], pos_pt.add(new Point(rad, rad)), rad, ellipse) 	
+				_bodyPartVO_arr.push(partVO);
+				
+				
+				switch (CreatureConsts.PART_NAMES[_historyVO.nextSelect_type]) {
+					case CreatureConsts.SUPPORT_PART:
+						_supportPart_tot++;
+						break;
+					
+					case CreatureConsts.VISCERAL_PART:
+						_visceraPart_tot++;
+						break;
+					
+					case CreatureConsts.CONTOUR_PART:
+						_contourPart_tot++;
+						break;
+				}
+				
+				btnClosePath.enabled = (_contourPart_tot > 2 || _supportPart_tot > 2);
+				btnClearCanvas.enabled = _bodyPartVO_arr.length > 0;
+				_historyVO.increment(EditorConsts.PART_ACTION, partVO);
+				
+				
+				trace ("\t~// Added \'\'"+CreatureConsts.PART_NAMES[_historyVO.nextSelect_type]+"\'\' #"+(_bodyPartVO_arr.length-1)+" @ "+pos_pt);
+				
+				
+				// there's at least two parts
+				if (_bodyPartVO_arr.length > 1) {
+					
+					// connect the previous w/ latest one
+					this.bindParts(_bodyPartVO_arr.length-1, _bodyPartVO_arr.length-2, (Math.random() * 62) + 2, Math.random());
+					
+					// created a contour part -- find the closest support & bind
+					if (CreatureConsts.PART_NAMES[_historyVO.nextSelect_type] == CreatureConsts.CONTOUR_PART) {
+						var supportVO:BodyPartVO = this.findNearestSupportVO(partVO);
+						
+						trace ("\t~// Nearest support for :"+(supportVO.pos_pt)+": // ind:["+supportVO.ind+"]");
+						this.bindParts(_bodyPartVO_arr.length-1, supportVO.ind, (Math.random() * 62) + 2, Math.random());
+					}
+				}
+				
+				
+				// add to plist
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*/
+			//* *\[ PLIST METHODS ]/*
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
+			
+			private function updPlistContent():void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".updPlistContent() [:_:]");
+				
+				_plist_str = "";
+				_plist_str += FileIOConsts.PLIST_HEADER;
+				_plist_str += this.writeBodyParts();
+				_plist_str += this.writeJoints();
+				_plist_str += FileIOConsts.PLIST_FOOTER;
+				
+				txtPlistOutput.text = _plist_str.replace(/\t/g, "   ");
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
+			private function writeBodyParts():String {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writeBodyParts("+(_bodyPartVO_arr.length)+") [:_:]");
+				
+				var str:String = FileIOConsts.BODYPART_PREGRP;
+				var vo_arr:Array;
+				var vo:BodyPartVO;
+				
+				for (var i:Number=0; i<_bodyPartVO_arr.length; i++) {
+					vo = _bodyPartVO_arr[i] as BodyPartVO;
+					
+					str += FileIOConsts.BODYPART_PRETAG + String(vo.ind);
+					str += FileIOConsts.BODYPART_TYPE + String(vo.type_id);
+					str += FileIOConsts.BODYPART_POS_X + String(vo.pos_pt.x);
+					str += FileIOConsts.BODYPART_POS_Y + String(vo.pos_pt.y);
+					str += FileIOConsts.BODYPART_RADIUS + String(vo.radius);
+					str += FileIOConsts.BODYPART_POSTTAG;
+				}
+				
+				return (str + FileIOConsts.BODYPART_POSTGRP);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
+			private function writeJoints():String {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writeJoints("+_clampVO_arr.length+") [:_:]");
+				
+				var str:String = FileIOConsts.CLAMP_PREGRP;
+				var vo:SpringClampVO;
+				
+				for (var i:Number=0; i<_clampVO_arr.length; i++) {
+					vo = _clampVO_arr[i] as SpringClampVO;
+					
+					str += FileIOConsts.CLAMP_PRETAG + String(vo.ind);
+					str += FileIOConsts.CLAMP_BODY_A + String(vo.bodyA);
+					str += FileIOConsts.CLAMP_BODY_B + String(vo.bodyB);
+					str += FileIOConsts.CLAMP_STR + String(vo.str);
+					str += FileIOConsts.CLAMP_DMP + String(vo.dmp);
+					str += FileIOConsts.CLAMP_POSTTAG;
+				}
+				
+				return (str + FileIOConsts.CLAMP_POSTGRP);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlPlist_Load(e:Event):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlPlist_Load() [:_:]");	
+				_plist_fileRef.browse();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlPlist_Select(e:Event):void {	
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlPlist_Select() [:_:]");
+				
+				_plist_fileRef.addEventListener(IOErrorEvent.IO_ERROR, function(e:IOErrorEvent):void {
+					trace("Error loading file : " + e.text);
+				});
+				
+				_plist_fileRef.load();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlPlist_LoadComplete(e:Event):void {	
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlPlist_LoadComplete("+(_plist_fileRef.data.readUTFBytes(_plist_fileRef.data.length))+") [:_:]");
+				txtPlistOutput.text = _plist_fileRef.data.readUTFBytes(_plist_fileRef.data.length);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
+			
+			
+			
+			
+			
+			private function dummyPopulate():void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".dummyPopulate() [:_:]");
+				
+				var i:Number;
+				var sup_amt:int = 1;
+				var vis_amt:int = 4;
+				var con_amt:int = 16;
+				
+				for (i=0; i<sup_amt; i++)
+					(_bodyPartVO_arr[0] as Array).push(new BodyPartVO(i, _historyVO.nextSelect_type, CreatureConsts.SUPPORT_PART, new Point(i, i), ((Math.random() * 62) << 0) + 2));
+				
+				for (i=0; i<vis_amt; i++)
+					(_bodyPartVO_arr[1] as Array).push(new BodyPartVO(i, _historyVO.nextSelect_type, CreatureConsts.VISCERAL_PART, new Point(i, i), ((Math.random() * 62) << 0) + 2));
+				
+				for (i=0; i<con_amt; i++)
+					(_bodyPartVO_arr[2] as Array).push(new BodyPartVO(i, _historyVO.nextSelect_type, CreatureConsts.CONTOUR_PART, new Point(i, i), ((Math.random() * 62) << 0) + 2));
+				
+				
+				for (i=0; i<con_amt; i++)
+					_clampVO_arr.push(new SpringClampVO(i, -1, CreatureConsts.SPRING_CLAMP, i, (i % 9), new Point(), new Point(), (Math.random() * 62) + 2, Math.random()));
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*·¯
+		]]>
+	</fx:Script>
+	<!-- /////////////////////////////// -->
+	
+	
+	<!-- -=[ FX OBJS ]=- -->
+	<fx:Declarations>
+		<s:RadioButtonGroup id="rGrpPartTypes" itemClick="hdlPartType_Change(event)"></s:RadioButtonGroup>
+	</fx:Declarations>
+	<!-- /////////////////////////////// -->
+	
+	
+	<!-- -=[ MXML UI ]=- -->
+	<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+	<s:Panel id="pnlTools" title="—Tools—" x="{ComponentConsts.APP_PADDING_L}" y="{ComponentConsts.APP_PADDING_T}" width="128" height="480">
+		<s:Group id="grpTools">
+			<s:BorderContainer id="grpVisceraBtns" x="4" y="4" width="112" height="64" borderAlpha="0.2">
+				<s:Label id="lblVisceraType" x="4" y="4" text="Type:" />
+				<s:RadioButton group="{rGrpPartTypes}" id="radSupport" value="{CreatureConsts.SUPPORT_PART}" x="4" y="20" label="Support" width="128" buttonMode="true" selected="true" />
+				<s:RadioButton group="{rGrpPartTypes}" id="radContour" value="{CreatureConsts.CONTOUR_PART}" x="4" y="36" label="Contour" width="128" useHandCursor="true" />	
+			</s:BorderContainer>
+			
+			<s:Label id="lblPartRadius" x="4" y="80" text="Radius: {sldRadius.value}" />
+			<s:HSlider id="sldRadius" x="4" y="96" minimum="1" maximum="32" value="8" stepSize="1" snapInterval="1" liveDragging="true" useHandCursor="true" change="hdlRadiusSlider_Change(event)" />
+			<s:Button id="btnSavePlist" x="24" y="320" width="80" height="64" label="Save Plist…" click="hdlSavePlistBtn_Click(event)" />
+		</s:Group>
+	</s:Panel>
+	
+	<s:Group id="grpCanvas" x="160" y="{ComponentConsts.APP_PADDING_T}">
+		<s:BorderContainer id="ctnCanvas" width="320" height="480" click="hdlCanvas_Click(event)" />
+		<s:HGroup y="480">
+			<s:Button id="btnClosePath" label="Close Path" y="{ComponentConsts.APP_PADDING_T}" width="128" height="32" click="hdlCloseGroup_Click(event)" enabled="false" />
+			<s:Button id="btnUndo" label="Undo" y="{ComponentConsts.APP_PADDING_T}" width="128" height="32" click="hdlUndo_Click(event)" enabled="false" />
+			<s:Button id="btnClearCanvas" label="Clear Canvas" y="{ComponentConsts.APP_PADDING_T}" width="128" height="32" click="hdlClearCanvas_Click(event)" enabled="false" />
+		</s:HGroup>
+	</s:Group>
+	
+	<s:TextArea id="txtPlistOutput" x="496" y="{ComponentConsts.APP_PADDING_T}" width="284" height="480" contentBackgroundColor="#e8e7cf" color="#1c0b22" lineBreak="explicit" editable="false"  />
+	<!-- /////////////////////////////// -->
+	
+</s:BorderContainer>
+<!-- -=[ END OF CREATURE BUILDER UI ]=- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->

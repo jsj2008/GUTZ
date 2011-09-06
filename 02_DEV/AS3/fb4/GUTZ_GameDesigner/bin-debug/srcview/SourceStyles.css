@@ -1,0 +1,146 @@
+body {
+	font-family: Courier New, Courier, monospace;
+	font-size: medium;
+}
+
+.ActionScriptASDoc {
+	color: #2a385a;
+}
+
+.ActionScriptBracket/Brace {
+	color: #2c9be9;
+	font-weight: bold;
+}
+
+.ActionScriptComment {
+	color: #2f373c;
+	font-style: italic;
+}
+
+.ActionScriptDefault_Text {
+	color: #4f5f7a;
+}
+
+.ActionScriptMetadata {
+	color: #d97720;
+}
+
+.ActionScriptOperator {
+	color: #25bfc9;
+	font-weight: bold;
+}
+
+.ActionScriptReserved {
+	color: #b31672;
+	font-weight: bold;
+}
+
+.ActionScriptString {
+	color: #147e46;
+}
+
+.ActionScriptclass {
+	color: #ff20cd;
+	font-weight: bold;
+}
+
+.ActionScriptfunction {
+	color: #dc32da;
+	font-weight: bold;
+}
+
+.ActionScriptinterface {
+	color: #ff3cd3;
+	font-weight: bold;
+}
+
+.ActionScriptpackage {
+	color: #912178;
+	font-weight: bold;
+}
+
+.ActionScripttrace {
+	color: #39ee21;
+	font-weight: bold;
+}
+
+.ActionScriptvar {
+	color: #9731d2;
+	font-weight: bold;
+}
+
+.CSS@font-face {
+	color: #dd330f;
+	font-weight: bold;
+}
+
+.CSS@import {
+	color: #ca4828;
+}
+
+.CSS@media {
+	color: #ca4828;
+}
+
+.CSS@namespace {
+	color: #dd330b;
+	font-weight: bold;
+}
+
+.CSSComment {
+	color: #495154;
+	font-style: italic;
+}
+
+.CSSDefault_Text {
+}
+
+.CSSDelimiters {
+}
+
+.CSSProperty_Name {
+	color: #a500a7;
+}
+
+.CSSProperty_Value {
+	color: #7abe0f;
+}
+
+.CSSSelector {
+	color: #d79514;
+}
+
+.CSSString {
+	color: #125c35;
+}
+
+.MXMLASDoc {
+	color: #2e4967;
+	font-style: italic;
+}
+
+.MXMLComment {
+	color: #353a3d;
+	font-style: italic;
+}
+
+.MXMLComponent_Tag {
+	color: #512b28;
+}
+
+.MXMLDefault_Text {
+	color: #4b6284;
+}
+
+.MXMLProcessing_Instruction {
+	color: #515041;
+}
+
+.MXMLSpecial_Tag {
+	color: #3f3985;
+}
+
+.MXMLString {
+	color: #1f8a45;
+}
+

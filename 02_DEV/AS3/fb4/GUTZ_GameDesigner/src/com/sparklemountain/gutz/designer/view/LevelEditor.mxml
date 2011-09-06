@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- -=[ START OF LEVEL EDITOR UI ]=- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+<s:BorderContainer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				   xmlns:s="library://ns.adobe.com/flex/spark" 
+				   xmlns:mx="library://ns.adobe.com/flex/mx" 
+				   
+				   initialize="uponInit(event)" 
+				   creationComplete="uponCreation(event)" 
+				   addedToStage="uponStageAdoption(event)" 
+				   width="100%" height="100%">
+	<!-- ////////////////////////////////////////////////// -->
+	
+	<!-- -=[ MXML SCRIPT ]=- -->
+	<!-- -=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+	<fx:Script>
+		<![CDATA[
+			import cc.gullinbursti.lang.Strings;
+			
+			import com.sparklemountain.gutz.designer.ComponentConsts;
+			import com.sparklemountain.gutz.designer.EditorConsts;
+			import com.sparklemountain.gutz.designer.FileIOConsts;
+			import com.sparklemountain.gutz.designer.model.vo.GoalVO;
+			import com.sparklemountain.gutz.designer.model.vo.WallVO;
+			
+			import mx.core.IVisualElement;
+			import mx.core.UIComponent;
+			import mx.events.FlexEvent;
+			
+			import spark.core.SpriteVisualElement;
+			//]~=~=~=~=~=~=~=~=~=~=~=~=~=~[]~=~=~=~=~=~=~=~=~=~=~=~=~=~[
+			
+			
+			//] UI PROPERTIES ]>
+			//]=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~.
+			public static const UI_TITLE:String = "GUTZ Level Editor";
+			
+			private var _goalVO_arr:Array;
+			private var _wallVO_arr:Array;
+			
+			private var _plist_str:String;
+			private var _lvl_ind:int;
+			
+			private var _plist_fileRef:FileReference;
+			
+			
+			private var _canvasWrapper:UIComponent;
+			//[¡]~=~=~=~=~=~=~=~=~=~=~=~=~=~[!]~=~=~=~=~=~=~=~=~=~=~=~=~=~[¡].
+			
+			
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*/
+			//* *\[ UI EVENT HANDLERS ]/*
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
+			
+			private function uponInit(e:FlexEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".uponInit() [:_:]");
+				
+				_canvasWrapper = new UIComponent();
+				ctnCanvas.addElement(_canvasWrapper);
+				
+				
+				_lvl_ind = 1;
+				this.flush();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function uponCreation(e:FlexEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".uponCreation("+e.toString()+") [:_:]");
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function uponStageAdoption(e:Event):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".uponAdoption("+e.toString()+") [:_:]");
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*/
+			//* *\[ MXML UI HANDLERS ]/*
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
+			
+			
+			
+			private function hdlGoalBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlGoalBtn_Click() [:_:]");
+				
+				var goal_mc:Goal_mc = new Goal_mc();
+					goal_mc.x = EditorConsts.CANVAS_CENTER.x;
+					goal_mc.y = EditorConsts.CANVAS_CENTER.y;
+					goal_mc.buttonMode = true;
+					goal_mc.useHandCursor = true;
+					goal_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlGoal_Press);
+					goal_mc.addEventListener(MouseEvent.MOUSE_UP, hdlGoal_Release);
+					
+					
+				_goalVO_arr.push(new GoalVO(_goalVO_arr.length, EditorConsts.CANVAS_CENTER, goal_mc));
+				_canvasWrapper.addChild(goal_mc);
+				lblCoords.text = "("+goal_mc.x+", "+goal_mc.y+")";
+				
+				this.updCanvas();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlWall1Btn_Click(e:MouseEvent):void {
+				//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlWall1Btn_Click() [:_:]");
+				
+				var wall_mc:Wall1_mc = new Wall1_mc();
+					wall_mc.x = EditorConsts.CANVAS_CENTER.x;
+					wall_mc.y = EditorConsts.CANVAS_CENTER.y;
+					wall_mc.buttonMode = true;
+					wall_mc.useHandCursor = true;
+					wall_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlWall_Press);
+					wall_mc.addEventListener(MouseEvent.MOUSE_UP, hdlWall_Release);
+				
+				
+				_wallVO_arr.push(new WallVO(_wallVO_arr.length, 1, wall_mc, EditorConsts.CANVAS_CENTER, 0.5, 0.1));
+				_canvasWrapper.addChild(wall_mc);
+				lblCoords.text = "("+wall_mc.x+", "+wall_mc.y+")";
+				
+				this.updCanvas();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlWall2Btn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlWall2Btn_Click() [:_:]");
+				
+				var wall_mc:Wall2_mc = new Wall2_mc();
+					wall_mc.x = EditorConsts.CANVAS_CENTER.x;
+					wall_mc.y = EditorConsts.CANVAS_CENTER.y;
+					wall_mc.buttonMode = true;
+					wall_mc.useHandCursor = true;
+					wall_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlWall_Press);
+					wall_mc.addEventListener(MouseEvent.MOUSE_UP, hdlWall_Release);
+				
+				
+				_wallVO_arr.push(new WallVO(_wallVO_arr.length, 2, wall_mc, EditorConsts.CANVAS_CENTER, 0.5, 0.1));
+				_canvasWrapper.addChild(wall_mc);
+				lblCoords.text = "("+wall_mc.x+", "+wall_mc.y+")";
+				
+				this.updCanvas();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
+			private function hdlClearCanvas_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlClearCanvas_Click() [:_:]");
+				
+				while (_canvasWrapper.numChildren > 0) {
+					for (var i:Number=0; i<_canvasWrapper.numChildren; i++)
+						_canvasWrapper.removeChild(_canvasWrapper.getChildAt(i) as MovieClip);
+				}
+				
+				this.flush();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlCanvas_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".hdlCanvas_Click("+new Point(e.localX, e.localY)+") [:_:]");
+				
+				//this.addNextPart(new Point(e.localX, e.localY));
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlSavePlistBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlSavePlistBtn_Click() [:_:]");
+				
+				this.writePlist();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*/
+			//* *\[ WORKER METHODS ]/*
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
+			
+			
+			private function hdlGoal_Press(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".hdlGoal_Press("+(e.currentTarget as MovieClip)+") [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+					trg_mc.startDrag(false, new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height));
+				
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+				
+			private function hdlGoal_Release(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".hdlGoal_Release("+(e.currentTarget as MovieClip)+") [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+					trg_mc.stopDrag();
+					
+				
+				this.updGoalVO(trg_mc);
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
+			private function hdlWall_Press(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".hdlWall_Press("+(e.currentTarget as MovieClip)+") [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+					trg_mc.startDrag(false, new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height));
+				
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
+			private function hdlWall_Release(e:MouseEvent):void {
+				//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".hdlWall_Release("+(e.currentTarget as MovieClip)+") [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+					trg_mc.stopDrag();
+				
+				
+				this.updWallVO(trg_mc);
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function dropByMC(trg_mc:MovieClip):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".updCanvas() [:_:]");
+				
+				var i:Number;
+				var mc:MovieClip;
+				
+				
+				for (i=0; i<_goalVO_arr.length; i++) {
+					mc = (_goalVO_arr[i] as GoalVO).asset_mc;
+					
+					if (mc == trg_mc) {
+						_goalVO_arr.splice(i, 1);
+						break;
+					}
+				}
+				
+				
+				for (i=0; i<_wallVO_arr.length; i++) {
+					mc = (_wallVO_arr[i] as WallVO).asset_mc;
+					
+					if (mc == trg_mc) {
+						_wallVO_arr.splice(i, 1);
+						break;
+					}
+				}
+				
+				
+				for (i=0; i<_canvasWrapper.numChildren; i++) {
+					mc = _canvasWrapper.getChildAt(i) as MovieClip;
+					
+					if (mc == trg_mc) {
+						_canvasWrapper.removeChild(mc);
+						break;
+					}
+				}
+					
+				
+				
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function updCanvas():void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".updCanvas() [:_:]");
+				
+				btnClearCanvas.enabled = (_canvasWrapper.numChildren > 0);
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
+			private function updGoalVO(trg_mc:MovieClip):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".updGoalVO("+trg_mc+") [:_:]");
+				
+				var goalVO:GoalVO;
+				for (var i:Number=0; i<_goalVO_arr.length; i++) {
+					goalVO = _goalVO_arr[i]as GoalVO;
+					
+					if (trg_mc == goalVO.asset_mc) {
+						goalVO.pos_pt.x = trg_mc.x;
+						goalVO.pos_pt.y = trg_mc.y;
+					}
+				}
+				
+				lblCoords.text = "("+trg_mc.x+", "+trg_mc.y+")";
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function updWallVO(trg_mc:MovieClip):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".updWallVO("+trg_mc+") [:_:]");
+				
+				var wallVO:WallVO;
+				for (var i:Number=0; i<_wallVO_arr.length; i++) {
+					wallVO = _wallVO_arr[i]as WallVO;
+					
+					if (trg_mc == wallVO.asset_mc) {
+						wallVO.pos_pt.x = trg_mc.x;
+						wallVO.pos_pt.y = trg_mc.y;
+					}
+				}
+				
+				lblCoords.text = "("+trg_mc.x+", "+trg_mc.y+")";
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function flush():void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".flush() [:_:]");
+				
+				_goalVO_arr = new Array();
+				_wallVO_arr = new Array();
+				
+				_plist_str = "";
+				txtPlistOutput.text = "";
+				
+				lblCoords.text = "";
+				btnClearCanvas.enabled = false;
+				
+				this.updPlistContent();
+				
+				_plist_fileRef = new FileReference();
+				_plist_fileRef = File.documentsDirectory.resolvePath(FileIOConsts.DIR_PATHNAME + "\\" + FileIOConsts.FILE_PATHNAME);
+				_plist_fileRef.addEventListener(Event.CANCEL, function(e:Event):void {
+					trace("File save select canceled.");
+					_plist_fileRef = null;
+				});
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
+			
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*/
+			//* *\[ PLIST METHODS ]/*
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
+			
+			private function updPlistContent():void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".updPlistContent() [:_:]");
+				
+				_plist_str = "";
+				_plist_str += FileIOConsts.PLIST_HEADER;
+				_plist_str += this.writeWalls();
+				_plist_str += this.writeGoals();
+				_plist_str += FileIOConsts.PLIST_FOOTER;
+				
+				txtPlistOutput.text = _plist_str.replace(/\t/g, "   ");
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
+			private function writeWalls():String {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writeWalls("+(_wallVO_arr.length)+") [:_:]");
+				
+				var str:String = FileIOConsts.WALL_PREGRP;
+				var vo_arr:Array;
+				var vo:WallVO;
+				
+				for (var i:Number=0; i<_wallVO_arr.length; i++) {
+					vo = _wallVO_arr[i] as WallVO;
+					
+					str += FileIOConsts.WALL_PRETAG + String(vo.ind);
+					str += FileIOConsts.WALL_TYPE + String(vo.type_id);
+					str += FileIOConsts.WALL_POS_X + String(vo.pos_pt.x);
+					str += FileIOConsts.WALL_POS_Y + String(EditorConsts.CANVAS_SIZE.height - vo.pos_pt.y);
+					str += FileIOConsts.WALL_FRICT + String(vo.friction_amt);
+					str += FileIOConsts.WALL_BOUNCE + String(vo.bounce_amt);
+					str += FileIOConsts.WALL_POSTTAG;
+				}
+				
+				return (str + FileIOConsts.WALL_POSTGRP);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
+			private function writeGoals():String {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writeGoals("+_goalVO_arr.length+") [:_:]");
+				
+				var str:String = FileIOConsts.GOAL_PREGRP;
+				var vo:GoalVO;
+				
+				for (var i:Number=0; i<_goalVO_arr.length; i++) {
+					vo = _goalVO_arr[i] as GoalVO;
+					
+					str += FileIOConsts.GOAL_PRETAG + String(vo.id);
+					str += FileIOConsts.GOAL_POS_X + String(vo.pos_pt.x);
+					str += FileIOConsts.GOAL_POS_Y + String(EditorConsts.CANVAS_SIZE.height - vo.pos_pt.y);
+					str += FileIOConsts.GOAL_POSTTAG;
+				}
+				
+				return (str + FileIOConsts.GOAL_POSTGRP);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlPlist_Load(e:Event):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlPlist_Load() [:_:]");	
+				_plist_fileRef.browse();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlPlist_Select(e:Event):void {	
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlPlist_Select() [:_:]");
+				
+				_plist_fileRef.addEventListener(IOErrorEvent.IO_ERROR, function(e:IOErrorEvent):void {
+					trace("Error loading file : " + e.text);
+				});
+				
+				_plist_fileRef.load();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlPlist_LoadComplete(e:Event):void {	
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlPlist_LoadComplete("+(_plist_fileRef.data.readUTFBytes(_plist_fileRef.data.length))+") [:_:]");
+				txtPlistOutput.text = _plist_fileRef.data.readUTFBytes(_plist_fileRef.data.length);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function writePlist():void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writePlist(["+(FileIOConsts.DIR_PATHNAME + "\\" + FileIOConsts.FILE_PATHNAME)+"]["+File.documentsDirectory.resolvePath(FileIOConsts.DIR_PATHNAME + "\\" + FileIOConsts.FILE_PATHNAME)+"]) [:_:]");
+				
+				_plist_fileRef.save(_plist_str, FileIOConsts.LEVEL_PLIST_NAME + String(Strings.prependZeroes(String(_lvl_ind) + FileIOConsts.PLIST_EXT, int(_lvl_ind < 10))));
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+		//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+		//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*·¯
+		]]>
+	</fx:Script>
+	<!-- /////////////////////////////// -->
+	
+	<!-- -=[ FX OBJS ]=- -->
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<!-- /////////////////////////////// -->
+	
+	
+	<!-- -=[ MXML UI ]=- -->
+	<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+	<s:Panel id="pnlTools" title="—Tools—" x="{ComponentConsts.APP_PADDING_L}" y="{ComponentConsts.APP_PADDING_T}" width="128" height="480">
+		<s:VGroup id="grpTools" paddingLeft="4" paddingTop="4">
+			<s:Button id="btnGoal" label="Goal" click="hdlGoalBtn_Click(event)" />
+			<s:Button id="btnWall1" label="Wall 1" click="hdlWall1Btn_Click(event)" />
+			<s:Button id="btnWall2" label="Wall 2" click="hdlWall2Btn_Click(event)" />
+			<s:Button id="btnSavePlist" y="320" width="80" height="64" label="Save Plist…" click="hdlSavePlistBtn_Click(event)" />
+		</s:VGroup>
+	</s:Panel>
+	
+	<s:Group id="grpCanvas" x="160" y="{ComponentConsts.APP_PADDING_T}">
+		<s:Group id="grpGuides">
+			<s:Line xFrom="160" xTo="160" yFrom="0" yTo="480"><s:stroke><s:SolidColorStroke color="#b5bdc3" /></s:stroke></s:Line>
+			<s:Line xFrom="0" xTo="320" yFrom="240" yTo="240"><s:stroke><s:SolidColorStroke color="#b5bdc3" /></s:stroke></s:Line>
+		</s:Group>
+		<s:BorderContainer id="ctnCanvas" width="320" height="480" backgroundAlpha="0" />
+			
+		<s:HGroup y="480">
+			<s:Group>
+				<s:Label id="lblCoords" y="4" width="160" text="" />
+			</s:Group>
+			<s:Button id="btnClearCanvas" label="Clear Canvas" x="256" width="128" height="32" click="hdlClearCanvas_Click(event)" enabled="false" />
+		</s:HGroup>
+	</s:Group>
+	
+	<s:TextArea id="txtPlistOutput" x="496" y="{ComponentConsts.APP_PADDING_T}" width="284" height="480" contentBackgroundColor="#e8e7cf" color="#1c0b22" lineBreak="explicit" editable="false"  />
+	<!-- /////////////////////////////// -->
+	
+</s:BorderContainer>
+<!-- -=[ END OF LEVEL EDITOR UI ]=- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->

@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project default="Build, publish, &amp; launch debug site on local web server" name="HP_RapYourTweets - Website">
+
+	<!--	User properties-->
+	<property file="${user.name}.properties" />
+
+	<!-- SDK path properties - sdk_dir is defined in user properties-->
+	<property name="mxmlc" value="${sdk_dir}/lib/mxmlc.jar" />
+	<property name="adt" value="${sdk_dir}/lib/adt.jar" />
+
+
+	<!-- *********** Start of editable properties *********** -->
+
+	<property name="project_name" value="RapYourTweets" />
+	<property name="project_pkg" value="eu/acne/hprapyourtweets" />
+
+	<property name="gfx_proj" value="../GFX_assets" />
+
+	<!-- Name of the application. -->
+	<property name="project_root_dir" value=".." />
+	<property name="output_swf" value="${project_name}.swf" />
+
+	<property name="cfg_dir" value="${project_root_dir}/config" />
+	<property name="assets_dir" location="${project_root_dir}/assets" />
+	<property name="build_dir" location="${project_root_dir}/build" />
+	<property name="debug_dir" location="${project_root_dir}/debug" />
+	<property name="deploy_dir" location="${project_root_dir}/deploy" />
+
+	<property name="libs_dir" location="${project_root_dir}/libs" />
+	<property name="gfx_lib_dir" location="${project_root_dir}/libs_gfx" />
+	
+	<property name="acne_webroot_dir" value="/Volumes/web/ryt" />
+	<property name="acne_lan_ip" value="10.0.1.140" />
+	<property name="acne_wan_ip" value="64.60.55.83" />
+	<property name="acne_web_port" value="80" />
+	
+	<property name="acne_webroot_dir" value="/Volumes/web/ryt" />
+	<property name="acne_webroot_path" value="ryt" />
+	
+	<property name="acne_ext_web_url" value="${acne_wan_ip}:${acne_web_port}/${acne_webroot_path}" />
+	<property name="acne_int_web_url" value="${acne_lan_ip}:${acne_web_port}/${acne_webroot_path}" />
+	
+
+	<!-- ************ End of editable properties ************ -->
+
+	<property name="project_src_dir" location="${project_root_dir}/src" />
+	<property name="external_src_dir" location="${project_root_dir}/external_src" />
+	<property name="common_src_dir" location="${project_src_dir}/eu/acne/hprapyourtweets/common" />
+
+	<property name="codebase" value="as" />
+	<property name="source_dir" location="${project_src_dir}/eu/acne/hprapyourtweets/web" />
+	<property name="loader_src" value="${source_dir}/Preloader.${codebase}" />
+	<property name="source_class" value="${source_dir}/HP_RapYourTweets.${codebase}" />
+	<property name="web_html" value="index.html" />
+	<property name="swf_bgcolor" value="000000" />
+	<property name="swf_width" value="900" />
+	<property name="swf_height" value="530" />
+	<property name="swf_framerate" value="30" />
+
+	<path id="project.classpath">
+		<fileset dir="javalib">
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement path="${java.class.path}" />
+	</path>
+
+
+	<!-- <taskdef name="svn" classname="org.tigris.subversion.svnant.SvnTask" classpathref="project.classpath" /> -->
+	<taskdef resource="flexTasks.tasks" classpath="${sdk_dir}/ant/lib/flexTasks.jar" />
+
+
+
+	<!-- *********** Start of project targets *********** -->
+
+	<target name="Show username" description="Display the username">
+		<echo>Username is: ${user.name}</echo>
+	</target>
+
+	<target name="SVN export GX asset SWCs">
+		<echo>Exporting SWCs from ${swc.resource.url}</echo>
+		<delete dir="${swc.target.url}" />
+		<svn username="${svnant.repository.user}" password="${svnant.repository.passwd}">
+			<export srcUrl="${swc.resource.url}" destPath="${swc.target.url}" />
+		</svn>
+	</target>
+
+
+	<target name="Copy over GX asset SWCs from local project">
+		<echo>Copying *.swc from the GX project to </echo>
+		<svn username="${svnant.repository.user}" password="${svnant.repository.passwd}">
+			<commit path="${gfx_proj}" commitMessage="Test commit" force="true" />
+		</svn>
+	</target>
+
+
+	<target name="Clean directories" description="clean up">
+		<echo>Removing compile dirs</echo>
+		<delete dir="${debug_dir}" />
+		<delete dir="${build_dir}" />
+		<delete dir="${deploy_dir}" />
+	</target>
+
+
+	<target name="Create directories">
+		<echo>Creating compile dirs</echo>
+		<mkdir dir="${debug_dir}" />
+		<mkdir dir="${build_dir}" />
+		<mkdir dir="${build_dir}/web" />
+		<mkdir dir="${deploy_dir}" />
+	</target>
+
+
+	<target name="Copy assets for debugging" depends="">
+		<echo>Copying web assets to the debug dir</echo>
+		<copy todir="${debug_dir}">
+			<fileset dir="${assets_dir}/web">
+				<include name="**" />
+			</fileset>
+		</copy>
+
+		<echo>Copying the config XML to the debug dir</echo>
+		<copy todir="${debug_dir}/config">
+			<fileset dir="${cfg_dir}/web">
+				<include name="**" />
+			</fileset>
+		</copy>
+		
+		<echo>Copying the app descriptor to the debug dir</echo>
+		<copy todir="${debug_dir}/eu/acne/hprapyourtweets/web" file="${cfg_dir}/web/HP_RapYourTweets-app.xml" />
+			
+	</target>
+
+
+	<target name="Copy assets for deployment" depends="">
+		<echo>Copying web assets to the deploy dir</echo>
+		<copy todir="${deploy_dir}">
+			<fileset dir="${assets_dir}/web">
+				<include name="**" />
+			</fileset>
+		</copy>
+
+		<echo>Copying the config XML to the deploy dir</echo>
+		<copy todir="${deploy_dir}/config">
+			<fileset dir="${cfg_dir}/web">
+				<include name="**" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="Purge contents of the debug directory">
+		<echo>Removing all files &amp; folders from the debug dir</echo>
+		<delete includeemptydirs="true">
+			<fileset dir="${debug_dir}" includes="**/*" />
+		</delete>
+	</target>
+
+	<target name="Purge contents of the deploy directory">
+		<echo>Removing all files &amp; folders from the deploy dir</echo>
+		<delete includeemptydirs="true">
+			<fileset dir="${deploy_dir}" includes="**/*" />
+		</delete>
+	</target>
+
+
+	<target name="Purge SWFs from project dirs">
+		<echo>Removing all SWFs from the the /libs &amp; /libs_gfx dirs</echo>
+		<delete includeemptydirs="true">
+			<fileset dir="${libs_dir}" includes="**/*.swf" />
+			<fileset dir="${gfx_lib_dir}" includes="**/*.swf" />
+		</delete>
+	</target>
+	
+	
+	
+	<target name="Build preloader for debugging" depends="Purge contents of the debug directory, Copy assets for debugging">
+		<echo>Compiling debug version of site preloader...</echo>
+		<copy file="${build_dir}/web/${project_name}.swf" todir="${debug_dir}/swf" />
+		<compileDebugSWF src-pkg="${project_pkg}/web" class-name="Preloader.as" swf-name="preloader" />
+		<copy file="${debug_dir}/swf/preloader.swf" todir="${build_dir}/web" />
+	</target>
+
+	<target name="Build shell for debugging" depends="Purge contents of the debug directory, Copy assets for debugging">
+		<echo>Compiling debug version of site shell...</echo>
+		<copy file="${build_dir}/web/preloader.swf" todir="${debug_dir}/swf" />
+		<compileDebugSWF src-pkg="${project_pkg}/web" class-name="HP_RapYourTweets.as" swf-name="${project_name}" />
+		<copy file="${debug_dir}/swf/${project_name}.swf" todir="${build_dir}/web" />
+	</target>
+
+	<target name="Build ALL for debugging" description="" depends="Purge contents of the debug directory, Copy assets for debugging">
+		<echo>Compiling debug version of site preloader...</echo>
+		<compileDebugSWF src-pkg="${project_pkg}/web" class-name="Preloader.as" swf-name="preloader" />
+		<copy file="${debug_dir}/swf/preloader.swf" todir="${build_dir}/web" />
+
+		<echo>Compiling debug version of site shell...</echo>
+		<compileDebugSWF src-pkg="${project_pkg}/web" class-name="HP_RapYourTweets.as" swf-name="${project_name}" />
+		<copy file="${debug_dir}/swf/${project_name}.swf" todir="${build_dir}/web" />
+	</target>
+
+	<target name="Build ALL for deployment" depends="Purge contents of the deploy directory, Copy assets for deployment">
+		<echo>Compiling deployment version of site preloader...</echo>
+		<compileDeploySWF src-pkg="${project_pkg}/web" class="Preloader" swf="preloader" />
+
+		<echo>Compiling deployment version of site shell...</echo>
+		<compileDeploySWF src-pkg="${project_pkg}/web" class="HP_RapYourTweets" swf="${project_name}" />
+	</target>
+
+
+	
+	<!-- builds a swf for debugging using native mxmlc compiler -->
+	<macrodef name="compileDebugSWF" description="Builds a SWF with debugging options">
+		<attribute name="src-pkg" />
+		<attribute name="class-name" />
+		<attribute name="swf-name" />
+		<sequential>
+			<echo>Compiling: &#8220;@{class-name}&#8221;  —\&gt; debug/swf/@{swf-name}.swf</echo>
+			<exec executable="${sdk_dir}/bin/${mxmlc_exec}" dir="." failonerror="true">
+				<arg line="${project_src_dir}/@{src-pkg}/@{class-name}" />
+				<arg value="-source-path=${project_src_dir}/" />
+				<arg value="-source-path=${external_src_dir}/" />
+				
+				<arg line="-library-path='${libs_dir}/common/'" />
+				<arg line="-library-path='${libs_dir}/web/'" />
+				<arg line="-library-path='${gfx_lib_dir}/'" />
+				<arg line="-library-path='${sdk_dir}/frameworks/libs'" />
+				<arg value="+flexlib=${sdk_dir}/frameworks" />
+				
+				<arg value="-debug=true" />
+				<arg value="-optimize=true" />
+				<arg value="-compiler.strict=true" />
+				<arg value="-show-actionscript-warnings=true" />
+				<arg value="-show-unused-type-selector-warnings=true" />
+				<arg line="-static-link-runtime-shared-libraries=true" />
+				
+				<arg line="-default-frame-rate=${swf_framerate}" />
+				<arg line="-default-background-color=0x${swf_bgcolor}" />
+				<arg line="-default-size ${swf_width} ${swf_height}" />
+				<arg line="-target-player=10.1" />
+				
+				<arg line="-output ${debug_dir}/swf/@{swf-name}.swf" />
+				
+				<!--<arg line="-compiler.include-libraries ${gfx_lib_dir}/RapThatTweet.swc" />-->
+				<!--<arg line="-compiler.source-path ${external_src_dir}" />-->
+			</exec>
+			<echo message=" " />
+		</sequential>
+	</macrodef>
+	
+	
+
+	<macrodef name="compileDeploySWF" description="Builds a SWF for distrobution">
+		<attribute name="src-pkg" />
+		<attribute name="class" />
+		<attribute name="swf" />
+		<sequential>
+			<exec executable="${sdk_dir}/bin/${mxmlc_exec}" dir="${basedir}" failonerror="true">
+				<arg line="'${project_src_dir}/@{src-pkg}/@{class}.as'" />
+				<arg line="-debug=false" />
+				<arg line="-default-frame-rate=${swf_framerate}" />
+				<arg line="-default-background-color=0x${swf_bgcolor}" />
+				<arg line="-default-size ${swf_width} ${swf_height}" />
+				<arg line="-static-link-runtime-shared-libraries=true" />
+				<arg line="-source-path='${project_src_dir}/'" />
+				<arg line="-source-path='${external_src_dir}/'" />
+				<arg line="-library-path='${libs_dir}/common/'" />
+				<arg line="-library-path='${libs_dir}/web/'" />
+				<arg line="-library-path='${gfx_lib_dir}/'" />
+				<arg line="-library-path='${sdk_dir}/frameworks/libs'" />
+				<arg line="-target-player=10.1" />
+				<arg line="-output '${deploy_dir}/swf/@{swf}.swf'" />
+			</exec>
+		</sequential>
+	</macrodef>
+
+
+	<target name="Launch debug dir site">
+		<echo>Lauching browser w/ page: file://${debug_dir}/${web_html}</echo>
+		<exec executable="${web_browser}" spawn="yes">
+			<arg line="file:///${debug_dir}/${web_html}" />
+		</exec>
+	</target>
+
+	<target name="Publish debug website on local webserver">
+		<echo>Copying contents of debug folder to local webserver htdocs: ${web_dir}</echo>
+		<copy todir="${web_dir}">
+			<fileset dir="${debug_dir}">
+				<include name="**" />
+			</fileset>
+		</copy>
+		
+		<!--
+		<echo>Replacing token '@@@baseURL@@@' in /proxy/index.php to: ${web_root_url}/proxy</echo>
+		<replace file="${web_dir}/proxy/index.php" token="@@@baseURL@@@" value="${web_root_url}/proxy"/>
+		
+		<echo>Replacing token '@@@auth-proxy@@@' in /config/config.xml to: http://${weburl}</echo>
+		<replace file="${web_dir}/config/config.xml" token="@@@auth-proxy@@@" value="http://${weburl}"/>
+		
+		
+		
+		<echo>Setting R/W/X permissions on ${web_dir}/proxy</echo>
+		<exec executable="chmod" spawn="no"><arg line="777 ${web_dir}/proxy" /></exec>
+		<echo>Setting R/W/X permissions on ${web_dir}/proxy/index.php</echo>
+		<exec executable="chmod" spawn="no"><arg line="777 ${web_dir}/proxy/index.php" /></exec>
+		-->	
+	</target>
+	
+	
+	
+		
+	<target name="Publish debug website on ACNE server">
+		<echo>Copying contents of debug folder to ACNE webserver htdocs: ${acne_webroot_dir}</echo>
+		<copy todir="${acne_webroot_dir}">
+			<fileset dir="${debug_dir}">
+				<include name="**" />
+			</fileset>
+		</copy>
+		
+		<!--
+		<echo>Replacing token '@@@baseURL@@@' in /proxy/index.php to: ${acne_webroot_dir}/proxy</echo>
+		<replace file="${acne_webroot_dir}/proxy/index.php" token="@@@baseURL@@@" value="${acne_webroot_path}/proxy"/>
+				
+		<echo>Replacing token '@@@auth-proxy@@@' in /config/config.xml to: http://${acne_webroot_dir}</echo>
+		<replace file="${acne_webroot_dir}/config/config.xml" token="@@@auth-proxy@@@" value="http://${acne_wan_ip}:${acne_web_port}/${acne_webroot_path}"/>
+		-->
+		
+		<antcall target="Launch ACNE external site in browser" />
+	</target>
+		
+	
+	<target name="Launch ACNE external site in browser" depends="" description="Opens the browser">
+		<echo>Lauching browser w/ page: ${weburl}/${web_html}</echo>
+		<exec executable="open" spawn="yes">
+			<arg line="-a ${web_browser}" />
+			<arg line="http://${acne_ext_web_url}/${web_html}" />
+		</exec>
+	</target>
+	
+	
+	<target name="Launch ACNE LAN site in browser" depends="" description="Opens the browser">
+		<echo>Lauching browser w/ page: ${weburl}/${web_html}</echo>
+		<exec executable="open" spawn="yes">
+			<arg line="-a ${web_browser}" />
+			<arg line="http://${acne_lan_web_url}/${web_html}" />
+		</exec>
+	</target>
+
+
+	<target name="Launch localhost site in browser" depends="" description="Opens the browser">
+		<echo>Lauching browser w/ page: ${weburl}/${web_html}</echo>
+		<exec executable="open" spawn="yes">
+			<arg line="-a ${web_browser}" />
+			<arg line="http://${weburl}/${web_html}" />
+		</exec>
+		
+		<!--
+		<echo>Lauching browser w/ page: ${weburl}/${web_html}</echo>
+		<exec executable="${web_browser}" spawn="yes">
+			<arg line="${browser.args}" />
+			<arg line="${weburl}/${web_html}" />
+		</exec>
+		-->
+	</target>
+	
+	<target name="Launch ACNE site in browser" depends="" description="Opens the browser">
+		<echo>Lauching browser w/ page: ${acne_web_url}</echo>
+		<exec executable="open" spawn="yes">
+			<arg line="-a ${web_browser}" />
+			<arg line="${acne_web_url}" />
+		</exec>
+	</target>
+	
+	<target name="Build, publish, &amp; launch debug site on local web server" depends="Build ALL for debugging, Publish debug website on local webserver, Launch localhost site in browser" description="Builds, publishes, then lauches the browser to localhost" />
+	
+	<target name="Publish localhost site on ACNE web server &amp; launch" depends="" description="Builds, publishes, then lauches the browser to localhost" />
+	
+	<!--
+	<target name="Launch deploy website">
+		<echo>Lauching browser w/ page: file://${deploy_dir}/${web_html}</echo>
+		
+		<exec executable="open" spawn="no">
+			<arg line="-a ${web_browser}" />
+			<arg line="http://${weburl}/${web_html}" />
+		</exec>
+	</target>
+	-->
+	<!-- *********** End of project targets *********** -->
+</project>

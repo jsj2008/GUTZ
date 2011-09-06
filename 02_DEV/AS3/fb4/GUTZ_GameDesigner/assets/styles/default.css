@@ -1,0 +1,58 @@
+/* CSS file */
+
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/halo";
+@namespace mx1 "library://ns.adobe.com/flex/mx";
+
+/*------------------------------------------------------------------------------ Fonts */
+/*------------------------------------------------------------------------------ Global */
+
+
+
+/** @import **/
+/** @media **/
+/** @font-face **/
+
+
+/*
+s|WindowedApplication {
+	background-color: #2e333f;
+}
+*/
+
+mx1|ToolTip { 
+	fontFamily: "Arial"; 
+	fontSize: 10; 
+	fontStyle: "italic"; 
+	color: #FF6699; 
+	backgroundColor: #33CC99;
+}
+
+
+s|Label {
+	font-size: 10;
+}
+
+s|Label .lblCoords {
+	font-size: 12;
+}
+
+s|Panel {
+	background-alpha: 0;
+}
+
+
+s|Panel #titleDisplay {
+	text-align: center;
+	font-size: 12;
+	header-height: 16;
+}
+
+
+s|RadioButton {
+	font-size: 10;
+}
+
+
+/*------------------------------------------------------------------------------ Text */
+/*------------------------------------------------------------------------------ Application */
