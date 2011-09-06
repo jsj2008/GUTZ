@@ -1,2 +1,0 @@
-﻿package com.sparklemountain.gutz.creaturebuilder.model.vo  {		import flash.geom.Point;	import mx.core.IVisualElement;	
-		public class CircleVO extends AbstractPartVO implements iPartVO {				public var radius:Number;						public function CircleVO(idx:int, kind:String, pos:Point, rad:Number, asset:IVisualElement=null) {			super(idx, kind, pos, asset);						radius = rad;		}	}}
