@@ -87,6 +87,7 @@
 	int score_amt;
 	BOOL _isCleared;
 	BOOL _isBonus;
+	BOOL _isWallSFX;
 	
 	cpFloat _edgeRad;
 	int _cntTargets;
@@ -132,6 +133,8 @@
 -(void) scaffoldHUD;
 -(void) debuggingSetup;
 -(void) onResetArea:(id)sender;
+
+-(void)resetWallSFX:(id)sender;
 
 - (void)setupSFX;
 -(void) buildLvlObjs;

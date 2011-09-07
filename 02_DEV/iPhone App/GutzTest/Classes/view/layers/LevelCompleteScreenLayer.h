@@ -10,22 +10,15 @@
 
 #import "ScreenManager.h"
 
-#import "BaseScreenLayer.h"
+#import "BasePhysicsLayer.h"
 #import "PlayScreenLayer.h"
 
 #import "ObjectiveChipmunk.h"
 #import "JellyBlob.h"
 
-@interface LevelCompleteScreenLayer : BaseScreenLayer {
+@interface LevelCompleteScreenLayer : BasePhysicsLayer {
     
 	int indLvl;
-	
-	
-	ChipmunkSpace *_space;
-	JellyBlob *_accBlob1;
-	JellyBlob *_accBlob2;
-	JellyBlob *_accBlob3;
-	
 	BOOL _isBonus;
 	
 	
@@ -42,10 +35,8 @@
 -(void) onNextLevel:(id)sender;
 
 
--(void) physicsStepper:(ccTime)dt;
 -(void)letterWiggleProvoker:(id)sender;
 -(void)starWiggleProvoker:(id)sender;
--(void) mobWiggler:(id)sender;
 -(void)letterWiggler:(id)sender;
 -(void)starWiggler:(id)sender;
 

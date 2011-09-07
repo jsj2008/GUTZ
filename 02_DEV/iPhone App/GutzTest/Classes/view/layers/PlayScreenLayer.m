@@ -8,6 +8,7 @@
 
 #import "GameConfig.h"
 #import "GameConsts.h"
+#import "CreatureConsts.h"
 
 #import "ChipmunkDebugNode.h"
 #import "PlayScreenLayer.h"
@@ -73,6 +74,7 @@ static NSString *borderType = @"borderType";
 		
 		_isBonus = NO;
 		_isCleared = NO;
+		_isWallSFX = NO;
 		
 		arrTouchedEdge = [[NSMutableArray alloc] init];
 		
@@ -335,10 +337,10 @@ static NSString *borderType = @"borderType";
 
 -(void) mobWiggler:(id)sender {
 	
-	cpFloat maxForce = 4.0f;
-	
+	cpFloat maxForce = kWiggleMaxForce;
 	cpFloat rndForce = CCRANDOM_0_1() * maxForce;
-	[_blob wiggleWithForce:[[RandUtils singleton]randIndex:BLOB_SEGS] force:rndForce];
+	
+	[_blob wiggleWithForce:[[RandUtils singleton]rndIndex:BLOB_SEGS] force:rndForce];
 }
 
 
@@ -430,7 +432,7 @@ static NSString *borderType = @"borderType";
 #pragma mark BonusCollisionHandlers
 
 - (BOOL)beginBonusCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	NSLog(@"%@.beginBonusCollision()", [self class]);
+	//NSLog(@"%@.beginBonusCollision()", [self class]);
 	
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
 	
@@ -443,15 +445,11 @@ static NSString *borderType = @"borderType";
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"ScoreChanged" object:[[NSNumber alloc] initWithInt:score_amt]];
 	[[PlayStatsModel singleton] incScore:score_amt];
 	
-	
-	
-	//NSLog(@"0:[%@] 1:[%@] 2:[%@]", [arrTargets objectAtIndex:0], [arrTargets objectAtIndex:1], [arrTargets objectAtIndex:2]);
-	
 	return (NO);
 }
 
 - (void)separateBonusCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	NSLog(@"%@.separateBonusCollision()", [self class]);
+	//NSLog(@"%@.separateBonusCollision()", [self class]);
 	
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
 	
@@ -468,21 +466,24 @@ static NSString *borderType = @"borderType";
 #pragma mark WallCollisionHandlers
 
 - (BOOL)beginWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	NSLog(@"beginWallCollision");
+	//NSLog(@"beginWallCollision");
 	
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
 	
 	
-	if (CCRANDOM_0_1() < 0.15f) {
+	if (CCRANDOM_0_1() < 0.15f && !_isWallSFX) {
+		_isWallSFX = true;
 		[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.1f];
 		[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_noise-02.mp3"];
+		
+		[self performSelector:@selector(resetWallSFX:) withObject:self afterDelay:0.33f];
 	}
 	
 	return (YES);
 }
 
 - (BOOL)preSolveWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	NSLog(@"preSolveWallCollision");
+	//NSLog(@"preSolveWallCollision");
 	
 	return (YES);
 }
@@ -496,8 +497,8 @@ static NSString *borderType = @"borderType";
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
 	
 	// force of the colliding bodies
-	cpFloat impulse = cpvlength(cpArbiterTotalImpulse(arbiter));
-	NSLog(@"postSolveWallCollision:[%f] (%@)", impulse, blobShape.collisionType);
+	//cpFloat impulse = cpvlength(cpArbiterTotalImpulse(arbiter));
+	//NSLog(@"postSolveWallCollision:[%f] (%@)", impulse, blobShape.collisionType);
 	
 	if (cpvlength(cpArbiterTotalImpulse(arbiter)) > 220.0f) {
 		[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.5f];
@@ -506,7 +507,7 @@ static NSString *borderType = @"borderType";
 }
 
 - (void)separateWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	NSLog(@"separateWallCollision: [%d]", _cntTargets);
+	//NSLog(@"separateWallCollision: [%d]", _cntTargets);
 	
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
 	
@@ -514,6 +515,11 @@ static NSString *borderType = @"borderType";
 		gibPos = CGPointMake(blobShape.body.pos.x, blobShape.body.pos.y);
 		[self performSelector:@selector(addGib:) withObject:nil afterDelay:0.05f];
 	}
+}
+
+
+-(void)resetWallSFX:(id)sender {
+	_isWallSFX = NO;
 }
 
 
@@ -684,7 +690,7 @@ static NSString *borderType = @"borderType";
 
 	}
 	
-	
+	//NSLog(@"///////FLOAT(0-10):[%f]////////", [[RandUtils singleton] rndFloat:0.0f max:10.0f]);
 	
 	//for (int i=0; i<[arrGibs count]; i++) {
 	//	ChipmunkShape *shape = (ChipmunkShape *)[arrGibs objectAtIndex:i];
@@ -724,7 +730,6 @@ static NSString *borderType = @"borderType";
 
 -(void) onBackMenu:(id)sender {
 	NSLog(@"PlayScreenLayer.onBackMenu()");
-	
 	[ScreenManager goLevelSelect];
 }
 
@@ -741,7 +746,6 @@ static NSString *borderType = @"borderType";
 
 -(void) onGameOver:(id)sender {
 	NSLog(@"PlayScreenLayer.onGameOver()");
-	
 	[ScreenManager goGameOver];
 }
 
@@ -756,7 +760,6 @@ static NSString *borderType = @"borderType";
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc {
-	//NSLog(@"PlayScreenLayer.()");
 	
 	self.splatDripsAction = nil;
 	self.splatExploAction = nil;
@@ -778,7 +781,8 @@ TouchLocation(UITouch *touch) {
 }
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event; {
-	for(UITouch *touch in touches) {
+	
+	for (UITouch *touch in touches) {
 		[_multiGrab beginLocation:TouchLocation(touch)];
 		
 		int ind = [_blob bodyIndexAt:TouchLocation(touch)];
@@ -794,13 +798,14 @@ TouchLocation(UITouch *touch) {
 }
 
 - (void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event; {
-	for(UITouch *touch in touches) {
+	
+	for (UITouch *touch in touches)
 		[_multiGrab updateLocation:TouchLocation(touch)];
-	}
 }
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event; {
-	for(UITouch *touch in touches) {
+	
+	for (UITouch *touch in touches) {
 		[_multiGrab endLocation:TouchLocation(touch)];
 		
 		
@@ -811,32 +816,12 @@ TouchLocation(UITouch *touch) {
 			[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_noise-02.mp3"];
 		}
 		
-		//if (ind >= 0) {
-		//NSLog(@"PlayScreenLayer.ccTouchesEnded(%d)", ind);
 			
-			for (int i=0; i<[arrTouchedEdge count]; i++) {
-				if ([[arrTouchedEdge objectAtIndex:i] isEqualToString:[NSString stringWithFormat:@"E_%d", ind]]) {
-					[arrTouchedEdge removeObjectAtIndex:i];
-				}
-			}
-		//}
+		for (int i=0; i<[arrTouchedEdge count]; i++) {
+			if ([[arrTouchedEdge objectAtIndex:i] isEqualToString:[NSString stringWithFormat:@"E_%d", ind]])
+				[arrTouchedEdge removeObjectAtIndex:i];
+		}
 	}
-}
-
-- (void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {	
-	//NSLog(@"PlayScreenLayer.accelerometer()");
-	
-	static float prevX=0, prevY=0;
-	
-#define kFilterFactor 0.05f
-	
-	float accelX = (float)(acceleration.x * kFilterFactor + (1 - kFilterFactor) * prevX);
-	float accelY = (float)(acceleration.y * kFilterFactor + (1 - kFilterFactor) * prevY);
-	
-	prevX = accelX;
-	prevY = accelY;
-	
-	_space.gravity = ccpMult(ccp(accelX, accelY), 32);
 }
 
 

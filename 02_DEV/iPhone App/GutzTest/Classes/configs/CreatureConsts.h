@@ -19,7 +19,7 @@
 #define kWiggleMaxInterval 0.5f
 
 #define kWiggleMaxLinVelocity 16.0f
-#define kWiggleMaxForce 32.0f
+#define kWiggleMaxForce 4.0f
 #define kWiggleMaxTorq 64.0f
 
 

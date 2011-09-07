@@ -290,9 +290,9 @@
 	
 	for (int i=0; i<[_arrParts count]; i++) {
 		body = [_arrParts objectAtIndex:i];
-		if (cpvnear(body.pos, pos, 15)) {
+		
+		if (cpvnear(body.pos, pos, 15))
 			return (body);
-		}
 	}
 	
 	
@@ -306,7 +306,6 @@
 		ChipmunkBody *body = [_edgeBodies objectAtIndex:i];
 		
 		if (cpvnear(body.pos, pos, 15)) {
-			
 			//NSLog(@"JellyBlob.bodyIndexAt[%d]", i);
 			
 			return (i);
@@ -338,21 +337,19 @@
 	float area = [[GeomUtils singleton] polygonArea:[NSArray arrayWithArray:_edgeBodies]];
 	
 	
-	if ((int)area > 23000) {
+	if ((int)area > 24000) {
 		NSLog(@"--> AREA:[%f]", area);
 		
 		if (!isStretched) {
 			isStretched = YES;
 			
 			[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.875f];
-			[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_long_stetch.mp3"];
-			
-			//[self performSelector:@selector(resetStretch:) withObject:self afterDelay:0.33f];
+			[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_long_stretch.mp3"];
 		}
 	}
 	
 	
-	if ((int)area < 20000) {
+	if ((int)area < 18000) {
 		//NSLog(@"<-- AREA:[%f]", area);
 		if (isStretched) {
 			isStretched = NO;
@@ -382,9 +379,6 @@
 	
 	[_centralBody applyImpulse:cpvmult(cpv(f * CCRANDOM_MINUS1_1(), f * CCRANDOM_MINUS1_1()), 16) offset:cpvzero];
 	[body applyImpulse:cpv(f, f) offset:_centralBody.pos];
-	
-	
-	//posPt = cpvadd(_centralBody.pos, cpv((CCRANDOM_0_1() * 2) - 1, (CCRANDOM_0_1() * 2) - 1));
 }
 
 -(void)pop {

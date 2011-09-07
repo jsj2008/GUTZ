@@ -10,7 +10,7 @@
 
 #import "ScreenManager.h"
 
-#import "BaseScreenLayer.h"
+#import "BasePhysicsLayer.h"
 #import "ConfigMenuLayer.h"
 #import "LevelSelectScreenLayer.h"
 
@@ -18,21 +18,14 @@
 #import "JellyBlob.h"
 
 
-@interface MainMenuScreenLayer : BaseScreenLayer {
-	
-	ChipmunkSpace *_space;
-	JellyBlob *_accBlob1;
-	JellyBlob *_accBlob2;
-	JellyBlob *_accBlob3;
-	JellyBlob *_accBlob4;
+@interface MainMenuScreenLayer : BasePhysicsLayer {
 	
 }
 
-- (void)onNewGame:(id)sender;
-- (void)onStore:(id)sender;
-- (void)onAbout:(id)sender;
-- (void)onConfig:(id)sender;
+-(void)onNewGame:(id)sender;
+-(void)onStore:(id)sender;
+-(void)onAbout:(id)sender;
+-(void)onConfig:(id)sender;
 
-- (void)physicsStepper:(ccTime)dt;
-- (void)mobWiggler:(id)sender;
+
 @end

@@ -492,6 +492,8 @@
 		4CB2BB0813CD5630006F9F89 /* VoronoiUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2BB0713CD562F006F9F89 /* VoronoiUtils.m */; };
 		4CB2BB0B13CD56A0006F9F89 /* GaussUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB2BB0A13CD56A0006F9F89 /* GaussUtils.m */; };
 		4CB2C43513FA21F2005C708A /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CB2C43413FA21F2005C708A /* test.png */; };
+		4CBCEEA214175D27002165D6 /* BasePhysicsLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBCEEA014175D27002165D6 /* BasePhysicsLayer.h */; };
+		4CBCEEA314175D27002165D6 /* BasePhysicsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCEEA114175D27002165D6 /* BasePhysicsLayer.m */; };
 		4CC18FB913B0202600CE8974 /* button_moreInfo_nonActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC18FAD13B0202600CE8974 /* button_moreInfo_nonActive.png */; };
 		4CC18FBA13B0202600CE8974 /* button_options_Active.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC18FAE13B0202600CE8974 /* button_options_Active.png */; };
 		4CC18FBB13B0202600CE8974 /* button_options_nonActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC18FAF13B0202600CE8974 /* button_options_nonActive.png */; };
@@ -550,7 +552,6 @@
 		4CEA22FC13FAF214009D1198 /* background_play.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA22FB13FAF214009D1198 /* background_play.jpg */; };
 		4CEA230013FAF450009D1198 /* eye.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA22FE13FAF450009D1198 /* eye.png */; };
 		4CEA230113FAF450009D1198 /* mouth.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA22FF13FAF450009D1198 /* mouth.png */; };
-		4CEA230413FAF682009D1198 /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA230313FAF682009D1198 /* target.png */; };
 		4CEA230913FAFAB7009D1198 /* gut_bits03.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA230513FAFAB7009D1198 /* gut_bits03.png */; };
 		4CEA230A13FAFAB7009D1198 /* gut_bits04.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA230613FAFAB7009D1198 /* gut_bits04.png */; };
 		4CEA230B13FAFAB7009D1198 /* gut_bits02.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA230713FAFAB7009D1198 /* gut_bits02.png */; };
@@ -1110,6 +1111,8 @@
 		4CB2BB0913CD569F006F9F89 /* GaussUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaussUtils.h; sourceTree = "<group>"; };
 		4CB2BB0A13CD56A0006F9F89 /* GaussUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GaussUtils.m; sourceTree = "<group>"; };
 		4CB2C43413FA21F2005C708A /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test.png; path = Resources/test.png; sourceTree = "<group>"; };
+		4CBCEEA014175D27002165D6 /* BasePhysicsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasePhysicsLayer.h; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/layers/BasePhysicsLayer.h"; sourceTree = "<group>"; };
+		4CBCEEA114175D27002165D6 /* BasePhysicsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasePhysicsLayer.m; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/layers/BasePhysicsLayer.m"; sourceTree = "<group>"; };
 		4CC18FAD13B0202600CE8974 /* button_moreInfo_nonActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_moreInfo_nonActive.png; path = Resources/button_moreInfo_nonActive.png; sourceTree = "<group>"; };
 		4CC18FAE13B0202600CE8974 /* button_options_Active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_options_Active.png; path = Resources/button_options_Active.png; sourceTree = "<group>"; };
 		4CC18FAF13B0202600CE8974 /* button_options_nonActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_options_nonActive.png; path = Resources/button_options_nonActive.png; sourceTree = "<group>"; };
@@ -1185,7 +1188,6 @@
 		4CEA22FB13FAF214009D1198 /* background_play.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background_play.jpg; path = Resources/background_play.jpg; sourceTree = "<group>"; };
 		4CEA22FE13FAF450009D1198 /* eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eye.png; path = Resources/eye.png; sourceTree = "<group>"; };
 		4CEA22FF13FAF450009D1198 /* mouth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mouth.png; path = Resources/mouth.png; sourceTree = "<group>"; };
-		4CEA230313FAF682009D1198 /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = target.png; path = Resources/target.png; sourceTree = "<group>"; };
 		4CEA230513FAFAB7009D1198 /* gut_bits03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gut_bits03.png; path = Resources/gut_bits03.png; sourceTree = "<group>"; };
 		4CEA230613FAFAB7009D1198 /* gut_bits04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gut_bits04.png; path = Resources/gut_bits04.png; sourceTree = "<group>"; };
 		4CEA230713FAFAB7009D1198 /* gut_bits02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gut_bits02.png; path = Resources/gut_bits02.png; sourceTree = "<group>"; };
@@ -1302,13 +1304,13 @@
 				4CD80D061416090D00AAD2DC /* BGM */,
 				4C2B84C213F6F8AD00656BC5 /* SFX */,
 				4CEA230213FAF669009D1198 /* Arena Stuff */,
-				4CC3AB6013BDA94F00AA130E /* Sprite Maps */,
 				4CD6FA7213BC62B90070B5C1 /* Creature Segments */,
 				4CD6FA8D13BCC4FD0070B5C1 /* Prop Lists */,
 				4CD6FA7013BC62050070B5C1 /* GFX Elements */,
 				4CD6FA6B13BC61850070B5C1 /* Screens */,
-				4CCCC98313FC4EB60076F9E8 /* Default.png */,
+				4CC3AB6013BDA94F00AA130E /* Sprite Maps */,
 				4CEA232713FB51D1009D1198 /* Default@2x.png */,
+				4CCCC98313FC4EB60076F9E8 /* Default.png */,
 				4C08C96C13A957B3007A0542 /* Icon-72.png */,
 				4C08C96E13A957B3007A0542 /* Icon-Small-50.png */,
 				4C08C97013A957B3007A0542 /* Icon-Small.png */,
@@ -1404,11 +1406,12 @@
 		4C3CB34B140716FB0049D4C4 /* Level Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4C9C648213FC7CD600EF993B /* inGamePin-hd.png */,
+				4C9C648313FC7CD600EF993B /* inGamePin.png */,
 				4CA6EED21416AEF200425F27 /* blocker_B_-hd.png */,
 				4CA6EED31416AEF200425F27 /* blocker_B_.png */,
 				4CA6EED41416AEF200425F27 /* blocker-hd.png */,
 				4CA6EED51416AEF200425F27 /* blocker.png */,
-				4CEA230313FAF682009D1198 /* target.png */,
 			);
 			name = "Level Assets";
 			sourceTree = "<group>";
@@ -1984,6 +1987,43 @@
 			name = "Creature Data";
 			sourceTree = "<group>";
 		};
+		4CBCEE9E14175C4D002165D6 /* HUD Elements */ = {
+			isa = PBXGroup;
+			children = (
+				4C9C646613FC777600EF993B /* btn_pause-hd.png */,
+				4C9C646713FC777600EF993B /* btn_pause.png */,
+				4C9C646813FC777600EF993B /* btn_pauseActive-hd.png */,
+				4C9C646913FC777600EF993B /* btn_pauseActive.png */,
+				4C85D39813C4649600EEF3F8 /* HUD_footerBG.png */,
+				4C85D39C13C4662700EEF3F8 /* HUD_footerBG-hd.png */,
+				4C08CB3D13A99E17007A0542 /* HUD_starA.png */,
+				4C08CB3E13A99E18007A0542 /* HUD_starB.png */,
+				4C85D39A13C4662600EEF3F8 /* HUD_starA-hd.png */,
+				4C85D39B13C4662600EEF3F8 /* HUD_starB-hd.png */,
+			);
+			name = "HUD Elements";
+			sourceTree = "<group>";
+		};
+		4CBCEE9F14175C72002165D6 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				4C569AE913F0A65900F061D0 /* debug_staticBody-128x8-hd.jpg */,
+				4C569AEA13F0A65900F061D0 /* debug_staticBody-128x8.jpg */,
+				4C569AEB13F0A65900F061D0 /* debug_staticBody-128x32.jpg */,
+				4C569AEC13F0A65900F061D0 /* debug_staticBody-320x16-hd.jpg */,
+				4C569AED13F0A65900F061D0 /* debug_staticBody-320x16.jpg */,
+				4CB2BAF413CD1A16006F9F89 /* debug_node-00.png */,
+				4C5694E113CE023A0047068D /* debug_node-00-hd.png */,
+				4CB2BAF513CD1A16006F9F89 /* debug_node-01.png */,
+				4C5694E213CE023A0047068D /* debug_node-01-hd.png */,
+				4CB2BAF613CD1A16006F9F89 /* debug_node-02.png */,
+				4C5694E313CE023A0047068D /* debug_node-02-hd.png */,
+				4C08C96A13A957B3007A0542 /* fps_images.png */,
+				4C5694E813CE056A0047068D /* fps_images-color.png */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
 		4CC3AB5313BD86A400AA130E /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -2092,18 +2132,20 @@
 			children = (
 				4CD6FA1313BC50860070B5C1 /* BaseScreenLayer.h */,
 				4CD6FA1413BC50860070B5C1 /* BaseScreenLayer.m */,
-				4CD6FA1513BC50860070B5C1 /* ConfigMenuLayer.h */,
-				4CD6FA7B13BC722C0070B5C1 /* ConfigMenuLayer.m */,
-				4CD6FA1813BC50860070B5C1 /* LevelCompleteScreenLayer.h */,
-				4CD6FA1913BC50860070B5C1 /* LevelCompleteScreenLayer.m */,
-				4CD6FA1A13BC50860070B5C1 /* LevelSelectScreenLayer.h */,
-				4CD6FA1B13BC50860070B5C1 /* LevelSelectScreenLayer.m */,
+				4CBCEEA014175D27002165D6 /* BasePhysicsLayer.h */,
+				4CBCEEA114175D27002165D6 /* BasePhysicsLayer.m */,
 				4CD6FA1C13BC50860070B5C1 /* MainMenuScreenLayer.h */,
 				4CD6FA1D13BC50860070B5C1 /* MainMenuScreenLayer.m */,
-				4CD6FA1E13BC50860070B5C1 /* PlayScreenLayer.h */,
-				4CD6FA1F13BC50860070B5C1 /* PlayScreenLayer.m */,
+				4CD6FA1A13BC50860070B5C1 /* LevelSelectScreenLayer.h */,
+				4CD6FA1B13BC50860070B5C1 /* LevelSelectScreenLayer.m */,
+				4CD6FA1813BC50860070B5C1 /* LevelCompleteScreenLayer.h */,
+				4CD6FA1913BC50860070B5C1 /* LevelCompleteScreenLayer.m */,
 				4C091C9D13C5126100581EAC /* GameOverScreenLayer.h */,
 				4C091C9E13C5126100581EAC /* GameOverScreenLayer.m */,
+				4CD6FA1513BC50860070B5C1 /* ConfigMenuLayer.h */,
+				4CD6FA7B13BC722C0070B5C1 /* ConfigMenuLayer.m */,
+				4CD6FA1E13BC50860070B5C1 /* PlayScreenLayer.h */,
+				4CD6FA1F13BC50860070B5C1 /* PlayScreenLayer.m */,
 			);
 			path = layers;
 			sourceTree = "<group>";
@@ -2294,18 +2336,7 @@
 		4CD6FA7113BC628C0070B5C1 /* Play Arena */ = {
 			isa = PBXGroup;
 			children = (
-				4C9C648213FC7CD600EF993B /* inGamePin-hd.png */,
-				4C9C648313FC7CD600EF993B /* inGamePin.png */,
-				4C9C646613FC777600EF993B /* btn_pause-hd.png */,
-				4C9C646713FC777600EF993B /* btn_pause.png */,
-				4C9C646813FC777600EF993B /* btn_pauseActive-hd.png */,
-				4C9C646913FC777600EF993B /* btn_pauseActive.png */,
-				4C85D39813C4649600EEF3F8 /* HUD_footerBG.png */,
-				4C85D39C13C4662700EEF3F8 /* HUD_footerBG-hd.png */,
-				4C08CB3D13A99E17007A0542 /* HUD_starA.png */,
-				4C08CB3E13A99E18007A0542 /* HUD_starB.png */,
-				4C85D39A13C4662600EEF3F8 /* HUD_starA-hd.png */,
-				4C85D39B13C4662600EEF3F8 /* HUD_starB-hd.png */,
+				4CBCEE9E14175C4D002165D6 /* HUD Elements */,
 			);
 			name = "Play Arena";
 			sourceTree = "<group>";
@@ -2354,20 +2385,8 @@
 		4CD6FA7413BC62E70070B5C1 /* Debugging */ = {
 			isa = PBXGroup;
 			children = (
+				4CBCEE9F14175C72002165D6 /* img */,
 				4C1B977D1417395A0039A3E8 /* sfx */,
-				4C569AE913F0A65900F061D0 /* debug_staticBody-128x8-hd.jpg */,
-				4C569AEA13F0A65900F061D0 /* debug_staticBody-128x8.jpg */,
-				4C569AEB13F0A65900F061D0 /* debug_staticBody-128x32.jpg */,
-				4C569AEC13F0A65900F061D0 /* debug_staticBody-320x16-hd.jpg */,
-				4C569AED13F0A65900F061D0 /* debug_staticBody-320x16.jpg */,
-				4CB2BAF413CD1A16006F9F89 /* debug_node-00.png */,
-				4C5694E113CE023A0047068D /* debug_node-00-hd.png */,
-				4CB2BAF513CD1A16006F9F89 /* debug_node-01.png */,
-				4C5694E213CE023A0047068D /* debug_node-01-hd.png */,
-				4CB2BAF613CD1A16006F9F89 /* debug_node-02.png */,
-				4C5694E313CE023A0047068D /* debug_node-02-hd.png */,
-				4C08C96A13A957B3007A0542 /* fps_images.png */,
-				4C5694E813CE056A0047068D /* fps_images-color.png */,
 			);
 			name = Debugging;
 			sourceTree = "<group>";
@@ -2589,6 +2608,7 @@
 				4CA6EEE11416BD3800425F27 /* BonusTarget.h in Headers */,
 				4CA6EEE91416BED400425F27 /* StarGoalTarget.h in Headers */,
 				4CA6EEED1416C01000425F27 /* BaseTarget.h in Headers */,
+				4CBCEEA214175D27002165D6 /* BasePhysicsLayer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2755,7 +2775,6 @@
 				4CEA22FC13FAF214009D1198 /* background_play.jpg in Resources */,
 				4CEA230013FAF450009D1198 /* eye.png in Resources */,
 				4CEA230113FAF450009D1198 /* mouth.png in Resources */,
-				4CEA230413FAF682009D1198 /* target.png in Resources */,
 				4CEA230913FAFAB7009D1198 /* gut_bits03.png in Resources */,
 				4CEA230A13FAFAB7009D1198 /* gut_bits04.png in Resources */,
 				4CEA230B13FAFAB7009D1198 /* gut_bits02.png in Resources */,
@@ -3069,6 +3088,7 @@
 				4CA6EEE21416BD3800425F27 /* BonusTarget.m in Sources */,
 				4CA6EEEA1416BED400425F27 /* StarGoalTarget.m in Sources */,
 				4CA6EEEE1416C01000425F27 /* BaseTarget.m in Sources */,
+				4CBCEEA314175D27002165D6 /* BasePhysicsLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

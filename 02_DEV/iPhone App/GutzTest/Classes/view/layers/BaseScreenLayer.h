@@ -14,6 +14,6 @@
     
 }
 
-- (id)initWithBackround:(NSString *)asset;
-- (id)initWithBackround:(NSString *)asset position:(CGPoint)pos;
+-(id)initWithBackround:(NSString *)asset;
+-(id)initWithBackround:(NSString *)asset position:(CGPoint)pos;
 @end

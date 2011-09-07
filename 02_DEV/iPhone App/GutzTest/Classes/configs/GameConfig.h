@@ -20,6 +20,8 @@
 #define kGameAutorotationCCDirector 1
 #define kGameAutorotationUIViewController 2
 
+//#define ARC4RANDOM_MAX 0x100000000
+
 #define kShowDebugMenus 0
 #define kLastLevel 4
 
