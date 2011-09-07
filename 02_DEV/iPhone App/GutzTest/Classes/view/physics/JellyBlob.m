@@ -338,7 +338,7 @@
 	
 	
 	if ((int)area > 24000) {
-		NSLog(@"--> AREA:[%f]", area);
+		//NSLog(@"--> AREA:[%f]", area);
 		
 		if (!isStretched) {
 			isStretched = YES;
@@ -349,7 +349,7 @@
 	}
 	
 	
-	if ((int)area < 18000) {
+	if ((int)area < 17500) {
 		//NSLog(@"<-- AREA:[%f]", area);
 		if (isStretched) {
 			isStretched = NO;

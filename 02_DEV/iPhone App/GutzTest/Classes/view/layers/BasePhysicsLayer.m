@@ -20,7 +20,7 @@ static NSString *borderType = @"borderType";
 
 -(id)initWithBackround:(NSString *)asset {
 	if ((self = [super initWithBackround:asset])) {
-		[self setupChipmunk];
+		//[self setupChipmunk];
 	}
 	
 	return (self);
@@ -34,7 +34,7 @@ static NSString *borderType = @"borderType";
 		sprite.position = ccp(pos.x, pos.y);
 		[self addChild:sprite z:0];
 		
-		[self setupChipmunk];
+		//[self setupChipmunk];
 	}
 		
 	return (self);
@@ -43,7 +43,7 @@ static NSString *borderType = @"borderType";
 
 -(id)initWithColor:(ccColor4B)color {
 	if ((self = [super initWithColor:color])) {
-		[self setupChipmunk];
+		//[self setupChipmunk];
 	}
 	
 	return (self);
