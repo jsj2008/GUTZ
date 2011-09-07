@@ -27,6 +27,16 @@ static NSString *borderType = @"borderType";
 	return ([self init]);
 }
 
+
+-(id)initWithLevel:(int)lvl withBonus:(BOOL)bonus {
+	NSLog(@"%@.initWithLevel(%d)", [self class], (int)bonus);
+	
+	indLvl = lvl;
+	_isBonus = bonus;
+	
+	return ([self init]);
+}
+
 -(id) init {
 	NSLog(@"LevelCompleteScreenLayer.init()");
 	
@@ -46,7 +56,20 @@ static NSString *borderType = @"borderType";
 	
 	
 	NSDate *unixTime = [[NSDate alloc] initWithTimeIntervalSince1970:0];
-	NSLog(@":::::::::::::[%d]:::::::::::::", unixTime);
+	NSLog(@":::::::::::::[%d]:::::::::::::", (int)unixTime);
+	
+	
+	/*
+	 // start time
+	 NSDate *startTime = [[NSDate date] retain];
+	 
+	 ...
+	 
+	 // At a later time
+	 double timeElapsed = -[startTime timeIntervalSinceNow] *  1000;  // msec elapsed
+	 */
+	
+			
 	
 	cpInitChipmunk();
 	
@@ -122,23 +145,35 @@ static NSString *borderType = @"borderType";
 	[self performSelector:@selector(letterWiggleProvoker:) withObject:nil afterDelay:0.2];
 	
 	
+	CGPoint ptStarPos = CGPointMake(-80 + (((int)!_isBonus) * 40), 0);
+	
+	CCSprite *starHolder = [CCSprite node];
+	[starHolder setPosition:ccp(160, 320)];
+	[self addChild:starHolder];
 	
 	CCSprite *star1 = [CCSprite spriteWithFile:@"lvlstar_big.png"];
 	[star1 setScale:0.0f];
-	[star1 setPosition:ccp(80, 320)];
-	[self addChild:star1];
+	[star1 setPosition:ccp(ptStarPos.x, ptStarPos.y)];
+	[starHolder addChild:star1];
+	ptStarPos.x += 80;
 	
 	CCSprite *star2 = [CCSprite spriteWithFile:@"lvlstar_big.png"];
-	[star2 setPosition:ccp(160, 320)];
+	[star2 setPosition:ccp(ptStarPos.x, ptStarPos.y)];
 	[star2 setScale:0.0f];
-	[self addChild:star2];
+	[starHolder addChild:star2];
+	ptStarPos.x += 80;
 	
-	CCSprite *star3 = [CCSprite spriteWithFile:@"lvlstar_big.png"];
-	[star3 setPosition:ccp(240, 320)];
-	[star3 setScale:0.0f];
-	[self addChild:star3];
+	if (_isBonus) {
+		
+		CCSprite *star3 = [CCSprite spriteWithFile:@"lvlstar_big.png"];
+		[star3 setPosition:ccp(ptStarPos.x, ptStarPos.y)];
+		[star3 setScale:0.0f];
+		[starHolder addChild:star3];
+		
+		arrStarSprite = [[NSMutableArray alloc] initWithObjects:star1, star2, star3, nil];
 	
-	arrStarSprite = [[NSMutableArray alloc] initWithObjects:star1, star2, star3, nil];
+	} else
+		arrStarSprite = [[NSMutableArray alloc] initWithObjects:star1, star2, nil]; 
 	
 	delayTime += 0.2f;
 	for (int i=0; i<[arrStarSprite count]; i++) {
@@ -230,7 +265,7 @@ static NSString *borderType = @"borderType";
 
 -(void)starWiggler:(id)sender {
 	
-	cpVect pos = cpv(80, 320);
+	cpVect pos = cpv(-80 + ((int)(!_isBonus) * 40), 0);
 	
 	for (int i=0; i<[arrStarSprite count]; i++) {
 		

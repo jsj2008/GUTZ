@@ -20,6 +20,7 @@
 			import com.sparklemountain.gutz.designer.ComponentConsts;
 			import com.sparklemountain.gutz.designer.EditorConsts;
 			import com.sparklemountain.gutz.designer.FileIOConsts;
+			import com.sparklemountain.gutz.designer.model.delegate.AbstractPlistParser;
 			import com.sparklemountain.gutz.designer.model.vo.GoalVO;
 			import com.sparklemountain.gutz.designer.model.vo.WallVO;
 			
@@ -68,6 +69,26 @@
 			private function uponCreation(e:FlexEvent):void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 				trace ("[:_:] "+this.className+".uponCreation("+e.toString()+") [:_:]");
+				
+				/*
+				var holder_sprite:Sprite;
+				
+				holder_sprite = new Sprite();
+				holder_sprite.y = 16;
+				holder_sprite.addChild(new Goal_mc());
+				uiLvlGoal.addChild(holder_sprite);
+				
+				holder_sprite = new Sprite();
+				holder_sprite.y = 64;
+				holder_sprite.addChild(new Wall1_mc());
+				uiLvlGoal.addChild(holder_sprite);
+				
+				holder_sprite = new Sprite();
+				holder_sprite.y = 128;
+				holder_sprite.addChild(new Wall2_mc());
+				uiLvlGoal.addChild(holder_sprite);
+				*/
+				
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
@@ -81,22 +102,54 @@
 			//* *\[ MXML UI HANDLERS ]/*
 			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
 			
+			private function hdlLoadPlistBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlLoadPlistBtn_Click() [:_:]");
+				
+				_plist_fileRef.addEventListener(Event.SELECT, hdlPlist_Select);
+				_plist_fileRef.browse([new FileFilter("Property List", "*.plist")]);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlSavePlistBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlSavePlistBtn_Click() [:_:]");
+				
+				this.writePlist();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
 			
 			
 			private function hdlGoalBtn_Click(e:MouseEvent):void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
-				trace ("[:_:] "+this.className+".hdlGoalBtn_Click() [:_:]");
+				trace ("[:_:] "+this.className+".hdlGoalBtn_Click("+(e.target as Button).id+") [:_:]");
 				
-				var goal_mc:Goal_mc = new Goal_mc();
-					goal_mc.x = EditorConsts.CANVAS_CENTER.x;
-					goal_mc.y = EditorConsts.CANVAS_CENTER.y;
-					goal_mc.buttonMode = true;
-					goal_mc.useHandCursor = true;
-					goal_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlGoal_Press);
-					goal_mc.addEventListener(MouseEvent.MOUSE_UP, hdlGoal_Release);
+				var goal_mc:MovieClip;
+				var type_id:int;
+				
+				switch ((e.target as Button).id) {
+					
+					case "btnGoalLvl":
+						goal_mc = new GoalLvl_mc() as MovieClip;
+						type_id = 1;
+						break;
+					
+					case "btnGoalStar":
+						goal_mc = new GoalStar_mc() as MovieClip;
+						type_id = 2;
+						break;
+				}
+				
+				//var goal_mc:Goal_mc = new Goal_mc();
+				goal_mc.x = EditorConsts.CANVAS_CENTER.x;
+				goal_mc.y = EditorConsts.CANVAS_CENTER.y;
+				goal_mc.buttonMode = true;
+				goal_mc.useHandCursor = true;
+				goal_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlGoal_Press);
+				goal_mc.addEventListener(MouseEvent.MOUSE_UP, hdlGoal_Release);
 					
 					
-				_goalVO_arr.push(new GoalVO(_goalVO_arr.length, EditorConsts.CANVAS_CENTER, goal_mc));
+				_goalVO_arr.push(new GoalVO(_goalVO_arr.length, type_id, EditorConsts.CANVAS_CENTER, goal_mc));
 				_canvasWrapper.addChild(goal_mc);
 				lblCoords.text = "("+goal_mc.x+", "+goal_mc.y+")";
 				
@@ -168,12 +221,7 @@
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
-			private function hdlSavePlistBtn_Click(e:MouseEvent):void {
-			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
-				trace ("[:_:] "+this.className+".hdlSavePlistBtn_Click() [:_:]");
-				
-				this.writePlist();
-			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
 			
 			
 			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*/
@@ -396,6 +444,7 @@
 					vo = _goalVO_arr[i] as GoalVO;
 					
 					str += FileIOConsts.GOAL_PRETAG + String(vo.id);
+					str += FileIOConsts.GOAL_TYPE + String(vo.type_id);
 					str += FileIOConsts.GOAL_POS_X + String(vo.pos_pt.x);
 					str += FileIOConsts.GOAL_POS_Y + String(EditorConsts.CANVAS_SIZE.height - vo.pos_pt.y);
 					str += FileIOConsts.GOAL_POSTTAG;
@@ -405,11 +454,13 @@
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
-			private function hdlPlist_Load(e:Event):void {
+			private function writePlist():void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
-				trace ("[:_:] "+this.className+".hdlPlist_Load() [:_:]");	
-				_plist_fileRef.browse();
+				//trace ("[:_:] "+this.className+".writePlist(["+(FileIOConsts.DIR_PATHNAME + "\\" + FileIOConsts.FILE_PATHNAME)+"]["+File.documentsDirectory.resolvePath(FileIOConsts.DIR_PATHNAME + "\\" + FileIOConsts.FILE_PATHNAME)+"]) [:_:]");
+				
+				_plist_fileRef.save(_plist_str, FileIOConsts.LEVEL_PLIST_NAME + String(Strings.prependZeroes(String(_lvl_ind) + FileIOConsts.PLIST_EXT, int(_lvl_ind < 10))));
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
 			
 			
 			private function hdlPlist_Select(e:Event):void {	
@@ -420,23 +471,24 @@
 					trace("Error loading file : " + e.text);
 				});
 				
+				_plist_fileRef.addEventListener(Event.COMPLETE, hdlPlist_LoadComplete);
+				_plist_fileRef.removeEventListener(Event.SELECT, hdlPlist_Select);
 				_plist_fileRef.load();
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
 			private function hdlPlist_LoadComplete(e:Event):void {	
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
-				trace ("[:_:] "+this.className+".hdlPlist_LoadComplete("+(_plist_fileRef.data.readUTFBytes(_plist_fileRef.data.length))+") [:_:]");
-				txtPlistOutput.text = _plist_fileRef.data.readUTFBytes(_plist_fileRef.data.length);
-			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
-			
-			private function writePlist():void {
-			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
-				//trace ("[:_:] "+this.className+".writePlist(["+(FileIOConsts.DIR_PATHNAME + "\\" + FileIOConsts.FILE_PATHNAME)+"]["+File.documentsDirectory.resolvePath(FileIOConsts.DIR_PATHNAME + "\\" + FileIOConsts.FILE_PATHNAME)+"]) [:_:]");
+				trace ("[:_:] "+this.className+".hdlPlist_LoadComplete("+(_plist_fileRef.data.length)+") [:_:]");
 				
-				_plist_fileRef.save(_plist_str, FileIOConsts.LEVEL_PLIST_NAME + String(Strings.prependZeroes(String(_lvl_ind) + FileIOConsts.PLIST_EXT, int(_lvl_ind < 10))));
+				var file_str:String = _plist_fileRef.data.readUTFBytes(_plist_fileRef.data.length).toString();
+				
+				_plist_fileRef.removeEventListener(Event.COMPLETE, hdlPlist_LoadComplete);
+				txtPlistOutput.text = file_str;
+				
+				
+				var plistParser:AbstractPlistParser = new AbstractPlistParser(XML(file_str));
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
-			
 			
 		//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 		//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*·¯
@@ -447,6 +499,13 @@
 	<!-- -=[ FX OBJS ]=- -->
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
+		
+		<fx:Array id="arrToolTips">
+			<fx:String>Level Goal</fx:String>
+			<fx:String>Star Goal</fx:String>
+			<fx:String>Short Wall</fx:String>
+			<fx:String>Long Wall</fx:String>
+		</fx:Array>
 	</fx:Declarations>
 	<!-- /////////////////////////////// -->
 	
@@ -454,10 +513,17 @@
 	<!-- -=[ MXML UI ]=- -->
 	<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
 	<s:Panel id="pnlTools" title="—Tools—" x="{ComponentConsts.APP_PADDING_L}" y="{ComponentConsts.APP_PADDING_T}" width="128" height="480">
-		<s:VGroup id="grpTools" paddingLeft="4" paddingTop="4">
-			<s:Button id="btnGoal" label="Goal" click="hdlGoalBtn_Click(event)" />
-			<s:Button id="btnWall1" label="Wall 1" click="hdlWall1Btn_Click(event)" />
-			<s:Button id="btnWall2" label="Wall 2" click="hdlWall2Btn_Click(event)" />
+		<s:layout>
+			<s:HorizontalLayout verticalAlign="top" horizontalAlign="center" />
+		</s:layout>
+		<s:VGroup id="grpTools" paddingTop="8">
+			<!-- <mx:UIComponent id="uiLvlGoal" width="36" height="39" toolTip="Level Goal" /> -->
+			<!-- <s:BitmapImage id="bmpGoal" source="@Embed('../../../../../../assets/images/LevelGoal.png')" width="36" height="39" /> --> 
+			<s:Button id="btnGoalLvl" label="Level Goal" width="80" click="hdlGoalBtn_Click(event)" />
+			<s:Button id="btnGoalStar" label="Star Goal" width="80" click="hdlGoalBtn_Click(event)" />
+			<s:Button id="btnWall1" label="Short Wall" width="80" click="hdlWall1Btn_Click(event)" />
+			<s:Button id="btnWall2" label="Long Wall" width="80" click="hdlWall2Btn_Click(event)" />
+			<s:Button id="btnLoadPlist" y="320" width="80" height="64" label="Load Plist…" click="hdlLoadPlistBtn_Click(event)" />
 			<s:Button id="btnSavePlist" y="320" width="80" height="64" label="Save Plist…" click="hdlSavePlistBtn_Click(event)" />
 		</s:VGroup>
 	</s:Panel>

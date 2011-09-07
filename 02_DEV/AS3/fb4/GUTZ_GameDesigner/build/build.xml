@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="Build Project" basedir="." default="Purge SWFs from libs folder">
+<project name="GUTZ Game Designer" basedir="." default="Purge SWFs from libs folder">
 
 	<!-- Define variables/paths used in this build script -->
 	<property file="./build.properties" />

@@ -44,16 +44,11 @@
 	
 	CCMenuItemImage *soundsOnButton = [CCMenuItemImage itemFromNormalImage:@"button_soundOn_nonActive.png" selectedImage:@"button_soundOn_Active.png" target:nil selector:nil];
 	CCMenuItemImage *soundsOffButton = [CCMenuItemImage itemFromNormalImage:@"button_soundOff_nonActive.png" selectedImage:@"button_soundOff_Active.png" target:nil selector:nil];
-	
-	if ((BOOL)kMutedSounds)
-		soundsToggleButton = [CCMenuItemToggle itemWithTarget:self selector:@selector(onSoundsToggle:) items:soundsOffButton, soundsOnButton, nil];
-	
-	else
-		soundsToggleButton = [CCMenuItemToggle itemWithTarget:self selector:@selector(onSoundsToggle:) items:soundsOnButton, soundsOffButton, nil];
+	soundsToggleButton = [CCMenuItemToggle itemWithTarget:self selector:@selector(onSoundsToggle:) items:soundsOffButton, soundsOnButton, nil];
 	
 	CCMenuItemImage *pushesOnButton = [CCMenuItemImage itemFromNormalImage:@"button_pushNotificationON_nonActive.png" selectedImage:@"button_pushNotificationON_Active.png" target:nil selector:nil];
 	CCMenuItemImage *pushesOffButton = [CCMenuItemImage itemFromNormalImage:@"button_pushNotificationOFF_nonActive.png" selectedImage:@"button_pushNotificationOFF_Active.png" target:nil selector:nil];
-	pushesToggleButton = [CCMenuItemToggle itemWithTarget:self selector:@selector(onPushesToggle:) items:pushesOnButton, pushesOffButton, nil];
+	pushesToggleButton = [CCMenuItemToggle itemWithTarget:self selector:@selector(onPushesToggle:) items:pushesOffButton, pushesOnButton, nil];
 	
 	CCMenuItemImage *infoButton = [CCMenuItemImage itemFromNormalImage:@"button_moreInfo_nonActive.png" selectedImage:@"button_moreInfo_Active.png" target:self selector:@selector(onInfo:)];
 	
@@ -97,15 +92,13 @@
 	
 	//NSLog(@"[pushesToggleButton selectedItem]:(%@, %d)", [pushesToggleButton selectedItem], [pushesToggleButton selectedIndex]);
 	
+	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+	NSInteger isSFX = [prefs integerForKey:@"enable_sfx"];
+	soundsToggleButton.selectedIndex = isSFX;
+	NSLog(@"[standardUserDefaults enable_sfx]:(%d)", isSFX);
 	
-	if ([[[plistSettings dicTopLvl] objectForKey:@"Sounds Enabled"] isEqualToNumber:[NSNumber numberWithInt:1]])
-		soundsToggleButton.selectedIndex = 0;
-	
-	else
-		soundsToggleButton.selectedIndex = 1;
-	
-	//NSLog(@"[soundsToggleButton selectedItem]:(%@, %d)", [soundsToggleButton selectedItem], [soundsToggleButton selectedIndex]);
-	//[plistSettings writeNumberByKey:@"Played Timestamp" val:[[CCDirector sharedDirector] startTime]];//[[plistSettings dicTopLvl] setValue:[NSNumber numberWithBool:YES] forKey:@"Pushes Enabled"];
+	//[plistSettings writeNumberByKey:@"Played Timestamp" val:[[CCDirector sharedDirector] startTime]];
+	//[[plistSettings dicTopLvl] setValue:[NSNumber numberWithBool:YES] forKey:@"Pushes Enabled"];
 }
 
 
@@ -141,14 +134,19 @@
 	CCMenuItemToggle *toggleBtn = (CCMenuItemToggle *)sender;
 	BOOL isEnabled;
 	
+	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+	[prefs setInteger:toggleBtn.selectedIndex forKey:@"enable_sfx"];
+	[prefs synchronize];
+	
 	if (toggleBtn.selectedIndex == 0)
-		isEnabled = YES;
+		isEnabled = NO;
 	
 	else
-		isEnabled = NO;
+		isEnabled = YES;
 	
 	[[SimpleAudioEngine sharedEngine] setMute:!isEnabled];
 	[plistSettings writeBoolByKey:@"Sounds Enabled" val:isEnabled];//[[plistSettings dicTopLvl] setValue:[NSNumber numberWithBool:YES] forKey:@"Pushes Enabled"];
+	
 	
 	NSLog(@"-/> %@.%@ [%d] </-", [self class], @"onSoundsToggle", isEnabled);
 	//NSLog(@"-/> %@.%@(%@) [%d] </-", [self class], @"onSoundsToggle", [[plistSettings dicTopLvl] objectForKey:@"Sounds Enabled"], toggleBtn.selectedIndex);

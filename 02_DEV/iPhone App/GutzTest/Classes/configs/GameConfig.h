@@ -21,7 +21,6 @@
 #define kGameAutorotationUIViewController 2
 
 #define kShowDebugMenus 0
-#define kMutedSounds 1
 #define kLastLevel 4
 
 //

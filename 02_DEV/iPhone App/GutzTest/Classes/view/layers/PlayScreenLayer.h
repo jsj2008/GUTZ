@@ -86,6 +86,7 @@
     
 	int score_amt;
 	BOOL _isCleared;
+	BOOL _isBonus;
 	
 	cpFloat _edgeRad;
 	int _cntTargets;

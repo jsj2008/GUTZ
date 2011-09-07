@@ -10,18 +10,32 @@
 		<dict>
 			<key>id</key>
 			<integer>0</integer>
+			<key>type</key>
+			<integer>1</integer>
 			<key>x</key>
-			<integer>33</integer>
+			<integer>66</integer>
 			<key>y</key>
-			<integer>447</integer>
+			<integer>350</integer>
 		</dict>
 		<dict>
 			<key>id</key>
 			<integer>1</integer>
+			<key>type</key>
+			<integer>2</integer>
 			<key>x</key>
-			<integer>290</integer>
+			<integer>219</integer>
 			<key>y</key>
-			<integer>31</integer>
+			<integer>317</integer>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>2</integer>
+			<key>type</key>
+			<integer>1</integer>
+			<key>x</key>
+			<integer>125</integer>
+			<key>y</key>
+			<integer>208</integer>
 		</dict>
 	</array>
 </dict>

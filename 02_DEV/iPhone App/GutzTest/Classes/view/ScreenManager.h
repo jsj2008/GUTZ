@@ -23,7 +23,7 @@
 +(void) goPlay:(int)lvl;
 +(void) goConfig;
 +(void) goLevelSelect;
-+(void) goLevelComplete:(int)lvl;
++(void) goLevelComplete:(int)lvl withBonus:(BOOL)bonus;
 +(void) goGameOver;
 
 @end

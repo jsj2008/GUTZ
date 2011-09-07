@@ -41,8 +41,11 @@ Class nextTransition() {
 
 +(void) goMenu {
     NSLog(@"ScreenManager.goMenu()");
-   
-	[[SimpleAudioEngine sharedEngine] setMute:kMutedSounds];
+	
+	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+	NSInteger isSFX = [prefs integerForKey:@"enable_sfx"];
+	[[SimpleAudioEngine sharedEngine] setMute:!(BOOL)isSFX];
+	
 	
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.67];
 	[[SimpleAudioEngine sharedEngine] playEffect:@"bootUp.wav"];
@@ -80,10 +83,10 @@ Class nextTransition() {
 }
 
 
-+(void) goLevelComplete:(int)lvl {
-    NSLog(@"ScreenManager.goLevelComplete()");
++(void) goLevelComplete:(int)lvl withBonus:(BOOL)bonus {
+    NSLog(@"ScreenManager.goLevelComplete(%d)", (int)bonus);
     
-	CCLayer *layer = [[LevelCompleteScreenLayer alloc] initWithLevel:lvl];
+	CCLayer *layer = [[LevelCompleteScreenLayer alloc] initWithLevel:lvl withBonus:bonus];
 	[ScreenManager go:layer];
 }
 

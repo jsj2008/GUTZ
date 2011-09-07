@@ -57,6 +57,7 @@ package com.sparklemountain.gutz.designer {
 		
 		public static const GOAL_PREGRP:String = "\t<key>goals</key>\n\t<array>\n";
 		public static const GOAL_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
+		public static const GOAL_TYPE:String = "</integer>\n\t\t\t<key>type</key>\n\t\t\t<integer>";
 		public static const GOAL_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
 		public static const GOAL_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
 		public static const GOAL_POSTTAG:String ="</integer>\n\t\t</dict>\n";

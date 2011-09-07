@@ -26,6 +26,8 @@
 	JellyBlob *_accBlob2;
 	JellyBlob *_accBlob3;
 	
+	BOOL _isBonus;
+	
 	
 	NSMutableArray *arrLetterSprite;
 	NSMutableArray *arrStarSprite;
@@ -33,6 +35,8 @@
 
 
 -(id)initWithLevel:(int)lvl;
+-(id)initWithLevel:(int)lvl withBonus:(BOOL)isBonus;
+
 -(void) onBackMenu:(id)sender;
 -(void) onReplayLevel:(id)sender;
 -(void) onNextLevel:(id)sender;

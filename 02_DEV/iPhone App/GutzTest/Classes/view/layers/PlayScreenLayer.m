@@ -42,6 +42,8 @@ static NSString *borderType = @"borderType";
 @synthesize splatDripsAction;
 
 
+#pragma mark INIT
+
 -(id)initWithLevel:(int)lvl {
 	NSLog(@"%@.initWithLevel(%d)", [self class], lvl);
 	
@@ -60,7 +62,6 @@ static NSString *borderType = @"borderType";
 	
 	if ((self = [super initWithColor:ccc4(ARENA_BG.r, ARENA_BG.g, ARENA_BG.b, 255)])) {
 		
-		
 		self.isTouchEnabled = YES;
 		self.isAccelerometerEnabled = YES;
 		
@@ -69,7 +70,7 @@ static NSString *borderType = @"borderType";
 		
 		//[[SimpleAudioEngine sharedEngine] playEffect:@"debug_healmag.wav"];
 		
-		//_cnt = 32;
+		_isBonus = NO;
 		_isCleared = NO;
 		
 		arrTouchedEdge = [[NSMutableArray alloc] init];
@@ -92,11 +93,9 @@ static NSString *borderType = @"borderType";
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95];
 }
 
-- (void)physProvoker:(id)sender {
-	[self schedule:@selector(physicsStepper:)];
-	[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
-}
 
+
+#pragma Arena Setup
 
 -(void)buildLvlObjs {
 	
@@ -105,26 +104,47 @@ static NSString *borderType = @"borderType";
 	NSLog(@"goals:[%@]", plistLvlData.arrGoalData);
 	NSLog(@"walls:[%@]", plistLvlData.arrWallData);
 	
+	
+	arrTargets = [[NSMutableArray alloc] initWithCapacity:[plistLvlData.arrGoalData count]];
+	[arrTargets addObject:@"NO"];
+	[arrTargets addObject:@"NO"];
+	[arrTargets addObject:@"NO"];
+	
 	int ind = 0;
 	
 	for (NSDictionary *dictGoal in plistLvlData.arrGoalData) {
 		CGPoint goalPos = CGPointMake([[dictGoal objectForKey:@"x"] floatValue], [[dictGoal objectForKey:@"y"] floatValue]);
 		//NSLog(@"[%d]: [%@]-(%f, %f)", ind, [dictGoal objectForKey:@"x"], goalPos.x, goalPos.y);
 		
-		if (ind == 0) {
-			goalTarget1 = [[GoalTarget alloc] initAtPos:goalPos];
-			goalTarget1.ind = ind;
-			[_space add:goalTarget1];
-			[self addChild:goalTarget1._sprite];		
+		[arrTargets addObject:@"NO"];
+		
+		switch ([[dictGoal objectForKey:@"type"] intValue]) {
 			
-		} else {
-			goalTarget2 = [[GoalTarget alloc] initAtPos:goalPos];
-			goalTarget2.ind = ind;
-			[_space add:goalTarget2];
-			[self addChild:goalTarget2._sprite];
+			case 1:
+				if (ind == 0) {
+					goalTarget1 = [[GoalTarget alloc] initAtPos:goalPos];
+					goalTarget1.ind = ind;
+					[_space add:goalTarget1];
+					[self addChild:goalTarget1._sprite];		
+					
+				} else {
+					goalTarget2 = [[GoalTarget alloc] initAtPos:goalPos];
+					goalTarget2.ind = ind;
+					[_space add:goalTarget2];
+					[self addChild:goalTarget2._sprite];
+				}
+				
+				ind++;
+				break;
+				
+			case 2:
+				_starGoalTarget = [[StarGoalTarget alloc] initAtPos:goalPos];//cpv((CCRANDOM_0_1() * 280) + 16, (CCRANDOM_0_1() * 400) + 32)];
+				_starGoalTarget.ind = 2;
+				[_space add:_starGoalTarget];
+				[self addChild:_starGoalTarget._sprite];
+				break;
 		}
 		
-		ind++;
 	}
 	
 	
@@ -171,22 +191,18 @@ static NSString *borderType = @"borderType";
 	
 	
 	
-	arrTargets = [[NSMutableArray alloc] initWithCapacity:2];
-	[arrTargets addObject:@"NO"];
-	[arrTargets addObject:@"NO"];
-	[arrTargets addObject:@"NO"];
 	
 	
-	_starGoalTarget = [[StarGoalTarget alloc] initAtPos:cpv((CCRANDOM_0_1() * 280) + 16, (CCRANDOM_0_1() * 400) + 32)];
-	_starGoalTarget.ind = 2;
-	[_space add:_starGoalTarget];
-	[self addChild:_starGoalTarget._sprite];
 	
 	
-	_bonusTarget = [[BonusTarget alloc] initAtPos:cpv(32, 200)];
+	
+	
+	/*
+	 _bonusTarget = [[BonusTarget alloc] initAtPos:cpv(32, 200)];
 	_bonusTarget.ind = 0;
 	[_space add:_bonusTarget];
 	[self addChild:_bonusTarget._sprite];
+	 */
 }
 
 -(void) scaffoldHUD {
@@ -203,9 +219,23 @@ static NSString *borderType = @"borderType";
 	
 	if (kShowDebugMenus)
 		[self debuggingSetup];
-	
-	
 }
+
+
+-(void) debuggingSetup {
+	CCMenuItemFont *reset = [CCMenuItemFont itemFromString:@"reset" target:self selector: @selector(onResetArea:)];
+	CCMenuItemFont *levelComplete = [CCMenuItemFont itemFromString:@"win" target:self selector: @selector(onLevelComplete:)];
+	CCMenuItemFont *gameOver = [CCMenuItemFont itemFromString:@"end" target:self selector: @selector(onGameOver:)];
+	CCMenu *mnuDebug = [CCMenu menuWithItems: reset, levelComplete, gameOver, nil];
+	
+	mnuDebug.position = ccp(160, 150);
+	[mnuDebug alignItemsVerticallyWithPadding: 20.0f];
+	[self addChild: mnuDebug];
+}
+
+
+
+#pragma mark PhysicsEngine
 
 -(void) chipmunkSetup {
 	
@@ -259,13 +289,60 @@ static NSString *borderType = @"borderType";
 	[_space addCollisionHandler:self typeA:[JellyBlob class] typeB:borderType begin:@selector(beginWallCollision:space:) preSolve:@selector(preSolveWallCollision:space:) postSolve:@selector(postSolveWallCollision:space:) separate:@selector(separateWallCollision:space:)];
 }
 
+
+- (void)physProvoker:(id)sender {
+	[self schedule:@selector(physicsStepper:)];
+	[self schedule:@selector(mobWiggler:) interval:0.25f + (CCRANDOM_0_1() * 0.125f)];
+}
+
+
+-(void) physicsStepper: (ccTime) dt {
+	//NSLog(@"PlayScreenLayer.physicsStepper(%0.000000f)", [[CCDirector sharedDirector] getFPS]);
+	
+	[_space step:1.0 / 60.0];
+	
+	
+	for (int i=0; i<[arrGibsShape count]; i++) {
+		ChipmunkShape *shape = (ChipmunkShape *)[arrGibsShape objectAtIndex:i];
+		CCSprite *sprite = (CCSprite *)[arrGibsSprite objectAtIndex:i];
+		
+		
+		[sprite setPosition:shape.body.pos];
+		[sprite setRotation:-shape.body.angle];
+		
+		if (shape.body.pos.y <= 16){
+			[arrGibsShape removeObjectAtIndex:i];
+			[arrGibsSprite removeObjectAtIndex:i];
+			
+			[_space remove:shape.body];
+			[_space remove:shape];
+			[self removeChild:sprite cleanup:NO];
+		}
+	}
+	
+	//[creatureSprite setPosition:[_blob posPt]];
+	
+	if (!_isCleared) {
+		[eyeSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y + 24)];
+		[mouthSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y - 24)];
+	}
+}
+
+
+-(void) mobWiggler:(id)sender {
+	
+	cpFloat maxForce = 4.0f;
+	
+	cpFloat rndForce = CCRANDOM_0_1() * maxForce;
+	[_blob wiggleWithForce:[[RandUtils singleton]randIndex:BLOB_SEGS] force:rndForce];
+}
+
+
+
 #pragma mark GoalCollisionHandlers
 
 - (BOOL)beginGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
-	
-	//NSLog(@"beginCollision: [%d]", _cntTargets);
-	
 	
 	GoalTarget *trg = target.data;
 	[arrTargets replaceObjectAtIndex:trg.ind withObject:@"YES"];
@@ -284,17 +361,16 @@ static NSString *borderType = @"borderType";
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"ScoreChanged" object:[[NSNumber alloc] initWithInt:score_amt]];
 	[[PlayStatsModel singleton] incScore:score_amt];
 	
-	//NSLog(@"0:[%@] 1:[%@] 2:[%@]", [arrTargets objectAtIndex:0], [arrTargets objectAtIndex:1], [arrTargets objectAtIndex:2]);
-	
 	return (NO);
 }
 
 - (void)separateGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
 	//NSLog(@"separateGoalCollision: [%d]", _cntTargets);
 	
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
+	
 	if ([[arrTargets objectAtIndex:0] isEqualToString:@"YES"] && [[arrTargets objectAtIndex:1] isEqualToString:@"YES"]) {
-		NSLog(@"GOAL! [%d]", [arrTouchedEdge count]);
+		NSLog(@"\nGOAL! [%d]", [arrTouchedEdge count]);
 		
 		_isCleared = YES;
 		self.isTouchEnabled = NO;
@@ -302,6 +378,8 @@ static NSString *borderType = @"borderType";
 		if (_starGoalTarget.isCovered) {
 			NSLog(@"¡¡¡BONUS PTS!!!");
 			
+			_isBonus = YES;
+			_starGoalTarget.isCleared = YES;
 			[_space removeCollisionHandlerForTypeA:[JellyBlob class] andB:[StarGoalTarget class]];
 			
 			score_amt = 50;
@@ -323,23 +401,23 @@ static NSString *borderType = @"borderType";
 #pragma mark StarGoalCollisionHandlers
 
 - (BOOL)beginStarGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
+	//NSLog(@"%@.beginStarGoalCollision()", [self class]);
 	
-	NSLog(@"%@.beginStarGoalCollision()", [self class]);
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
 	
 	
 	StarGoalTarget *trg = target.data;
 	[trg updateCovered:YES];
-	trg.isCleared = YES;
 	
 	return (NO);
 }
 
 - (void)separateStarGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
-	NSLog(@"%@.separateStarGoalCollision()", [self class]);
+	//NSLog(@"%@.separateStarGoalCollision()", [self class]);
 	
-	StarGoalTarget *trg = target.data;	
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
+	
+	StarGoalTarget *trg = target.data;
 	[trg updateCovered:NO];
 }
 
@@ -348,8 +426,9 @@ static NSString *borderType = @"borderType";
 #pragma mark BonusCollisionHandlers
 
 - (BOOL)beginBonusCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
 	NSLog(@"%@.beginBonusCollision()", [self class]);
+	
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
 	
 	
 	BonusTarget *trg = target.data;
@@ -368,15 +447,14 @@ static NSString *borderType = @"borderType";
 }
 
 - (void)separateBonusCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
 	NSLog(@"%@.separateBonusCollision()", [self class]);
 	
-	BonusTarget *trg = target.data;	
-	[trg updateCovered:YES];
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
 	
+	BonusTarget *trg = target.data;
+	[trg updateCovered:NO];
 	
 	[_space removeCollisionHandlerForTypeA:[JellyBlob class] andB:[BonusTarget class]];
-	//[_space addPostStepRemoval:trg];
 }
 
 
@@ -386,14 +464,13 @@ static NSString *borderType = @"borderType";
 #pragma mark WallCollisionHandlers
 
 - (BOOL)beginWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
-	
 	//NSLog(@"beginWallCollision");
+	
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
 	return (YES);
 }
 
 - (BOOL)preSolveWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	
 	//NSLog(@"preSolveWallCollision");
 	
 	return (YES);
@@ -414,9 +491,9 @@ static NSString *borderType = @"borderType";
 }
 
 - (void)separateWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
-	
 	//NSLog(@"separateWallCollision: [%d]", _cntTargets);
+	
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
 	
 	if (CCRANDOM_0_1() > 0.875) {
 		gibPos = CGPointMake(blobShape.body.pos.x, blobShape.body.pos.y);
@@ -428,8 +505,27 @@ static NSString *borderType = @"borderType";
 }
 
 
+#pragma mark Drawing/Rendering
+
+-(void)flashBG {
+	
+	if (bg_cnt % 2 == 0)
+		[self setColor:ccc3(229, 220, 7)];
+	
+	else
+		[self setColor:ccc3(233, 86, 86)];
+	
+	
+	bg_cnt++;
+	
+	
+	if (bg_cnt >= 16)
+		[self unschedule:@selector(flashBG)];
+}
+
+
 - (void)clearArena:(id)sender {
-	NSLog(@"///////[clearArena]////////");
+	NSLog(@"\n\n///////[clearArena]////////\n");
 	
 	//[self removeChild:lEyeSprite cleanup:NO];
 	//[self removeChild:rEyeSprite cleanup:NO];
@@ -458,7 +554,7 @@ static NSString *borderType = @"borderType";
 	
 	[self removeChild:goalTarget1._sprite cleanup:NO];
 	[self removeChild:goalTarget2._sprite cleanup:NO];
-	[self removeChild:_starGoalTarget._sprite cleanup:NO];
+	//[self removeChild:_starGoalTarget._sprite cleanup:NO];
 	[self removeChild:_bonusTarget._sprite cleanup:NO];
 	
 	NSMutableArray *arrSplatter = [[NSMutableArray alloc] init];
@@ -504,10 +600,7 @@ static NSString *borderType = @"borderType";
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95];
 	
 	[self schedule:@selector(flashBG) interval:0.1];
-	
 	[self performSelector:@selector(onLevelComplete:) withObject:self afterDelay:1];
-	//[self onLevelComplete:self];
-	
 }
 
 
@@ -592,36 +685,15 @@ static NSString *borderType = @"borderType";
 }
 
 
--(void) mobWiggler:(id)sender {
-	
-	cpFloat maxForce = 4.0f;
-	
-	cpFloat rndForce = CCRANDOM_0_1() * maxForce;
-	[_blob wiggleWithForce:[[RandUtils singleton]randIndex:BLOB_SEGS] force:rndForce];
-}
-
 
 
 #pragma mark MenuNav
 
--(void) onBackMenu:(id)sender {
-	NSLog(@"PlayScreenLayer.onBackMenu()");
+-(void) onEnter {
+	//NSLog(@"PlayScreenLayer.onEnter()");
 	
-	[ScreenManager goLevelSelect];
-}
-
-
--(void) onLevelComplete:(id)sender {
-	NSLog(@"PlayScreenLayer.onLevelComplete()");
-	
-	[ScreenManager goLevelComplete:indLvl];
-}
-
-
--(void) onGameOver:(id)sender {
-	NSLog(@"PlayScreenLayer.onGameOver()");
-	
-	[ScreenManager goGameOver];
+	[super onEnter];
+	[[UIAccelerometer sharedAccelerometer] setUpdateInterval:(1.0 / 60)];
 }
 
 
@@ -641,6 +713,35 @@ static NSString *borderType = @"borderType";
 	}
 }
 
+-(void) onBackMenu:(id)sender {
+	NSLog(@"PlayScreenLayer.onBackMenu()");
+	
+	[ScreenManager goLevelSelect];
+}
+
+
+-(void) onLevelComplete:(id)sender {
+	NSLog(@"PlayScreenLayer.onLevelComplete(%d)", (int)_isBonus);
+	
+	[ScreenManager goLevelComplete:indLvl withBonus:_isBonus];
+}
+
+
+-(void) onGameOver:(id)sender {
+	NSLog(@"PlayScreenLayer.onGameOver()");
+	
+	[ScreenManager goGameOver];
+}
+
+
+-(void) onResetArea:(id)sender {
+	
+	
+}
+
+
+#pragma mark CLEANUP
+
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc {
 	//NSLog(@"PlayScreenLayer.()");
@@ -656,45 +757,8 @@ static NSString *borderType = @"borderType";
 	[super dealloc];
 }
 
--(void) onEnter {
-	//NSLog(@"PlayScreenLayer.onEnter()");
-	
-	[super onEnter];
-	[[UIAccelerometer sharedAccelerometer] setUpdateInterval:(1.0 / 60)];
-}
 
--(void) physicsStepper: (ccTime) dt {
-	//NSLog(@"PlayScreenLayer.physicsStepper(%0.000000f)", [[CCDirector sharedDirector] getFPS]);
-	
-	[_space step:1.0 / 60.0];
-	
-	
-	for (int i=0; i<[arrGibsShape count]; i++) {
-		ChipmunkShape *shape = (ChipmunkShape *)[arrGibsShape objectAtIndex:i];
-		CCSprite *sprite = (CCSprite *)[arrGibsSprite objectAtIndex:i];
-		
-		
-		[sprite setPosition:shape.body.pos];
-		[sprite setRotation:-shape.body.angle];
-		
-		if (shape.body.pos.y <= 16){
-			[arrGibsShape removeObjectAtIndex:i];
-			[arrGibsSprite removeObjectAtIndex:i];
-			
-			[_space remove:shape.body];
-			[_space remove:shape];
-			[self removeChild:sprite cleanup:NO];
-		}
-	}
-	
-	//[creatureSprite setPosition:[_blob posPt]];
-	
-	if (!_isCleared) {
-		[eyeSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y + 24)];
-		[mouthSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y - 24)];
-	}
-}
-
+#pragma mark Touch Interactions
 
 static cpVect
 TouchLocation(UITouch *touch) {
@@ -755,41 +819,6 @@ TouchLocation(UITouch *touch) {
 	_space.gravity = ccpMult(ccp(accelX, accelY), 32);
 }
 
-
--(void) debuggingSetup {
-	CCMenuItemFont *reset = [CCMenuItemFont itemFromString:@"reset" target:self selector: @selector(onResetArea:)];
-	CCMenuItemFont *levelComplete = [CCMenuItemFont itemFromString:@"win" target:self selector: @selector(onLevelComplete:)];
-	CCMenuItemFont *gameOver = [CCMenuItemFont itemFromString:@"end" target:self selector: @selector(onGameOver:)];
-	CCMenu *mnuDebug = [CCMenu menuWithItems: reset, levelComplete, gameOver, nil];
-	
-	mnuDebug.position = ccp(160, 150);
-	[mnuDebug alignItemsVerticallyWithPadding: 20.0f];
-	[self addChild: mnuDebug];
-}
-
-
-
--(void) onResetArea:(id)sender {
-	
-	
-}
-
-
--(void)flashBG {
-	
-	if (bg_cnt % 2 == 0)
-		[self setColor:ccc3(229, 220, 7)];
-	
-	else
-		[self setColor:ccc3(233, 86, 86)];
-	
-	
-	bg_cnt++;
-	
-	
-	if (bg_cnt >= 16)
-		[self unschedule:@selector(flashBG)];
-}
 
 
 @end

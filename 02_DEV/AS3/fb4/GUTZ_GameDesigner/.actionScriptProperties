@@ -24,9 +24,9 @@
     <sourcePathIncludes/>
     <sourceExcludes>
       <exclude path="assets"/>
+      <exclude path="bin-deploy"/>
       <exclude path="build"/>
       <exclude path="raw"/>
     </sourceExcludes>
   </publishSource>
 </actionScriptProperties>
-
