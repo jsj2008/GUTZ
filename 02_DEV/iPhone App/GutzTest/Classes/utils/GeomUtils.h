@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+#import "ObjectiveChipmunk.h"
 
 @interface GeomUtils : NSObject {
     
 }
+
++(GeomUtils *) singleton;
+
+
+-(float)polygonArea:(NSArray *)arrVerts;
 
 @end

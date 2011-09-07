@@ -34,6 +34,11 @@ static NSString *borderType = @"borderType";
 	indLvl = lvl;
 	_isBonus = bonus;
 	
+	
+	if (_isBonus) {
+		[[SimpleAudioEngine sharedEngine] preloadEffect:@"sfx_3stars_fanfare.mp3"];
+	}
+	
 	return ([self init]);
 }
 
@@ -49,12 +54,7 @@ static NSString *borderType = @"borderType";
 	
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.85f];
 	[[SimpleAudioEngine sharedEngine] preloadEffect:@"buttonSound.wav"];
-	
-	[[SimpleAudioEngine sharedEngine] playEffect:@"greatJob.wav"];
-	[[SimpleAudioEngine sharedEngine] playEffect:@"afterSplatter.wav"];
-	[[SimpleAudioEngine sharedEngine] playEffect:@"postGameEffect01.wav"];
-	
-	
+		
 	NSDate *unixTime = [[NSDate alloc] initWithTimeIntervalSince1970:0];
 	NSLog(@":::::::::::::[%d]:::::::::::::", (int)unixTime);
 	
@@ -164,6 +164,9 @@ static NSString *borderType = @"borderType";
 	ptStarPos.x += 80;
 	
 	if (_isBonus) {
+		
+		[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.85f];
+		[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_3stars_fanfare.mp3"];
 		
 		CCSprite *star3 = [CCSprite spriteWithFile:@"lvlstar_big.png"];
 		[star3 setPosition:ccp(ptStarPos.x, ptStarPos.y)];

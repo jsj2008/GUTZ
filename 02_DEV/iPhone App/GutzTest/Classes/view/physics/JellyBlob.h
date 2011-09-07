@@ -30,6 +30,9 @@
 	cpVect _ctrPt;
 	
 	
+	BOOL isStretched;
+	
+	
 	ChipmunkBody *_centralBody;
 	NSArray *_arrParts;
 	NSArray *_arrClamps;
@@ -71,5 +74,6 @@
 -(int)bodyIndexAt:(CGPoint)pos;
 
 -(void)draw;
+-(void)resetStretch:(id)sender;
 
 @end

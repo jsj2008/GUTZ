@@ -200,8 +200,14 @@ static NSString *borderType = @"borderType";
 	
 	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
 	
-	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.25f];
-	[[SimpleAudioEngine sharedEngine] playEffect:@"levelSelect.wav"];
+	//[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.25f];
+	//[[SimpleAudioEngine sharedEngine] playEffect:@"levelSelect.wav"];
+	
+	NSString *strBGM = [NSString stringWithFormat:@"bgm_play-0%d.mp3", (int)(CCRANDOM_0_1() + 1)];
+	[[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:0.5f];
+	[[SimpleAudioEngine sharedEngine] playBackgroundMusic:strBGM loop:YES];
+	
+	
 	[ScreenManager goPlay:((LvlBtnSprite *)sender).iLvlIndex];
 }
 

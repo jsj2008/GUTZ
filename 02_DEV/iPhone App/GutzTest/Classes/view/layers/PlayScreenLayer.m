@@ -22,6 +22,7 @@
 #import "VisceraVO.h"
 
 #import "RandUtils.h"
+#import "GeomUtils.h"
 #import "GoalTarget.h"
 
 #import "SimpleAudioEngine.h"
@@ -85,10 +86,13 @@ static NSString *borderType = @"borderType";
 }
 
 - (void)setupSFX {
-	[[SimpleAudioEngine sharedEngine] preloadEffect:@"splatter.wav"];
-	[[SimpleAudioEngine sharedEngine] preloadEffect:@"collision.wav"];
-	[[SimpleAudioEngine sharedEngine] preloadEffect:@"stretch.wav"];
-	[[SimpleAudioEngine sharedEngine] preloadEffect:@"tensionSplatter.wav"];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:@"sfx_noise-01.mp3"];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:@"sfx_noise-02.mp3"];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:@"sfx_light_splat.mp3"];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:@"sfx_big_stretch.mp3"];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:@"sfx_long_stretch.mp3"];
+	[[SimpleAudioEngine sharedEngine] preloadEffect:@"sfx_finish_splatter.mp3"];
+	
 	
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95];
 }
@@ -464,14 +468,21 @@ static NSString *borderType = @"borderType";
 #pragma mark WallCollisionHandlers
 
 - (BOOL)beginWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	//NSLog(@"beginWallCollision");
+	NSLog(@"beginWallCollision");
 	
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, target);
+	
+	
+	if (CCRANDOM_0_1() < 0.15f) {
+		[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.1f];
+		[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_noise-02.mp3"];
+	}
+	
 	return (YES);
 }
 
 - (BOOL)preSolveWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	//NSLog(@"preSolveWallCollision");
+	NSLog(@"preSolveWallCollision");
 	
 	return (YES);
 }
@@ -485,23 +496,24 @@ static NSString *borderType = @"borderType";
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
 	
 	// force of the colliding bodies
-	//cpFloat impulse = cpvlength(cpArbiterTotalImpulse(arbiter));
+	cpFloat impulse = cpvlength(cpArbiterTotalImpulse(arbiter));
+	NSLog(@"postSolveWallCollision:[%f] (%@)", impulse, blobShape.collisionType);
 	
-	//NSLog(@"postSolveWallCollision:[%f] (%@)", impulse, blobShape.collisionType);
+	if (cpvlength(cpArbiterTotalImpulse(arbiter)) > 220.0f) {
+		[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.5f];
+		[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_light_splat.mp3"];
+	}
 }
 
 - (void)separateWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
-	//NSLog(@"separateWallCollision: [%d]", _cntTargets);
+	NSLog(@"separateWallCollision: [%d]", _cntTargets);
 	
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
 	
 	if (CCRANDOM_0_1() > 0.875) {
 		gibPos = CGPointMake(blobShape.body.pos.x, blobShape.body.pos.y);
-		[self performSelector:@selector(addGib:) withObject:nil afterDelay:0.05];
+		[self performSelector:@selector(addGib:) withObject:nil afterDelay:0.05f];
 	}
-	
-	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.25];
-	[[SimpleAudioEngine sharedEngine] playEffect:@"collision.wav"];
 }
 
 
@@ -577,7 +589,10 @@ static NSString *borderType = @"borderType";
 		}
 	}
 	
-	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.67];
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.67f];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_finish_splatter.mp3"];
+	
+	
 	float delayTime = 0.0f;
 	
 	for (int i=0; i<[arrSplatter count]; i++) {
@@ -588,16 +603,10 @@ static NSString *borderType = @"borderType";
 		[self addChild:sprite];
 		[sprite runAction:[CCSequence actions:[CCDelayTime actionWithDuration:delayTime], [CCScaleTo actionWithDuration:0.2 scale:1 + (CCRANDOM_0_1() * 2)], [CCEaseIn actionWithAction:[CCMoveBy actionWithDuration:0.2f position:ccp((CCRANDOM_0_1() * 320) - 160, (CCRANDOM_0_1() * 480) - 240)] rate:0.5f], nil]];
 		delayTime += 0.025f;
-		
-		if (i % 2 == 0)
-			[[SimpleAudioEngine sharedEngine] playEffect:@"tensionSplatter.wav"];
-		
-		else
-			[[SimpleAudioEngine sharedEngine] playEffect:@"splatter.wav"];
 	}
 	
-	
-	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95];
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:(CCRANDOM_0_1() * 0.33f) + 0.33f];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_light_splat.mp3"];
 	
 	[self schedule:@selector(flashBG) interval:0.1];
 	[self performSelector:@selector(onLevelComplete:) withObject:self afterDelay:1];
@@ -672,7 +681,7 @@ static NSString *borderType = @"borderType";
 		
 		
 	} else {
-		
+
 	}
 	
 	
@@ -722,6 +731,9 @@ static NSString *borderType = @"borderType";
 
 -(void) onLevelComplete:(id)sender {
 	NSLog(@"PlayScreenLayer.onLevelComplete(%d)", (int)_isBonus);
+	
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.85f];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_finish_splatter.wav"];
 	
 	[ScreenManager goLevelComplete:indLvl withBonus:_isBonus];
 }
@@ -774,6 +786,9 @@ TouchLocation(UITouch *touch) {
 		if (ind >= 0) {
 			//NSLog(@"PlayScreenLayer.ccTouchesBegan(%d)", ind);
 			[arrTouchedEdge addObject:[NSString stringWithFormat:@"E_%d", ind]];
+			
+			[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.5f];
+			[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_noise-01.mp3"];
 		}
 	}
 }
@@ -790,6 +805,11 @@ TouchLocation(UITouch *touch) {
 		
 		
 		int ind = [_blob bodyIndexAt:TouchLocation(touch)];
+		
+		if (ind % 2 == 0) {
+			[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.25f];
+			[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_noise-02.mp3"];
+		}
 		
 		//if (ind >= 0) {
 		//NSLog(@"PlayScreenLayer.ccTouchesEnded(%d)", ind);

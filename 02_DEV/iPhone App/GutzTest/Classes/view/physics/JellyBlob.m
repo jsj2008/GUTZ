@@ -5,7 +5,12 @@
 #import "CreatureDataPlistParser.h"
 
 #import "GameConsts.h"
+#import "GeomUtils.h"
 
+
+#import "SimpleAudioEngine.h"
+#import "CDAudioManager.h"
+#import "CocosDenshion.h"
 
 @implementation JellyBlob
 
@@ -25,6 +30,8 @@
 		
 		posPt = CGPointMake(pos.x, pos.y);
 		
+		isStretched = NO;
+		[[SimpleAudioEngine sharedEngine] preloadEffect:@"sfx_long_stetch.mp3"];
 		
 		_plistCreatureData = [[CreatureDataPlistParser alloc] initWithLevel:lvl];
 		_arrParts = [[NSArray alloc] initWithArray:_plistCreatureData.arrParts];
@@ -160,9 +167,12 @@
 		set = [NSMutableSet set];
 		chipmunkObjects = set;
 		
+		isStretched = NO;
 		totCBodies = 0;
 		totSBodies = 0;
 		totBodies = 0;
+		
+		[[SimpleAudioEngine sharedEngine] preloadEffect:@"sfx_long_stetch.mp3"];
 		
 		posPt = CGPointMake(pos.x, pos.y);
 		totBodies = count;
@@ -311,6 +321,8 @@
 	cpVect center = _centralBody.pos;
 	posPt = _centralBody.pos;
 	
+	NSMutableArray *arrVerts = [NSMutableArray arrayWithCapacity:totBodies];
+	
 	cpVect verts[totBodies];
 	for (int i=0; i<[_edgeBodies count]; i++) {
 		cpVect v = [[_edgeBodies objectAtIndex:i] pos];
@@ -318,9 +330,35 @@
 		
 		glColor4f(0.00f, 0.87, 1.00f, 1.00f);
 		ccDrawCircle(v, _edgeRadius, 360, 16, NO);
+		
+		[arrVerts addObject:[_edgeBodies objectAtIndex:i]];
 	}
 	
-	//NSLog(@"DERP");
+	[arrVerts addObject:[_edgeBodies objectAtIndex:0]];
+	float area = [[GeomUtils singleton] polygonArea:[NSArray arrayWithArray:_edgeBodies]];
+	
+	
+	if ((int)area > 23000) {
+		NSLog(@"--> AREA:[%f]", area);
+		
+		if (!isStretched) {
+			isStretched = YES;
+			
+			[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.875f];
+			[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_long_stetch.mp3"];
+			
+			//[self performSelector:@selector(resetStretch:) withObject:self afterDelay:0.33f];
+		}
+	}
+	
+	
+	if ((int)area < 20000) {
+		//NSLog(@"<-- AREA:[%f]", area);
+		if (isStretched) {
+			isStretched = NO;
+		}
+	}
+	
 	//ChipmunkDebugDrawPolygon(_count, verts, LAColor(0, 1), LAColor(0, 0));
 	
 	glEnable(GL_LINE_SMOOTH);
@@ -333,7 +371,11 @@
 	ccDrawPoly(verts, totBodies, NO);
 }
 
-
+-(void)resetStretch:(id)sender {
+	NSLog(@"resetStretch");
+	isStretched = NO;
+}
+	
 -(void)wiggleWithForce:(int)index force:(cpFloat)f {
 	
 	ChipmunkBody *body = [_edgeBodies objectAtIndex:index];
