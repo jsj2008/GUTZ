@@ -196,7 +196,25 @@
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.95f];
 	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
 	
-	[ScreenManager goPlay:++indLvl];
+	
+	if (indLvl % 12 == 0) {
+		int totSlides;
+		
+		switch (indLvl) {
+			case 12:
+				totSlides = 3;
+				
+				break;
+				
+			case 24:
+				totSlides = 4;
+				break;
+		}
+		
+		[ScreenManager goLevelStorySlides:(indLvl / 12) + 1 slideCount:totSlides nextLvl:indLvl++];
+	
+	} else
+		[ScreenManager goPlay:++indLvl];
 }
 
 -(void) onReplayLevel:(id)sender { 

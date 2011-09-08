@@ -28,7 +28,7 @@
 -(id) initWithLevel:(int)ind {
 	NSLog(@"-/> %@.%@(\"%@\") </-", [self class], @"initWithFile", @"LevelObjects");
 	
-	if ((self = [super initWithFile:[NSString stringWithFormat:@"LevelData_0%d", ind] path:@""])) {
+	if ((self = [super initWithFile:[NSString stringWithFormat:@"LevelData_%02d", ind] path:@""])) {
 		
 		arrWallData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"walls"]];
 		arrGoalData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"goals"]];

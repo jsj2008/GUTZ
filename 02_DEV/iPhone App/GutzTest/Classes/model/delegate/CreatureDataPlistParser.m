@@ -26,7 +26,7 @@
 -(id)initWithLevel:(int)ind {
 	//NSLog(@"-/> %@.%@(\"%d\") </-", [self class], @"initWithLevel", ind);
 	
-	if ((self = [super initWithFile:[NSString stringWithFormat:@"CreatureData_0%d", ind] path:@""])) {
+	if ((self = [super initWithFile:[NSString stringWithFormat:@"CreatureData_%02d", ind] path:@""])) {
 		arrParts = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"parts"]];
 		arrClamps = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"clamps"]];
 		

@@ -14,8 +14,6 @@
 
 #import "ScreenManager.h"
 
-#import "ObjectiveChipmunk.h"
-#import "JellyBlob.h"
 
 
 #define kLVL_NUM_SCALE_MULT 0.4f
@@ -25,13 +23,15 @@
 	CCSpriteBatchNode *digitBatchSprite;
 	
 	CGPoint digitSize;
+	int _prevLvl;
 }
 
+-(id)initFromLevel:(int)lvl;
 
--(LvlBtnSprite *) makeBtn:(int)ind locked:(BOOL)isLocked;
+-(LvlBtnSprite *)makeBtn:(int)ind locked:(BOOL)isLocked;
 
--(void) onBackMenu:(id)sender;
--(void) onLevelSelect:(id)sender;
-+ (void) onPageChange:(int)ind;
+-(void)scaffoldMenu;
+-(void)onBackMenu:(id)sender;
+-(void)onLevelSelect:(id)sender;
 
 @end

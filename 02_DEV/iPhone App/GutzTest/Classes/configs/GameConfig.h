@@ -23,7 +23,8 @@
 //#define ARC4RANDOM_MAX 0x100000000
 
 #define kShowDebugMenus 0
-#define kLastLevel 4
+#define kLvlUnlock 12
+#define kLastLvl 36
 
 //
 // Define here the type of autorotation that you want for your game

@@ -14,6 +14,7 @@
 #define TRANSITION_DURATION (1.2f)
 
 static int sceneIdx=0;
+
 static NSString *transitions[] = {
 	@"FlipYDownOver",
 	@"FadeWhiteTransition",
@@ -28,30 +29,37 @@ Class nextTransition() {
 	sceneIdx = sceneIdx % ( sizeof(transitions) / sizeof(transitions[0]) );
 	NSString *r = transitions[sceneIdx];
 	Class c = NSClassFromString(r);
-	return c;
+	return (c);
 }
 
 @interface ScreenManager ()
-+(void) go: (CCLayer *) layer;
-+(CCScene *) wrap: (CCLayer *) layer;
++(void)go:(CCLayer *)layer;
++(CCScene *)wrap:(CCLayer *)layer;
 @end
 
 
 @implementation ScreenManager
 
-+(void) goMenu {
++(void)goMenu {
 	NSLog(@"ScreenManager.goMenu()");
 	
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	NSInteger isSFX = [prefs integerForKey:@"enable_sfx"];
+	
+	/*
+	if (!isSFX) {
+		isSFX = YES;
+		
+		[prefs setInteger:isSFX forKey:@"enable_sfx"];
+		[prefs synchronize];
+	}
+	*/
+	
 	[[SimpleAudioEngine sharedEngine] setMute:!(BOOL)isSFX];
 	
 	
-	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.33];
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.33f];
 	[[SimpleAudioEngine sharedEngine] playEffect:@"bootUp.wav"];
-	
-	//[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.75];
-	//[[SimpleAudioEngine sharedEngine] playEffect:@"menuGUTZ.wav"];
 	
 	[[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:0.875f];
 	[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"bgm_menu-01.mp3" loop:YES];
@@ -60,22 +68,22 @@ Class nextTransition() {
 	[ScreenManager go:layer];
 }
 
-+(void) goConfig {
++(void)goConfig {
 	NSLog(@"ScreenManager.goConfig()");
 		
 	CCLayer *layer = [[ConfigMenuLayer alloc] init];
 	[ScreenManager go:layer];
 }
 
-+(void) goLevelSelect {
-	NSLog(@"ScreenManager.goLevelSelect()");
-		
-	CCLayer *layer = [[LevelSelectScreenLayer alloc] init];
++(void)goLevelSelect:(int)lvl {
+	NSLog(@"ScreenManager.goLevelSelect(%d)", lvl);
+	
+	CCLayer *layer = [[LevelSelectScreenLayer alloc] initFromLevel:lvl];
 	[ScreenManager go:layer];
 }
 
-+(void) goPlay:(int)lvl {
-	NSLog(@"ScreenManager.goPlay()");
++(void)goPlay:(int)lvl {
+	NSLog(@"ScreenManager.goPlay(%d)", lvl);
 	
 	CCLayer *layer = [[PlayScreenLayer alloc] initWithLevel:lvl];
 	//CCLayer *layer = [[PlayScreenLayer alloc] init];
@@ -83,14 +91,23 @@ Class nextTransition() {
 }
 
 
-+(void) goLevelComplete:(int)lvl withBonus:(BOOL)bonus {
++(void)goLevelComplete:(int)lvl withBonus:(BOOL)bonus {
 	NSLog(@"ScreenManager.goLevelComplete(%d)", (int)bonus);
 		
 	CCLayer *layer = [[LevelCompleteScreenLayer alloc] initWithLevel:lvl withBonus:bonus];
 	[ScreenManager go:layer];
 }
 
-+(void) goGameOver {
+
+
++(void)goLevelStorySlides:(int)ind slideCount:(int)cnt nextLvl:(int)lvl {
+	NSLog(@"ScreenManager.goLevelStorySlides(%d, %d)", ind, cnt);
+	
+	CCLayer *layer = [[StorySlidesLayer alloc] initWithStoryIndex:ind slideCount:cnt nextLvl:lvl];
+	[ScreenManager go:layer];
+}
+
++(void)goGameOver {
 	NSLog(@"ScreenManager.goGameOver()");
 		
 	//CCLayer *layer = [GameOverLayer node];
@@ -98,14 +115,14 @@ Class nextTransition() {
 }
 
 
-+(void) goFinaleAct {
++(void)goFinaleAct {
 	NSLog(@"ScreenManager.goFinaleAct()");
 		
 	//CCLayer *layer = [GameOverLayer node];
 	//[ScreenManager go: layer];
 }
 
-+(void) go: (CCLayer *) layer {
++(void)go:(CCLayer *)layer {
 	//NSLog(@"ScreenManager.go("+layer+")");
 		
 	CCDirector *director = [CCDirector sharedDirector];
@@ -117,17 +134,17 @@ Class nextTransition() {
 				[director replaceScene:newScene];
 		//[director replaceScene:[transition transitionWithDuration:TRANSITION_DURATION scene:newScene]];
 		
-	}else {
+	} else
 		[director runWithScene:newScene];		
-	}
 }
 
-+(CCScene *) wrap:(CCLayer *)layer {
++(CCScene *)wrap:(CCLayer *)layer {
 	NSLog(@"ScreenManager.wrap()");
 		
 	CCScene *newScene = [CCScene node];
-	[newScene addChild: layer];
-	return newScene;
+	[newScene addChild:layer];
+	
+	return (newScene);
 }
 
 @end

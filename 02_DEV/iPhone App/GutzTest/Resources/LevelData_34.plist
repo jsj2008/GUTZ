@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>walls</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>0</integer>
+			<key>type</key>
+			<integer>1</integer>
+			<key>x</key>
+			<integer>266</integer>
+			<key>y</key>
+			<integer>349</integer>
+			<key>friction</key>
+			<real>0.5</real>
+			<key>bounce</key>
+			<real>0.1</real>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>1</integer>
+			<key>type</key>
+			<integer>2</integer>
+			<key>x</key>
+			<integer>97</integer>
+			<key>y</key>
+			<integer>111</integer>
+			<key>friction</key>
+			<real>0.5</real>
+			<key>bounce</key>
+			<real>0.1</real>
+		</dict>
+	</array>
+	<key>goals</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>0</integer>
+			<key>type</key>
+			<integer>1</integer>
+			<key>x</key>
+			<integer>284</integer>
+			<key>y</key>
+			<integer>443</integer>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>1</integer>
+			<key>type</key>
+			<integer>1</integer>
+			<key>x</key>
+			<integer>27</integer>
+			<key>y</key>
+			<integer>29</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

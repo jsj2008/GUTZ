@@ -21,8 +21,8 @@
 
 @implementation MainMenuScreenLayer
 
--(id) init {
-    NSLog(@"MainMenuScreenLayer.init()");
+-(id)init {
+	NSLog(@"MainMenuScreenLayer.init()");
    
 	if ((self = [super initWithBackround:MENU_BG_ASSET])) {
 		
@@ -68,28 +68,28 @@
 
 #pragma mark MenuActions
 
--(void) onNewGame:(id)sender{ 
+-(void)onNewGame:(id)sender{ 
      NSLog(@"MainMenuScreenLayer.onNewGame()");
 	
 	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
-    [ScreenManager goLevelSelect];
+    [ScreenManager goLevelSelect:0];
 }
 
--(void) onStore:(id)sender {
+-(void)onStore:(id)sender {
 	NSLog(@"MainMenuScreenLayer.onStore()");
 	
 	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
 	//[ScreenManager goConfig];
 }
 
--(void) onAbout:(id)sender {
+-(void)onAbout:(id)sender {
 	NSLog(@"MainMenuScreenLayer.onAbout()");
 	
 	[[SimpleAudioEngine sharedEngine] playEffect:@"buttonSound.wav"];
 	//[ScreenManager goConfig];
 }
 
--(void) onConfig:(id)sender {
+-(void)onConfig:(id)sender {
     NSLog(@"MainMenuScreenLayer.onConfig()");
 	
 	
@@ -99,7 +99,7 @@
 }
 
 
--(void) dealloc {
+-(void)dealloc {
 	[super dealloc];	
 }
 

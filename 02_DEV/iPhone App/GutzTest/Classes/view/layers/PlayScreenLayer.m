@@ -51,7 +51,7 @@ static NSString *borderType = @"borderType";
 	
 	indLvl = lvl;
 	
-	if (indLvl > kLastLevel)
+	if (indLvl > kLastLvl)
 		indLvl = 1;
 	
 	return ([self init]);
@@ -81,6 +81,9 @@ static NSString *borderType = @"borderType";
 		[self chipmunkSetup];
 		[self buildLvlObjs];
 		[self scaffoldHUD];
+		
+		[[NSNotificationCenter defaultCenter] postNotificationName:@"UPD_LVL" object:[[NSNumber alloc] initWithInt:indLvl]];
+		
 		[self performSelector:@selector(physProvoker:) withObject:self afterDelay:0.33f];
 	}
 	
@@ -107,8 +110,8 @@ static NSString *borderType = @"borderType";
 	
 	plistLvlData = [[LevelDataPlistParser alloc] initWithLevel:indLvl];
 	
-	NSLog(@"goals:[%@]", plistLvlData.arrGoalData);
-	NSLog(@"walls:[%@]", plistLvlData.arrWallData);
+	//NSLog(@"goals:[%@]", plistLvlData.arrGoalData);
+	//NSLog(@"walls:[%@]", plistLvlData.arrWallData);
 	
 	
 	arrTargets = [[NSMutableArray alloc] initWithCapacity:[plistLvlData.arrGoalData count]];
@@ -222,6 +225,10 @@ static NSString *borderType = @"borderType";
 	[mnuPlayPause alignItemsVerticallyWithPadding: 20.0f];
 	[self addChild: mnuPlayPause];
 	
+	
+	scoreDisplaySprite = [[ScoreSprite alloc] init];
+	[scoreDisplaySprite setPosition:ccp(55, 450)];
+	[self addChild:scoreDisplaySprite];
 	
 	if (kShowDebugMenus)
 		[self debuggingSetup];
@@ -364,7 +371,7 @@ static NSString *borderType = @"borderType";
 	
 	
 	score_amt = (int)(cnt * 32);
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"ScoreChanged" object:[[NSNumber alloc] initWithInt:score_amt]];
+	//[[NSNotificationCenter defaultCenter] postNotificationName:@"ScoreChanged" object:[[NSNumber alloc] initWithInt:score_amt]];
 	[[PlayStatsModel singleton] incScore:score_amt];
 	
 	return (NO);
@@ -730,7 +737,7 @@ static NSString *borderType = @"borderType";
 
 -(void) onBackMenu:(id)sender {
 	NSLog(@"PlayScreenLayer.onBackMenu()");
-	[ScreenManager goLevelSelect];
+	[ScreenManager goLevelSelect:indLvl];
 }
 
 
