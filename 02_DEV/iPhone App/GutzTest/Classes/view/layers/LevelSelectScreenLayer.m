@@ -174,4 +174,9 @@
 	}
 }
 
+
+-(void) registerWithTouchDispatcher {
+	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:INT_MIN+2 swallowsTouches:NO];
+}
+
 @end

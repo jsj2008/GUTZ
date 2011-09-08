@@ -27,7 +27,7 @@
 
 
 
-- (void)dealloc {
+-(void)dealloc {
 	[_body release];
 	[_shape release];
 	

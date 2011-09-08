@@ -16,14 +16,14 @@
 
 -(id)initWithStoryIndex:(int)ind slideCount:(int)cnt nextLvl:(int)lvl {
 	
-	if ((self = [super initWithBackround:@"bg_menu.png"])) {
+	if ((self = [super initWithColor:ccc4(0, 0, 0, 255)])) {//[super initWithBackround:@"bg_menu.png"])) {
 		NSLog(@"%@.initWithStoryIndex(%d, %d, %d)", [self class], ind, cnt, lvl);
 		
 		self.isTouchEnabled = YES;
 		
 		CGSize wins = [[CCDirector sharedDirector] winSize];
 		CGPoint ptCtr = CGPointMake((int)(wins.width * 0.5), (int)(wins.height * 0.5));
-
+		
 		_indSlide = 0;
 		_indStory = ind;
 		_totSlides = cnt;
@@ -110,13 +110,8 @@
 		_isMoving = NO;
 		
 		if (_totSlides > 1 && (kTransThreshold < abs(_distOffset))) {
-			//bool isForward = (_distOffset < 0);// ? true : false;
-			
 			if ((_distOffset < 0) && (_totSlides > _indSlide + 1))
-				_indSlide++;
-			
-			//else if (!isForward && (_indSlide > 0))
-			//	_indSlide--;
+				_indSlide++;			
 		}
 		
 		[self moveToCurrentPage];
@@ -166,17 +161,6 @@
 	
 	return (CGPointMake((_ptSlideOrg.x - (_indSlide * winSize.width) + offset), _ptSlideOrg.y));
 }
-
-
-/*
--(float)getSwipeDeadZone {
-	return fMoveDeadZone;
-}
-
--(void)setSwipeDeadZone:(float)fValue {
-	fMoveDeadZone = fValue;
-}
-*/
 
 -(void)dealloc {
 	[super dealloc];

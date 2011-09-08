@@ -13,7 +13,7 @@
 -(id)initWithFile:(NSString *)filename {
 	
 	if ((self = [super initWithFile:filename])) {
-		NSLog(@"-/> %@.initWithFile(%@) </-", [self class], filename);
+		//NSLog(@"-/> %@.initWithFile(%@) </-", [self class], filename);
 		
 		_strAssetFile = filename;
 		//self.isTouchEnabled = YES;

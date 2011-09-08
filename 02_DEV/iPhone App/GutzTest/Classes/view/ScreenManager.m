@@ -86,7 +86,6 @@ Class nextTransition() {
 	NSLog(@"ScreenManager.goPlay(%d)", lvl);
 	
 	CCLayer *layer = [[PlayScreenLayer alloc] initWithLevel:lvl];
-	//CCLayer *layer = [[PlayScreenLayer alloc] init];
 	[ScreenManager go:layer];
 }
 

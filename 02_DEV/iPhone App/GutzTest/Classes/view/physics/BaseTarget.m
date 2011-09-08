@@ -39,14 +39,14 @@
 
 
 
-- (void)updatePosition {
+-(void)updatePosition {
 	[super updatePosition];
 	
 	[_sprite setPosition:_body.pos];
 	
 }
 
-- (void)updateCovered:(BOOL)covered {
+-(void)updateCovered:(BOOL)covered {
 	isCovered = covered;
 	
 	if ([self isCovered])
@@ -57,7 +57,7 @@
 }
 
 
-- (void)dealloc {
+-(void)dealloc {
 	[_sprite release];
 	
 	[super dealloc];

@@ -36,23 +36,7 @@
 -(void)slidesComplete;
 -(void)onCloseSlides:(id)sender;
 
-//-(CGPoint)calcSlidePosWithOffset:(float)offset;
 -(CGPoint)calcSlidePos;
 -(CGPoint)calcSlidePos:(float)offset;
-
-//-(float)getSwipeDeadZone;
-//-(void)setSwipeDeadZone:(float)fValue;
-
-
-/*
-@property (nonatomic, readwrite) CGPoint ptSlideOrg;
-@property (nonatomic, readwrite) CGPoint ptTouchStart;
-@property (nonatomic, readwrite) CGPoint ptTouchStop;
-
-@property (nonatomic, readwrite) BOOL isMoving;
-@property (nonatomic, readwrite) float fMoveDelta;
-@property (nonatomic, readwrite) float fMoveDeadZone;
-@property (nonatomic, readwrite) float fAnimSpeed;
-*/
 
 @end

@@ -27,7 +27,7 @@
 
 
 -(id)initWithLevel:(int)lvl withBonus:(BOOL)bonus {
-	NSLog(@"%@.initWithLevel(%d)", [self class], (int)bonus);
+	NSLog(@"%@.initWithLevel(%d) <[%d]>", [self class], lvl, (int)bonus);
 	
 	indLvl = lvl;
 	_isBonus = bonus;
@@ -41,7 +41,7 @@
 }
 
 -(id) init {
-	NSLog(@"LevelCompleteScreenLayer.init()");
+	//NSLog(@"LevelCompleteScreenLayer.init()");
 	
 	if ((self = [super initWithBackround:MENU_BG_ASSET])) {
 		
@@ -156,24 +156,14 @@
 		[self performSelector:@selector(starWiggleProvoker:) withObject:nil afterDelay:0.5];
 		
 		CCMenuItemImage *btnReplayLevel = [CCMenuItemImage itemFromNormalImage:@"btn_replay.png" selectedImage:@"btn_replayActive.png" target:self selector:@selector(onReplayLevel:)];
-		//[btnReplayLevel setScale:0.0f];
-		
 		CCMenuItemImage *btnNextLevel = [CCMenuItemImage itemFromNormalImage:@"btn_next.png" selectedImage:@"btn_nextActive.png" target:self selector:@selector(onNextLevel:)];
-		//[btnNextLevel setScale:0.0f];
-		
 		CCMenu *menu = [CCMenu menuWithItems:btnReplayLevel, btnNextLevel, nil];
-		//CCAction *action = [CCSequence actions:[CCDelayTime actionWithDuration:delayTime], [CCScaleTo actionWithDuration:0.5f scale:1.0f], nil];
-		
 		CCAction *action = [CCSequence actions:[CCMoveBy actionWithDuration:0.2f position:ccp(0, 160)], nil];
-		
-		//[btnReplayLevel runAction:[action copy]];
-		//[btnNextLevel runAction:[action copy]];
 		
 		menu.position = ccp(160, 0);
 		[menu alignItemsVerticallyWithPadding:50.0f];
 		[menu runAction:action];
 		
-		//[menu alignItemsVerticallyWithPadding:115.0f];
 		[self addChild:menu z:2];
 	}
 		
@@ -265,26 +255,3 @@
 }
 
 @end
-
-
-
-
-
-/*
- CFDataRef xmlData;
- Boolean status;
- SInt32 errorCode;
- 
- // Convert the property list into XML data.
- xmlData = CFPropertyListCreateXMLData( kCFAllocatorDefault, [[AchievementsPlistParser alloc] dicTopLvl] );
- 
- // Write the XML data to the file.
- status = CFURLWriteDataAndPropertiesToResource (
- @"Achievements.plist",				  // URL to use
- xmlData,				  // data to write
- NULL,
- &errorCode);
- 
- CFRelease(xmlData);
- */
-

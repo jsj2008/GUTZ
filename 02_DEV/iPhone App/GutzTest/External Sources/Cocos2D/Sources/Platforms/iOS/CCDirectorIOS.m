@@ -125,7 +125,7 @@ CGFloat	__ccContentScaleFactor = 1;
 		deviceOrientation_ = CCDeviceOrientationPortrait;
 		
 		__ccContentScaleFactor = 1;
-		isContentScaleSupported_ = NO;
+		isContentScaleSupported_ = YES;
 		
 		// running thread is main thread on iOS
 		runningThread_ = [NSThread currentThread];

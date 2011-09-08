@@ -23,13 +23,13 @@
 	return (self);
 }
 
-- (void)updatePosition {
+-(void)updatePosition {
 	
 	[_sprite setPosition:_body.pos];
 	
 }
 
-- (void)dealloc {
+-(void)dealloc {
 	[_sprite release];
 	
 	[super dealloc];

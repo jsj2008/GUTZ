@@ -36,7 +36,7 @@
 	
 }
 
-- (void)updateCovered:(BOOL)covered {
+-(void)updateCovered:(BOOL)covered {
 	isCovered = covered;
 	
 	if ([self isCovered])
@@ -47,7 +47,7 @@
 }
 
 
-- (void)dealloc {
+-(void)dealloc {
 	[super dealloc];
 }
 

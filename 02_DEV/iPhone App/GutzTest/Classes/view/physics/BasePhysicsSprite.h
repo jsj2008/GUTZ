@@ -18,6 +18,6 @@
 
 @property (readonly) CCSprite *_sprite;
 
-- (void)updatePosition;
+-(void)updatePosition;
 
 @end
