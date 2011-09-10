@@ -66,13 +66,17 @@
 	
 	CCSprite *creatureSprite;
 	
-	CGPoint gibPos;
+	cpVect gibPos;
+	cpVect vHitCoords;
+	cpVect vHitForce;
 	
 	CCParticleSystemPoint *particles;
 	NSMutableArray *arrTargets;
 	NSMutableArray *arrGibsShape;
 	NSMutableArray *arrGibsSprite;
 	NSMutableArray *arrTouchedEdge;
+	
+	NSMutableArray *_arrGibs;
 	
 	CCSprite *axisSprite;
 	cpBody *axisBody;
@@ -160,6 +164,7 @@
 -(void) mobWiggler:(id)sender;
 - (void)clearArena:(id)sender;
 -(void)addGib:(id)sender;
+-(void)onGibsExpiry:(id)sender;
 -(void)flashBG;
 
 

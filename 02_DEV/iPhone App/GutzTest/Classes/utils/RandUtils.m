@@ -56,6 +56,10 @@ static RandUtils *singleton = nil;
 	return ([[RandUtils singleton] diceRoller:2] == 1);
 }
 
+-(BOOL)rndBool {
+	return ([[RandUtils singleton] coinFlip] == 1);
+}
+
 -(int)rndIndex:(int)max {
 	return ([[RandUtils singleton] rndInt:1 max:max]);
 }

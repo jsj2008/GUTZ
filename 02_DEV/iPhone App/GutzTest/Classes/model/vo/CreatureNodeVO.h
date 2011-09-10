@@ -11,7 +11,6 @@
 #import "CCSprite.h"
 #import "chipmunk.h"
 
-#import "SegNodeSprite.h"
 
 @interface CreatureNodeVO : NSObject {
     

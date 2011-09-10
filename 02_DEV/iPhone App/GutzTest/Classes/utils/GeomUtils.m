@@ -45,4 +45,13 @@ static GeomUtils *singleton = nil;
 	return (area);
 }
 
+
+-(float)toDegrees:(float)ang {
+	return (ang * (180 / M_PI));
+}
+
+-(float)toRadians:(float)ang {
+	return (ang * (M_PI / 180));
+}
+
 @end

@@ -62,6 +62,7 @@ Class nextTransition() {
 	[[SimpleAudioEngine sharedEngine] playEffect:@"bootUp.wav"];
 	
 	[[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:0.875f];
+	[[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
 	[[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"bgm_menu-01.mp3" loop:YES];
 	
 	CCLayer *layer = [[MainMenuScreenLayer alloc] init];

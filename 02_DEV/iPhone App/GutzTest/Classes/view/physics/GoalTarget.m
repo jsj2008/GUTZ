@@ -41,8 +41,8 @@
 
 
 
--(void)updatePosition {
-	[super updatePosition];
+-(void)updPos {
+	[super updPos];
 	
 	[_sprite setPosition:_body.pos];
 	

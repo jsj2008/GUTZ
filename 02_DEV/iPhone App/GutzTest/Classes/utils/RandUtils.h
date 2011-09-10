@@ -21,6 +21,7 @@
 -(int)diceRoller:(int)sides;
 
 -(uint)rndBit;
+-(BOOL)rndBool;
 -(int)rndSigned;
 -(int)rndIndex:(int)max;
 -(int)rndInt:(int)lower max:(int)upper;

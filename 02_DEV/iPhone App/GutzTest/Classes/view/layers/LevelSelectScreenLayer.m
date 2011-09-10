@@ -14,7 +14,7 @@
 #import "AchievementsPlistParser.h"
 
 #import "LevelSelectScreenLayer.h"
-#import "LvlPagesMenuSprite.h"
+#import "LvlPagesMenuLayer.h"
 
 #import "DigitUtils.h"
 #import "RandUtils.h"
@@ -77,7 +77,7 @@
 	}
 	
 	
-	LvlPagesMenuSprite *levelMenu = [LvlPagesMenuSprite menuWithArray:level_arr cols:LVL_MENU_DIM.x rows:LVL_MENU_DIM.y position:ccp(70.0f, 360.0f) padding:CGPointMake(90.0f, 80.0f)];
+	LvlPagesMenuLayer *levelMenu = [LvlPagesMenuLayer menuWithArray:level_arr cols:LVL_MENU_DIM.x rows:LVL_MENU_DIM.y position:ccp(70.0f, 360.0f) padding:CGPointMake(90.0f, 80.0f)];
 	[self addChild:levelMenu z:2];
 	
 	CCMenuItemImage *backButton = [CCMenuItemImage itemFromNormalImage:@"button_options_nonActive.png" selectedImage:@"button_options_Active.png" target:self selector:@selector(onBackMenu:)];
@@ -162,6 +162,7 @@
 	if (indLvl > kLastLvl)
 		indLvl = 1;
 	
+	[[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
 	[[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:0.5f];
 	
 	if (indLvl == 1) {

@@ -14,6 +14,17 @@
 @synthesize _sprite;
 
 
+-(id)initAtPos:(cpVect)pos {
+
+	if ((self = [super init])) {
+		_ptPos = pos;
+	}
+	
+	
+	return (self);
+}
+
+
 -(id)init {
 	
 	if ((self = [super init])) {
@@ -23,7 +34,7 @@
 	return (self);
 }
 
--(void)updatePosition {
+-(void)updPos {
 	
 	[_sprite setPosition:_body.pos];
 	

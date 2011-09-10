@@ -18,6 +18,7 @@
 
 @property (readonly) CCSprite *_sprite;
 
--(void)updatePosition;
+-(id)initAtPos:(cpVect)pos;
+-(void)updPos;
 
 @end

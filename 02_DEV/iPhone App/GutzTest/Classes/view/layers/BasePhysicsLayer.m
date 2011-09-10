@@ -8,6 +8,7 @@
 
 #import "BasePhysicsLayer.h"
 
+#import "GameConfig.h"
 #import "RandUtils.h"
 
 #import "ChipmunkDebugNode.h"
@@ -60,7 +61,9 @@ static NSString *borderType = @"borderType";
 	CGSize wins = [[CCDirector sharedDirector] winSize];
 	CGRect rect = CGRectMake(0, 0, wins.width, wins.height);
 	
-	[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space]];
+	if (kDrawChipmunkObjs == 1)
+		[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space] z:0 tag:666];
+	
 	
 	[_space addBounds:rect thickness:532 elasticity:1 friction:1 layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:borderType];
 	

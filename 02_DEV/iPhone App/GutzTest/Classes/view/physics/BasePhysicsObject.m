@@ -18,20 +18,33 @@
 	
 	if ((self = [super init])) {
 		
+		set = [NSMutableSet set];
 		chipmunkObjects = [NSMutableSet set];
 	}
-	
 	
 	return (self);
 }
 
 
+-(void)spaceRef:(ChipmunkSpace *)space {
+	_space = space;
+}
+
+
 
 -(void)dealloc {
+	[_body removeFromSpace:_space];
 	[_body release];
+	
+	[_shape removeFromSpace:_space];
 	[_shape release];
 	
-	chipmunkObjects = nil;
+	[_space removeBaseObjects:chipmunkObjects];
+	[chipmunkObjects release];
+
+	_body = nil;
+	_shape = nil;
+	set = nil;
 	
 	[super dealloc];
 }

@@ -18,5 +18,7 @@
 
 
 -(float)polygonArea:(NSArray *)arrVerts;
+-(float)toDegrees:(float)ang;
+-(float)toRadians:(float)ang;
 
 @end

@@ -16,7 +16,6 @@
 #import "LvlStarSprite.h"
 #import "ScoreSprite.h"
 #import "ElapsedTimeSprite.h"
-#import "SegNodeSprite.h"
 
 
 #import "CreatureNodeVO.h"
@@ -30,6 +29,8 @@
 #import "CDAudioManager.h"
 #import "CocosDenshion.h"
 
+
+#import "BaseGibs.h"
 
 
 static NSString *borderType = @"borderType";
@@ -269,10 +270,13 @@ static NSString *borderType = @"borderType";
 	_multiGrab = [[ChipmunkMultiGrab alloc] initForSpace:_space withSmoothing:cpfpow(0.8, 60.0) withGrabForce:30000];
 	_multiGrab.layers = GRABABLE_LAYER;
 	
-	//[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space] z:0 tag:666];
+	if (kDrawChipmunkObjs == 1)
+		[self addChild:[ChipmunkDebugNode debugNodeForSpace:_space] z:0 tag:666];
 	
 	arrGibsShape = [[NSMutableArray alloc] init];
 	arrGibsSprite = [[NSMutableArray alloc] init];
+	
+	_arrGibs = [[NSMutableArray alloc] init];
 	
 	
 	//_blob = [[JellyBlob alloc] initWithLvl:indLvl atPos:cpv(BLOB_X, BLOB_Y)];
@@ -309,32 +313,25 @@ static NSString *borderType = @"borderType";
 }
 
 
--(void) physicsStepper: (ccTime) dt {
+-(void) physicsStepper:(ccTime) dt {
 	//NSLog(@"PlayScreenLayer.physicsStepper(%0.000000f)", [[CCDirector sharedDirector] getFPS]);
 	
 	[_space step:1.0 / 60.0];
 	
-	
-	for (int i=0; i<[arrGibsShape count]; i++) {
-		ChipmunkShape *shape = (ChipmunkShape *)[arrGibsShape objectAtIndex:i];
-		CCSprite *sprite = (CCSprite *)[arrGibsSprite objectAtIndex:i];
+	for (BaseGibs *gibs in _arrGibs) {
+		[gibs step];
 		
 		
-		[sprite setPosition:shape.body.pos];
-		[sprite setRotation:-shape.body.angle];
-		
-		if (shape.body.pos.y <= 16){
-			[arrGibsShape removeObjectAtIndex:i];
-			[arrGibsSprite removeObjectAtIndex:i];
+		if ([gibs lifeRemains] <= 1) {
 			
-			[_space remove:shape.body];
-			[_space remove:shape];
-			[self removeChild:sprite cleanup:NO];
+ 			if ([_arrGibs containsObject:gibs]) {
+				[self removeChild:[gibs _sprite] cleanup:YES];
+				[_space addPostStepCallback:self selector:@selector(onGibsExpiry:) key:gibs];
+			}
 		}
 	}
 	
-	//[creatureSprite setPosition:[_blob posPt]];
-	
+		
 	if (!_isCleared) {
 		[eyeSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y + 24)];
 		[mouthSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y - 24)];
@@ -484,6 +481,25 @@ static NSString *borderType = @"borderType";
 		[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_noise-02.mp3"];
 		
 		[self performSelector:@selector(resetWallSFX:) withObject:self afterDelay:0.33f];
+		
+//		vHitForce = cpArbiterTotalImpulse(arbiter);
+//		vHitCoords = cpArbiterGetPoint(arbiter, 0);
+//		gibPos = vHitCoords;
+//		
+//		NSLog(@"beginWallCollision [%f, %f] @ (%f, %f)", vHitForce.x, vHitForce.y, vHitCoords.x, vHitCoords.y);
+//		[self performSelector:@selector(addGib:) withObject:nil afterDelay:0.05f];
+		
+		
+		
+		//cpContactPointSet pset = cpArbiterGetContactPointSet(arbiter);
+		//if (pset.count > 0) {
+		//	gibPos = cpv(pset.points[0].point.x, pset.points[0].point.y);
+		//}
+		
+		//for (int i=0; i<pset.count; i++) {
+		//	NSLog(@"beginWallCollision:[%d] (%f, %f)", i, pset.points[i].point.x, pset.points[i].point.y);
+		//}
+
 	}
 	
 	return (YES);
@@ -496,32 +512,34 @@ static NSString *borderType = @"borderType";
 }
 
 - (void)postSolveWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
+	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
 	
 	// skip the later collisions
 	if (!cpArbiterIsFirstContact(arbiter))
 		return;
 	
-	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
+	
 	
 	// force of the colliding bodies
-	//cpFloat impulse = cpvlength(cpArbiterTotalImpulse(arbiter));
-	//NSLog(@"postSolveWallCollision:[%f] (%@)", impulse, blobShape.collisionType);
-	
-	if (cpvlength(cpArbiterTotalImpulse(arbiter)) > 220.0f) {
+	if (cpvlength(cpArbiterTotalImpulse(arbiter)) > 192.0f) {
 		[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.5f];
 		[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_light_splat.mp3"];
 	}
+	
+	
+	vHitCoords = cpArbiterGetPoint(arbiter, 0);
+	vHitForce = cpvclamp(cpArbiterTotalImpulse(arbiter), 144.0f);
+	
+	//NSLog(@"postSolveWallCollision [%f, %f] @ (%f, %f) |%f|", vHitCoords.x, vHitCoords.y, vHitForce.x, vHitForce.y, cpvlength(vHitForce));
+	
+	if ((int)cpvlength(vHitForce) > 52.0f)
+		[_space addPostStepCallback:self selector:@selector(addGib:) key:nil];
 }
 
 - (void)separateWallCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space {
 	//NSLog(@"separateWallCollision: [%d]", _cntTargets);
 	
 	CHIPMUNK_ARBITER_GET_SHAPES(arbiter, blobShape, wall);
-	
-	if (CCRANDOM_0_1() > 0.875) {
-		gibPos = CGPointMake(blobShape.body.pos.x, blobShape.body.pos.y);
-		[self performSelector:@selector(addGib:) withObject:nil afterDelay:0.05f];
-	}
 }
 
 
@@ -555,7 +573,7 @@ static NSString *borderType = @"borderType";
 	//[self removeChild:lEyeSprite cleanup:NO];
 	//[self removeChild:rEyeSprite cleanup:NO];
 	
-	//[self unschedule:@selector(physicsStepper:)];
+	[self unschedule:@selector(physicsStepper:)];
 	//[_space remove:_blob];
 	//[_space remove:goalTarget1];
 	//[_space remove:goalTarget2];
@@ -563,6 +581,8 @@ static NSString *borderType = @"borderType";
 	//[_space addPostStepRemoval:goalTarget1];
 	//[_space addPostStepRemoval:goalTarget2];
 	//[_space addPostStepRemoval:_blob];
+	
+	
 	
 	[self removeChildByTag:666 cleanup:NO];
 	
@@ -628,25 +648,39 @@ static NSString *borderType = @"borderType";
 
 -(void)addGib:(id)sender {
 	
-	float fx = (CCRANDOM_0_1() * 32.0f) + 64.0f;
-	float fy = (CCRANDOM_0_1() * 32.0f) + 64.0f;
+		
+	BaseGibs *gibs = [[BaseGibs alloc] initAtPos:cpvadd(vHitCoords, cpvmult(_blob.posPt, 0.5f))];
 	
-	float rad = (CCRANDOM_0_1() * 4) + 1;
+	[gibs spaceRef:_space];
 	
-	CCSprite *sprite = [CCSprite spriteWithFile:[NSString stringWithFormat:@"gut_bits0%d.png", (int)rad]];
-	[sprite setScale:0.2f];
-	[sprite setPosition:gibPos];
-	[self addChild:sprite];
+	[self addChild:gibs._sprite];
+	[_space add:gibs];
 	
-	if (gibPos.x < 100)
-		fx *= -1;
+	[_arrGibs addObject:gibs];
+	[gibs applyThrust:cpvmult(vHitForce, 1.33f) from:vHitCoords edgesToo:NO];//[[RandUtils singleton] rndBool]];
 	
-	ChipmunkBody *body = [_space add:[ChipmunkBody bodyWithMass:rad * 0.33f andMoment:INFINITY]];
+	/*
+	 float fx = (CCRANDOM_0_1() * 32.0f) + 64.0f;
+	 float fy = (CCRANDOM_0_1() * 32.0f) + 64.0f;
+	 
+	 float rad = (CCRANDOM_0_1() * 4) + 1;
+	*/
+	
+	
+	
+	/*
+	 CCSprite *sprite = [CCSprite spriteWithFile:[NSString stringWithFormat:@"gut_bits0%d.png", (int)rad]];
+	 [sprite setScale:0.2f];
+	 [sprite setPosition:gibPos];
+	 [self addChild:sprite];
+	 
+	 if (gibPos.x < 100)
+	 fx *= -1;
+
+	 ChipmunkBody *body = [_space add:[ChipmunkBody bodyWithMass:rad * 0.33f andMoment:INFINITY]];
 	body.pos = cpv(gibPos.x, gibPos.y);
 	[body setTorque:CCRANDOM_0_1() * 16.0f];
 	[body applyImpulse:cpvmult(cpv(fx, fy), 3) offset:cpvzero];
-	
-	
 	
 	ChipmunkShape *shape = [_space add:[ChipmunkCircleShape circleWithBody:body radius:rad offset:cpvzero]];
 	shape.friction = 0.25;
@@ -654,9 +688,20 @@ static NSString *borderType = @"borderType";
 	
 	[arrGibsShape addObject:shape];
 	[arrGibsSprite addObject:sprite];
+	*/
 }
 
 
+-(void)onGibsExpiry:(id)sender {
+	NSLog(@"PlayScreenLayer.onGibsExpiry(%@)", sender);
+	
+	BaseGibs *gibs = (BaseGibs *)sender;
+	[_arrGibs removeObject:gibs];
+	
+	
+	//[gibs release];
+	NSLog(@"\t --> pulled out(%@)", sender);
+}
 
 
 -(void)addGib2 {
@@ -751,14 +796,13 @@ static NSString *borderType = @"borderType";
 }
 
 
--(void) onGameOver:(id)sender {
-	NSLog(@"PlayScreenLayer.onGameOver()");
+-(void) onGameOver:(id)sender  {
+	NSLog(@"PlayScreenLayer.onGameOver(%@)", sender);	//[ScreenManager goGameOver];
 	[ScreenManager goGameOver];
 }
 
 
 -(void) onResetArea:(id)sender {
-	
 	
 }
 

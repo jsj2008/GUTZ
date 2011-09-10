@@ -9,7 +9,7 @@
 #define EDGE_BOUNCE 0.5f
 #define EDGE_FRICTION 0.1f
 
-#define CENTRAL_MASS 1.5f
+#define CENTRAL_MASS 4.5f
 #define CENTRAL_RADIUS 16.0f
 
 #define SQUISH_COEFF 0.7f
@@ -24,7 +24,7 @@
 	
 	CreatureDataPlistParser *_plistCreatureData;
 	CGPoint posPt;
-	cpFloat _radius;
+	cpFloat radius;
 	cpFloat _edgeRadius;
 	cpVect _ptSize;
 	cpVect _ctrPt;
@@ -59,6 +59,7 @@
 @property (nonatomic) float rFillColor;
 @property (nonatomic) float gFillColor;
 @property (nonatomic) float bFillColor;
+@property (nonatomic) cpFloat radius;
 
 -(id)initWithPos:(cpVect)pos radius:(cpFloat)radius count:(int)count;
 -(id)initWithLvl:(int)lvl atPos:(cpVect)pos;

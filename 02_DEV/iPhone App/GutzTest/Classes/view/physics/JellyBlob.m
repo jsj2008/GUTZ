@@ -5,6 +5,7 @@
 #import "CreatureDataPlistParser.h"
 
 #import "GameConsts.h"
+#import "GameConfig.h"
 #import "GeomUtils.h"
 
 
@@ -16,6 +17,7 @@
 
 @synthesize chipmunkObjects;
 @synthesize posPt;
+@synthesize radius;
 @synthesize rFillColor;
 @synthesize gFillColor;
 @synthesize bFillColor;
@@ -88,7 +90,7 @@
 		for(int i=0; i<[_arrParts count]; i++) {
 			NSDictionary *dict = [_arrParts objectAtIndex:i];
 			
-			int radius = [[dict objectForKey:@"radius"] intValue];
+			int radPart = [[dict objectForKey:@"radius"] intValue];
 			cpVect vecPos = cpv([[dict objectForKey:@"x"] intValue], [[dict objectForKey:@"y"] intValue]);
 			cpVect vecOffsetCenter = cpvsub(vecPos, _ctrPt);
 			cpVect slope = cpvnormalize(vecOffsetCenter);
@@ -100,7 +102,7 @@
 			body.data = [[NSNumber alloc] initWithInt:[[dict objectForKey:@"type"] intValue]];
 			[bodies addObject:body];
 			
-			ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:radius offset:cpvzero];
+			ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:radPart offset:cpvzero];
 			[set addObject:shape];
 			shape.elasticity = EDGE_BOUNCE;
 			shape.friction = EDGE_FRICTION;
@@ -112,7 +114,7 @@
 			switch ([[dict objectForKey:@"type"] intValue]) {
 				case 0:
 					[_arrSupportBodies addObject:body];
-					cpVect springOffset = cpvmult(slope, CENTRAL_RADIUS + radius * 2);
+					cpVect springOffset = cpvmult(slope, CENTRAL_RADIUS + radPart * 2);
 					[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:_centralBody bodyB:body anchr1:springOffset anchr2:cpvzero restLength:0 stiffness:SPRING_STR damping:SPRING_DAMP]];
 					//[set addObject:[ChipmunkPinJoint pinJointWithBodyA:_centralBody bodyB:body anchr1:_centralBody.pos anchr2:body.pos]];
 					break;
@@ -160,8 +162,8 @@
 	return (self);
 }
 
--(id)initWithPos:(cpVect)pos radius:(cpFloat)radius count:(int)count {
-	NSLog(@"%@.initWithPos(%f, %d)", [self class], radius, count);
+-(id)initWithPos:(cpVect)pos radius:(cpFloat)rad count:(int)count {
+	NSLog(@"%@.initWithPos(%f, %d)", [self class], rad, count);
 	
 	if ((self = [super init])) {
 		set = [NSMutableSet set];
@@ -176,7 +178,7 @@
 		
 		posPt = CGPointMake(pos.x, pos.y);
 		totBodies = count;
-		_radius = radius;
+		radius = rad;
 		
 		[self constructCenter];
 		[self constructEdges];
@@ -189,7 +191,7 @@
 
 -(void)constructCenter {
 	
-	_centralBody = [ChipmunkBody bodyWithMass:CENTRAL_MASS andMoment:cpMomentForCircle(CENTRAL_MASS, 0, _radius, cpvzero)];
+	_centralBody = [ChipmunkBody bodyWithMass:CENTRAL_MASS andMoment:cpMomentForCircle(CENTRAL_MASS, 0, radius, cpvzero)];
 	[set addObject:_centralBody];
 	_centralBody.pos = posPt;
 	
@@ -197,7 +199,7 @@
 	cpVect vt[totBodies];
 	for(int i=0; i<totBodies; i++){
 		cpVect slope = cpvforangle(((cpFloat)totBodies - i) / (cpFloat)totBodies * 2.0 * M_PI);
-		cpVect posMult = cpvmult(slope, _radius);
+		cpVect posMult = cpvmult(slope, radius);
 		
 		vt[i] = cpvadd(posMult, cpvzero);
 		//NSLog(@"vt[%d]: (%f, %f)", i, vt[i].x, vt[i].y);
@@ -205,7 +207,7 @@
 	
 	
 	//ChipmunkShape *centralShape = [ChipmunkPolyShape polyWithBody:_centralBody count:count verts:vt offset:cpvzero];
-	ChipmunkShape *centralShape = [ChipmunkCircleShape circleWithBody:_centralBody radius:_radius offset:cpvzero];
+	ChipmunkShape *centralShape = [ChipmunkCircleShape circleWithBody:_centralBody radius:radius offset:cpvzero];
 	[set addObject:centralShape];
 	centralShape.group = self;
 	centralShape.layers = GRABABLE_LAYER;
@@ -217,7 +219,7 @@
 -(void)constructEdges {
 	
 	cpFloat edgeMass = 1.0f / totBodies;
-	cpFloat edgeDistance = 2.0f * _radius * cpfsin(M_PI / (cpFloat)totBodies);
+	cpFloat edgeDistance = 2.0f * radius * cpfsin(M_PI / (cpFloat)totBodies);
 	_edgeRadius = edgeDistance * 1.5f;
 	
 	//cpFloat squishCoef = 0.7;
@@ -229,7 +231,7 @@
 	
 	for(int i=0; i<totBodies; i++){
 		cpVect slope = cpvforangle((cpFloat)i / (cpFloat)totBodies * 2.0 * M_PI);
-		cpVect posMult = cpvmult(slope, _radius);
+		cpVect posMult = cpvmult(slope, radius);
 		
 		ChipmunkBody *body = [ChipmunkBody bodyWithMass:edgeMass andMoment:INFINITY];
 		body.pos = cpvadd(posPt, posMult);
@@ -247,7 +249,7 @@
 		
 		//[set addObject:[ChipmunkSlideJoint slideJointWithBodyA:_centralBody bodyB:body anchr1:cpvzero anchr2:cpvzero min:0 max:radius*squishCoef]];
 		
-		cpVect springOffset = cpvmult(slope, _radius + _edgeRadius);
+		cpVect springOffset = cpvmult(slope, radius + _edgeRadius);
 		[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:_centralBody bodyB:body anchr1:springOffset anchr2:cpvzero restLength:0 stiffness:springStiffness damping:springDamping]];
 	}
 	
@@ -320,24 +322,23 @@
 	cpVect center = _centralBody.pos;
 	posPt = _centralBody.pos;
 	
-	NSMutableArray *arrVerts = [NSMutableArray arrayWithCapacity:totBodies];
 	
-	cpVect verts[totBodies];
+	glColor4f(0.00f, 0.87, 1.00f, 1.00f);
+	
+	cpVect verts[[bodies count]];
 	for (int i=0; i<[_edgeBodies count]; i++) {
 		cpVect v = [[_edgeBodies objectAtIndex:i] pos];
+		ccDrawCircle(v, _edgeRadius, 360, 16, !kDrawChipmunkObjs);
+		
 		verts[i] = cpvadd(v, cpvmult(cpvnormalize(cpvsub(v, center)), _edgeRadius * 0.85));
-		
-		glColor4f(0.00f, 0.87, 1.00f, 1.00f);
-		ccDrawCircle(v, _edgeRadius, 360, 16, NO);
-		
-		[arrVerts addObject:[_edgeBodies objectAtIndex:i]];
 	}
-	
-	[arrVerts addObject:[_edgeBodies objectAtIndex:0]];
-	float area = [[GeomUtils singleton] polygonArea:[NSArray arrayWithArray:_edgeBodies]];
+	verts[[bodies count]] = verts[0];
 	
 	
-	if ((int)area > 24000) {
+	//float area = [[GeomUtils singleton] polygonArea:verts];
+	//NSLog(@"--> AREA:[%f]", area);
+	
+	/*if ((int)area > 24000) {
 		//NSLog(@"--> AREA:[%f]", area);
 		
 		if (!isStretched) {
@@ -354,18 +355,18 @@
 		if (isStretched) {
 			isStretched = NO;
 		}
-	}
+	}*/
 	
 	//ChipmunkDebugDrawPolygon(_count, verts, LAColor(0, 1), LAColor(0, 0));
 	
 	glEnable(GL_LINE_SMOOTH);
 	
 	glColor4f(0.00f, 0.87, 1.00f, 1.00f);
-	ccDrawPoly(verts, totBodies, YES);
+	ccDrawPoly(verts, [_edgeBodies count], !kDrawChipmunkObjs);
 	
 	glLineWidth(1.0f);
 	glColor4f(0.00f, 0.00f, 0.00f, 1.00f);
-	ccDrawPoly(verts, totBodies, NO);
+	ccDrawPoly(verts, [_edgeBodies count], NO);
 }
 
 -(void)resetStretch:(id)sender {
