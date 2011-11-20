@@ -218,12 +218,12 @@
 
 -(void)constructEdges {
 	
-	cpFloat edgeMass = 1.0f / totBodies;
+	cpFloat edgeMass = 4.0f / totBodies;
 	cpFloat edgeDistance = 2.0f * radius * cpfsin(M_PI / (cpFloat)totBodies);
 	_edgeRadius = edgeDistance * 1.5f;
 	
 	//cpFloat squishCoef = 0.7;
-	cpFloat springStiffness = 40.0f;
+	cpFloat springStiffness = 80.0f;
 	cpFloat springDamping = 1.0f;
 	
 	bodies = [[NSMutableArray alloc] initWithCapacity:totBodies];

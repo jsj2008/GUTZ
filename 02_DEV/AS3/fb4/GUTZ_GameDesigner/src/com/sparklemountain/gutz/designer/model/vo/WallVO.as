@@ -7,7 +7,6 @@ package com.sparklemountain.gutz.designer.model.vo {
 	import flash.geom.Rectangle;
 	
 	import mx.core.IVisualElement;
-
 	//]~=~=~=~=~=~=~=~=~=~=~=~=~=~[]~=~=~=~=~=~=~=~=~=~=~=~=~=~[
 	
 	/**

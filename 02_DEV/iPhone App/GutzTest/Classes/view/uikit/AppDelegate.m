@@ -94,7 +94,14 @@
 	if (![director enableRetinaDisplay:YES])
 		CCLOG(@"Retina Display Not supported");
 	
-	
+	if ([[NSUserDefaults standardUserDefaults] objectForKey:@"oddjobData"]) {
+		NSMutableDictionary *oddjobData = [[NSUserDefaults standardUserDefaults] objectForKey:@"oddjobData"];
+		NSString *hasApp = [oddjobData objectForKey:@"3.141592653589793238"];
+		
+		NSLog(@"\n\n\n>>>>>> ODDJOB <<<<<<<<<<< [%@]", hasApp);
+		
+		//[[NSUserDefaults standardUserDefaults] synchronize];
+	}
 	
 	// sho main menu
 	[ScreenManager goMenu];

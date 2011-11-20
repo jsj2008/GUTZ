@@ -22,11 +22,14 @@
 			import com.sparklemountain.gutz.designer.FileIOConsts;
 			import com.sparklemountain.gutz.designer.model.delegate.AbstractPlistParser;
 			import com.sparklemountain.gutz.designer.model.vo.GoalVO;
+			import com.sparklemountain.gutz.designer.model.vo.RangedTrapVO;
+			import com.sparklemountain.gutz.designer.model.vo.StudVO;
 			import com.sparklemountain.gutz.designer.model.vo.WallVO;
 			
 			import mx.core.IVisualElement;
 			import mx.core.UIComponent;
 			import mx.events.FlexEvent;
+			import mx.events.SliderEvent;
 			
 			import spark.core.SpriteVisualElement;
 			//]~=~=~=~=~=~=~=~=~=~=~=~=~=~[]~=~=~=~=~=~=~=~=~=~=~=~=~=~[
@@ -36,14 +39,21 @@
 			//]=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~.
 			public static const UI_TITLE:String = "GUTZ Level Editor";
 			
+			private var _actTrapVO:RangedTrapVO;
+			
 			private var _goalVO_arr:Array;
 			private var _wallVO_arr:Array;
+			private var _trapVO_arr:Array;
+			private var _studVO_arr:Array;
 			
 			private var _plist_str:String;
 			private var _lvl_ind:int;
 			
 			private var _plist_fileRef:FileReference;
 			
+			[Bindable] private var _trapVal_min:int;
+			[Bindable] private var _trapVal_max:int;
+			[Bindable] private var _trapVal_spd:Number;
 			
 			private var _canvasWrapper:UIComponent;
 			//[¡]~=~=~=~=~=~=~=~=~=~=~=~=~=~[!]~=~=~=~=~=~=~=~=~=~=~=~=~=~[¡].
@@ -124,18 +134,20 @@
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 				trace ("[:_:] "+this.className+".hdlGoalBtn_Click("+(e.target as Button).id+") [:_:]");
 				
+				var trg_btn:Button = e.target as Button;
 				var goal_mc:MovieClip;
 				var type_id:int;
 				
-				switch ((e.target as Button).id) {
-					
-					case "btnGoalLvl":
-						goal_mc = new GoalLvl_mc() as MovieClip;
+				trg_btn.enabled = false;
+				
+				switch (trg_btn.id) {
+					case "btnGoalStart":
+						goal_mc = new GoalStart_mc() as MovieClip;
 						type_id = 1;
 						break;
 					
-					case "btnGoalStar":
-						goal_mc = new GoalStar_mc() as MovieClip;
+					case "btnGoalEnd":
+						goal_mc = new GoalEnd_mc() as MovieClip;
 						type_id = 2;
 						break;
 				}
@@ -152,6 +164,9 @@
 				_goalVO_arr.push(new GoalVO(_goalVO_arr.length, type_id, EditorConsts.CANVAS_CENTER, goal_mc));
 				_canvasWrapper.addChild(goal_mc);
 				lblCoords.text = "("+goal_mc.x+", "+goal_mc.y+")";
+				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
 				
 				this.updCanvas();
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
@@ -174,6 +189,9 @@
 				_canvasWrapper.addChild(wall_mc);
 				lblCoords.text = "("+wall_mc.x+", "+wall_mc.y+")";
 				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
+				
 				this.updCanvas();
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
@@ -195,9 +213,98 @@
 				_canvasWrapper.addChild(wall_mc);
 				lblCoords.text = "("+wall_mc.x+", "+wall_mc.y+")";
 				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
+				
 				this.updCanvas();
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
+			
+			private function hdlVTrapBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlVTrapBtn_Click() [:_:]");
+				
+				var trap_mc:TrapV_mc = new TrapV_mc();
+					trap_mc.x = EditorConsts.CANVAS_CENTER.x;
+					trap_mc.y = EditorConsts.CANVAS_CENTER.y;
+					trap_mc.buttonMode = true;
+					trap_mc.useHandCursor = true;
+					trap_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlTrap_Press);
+					trap_mc.addEventListener(MouseEvent.MOUSE_UP, hdlTrap_Release);
+					
+				
+				_trapVO_arr.push(new RangedTrapVO(_trapVO_arr.length, 2, trap_mc, EditorConsts.CANVAS_CENTER, new Point(EditorConsts.CANVAS_CENTER.y, EditorConsts.CANVAS_CENTER.y), 1.0, true));
+				_canvasWrapper.addChild(trap_mc);
+				lblCoords.text = "("+trap_mc.x+", "+trap_mc.y+")";
+				
+				_actTrapVO = this.findTrapVOByMC(trap_mc);
+				_trapVal_min = _actTrapVO.range_pt.x;
+				_trapVal_max = _actTrapVO.range_pt.y;
+				btnMin.enabled = true;
+				btnMax.enabled = true;
+				
+				this.updCanvas();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlHTrapBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlHTrapBtn_Click() [:_:]");
+				
+				var trap_mc:TrapH_mc = new TrapH_mc();
+					trap_mc.x = EditorConsts.CANVAS_CENTER.x;
+					trap_mc.y = EditorConsts.CANVAS_CENTER.y;
+					trap_mc.buttonMode = true;
+					trap_mc.useHandCursor = true;
+					trap_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlTrap_Press);
+					trap_mc.addEventListener(MouseEvent.MOUSE_UP, hdlTrap_Release);
+					
+				
+				_trapVO_arr.push(new RangedTrapVO(_trapVO_arr.length, 1, trap_mc, EditorConsts.CANVAS_CENTER, new Point(EditorConsts.CANVAS_CENTER.x, EditorConsts.CANVAS_CENTER.x), 1.0, false));
+				_canvasWrapper.addChild(trap_mc);
+				lblCoords.text = "("+trap_mc.x+", "+trap_mc.y+")";
+				
+				_actTrapVO = this.findTrapVOByMC(trap_mc);
+				_trapVal_min = _actTrapVO.range_pt.x;
+				_trapVal_max = _actTrapVO.range_pt.y;
+				btnMin.enabled = true;
+				btnMax.enabled = true;
+				
+				this.updCanvas();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlStudBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlStudBtn_Click() [:_:]");
+				
+				var stud_mc:GoalStart_mc = new GoalStart_mc();
+					stud_mc.x = EditorConsts.CANVAS_CENTER.x;
+					stud_mc.y = EditorConsts.CANVAS_CENTER.y;
+					stud_mc.buttonMode = true;
+					stud_mc.useHandCursor = true;
+					stud_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlStud_Press);
+					stud_mc.addEventListener(MouseEvent.MOUSE_UP, hdlStud_Release);
+				
+				
+				_studVO_arr.push(new StudVO(_studVO_arr.length, stud_mc, EditorConsts.CANVAS_CENTER, 16, 0.5, 0.1));
+				_canvasWrapper.addChild(stud_mc);
+				lblCoords.text = "("+stud_mc.x+", "+stud_mc.y+")";
+				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
+				
+				this.updCanvas();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlTrapSpdSld_Change(e:SliderEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlTrapSpdSld_Change() [:_:]");
+				
+				_trapVal_spd = sldSpd.value * 0.5;
+				this.updTrapRange();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
 			private function hdlClearCanvas_Click(e:MouseEvent):void {
@@ -210,6 +317,40 @@
 				}
 				
 				this.flush();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlTrapMinBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlTrapMinBtn_Click() [:_:]");
+				
+				if (_actTrapVO.type_id == 1) {
+					_trapVal_min = _actTrapVO.pos_pt.x;
+					_actTrapVO.range_pt.x = _actTrapVO.pos_pt.x;
+				
+				} else {
+					_trapVal_min = _actTrapVO.pos_pt.y;
+					_actTrapVO.range_pt.x = _actTrapVO.pos_pt.y;
+				}
+				
+				this.updTrapRange();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlTrapMaxBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlTrapMaxBtn_Click() [:_:]");
+				
+				if (_actTrapVO.type_id == 1) {
+					_trapVal_max = _actTrapVO.pos_pt.x;
+					_actTrapVO.range_pt.y = _actTrapVO.pos_pt.x;
+					
+				} else {
+					_trapVal_max = _actTrapVO.pos_pt.y;
+					_actTrapVO.range_pt.y = _actTrapVO.pos_pt.y;
+				}
+				
+				this.updTrapRange();
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
@@ -236,6 +377,8 @@
 				var trg_mc:MovieClip = e.currentTarget as MovieClip;
 					trg_mc.startDrag(false, new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height));
 				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 				
@@ -253,6 +396,32 @@
 			
 			
 			
+			private function hdlStud_Press(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".hdlStud_Press("+(e.currentTarget as MovieClip)+") [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+					trg_mc.startDrag(false, new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height));
+				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlStud_Release(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".hdlStud_Release("+(e.currentTarget as MovieClip)+") [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+					trg_mc.stopDrag();
+				
+				
+				this.updStudVO(trg_mc);
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
 			private function hdlWall_Press(e:MouseEvent):void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 				//trace ("[:_:] "+this.className+".hdlWall_Press("+(e.currentTarget as MovieClip)+") [:_:]");
@@ -260,6 +429,8 @@
 				var trg_mc:MovieClip = e.currentTarget as MovieClip;
 					trg_mc.startDrag(false, new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height));
 				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
@@ -276,6 +447,66 @@
 				this.updPlistContent();
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
+			
+			private function hdlTrap_Press(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlTrap_Press() [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+				var drag_rect:Rectangle;
+				
+				_actTrapVO = this.findTrapVOByMC(trg_mc);
+				_trapVal_min = _actTrapVO.range_pt.x;
+				_trapVal_max = _actTrapVO.range_pt.y;
+				
+				drag_rect = new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height);
+				
+				/*
+				if (_actTrapVO.type_id == 1)
+					drag_rect = new Rectangle((trg_mc.width * 0.5) << 0, trg_mc.y, ctnCanvas.width - trg_mc.width, 0);
+				
+				else
+					drag_rect = new Rectangle(trg_mc.x, (trg_mc.height * 0.5) << 0, 0, ctnCanvas.height - trg_mc.height);
+				*/
+				
+				trg_mc.startDrag(false, drag_rect);
+				
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlTrap_Release(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlTrap_Release() [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+					trg_mc.stopDrag();
+				
+				btnMin.enabled = true;
+				btnMax.enabled = true;
+					
+				this.updTrapVO(trg_mc);
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			
+			private function findTrapVOByMC(trg_mc:MovieClip):RangedTrapVO {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".updCanvas() [:_:]");
+				
+				var trapVO:RangedTrapVO;
+				
+				for (var i:Number=0; i<_trapVO_arr.length; i++) {
+					trapVO = _trapVO_arr[i] as RangedTrapVO;
+					
+					if (trapVO.asset_mc == trg_mc)
+						return (trapVO);	
+				}
+				
+				return (null);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+				
 			private function dropByMC(trg_mc:MovieClip):void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 				//trace ("[:_:] "+this.className+".updCanvas() [:_:]");
@@ -303,6 +534,24 @@
 					}
 				}
 				
+				for (i=0; i<_trapVO_arr.length; i++) {
+					mc = (_trapVO_arr[i] as RangedTrapVO).asset_mc;
+					
+					if (mc == trg_mc) {
+						_trapVO_arr.splice(i, 1);
+						break;
+					}
+				}
+				
+				
+				for (i=0; i<_studVO_arr.length; i++) {
+					mc = (_studVO_arr[i] as StudVO).asset_mc;
+					
+					if (mc == trg_mc) {
+						_studVO_arr.splice(i, 1);
+						break;
+					}
+				}
 				
 				for (i=0; i<_canvasWrapper.numChildren; i++) {
 					mc = _canvasWrapper.getChildAt(i) as MovieClip;
@@ -362,6 +611,58 @@
 				lblCoords.text = "("+trg_mc.x+", "+trg_mc.y+")";
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
+			private function updTrapRange():void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".updWallVO("+trg_mc+") [:_:]");
+				
+				var trapVO:RangedTrapVO;
+				for (var i:Number=0; i<_trapVO_arr.length; i++) {
+					trapVO = _trapVO_arr[i]as RangedTrapVO;
+					
+					if (_actTrapVO == trapVO) {
+						trapVO.range_pt.x = _trapVal_min;
+						trapVO.range_pt.y = _trapVal_max;
+						trapVO.spd = _trapVal_spd;
+					}
+				}
+				
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function updTrapVO(trg_mc:MovieClip):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".updWallVO("+trg_mc+") [:_:]");
+				
+				var trapVO:RangedTrapVO;
+				for (var i:Number=0; i<_trapVO_arr.length; i++) {
+					trapVO = _trapVO_arr[i]as RangedTrapVO;
+					
+					if (trg_mc == trapVO.asset_mc) {
+						trapVO.pos_pt.x = trg_mc.x;
+						trapVO.pos_pt.y = trg_mc.y;
+					}
+				}
+				
+				lblCoords.text = "("+trg_mc.x+", "+trg_mc.y+")";
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function updStudVO(trg_mc:MovieClip):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".updGoalVO("+trg_mc+") [:_:]");
+				
+				var studVO:StudVO;
+				for (var i:Number=0; i<_studVO_arr.length; i++) {
+					studVO = _studVO_arr[i]as StudVO;
+					
+					if (trg_mc == studVO.asset_mc) {
+						studVO.pos_pt.x = trg_mc.x;
+						studVO.pos_pt.y = trg_mc.y;
+					}
+				}
+				
+				lblCoords.text = "("+trg_mc.x+", "+trg_mc.y+")";
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			private function flush():void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
@@ -369,9 +670,19 @@
 				
 				_goalVO_arr = new Array();
 				_wallVO_arr = new Array();
+				_trapVO_arr = new Array();
+				_studVO_arr = new Array();
+				
+				btnGoalStart.enabled = true;
+				btnGoalEnd.enabled = true;
+				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
 				
 				_plist_str = "";
 				txtPlistOutput.text = "";
+				
+				_trapVal_spd = 0;
 				
 				lblCoords.text = "";
 				btnClearCanvas.enabled = false;
@@ -400,7 +711,9 @@
 				_plist_str = "";
 				_plist_str += FileIOConsts.PLIST_HEADER;
 				_plist_str += this.writeWalls();
+				_plist_str += this.writeStuds();
 				_plist_str += this.writeGoals();
+				_plist_str += this.writeTraps();
 				_plist_str += FileIOConsts.PLIST_FOOTER;
 				
 				txtPlistOutput.text = _plist_str.replace(/\t/g, "   ");
@@ -454,6 +767,60 @@
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
+			private function writeStuds():String {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writeStuds("+_studVO_arr.length+") [:_:]");
+				
+				var str:String = FileIOConsts.STUD_PREGRP;
+				var vo:StudVO;
+				
+				for (var i:Number=0; i<_studVO_arr.length; i++) {
+					vo = _studVO_arr[i] as StudVO;
+					
+					str += FileIOConsts.STUD_PRETAG + String(vo.id);
+					str += FileIOConsts.STUD_TYPE + String(vo.type_id);
+					str += FileIOConsts.STUD_POS_X + String(vo.pos_pt.x);
+					str += FileIOConsts.STUD_POS_Y + String(EditorConsts.CANVAS_SIZE.height - vo.pos_pt.y);
+					str += FileIOConsts.STUD_RAD + String(vo.radius);
+					str += FileIOConsts.STUD_FRICT + String(vo.friction_amt);
+					str += FileIOConsts.STUD_BOUNCE + String(vo.bounce_amt);
+					str += FileIOConsts.STUD_POSTTAG;
+				}
+				
+				return (str + FileIOConsts.STUD_POSTGRP);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function writeTraps():String {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writeTraps("+_trapVO_arr.length+") [:_:]");
+				
+				var str:String = FileIOConsts.TRAP_PREGRP;
+				var vo:RangedTrapVO;
+				
+				for (var i:Number=0; i<_trapVO_arr.length; i++) {
+					vo = _trapVO_arr[i] as RangedTrapVO;
+					
+					str += FileIOConsts.TRAP_PRETAG + String(vo.ind);
+					str += FileIOConsts.TRAP_TYPE + String(vo.type_id);
+					str += FileIOConsts.TRAP_POS_X + String(vo.pos_pt.x);
+					str += FileIOConsts.TRAP_POS_Y + String(EditorConsts.CANVAS_SIZE.height - vo.pos_pt.y);
+					
+					if (vo.type_id == 1) {
+						str += FileIOConsts.TRAP_MIN + String(vo.range_pt.x);
+						str += FileIOConsts.TRAP_MAX + String(vo.range_pt.y);
+					} else {
+						str += FileIOConsts.TRAP_MIN + String(EditorConsts.CANVAS_SIZE.height - vo.range_pt.y);
+						str += FileIOConsts.TRAP_MAX + String(EditorConsts.CANVAS_SIZE.height - vo.range_pt.x);
+					}
+					str += FileIOConsts.TRAP_SPD + String(vo.spd);
+					str += FileIOConsts.TRAP_POSTTAG;
+				}
+				
+				return (str + FileIOConsts.TRAP_POSTGRP);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
 			private function writePlist():void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 				//trace ("[:_:] "+this.className+".writePlist(["+(FileIOConsts.DIR_PATHNAME + "\\" + FileIOConsts.FILE_PATHNAME)+"]["+File.documentsDirectory.resolvePath(FileIOConsts.DIR_PATHNAME + "\\" + FileIOConsts.FILE_PATHNAME)+"]) [:_:]");
@@ -461,6 +828,13 @@
 				_plist_fileRef.save(_plist_str, FileIOConsts.LEVEL_PLIST_NAME + String(Strings.prependZeroes(String(_lvl_ind) + FileIOConsts.PLIST_EXT, int(_lvl_ind < 10))));
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
+			
+			private function parsePlist(parser:AbstractPlistParser):void {	
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".parsePlist() [:_:]");
+				
+				
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
 			private function hdlPlist_Select(e:Event):void {	
@@ -486,12 +860,12 @@
 				_plist_fileRef.removeEventListener(Event.COMPLETE, hdlPlist_LoadComplete);
 				txtPlistOutput.text = file_str;
 				
-				
-				var plistParser:AbstractPlistParser = new AbstractPlistParser(XML(file_str));
+				this.parsePlist(new AbstractPlistParser(XML(file_str)));
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 		//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 		//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*·¯
+
 		]]>
 	</fx:Script>
 	<!-- /////////////////////////////// -->
@@ -519,12 +893,16 @@
 		<s:VGroup id="grpTools" paddingTop="8">
 			<!-- <mx:UIComponent id="uiLvlGoal" width="36" height="39" toolTip="Level Goal" /> -->
 			<!-- <s:BitmapImage id="bmpGoal" source="@Embed('../../../../../../assets/images/LevelGoal.png')" width="36" height="39" /> --> 
-			<s:Button id="btnGoalLvl" label="Level Goal" width="80" click="hdlGoalBtn_Click(event)" />
-			<s:Button id="btnGoalStar" label="Star Goal" width="80" click="hdlGoalBtn_Click(event)" />
+			<s:Button id="btnGoalStart" label="Start Goal" width="80" click="hdlGoalBtn_Click(event)" />
+			<s:Button id="btnGoalEnd" label="End Goal" width="80" click="hdlGoalBtn_Click(event)" />
 			<s:Button id="btnWall1" label="Short Wall" width="80" click="hdlWall1Btn_Click(event)" />
 			<s:Button id="btnWall2" label="Long Wall" width="80" click="hdlWall2Btn_Click(event)" />
+			<s:Button id="btnVTrap" label="V-Trap" width="80" click="hdlVTrapBtn_Click(event)" />
+			<s:Button id="btnHTrap" label="H-Trap" width="80" click="hdlHTrapBtn_Click(event)" />
+			<s:Button id="btnStud" label="Stud" width="80" click="hdlStudBtn_Click(event)" />
 			<s:Button id="btnLoadPlist" y="320" width="80" height="64" label="Load Plist…" click="hdlLoadPlistBtn_Click(event)" />
 			<s:Button id="btnSavePlist" y="320" width="80" height="64" label="Save Plist…" click="hdlSavePlistBtn_Click(event)" />
+			<s:Label id="lblCoords" y="4" width="80" text="" />
 		</s:VGroup>
 	</s:Panel>
 	
@@ -536,10 +914,10 @@
 		<s:BorderContainer id="ctnCanvas" width="320" height="480" backgroundAlpha="0" />
 			
 		<s:HGroup y="480">
-			<s:Group>
-				<s:Label id="lblCoords" y="4" width="160" text="" />
-			</s:Group>
 			<s:Button id="btnClearCanvas" label="Clear Canvas" x="256" width="128" height="32" click="hdlClearCanvas_Click(event)" enabled="false" />
+			<s:Button id="btnMin" label="MIN: {_trapVal_min}" width="96" click="hdlTrapMinBtn_Click(event)" enabled="false" />
+			<s:Button id="btnMax" label="MAX: {_trapVal_max}" width="96" click="hdlTrapMaxBtn_Click(event)" enabled="false" />
+			<mx:Slider id="sldSpd" value="{_trapVal_spd}" width="96" useHandCursor="true" change="hdlTrapSpdSld_Change(event)" enabled="true" />
 		</s:HGroup>
 	</s:Group>
 	

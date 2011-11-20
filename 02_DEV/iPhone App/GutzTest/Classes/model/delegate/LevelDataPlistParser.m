@@ -13,6 +13,9 @@
 
 @synthesize arrWallData;
 @synthesize arrGoalData;
+@synthesize arrTrapData;
+@synthesize arrStudData;
+@synthesize arrDartData;
 
 
 -(id)init {
@@ -32,6 +35,9 @@
 		
 		arrWallData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"walls"]];
 		arrGoalData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"goals"]];
+		arrTrapData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"traps"]];
+		arrStudData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"studs"]];
+		arrDartData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"darts"]];
 	}
 	
 	return (self);

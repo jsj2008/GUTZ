@@ -63,6 +63,28 @@ package com.sparklemountain.gutz.designer {
 		public static const GOAL_POSTTAG:String ="</integer>\n\t\t</dict>\n";
 		public static const GOAL_POSTGRP:String = "\t</array>\n";
 		
+		public static const TRAP_PREGRP:String = "\t<key>traps</key>\n\t<array>\n";
+		public static const TRAP_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
+		public static const TRAP_TYPE:String = "</integer>\n\t\t\t<key>type</key>\n\t\t\t<integer>";
+		public static const TRAP_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
+		public static const TRAP_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
+		public static const TRAP_MIN:String = "</integer>\n\t\t\t<key>min</key>\n\t\t\t<integer>";
+		public static const TRAP_MAX:String = "</integer>\n\t\t\t<key>max</key>\n\t\t\t<integer>";
+		public static const TRAP_SPD:String = "</integer>\n\t\t\t<key>speed</key>\n\t\t\t<real>";
+		public static const TRAP_POSTTAG:String ="</real>\n\t\t</dict>\n";
+		public static const TRAP_POSTGRP:String = "\t</array>\n";
+		
+		public static const STUD_PREGRP:String = "\t<key>studs</key>\n\t<array>\n";
+		public static const STUD_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
+		public static const STUD_TYPE:String = "</integer>\n\t\t\t<key>type</key>\n\t\t\t<integer>";
+		public static const STUD_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
+		public static const STUD_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
+		public static const STUD_RAD:String = "</integer>\n\t\t\t<key>radius</key>\n\t\t\t<integer>";
+		public static const STUD_FRICT:String = "</integer>\n\t\t\t<key>friction</key>\n\t\t\t<real>";
+		public static const STUD_BOUNCE:String = "</real>\n\t\t\t<key>bounce</key>\n\t\t\t<real>";
+		public static const STUD_POSTTAG:String ="</real>\n\t\t</dict>\n";
+		public static const STUD_POSTGRP:String = "\t</array>\n";
+		
 		
 		public static const FILE_PATHNAME:String = "GUTZ-Editors.demo";
 		public static const DIR_PATHNAME:String = "./";

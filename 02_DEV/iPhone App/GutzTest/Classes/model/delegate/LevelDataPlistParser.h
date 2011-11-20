@@ -15,12 +15,17 @@
     
 	NSArray *arrWallData;
 	NSArray *arrGoalData;
-	
+	NSArray *arrTrapData;
+	NSArray *arrStudData;
+	NSArray *arrDartData;
 }
 
 
 @property (nonatomic, retain) NSArray *arrWallData;
 @property (nonatomic, retain) NSArray *arrGoalData;
+@property (nonatomic, retain) NSArray *arrTrapData;
+@property (nonatomic, retain) NSArray *arrStudData;
+@property (nonatomic, retain) NSArray *arrDartData;
 
 -(id) initWithLevel:(int)ind;
 

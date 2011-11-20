@@ -23,6 +23,7 @@
 	NSSet *chipmunkObjects;
 	NSMutableSet *set;
 	ChipmunkSpace *_space;
+	CCLayer *_layer;
 	
 	ChipmunkBody *_body;
 	ChipmunkShape *_shape;
@@ -33,8 +34,11 @@
 }
 
 -(void)spaceRef:(ChipmunkSpace *)space;
+-(void)layerRef:(CCLayer *)layer;
 
 @property (nonatomic, readonly) NSSet *chipmunkObjects;
+@property (nonatomic, retain) ChipmunkBody *_body;
+
 //@property (readonly) NSSet *chipmunkObjects;
 
 

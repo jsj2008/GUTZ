@@ -474,8 +474,6 @@
 		4CA6EED71416AEF200425F27 /* blocker_B_.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6EED31416AEF200425F27 /* blocker_B_.png */; };
 		4CA6EED81416AEF200425F27 /* blocker-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6EED41416AEF200425F27 /* blocker-hd.png */; };
 		4CA6EED91416AEF200425F27 /* blocker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA6EED51416AEF200425F27 /* blocker.png */; };
-		4CA6EEE11416BD3800425F27 /* BonusTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6EEDF1416BD3800425F27 /* BonusTarget.h */; };
-		4CA6EEE21416BD3800425F27 /* BonusTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6EEE01416BD3800425F27 /* BonusTarget.m */; };
 		4CA6EEE91416BED400425F27 /* StarGoalTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6EEE71416BED400425F27 /* StarGoalTarget.h */; };
 		4CA6EEEA1416BED400425F27 /* StarGoalTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA6EEE81416BED400425F27 /* StarGoalTarget.m */; };
 		4CA6EEED1416C01000425F27 /* BaseTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA6EEEB1416C01000425F27 /* BaseTarget.h */; };
@@ -596,6 +594,12 @@
 		4CCF492A13C6A98B0025F720 /* lvlSelectDigit_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCF492013C6A98B0025F720 /* lvlSelectDigit_8.png */; };
 		4CCF492B13C6A98B0025F720 /* lvlSelectDigit_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCF492113C6A98B0025F720 /* lvlSelectDigit_9.png */; };
 		4CCF492F13C6E3540025F720 /* LvlStarVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF492E13C6E3540025F720 /* LvlStarVO.m */; };
+		4CD5A262147867F30082B6DD /* BaseTrap.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CD5A260147867F30082B6DD /* BaseTrap.h */; };
+		4CD5A263147867F30082B6DD /* BaseTrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5A261147867F30082B6DD /* BaseTrap.m */; };
+		4CD5A26714786B570082B6DD /* DartEmitter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CD5A26514786B570082B6DD /* DartEmitter.h */; };
+		4CD5A26814786B570082B6DD /* DartEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5A26614786B570082B6DD /* DartEmitter.m */; };
+		4CD5A26F14787CCB0082B6DD /* Dart.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CD5A26D14787CCA0082B6DD /* Dart.h */; };
+		4CD5A27014787CCB0082B6DD /* Dart.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5A26E14787CCB0082B6DD /* Dart.m */; };
 		4CD6FA2B13BC50860070B5C1 /* BaseScreenLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6FA1413BC50860070B5C1 /* BaseScreenLayer.m */; };
 		4CD6FA2D13BC50860070B5C1 /* LevelCompleteScreenLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6FA1913BC50860070B5C1 /* LevelCompleteScreenLayer.m */; };
 		4CD6FA2E13BC50860070B5C1 /* LevelSelectScreenLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6FA1B13BC50860070B5C1 /* LevelSelectScreenLayer.m */; };
@@ -655,6 +659,8 @@
 		4CEA238F13FB5C21009D1198 /* letter_t-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA238D13FB5C21009D1198 /* letter_t-hd.png */; };
 		4CEA239013FB5C21009D1198 /* letter_t.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA238E13FB5C21009D1198 /* letter_t.png */; };
 		4CEA239213FB5D18009D1198 /* btn_replayActive-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA239113FB5D18009D1198 /* btn_replayActive-hd.png */; };
+		4CED264D1471D43A003C6B43 /* RangedTrap.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CED264B1471D43A003C6B43 /* RangedTrap.h */; };
+		4CED264E1471D43A003C6B43 /* RangedTrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CED264C1471D43A003C6B43 /* RangedTrap.m */; };
 		4CF7952213F34C0800CD5535 /* LevelData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CF7952113F34C0800CD5535 /* LevelData.plist */; };
 		4CF7952613F378DA00CD5535 /* LevelDataPlistParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF7952413F378DA00CD5535 /* LevelDataPlistParser.h */; };
 		4CF7952713F378DA00CD5535 /* LevelDataPlistParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7952513F378DA00CD5535 /* LevelDataPlistParser.m */; };
@@ -1149,8 +1155,6 @@
 		4CA6EED31416AEF200425F27 /* blocker_B_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker_B_.png; path = Resources/blocker_B_.png; sourceTree = "<group>"; };
 		4CA6EED41416AEF200425F27 /* blocker-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blocker-hd.png"; path = "Resources/blocker-hd.png"; sourceTree = "<group>"; };
 		4CA6EED51416AEF200425F27 /* blocker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blocker.png; path = Resources/blocker.png; sourceTree = "<group>"; };
-		4CA6EEDF1416BD3800425F27 /* BonusTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonusTarget.h; sourceTree = "<group>"; };
-		4CA6EEE01416BD3800425F27 /* BonusTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonusTarget.m; sourceTree = "<group>"; };
 		4CA6EEE71416BED400425F27 /* StarGoalTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarGoalTarget.h; sourceTree = "<group>"; };
 		4CA6EEE81416BED400425F27 /* StarGoalTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarGoalTarget.m; sourceTree = "<group>"; };
 		4CA6EEEB1416C01000425F27 /* BaseTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTarget.h; sourceTree = "<group>"; };
@@ -1282,6 +1286,12 @@
 		4CCF492113C6A98B0025F720 /* lvlSelectDigit_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lvlSelectDigit_9.png; path = Resources/lvlSelectDigit_9.png; sourceTree = "<group>"; };
 		4CCF492D13C6E3540025F720 /* LvlStarVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LvlStarVO.h; sourceTree = "<group>"; };
 		4CCF492E13C6E3540025F720 /* LvlStarVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LvlStarVO.m; sourceTree = "<group>"; };
+		4CD5A260147867F30082B6DD /* BaseTrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseTrap.h; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/BaseTrap.h"; sourceTree = "<group>"; };
+		4CD5A261147867F30082B6DD /* BaseTrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseTrap.m; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/BaseTrap.m"; sourceTree = "<group>"; };
+		4CD5A26514786B570082B6DD /* DartEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DartEmitter.h; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/DartEmitter.h"; sourceTree = "<group>"; };
+		4CD5A26614786B570082B6DD /* DartEmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DartEmitter.m; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/DartEmitter.m"; sourceTree = "<group>"; };
+		4CD5A26D14787CCA0082B6DD /* Dart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dart.h; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/Dart.h"; sourceTree = "<group>"; };
+		4CD5A26E14787CCB0082B6DD /* Dart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dart.m; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/Dart.m"; sourceTree = "<group>"; };
 		4CD6FA1313BC50860070B5C1 /* BaseScreenLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScreenLayer.h; sourceTree = "<group>"; };
 		4CD6FA1413BC50860070B5C1 /* BaseScreenLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseScreenLayer.m; sourceTree = "<group>"; };
 		4CD6FA1513BC50860070B5C1 /* ConfigMenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigMenuLayer.h; sourceTree = "<group>"; };
@@ -1354,6 +1364,8 @@
 		4CEA238D13FB5C21009D1198 /* letter_t-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "letter_t-hd.png"; path = "Resources/letter_t-hd.png"; sourceTree = "<group>"; };
 		4CEA238E13FB5C21009D1198 /* letter_t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letter_t.png; path = Resources/letter_t.png; sourceTree = "<group>"; };
 		4CEA239113FB5D18009D1198 /* btn_replayActive-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_replayActive-hd.png"; path = "Resources/btn_replayActive-hd.png"; sourceTree = "<group>"; };
+		4CED264B1471D43A003C6B43 /* RangedTrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RangedTrap.h; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/RangedTrap.h"; sourceTree = "<group>"; };
+		4CED264C1471D43A003C6B43 /* RangedTrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RangedTrap.m; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/RangedTrap.m"; sourceTree = "<group>"; };
 		4CF7952113F34C0800CD5535 /* LevelData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LevelData.plist; path = Resources/LevelData.plist; sourceTree = "<group>"; };
 		4CF7952413F378DA00CD5535 /* LevelDataPlistParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelDataPlistParser.h; sourceTree = "<group>"; };
 		4CF7952513F378DA00CD5535 /* LevelDataPlistParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelDataPlistParser.m; sourceTree = "<group>"; };
@@ -1658,12 +1670,18 @@
 				4C77DD0F1418BB9D0079B3DD /* StiffGibs.m */,
 				4CA6EEEB1416C01000425F27 /* BaseTarget.h */,
 				4CA6EEEC1416C01000425F27 /* BaseTarget.m */,
-				4CA6EEDF1416BD3800425F27 /* BonusTarget.h */,
-				4CA6EEE01416BD3800425F27 /* BonusTarget.m */,
 				4C569B2713F2614E00F061D0 /* GoalTarget.h */,
 				4C569B2813F2614E00F061D0 /* GoalTarget.m */,
 				4CA6EEE71416BED400425F27 /* StarGoalTarget.h */,
 				4CA6EEE81416BED400425F27 /* StarGoalTarget.m */,
+				4CD5A26514786B570082B6DD /* DartEmitter.h */,
+				4CD5A26614786B570082B6DD /* DartEmitter.m */,
+				4CD5A26D14787CCA0082B6DD /* Dart.h */,
+				4CD5A26E14787CCB0082B6DD /* Dart.m */,
+				4CD5A260147867F30082B6DD /* BaseTrap.h */,
+				4CD5A261147867F30082B6DD /* BaseTrap.m */,
+				4CED264B1471D43A003C6B43 /* RangedTrap.h */,
+				4CED264C1471D43A003C6B43 /* RangedTrap.m */,
 				4C69D5C713EFB55300B17B33 /* JellyBlob.h */,
 				4C69D5C813EFB55300B17B33 /* JellyBlob.m */,
 			);
@@ -2811,7 +2829,6 @@
 				4C8911CA140C50A60014C1D8 /* ObjectiveChipmunk.h in Headers */,
 				4C3F27F5140C58CE00D8B959 /* GameSettingsModel.h in Headers */,
 				4C8C84BA140CBE7400CEDDA0 /* CreatureDataPlistParser.h in Headers */,
-				4CA6EEE11416BD3800425F27 /* BonusTarget.h in Headers */,
 				4CA6EEE91416BED400425F27 /* StarGoalTarget.h in Headers */,
 				4CA6EEED1416C01000425F27 /* BaseTarget.h in Headers */,
 				4CBCEEA214175D27002165D6 /* BasePhysicsLayer.h in Headers */,
@@ -2821,6 +2838,10 @@
 				4CC1BB9A1418B0E900C23280 /* BaseGibs.h in Headers */,
 				4CC1BB9E1418BABA00C23280 /* SoftGibs.h in Headers */,
 				4C77DD101418BB9D0079B3DD /* StiffGibs.h in Headers */,
+				4CED264D1471D43A003C6B43 /* RangedTrap.h in Headers */,
+				4CD5A262147867F30082B6DD /* BaseTrap.h in Headers */,
+				4CD5A26714786B570082B6DD /* DartEmitter.h in Headers */,
+				4CD5A26F14787CCB0082B6DD /* Dart.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3351,7 +3372,6 @@
 				4C891174140C48300014C1D8 /* CJSONSerializer.m in Sources */,
 				4C3F27F6140C58CE00D8B959 /* GameSettingsModel.m in Sources */,
 				4C8C84BB140CBE7400CEDDA0 /* CreatureDataPlistParser.m in Sources */,
-				4CA6EEE21416BD3800425F27 /* BonusTarget.m in Sources */,
 				4CA6EEEA1416BED400425F27 /* StarGoalTarget.m in Sources */,
 				4CA6EEEE1416C01000425F27 /* BaseTarget.m in Sources */,
 				4CBCEEA314175D27002165D6 /* BasePhysicsLayer.m in Sources */,
@@ -3361,6 +3381,10 @@
 				4CC1BB9B1418B0E900C23280 /* BaseGibs.m in Sources */,
 				4CC1BB9F1418BABA00C23280 /* SoftGibs.m in Sources */,
 				4C77DD111418BB9D0079B3DD /* StiffGibs.m in Sources */,
+				4CED264E1471D43A003C6B43 /* RangedTrap.m in Sources */,
+				4CD5A263147867F30082B6DD /* BaseTrap.m in Sources */,
+				4CD5A26814786B570082B6DD /* DartEmitter.m in Sources */,
+				4CD5A27014787CCB0082B6DD /* Dart.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

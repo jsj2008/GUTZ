@@ -13,6 +13,7 @@
 @implementation BasePhysicsObject
 
 @synthesize chipmunkObjects;
+@synthesize _body;
 
 -(id)init {
 	
@@ -28,6 +29,10 @@
 
 -(void)spaceRef:(ChipmunkSpace *)space {
 	_space = space;
+}
+
+-(void)layerRef:(CCLayer *)layer {
+	_layer = layer;
 }
 
 

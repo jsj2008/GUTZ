@@ -22,11 +22,25 @@
 			<key>id</key>
 			<integer>1</integer>
 			<key>type</key>
+			<integer>1</integer>
+			<key>x</key>
+			<integer>85</integer>
+			<key>y</key>
+			<integer>349</integer>
+			<key>friction</key>
+			<real>0.5</real>
+			<key>bounce</key>
+			<real>0.1</real>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>2</integer>
+			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>97</integer>
+			<integer>85</integer>
 			<key>y</key>
-			<integer>111</integer>
+			<integer>155</integer>
 			<key>friction</key>
 			<real>0.5</real>
 			<key>bounce</key>
@@ -41,15 +55,15 @@
 			<key>type</key>
 			<integer>1</integer>
 			<key>x</key>
-			<integer>284</integer>
+			<integer>35</integer>
 			<key>y</key>
-			<integer>443</integer>
+			<integer>420</integer>
 		</dict>
 		<dict>
 			<key>id</key>
 			<integer>1</integer>
 			<key>type</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>x</key>
 			<integer>27</integer>
 			<key>y</key>
