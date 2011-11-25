@@ -49,7 +49,7 @@ package com.sparklemountain.gutz.designer.model.vo {
 		
 		
 		public function toString():String {
-			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._	
+		//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._	
 			
 			var ret_str:String = "\n"+this+":\n[=-=-=-=-=-=-=-=-=-=-=-=-=-=]";
 				ret_str += "\n[id]: "+this.id;

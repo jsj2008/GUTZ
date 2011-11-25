@@ -9,12 +9,14 @@
 			<integer>0</integer>
 			<key>type</key>
 			<integer>2</integer>
+			<key>spikes</key>
+			<integer>2</integer>
 			<key>x</key>
-			<integer>223</integer>
+			<integer>107</integer>
 			<key>y</key>
-			<integer>119</integer>
+			<integer>354</integer>
 			<key>friction</key>
-			<real>0.5</real>
+			<real>0.85</real>
 			<key>bounce</key>
 			<real>0.1</real>
 		</dict>
@@ -23,12 +25,30 @@
 			<integer>1</integer>
 			<key>type</key>
 			<integer>1</integer>
+			<key>spikes</key>
+			<integer>2</integer>
 			<key>x</key>
-			<integer>54</integer>
+			<integer>247</integer>
 			<key>y</key>
-			<integer>377</integer>
+			<integer>94</integer>
 			<key>friction</key>
-			<real>0.5</real>
+			<real>0.85</real>
+			<key>bounce</key>
+			<real>0.1</real>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>2</integer>
+			<key>type</key>
+			<integer>1</integer>
+			<key>spikes</key>
+			<integer>1</integer>
+			<key>x</key>
+			<integer>72</integer>
+			<key>y</key>
+			<integer>260</integer>
+			<key>friction</key>
+			<real>0.85</real>
 			<key>bounce</key>
 			<real>0.1</real>
 		</dict>
@@ -41,27 +61,11 @@
 			<key>type</key>
 			<integer>-1</integer>
 			<key>x</key>
-			<integer>178</integer>
+			<integer>200</integer>
 			<key>y</key>
-			<integer>319</integer>
+			<integer>400</integer>
 			<key>radius</key>
-			<integer>16</integer>
-			<key>friction</key>
-			<real>0.5</real>
-			<key>bounce</key>
-			<real>0.1</real>
-		</dict>
-		<dict>
-			<key>id</key>
-			<integer>1</integer>
-			<key>type</key>
-			<integer>-1</integer>
-			<key>x</key>
-			<integer>260</integer>
-			<key>y</key>
-			<integer>317</integer>
-			<key>radius</key>
-			<integer>16</integer>
+			<integer>18</integer>
 			<key>friction</key>
 			<real>0.5</real>
 			<key>bounce</key>
@@ -86,9 +90,9 @@
 			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>302</integer>
+			<integer>41</integer>
 			<key>y</key>
-			<integer>20</integer>
+			<integer>221</integer>
 		</dict>
 	</array>
 	<key>traps</key>
@@ -99,32 +103,15 @@
 			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>51</integer>
+			<integer>35</integer>
 			<key>y</key>
-			<integer>299</integer>
+			<integer>203</integer>
 			<key>min</key>
-			<integer>32</integer>
+			<integer>39</integer>
 			<key>max</key>
-			<integer>326</integer>
+			<integer>213</integer>
 			<key>speed</key>
-			<real>1.558823529411765</real>
-		</dict>
-	</array>
-	<key>darts</key>
-	<array>
-		<dict>
-			<key>id</key>
-			<integer>0</integer>
-			<key>type</key>
-			<integer>0</integer>
-			<key>x</key>
-			<integer>0</integer>
-			<key>y</key>
-			<integer>200</integer>
-			<key>interval</key>
-			<real>0.85</real>
-			<key>speed</key>
-			<real>4.158823529411765</real>
+			<real>1.147058823529412</real>
 		</dict>
 	</array>
 </dict>

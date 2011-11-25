@@ -26,10 +26,18 @@
 		_shape.collisionType = [BaseTrap class];
 		_shape.data = self;
 		
+		_frame1Sprite = [CCSprite spriteWithFile:@"enemy_spike_f1.png"];
+		_frame2Sprite = [CCSprite spriteWithFile:@"enemy_spike_f2.png"];
+		_frame2Sprite.visible = NO;
 		
-		_sprite = [CCSprite spriteWithFile:@"inGamePin.png"];
+		
+		_sprite = [CCSprite new];
+		[_sprite addChild:_frame1Sprite];
+		[_sprite addChild:_frame2Sprite];
+		
 		[_sprite setPosition:pos];
 		
+		_isFrame1 = YES;
 		
 		chipmunkObjects = [ChipmunkObjectFlatten(_shape, nil) retain];
 	}
@@ -38,6 +46,9 @@
 }
 
 
+-(void)onFrameChange:(id)sender {
+	
+}
 
 -(void)updPos {
 	[super updPos];

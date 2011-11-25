@@ -10,7 +10,6 @@
 
 @implementation RangedTrap
 
-
 -(id)initAtPos:(CGPoint)pos vertical:(BOOL)vert speed:(float)spd range:(CGPoint)rng {
 	if ((self = [super init])) {
 		
@@ -21,31 +20,25 @@
 		_body = [[ChipmunkBody alloc] initWithMass:INFINITY andMoment:INFINITY];
 		_body.pos = pos;
 		
-		if (_isVertical)
-			_shape = [ChipmunkPolyShape boxWithBody:_body width:TRAP_HEIGHT height:TRAP_WIDTH];
-		
-		else
-			_shape = [ChipmunkPolyShape boxWithBody:_body width:TRAP_WIDTH height:TRAP_HEIGHT];
-		
+		_shape = [ChipmunkCircleShape circleWithBody:_body radius:TRAP_RADIUS offset:cpvzero];
 		_shape.elasticity = 0.0f;
 		_shape.friction = 0.0f;		
 		_shape.collisionType = [RangedTrap class];
 		_shape.data = self;
 		
-		_sprite = [CCSprite spriteWithFile:@"debug_node-01.png"];
+		_frame1Sprite = [CCSprite spriteWithFile:@"enemy_spike_f1.png"];
+		_frame2Sprite = [CCSprite spriteWithFile:@"enemy_spike_f2.png"];
+		_frame2Sprite.visible = NO;
+		
+		_sprite = [CCSprite new];
+		[_sprite addChild:_frame1Sprite];
+		[_sprite addChild:_frame2Sprite];
 		[_sprite setPosition:pos];
-		
-		if (_isVertical) {
-			[_sprite setScaleX:2.0f];
-			[_sprite setScaleY:7.0f];
-			
-		} else {
-			[_sprite setScaleX:7.0f];
-			[_sprite setScaleY:2.0f];
-		}
-		
+
 		_isDirInc = YES;
+		_isFrame1 = YES;
 		
+		_frameTimer = [NSTimer scheduledTimerWithTimeInterval:TRAP_INTERVAL target:self selector:@selector(onFrameChange:) userInfo:nil repeats:YES];
 		chipmunkObjects = [ChipmunkObjectFlatten(_shape, nil) retain];
 	}
 	
@@ -67,6 +60,13 @@
 
 -(void)dealloc {
 	[super dealloc];
+}
+
+-(void)onFrameChange:(id)sender {
+	_isFrame1 = !_isFrame1;
+	
+	_frame1Sprite.visible = _isFrame1;
+	_frame2Sprite.visible = !_isFrame1;
 }
 
 -(void)updPos {
@@ -103,7 +103,7 @@
 	
 	_body.pos = cpvadd(_body.pos, vecInc);
 	[_sprite setPosition:cpvadd(_body.pos, vecInc)];
-
+	//[_sprite setRotation:_sprite.rotation - 4];
 }
 
 

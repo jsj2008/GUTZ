@@ -21,6 +21,7 @@
 @synthesize rFillColor;
 @synthesize gFillColor;
 @synthesize bFillColor;
+@synthesize ccLayer;
 
 
 -(id)initWithLvl:(int)lvl atPos:(cpVect)pos {
@@ -180,6 +181,16 @@
 		totBodies = count;
 		radius = rad;
 		
+		
+		_eyeSprite = [CCSprite spriteWithFile:@"eye.png"];
+		[_eyeSprite setPosition:cpv(posPt.x, posPt.y - 8)];
+		[_eyeSprite setScale:0.2f];
+		
+		
+		_mouthSprite = [CCSprite spriteWithFile:@"smile.png"];
+		[_mouthSprite setPosition:cpv(posPt.x, posPt.y + 5)];
+		[_mouthSprite setScale:0.5f];
+		
 		[self constructCenter];
 		[self constructEdges];
 	}
@@ -195,6 +206,9 @@
 	[set addObject:_centralBody];
 	_centralBody.pos = posPt;
 	
+	_centerSprite = [CCSprite spriteWithFile:@"jellyCenter.png"];
+	[_centerSprite setScale:radius / 23.0f];
+	[_centerSprite setPosition:posPt];
 	
 	cpVect vt[totBodies];
 	for(int i=0; i<totBodies; i++){
@@ -218,14 +232,15 @@
 
 -(void)constructEdges {
 	
-	cpFloat edgeMass = 4.0f / totBodies;
+	cpFloat edgeMass = 2.0f / totBodies;
 	cpFloat edgeDistance = 2.0f * radius * cpfsin(M_PI / (cpFloat)totBodies);
-	_edgeRadius = edgeDistance * 1.5f;
+	_edgeRadius = edgeDistance * 1.33f;
 	
 	//cpFloat squishCoef = 0.7;
 	cpFloat springStiffness = 80.0f;
 	cpFloat springDamping = 1.0f;
 	
+	_edgeSprites = [[NSMutableArray alloc] initWithCapacity:totBodies];
 	bodies = [[NSMutableArray alloc] initWithCapacity:totBodies];
 	_edgeBodies = bodies;
 	
@@ -235,8 +250,12 @@
 		
 		ChipmunkBody *body = [ChipmunkBody bodyWithMass:edgeMass andMoment:INFINITY];
 		body.pos = cpvadd(posPt, posMult);
-		
 		[bodies addObject:body];
+		
+		CCSprite *sprite = [CCSprite spriteWithFile:@"jellyEdge.png"];
+		[sprite setPosition:body.pos];
+		[sprite setScale:_edgeRadius / 9.0f];
+		[_edgeSprites addObject:sprite];
 		
 		//ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:_edgeRadius * ((CCRANDOM_0_1() * 1) + 0.5) offset:cpvzero];
 		ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:_edgeRadius offset:cpvzero];
@@ -244,13 +263,13 @@
 		shape.elasticity = EDGE_BOUNCE;
 		shape.friction = EDGE_FRICTION;
 		shape.group = self;
-		shape.layers = GRABABLE_LAYER;
+		shape.layers = NORMAL_LAYER;
 		shape.collisionType = [JellyBlob class];
 		
 		//[set addObject:[ChipmunkSlideJoint slideJointWithBodyA:_centralBody bodyB:body anchr1:cpvzero anchr2:cpvzero min:0 max:radius*squishCoef]];
 		
 		cpVect springOffset = cpvmult(slope, radius + _edgeRadius);
-		[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:_centralBody bodyB:body anchr1:springOffset anchr2:cpvzero restLength:0 stiffness:springStiffness damping:springDamping]];
+		[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:_centralBody bodyB:body anchr1:springOffset anchr2:cpvzero restLength:0 stiffness:SPRING_STR damping:SPRING_DAMP]];
 	}
 	
 	[set addObjectsFromArray:bodies];
@@ -269,6 +288,40 @@
 	
 }
 
+
+-(void)adoptSprites:(CCLayer *)layer {
+		
+	for (CCSprite *sprite in _edgeSprites)
+		[layer addChild:sprite];
+	
+	[layer addChild:_centerSprite];
+	[layer addChild:_eyeSprite];
+	[layer addChild:_mouthSprite];
+}
+
+-(void)updSprites {
+	int cnt = 0;
+	
+	[_centerSprite setPosition:posPt];
+	[_eyeSprite setPosition:cpv([self posPt].x, [self posPt].y + 12)];
+	[_mouthSprite setPosition:cpv([self posPt].x, [self posPt].y - 12)];
+	
+	for (ChipmunkBody *body in bodies) {
+		CCSprite *sprite = [_edgeSprites objectAtIndex:cnt];
+		[sprite setPosition:body.pos];
+		cnt++;
+	}
+}
+
+-(void)flushSprites:(CCLayer *)layer {
+	
+	[layer removeChild:_centerSprite cleanup:NO];
+	[layer removeChild:_eyeSprite cleanup:NO];
+	[layer removeChild:_mouthSprite cleanup:NO];
+	
+	for (CCSprite *sprite in _edgeSprites)
+		[layer removeChild:sprite cleanup:NO];
+}
 
 -(ChipmunkBody *)findByID:(int)val {
 	//NSLog(@"%@.findInnerNode(%d)", [self class], ind);
@@ -383,6 +436,13 @@
 }
 
 -(void)pop {
+	
+	/*
+	 id eyeAction = [CCMoveTo actionWithDuration:0.33f position:ccp((CCRANDOM_0_1() * 200) + 64, (CCRANDOM_0_1() * 360) + 64)];
+	 id mouthActon = [CCMoveTo actionWithDuration:0.33f position:ccp((CCRANDOM_0_1() * 200) + 64, -((CCRANDOM_0_1() * 300) + 64))];
+	 [eyeSprite runAction:[CCEaseIn actionWithAction:[eyeAction copy] rate:0.9f]];
+	 [mouthSprite runAction:[CCEaseIn actionWithAction:[mouthActon copy] rate:0.2f]];
+	 */
 	
 	//if (!isPopped) {
 		

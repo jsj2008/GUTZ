@@ -11,9 +11,7 @@
 #import "cocos2d.h"
 #import "ObjectiveChipmunk.h"
 
-#define TRAP_RADIUS 8.0f
-#define TRAP_WIDTH 56.0f
-#define TRAP_HEIGHT 16.0f
+#define TRAP_RADIUS 38.0f
 
 @interface RangedTrap : BaseTrap <ChipmunkObject> {
 	BOOL _isDirInc;

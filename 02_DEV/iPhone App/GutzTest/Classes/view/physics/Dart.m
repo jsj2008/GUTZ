@@ -18,15 +18,17 @@
 		_body = [[ChipmunkBody alloc] initWithMass:INFINITY andMoment:INFINITY];
 		_body.pos = pos;
 		
-		_shape = [ChipmunkStaticCircleShape circleWithBody:_body radius:DART_RADIUS offset:cpvzero];
+		_shape = [ChipmunkPolyShape boxWithBody:_body width:40 height:20];
 		_shape.elasticity = 0.0f;
 		_shape.friction = 0.0f;		
 		_shape.collisionType = [Dart class];
 		_shape.data = self;
 
-		_sprite = [CCSprite spriteWithFile:@"debug_node-02.png"];
-		[_sprite setScale:0.5f];
+		_sprite = [CCSprite spriteWithFile:@"dart.png"];
+		[_sprite setScale:0.67f];
 		[_sprite setPosition:_body.pos];
+		
+		chipmunkObjects = [ChipmunkObjectFlatten(_shape, nil) retain];
 	}
 	
 	return (self);

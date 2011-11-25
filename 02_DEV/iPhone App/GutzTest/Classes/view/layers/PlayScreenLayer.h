@@ -13,6 +13,11 @@
 #import "StarGoalTarget.h"
 #import "RangedTrap.h"
 #import "DartEmitter.h"
+#import "Pinwheel.h"
+#import "BaseWall.h"
+#import "SpikedWall.h"
+#import "ConveyorBelt.h"
+
 
 #import "AlgebraUtils.h"
 #import "GameConfig.h"
@@ -78,6 +83,7 @@
 	NSMutableArray *arrTraps;
 	NSMutableArray *arrDartEmitters;
 	NSMutableArray *arrDarts;
+	NSMutableArray *arrPinwheels;
 	
 	NSMutableArray *_arrGibs;
 	
@@ -156,6 +162,9 @@
 
 -(BOOL)beginTrapCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
 -(void)separateTrapCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
+
+-(BOOL)beginSpikeCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
+-(void)separateSpikeCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
 
 -(BOOL)beginStarGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
 -(void)separateStarGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;

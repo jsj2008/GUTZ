@@ -25,6 +25,7 @@ package com.sparklemountain.gutz.designer.model.vo {
 		//]=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~.
 		public var ind:int;
 		public var type_id:int;
+		public var spikes:int;
 		public var asset_mc:MovieClip;
 		public var pos_pt:Point;
 		public var dim_rect:Rectangle;
@@ -36,11 +37,12 @@ package com.sparklemountain.gutz.designer.model.vo {
 		
 		
 		// <*] class constructor [*>
-		public function WallVO(idx:int, type:int, asset:MovieClip, pos:Point, frict:Number, bounce:Number) {
+		public function WallVO(idx:int, type:int, spike:int, asset:MovieClip, pos:Point, frict:Number, bounce:Number) {
 		//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 			
 			this.ind = idx;
 			this.type_id = type;
+			this.spikes = spike;
 			this.asset_mc = asset;
 			this.pos_pt = pos.clone();
 			this.dim_rect = new Rectangle(0, 0, asset.width, asset.height);
@@ -60,6 +62,7 @@ package com.sparklemountain.gutz.designer.model.vo {
 			var ret_str:String = "\n"+this+":\n[=-=-=-=-=-=-=-=-=-=-=-=-=-=]";
 				ret_str += "\n[ind]: "+this.ind;
 				ret_str += "\n[type_id]: "+this.type_id;
+				ret_str += "\n[spikes]: "+this.spikes;
 				ret_str += "\n[asset_mc]: "+this.asset_mc;
 				ret_str += "\n[pos_pt]: "+this.pos_pt;
 				ret_str += "\n[dim_rect]: "+this.dim_rect;

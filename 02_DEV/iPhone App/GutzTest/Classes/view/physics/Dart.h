@@ -10,7 +10,7 @@
 #import "ObjectiveChipmunk.h"
 #import "cocos2d.h"
 
-#define DART_RADIUS 2
+#define DART_RADIUS 4
 
 @interface Dart : BasePhysicsSprite <ChipmunkObject> {
 	int ind;

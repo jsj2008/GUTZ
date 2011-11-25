@@ -21,10 +21,7 @@
 			import com.sparklemountain.gutz.designer.EditorConsts;
 			import com.sparklemountain.gutz.designer.FileIOConsts;
 			import com.sparklemountain.gutz.designer.model.delegate.AbstractPlistParser;
-			import com.sparklemountain.gutz.designer.model.vo.GoalVO;
-			import com.sparklemountain.gutz.designer.model.vo.RangedTrapVO;
-			import com.sparklemountain.gutz.designer.model.vo.StudVO;
-			import com.sparklemountain.gutz.designer.model.vo.WallVO;
+			import com.sparklemountain.gutz.designer.model.vo.*;
 			
 			import mx.core.IVisualElement;
 			import mx.core.UIComponent;
@@ -40,11 +37,15 @@
 			public static const UI_TITLE:String = "GUTZ Level Editor";
 			
 			private var _actTrapVO:RangedTrapVO;
+			private var _actWall_mc:MovieClip;
 			
 			private var _goalVO_arr:Array;
 			private var _wallVO_arr:Array;
 			private var _trapVO_arr:Array;
 			private var _studVO_arr:Array;
+			private var _dartVO_arr:Array;
+			private var _handWheelVO_arr:Array;
+			private var _conveyorVO_arr:Array;
 			
 			private var _plist_str:String;
 			private var _lvl_ind:int;
@@ -184,13 +185,14 @@
 					wall_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlWall_Press);
 					wall_mc.addEventListener(MouseEvent.MOUSE_UP, hdlWall_Release);
 				
-				
-				_wallVO_arr.push(new WallVO(_wallVO_arr.length, 1, wall_mc, EditorConsts.CANVAS_CENTER, 0.5, 0.1));
+				_actWall_mc = wall_mc;
+				_wallVO_arr.push(new WallVO(_wallVO_arr.length, 1, 2 - ((wall_mc.rotation / 180) << 0), wall_mc, EditorConsts.CANVAS_CENTER, 0.5, 0.1));
 				_canvasWrapper.addChild(wall_mc);
 				lblCoords.text = "("+wall_mc.x+", "+wall_mc.y+")";
 				
 				btnMin.enabled = false;
 				btnMax.enabled = false;
+				btnFlipWall.enabled = true;
 				
 				this.updCanvas();
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
@@ -208,11 +210,12 @@
 					wall_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlWall_Press);
 					wall_mc.addEventListener(MouseEvent.MOUSE_UP, hdlWall_Release);
 				
-				
-				_wallVO_arr.push(new WallVO(_wallVO_arr.length, 2, wall_mc, EditorConsts.CANVAS_CENTER, 0.5, 0.1));
+				_actWall_mc = wall_mc;
+				_wallVO_arr.push(new WallVO(_wallVO_arr.length, 2, 2 - ((wall_mc.rotation / 180) << 0), wall_mc, EditorConsts.CANVAS_CENTER, 0.5, 0.1));
 				_canvasWrapper.addChild(wall_mc);
 				lblCoords.text = "("+wall_mc.x+", "+wall_mc.y+")";
 				
+				btnFlipWall.enabled = true;
 				btnMin.enabled = false;
 				btnMax.enabled = false;
 				
@@ -224,14 +227,13 @@
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 				trace ("[:_:] "+this.className+".hdlVTrapBtn_Click() [:_:]");
 				
-				var trap_mc:TrapV_mc = new TrapV_mc();
+				var trap_mc:Spike_mc = new Spike_mc();
 					trap_mc.x = EditorConsts.CANVAS_CENTER.x;
 					trap_mc.y = EditorConsts.CANVAS_CENTER.y;
 					trap_mc.buttonMode = true;
 					trap_mc.useHandCursor = true;
 					trap_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlTrap_Press);
 					trap_mc.addEventListener(MouseEvent.MOUSE_UP, hdlTrap_Release);
-					
 				
 				_trapVO_arr.push(new RangedTrapVO(_trapVO_arr.length, 2, trap_mc, EditorConsts.CANVAS_CENTER, new Point(EditorConsts.CANVAS_CENTER.y, EditorConsts.CANVAS_CENTER.y), 1.0, true));
 				_canvasWrapper.addChild(trap_mc);
@@ -251,7 +253,7 @@
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 				trace ("[:_:] "+this.className+".hdlHTrapBtn_Click() [:_:]");
 				
-				var trap_mc:TrapH_mc = new TrapH_mc();
+				var trap_mc:Spike_mc = new Spike_mc();
 					trap_mc.x = EditorConsts.CANVAS_CENTER.x;
 					trap_mc.y = EditorConsts.CANVAS_CENTER.y;
 					trap_mc.buttonMode = true;
@@ -274,11 +276,35 @@
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
+			private function hdlDartBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlDartBtn_Click() [:_:]");
+				
+				var dart_mc:DartEmitter_mc = new DartEmitter_mc();
+					dart_mc.x = EditorConsts.CANVAS_CENTER.x;
+					dart_mc.y = EditorConsts.CANVAS_CENTER.y;
+					dart_mc.buttonMode = true;
+					dart_mc.useHandCursor = true;
+					dart_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlDart_Press);
+					dart_mc.addEventListener(MouseEvent.MOUSE_UP, hdlDart_Release);
+				
+				
+				_dartVO_arr.push(new DartEmitterVO(_dartVO_arr.length, 0, dart_mc, EditorConsts.CANVAS_CENTER, 1.0, 3.2));
+				_canvasWrapper.addChild(dart_mc);
+				lblCoords.text = "("+dart_mc.x+", "+dart_mc.y+")";
+				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
+				
+				this.updCanvas();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
 			private function hdlStudBtn_Click(e:MouseEvent):void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 				trace ("[:_:] "+this.className+".hdlStudBtn_Click() [:_:]");
 				
-				var stud_mc:GoalStart_mc = new GoalStart_mc();
+				var stud_mc:Stud_mc = new Stud_mc();
 					stud_mc.x = EditorConsts.CANVAS_CENTER.x;
 					stud_mc.y = EditorConsts.CANVAS_CENTER.y;
 					stud_mc.buttonMode = true;
@@ -290,6 +316,54 @@
 				_studVO_arr.push(new StudVO(_studVO_arr.length, stud_mc, EditorConsts.CANVAS_CENTER, 16, 0.5, 0.1));
 				_canvasWrapper.addChild(stud_mc);
 				lblCoords.text = "("+stud_mc.x+", "+stud_mc.y+")";
+				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
+				
+				this.updCanvas();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlHandWheelBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlHandWheelBtn_Click() [:_:]");
+				
+				var handWheel_mc:HandWheel_mc = new HandWheel_mc();
+					handWheel_mc.x = EditorConsts.CANVAS_CENTER.x;
+					handWheel_mc.y = EditorConsts.CANVAS_CENTER.y;
+					handWheel_mc.buttonMode = true;
+					handWheel_mc.useHandCursor = true;
+					handWheel_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlHandWheel_Press);
+					handWheel_mc.addEventListener(MouseEvent.MOUSE_UP, hdlHandWheel_Release);
+				
+				
+				_handWheelVO_arr.push(new HandWheelVO(_handWheelVO_arr.length, handWheel_mc, EditorConsts.CANVAS_CENTER, 2));
+				_canvasWrapper.addChild(handWheel_mc);
+				lblCoords.text = "("+handWheel_mc.x+", "+handWheel_mc.y+")";
+				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
+				
+				this.updCanvas();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlConveyorBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlConveyorBtn_Click() [:_:]");
+				
+				var conveyor_mc:ConveyorBelt_mc = new ConveyorBelt_mc();
+					conveyor_mc.x = EditorConsts.CANVAS_CENTER.x;
+					conveyor_mc.y = EditorConsts.CANVAS_CENTER.y;
+					conveyor_mc.buttonMode = true;
+					conveyor_mc.useHandCursor = true;
+					conveyor_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlConveyor_Press);
+					conveyor_mc.addEventListener(MouseEvent.MOUSE_UP, hdlConveyor_Release);
+				
+				
+				_conveyorVO_arr.push(new ConveyorVO(_conveyorVO_arr.length, conveyor_mc, EditorConsts.CANVAS_CENTER, 200, 16));
+				_canvasWrapper.addChild(conveyor_mc);
+				lblCoords.text = "("+conveyor_mc.x+", "+conveyor_mc.y+")";
 				
 				btnMin.enabled = false;
 				btnMax.enabled = false;
@@ -353,6 +427,16 @@
 				this.updTrapRange();
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
+			private function hdlFlipWallBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlFlipWallBtn_Click() [:_:]");
+				
+				_actWall_mc.rotation += 180;
+				
+				this.updWallVO(_actWall_mc);
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
 			
 			private function hdlCanvas_Click(e:MouseEvent):void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
@@ -407,6 +491,27 @@
 				btnMax.enabled = false;
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
+			private function hdlDart_Press(e:MouseEvent):void {
+				//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".hdlDart_Press("+(e.currentTarget as MovieClip)+") [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+					trg_mc.startDrag(false, new Rectangle(0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height));
+					
+				btnMin.enabled = false;
+				btnMax.enabled = false;
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function hdlDart_Release(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".hdlDart_Release("+(e.currentTarget as MovieClip)+") [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+					trg_mc.stopDrag();
+				
+				this.updDartVO(trg_mc);
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			private function hdlStud_Release(e:MouseEvent):void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
@@ -421,7 +526,6 @@
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
-			
 			private function hdlWall_Press(e:MouseEvent):void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 				//trace ("[:_:] "+this.className+".hdlWall_Press("+(e.currentTarget as MovieClip)+") [:_:]");
@@ -429,10 +533,12 @@
 				var trg_mc:MovieClip = e.currentTarget as MovieClip;
 					trg_mc.startDrag(false, new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height));
 				
+				_actWall_mc = trg_mc;
+				
+				btnFlipWall.enabled = true;
 				btnMin.enabled = false;
 				btnMax.enabled = false;
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
-			
 			
 			
 			private function hdlWall_Release(e:MouseEvent):void {
@@ -485,6 +591,53 @@
 				btnMax.enabled = true;
 					
 				this.updTrapVO(trg_mc);
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlHandWheel_Press(e:MouseEvent):void {
+				//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlHandWheel_Press() [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+				var drag_rect:Rectangle;
+				
+				drag_rect = new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height);
+				trg_mc.startDrag(false, drag_rect);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlHandWheel_Release(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlHandWheel_Release() [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+				trg_mc.stopDrag();
+				
+				this.updHandWheelVO(trg_mc);
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function hdlConveyor_Press(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlConveyor_Press() [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+				var drag_rect:Rectangle;
+				
+				drag_rect = new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height);
+				trg_mc.startDrag(false, drag_rect);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlConveyor_Release(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlConveyor_Release() [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+					trg_mc.stopDrag();
+				
+				this.updConveyorVO(trg_mc);
 				this.updPlistContent();
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
@@ -543,6 +696,14 @@
 					}
 				}
 				
+				for (i=0; i<_dartVO_arr.length; i++) {
+					mc = (_dartVO_arr[i] as DartEmitterVO).asset_mc;
+					
+					if (mc == trg_mc) {
+						_dartVO_arr.splice(i, 1);
+						break;
+					}
+				}
 				
 				for (i=0; i<_studVO_arr.length; i++) {
 					mc = (_studVO_arr[i] as StudVO).asset_mc;
@@ -605,6 +766,45 @@
 					if (trg_mc == wallVO.asset_mc) {
 						wallVO.pos_pt.x = trg_mc.x;
 						wallVO.pos_pt.y = trg_mc.y;
+						wallVO.spikes = 1 + int(trg_mc.rotation != 180);
+					}
+				}
+				
+				lblCoords.text = "("+trg_mc.x+", "+trg_mc.y+")";
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function updHandWheelVO(trg_mc:MovieClip):void {
+				//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".updWallVO("+trg_mc+") [:_:]");
+				
+				var handWheelVO:HandWheelVO;
+				for (var i:Number=0; i<_handWheelVO_arr.length; i++) {
+					handWheelVO = _handWheelVO_arr[i]as HandWheelVO;
+					
+					if (trg_mc == handWheelVO.asset_mc) {
+						handWheelVO.pos_pt.x = trg_mc.x;
+						handWheelVO.pos_pt.y = trg_mc.y;
+						handWheelVO.speed = 16;
+					}
+				}
+				
+				lblCoords.text = "("+trg_mc.x+", "+trg_mc.y+")";
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function updConveyorVO(trg_mc:MovieClip):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".updConveyorVO("+trg_mc+") [:_:]");
+				
+				var conveyorVO:ConveyorVO;
+				for (var i:Number=0; i<_conveyorVO_arr.length; i++) {
+					conveyorVO = _conveyorVO_arr[i]as ConveyorVO;
+					
+					if (trg_mc == conveyorVO.asset_mc) {
+						conveyorVO.pos_pt.x = trg_mc.x;
+						conveyorVO.pos_pt.y = trg_mc.y;
+						conveyorVO.width = 200;
+						conveyorVO.speed = 32;
+						
 					}
 				}
 				
@@ -636,11 +836,28 @@
 				
 				var trapVO:RangedTrapVO;
 				for (var i:Number=0; i<_trapVO_arr.length; i++) {
-					trapVO = _trapVO_arr[i]as RangedTrapVO;
+					trapVO = _trapVO_arr[i] as RangedTrapVO;
 					
 					if (trg_mc == trapVO.asset_mc) {
 						trapVO.pos_pt.x = trg_mc.x;
 						trapVO.pos_pt.y = trg_mc.y;
+					}
+				}
+				
+				lblCoords.text = "("+trg_mc.x+", "+trg_mc.y+")";
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function updDartVO(trg_mc:MovieClip):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".updDartVO("+trg_mc+") [:_:]");
+				
+				var dartEmitterVO:DartEmitterVO;
+				for (var i:Number=0; i<_dartVO_arr.length; i++) {
+					dartEmitterVO = _dartVO_arr[i] as DartEmitterVO;
+					
+					if (trg_mc == dartEmitterVO.asset_mc) {
+						dartEmitterVO.pos_pt.x = trg_mc.x;
+						dartEmitterVO.pos_pt.y = trg_mc.y;
 					}
 				}
 				
@@ -671,7 +888,10 @@
 				_goalVO_arr = new Array();
 				_wallVO_arr = new Array();
 				_trapVO_arr = new Array();
+				_dartVO_arr = new Array();
 				_studVO_arr = new Array();
+				_handWheelVO_arr = new Array();
+				_conveyorVO_arr= new Array();
 				
 				btnGoalStart.enabled = true;
 				btnGoalEnd.enabled = true;
@@ -714,6 +934,9 @@
 				_plist_str += this.writeStuds();
 				_plist_str += this.writeGoals();
 				_plist_str += this.writeTraps();
+				_plist_str += this.writeDarts();
+				_plist_str += this.writeHandwheels();
+				_plist_str += this.writeConveyors();
 				_plist_str += FileIOConsts.PLIST_FOOTER;
 				
 				txtPlistOutput.text = _plist_str.replace(/\t/g, "   ");
@@ -734,6 +957,7 @@
 					
 					str += FileIOConsts.WALL_PRETAG + String(vo.ind);
 					str += FileIOConsts.WALL_TYPE + String(vo.type_id);
+					str += FileIOConsts.WALL_SPIKE + String(vo.spikes);
 					str += FileIOConsts.WALL_POS_X + String(vo.pos_pt.x);
 					str += FileIOConsts.WALL_POS_Y + String(EditorConsts.CANVAS_SIZE.height - vo.pos_pt.y);
 					str += FileIOConsts.WALL_FRICT + String(vo.friction_amt);
@@ -821,6 +1045,71 @@
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
+			private function writeDarts():String {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writeDarts("+_trapVO_arr.length+") [:_:]");
+				
+				var str:String = FileIOConsts.DART_PREGRP;
+				var vo:DartEmitterVO;
+				
+				for (var i:Number=0; i<_dartVO_arr.length; i++) {
+					vo = _dartVO_arr[i] as DartEmitterVO;
+					
+					str += FileIOConsts.DART_PRETAG + String(vo.id);
+					str += FileIOConsts.DART_TYPE + String(vo.type_id);
+					str += FileIOConsts.DART_POS_X + String(vo.pos_pt.x);
+					str += FileIOConsts.DART_POS_Y + String(EditorConsts.CANVAS_SIZE.height - vo.pos_pt.y);
+					str += FileIOConsts.DART_ITV + String(vo.interval);
+					str += FileIOConsts.DART_SPD + String(vo.speed);
+					str += FileIOConsts.DART_POSTTAG;
+				}
+				
+				return (str + FileIOConsts.DART_POSTGRP);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function writeHandwheels():String {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writeHandwheels("+_handwheelVO_arr.length+") [:_:]");
+				
+				var str:String = FileIOConsts.HANDWHEEL_PREGRP;
+				var vo:HandWheelVO;
+				
+				for (var i:Number=0; i<_handWheelVO_arr.length; i++) {
+					vo = _handWheelVO_arr[i] as HandWheelVO;
+					
+					str += FileIOConsts.HANDWHEEL_PRETAG + String(vo.ind);
+					str += FileIOConsts.HANDWHEEL_POS_X + String(vo.pos_pt.x);
+					str += FileIOConsts.HANDWHEEL_POS_Y + String(EditorConsts.CANVAS_SIZE.height - vo.pos_pt.y);
+					str += FileIOConsts.HANDWHEEL_SPD + String(vo.speed);
+					str += FileIOConsts.HANDWHEEL_POSTTAG;
+				}
+				
+				return (str + FileIOConsts.HANDWHEEL_POSTGRP);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function writeConveyors():String {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writeConveyors("+_conveyorVO_arr.length+") [:_:]");
+				
+				var str:String = FileIOConsts.CONVEYOR_PREGRP;
+				var vo:ConveyorVO;
+				
+				for (var i:Number=0; i<_conveyorVO_arr.length; i++) {
+					vo = _conveyorVO_arr[i] as ConveyorVO;
+					
+					str += FileIOConsts.CONVEYOR_PRETAG + String(vo.ind);
+					str += FileIOConsts.CONVEYOR_POS_X + String(vo.pos_pt.x);
+					str += FileIOConsts.CONVEYOR_POS_Y + String(EditorConsts.CANVAS_SIZE.height - vo.pos_pt.y);
+					str += FileIOConsts.CONVEYOR_WIDTH + String(vo.width);
+					str += FileIOConsts.CONVEYOR_SPD + String(vo.speed);
+					str += FileIOConsts.CONVEYOR_POSTTAG;
+				}
+				
+				return (str + FileIOConsts.CONVEYOR_POSTGRP);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
 			private function writePlist():void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 				//trace ("[:_:] "+this.className+".writePlist(["+(FileIOConsts.DIR_PATHNAME + "\\" + FileIOConsts.FILE_PATHNAME)+"]["+File.documentsDirectory.resolvePath(FileIOConsts.DIR_PATHNAME + "\\" + FileIOConsts.FILE_PATHNAME)+"]) [:_:]");
@@ -899,9 +1188,12 @@
 			<s:Button id="btnWall2" label="Long Wall" width="80" click="hdlWall2Btn_Click(event)" />
 			<s:Button id="btnVTrap" label="V-Trap" width="80" click="hdlVTrapBtn_Click(event)" />
 			<s:Button id="btnHTrap" label="H-Trap" width="80" click="hdlHTrapBtn_Click(event)" />
+			<s:Button id="btnDarts" label="Dart Shooter" width="80" click="hdlDartBtn_Click(event)" />
 			<s:Button id="btnStud" label="Stud" width="80" click="hdlStudBtn_Click(event)" />
-			<s:Button id="btnLoadPlist" y="320" width="80" height="64" label="Load Plist…" click="hdlLoadPlistBtn_Click(event)" />
-			<s:Button id="btnSavePlist" y="320" width="80" height="64" label="Save Plist…" click="hdlSavePlistBtn_Click(event)" />
+			<s:Button id="btnHandWheel" label="Hand Wheel" width="80" click="hdlHandWheelBtn_Click(event)" />
+			<s:Button id="btnConveyorBelt" label="Conveyor Belt" width="80" click="hdlConveyorBtn_Click(event)" />
+			<s:Button id="btnLoadPlist" width="80" height="32" label="Load Plist…" click="hdlLoadPlistBtn_Click(event)" />
+			<s:Button id="btnSavePlist" width="80" height="32" label="Save Plist…" click="hdlSavePlistBtn_Click(event)" />
 			<s:Label id="lblCoords" y="4" width="80" text="" />
 		</s:VGroup>
 	</s:Panel>
@@ -913,15 +1205,18 @@
 		</s:Group>
 		<s:BorderContainer id="ctnCanvas" width="320" height="480" backgroundAlpha="0" />
 			
-		<s:HGroup y="480">
+		<s:VGroup x="328" y="{ComponentConsts.APP_PADDING_T}">
 			<s:Button id="btnClearCanvas" label="Clear Canvas" x="256" width="128" height="32" click="hdlClearCanvas_Click(event)" enabled="false" />
-			<s:Button id="btnMin" label="MIN: {_trapVal_min}" width="96" click="hdlTrapMinBtn_Click(event)" enabled="false" />
-			<s:Button id="btnMax" label="MAX: {_trapVal_max}" width="96" click="hdlTrapMaxBtn_Click(event)" enabled="false" />
-			<mx:Slider id="sldSpd" value="{_trapVal_spd}" width="96" useHandCursor="true" change="hdlTrapSpdSld_Change(event)" enabled="true" />
-		</s:HGroup>
+			<s:HGroup>
+				<s:Button id="btnMin" label="MIN: {_trapVal_min}" width="96" click="hdlTrapMinBtn_Click(event)" enabled="false" />
+				<s:Button id="btnMax" label="MAX: {_trapVal_max}" width="96" click="hdlTrapMaxBtn_Click(event)" enabled="false" />
+				<mx:Slider id="sldSpd" value="{_trapVal_spd}" width="96" useHandCursor="true" change="hdlTrapSpdSld_Change(event)" enabled="true" />
+			</s:HGroup>
+			<s:Button id="btnFlipWall" label="Flip Wall" width="96" click="hdlFlipWallBtn_Click(event)" enabled="false" />
+		</s:VGroup>
 	</s:Group>
 	
-	<s:TextArea id="txtPlistOutput" x="496" y="{ComponentConsts.APP_PADDING_T}" width="284" height="480" contentBackgroundColor="#e8e7cf" color="#1c0b22" lineBreak="explicit" editable="false"  />
+	<s:TextArea id="txtPlistOutput" x="{ComponentConsts.APP_PADDING_L}" y="496" width="800" height="192" contentBackgroundColor="#e8e7cf" color="#1c0b22" lineBreak="explicit" editable="false"  />
 	<!-- /////////////////////////////// -->
 	
 </s:BorderContainer>

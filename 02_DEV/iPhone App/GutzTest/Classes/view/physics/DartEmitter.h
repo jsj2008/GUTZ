@@ -12,8 +12,8 @@
 
 #import "Dart.h"
 
-#define EMITTER_WIDTH 8
-#define EMITTER_HEIGHT 24
+#define EMITTER_WIDTH 22
+#define EMITTER_HEIGHT 55
 
 @interface DartEmitter : BasePhysicsSprite <ChipmunkObject> {
 	int ind;
@@ -25,12 +25,14 @@
 	
 	NSTimer *_fireTimer;
 	NSMutableArray *arrDarts;
+	NSArray *arrFrames;
 }
 
 -(id)initAtPos:(CGPoint)pos fires:(int)dir freq:(float)itv speed:(float)spd;
 -(void)toggleFiring:(BOOL)isFiring;
 -(void)fire:(id)sender;
 -(void)updDarts;
+-(void)flush;
 
 @property (nonatomic) int ind;
 @property (nonatomic, retain) NSMutableArray *arrDarts;

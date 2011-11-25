@@ -46,6 +46,7 @@ package com.sparklemountain.gutz.designer {
 		public static const WALL_PREGRP:String = "\t<key>walls</key>\n\t<array>\n";
 		public static const WALL_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
 		public static const WALL_TYPE:String = "</integer>\n\t\t\t<key>type</key>\n\t\t\t<integer>";
+		public static const WALL_SPIKE:String = "</integer>\n\t\t\t<key>spikes</key>\n\t\t\t<integer>";
 		public static const WALL_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
 		public static const WALL_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
 		public static const WALL_WIDTH:String = "</integer>\n\t\t\t<key>width</key>\n\t\t\t<integer>";
@@ -74,6 +75,16 @@ package com.sparklemountain.gutz.designer {
 		public static const TRAP_POSTTAG:String ="</real>\n\t\t</dict>\n";
 		public static const TRAP_POSTGRP:String = "\t</array>\n";
 		
+		public static const DART_PREGRP:String = "\t<key>darts</key>\n\t<array>\n";
+		public static const DART_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
+		public static const DART_TYPE:String = "</integer>\n\t\t\t<key>type</key>\n\t\t\t<integer>";
+		public static const DART_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
+		public static const DART_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
+		public static const DART_ITV:String = "</integer>\n\t\t\t<key>interval</key>\n\t\t\t<integer>";
+		public static const DART_SPD:String = "</integer>\n\t\t\t<key>speed</key>\n\t\t\t<real>";
+		public static const DART_POSTTAG:String ="</real>\n\t\t</dict>\n";
+		public static const DART_POSTGRP:String = "\t</array>\n";
+		
 		public static const STUD_PREGRP:String = "\t<key>studs</key>\n\t<array>\n";
 		public static const STUD_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
 		public static const STUD_TYPE:String = "</integer>\n\t\t\t<key>type</key>\n\t\t\t<integer>";
@@ -85,6 +96,22 @@ package com.sparklemountain.gutz.designer {
 		public static const STUD_POSTTAG:String ="</real>\n\t\t</dict>\n";
 		public static const STUD_POSTGRP:String = "\t</array>\n";
 		
+		public static const HANDWHEEL_PREGRP:String = "\t<key>handwheels</key>\n\t<array>\n";
+		public static const HANDWHEEL_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
+		public static const HANDWHEEL_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
+		public static const HANDWHEEL_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
+		public static const HANDWHEEL_SPD:String = "</integer>\n\t\t\t<key>speed</key>\n\t\t\t<real>";
+		public static const HANDWHEEL_POSTTAG:String ="</real>\n\t\t</dict>\n";
+		public static const HANDWHEEL_POSTGRP:String = "\t</array>\n";
+		
+		public static const CONVEYOR_PREGRP:String = "\t<key>conveyors</key>\n\t<array>\n";
+		public static const CONVEYOR_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
+		public static const CONVEYOR_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
+		public static const CONVEYOR_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
+		public static const CONVEYOR_WIDTH:String = "</integer>\n\t\t\t<key>width</key>\n\t\t\t<integer>";
+		public static const CONVEYOR_SPD:String = "</integer>\n\t\t\t<key>speed</key>\n\t\t\t<real>";
+		public static const CONVEYOR_POSTTAG:String ="</real>\n\t\t</dict>\n";
+		public static const CONVEYOR_POSTGRP:String = "\t</array>\n";
 		
 		public static const FILE_PATHNAME:String = "GUTZ-Editors.demo";
 		public static const DIR_PATHNAME:String = "./";
