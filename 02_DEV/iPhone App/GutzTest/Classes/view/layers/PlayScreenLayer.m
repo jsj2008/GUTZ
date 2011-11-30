@@ -120,7 +120,7 @@ static NSString *borderType = @"borderType";
 	
 	CCSprite *bg1Sprite = [CCSprite spriteWithFile:[NSString stringWithFormat:@"background_%d.jpg", [[[plistLvlData dicTopLvl] objectForKey:@"bg"] intValue]]];
 	[bg1Sprite setPosition:CGPointMake(160, 240)];
-	[self addChild:bg1Sprite];
+	//[self addChild:bg1Sprite];
 	
 	CCSprite *bg2Sprite = [CCSprite spriteWithFile:[NSString stringWithFormat:@"background_%d.jpg", [[[plistLvlData dicTopLvl] objectForKey:@"bg"] intValue]]];
 	[bg2Sprite setPosition:CGPointMake(160, -240)];
@@ -178,7 +178,7 @@ static NSString *borderType = @"borderType";
 	
 	
 	for (NSDictionary *dictWall in plistLvlData.arrWallData) {
-		SpikedWall *wall = [[SpikedWall alloc] initAtPos:CGPointMake([[dictWall objectForKey:@"x"] floatValue], [[dictWall objectForKey:@"y"] floatValue]) large:[[dictWall objectForKey:@"type"] intValue]-1 spikes:[[dictWall objectForKey:@"spikes"] intValue] rotation:0 friction:[[dictWall objectForKey:@"frict"] floatValue] bounce:[[dictWall objectForKey:@"bounce"] floatValue]];
+		SpikedWall *wall = [[SpikedWall alloc] initAtPos:CGPointMake([[dictWall objectForKey:@"x"] floatValue], [[dictWall objectForKey:@"y"] floatValue]) large:[[dictWall objectForKey:@"type"] intValue]-1 spikes:[[dictWall objectForKey:@"spikes"] intValue] rotation:[[dictWall objectForKey:@"angle"] intValue] friction:[[dictWall objectForKey:@"frict"] floatValue] bounce:[[dictWall objectForKey:@"bounce"] floatValue]];
 		[wall spaceRef:_space];
 		[wall makeSpikes];
 		
@@ -248,27 +248,26 @@ static NSString *borderType = @"borderType";
 	for (NSDictionary *dictConveyor in plistLvlData.arrConveyorData) {
 		CGPoint conveyorPos = CGPointMake([[dictConveyor objectForKey:@"x"] floatValue], [[dictConveyor objectForKey:@"y"] floatValue]);
 		
-		ConveyorBelt *conveyorBelt = [[ConveyorBelt alloc] initAtPos:conveyorPos width:200 speed:-4];
+		ConveyorBelt *conveyorBelt = [[ConveyorBelt alloc] initAtPos:conveyorPos width:200 speed:1.0f];
 		[_space add:conveyorBelt];
 		[self addChild:conveyorBelt._sprite];
 	}
 	
 		
-	_blob = [[JellyBlob alloc] initWithPos:_startTarget._sprite.position radius:BLOB_RADIUS count:BLOB_SEGS];
+	_blob = [[JellyBlob alloc] initWithPos:_startTarget._sprite.position radius:BLOB_RADIUS count:BLOB_SEGS color:0];
 	[_blob adoptSprites:self];
 	[_space add:_blob];
 	
 	
-	
 	/*
+	
 	 ChipmunkBody *polyBody;
 	 ChipmunkPolyShape *polyShape;
 	 
 	 cpVect polyVerts1[] = {
-	 cpv(0.0, 30.0), 
-	 cpv(70.0, 0.0),
-	 cpv(55.0, -15.0), 
-	 cpv(0.0, -15.0)
+	 	cpv(0.0, 24.0), 
+	 	cpv(32.0, 0.0),
+	 	cpv(0.0, 0.0)
 	 };
 	 
 	 cpVect polyVerts2[] = {
@@ -281,10 +280,10 @@ static NSString *borderType = @"borderType";
 	 polyBody = [[ChipmunkBody alloc] initWithMass:INFINITY andMoment:INFINITY];
 	 polyBody.pos = cpv(100, 160);
 	 
-	 polyShape = [[ChipmunkPolyShape alloc] initWithBody:polyBody count:4 verts:polyVerts1 offset:cpvzero];
+	 polyShape = [[ChipmunkPolyShape alloc] initWithBody:polyBody count:3 verts:polyVerts1 offset:cpvzero];
 	 polyShape.friction = 0.5;
 	 polyShape.elasticity = 0.1;
-	 //[_space add:polyShape];
+	 [_space add:polyShape];
 	 
 	 polyBody = [[ChipmunkBody alloc] initWithMass:INFINITY andMoment:INFINITY];
 	 polyBody.pos = cpv(290, 120);
@@ -293,8 +292,7 @@ static NSString *borderType = @"borderType";
 	 polyShape.friction = 0.5;
 	 polyShape.elasticity = 0.1;
 	 //[_space add:polyShape];
-	 */
-
+	*/
 }
 
 -(void)setPosition:(CGPoint)position {
@@ -398,12 +396,7 @@ static NSString *borderType = @"borderType";
 	
 		
 	if (!_isCleared) {
-		//[eyeSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y + 12)];
-		//[mouthSprite setPosition:cpv([_blob posPt].x, [_blob posPt].y - 12)];
-		
 		[_blob updSprites];
-		//ChipmunkBody *body = (ChipmunkBody *)_pinwheelShape.data;
-		//[body setAngle:10.33];
 		
 		for (RangedTrap *trap in arrTraps)
 			[trap updPos];

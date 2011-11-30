@@ -13,6 +13,11 @@
 @interface SpikedWall : BaseWall <ChipmunkObject> {
 	int spikes;
 	
+	int angle;
+	
+	ChipmunkBody *_spikedBody;
+	ChipmunkPolyShape *_spikedShape;
+	
 	NSArray *_arrShortSpikes;
 	NSArray *_arrLongSpikes;
 	NSArray *_arrSpikes;

@@ -219,7 +219,7 @@
 					wall_mc.addEventListener(MouseEvent.MOUSE_UP, hdlWall_Release);
 				
 				_actWall_mc = wall_mc;
-				_wallVO_arr.push(new WallVO(_wallVO_arr.length, 1, 2 - ((wall_mc.rotation / 180) << 0), wall_mc, EditorConsts.CANVAS_CENTER, 0.5, 0.1));
+				_wallVO_arr.push(new WallVO(_wallVO_arr.length, 1, 0, 2 - ((wall_mc.rotation / 180) << 0), wall_mc, EditorConsts.CANVAS_CENTER, 0.5, 0.1));
 				_canvasWrapper.addChild(wall_mc);
 				lblCoords.text = "("+wall_mc.x+", "+wall_mc.y+")";
 				
@@ -244,7 +244,7 @@
 					wall_mc.addEventListener(MouseEvent.MOUSE_UP, hdlWall_Release);
 				
 				_actWall_mc = wall_mc;
-				_wallVO_arr.push(new WallVO(_wallVO_arr.length, 2, 2 - ((wall_mc.rotation / 180) << 0), wall_mc, EditorConsts.CANVAS_CENTER, 0.5, 0.1));
+				_wallVO_arr.push(new WallVO(_wallVO_arr.length, 2, 0, 2 - ((wall_mc.rotation / 180) << 0), wall_mc, EditorConsts.CANVAS_CENTER, 0.5, 0.1));
 				_canvasWrapper.addChild(wall_mc);
 				lblCoords.text = "("+wall_mc.x+", "+wall_mc.y+")";
 				
@@ -394,26 +394,33 @@
 				trace ("[:_:] "+this.className+".hdlHealthBtn_Click() [:_:]");
 				
 				var trg_btn:Button = e.target as Button;
+				var health_mc:MovieClip;
+				var type_id:int;
 				
 				switch ((e.target as Button).id) {
 					case "btnBandAid":
-						var health_mc:Health1_mc = new Health1_mc();
+						health_mc = new Health1_mc() as MovieClip;
+						type_id = 1;
 						break;
 					
 					case "btnSteak":
-						var health_mc:Steak_mc = new Steak_mc();
+						health_mc = new Steak_mc() as MovieClip;
+						type_id = 2;
 						break;
 					
 					case "btnChicken":
-						var health_mc:Chicken_mc = new Chicken_mc();
+						health_mc = new Chicken_mc() as MovieClip;
+						type_id = 3;
 						break;
 					
 					case "btnDoughnut":
-						var health_mc:Doughnut_mc = new Doughnut_mc();
+						health_mc = new Doughnut_mc() as MovieClip;
+						type_id = 4;
 						break;
 					
 					case "btnCola":
-						var health_mc:Cola_mc = new Cola_mc();
+						health_mc = new Cola_mc() as MovieClip;
+						type_id = 5;
 						break;
 				}
 				
@@ -424,7 +431,7 @@
 				health_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlHealth_Press);
 				health_mc.addEventListener(MouseEvent.MOUSE_UP, hdlHealth_Release);
 				
-				_healthVO_arr.push(new HealthVO(_healthVO_arr.length, 1, health_mc, EditorConsts.CANVAS_CENTER));
+				_healthVO_arr.push(new HealthVO(_healthVO_arr.length, type_id, health_mc, EditorConsts.CANVAS_CENTER));
 				_canvasWrapper.addChild(health_mc);
 				lblCoords.text = "("+health_mc.x+", "+health_mc.y+")";
 				
@@ -564,7 +571,10 @@
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 				trace ("[:_:] "+this.className+".hdlFlipWallBtn_Click() [:_:]");
 				
-				_actWall_mc.rotation += 180;
+				_actWall_mc.rotation += 90;
+				
+				if (_actWall_mc.rotation == 360)
+					_actWall_mc.rotation = 0;
 				
 				this.updWallVO(_actWall_mc);
 				this.updPlistContent();
@@ -987,7 +997,7 @@
 			
 			private function updWallVO(trg_mc:MovieClip):void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
-				//trace ("[:_:] "+this.className+".updWallVO("+trg_mc+") [:_:]");
+				trace ("[:_:] "+this.className+".updWallVO("+trg_mc.rotation+") [:_:]");
 				
 				var wallVO:WallVO;
 				for (var i:Number=0; i<_wallVO_arr.length; i++) {
@@ -996,6 +1006,11 @@
 					if (trg_mc == wallVO.asset_mc) {
 						wallVO.pos_pt.x = trg_mc.x;
 						wallVO.pos_pt.y = trg_mc.y;
+						wallVO.angle = trg_mc.rotation / 90;
+						
+						if (wallVO.angle == -1)
+							wallVO.angle = 3;
+						
 						wallVO.spikes = 1 + int(trg_mc.rotation != 180);
 					}
 				}
@@ -1209,6 +1224,7 @@
 					
 					str += FileIOConsts.WALL_PRETAG + String(vo.ind);
 					str += FileIOConsts.WALL_TYPE + String(vo.type_id);
+					str += FileIOConsts.WALL_ANGLE + String(vo.angle);
 					str += FileIOConsts.WALL_SPIKE + String(vo.spikes);
 					str += FileIOConsts.WALL_POS_X + String(vo.pos_pt.x);
 					str += FileIOConsts.WALL_POS_Y + String(EditorConsts.CANVAS_SIZE.height - vo.pos_pt.y);
@@ -1529,7 +1545,7 @@
 			<view:LevelBackgroundUI ind="4" click="hdlLvlBG_Click(event)" />
 			<view:LevelBackgroundUI ind="5" click="hdlLvlBG_Click(event)" />
 		</s:HGroup></s:Panel>
-		<s:Panel id="pnlCharacters" title="—Players—" width="320" height="170"><s:VGroup>
+		<s:Panel id="pnlCharacters" title="—Players—" width="320" height="160"><s:VGroup>
 			<s:HGroup>
 				<view:PlayerCharacterUI ind="1" click="hdlPlayer_Click(event)" />
 				<view:PlayerCharacterUI ind="2" click="hdlPlayer_Click(event)" />
@@ -1545,15 +1561,19 @@
 				<view:PlayerCharacterUI ind="10" click="hdlPlayer_Click(event)" />
 			</s:HGroup>
 		</s:VGroup></s:Panel>
-		<s:Panel id="pnlPickups" title="—Pickups—" width="320" height="64"><s:HGroup>
-			<s:Button id="btnPickup" label="Pickup" width="80" click="hdlPickupBtn_Click(event)" />
-			<s:Button id="btnStar" label="Star" width="80" click="hdlStarBtn_Click(event)" />
-			<s:Button id="btnBandAid" label="BandAid" width="80" click="hdlHealthBtn_Click(event)" />
-			<s:Button id="btnSteak" label="Steak" width="80" click="hdlHealthBtn_Click(event)" />
-			<s:Button id="btnChicken" label="Chicken" width="80" click="hdlHealthBtn_Click(event)" />
-			<s:Button id="btnDoughnut" label="Doughnut" width="80" click="hdlHealthBtn_Click(event)" />
-			<s:Button id="btnCola" label="Cola" width="80" click="hdlHealthBtn_Click(event)" />
-		</s:HGroup></s:Panel>
+		<s:Panel id="pnlPickups" title="—Pickups—" width="320" height="120"><s:VGroup>
+			<s:HGroup>
+				<s:Button id="btnPickup" label="Pickup" width="80" click="hdlPickupBtn_Click(event)" />
+				<s:Button id="btnStar" label="Star" width="80" click="hdlStarBtn_Click(event)" />
+				<s:Button id="btnBandAid" label="BandAid" width="80" click="hdlHealthBtn_Click(event)" />
+			</s:HGroup><s:HGroup>
+				<s:Button id="btnSteak" label="Steak" width="80" click="hdlHealthBtn_Click(event)" />
+				<s:Button id="btnChicken" label="Chicken" width="80" click="hdlHealthBtn_Click(event)" />
+				<s:Button id="btnDoughnut" label="Doughnut" width="80" click="hdlHealthBtn_Click(event)" />
+			</s:HGroup><s:HGroup>
+				<s:Button id="btnCola" label="Cola" width="80" click="hdlHealthBtn_Click(event)" />
+			</s:HGroup>
+		</s:VGroup></s:Panel>
 		<s:Button id="btnClearCanvas" label="Clear Canvas" x="256" width="128" height="32" click="hdlClearCanvas_Click(event)" enabled="false" />
 		<s:HGroup>
 			<s:Button id="btnMin" label="MIN: {_trapVal_min}" width="96" click="hdlTrapMinBtn_Click(event)" enabled="false" />

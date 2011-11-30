@@ -26,7 +26,7 @@
 #define kLvlUnlock 12
 #define kLastLvl 36
 
-#define kDrawChipmunkObjs 0
+#define kDrawChipmunkObjs 1
 
 //
 // Define here the type of autorotation that you want for your game

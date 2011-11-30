@@ -52,6 +52,7 @@ package com.sparklemountain.gutz.designer {
 		public static const WALL_PREGRP:String = "\t<key>walls</key>\n\t<array>\n";
 		public static const WALL_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
 		public static const WALL_TYPE:String = "</integer>\n\t\t\t<key>type</key>\n\t\t\t<integer>";
+		public static const WALL_ANGLE:String = "</integer>\n\t\t\t<key>angle</key>\n\t\t\t<integer>";
 		public static const WALL_SPIKE:String = "</integer>\n\t\t\t<key>spikes</key>\n\t\t\t<integer>";
 		public static const WALL_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
 		public static const WALL_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";

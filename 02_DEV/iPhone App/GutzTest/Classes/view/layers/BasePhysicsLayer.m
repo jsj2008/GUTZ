@@ -67,16 +67,16 @@ static NSString *borderType = @"borderType";
 	
 	[_space addBounds:rect thickness:532 elasticity:1 friction:1 layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:borderType];
 	
-	 _accBlob1 = [[JellyBlob alloc] initWithPos:cpv(164, 100) radius:32 count:16];
+	 _accBlob1 = [[JellyBlob alloc] initWithPos:cpv(164, 100) radius:32 count:16 color:1];
 	 [_space add:_accBlob1];
 	 
-	 _accBlob2 = [[JellyBlob alloc] initWithPos:cpv(160, 120) radius:16 count:8];
+	 _accBlob2 = [[JellyBlob alloc] initWithPos:cpv(160, 120) radius:16 count:8 color:1];
 	 [_space add:_accBlob2];
 	 
-	 _accBlob3 = [[JellyBlob alloc] initWithPos:cpv(140, 210) radius:24 count:12];
+	 _accBlob3 = [[JellyBlob alloc] initWithPos:cpv(140, 210) radius:24 count:12 color:1];
 	 [_space add:_accBlob3];
 	 
-	 _accBlob4 = [[JellyBlob alloc] initWithPos:cpv(40, 232) radius:8 count:8];
+	 _accBlob4 = [[JellyBlob alloc] initWithPos:cpv(40, 232) radius:8 count:8 color:1];
 	 [_space add:_accBlob4];
 	 
 	 [self schedule:@selector(physicsStepper:)];

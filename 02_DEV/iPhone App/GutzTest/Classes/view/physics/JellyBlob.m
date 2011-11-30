@@ -13,6 +13,14 @@
 #import "CDAudioManager.h"
 #import "CocosDenshion.h"
 
+enum {
+	kTagBodyBatchNode = 3513,
+};
+
+enum {
+	kTagFaceBatchNode = 3514,
+};
+
 @implementation JellyBlob
 
 @synthesize chipmunkObjects;
@@ -163,7 +171,7 @@
 	return (self);
 }
 
--(id)initWithPos:(cpVect)pos radius:(cpFloat)rad count:(int)count {
+-(id)initWithPos:(cpVect)pos radius:(cpFloat)rad count:(int)count color:(int)colorID {
 	NSLog(@"%@.initWithPos(%f, %d)", [self class], rad, count);
 	
 	if ((self = [super init])) {
@@ -175,11 +183,14 @@
 		totSBodies = 0;
 		totBodies = 0;
 		
+		_colorID = colorID;
+		
 		[[SimpleAudioEngine sharedEngine] preloadEffect:@"sfx_long_stetch.mp3"];
 		
 		posPt = CGPointMake(pos.x, pos.y);
 		totBodies = count;
 		radius = rad;
+		
 		
 		
 		_eyeSprite = [CCSprite spriteWithFile:@"eye.png"];
@@ -274,9 +285,6 @@
 	
 	[set addObjectsFromArray:bodies];
 	
-	
-	
-	
 	for (int i=0; i<totBodies; i++) {
 		ChipmunkBody *a = [bodies objectAtIndex:i];
 		ChipmunkBody *b = [bodies objectAtIndex:(i + 1) % totBodies];
@@ -284,43 +292,71 @@
 		
 		// add'l
 		[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:a bodyB:b anchr1:cpvzero anchr2:cpvzero restLength:0 stiffness:springStiffness damping:springDamping]];
-	}
-	
+	}	
 }
 
 
 -(void)adoptSprites:(CCLayer *)layer {
-		
-	for (CCSprite *sprite in _edgeSprites)
-		[layer addChild:sprite];
 	
-	[layer addChild:_centerSprite];
-	[layer addChild:_eyeSprite];
-	[layer addChild:_mouthSprite];
+	_bodyBatchSprite = [CCSpriteBatchNode batchNodeWithFile:@"playerBodies.png" capacity:6];
+	_faceBatchSprite = [CCSpriteBatchNode batchNodeWithFile:@"playerFaces.png" capacity:6];
+	
+	[layer addChild:_bodyBatchSprite z:0 tag:kTagBodyBatchNode];
+	[layer addChild:_faceBatchSprite z:0 tag:kTagFaceBatchNode];
+	
+	_bodySprite = [CCSprite spriteWithBatchNode:_bodyBatchSprite rect:CGRectMake(0, _colorID * 80, 80, 80)];
+	[_bodySprite setPosition:posPt];
+	
+	_faceSprite = [CCSprite spriteWithBatchNode:_faceBatchSprite rect:CGRectMake(0, 0, 80, 80)];
+	[_faceSprite setPosition:posPt];
+	
+	[_bodyBatchSprite addChild:_bodySprite];
+	[_faceBatchSprite addChild:_faceSprite];
+	
+	CCAnimation *bodyAnimation = [[CCAnimation alloc] init];
+	
+	for (int i=0; i<6; i++)
+		[bodyAnimation addFrame:[CCSpriteFrame frameWithTexture:_bodyBatchSprite.texture rect:CGRectMake(i * 80, _colorID * 80, 80, 80)]];
+	
+	CCAnimate *bodyAction = [CCAnimate actionWithAnimation:bodyAnimation];
+	CCRepeatForever *repeat = [CCRepeatForever actionWithAction:bodyAction];
+	
+	[_bodySprite runAction:repeat];
+	
+	
+	//for (CCSprite *sprite in _edgeSprites)
+	//	[layer addChild:sprite];
+	
+	//[layer addChild:_centerSprite];
+	//[layer addChild:_eyeSprite];
+	//[layer addChild:_mouthSprite];
 }
 
 -(void)updSprites {
-	int cnt = 0;
+	//int cnt = 0;
 	
-	[_centerSprite setPosition:posPt];
-	[_eyeSprite setPosition:cpv([self posPt].x, [self posPt].y + 12)];
-	[_mouthSprite setPosition:cpv([self posPt].x, [self posPt].y - 12)];
+	[_bodySprite setPosition:posPt];
+	[_faceSprite setPosition:posPt];
 	
-	for (ChipmunkBody *body in bodies) {
-		CCSprite *sprite = [_edgeSprites objectAtIndex:cnt];
-		[sprite setPosition:body.pos];
-		cnt++;
-	}
+	//[_centerSprite setPosition:posPt];
+	//[_eyeSprite setPosition:cpv([self posPt].x, [self posPt].y + 12)];
+	//[_mouthSprite setPosition:cpv([self posPt].x, [self posPt].y - 12)];
+	
+	//for (ChipmunkBody *body in bodies) {
+	//	CCSprite *sprite = [_edgeSprites objectAtIndex:cnt];
+	//	[sprite setPosition:body.pos];
+	//	cnt++;
+	//}
 }
 
 -(void)flushSprites:(CCLayer *)layer {
 	
-	[layer removeChild:_centerSprite cleanup:NO];
-	[layer removeChild:_eyeSprite cleanup:NO];
-	[layer removeChild:_mouthSprite cleanup:NO];
+	//[layer removeChild:_centerSprite cleanup:NO];
+	//[layer removeChild:_eyeSprite cleanup:NO];
+	//[layer removeChild:_mouthSprite cleanup:NO];
 	
-	for (CCSprite *sprite in _edgeSprites)
-		[layer removeChild:sprite cleanup:NO];
+	//for (CCSprite *sprite in _edgeSprites)
+	//	[layer removeChild:sprite cleanup:NO];
 }
 
 -(ChipmunkBody *)findByID:(int)val {

@@ -57,6 +57,18 @@
 		4C2938D714130CA20028F5F1 /* CreatureData_01.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C2938D614130CA20028F5F1 /* CreatureData_01.plist */; };
 		4C2B84C513F6FA9700656BC5 /* debug_finger.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C2B84C313F6FA9700656BC5 /* debug_finger.wav */; };
 		4C2B84C613F6FA9700656BC5 /* debug_redmag.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4C2B84C413F6FA9700656BC5 /* debug_redmag.wav */; };
+		4C3C6D511485B17D0011563B /* chicken-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C6D491485B17D0011563B /* chicken-hd.png */; };
+		4C3C6D521485B17D0011563B /* chicken.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C6D4A1485B17D0011563B /* chicken.png */; };
+		4C3C6D531485B17D0011563B /* cola-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C6D4B1485B17D0011563B /* cola-hd.png */; };
+		4C3C6D541485B17D0011563B /* cola.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C6D4C1485B17D0011563B /* cola.png */; };
+		4C3C6D551485B17D0011563B /* doughnut.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C6D4D1485B17D0011563B /* doughnut.png */; };
+		4C3C6D561485B17D0011563B /* dougnut-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C6D4E1485B17D0011563B /* dougnut-hd.png */; };
+		4C3C6D571485B17D0011563B /* steak-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C6D4F1485B17D0011563B /* steak-hd.png */; };
+		4C3C6D581485B17D0011563B /* steak.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C6D501485B17D0011563B /* steak.png */; };
+		4C3C6D601485C1E50011563B /* playerFaces-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C6D5C1485C1E50011563B /* playerFaces-hd.png */; };
+		4C3C6D611485C1E50011563B /* playerFaces.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C6D5D1485C1E50011563B /* playerFaces.png */; };
+		4C3C6D641485C41D0011563B /* playerBodies-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C6D621485C41D0011563B /* playerBodies-hd.png */; };
+		4C3C6D651485C41D0011563B /* playerBodies.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C3C6D631485C41D0011563B /* playerBodies.png */; };
 		4C3CB34F14071C1F0049D4C4 /* LevelData_01.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C3CB34E14071C1F0049D4C4 /* LevelData_01.plist */; };
 		4C3F27F5140C58CE00D8B959 /* GameSettingsModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C3F27F3140C58CE00D8B959 /* GameSettingsModel.h */; };
 		4C3F27F6140C58CE00D8B959 /* GameSettingsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F27F4140C58CE00D8B959 /* GameSettingsModel.m */; };
@@ -789,6 +801,18 @@
 		4C2938D614130CA20028F5F1 /* CreatureData_01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CreatureData_01.plist; path = Resources/CreatureData_01.plist; sourceTree = "<group>"; };
 		4C2B84C313F6FA9700656BC5 /* debug_finger.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = debug_finger.wav; path = Resources/debug_finger.wav; sourceTree = "<group>"; };
 		4C2B84C413F6FA9700656BC5 /* debug_redmag.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = debug_redmag.wav; path = Resources/debug_redmag.wav; sourceTree = "<group>"; };
+		4C3C6D491485B17D0011563B /* chicken-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "chicken-hd.png"; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/chicken-hd.png"; sourceTree = "<group>"; };
+		4C3C6D4A1485B17D0011563B /* chicken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chicken.png; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/chicken.png"; sourceTree = "<group>"; };
+		4C3C6D4B1485B17D0011563B /* cola-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cola-hd.png"; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/cola-hd.png"; sourceTree = "<group>"; };
+		4C3C6D4C1485B17D0011563B /* cola.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cola.png; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/cola.png"; sourceTree = "<group>"; };
+		4C3C6D4D1485B17D0011563B /* doughnut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = doughnut.png; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/doughnut.png"; sourceTree = "<group>"; };
+		4C3C6D4E1485B17D0011563B /* dougnut-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dougnut-hd.png"; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/dougnut-hd.png"; sourceTree = "<group>"; };
+		4C3C6D4F1485B17D0011563B /* steak-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "steak-hd.png"; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/steak-hd.png"; sourceTree = "<group>"; };
+		4C3C6D501485B17D0011563B /* steak.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = steak.png; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/steak.png"; sourceTree = "<group>"; };
+		4C3C6D5C1485C1E50011563B /* playerFaces-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "playerFaces-hd.png"; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/playerFaces-hd.png"; sourceTree = "<group>"; };
+		4C3C6D5D1485C1E50011563B /* playerFaces.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playerFaces.png; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/playerFaces.png"; sourceTree = "<group>"; };
+		4C3C6D621485C41D0011563B /* playerBodies-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "playerBodies-hd.png"; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/playerBodies-hd.png"; sourceTree = "<group>"; };
+		4C3C6D631485C41D0011563B /* playerBodies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playerBodies.png; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/playerBodies.png"; sourceTree = "<group>"; };
 		4C3CB34E14071C1F0049D4C4 /* LevelData_01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LevelData_01.plist; path = Resources/LevelData_01.plist; sourceTree = "<group>"; };
 		4C3F27F3140C58CE00D8B959 /* GameSettingsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSettingsModel.h; sourceTree = "<group>"; };
 		4C3F27F4140C58CE00D8B959 /* GameSettingsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameSettingsModel.m; sourceTree = "<group>"; };
@@ -1691,6 +1715,14 @@
 		4C3CB34B140716FB0049D4C4 /* Level Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4C3C6D491485B17D0011563B /* chicken-hd.png */,
+				4C3C6D4A1485B17D0011563B /* chicken.png */,
+				4C3C6D4B1485B17D0011563B /* cola-hd.png */,
+				4C3C6D4C1485B17D0011563B /* cola.png */,
+				4C3C6D4D1485B17D0011563B /* doughnut.png */,
+				4C3C6D4E1485B17D0011563B /* dougnut-hd.png */,
+				4C3C6D4F1485B17D0011563B /* steak-hd.png */,
+				4C3C6D501485B17D0011563B /* steak.png */,
 				4C1186801484B23E001C906F /* starPickup-hd.png */,
 				4C1186811484B23E001C906F /* starPickup.png */,
 				4C50F426148497B600139B86 /* ptPickup-hd.png */,
@@ -2732,6 +2764,10 @@
 		4CD6FA7213BC62B90070B5C1 /* Creature Segments */ = {
 			isa = PBXGroup;
 			children = (
+				4C3C6D621485C41D0011563B /* playerBodies-hd.png */,
+				4C3C6D631485C41D0011563B /* playerBodies.png */,
+				4C3C6D5C1485C1E50011563B /* playerFaces-hd.png */,
+				4C3C6D5D1485C1E50011563B /* playerFaces.png */,
 				4CD5A2C2147C8B450082B6DD /* jellyCenter-hd.png */,
 				4CD5A2B6147C764E0082B6DD /* jellyCenter.png */,
 				4CD5A2B2147C73970082B6DD /* jellyEdge-hd.png */,
@@ -3439,6 +3475,18 @@
 				4C50F429148497B600139B86 /* ptPickup.png in Resources */,
 				4C1186821484B23E001C906F /* starPickup-hd.png in Resources */,
 				4C1186831484B23E001C906F /* starPickup.png in Resources */,
+				4C3C6D511485B17D0011563B /* chicken-hd.png in Resources */,
+				4C3C6D521485B17D0011563B /* chicken.png in Resources */,
+				4C3C6D531485B17D0011563B /* cola-hd.png in Resources */,
+				4C3C6D541485B17D0011563B /* cola.png in Resources */,
+				4C3C6D551485B17D0011563B /* doughnut.png in Resources */,
+				4C3C6D561485B17D0011563B /* dougnut-hd.png in Resources */,
+				4C3C6D571485B17D0011563B /* steak-hd.png in Resources */,
+				4C3C6D581485B17D0011563B /* steak.png in Resources */,
+				4C3C6D601485C1E50011563B /* playerFaces-hd.png in Resources */,
+				4C3C6D611485C1E50011563B /* playerFaces.png in Resources */,
+				4C3C6D641485C41D0011563B /* playerBodies-hd.png in Resources */,
+				4C3C6D651485C41D0011563B /* playerBodies.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
