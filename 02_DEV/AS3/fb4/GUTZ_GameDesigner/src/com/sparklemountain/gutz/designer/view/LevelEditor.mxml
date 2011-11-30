@@ -8,7 +8,7 @@
 				   initialize="uponInit(event)" 
 				   creationComplete="uponCreation(event)" 
 				   addedToStage="uponStageAdoption(event)" 
-				   width="100%" height="100%">
+				   width="100%" height="100%" xmlns:view="com.sparklemountain.gutz.designer.view.*">
 	<!-- ////////////////////////////////////////////////// -->
 	
 	<!-- -=[ MXML SCRIPT ]=- -->
@@ -23,6 +23,7 @@
 			import com.sparklemountain.gutz.designer.model.delegate.AbstractPlistParser;
 			import com.sparklemountain.gutz.designer.model.vo.*;
 			
+			import mx.controls.Image;
 			import mx.core.IVisualElement;
 			import mx.core.UIComponent;
 			import mx.events.FlexEvent;
@@ -39,7 +40,14 @@
 			private var _actTrapVO:RangedTrapVO;
 			private var _actWall_mc:MovieClip;
 			
+			private var _lvl_ind:int;
+			private var _bg_ind:int;
+			private var _player_ind:int;
+			
+			private var _pickupVO_arr:Array;
+			private var _healthVO_arr:Array;
 			private var _goalVO_arr:Array;
+			private var _wyptVO_arr:Array;
 			private var _wallVO_arr:Array;
 			private var _trapVO_arr:Array;
 			private var _studVO_arr:Array;
@@ -47,9 +55,7 @@
 			private var _handWheelVO_arr:Array;
 			private var _conveyorVO_arr:Array;
 			
-			private var _plist_str:String;
-			private var _lvl_ind:int;
-			
+			private var _plist_str:String;	
 			private var _plist_fileRef:FileReference;
 			
 			[Bindable] private var _trapVal_min:int;
@@ -69,7 +75,7 @@
 				trace ("[:_:] "+this.className+".uponInit() [:_:]");
 				
 				_canvasWrapper = new UIComponent();
-				ctnCanvas.addElement(_canvasWrapper);
+				ctnCanvasTop.addElement(_canvasWrapper);
 				
 				
 				_lvl_ind = 1;
@@ -130,6 +136,24 @@
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
+			private function hdlLvlBG_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlLvlBG_Click() [:_:]");
+				
+				_bg_ind = (e.currentTarget as LevelBackgroundUI).ind;
+				imgBG.source = "./assets/images/bg/bg_0" + _bg_ind + ".jpg";
+				
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function hdlPlayer_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlPlayer_Click() [:_:]");
+				
+				_player_ind = (e.currentTarget as PlayerCharacterUI).ind;
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
 			
 			private function hdlGoalBtn_Click(e:MouseEvent):void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
@@ -147,6 +171,11 @@
 						type_id = 1;
 						break;
 					
+					case "btnGoalCheck":
+						goal_mc = new GoalCheck_mc() as MovieClip;
+						type_id = 3;
+						break;
+					
 					case "btnGoalEnd":
 						goal_mc = new GoalEnd_mc() as MovieClip;
 						type_id = 2;
@@ -161,8 +190,12 @@
 				goal_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlGoal_Press);
 				goal_mc.addEventListener(MouseEvent.MOUSE_UP, hdlGoal_Release);
 					
-					
-				_goalVO_arr.push(new GoalVO(_goalVO_arr.length, type_id, EditorConsts.CANVAS_CENTER, goal_mc));
+				//if (trg_btn.id == "btnGoalCheck")
+				//	_wyptVO_arr.push(new WayptVO(_wyptVO_arr.length, goal_mc, EditorConsts.CANVAS_CENTER, EditorConsts.CANVAS_CENTER));
+				//
+				//else
+					_goalVO_arr.push(new GoalVO(_goalVO_arr.length, type_id, goal_mc, EditorConsts.CANVAS_CENTER));
+				
 				_canvasWrapper.addChild(goal_mc);
 				lblCoords.text = "("+goal_mc.x+", "+goal_mc.y+")";
 				
@@ -253,7 +286,7 @@
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 				trace ("[:_:] "+this.className+".hdlHTrapBtn_Click() [:_:]");
 				
-				var trap_mc:Spike_mc = new Spike_mc();
+				var trap_mc:Furball_mc = new Furball_mc();
 					trap_mc.x = EditorConsts.CANVAS_CENTER.x;
 					trap_mc.y = EditorConsts.CANVAS_CENTER.y;
 					trap_mc.buttonMode = true;
@@ -273,6 +306,15 @@
 				btnMax.enabled = true;
 				
 				this.updCanvas();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlSwitchCanvasBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlSwitchCanvasBtn_Click() [:_:]");
+				
+				ctnCanvasTop.visible = !ctnCanvasTop.visible;
+				ctnCanvasBottom.visible = !ctnCanvasBottom.visible;
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
@@ -316,6 +358,97 @@
 				_studVO_arr.push(new StudVO(_studVO_arr.length, stud_mc, EditorConsts.CANVAS_CENTER, 16, 0.5, 0.1));
 				_canvasWrapper.addChild(stud_mc);
 				lblCoords.text = "("+stud_mc.x+", "+stud_mc.y+")";
+				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
+				
+				this.updCanvas();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlPickupBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlPickupBtn_Click() [:_:]");
+				
+				var pickup_mc:Pickup_mc = new Pickup_mc();
+					pickup_mc.x = EditorConsts.CANVAS_CENTER.x;
+					pickup_mc.y = EditorConsts.CANVAS_CENTER.y;
+					pickup_mc.buttonMode = true;
+					pickup_mc.useHandCursor = true;
+					pickup_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlPickup_Press);
+					pickup_mc.addEventListener(MouseEvent.MOUSE_UP, hdlPickup_Release);
+				
+				
+				_pickupVO_arr.push(new PickupVO(_pickupVO_arr.length, 1, pickup_mc, EditorConsts.CANVAS_CENTER));
+				_canvasWrapper.addChild(pickup_mc);
+				lblCoords.text = "("+pickup_mc.x+", "+pickup_mc.y+")";
+				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
+				
+				this.updCanvas();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function hdlHealthBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlHealthBtn_Click() [:_:]");
+				
+				var trg_btn:Button = e.target as Button;
+				
+				switch ((e.target as Button).id) {
+					case "btnBandAid":
+						var health_mc:Health1_mc = new Health1_mc();
+						break;
+					
+					case "btnSteak":
+						var health_mc:Steak_mc = new Steak_mc();
+						break;
+					
+					case "btnChicken":
+						var health_mc:Chicken_mc = new Chicken_mc();
+						break;
+					
+					case "btnDoughnut":
+						var health_mc:Doughnut_mc = new Doughnut_mc();
+						break;
+					
+					case "btnCola":
+						var health_mc:Cola_mc = new Cola_mc();
+						break;
+				}
+				
+				health_mc.x = EditorConsts.CANVAS_CENTER.x;
+				health_mc.y = EditorConsts.CANVAS_CENTER.y;
+				health_mc.buttonMode = true;
+				health_mc.useHandCursor = true;
+				health_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlHealth_Press);
+				health_mc.addEventListener(MouseEvent.MOUSE_UP, hdlHealth_Release);
+				
+				_healthVO_arr.push(new HealthVO(_healthVO_arr.length, 1, health_mc, EditorConsts.CANVAS_CENTER));
+				_canvasWrapper.addChild(health_mc);
+				lblCoords.text = "("+health_mc.x+", "+health_mc.y+")";
+				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
+				
+				this.updCanvas();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function hdlStarBtn_Click(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this.className+".hdlStarBtn_Click() [:_:]");
+				
+				var star_mc:Star_mc = new Star_mc();
+					star_mc.x = EditorConsts.CANVAS_CENTER.x;
+					star_mc.y = EditorConsts.CANVAS_CENTER.y;
+					star_mc.buttonMode = true;
+					star_mc.useHandCursor = true;
+					star_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlPickup_Press);
+					star_mc.addEventListener(MouseEvent.MOUSE_UP, hdlPickup_Release);
+				
+				_pickupVO_arr.push(new PickupVO(_pickupVO_arr.length, 2, star_mc, EditorConsts.CANVAS_CENTER));
+				_canvasWrapper.addChild(star_mc);
+				lblCoords.text = "("+star_mc.x+", "+star_mc.y+")";
 				
 				btnMin.enabled = false;
 				btnMax.enabled = false;
@@ -459,7 +592,7 @@
 				//trace ("[:_:] "+this.className+".hdlGoal_Press("+(e.currentTarget as MovieClip)+") [:_:]");
 				
 				var trg_mc:MovieClip = e.currentTarget as MovieClip;
-					trg_mc.startDrag(false, new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height));
+					trg_mc.startDrag(false, new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvasTop.width - trg_mc.width, ctnCanvasTop.height - trg_mc.height));
 				
 				btnMin.enabled = false;
 				btnMax.enabled = false;
@@ -478,6 +611,51 @@
 				this.updPlistContent();
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
+			private function hdlPickup_Press(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".hdlPickup_Press("+(e.currentTarget as MovieClip)+") [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+					trg_mc.startDrag(false, new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvasTop.width - trg_mc.width, ctnCanvasTop.height - trg_mc.height));
+				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlPickup_Release(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".hdlPickup_Release("+(e.currentTarget as MovieClip)+") [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+					trg_mc.stopDrag();
+				
+				this.updPickupVO(trg_mc);
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function hdlHealth_Press(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".hdlHealth_Press("+(e.currentTarget as MovieClip)+") [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+					trg_mc.startDrag(false, new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvasTop.width - trg_mc.width, ctnCanvasTop.height - trg_mc.height));
+				
+				btnMin.enabled = false;
+				btnMax.enabled = false;
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function hdlHealth_Release(e:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".hdlHealth_Release("+(e.currentTarget as MovieClip)+") [:_:]");
+				
+				var trg_mc:MovieClip = e.currentTarget as MovieClip;
+					trg_mc.stopDrag();
+				
+				this.updHealthVO(trg_mc);
+				this.updPlistContent();
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
 			private function hdlStud_Press(e:MouseEvent):void {
@@ -485,7 +663,7 @@
 				//trace ("[:_:] "+this.className+".hdlStud_Press("+(e.currentTarget as MovieClip)+") [:_:]");
 				
 				var trg_mc:MovieClip = e.currentTarget as MovieClip;
-					trg_mc.startDrag(false, new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height));
+					trg_mc.startDrag(false, new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvasTop.width - trg_mc.width, ctnCanvasTop.height - trg_mc.height));
 				
 				btnMin.enabled = false;
 				btnMax.enabled = false;
@@ -496,7 +674,7 @@
 				//trace ("[:_:] "+this.className+".hdlDart_Press("+(e.currentTarget as MovieClip)+") [:_:]");
 				
 				var trg_mc:MovieClip = e.currentTarget as MovieClip;
-					trg_mc.startDrag(false, new Rectangle(0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height));
+					trg_mc.startDrag(false, new Rectangle(0, (trg_mc.height * 0.5) << 0, ctnCanvasTop.width - trg_mc.width, ctnCanvasTop.height - trg_mc.height));
 					
 				btnMin.enabled = false;
 				btnMax.enabled = false;
@@ -531,7 +709,7 @@
 				//trace ("[:_:] "+this.className+".hdlWall_Press("+(e.currentTarget as MovieClip)+") [:_:]");
 				
 				var trg_mc:MovieClip = e.currentTarget as MovieClip;
-					trg_mc.startDrag(false, new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height));
+					trg_mc.startDrag(false, new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvasTop.width - trg_mc.width, ctnCanvasTop.height - trg_mc.height));
 				
 				_actWall_mc = trg_mc;
 				
@@ -565,14 +743,14 @@
 				_trapVal_min = _actTrapVO.range_pt.x;
 				_trapVal_max = _actTrapVO.range_pt.y;
 				
-				drag_rect = new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height);
+				drag_rect = new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvasTop.width - trg_mc.width, ctnCanvasTop.height - trg_mc.height);
 				
 				/*
 				if (_actTrapVO.type_id == 1)
-					drag_rect = new Rectangle((trg_mc.width * 0.5) << 0, trg_mc.y, ctnCanvas.width - trg_mc.width, 0);
+					drag_rect = new Rectangle((trg_mc.width * 0.5) << 0, trg_mc.y, ctnCanvasTop.width - trg_mc.width, 0);
 				
 				else
-					drag_rect = new Rectangle(trg_mc.x, (trg_mc.height * 0.5) << 0, 0, ctnCanvas.height - trg_mc.height);
+					drag_rect = new Rectangle(trg_mc.x, (trg_mc.height * 0.5) << 0, 0, ctnCanvasTop.height - trg_mc.height);
 				*/
 				
 				trg_mc.startDrag(false, drag_rect);
@@ -602,7 +780,7 @@
 				var trg_mc:MovieClip = e.currentTarget as MovieClip;
 				var drag_rect:Rectangle;
 				
-				drag_rect = new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height);
+				drag_rect = new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvasTop.width - trg_mc.width, ctnCanvasTop.height - trg_mc.height);
 				trg_mc.startDrag(false, drag_rect);
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
@@ -625,7 +803,7 @@
 				var trg_mc:MovieClip = e.currentTarget as MovieClip;
 				var drag_rect:Rectangle;
 				
-				drag_rect = new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvas.width - trg_mc.width, ctnCanvas.height - trg_mc.height);
+				drag_rect = new Rectangle((trg_mc.width * 0.5) << 0, (trg_mc.height * 0.5) << 0, ctnCanvasTop.width - trg_mc.width, ctnCanvasTop.height - trg_mc.height);
 				trg_mc.startDrag(false, drag_rect);
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
@@ -736,6 +914,40 @@
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
+			private function updPickupVO(trg_mc:MovieClip):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".updPickupVO("+trg_mc+") [:_:]");
+				
+				var pickupVO:PickupVO;
+				for (var i:Number=0; i<_pickupVO_arr.length; i++) {
+					pickupVO = _pickupVO_arr[i] as PickupVO;
+					
+					if (trg_mc == pickupVO.asset_mc) {
+						pickupVO.pos_pt.x = trg_mc.x;
+						pickupVO.pos_pt.y = trg_mc.y;
+					}
+				}
+				
+				lblCoords.text = "("+trg_mc.x+", "+trg_mc.y+")";
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function updHealthVO(trg_mc:MovieClip):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".updHealthVO("+trg_mc+") [:_:]");
+				
+				var healthVO:HealthVO;
+				for (var i:Number=0; i<_healthVO_arr.length; i++) {
+					healthVO = _healthVO_arr[i] as HealthVO;
+					
+					if (trg_mc == healthVO.asset_mc) {
+						healthVO.pos_pt.x = trg_mc.x;
+						healthVO.pos_pt.y = trg_mc.y;
+					}
+				}
+				
+				lblCoords.text = "("+trg_mc.x+", "+trg_mc.y+")";
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
 			
 			private function updGoalVO(trg_mc:MovieClip):void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
@@ -743,11 +955,29 @@
 				
 				var goalVO:GoalVO;
 				for (var i:Number=0; i<_goalVO_arr.length; i++) {
-					goalVO = _goalVO_arr[i]as GoalVO;
+					goalVO = _goalVO_arr[i] as GoalVO;
 					
 					if (trg_mc == goalVO.asset_mc) {
 						goalVO.pos_pt.x = trg_mc.x;
 						goalVO.pos_pt.y = trg_mc.y;
+					}
+				}
+				
+				lblCoords.text = "("+trg_mc.x+", "+trg_mc.y+")";
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function updWayptVO(trg_mc:MovieClip):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".updWayptVO("+trg_mc+") [:_:]");
+				
+				var wyptVO:WayptVO;
+				for (var i:Number=0; i<_wyptVO_arr.length; i++) {
+					wyptVO = _wyptVO_arr[i] as WayptVO;
+					
+					if (trg_mc == wyptVO.asset_mc) {
+						wyptVO.pos_pt.x = trg_mc.x;
+						wyptVO.pos_pt.y = trg_mc.y;
 					}
 				}
 				
@@ -761,7 +991,7 @@
 				
 				var wallVO:WallVO;
 				for (var i:Number=0; i<_wallVO_arr.length; i++) {
-					wallVO = _wallVO_arr[i]as WallVO;
+					wallVO = _wallVO_arr[i] as WallVO;
 					
 					if (trg_mc == wallVO.asset_mc) {
 						wallVO.pos_pt.x = trg_mc.x;
@@ -779,7 +1009,7 @@
 				
 				var handWheelVO:HandWheelVO;
 				for (var i:Number=0; i<_handWheelVO_arr.length; i++) {
-					handWheelVO = _handWheelVO_arr[i]as HandWheelVO;
+					handWheelVO = _handWheelVO_arr[i] as HandWheelVO;
 					
 					if (trg_mc == handWheelVO.asset_mc) {
 						handWheelVO.pos_pt.x = trg_mc.x;
@@ -797,7 +1027,7 @@
 				
 				var conveyorVO:ConveyorVO;
 				for (var i:Number=0; i<_conveyorVO_arr.length; i++) {
-					conveyorVO = _conveyorVO_arr[i]as ConveyorVO;
+					conveyorVO = _conveyorVO_arr[i] as ConveyorVO;
 					
 					if (trg_mc == conveyorVO.asset_mc) {
 						conveyorVO.pos_pt.x = trg_mc.x;
@@ -817,7 +1047,7 @@
 				
 				var trapVO:RangedTrapVO;
 				for (var i:Number=0; i<_trapVO_arr.length; i++) {
-					trapVO = _trapVO_arr[i]as RangedTrapVO;
+					trapVO = _trapVO_arr[i] as RangedTrapVO;
 					
 					if (_actTrapVO == trapVO) {
 						trapVO.range_pt.x = _trapVal_min;
@@ -885,7 +1115,10 @@
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 				trace ("[:_:] "+this.className+".flush() [:_:]");
 				
+				_pickupVO_arr = new Array();
+				_healthVO_arr = new Array();
 				_goalVO_arr = new Array();
+				_wyptVO_arr = new Array();
 				_wallVO_arr = new Array();
 				_trapVO_arr = new Array();
 				_dartVO_arr = new Array();
@@ -893,8 +1126,12 @@
 				_handWheelVO_arr = new Array();
 				_conveyorVO_arr= new Array();
 				
+				_bg_ind = 0;
+				_player_ind = 0;
+				
 				btnGoalStart.enabled = true;
 				btnGoalEnd.enabled = true;
+				btnGoalCheck.enabled = true;
 				
 				btnMin.enabled = false;
 				btnMax.enabled = false;
@@ -930,9 +1167,14 @@
 				
 				_plist_str = "";
 				_plist_str += FileIOConsts.PLIST_HEADER;
+				_plist_str += this.writeBG();
+				_plist_str += this.writePlayer();
+				_plist_str += this.writeGoals();
+				_plist_str += this.writeWaypts();
+				_plist_str += this.writePickups();
+				_plist_str += this.writeHealths();
 				_plist_str += this.writeWalls();
 				_plist_str += this.writeStuds();
-				_plist_str += this.writeGoals();
 				_plist_str += this.writeTraps();
 				_plist_str += this.writeDarts();
 				_plist_str += this.writeHandwheels();
@@ -942,7 +1184,17 @@
 				txtPlistOutput.text = _plist_str.replace(/\t/g, "   ");
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
+			private function writeBG():String {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writeBG("+_bg_ind+") [:_:]");
+				return (FileIOConsts.BG_PRETAG + String(_bg_ind)) + FileIOConsts.BG_POSTTAG;
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
+			private function writePlayer():String {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writePlayer("+_player_ind+") [:_:]");
+				return (FileIOConsts.PLAYER_PRETAG + String(_player_ind)) + FileIOConsts.PLAYER_POSTTAG;
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			private function writeWalls():String {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
@@ -968,7 +1220,46 @@
 				return (str + FileIOConsts.WALL_POSTGRP);
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
+			private function writeHealths():String {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writeHealths("+_healthVO_arr.length+") [:_:]");
+				
+				var str:String = FileIOConsts.HEALTH_PREGRP;
+				var vo:HealthVO;
+				
+				for (var i:Number=0; i<_healthVO_arr.length; i++) {
+					vo = _healthVO_arr[i] as HealthVO;
+					
+					str += FileIOConsts.HEALTH_PRETAG + String(vo.id);
+					str += FileIOConsts.HEALTH_TYPE + String(vo.type_id);
+					str += FileIOConsts.HEALTH_POS_X + String(vo.pos_pt.x);
+					str += FileIOConsts.HEALTH_POS_Y + String(EditorConsts.CANVAS_SIZE.height - vo.pos_pt.y);
+					str += FileIOConsts.HEALTH_POSTTAG;
+				}
+				
+				return (str + FileIOConsts.HEALTH_POSTGRP);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
+			
+			private function writePickups():String {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writePickups("+_pickupVO_arr.length+") [:_:]");
+				
+				var str:String = FileIOConsts.PICKUP_PREGRP;
+				var vo:PickupVO;
+				
+				for (var i:Number=0; i<_pickupVO_arr.length; i++) {
+					vo = _pickupVO_arr[i] as PickupVO;
+					
+					str += FileIOConsts.PICKUP_PRETAG + String(vo.id);
+					str += FileIOConsts.PICKUP_TYPE + String(vo.type_id);
+					str += FileIOConsts.PICKUP_POS_X + String(vo.pos_pt.x);
+					str += FileIOConsts.PICKUP_POS_Y + String(EditorConsts.CANVAS_SIZE.height - vo.pos_pt.y);
+					str += FileIOConsts.PICKUP_POSTTAG;
+				}
+				
+				return (str + FileIOConsts.PICKUP_POSTGRP);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			private function writeGoals():String {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
@@ -988,6 +1279,28 @@
 				}
 				
 				return (str + FileIOConsts.GOAL_POSTGRP);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function writeWaypts():String {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				//trace ("[:_:] "+this.className+".writeWaypts("+_wyptVO_arr.length+") [:_:]");
+				
+				var str:String = FileIOConsts.WYPT_PREGRP;
+				var vo:WayptVO;
+				
+				for (var i:Number=0; i<_wyptVO_arr.length; i++) {
+					vo = _wyptVO_arr[i] as WayptVO;
+					
+					str += FileIOConsts.WYPT_PRETAG + String(vo.id);
+					str += FileIOConsts.WYPT_POS_X + String(vo.pos_pt.x);
+					str += FileIOConsts.WYPT_POS_Y + String(EditorConsts.CANVAS_SIZE.height - vo.pos_pt.y);
+					str += FileIOConsts.WYPT_PAN_X + String(vo.pan_pt.x);
+					str += FileIOConsts.WYPT_PAN_Y + String(EditorConsts.CANVAS_SIZE.height - vo.pan_pt.y);
+					str += FileIOConsts.WYPT_POSTTAG;
+				}
+				
+				return (str + FileIOConsts.WYPT_POSTGRP);
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
@@ -1183,40 +1496,77 @@
 			<!-- <mx:UIComponent id="uiLvlGoal" width="36" height="39" toolTip="Level Goal" /> -->
 			<!-- <s:BitmapImage id="bmpGoal" source="@Embed('../../../../../../assets/images/LevelGoal.png')" width="36" height="39" /> --> 
 			<s:Button id="btnGoalStart" label="Start Goal" width="80" click="hdlGoalBtn_Click(event)" />
+			<s:Button id="btnGoalCheck" label="Check Goal" width="80" click="hdlGoalBtn_Click(event)" />
 			<s:Button id="btnGoalEnd" label="End Goal" width="80" click="hdlGoalBtn_Click(event)" />
 			<s:Button id="btnWall1" label="Short Wall" width="80" click="hdlWall1Btn_Click(event)" />
 			<s:Button id="btnWall2" label="Long Wall" width="80" click="hdlWall2Btn_Click(event)" />
-			<s:Button id="btnVTrap" label="V-Trap" width="80" click="hdlVTrapBtn_Click(event)" />
-			<s:Button id="btnHTrap" label="H-Trap" width="80" click="hdlHTrapBtn_Click(event)" />
+			<s:Button id="btnVEnemy" label="V-Enemy" width="80" click="hdlVTrapBtn_Click(event)" />
+			<s:Button id="btnHEnemy" label="H-Enemy" width="80" click="hdlHTrapBtn_Click(event)" />
 			<s:Button id="btnDarts" label="Dart Shooter" width="80" click="hdlDartBtn_Click(event)" />
 			<s:Button id="btnStud" label="Stud" width="80" click="hdlStudBtn_Click(event)" />
 			<s:Button id="btnHandWheel" label="Hand Wheel" width="80" click="hdlHandWheelBtn_Click(event)" />
 			<s:Button id="btnConveyorBelt" label="Conveyor Belt" width="80" click="hdlConveyorBtn_Click(event)" />
-			<s:Button id="btnLoadPlist" width="80" height="32" label="Load Plist…" click="hdlLoadPlistBtn_Click(event)" />
-			<s:Button id="btnSavePlist" width="80" height="32" label="Save Plist…" click="hdlSavePlistBtn_Click(event)" />
+			<s:Button id="btnSwitchCanvas" width="80" height="32" label="Switch Canvas" click="hdlSwitchCanvasBtn_Click(event)" />
 			<s:Label id="lblCoords" y="4" width="80" text="" />
 		</s:VGroup>
 	</s:Panel>
 	
 	<s:Group id="grpCanvas" x="160" y="{ComponentConsts.APP_PADDING_T}">
+		<mx:Image id="imgBG" width="320" height="480" />
 		<s:Group id="grpGuides">
 			<s:Line xFrom="160" xTo="160" yFrom="0" yTo="480"><s:stroke><s:SolidColorStroke color="#b5bdc3" /></s:stroke></s:Line>
 			<s:Line xFrom="0" xTo="320" yFrom="240" yTo="240"><s:stroke><s:SolidColorStroke color="#b5bdc3" /></s:stroke></s:Line>
 		</s:Group>
-		<s:BorderContainer id="ctnCanvas" width="320" height="480" backgroundAlpha="0" />
-			
-		<s:VGroup x="328" y="{ComponentConsts.APP_PADDING_T}">
-			<s:Button id="btnClearCanvas" label="Clear Canvas" x="256" width="128" height="32" click="hdlClearCanvas_Click(event)" enabled="false" />
-			<s:HGroup>
-				<s:Button id="btnMin" label="MIN: {_trapVal_min}" width="96" click="hdlTrapMinBtn_Click(event)" enabled="false" />
-				<s:Button id="btnMax" label="MAX: {_trapVal_max}" width="96" click="hdlTrapMaxBtn_Click(event)" enabled="false" />
-				<mx:Slider id="sldSpd" value="{_trapVal_spd}" width="96" useHandCursor="true" change="hdlTrapSpdSld_Change(event)" enabled="true" />
-			</s:HGroup>
-			<s:Button id="btnFlipWall" label="Flip Wall" width="96" click="hdlFlipWallBtn_Click(event)" enabled="false" />
-		</s:VGroup>
+		<s:BorderContainer id="ctnCanvasTop" width="320" height="480" backgroundAlpha="0" />
+		<s:BorderContainer id="ctnCanvasBottom" width="320" height="480" backgroundAlpha="0" visible="false" />
 	</s:Group>
 	
-	<s:TextArea id="txtPlistOutput" x="{ComponentConsts.APP_PADDING_L}" y="496" width="800" height="192" contentBackgroundColor="#e8e7cf" color="#1c0b22" lineBreak="explicit" editable="false"  />
+	<s:VGroup x="488" y="{ComponentConsts.APP_PADDING_T}">
+		<s:Panel id="pnlBackgrounds" title="—Backgrounds—" width="320" height="82"><s:HGroup>
+			<view:LevelBackgroundUI ind="1" click="hdlLvlBG_Click(event)" />
+			<view:LevelBackgroundUI ind="2" click="hdlLvlBG_Click(event)" />
+			<view:LevelBackgroundUI ind="3" click="hdlLvlBG_Click(event)" />
+			<view:LevelBackgroundUI ind="4" click="hdlLvlBG_Click(event)" />
+			<view:LevelBackgroundUI ind="5" click="hdlLvlBG_Click(event)" />
+		</s:HGroup></s:Panel>
+		<s:Panel id="pnlCharacters" title="—Players—" width="320" height="170"><s:VGroup>
+			<s:HGroup>
+				<view:PlayerCharacterUI ind="1" click="hdlPlayer_Click(event)" />
+				<view:PlayerCharacterUI ind="2" click="hdlPlayer_Click(event)" />
+				<view:PlayerCharacterUI ind="3" click="hdlPlayer_Click(event)" />
+				<view:PlayerCharacterUI ind="4" click="hdlPlayer_Click(event)" />
+				<view:PlayerCharacterUI ind="5" click="hdlPlayer_Click(event)" />
+			</s:HGroup>
+			<s:HGroup>
+				<view:PlayerCharacterUI ind="6" click="hdlPlayer_Click(event)" />
+				<view:PlayerCharacterUI ind="7" click="hdlPlayer_Click(event)" />
+				<view:PlayerCharacterUI ind="8" click="hdlPlayer_Click(event)" />
+				<view:PlayerCharacterUI ind="9" click="hdlPlayer_Click(event)" />
+				<view:PlayerCharacterUI ind="10" click="hdlPlayer_Click(event)" />
+			</s:HGroup>
+		</s:VGroup></s:Panel>
+		<s:Panel id="pnlPickups" title="—Pickups—" width="320" height="64"><s:HGroup>
+			<s:Button id="btnPickup" label="Pickup" width="80" click="hdlPickupBtn_Click(event)" />
+			<s:Button id="btnStar" label="Star" width="80" click="hdlStarBtn_Click(event)" />
+			<s:Button id="btnBandAid" label="BandAid" width="80" click="hdlHealthBtn_Click(event)" />
+			<s:Button id="btnSteak" label="Steak" width="80" click="hdlHealthBtn_Click(event)" />
+			<s:Button id="btnChicken" label="Chicken" width="80" click="hdlHealthBtn_Click(event)" />
+			<s:Button id="btnDoughnut" label="Doughnut" width="80" click="hdlHealthBtn_Click(event)" />
+			<s:Button id="btnCola" label="Cola" width="80" click="hdlHealthBtn_Click(event)" />
+		</s:HGroup></s:Panel>
+		<s:Button id="btnClearCanvas" label="Clear Canvas" x="256" width="128" height="32" click="hdlClearCanvas_Click(event)" enabled="false" />
+		<s:HGroup>
+			<s:Button id="btnMin" label="MIN: {_trapVal_min}" width="96" click="hdlTrapMinBtn_Click(event)" enabled="false" />
+			<s:Button id="btnMax" label="MAX: {_trapVal_max}" width="96" click="hdlTrapMaxBtn_Click(event)" enabled="false" />
+			<mx:Slider id="sldSpd" value="{_trapVal_spd}" width="96" useHandCursor="true" change="hdlTrapSpdSld_Change(event)" enabled="true" />
+		</s:HGroup>
+		<s:Button id="btnFlipWall" label="Flip Wall" width="96" click="hdlFlipWallBtn_Click(event)" enabled="false" />
+		<s:HGroup>
+			<s:Button id="btnLoadPlist" width="96" height="32" label="Load Plist…" click="hdlLoadPlistBtn_Click(event)" />
+			<s:Button id="btnSavePlist" width="96" height="32" label="Save Plist…" click="hdlSavePlistBtn_Click(event)" />
+		</s:HGroup>
+	</s:VGroup>
+	<s:TextArea id="txtPlistOutput" x="{ComponentConsts.APP_PADDING_L}" y="496" width="720" height="192" contentBackgroundColor="#e8e7cf" color="#1c0b22" lineBreak="explicit" editable="false"  />
 	<!-- /////////////////////////////// -->
 	
 </s:BorderContainer>

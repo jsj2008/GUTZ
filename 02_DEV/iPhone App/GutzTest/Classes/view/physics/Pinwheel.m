@@ -18,7 +18,8 @@
 		_body = [[ChipmunkBody alloc] initWithMass:INFINITY andMoment:INFINITY];
 		_body.pos = pos;
 		
-		_shape = [ChipmunkPolyShape boxWithBody:_body width:50 height:4];
+		//_shape = [ChipmunkPolyShape boxWithBody:_body width:50 height:4];
+		_shape = [ChipmunkCircleShape circleWithBody:_body radius:16.0f offset:cpvzero];
 		_shape.elasticity = 0.0f;
 		_shape.friction = 0.0f;		
 		_shape.collisionType = [Pinwheel class];
@@ -46,7 +47,7 @@
 		ChipmunkConstraint *motor = [ChipmunkSimpleMotor simpleMotorWithBodyA:_body bodyB:[ChipmunkBody staticBody] rate:CC_DEGREES_TO_RADIANS(_speed)];
 		[_space add:motor];
 		
-		chipmunkObjects = [ChipmunkObjectFlatten(_shape, lShape, rShape, nil) retain];
+		chipmunkObjects = [ChipmunkObjectFlatten(_shape, nil) retain];
 	}
 	
 	return (self);

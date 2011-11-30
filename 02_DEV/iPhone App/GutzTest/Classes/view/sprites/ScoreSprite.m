@@ -41,7 +41,7 @@ enum {
 		[self makeDigit:3 value:0];
 		
 		
-		//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onScoreChange:) name:@"ScoreChanged" object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onScoreChange:) name:@"ScoreChanged" object:nil];
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onScoreChange:) name:@"UPD_LVL" object:nil];
 	}
 	
@@ -58,7 +58,7 @@ enum {
 - (void) onScoreChange:(NSNotification *)notification {
     NSNumber *amt = (NSNumber *)[notification object];
 	
-	uiScore = [amt integerValue];// += [amt integerValue];
+	uiScore += [amt integerValue];
 	int thous = [[DigitUtils singleton]thousands:uiScore];
 	int hunds = [[DigitUtils singleton]hundreds:uiScore];
 	int tens = [[DigitUtils singleton]tens:uiScore];

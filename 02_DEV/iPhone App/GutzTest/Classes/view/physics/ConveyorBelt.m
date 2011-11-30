@@ -25,7 +25,7 @@
 			
 		}
 		
-		_sprite = [CCSprite spriteWithFile:@"ConveyorBelt.png"];
+		_sprite = [CCSprite spriteWithFile:@"conveyorBelt.png"];
 		[_sprite setPosition:pos];
 		
 		_shape = [ChipmunkPolyShape boxWithBody:_body width:width height:24.0f];

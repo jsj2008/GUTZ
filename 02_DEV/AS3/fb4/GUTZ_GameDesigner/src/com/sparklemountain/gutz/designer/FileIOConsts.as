@@ -23,6 +23,12 @@ package com.sparklemountain.gutz.designer {
 		public static const PLIST_HEADER:String = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">\n<plist version=\"1.0\">\n<dict>\n";
 		public static const PLIST_FOOTER:String = "</dict>\n</plist>\n"
 		
+		public static const BG_PRETAG:String = "\t<key>bg</key>\n\t<integer>";
+		public static const BG_POSTTAG:String = "</integer>\n";
+		
+		public static const PLAYER_PRETAG:String = "\t<key>player</key>\n\t<integer>";
+		public static const PLAYER_POSTTAG:String = "</integer>\n";
+		
 		public static const BODYPART_PREGRP:String = "\t<key>parts</key>\n\t<array>\n";
 		public static const BODYPART_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
 		public static const BODYPART_TYPE:String = "</integer>\n\t\t\t<key>type</key>\n\t\t\t<integer>";
@@ -63,6 +69,32 @@ package com.sparklemountain.gutz.designer {
 		public static const GOAL_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
 		public static const GOAL_POSTTAG:String ="</integer>\n\t\t</dict>\n";
 		public static const GOAL_POSTGRP:String = "\t</array>\n";
+		
+		public static const PICKUP_PREGRP:String = "\t<key>pickups</key>\n\t<array>\n";
+		public static const PICKUP_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
+		public static const PICKUP_TYPE:String = "</integer>\n\t\t\t<key>type</key>\n\t\t\t<integer>";
+		public static const PICKUP_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
+		public static const PICKUP_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
+		public static const PICKUP_POSTTAG:String ="</integer>\n\t\t</dict>\n";
+		public static const PICKUP_POSTGRP:String = "\t</array>\n";
+		
+		public static const HEALTH_PREGRP:String = "\t<key>healths</key>\n\t<array>\n";
+		public static const HEALTH_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
+		public static const HEALTH_TYPE:String = "</integer>\n\t\t\t<key>type</key>\n\t\t\t<integer>";
+		public static const HEALTH_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
+		public static const HEALTH_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
+		public static const HEALTH_POSTTAG:String ="</integer>\n\t\t</dict>\n";
+		public static const HEALTH_POSTGRP:String = "\t</array>\n";
+		
+		public static const WYPT_PREGRP:String = "\t<key>waypts</key>\n\t<array>\n";
+		public static const WYPT_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
+		public static const WYPT_TYPE:String = "</integer>\n\t\t\t<key>type</key>\n\t\t\t<integer>";
+		public static const WYPT_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
+		public static const WYPT_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
+		public static const WYPT_PAN_X:String = "</integer>\n\t\t\t<key>pan_x</key>\n\t\t\t<integer>";
+		public static const WYPT_PAN_Y:String = "</integer>\n\t\t\t<key>pan_y</key>\n\t\t\t<integer>";
+		public static const WYPT_POSTTAG:String ="</integer>\n\t\t</dict>\n";
+		public static const WYPT_POSTGRP:String = "\t</array>\n";
 		
 		public static const TRAP_PREGRP:String = "\t<key>traps</key>\n\t<array>\n";
 		public static const TRAP_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";

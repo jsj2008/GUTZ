@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- -=[ START OF LEVEL BACKGROUND UI ]=- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 
+		width="32" height="48"
+		creationComplete="uponCreation(event)" 
+		addedToStage="uponAdoption(event)">
+	<!-- ////////////////////////////////////////////////// -->
+	
+	<!-- -=[ MXML SCRIPT ]=- -->
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			//]~=~=~=~=~=~=~=~=~=~=~=~=~=~[]~=~=~=~=~=~=~=~=~=~=~=~=~=~[
+			
+			//] APP PROPERTIES ]>
+			//]=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~.
+			public var ind:int;
+			public var asset:String;
+			//[¡]~=~=~=~=~=~=~=~=~=~=~=~=~=~[!]~=~=~=~=~=~=~=~=~=~=~=~=~=~[¡].
+			
+			
+			
+			//* *\[ APP EVENT HANDLERS ]/*
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
+			
+			private function uponCreation(e:FlexEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this+".uponCreation() [:_:]");
+				imgAsset.source = "./assets/images/bg/bg_0" + this.ind + ".jpg";
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function uponAdoption(e:Event):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this+".uponAdoption() [:_:]");
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function imgAsset_Click(event:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this+".imgAsset_Click() [:_:]");
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*·¯
+		]]>
+	</fx:Script>
+	
+	<!-- -=[ OUTPUT UI ]=- -->
+	<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+	<mx:Image id="imgAsset" width="32" height="48" click="imgAsset_Click(event)" buttonMode="true" useHandCursor="true" />
+	<!-- /////////////////////////////// -->
+</s:Group>
+<!-- -=[ END OF LEVEL BACKGROUND UI ]=- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->

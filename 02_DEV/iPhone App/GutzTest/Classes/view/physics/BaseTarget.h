@@ -10,7 +10,7 @@
 #import "ObjectiveChipmunk.h"
 #import "cocos2d.h"
 
-#define BASE_RADIUS 16.0f
+#define TARGET_RADIUS 16.0f
 
 @interface BaseTarget : BasePhysicsSprite <ChipmunkObject> {
 	

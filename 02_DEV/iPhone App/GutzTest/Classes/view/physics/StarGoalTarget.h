@@ -6,7 +6,7 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "GoalTarget.h"
+#import "BaseTarget.h"
 
 #import "ObjectiveChipmunk.h"
 #import "cocos2d.h"
@@ -14,9 +14,6 @@
 
 #define STAR_RADIUS 16.0f
 
-@interface StarGoalTarget : GoalTarget <ChipmunkObject>
-
-
--(id)initAtPos:(CGPoint)pos;
+@interface StarGoalTarget : BaseTarget <ChipmunkObject>
 
 @end

@@ -26,8 +26,13 @@
 		_shape.collisionType = [RangedTrap class];
 		_shape.data = self;
 		
-		_frame1Sprite = [CCSprite spriteWithFile:@"enemy_spike_f1.png"];
-		_frame2Sprite = [CCSprite spriteWithFile:@"enemy_spike_f2.png"];
+		if (_isVertical) {
+			_frame1Sprite = [CCSprite spriteWithFile:@"enemy_spike_f1.png"];
+			_frame2Sprite = [CCSprite spriteWithFile:@"enemy_spike_f2.png"];
+		} else {
+			_frame1Sprite = [CCSprite spriteWithFile:@"furball_f1.png"];
+			_frame2Sprite = [CCSprite spriteWithFile:@"furball_f2.png"];
+		}
 		_frame2Sprite.visible = NO;
 		
 		_sprite = [CCSprite new];

@@ -130,7 +130,7 @@
 	cpFloat edgeDistance = 2.0f * _rad * cpfsin(M_PI / (cpFloat)_totBodies);
 	_radEdge = edgeDistance * 1.5f;
 	
-	cpFloat squishy = ORTHODOX_SQUISH;
+	//cpFloat squishy = ORTHODOX_SQUISH;
 	cpFloat stiffness = ORTHODOX_STIFFNESS;
 	cpFloat damping = ORTHODOX_DAMPING;
 	
@@ -149,8 +149,8 @@
 		
 		//ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:_edgeRadius * ((CCRANDOM_0_1() * 1) + 0.5) offset:cpvzero];
 		ChipmunkShape *shape = [ChipmunkCircleShape circleWithBody:body radius:_radEdge offset:cpvzero];
-		shape.elasticity = EDGE_BOUNCE;
-		shape.friction = EDGE_FRICTION;
+		shape.elasticity = BOUNCE;
+		shape.friction = FRICTION;
 		shape.group = self;
 		shape.layers = GRABABLE_LAYER;
 		shape.collisionType = [BaseGibs class];

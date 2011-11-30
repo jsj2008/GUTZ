@@ -42,6 +42,8 @@
 		4C10664413C3ED9B009FD4D6 /* SettingsPlistParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C10664113C3ED9B009FD4D6 /* SettingsPlistParser.m */; };
 		4C10664813C3F1A8009FD4D6 /* TimeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C10664713C3F1A8009FD4D6 /* TimeUtils.m */; };
 		4C10664B13C3F293009FD4D6 /* DigitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C10664A13C3F293009FD4D6 /* DigitUtils.m */; };
+		4C1186821484B23E001C906F /* starPickup-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1186801484B23E001C906F /* starPickup-hd.png */; };
+		4C1186831484B23E001C906F /* starPickup.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C1186811484B23E001C906F /* starPickup.png */; };
 		4C1B9784141739BF0039A3E8 /* sfx_noise-02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C1B9783141739BF0039A3E8 /* sfx_noise-02.mp3 */; };
 		4C1B9786141739C60039A3E8 /* sfx_noise-01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C1B9785141739C60039A3E8 /* sfx_noise-01.mp3 */; };
 		4C1B9788141739CB0039A3E8 /* sfx_long_stretch.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4C1B9787141739CB0039A3E8 /* sfx_long_stretch.mp3 */; };
@@ -112,6 +114,24 @@
 		4C50C72913EAFF60004FA05C /* PhysicsItemVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C50C72813EAFF60004FA05C /* PhysicsItemVO.m */; };
 		4C50C72D13EAFFA6004FA05C /* VisceraVO.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C50C72B13EAFFA6004FA05C /* VisceraVO.h */; };
 		4C50C72E13EAFFA6004FA05C /* VisceraVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C50C72C13EAFFA6004FA05C /* VisceraVO.m */; };
+		4C50F40B1481648900139B86 /* CheckTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C50F4091481648000139B86 /* CheckTarget.h */; };
+		4C50F40C1481648900139B86 /* CheckTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C50F40A1481648500139B86 /* CheckTarget.m */; };
+		4C50F410148165A500139B86 /* StartTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C50F40E148165A400139B86 /* StartTarget.h */; };
+		4C50F411148165A500139B86 /* StartTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C50F40F148165A400139B86 /* StartTarget.m */; };
+		4C50F4161482C18C00139B86 /* furball_f1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C50F4121482C18C00139B86 /* furball_f1.png */; };
+		4C50F4171482C18C00139B86 /* furball_f2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C50F4131482C18C00139B86 /* furball_f2.png */; };
+		4C50F4181482C18C00139B86 /* furball_f3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C50F4141482C18C00139B86 /* furball_f3.png */; };
+		4C50F4191482C18C00139B86 /* furball_f4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C50F4151482C18C00139B86 /* furball_f4.png */; };
+		4C50F41C14848D1A00139B86 /* HealthTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C50F41A14848CDA00139B86 /* HealthTarget.h */; };
+		4C50F41D14848D1B00139B86 /* HealthTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C50F41B14848CDD00139B86 /* HealthTarget.m */; };
+		4C50F42014848D9C00139B86 /* bandAid-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C50F41E14848D9C00139B86 /* bandAid-hd.png */; };
+		4C50F42114848D9C00139B86 /* bandAid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C50F41F14848D9C00139B86 /* bandAid.png */; };
+		4C50F4241484976E00139B86 /* bonus-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C50F4221484976E00139B86 /* bonus-hd.png */; };
+		4C50F4251484976E00139B86 /* bonus1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C50F4231484976E00139B86 /* bonus1.png */; };
+		4C50F428148497B600139B86 /* ptPickup-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C50F426148497B600139B86 /* ptPickup-hd.png */; };
+		4C50F429148497B600139B86 /* ptPickup.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C50F427148497B600139B86 /* ptPickup.png */; };
+		4C50F42C1484980200139B86 /* PointTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C50F42A148497F400139B86 /* PointTarget.h */; };
+		4C50F42D1484980200139B86 /* PointTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C50F42B148497F700139B86 /* PointTarget.m */; };
 		4C5694E413CE023A0047068D /* debug_node-00-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5694E113CE023A0047068D /* debug_node-00-hd.png */; };
 		4C5694E513CE023A0047068D /* debug_node-01-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5694E213CE023A0047068D /* debug_node-01-hd.png */; };
 		4C5694E613CE023A0047068D /* debug_node-02-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5694E313CE023A0047068D /* debug_node-02-hd.png */; };
@@ -754,6 +774,8 @@
 		4C10664713C3F1A8009FD4D6 /* TimeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeUtils.m; sourceTree = "<group>"; };
 		4C10664913C3F293009FD4D6 /* DigitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DigitUtils.h; sourceTree = "<group>"; };
 		4C10664A13C3F293009FD4D6 /* DigitUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DigitUtils.m; sourceTree = "<group>"; };
+		4C1186801484B23E001C906F /* starPickup-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "starPickup-hd.png"; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/starPickup-hd.png"; sourceTree = "<group>"; };
+		4C1186811484B23E001C906F /* starPickup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = starPickup.png; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/starPickup.png"; sourceTree = "<group>"; };
 		4C1B9783141739BF0039A3E8 /* sfx_noise-02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "sfx_noise-02.mp3"; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/sfx_noise-02.mp3"; sourceTree = "<group>"; };
 		4C1B9785141739C60039A3E8 /* sfx_noise-01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "sfx_noise-01.mp3"; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/sfx_noise-01.mp3"; sourceTree = "<group>"; };
 		4C1B9787141739CB0039A3E8 /* sfx_long_stretch.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sfx_long_stretch.mp3; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/sfx_long_stretch.mp3"; sourceTree = "<group>"; };
@@ -829,6 +851,24 @@
 		4C50C72813EAFF60004FA05C /* PhysicsItemVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsItemVO.m; sourceTree = "<group>"; };
 		4C50C72B13EAFFA6004FA05C /* VisceraVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisceraVO.h; sourceTree = "<group>"; };
 		4C50C72C13EAFFA6004FA05C /* VisceraVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisceraVO.m; sourceTree = "<group>"; };
+		4C50F4091481648000139B86 /* CheckTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckTarget.h; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/CheckTarget.h"; sourceTree = "<group>"; };
+		4C50F40A1481648500139B86 /* CheckTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckTarget.m; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/CheckTarget.m"; sourceTree = "<group>"; };
+		4C50F40E148165A400139B86 /* StartTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartTarget.h; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/StartTarget.h"; sourceTree = "<group>"; };
+		4C50F40F148165A400139B86 /* StartTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartTarget.m; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/StartTarget.m"; sourceTree = "<group>"; };
+		4C50F4121482C18C00139B86 /* furball_f1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = furball_f1.png; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/furball_f1.png"; sourceTree = "<group>"; };
+		4C50F4131482C18C00139B86 /* furball_f2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = furball_f2.png; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/furball_f2.png"; sourceTree = "<group>"; };
+		4C50F4141482C18C00139B86 /* furball_f3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = furball_f3.png; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/furball_f3.png"; sourceTree = "<group>"; };
+		4C50F4151482C18C00139B86 /* furball_f4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = furball_f4.png; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/furball_f4.png"; sourceTree = "<group>"; };
+		4C50F41A14848CDA00139B86 /* HealthTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HealthTarget.h; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/HealthTarget.h"; sourceTree = "<group>"; };
+		4C50F41B14848CDD00139B86 /* HealthTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HealthTarget.m; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/HealthTarget.m"; sourceTree = "<group>"; };
+		4C50F41E14848D9C00139B86 /* bandAid-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bandAid-hd.png"; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/bandAid-hd.png"; sourceTree = "<group>"; };
+		4C50F41F14848D9C00139B86 /* bandAid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bandAid.png; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/bandAid.png"; sourceTree = "<group>"; };
+		4C50F4221484976E00139B86 /* bonus-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bonus-hd.png"; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/bonus-hd.png"; sourceTree = "<group>"; };
+		4C50F4231484976E00139B86 /* bonus1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bonus1.png; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/bonus1.png"; sourceTree = "<group>"; };
+		4C50F426148497B600139B86 /* ptPickup-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ptPickup-hd.png"; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/ptPickup-hd.png"; sourceTree = "<group>"; };
+		4C50F427148497B600139B86 /* ptPickup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ptPickup.png; path = "../../../../GUTZ/02_DEV/iPhone App/GutzTest/Resources/ptPickup.png"; sourceTree = "<group>"; };
+		4C50F42A148497F400139B86 /* PointTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PointTarget.h; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/PointTarget.h"; sourceTree = "<group>"; };
+		4C50F42B148497F700139B86 /* PointTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PointTarget.m; path = "../../../../../../../GUTZ/02_DEV/iPhone App/GutzTest/Classes/view/physics/PointTarget.m"; sourceTree = "<group>"; };
 		4C5694E113CE023A0047068D /* debug_node-00-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "debug_node-00-hd.png"; path = "Resources/debug_node-00-hd.png"; sourceTree = "<group>"; };
 		4C5694E213CE023A0047068D /* debug_node-01-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "debug_node-01-hd.png"; path = "Resources/debug_node-01-hd.png"; sourceTree = "<group>"; };
 		4C5694E313CE023A0047068D /* debug_node-02-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "debug_node-02-hd.png"; path = "Resources/debug_node-02-hd.png"; sourceTree = "<group>"; };
@@ -1651,6 +1691,18 @@
 		4C3CB34B140716FB0049D4C4 /* Level Assets */ = {
 			isa = PBXGroup;
 			children = (
+				4C1186801484B23E001C906F /* starPickup-hd.png */,
+				4C1186811484B23E001C906F /* starPickup.png */,
+				4C50F426148497B600139B86 /* ptPickup-hd.png */,
+				4C50F427148497B600139B86 /* ptPickup.png */,
+				4C50F4221484976E00139B86 /* bonus-hd.png */,
+				4C50F4231484976E00139B86 /* bonus1.png */,
+				4C50F41E14848D9C00139B86 /* bandAid-hd.png */,
+				4C50F41F14848D9C00139B86 /* bandAid.png */,
+				4C50F4121482C18C00139B86 /* furball_f1.png */,
+				4C50F4131482C18C00139B86 /* furball_f2.png */,
+				4C50F4141482C18C00139B86 /* furball_f3.png */,
+				4C50F4151482C18C00139B86 /* furball_f4.png */,
 				4CD5A2CC1480428A0082B6DD /* conveyorBelt-hd.png */,
 				4CD5A2CD1480428A0082B6DD /* conveyorBelt.png */,
 				4CD5A28E1479F4B60082B6DD /* enemy_spike_f1-hd.png */,
@@ -1756,10 +1808,18 @@
 				4C77DD0F1418BB9D0079B3DD /* StiffGibs.m */,
 				4CA6EEEB1416C01000425F27 /* BaseTarget.h */,
 				4CA6EEEC1416C01000425F27 /* BaseTarget.m */,
+				4C50F40E148165A400139B86 /* StartTarget.h */,
+				4C50F40F148165A400139B86 /* StartTarget.m */,
+				4C50F4091481648000139B86 /* CheckTarget.h */,
+				4C50F40A1481648500139B86 /* CheckTarget.m */,
 				4C569B2713F2614E00F061D0 /* GoalTarget.h */,
 				4C569B2813F2614E00F061D0 /* GoalTarget.m */,
 				4CA6EEE71416BED400425F27 /* StarGoalTarget.h */,
 				4CA6EEE81416BED400425F27 /* StarGoalTarget.m */,
+				4C50F42A148497F400139B86 /* PointTarget.h */,
+				4C50F42B148497F700139B86 /* PointTarget.m */,
+				4C50F41A14848CDA00139B86 /* HealthTarget.h */,
+				4C50F41B14848CDD00139B86 /* HealthTarget.m */,
 				4CD5A26514786B570082B6DD /* DartEmitter.h */,
 				4CD5A26614786B570082B6DD /* DartEmitter.m */,
 				4CD5A26D14787CCA0082B6DD /* Dart.h */,
@@ -2954,6 +3014,10 @@
 				4CD5A2AC147C38C80082B6DD /* BaseWall.h in Headers */,
 				4CD5A2B0147C39C20082B6DD /* SpikedWall.h in Headers */,
 				4CD5A2CA148010510082B6DD /* ConveyorBelt.h in Headers */,
+				4C50F40B1481648900139B86 /* CheckTarget.h in Headers */,
+				4C50F410148165A500139B86 /* StartTarget.h in Headers */,
+				4C50F41C14848D1A00139B86 /* HealthTarget.h in Headers */,
+				4C50F42C1484980200139B86 /* PointTarget.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3363,6 +3427,18 @@
 				4CD5A2C3147C8B450082B6DD /* jellyCenter-hd.png in Resources */,
 				4CD5A2CE1480428A0082B6DD /* conveyorBelt-hd.png in Resources */,
 				4CD5A2CF1480428A0082B6DD /* conveyorBelt.png in Resources */,
+				4C50F4161482C18C00139B86 /* furball_f1.png in Resources */,
+				4C50F4171482C18C00139B86 /* furball_f2.png in Resources */,
+				4C50F4181482C18C00139B86 /* furball_f3.png in Resources */,
+				4C50F4191482C18C00139B86 /* furball_f4.png in Resources */,
+				4C50F42014848D9C00139B86 /* bandAid-hd.png in Resources */,
+				4C50F42114848D9C00139B86 /* bandAid.png in Resources */,
+				4C50F4241484976E00139B86 /* bonus-hd.png in Resources */,
+				4C50F4251484976E00139B86 /* bonus1.png in Resources */,
+				4C50F428148497B600139B86 /* ptPickup-hd.png in Resources */,
+				4C50F429148497B600139B86 /* ptPickup.png in Resources */,
+				4C1186821484B23E001C906F /* starPickup-hd.png in Resources */,
+				4C1186831484B23E001C906F /* starPickup.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3529,6 +3605,10 @@
 				4CD5A2AD147C38C80082B6DD /* BaseWall.m in Sources */,
 				4CD5A2B1147C39C20082B6DD /* SpikedWall.m in Sources */,
 				4CD5A2CB148010510082B6DD /* ConveyorBelt.m in Sources */,
+				4C50F40C1481648900139B86 /* CheckTarget.m in Sources */,
+				4C50F411148165A500139B86 /* StartTarget.m in Sources */,
+				4C50F41D14848D1B00139B86 /* HealthTarget.m in Sources */,
+				4C50F42D1484980200139B86 /* PointTarget.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

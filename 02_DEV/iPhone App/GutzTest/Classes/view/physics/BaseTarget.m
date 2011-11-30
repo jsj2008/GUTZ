@@ -20,7 +20,7 @@
 		_body = [[ChipmunkBody alloc] initWithMass:1 andMoment:INFINITY];
 		_body.pos = pos;
 		
-		_shape = [ChipmunkStaticCircleShape circleWithBody:_body radius:BASE_RADIUS offset:cpvzero];
+		_shape = [ChipmunkStaticCircleShape circleWithBody:_body radius:TARGET_RADIUS offset:cpvzero];
 		_shape.elasticity = 0.0f;
 		_shape.friction = 0.0f;		
 		_shape.collisionType = [BaseTarget class];

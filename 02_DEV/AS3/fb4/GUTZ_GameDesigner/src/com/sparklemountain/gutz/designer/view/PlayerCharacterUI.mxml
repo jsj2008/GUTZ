@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- -=[ START OF LEVEL BACKGROUND UI ]=- -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- -->
+<mx:Container xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			  xmlns:s="library://ns.adobe.com/flex/spark" 
+			  xmlns:mx="library://ns.adobe.com/flex/mx" 
+			  width="60" height="60"
+			  
+			  creationComplete="uponCreation(event)" 
+			  addedToStage="uponAdoption(event)"
+			  click="hdl_Click(event)"
+			  
+			  buttonMode="true" useHandCursor="true">
+	<!-- ////////////////////////////////////////////////// -->
+	
+	
+	<!-- -=[ MXML SCRIPT ]=- -->
+	<fx:Script>
+		<![CDATA[
+			import mx.core.UIComponent;
+			import mx.events.FlexEvent;
+			//]~=~=~=~=~=~=~=~=~=~=~=~=~=~[]~=~=~=~=~=~=~=~=~=~=~=~=~=~[
+			
+			//] APP PROPERTIES ]>
+			//]=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~.
+			public var ind:int;
+			
+			private var _asset_mc:MovieClip;
+			private var _canvasWrapper:UIComponent;
+			//[¡]~=~=~=~=~=~=~=~=~=~=~=~=~=~[!]~=~=~=~=~=~=~=~=~=~=~=~=~=~[¡].
+			
+			
+			
+			//* *\[ APP EVENT HANDLERS ]/*
+			//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*\
+			
+			private function uponCreation(e:FlexEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this+".uponCreation() [:_:]");
+				
+				switch (this.ind) {
+					default:
+						_asset_mc = new Spike_mc() as MovieClip;
+						break;
+				}
+				_asset_mc.scaleX = _asset_mc.scaleY = 0.5;
+				
+				_canvasWrapper = new UIComponent();
+				_canvasWrapper.x = 24;
+				_canvasWrapper.y = 24;
+				_canvasWrapper.addChild(_asset_mc);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			
+			private function uponAdoption(e:Event):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this+".uponAdoption() [:_:]");
+				
+				this.addElement(_canvasWrapper);
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+			
+			private function hdl_Click(event:MouseEvent):void {
+			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
+				trace ("[:_:] "+this+".uponAdoption() [:_:]");
+				this.alpha = 0.5;
+				
+			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+		//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~·¯
+		//*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*·¯
+
+		]]>
+	</fx:Script>
+	
+	<!-- -=[ OUTPUT UI ]=- -->
+	<!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
+	<!-- /////////////////////////////// -->
+</mx:Container>

@@ -9,11 +9,15 @@
 #import "cocos2d.h"
 #import "ObjectiveChipmunk.h"
 #import "JellyBlob.h"
-#import "GoalTarget.h"
+#import "StartTarget.h"
+#import "CheckTarget.h"
+#import "PointTarget.h"
 #import "StarGoalTarget.h"
+#import "GoalTarget.h"
 #import "RangedTrap.h"
 #import "DartEmitter.h"
 #import "Pinwheel.h"
+#import "HealthTarget.h"
 #import "BaseWall.h"
 #import "SpikedWall.h"
 #import "ConveyorBelt.h"
@@ -49,41 +53,35 @@
 @interface PlayScreenLayer : BaseScreenLayer {
 	
 	CGPoint *lastTouch;
+	CGPoint _ptViewOffset;
 	
 	ChipmunkSpace *_space;
 	ChipmunkMultiGrab *_multiGrab;
 	JellyBlob *_blob;
 	
-	GoalTarget *goalTarget1;
-	GoalTarget *goalTarget2;
-	GoalTarget *goalTarget3;
-	ChipmunkStaticPolyShape *_pinwheelShape;
-	
-	StarGoalTarget *_starGoalTarget;
+	StartTarget *_startTarget;
+	GoalTarget *_goalTarget;
+	NSMutableArray *arrCheckTargets;
 	
 	CCSprite *hudStarsSprite;
 	CCSprite *scoreDisplaySprite;
 	CCSprite *timeDisplaySprite;
-	
-	
-	CCSprite *eyeSprite;
-	CCSprite *mouthSprite;
-	
-	CCSprite *creatureSprite;
 	
 	cpVect gibPos;
 	cpVect vHitCoords;
 	cpVect vHitForce;
 	
 	CCParticleSystemPoint *particles;
-	NSMutableArray *arrTargets;
 	NSMutableArray *arrGibsShape;
+	NSMutableArray *arrHealths;
+	NSMutableArray *arrPickups;
 	NSMutableArray *arrGibsSprite;
 	NSMutableArray *arrTouchedEdge;
 	NSMutableArray *arrTraps;
 	NSMutableArray *arrDartEmitters;
 	NSMutableArray *arrDarts;
 	NSMutableArray *arrPinwheels;
+	NSMutableArray *arrConveyors;
 	
 	NSMutableArray *_arrGibs;
 	
@@ -104,6 +102,7 @@
 	BOOL _isBonus;
 	BOOL _isWallSFX;
 	BOOL _isDrawing;
+	BOOL _isPanning;
 	
 	cpFloat _edgeRad;
 	int _cntTargets;
@@ -145,6 +144,7 @@
 -(void) onGameOver:(id)sender;
 -(void) onPlayPauseToggle:(id)sender;
 -(void) physicsStepper:(ccTime)dt;
+-(void)toggleCollisions:(BOOL)isEnabled;
 -(void) chipmunkSetup;
 -(void) scaffoldHUD;
 -(void) debuggingSetup;
@@ -166,8 +166,8 @@
 -(BOOL)beginSpikeCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
 -(void)separateSpikeCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
 
--(BOOL)beginStarGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
--(void)separateStarGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
+-(BOOL)beginCheckGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
+-(void)separateCheckGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
 
 -(BOOL)beginGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
 -(void)separateGoalCollision:(cpArbiter *)arbiter space:(ChipmunkSpace *)space;
@@ -185,9 +185,5 @@
 -(void)addGib:(id)sender;
 -(void)onGibsExpiry:(id)sender;
 -(void)flashBG;
-
--(void)onDartFired:(NSNotification *)notification;
-
-
 
 @end

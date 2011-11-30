@@ -337,7 +337,10 @@
 }
 
 
-
+-(void)shiftDown {
+	posPt = cpvsub(posPt, cpv(0, 128));
+	_centralBody.pos = posPt;
+}
 
 -(ChipmunkBody *)touchedBodyAt:(CGPoint)pos {
 	ChipmunkBody *body;

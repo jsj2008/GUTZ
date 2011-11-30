@@ -2,6 +2,44 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>goals</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>0</integer>
+			<key>type</key>
+			<integer>1</integer>
+			<key>x</key>
+			<integer>20</integer>
+			<key>y</key>
+			<integer>461</integer>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>1</integer>
+			<key>type</key>
+			<integer>2</integer>
+			<key>x</key>
+			<integer>302</integer>
+			<key>y</key>
+			<integer>20</integer>
+		</dict>
+	</array>
+	<key>waypts</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>0</integer>
+			<key>x</key>
+			<integer>160</integer>
+			<key>y</key>
+			<integer>240</integer>
+			<key>pan_x</key>
+			<integer>160</integer>
+			<key>pan_y</key>
+			<integer>240</integer>
+		</dict>
+	</array>
 	<key>walls</key>
 	<array>
 		<dict>
@@ -9,48 +47,64 @@
 			<integer>0</integer>
 			<key>type</key>
 			<integer>2</integer>
+			<key>spikes</key>
+			<integer>2</integer>
 			<key>x</key>
-			<integer>97</integer>
+			<integer>108</integer>
 			<key>y</key>
-			<integer>243</integer>
+			<integer>371</integer>
+			<key>friction</key>
+			<real>0.5</real>
+			<key>bounce</key>
+			<real>0.1</real>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>1</integer>
+			<key>type</key>
+			<integer>1</integer>
+			<key>spikes</key>
+			<integer>2</integer>
+			<key>x</key>
+			<integer>161</integer>
+			<key>y</key>
+			<integer>147</integer>
 			<key>friction</key>
 			<real>0.5</real>
 			<key>bounce</key>
 			<real>0.1</real>
 		</dict>
 	</array>
-	<key>goals</key>
+	<key>studs</key>
 	<array>
-		<dict>
-			<key>id</key>
-			<integer>2</integer>
-			<key>type</key>
-			<integer>2</integer>
-			<key>x</key>
-			<integer>120</integer>
-			<key>y</key>
-			<integer>160</integer>
-		</dict>
+	</array>
+	<key>traps</key>
+	<array>
 		<dict>
 			<key>id</key>
 			<integer>0</integer>
 			<key>type</key>
 			<integer>1</integer>
 			<key>x</key>
-			<integer>35</integer>
+			<integer>42</integer>
 			<key>y</key>
-			<integer>444</integer>
+			<integer>85</integer>
+			<key>min</key>
+			<integer>39</integer>
+			<key>max</key>
+			<integer>284</integer>
+			<key>speed</key>
+			<real>1.161764705882353</real>
 		</dict>
-		<dict>
-			<key>id</key>
-			<integer>1</integer>
-			<key>type</key>
-			<integer>1</integer>
-			<key>x</key>
-			<integer>32</integer>
-			<key>y</key>
-			<integer>34</integer>
-		</dict>
+	</array>
+	<key>darts</key>
+	<array>
+	</array>
+	<key>handwheels</key>
+	<array>
+	</array>
+	<key>conveyors</key>
+	<array>
 	</array>
 </dict>
 </plist>

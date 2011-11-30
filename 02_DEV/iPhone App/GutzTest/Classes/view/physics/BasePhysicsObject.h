@@ -15,8 +15,8 @@
 #define NORMAL_LAYER 1
 #define GRABABLE_LAYER 2
 
-#define EDGE_BOUNCE 0.5f
-#define EDGE_FRICTION 0.1f
+#define BOUNCE 0.5f
+#define FRICTION 0.1f
 
 @interface BasePhysicsObject : NSObject <ChipmunkObject> {
     

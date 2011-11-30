@@ -6,27 +6,16 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 #import "ObjectiveChipmunk.h"
 #import "cocos2d.h"
 
-#import "BasePhysicsSprite.h"
+#import "BaseTarget.h"
 
-#define GOAL_RADIUS 18.0f
-
-@interface GoalTarget : BasePhysicsSprite <ChipmunkObject> {
+@interface GoalTarget : BaseTarget <ChipmunkObject> {
 	
-	int ind;
-	BOOL isCovered;
-	BOOL isCleared;
 }
 
--(id)initAtPos:(CGPoint)pos;
 -(void)updateCovered:(BOOL)covered;
 
-@property (nonatomic) int ind;
-@property (nonatomic) BOOL isCovered;
-@property (nonatomic) BOOL isCleared;
 
 @end

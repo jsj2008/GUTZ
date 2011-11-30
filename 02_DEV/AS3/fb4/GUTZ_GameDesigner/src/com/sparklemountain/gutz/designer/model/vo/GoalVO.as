@@ -26,17 +26,16 @@ package com.sparklemountain.gutz.designer.model.vo {
 		public var type_id:int;
 		public var asset_mc:MovieClip;
 		public var pos_pt:Point;
-		public var ui:IVisualElement;
 		// <[=-=-=-=-=-=-=-=-=-=-=-=][=-=-=-=-=-=-=-=-=-=-=-=]>
 		
 		// <*] class constructor [*>
-		public function GoalVO(i:int, type:int, pos:Point, asset:MovieClip) {
+		public function GoalVO(i:int, type:int, asset:MovieClip, pos:Point) {
 		//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 			
 			this.id = i;
 			this.type_id = type;
-			this.pos_pt = pos.clone();
 			this.asset_mc = asset;
+			this.pos_pt = pos.clone();
 		}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 		
 		//]~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=[>
@@ -52,7 +51,6 @@ package com.sparklemountain.gutz.designer.model.vo {
 				ret_str += "\n[type_id]: "+this.type_id;
 				ret_str += "\n[asset_mc]: "+this.asset_mc;
 				ret_str += "\n[pos_pt]: "+this.pos_pt;
-				ret_str += "\n[ui]: "+this.ui;
 				ret_str += "\n[=-=-=-=-=-=-=-=-=-=-=-=-=-=]";
 				ret_str += "\n[=-=-=-=-=-=-=-=-=-=-=-=-=-=]";
 			

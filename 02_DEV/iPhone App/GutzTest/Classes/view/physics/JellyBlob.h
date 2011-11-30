@@ -81,6 +81,7 @@
 -(void)wiggleWithForce:(int)index force:(cpFloat)f;
 -(void)pop;
 -(void)pulsate:(CGPoint)pos;
+-(void)shiftDown;
 
 -(ChipmunkBody *)touchedBodyAt:(CGPoint)pos;
 -(int)bodyIndexAt:(CGPoint)pos;
