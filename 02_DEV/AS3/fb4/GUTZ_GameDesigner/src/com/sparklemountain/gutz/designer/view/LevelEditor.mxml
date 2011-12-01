@@ -225,7 +225,7 @@
 				
 				btnMin.enabled = false;
 				btnMax.enabled = false;
-				btnFlipWall.enabled = true;
+				btnRotateWall.enabled = true;
 				
 				this.updCanvas();
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
@@ -248,7 +248,7 @@
 				_canvasWrapper.addChild(wall_mc);
 				lblCoords.text = "("+wall_mc.x+", "+wall_mc.y+")";
 				
-				btnFlipWall.enabled = true;
+				btnRotateWall.enabled = true;
 				btnMin.enabled = false;
 				btnMax.enabled = false;
 				
@@ -313,8 +313,8 @@
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 				trace ("[:_:] "+this.className+".hdlSwitchCanvasBtn_Click() [:_:]");
 				
-				ctnCanvasTop.visible = !ctnCanvasTop.visible;
-				ctnCanvasBottom.visible = !ctnCanvasBottom.visible;
+				//ctnCanvasTop.visible = !ctnCanvasTop.visible;
+				//ctnCanvasBottom.visible = !ctnCanvasBottom.visible;
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
 			
@@ -422,6 +422,11 @@
 						health_mc = new Cola_mc() as MovieClip;
 						type_id = 5;
 						break;
+					
+					case "btnStar":
+						health_mc = new Star_mc() as MovieClip;
+						type_id = 6;
+						break;
 				}
 				
 				health_mc.x = EditorConsts.CANVAS_CENTER.x;
@@ -434,28 +439,6 @@
 				_healthVO_arr.push(new HealthVO(_healthVO_arr.length, type_id, health_mc, EditorConsts.CANVAS_CENTER));
 				_canvasWrapper.addChild(health_mc);
 				lblCoords.text = "("+health_mc.x+", "+health_mc.y+")";
-				
-				btnMin.enabled = false;
-				btnMax.enabled = false;
-				
-				this.updCanvas();
-			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
-			
-			private function hdlStarBtn_Click(e:MouseEvent):void {
-			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
-				trace ("[:_:] "+this.className+".hdlStarBtn_Click() [:_:]");
-				
-				var star_mc:Star_mc = new Star_mc();
-					star_mc.x = EditorConsts.CANVAS_CENTER.x;
-					star_mc.y = EditorConsts.CANVAS_CENTER.y;
-					star_mc.buttonMode = true;
-					star_mc.useHandCursor = true;
-					star_mc.addEventListener(MouseEvent.MOUSE_DOWN, hdlPickup_Press);
-					star_mc.addEventListener(MouseEvent.MOUSE_UP, hdlPickup_Release);
-				
-				_pickupVO_arr.push(new PickupVO(_pickupVO_arr.length, 2, star_mc, EditorConsts.CANVAS_CENTER));
-				_canvasWrapper.addChild(star_mc);
-				lblCoords.text = "("+star_mc.x+", "+star_mc.y+")";
 				
 				btnMin.enabled = false;
 				btnMax.enabled = false;
@@ -567,9 +550,9 @@
 				this.updTrapRange();
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 			
-			private function hdlFlipWallBtn_Click(e:MouseEvent):void {
+			private function hdlRotateWallBtn_Click(e:MouseEvent):void {
 			//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
-				trace ("[:_:] "+this.className+".hdlFlipWallBtn_Click() [:_:]");
+				trace ("[:_:] "+this.className+".hdlRotateWallBtn_Click() [:_:]");
 				
 				_actWall_mc.rotation += 90;
 				
@@ -723,7 +706,7 @@
 				
 				_actWall_mc = trg_mc;
 				
-				btnFlipWall.enabled = true;
+				btnRotateWall.enabled = true;
 				btnMin.enabled = false;
 				btnMax.enabled = false;
 			}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
@@ -1533,11 +1516,14 @@
 			<s:Line xFrom="160" xTo="160" yFrom="0" yTo="480"><s:stroke><s:SolidColorStroke color="#b5bdc3" /></s:stroke></s:Line>
 			<s:Line xFrom="0" xTo="320" yFrom="240" yTo="240"><s:stroke><s:SolidColorStroke color="#b5bdc3" /></s:stroke></s:Line>
 		</s:Group>
-		<s:BorderContainer id="ctnCanvasTop" width="320" height="480" backgroundAlpha="0" />
-		<s:BorderContainer id="ctnCanvasBottom" width="320" height="480" backgroundAlpha="0" visible="false" />
+		<s:BorderContainer id="ctnScroller" width="337" height="480" backgroundAlpha="0">
+			<s:Scroller width="100%" height="100%">
+				<s:Group><s:BorderContainer id="ctnCanvasTop" width="320" height="960" backgroundAlpha="0" /></s:Group>
+			</s:Scroller>
+		</s:BorderContainer>
 	</s:Group>
 	
-	<s:VGroup x="488" y="{ComponentConsts.APP_PADDING_T}">
+	<s:VGroup x="500" y="{ComponentConsts.APP_PADDING_T}">
 		<s:Panel id="pnlBackgrounds" title="—Backgrounds—" width="320" height="82"><s:HGroup>
 			<view:LevelBackgroundUI ind="1" click="hdlLvlBG_Click(event)" />
 			<view:LevelBackgroundUI ind="2" click="hdlLvlBG_Click(event)" />
@@ -1564,7 +1550,7 @@
 		<s:Panel id="pnlPickups" title="—Pickups—" width="320" height="120"><s:VGroup>
 			<s:HGroup>
 				<s:Button id="btnPickup" label="Pickup" width="80" click="hdlPickupBtn_Click(event)" />
-				<s:Button id="btnStar" label="Star" width="80" click="hdlStarBtn_Click(event)" />
+				<s:Button id="btnStar" label="Star" width="80" click="hdlHealthBtn_Click(event)" />
 				<s:Button id="btnBandAid" label="BandAid" width="80" click="hdlHealthBtn_Click(event)" />
 			</s:HGroup><s:HGroup>
 				<s:Button id="btnSteak" label="Steak" width="80" click="hdlHealthBtn_Click(event)" />
@@ -1580,7 +1566,7 @@
 			<s:Button id="btnMax" label="MAX: {_trapVal_max}" width="96" click="hdlTrapMaxBtn_Click(event)" enabled="false" />
 			<mx:Slider id="sldSpd" value="{_trapVal_spd}" width="96" useHandCursor="true" change="hdlTrapSpdSld_Change(event)" enabled="true" />
 		</s:HGroup>
-		<s:Button id="btnFlipWall" label="Flip Wall" width="96" click="hdlFlipWallBtn_Click(event)" enabled="false" />
+		<s:Button id="btnRotateWall" label="Rotate Wall" width="96" click="hdlRotateWallBtn_Click(event)" enabled="false" />
 		<s:HGroup>
 			<s:Button id="btnLoadPlist" width="96" height="32" label="Load Plist…" click="hdlLoadPlistBtn_Click(event)" />
 			<s:Button id="btnSavePlist" width="96" height="32" label="Save Plist…" click="hdlSavePlistBtn_Click(event)" />

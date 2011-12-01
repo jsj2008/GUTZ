@@ -40,8 +40,8 @@
 #define PI 3.1415926536
 
 
-#define BLOB_RADIUS 32
-#define BLOB_SEGS 32
+#define BLOB_RADIUS 24
+#define BLOB_SEGS 24
 
 #define BLOB_X 250
 #define BLOB_Y 415

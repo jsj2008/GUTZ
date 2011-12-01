@@ -14,10 +14,9 @@
 	
 	BOOL _isClockwise;
 	float _speed;
-	
 }
 
 -(id)initAtPos:(CGPoint)pos spinsClockwise:(BOOL)spins speed:(float)spd;
 -(void)updRot;
-
+-(void)attach:(ChipmunkSpace *)space;
 @end

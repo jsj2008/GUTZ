@@ -62,7 +62,7 @@
 			
 			for (int i=0; i<segs; i++) {
 				ChipmunkBody *body = [ChipmunkBody bodyWithMass:INFINITY andMoment:INFINITY];
-				[body setPos:cpvadd(_ptPos, cpv(((SEG_SIZE * 0.5f) + (-width * 0.5f)) + (i * SEG_SIZE), -8))];
+				[body setPos:cpvadd(_ptPos, cpv(((SEG_SIZE * 0.5f) + (-width * 0.5f)) + (i * SEG_SIZE), 4))];
 				
 				ChipmunkPolyShape *shape = [[ChipmunkPolyShape alloc] initWithBody:body count:3 verts:polyVerts offset:cpvzero];
 				shape.friction = 1.0f;
@@ -81,7 +81,7 @@
 			
 			for (int i=0; i<segs; i++) {
 				ChipmunkBody *body = [ChipmunkBody bodyWithMass:INFINITY andMoment:INFINITY];
-				[body setPos:cpvadd(_ptPos, cpv(((SEG_SIZE * 0.5f) + (-width * 0.5f)) + (i * SEG_SIZE), -8))];
+				[body setPos:cpvadd(_ptPos, cpv(((SEG_SIZE * 0.5f) + (-width * 0.5f)) + (i * SEG_SIZE), 4))];
 				
 				ChipmunkPolyShape *shape = [[ChipmunkPolyShape alloc] initWithBody:body count:3 verts:polyVerts offset:cpvzero];
 				shape.friction = 1.0f;

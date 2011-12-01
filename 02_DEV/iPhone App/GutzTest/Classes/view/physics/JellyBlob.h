@@ -10,7 +10,7 @@
 #define EDGE_BOUNCE 0.5f
 #define EDGE_FRICTION 1.8f
 
-#define CENTRAL_MASS 4.5f
+#define CENTRAL_MASS 6.5f
 #define CENTRAL_RADIUS 8.0f
 
 #define SQUISH_COEFF 0.7f

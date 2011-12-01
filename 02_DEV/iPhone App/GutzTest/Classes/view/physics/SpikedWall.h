@@ -17,13 +17,8 @@
 	
 	ChipmunkBody *_spikedBody;
 	ChipmunkPolyShape *_spikedShape;
-	
-	NSArray *_arrShortSpikes;
-	NSArray *_arrLongSpikes;
-	NSArray *_arrSpikes;
 }
 
 -(id)initAtPos:(CGPoint)pos large:(BOOL)isLarge spikes:(int)spiked rotation:(int)ang friction:(float)fric bounce:(float)bnc;
--(void)makeSpikes;
 
 @end

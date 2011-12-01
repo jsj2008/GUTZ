@@ -75,6 +75,7 @@ static NSString *borderType = @"borderType";
 		_isCleared = NO;
 		_isWallSFX = NO;
 		
+		_arrDrawPts = [[NSMutableArray alloc] init];
 		arrTouchedEdge = [[NSMutableArray alloc] init];
 		
 		[self chipmunkSetup];
@@ -120,7 +121,7 @@ static NSString *borderType = @"borderType";
 	
 	CCSprite *bg1Sprite = [CCSprite spriteWithFile:[NSString stringWithFormat:@"background_%d.jpg", [[[plistLvlData dicTopLvl] objectForKey:@"bg"] intValue]]];
 	[bg1Sprite setPosition:CGPointMake(160, 240)];
-	//[self addChild:bg1Sprite];
+	[self addChild:bg1Sprite];
 	
 	CCSprite *bg2Sprite = [CCSprite spriteWithFile:[NSString stringWithFormat:@"background_%d.jpg", [[[plistLvlData dicTopLvl] objectForKey:@"bg"] intValue]]];
 	[bg2Sprite setPosition:CGPointMake(160, -240)];
@@ -162,7 +163,7 @@ static NSString *borderType = @"borderType";
 				break;
 				
 			case 2:
-				_goalTarget = [[GoalTarget alloc] initAtPos:cpvadd(goalPos, cpv(0, -480))];//cpv((CCRANDOM_0_1() * 280) + 16, (CCRANDOM_0_1() * 400) + 32)];
+				_goalTarget = [[GoalTarget alloc] initAtPos:goalPos];//cpv((CCRANDOM_0_1() * 280) + 16, (CCRANDOM_0_1() * 400) + 32)];
 				[_space add:_goalTarget];
 				[self addChild:_goalTarget._sprite];
 				break;
@@ -179,8 +180,6 @@ static NSString *borderType = @"borderType";
 	
 	for (NSDictionary *dictWall in plistLvlData.arrWallData) {
 		SpikedWall *wall = [[SpikedWall alloc] initAtPos:CGPointMake([[dictWall objectForKey:@"x"] floatValue], [[dictWall objectForKey:@"y"] floatValue]) large:[[dictWall objectForKey:@"type"] intValue]-1 spikes:[[dictWall objectForKey:@"spikes"] intValue] rotation:[[dictWall objectForKey:@"angle"] intValue] friction:[[dictWall objectForKey:@"frict"] floatValue] bounce:[[dictWall objectForKey:@"bounce"] floatValue]];
-		[wall spaceRef:_space];
-		[wall makeSpikes];
 		
 		[self addChild:wall._sprite];
 		[_space add:wall];
@@ -237,7 +236,7 @@ static NSString *borderType = @"borderType";
 		CGPoint handwheelPos = CGPointMake([[dictPinwheel objectForKey:@"x"] floatValue], [[dictPinwheel objectForKey:@"y"] floatValue]);
 		
 		Pinwheel *pinwheel = [[Pinwheel alloc] initAtPos:handwheelPos spinsClockwise:YES speed:2.33f];
-		[pinwheel spaceRef:_space];
+		[pinwheel attach:_space];
 		[arrPinwheels addObject:pinwheel];
 		
 		[_space add:pinwheel];
@@ -352,8 +351,7 @@ static NSString *borderType = @"borderType";
 	//CGRect rect = CGRectMake(0, 0, wins.width, wins.height);
 	[_space addBounds:rect thickness:532 elasticity:1 friction:1 layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:borderType];
 	
-	
-	_multiGrab = [[ChipmunkMultiGrab alloc] initForSpace:_space withSmoothing:cpfpow(0.8, 60.0) withGrabForce:30000];
+	_multiGrab = [[ChipmunkMultiGrab alloc] initForSpace:_space withSmoothing:cpfpow(0.5, 60.0) withGrabForce:20000];
 	_multiGrab.layers = GRABABLE_LAYER;
 	
 	if (kDrawChipmunkObjs == 1)
@@ -484,8 +482,8 @@ static NSString *borderType = @"borderType";
 	HealthTarget *trg = target.data;
 	[trg updateCovered:YES];
 	
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"ScoreChanged" object:[[NSNumber alloc] initWithInt:50]];
-	[[PlayStatsModel singleton] incScore:score_amt];
+	//[[NSNotificationCenter defaultCenter] postNotificationName:@"ScoreChanged" object:[[NSNumber alloc] initWithInt:50]];
+	//[[PlayStatsModel singleton] incScore:score_amt];
 	
 	return (NO);
 }
@@ -834,6 +832,9 @@ static NSString *borderType = @"borderType";
 		}
 	}
 	
+	for (UITouch *touch in _arrDrawPts)
+		[_multiGrab endLocation:cpvadd([[CCDirector sharedDirector] convertToGL:[touch locationInView:[touch view]]], cpvneg(_ptViewOffset))];
+	
 	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.67f];
 	[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_finish_splatter.mp3"];
 	
@@ -897,8 +898,8 @@ static NSString *borderType = @"borderType";
 	for (Pinwheel *pinwheel in arrPinwheels)
 		[self removeChild:pinwheel._sprite cleanup:NO];
 	
-	//[_multiGrab release];
-	[_multiGrab dealloc];
+	for (UITouch *touch in _arrDrawPts)
+		[_multiGrab endLocation:cpvadd([[CCDirector sharedDirector] convertToGL:[touch locationInView:[touch view]]], cpvneg(_ptViewOffset))];
 	
 	[self schedule:@selector(flashBG) interval:0.1];
 	[self performSelector:@selector(onResetArea:) withObject:self afterDelay:0.5];
@@ -1101,10 +1102,10 @@ TouchLocation(UITouch *touch) {
 }
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event; {
-	_arrDrawPts = [[NSMutableArray alloc] init];
 	_isDrawing = NO;
 	
 	for (UITouch *touch in touches) {
+		[_arrDrawPts addObject:touch];
 		[_multiGrab beginLocation:cpvadd(TouchLocation(touch), cpvneg(_ptViewOffset))];
 		
 		int ind = [_blob bodyIndexAt:TouchLocation(touch)];
@@ -1154,6 +1155,8 @@ TouchLocation(UITouch *touch) {
 			if ([[arrTouchedEdge objectAtIndex:i] isEqualToString:[NSString stringWithFormat:@"E_%d", ind]])
 				[arrTouchedEdge removeObjectAtIndex:i];
 		}
+		
+		[_arrDrawPts removeObject:touch];
 	}
 }
 

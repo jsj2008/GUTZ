@@ -28,10 +28,6 @@
 			case 1:
 				_sprite = [CCSprite spriteWithFile:@"ptPickup.png"];
 				break;
-		
-			case 2:
-				_sprite = [CCSprite spriteWithFile:@"starPickup.png"];
-				break;
 		}
 		
 		[_sprite setPosition:pos];

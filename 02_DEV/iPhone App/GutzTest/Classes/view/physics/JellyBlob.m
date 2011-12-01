@@ -374,7 +374,7 @@ enum {
 
 
 -(void)shiftDown {
-	posPt = cpvsub(posPt, cpv(0, 128));
+	posPt = cpvsub(posPt, cpv(0, 32));
 	_centralBody.pos = posPt;
 }
 
