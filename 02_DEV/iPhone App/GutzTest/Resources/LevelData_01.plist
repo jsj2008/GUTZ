@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bg</key>
-	<integer>3</integer>
+	<integer>0</integer>
 	<key>player</key>
 	<integer>0</integer>
 	<key>goals</key>
@@ -14,29 +14,19 @@
 			<key>type</key>
 			<integer>1</integer>
 			<key>x</key>
-			<integer>56</integer>
+			<integer>158</integer>
 			<key>y</key>
-			<integer>416</integer>
+			<integer>414</integer>
 		</dict>
 		<dict>
 			<key>id</key>
 			<integer>1</integer>
 			<key>type</key>
-			<integer>3</integer>
-			<key>x</key>
-			<integer>33</integer>
-			<key>y</key>
-			<integer>36</integer>
-		</dict>
-		<dict>
-			<key>id</key>
-			<integer>2</integer>
-			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>278</integer>
+			<integer>157</integer>
 			<key>y</key>
-			<integer>-426</integer>
+			<integer>59</integer>
 		</dict>
 	</array>
 	<key>waypts</key>
@@ -44,90 +34,61 @@
 	</array>
 	<key>pickups</key>
 	<array>
+		<dict>
+			<key>id</key>
+			<integer>0</integer>
+			<key>type</key>
+			<integer>2</integer>
+			<key>x</key>
+			<integer>159</integer>
+			<key>y</key>
+			<integer>316</integer>
+			<key>points</key>
+			<integer>10</integer>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>1</integer>
+			<key>type</key>
+			<integer>2</integer>
+			<key>x</key>
+			<integer>160</integer>
+			<key>y</key>
+			<integer>147</integer>
+			<key>points</key>
+			<integer>10</integer>
+		</dict>
 	</array>
 	<key>healths</key>
 	<array>
 	</array>
-	<key>walls</key>
+	<key>stars</key>
 	<array>
 		<dict>
 			<key>id</key>
 			<integer>0</integer>
-			<key>type</key>
-			<integer>1</integer>
-			<key>angle</key>
-			<integer>0</integer>
-			<key>spikes</key>
-			<integer>2</integer>
 			<key>x</key>
-			<integer>101</integer>
+			<integer>160</integer>
 			<key>y</key>
-			<integer>294</integer>
-			<key>friction</key>
-			<real>0.5</real>
-			<key>bounce</key>
-			<real>0.1</real>
+			<integer>240</integer>
 		</dict>
-		<dict>
-			<key>id</key>
-			<integer>1</integer>
-			<key>type</key>
-			<integer>2</integer>
-			<key>angle</key>
-			<integer>2</integer>
-			<key>spikes</key>
-			<integer>1</integer>
-			<key>x</key>
-			<integer>205</integer>
-			<key>y</key>
-			<integer>53</integer>
-			<key>friction</key>
-			<real>0.5</real>
-			<key>bounce</key>
-			<real>0.1</real>
-		</dict>
-		<dict>
-			<key>id</key>
-			<integer>2</integer>
-			<key>type</key>
-			<integer>1</integer>
-			<key>angle</key>
-			<integer>3</integer>
-			<key>spikes</key>
-			<integer>2</integer>
-			<key>x</key>
-			<integer>19</integer>
-			<key>y</key>
-			<integer>204</integer>
-			<key>friction</key>
-			<real>0.5</real>
-			<key>bounce</key>
-			<real>0.1</real>
-		</dict>
+	</array>
+	<key>walls</key>
+	<array>
 	</array>
 	<key>studs</key>
 	<array>
-		<dict>
-			<key>id</key>
-			<integer>0</integer>
-			<key>type</key>
-			<integer>-1</integer>
-			<key>x</key>
-			<integer>196</integer>
-			<key>y</key>
-			<integer>348</integer>
-			<key>radius</key>
-			<integer>16</integer>
-			<key>friction</key>
-			<real>0.5</real>
-			<key>bounce</key>
-			<real>0.1</real>
-		</dict>
 	</array>
 	<key>traps</key>
 	<array>
 	</array>
 	<key>darts</key>
+	<array>
+	</array>
+	<key>bombs</key>
+	<array>
+	</array>
+	<key>punters</key>
 	<array>
 	</array>
 	<key>handwheels</key>

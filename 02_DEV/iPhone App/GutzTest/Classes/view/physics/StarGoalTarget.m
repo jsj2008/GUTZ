@@ -23,7 +23,7 @@
 		_shape.data = self;
 		
 		
-		_sprite = [CCSprite spriteWithFile:@"bonus.png"];
+		_sprite = [CCSprite spriteWithFile:@"starPickup.png"];
 		[_sprite setPosition:pos];
 		
 		
@@ -31,6 +31,16 @@
 	}
 	
 	return (self);
+}
+
+-(void)updCovered:(BOOL)covered {
+	isCovered = covered;
+	
+	if ([self isCovered])
+		[_sprite setOpacity:0];
+	
+	else
+		[_sprite setOpacity:255];
 }
 
 -(void)dealloc {

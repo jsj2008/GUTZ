@@ -46,10 +46,6 @@
 			case 5:
 				_sprite = [CCSprite spriteWithFile:@"cola.png"];
 				break;
-				
-			case 6:
-				_sprite = [CCSprite spriteWithFile:@"starPickup.png"];
-				break;
 		}
 		
 		[_sprite setPosition:pos];
@@ -59,7 +55,7 @@
 	return (self);
 }
 
--(void)updateCovered:(BOOL)covered {
+-(void)updCovered:(BOOL)covered {
 	isCovered = covered;
 	
 	if ([self isCovered])

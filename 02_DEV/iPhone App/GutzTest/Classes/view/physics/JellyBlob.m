@@ -474,6 +474,25 @@ enum {
 	[body applyImpulse:cpv(f, f) offset:_centralBody.pos];
 }
 
+-(void)pushWithForce:(float)force angle:(float)ang {
+	
+	cpVect slope = cpvforangle(CC_DEGREES_TO_RADIANS(ang));
+	[_centralBody applyImpulse:cpvmult(slope, force) offset:cpvzero];
+}
+
+-(void)stickAt:(cpVect)pos staticBody:(ChipmunkBody *)body {
+	NSLog(@"%@.stickAt(%f, %f) %@", [self class], pos.x, pos.y, body);
+	
+	//ChipmunkBody *body1 = [ChipmunkBody bodyWithMass:INFINITY andMoment:INFINITY];
+	//body1.pos= pos;
+	
+	//[set addObject:body1];
+	
+	[set addObject:[ChipmunkSlideJoint slideJointWithBodyA:_centralBody bodyB:body anchr1:cpvzero anchr2:cpvzero min:CENTRAL_RADIUS max:CENTRAL_RADIUS * 3.0f]];
+	//[set addObject:[ChipmunkDampedSpring dampedSpringWithBodyA:_centralBody bodyB:body1 anchr1:cpvzero anchr2:cpvzero restLength:0 stiffness:SPRING_STR damping:SPRING_DAMP]];
+}
+
+
 -(void)pop {
 	
 	/*

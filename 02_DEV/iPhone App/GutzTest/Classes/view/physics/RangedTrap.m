@@ -108,7 +108,6 @@
 	
 	_body.pos = cpvadd(_body.pos, vecInc);
 	[_sprite setPosition:cpvadd(_body.pos, vecInc)];
-	//[_sprite setRotation:_sprite.rotation - 4];
 }
 
 

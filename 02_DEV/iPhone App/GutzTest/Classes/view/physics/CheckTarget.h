@@ -16,6 +16,6 @@
 }
 
 -(id)initAtPos:(CGPoint)pos;
--(void)updateCovered:(BOOL)covered;
+-(void)updCovered:(BOOL)covered;
 
 @end

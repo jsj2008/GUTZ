@@ -24,19 +24,19 @@ package com.sparklemountain.gutz.designer.model.vo {
 		public var asset_mc:MovieClip;
 		public var pos_pt:Point;
 		public var width:int;
-		public var speed:Number;
+		public var dir:int;
 		// <[=-=-=-=-=-=-=-=-=-=-=-=][=-=-=-=-=-=-=-=-=-=-=-=]>
 		
 		
 		// <*] class constructor [*>
-		public function ConveyorVO(idx:int, asset:MovieClip, pos:Point, wid:int, spd:Number) {
+		public function ConveyorVO(idx:int, asset:MovieClip, pos:Point, wid:int, spd:int) {
 		//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 			
 			this.ind = idx;
 			this.asset_mc = asset;
 			this.pos_pt = pos.clone();
 			this.width = wid;
-			this.speed = spd;
+			this.dir = spd;
 		}//]~*~~*~~*~~*~~*~~*~~*~~*~~·¯
 		
 		//]~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=[>
@@ -52,7 +52,7 @@ package com.sparklemountain.gutz.designer.model.vo {
 				ret_str += "\n[asset_mc]: "+this.asset_mc;
 				ret_str += "\n[pos_pt]: "+this.pos_pt;
 				ret_str += "\n[width]: "+this.width;
-				ret_str += "\n[speed]: "+this.speed;
+				ret_str += "\n[dir]: "+this.dir;
 				ret_str += "\n[=-=-=-=-=-=-=-=-=-=-=-=-=-=]";
 				ret_str += "\n[=-=-=-=-=-=-=-=-=-=-=-=-=-=]";
 			

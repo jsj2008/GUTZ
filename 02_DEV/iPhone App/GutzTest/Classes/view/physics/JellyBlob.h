@@ -10,11 +10,11 @@
 #define EDGE_BOUNCE 0.5f
 #define EDGE_FRICTION 1.8f
 
-#define CENTRAL_MASS 6.5f
+#define CENTRAL_MASS 4.5f
 #define CENTRAL_RADIUS 8.0f
 
 #define SQUISH_COEFF 0.7f
-#define SPRING_STR 96.0f
+#define SPRING_STR 64.0f
 #define SPRING_DAMP 1.0f
 
 
@@ -86,10 +86,12 @@
 -(void)updSprites;
 -(void)flushSprites:(CCLayer *)layer;
 
+-(void)pushWithForce:(float)force angle:(float)ang;
 -(void)wiggleWithForce:(int)index force:(cpFloat)f;
 -(void)pop;
 -(void)pulsate:(CGPoint)pos;
 -(void)shiftDown;
+-(void)stickAt:(cpVect)pos staticBody:(ChipmunkBody *)body;
 
 -(ChipmunkBody *)touchedBodyAt:(CGPoint)pos;
 -(int)bodyIndexAt:(CGPoint)pos;

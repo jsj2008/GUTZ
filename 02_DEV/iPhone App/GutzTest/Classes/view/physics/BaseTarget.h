@@ -20,7 +20,8 @@
 }
 
 -(id)initAtPos:(CGPoint)pos;
--(void)updateCovered:(BOOL)covered;
+-(void)updCovered:(BOOL)covered;
+-(void)remove;
 
 @property (nonatomic) int ind;
 @property (nonatomic) BOOL isCovered;

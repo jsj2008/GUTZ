@@ -43,7 +43,7 @@
 	
 }
 
--(void)updateCovered:(BOOL)covered {
+-(void)updCovered:(BOOL)covered {
 	isCovered = covered;
 	
 	if ([self isCovered])

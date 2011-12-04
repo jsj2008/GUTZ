@@ -46,7 +46,7 @@
 				_shape = [ChipmunkStaticPolyShape boxWithBody:_body width:width height:height];
 				
 				[_spikedBody setPos:cpvsub(pos, cpv(0, 4))];
-				_spikedShape = [ChipmunkPolyShape boxWithBody:_spikedBody width:width * 0.9 height:4.0];
+				_spikedShape = [ChipmunkPolyShape boxWithBody:_spikedBody width:width * 0.8 height:4.0];
 				break;
 				
 			case 1:
@@ -54,7 +54,7 @@
 				_shape = [ChipmunkStaticPolyShape boxWithBody:_body width:height height:width];
 				
 				[_spikedBody setPos:cpvsub(pos, cpv(8, 0))];
-				_spikedShape = [ChipmunkPolyShape boxWithBody:_spikedBody width:4.0 height:width * 0.9];
+				_spikedShape = [ChipmunkPolyShape boxWithBody:_spikedBody width:4.0 height:width * 0.8];
 				break;
 				
 			case 2:
@@ -62,7 +62,7 @@
 				_shape = [ChipmunkStaticPolyShape boxWithBody:_body width:width height:height];
 				
 				[_spikedBody setPos:cpvadd(pos, cpv(0, 4))];
-				_spikedShape = [ChipmunkPolyShape boxWithBody:_spikedBody width:width * 0.9 height:4.0];
+				_spikedShape = [ChipmunkPolyShape boxWithBody:_spikedBody width:width * 0.8 height:4.0];
 				break;
 				
 			case 3:
@@ -70,7 +70,7 @@
 				_shape = [ChipmunkStaticPolyShape boxWithBody:_body width:height height:width];
 				
 				[_spikedBody setPos:cpvadd(pos, cpv(4, 0))];
-				_spikedShape = [ChipmunkPolyShape boxWithBody:_spikedBody width:4.0 height:width * 0.9];
+				_spikedShape = [ChipmunkPolyShape boxWithBody:_spikedBody width:4.0 height:width * 0.8];
 				break;
 		}
 		

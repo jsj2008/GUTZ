@@ -10,15 +10,18 @@
 
 @implementation PointTarget
 
--(id)initAtPos:(CGPoint)pos type:(int)kind {
+@synthesize points;
+
+-(id)initAtPos:(CGPoint)pos type:(int)kind points:(int)pts {
 	if ((self = [super init])) {
 		
 		_type = kind;
+		points = pts;
 		
 		_body = [[ChipmunkBody alloc] initWithMass:1 andMoment:INFINITY];
 		_body.pos = pos;
 		
-		_shape = [ChipmunkStaticCircleShape circleWithBody:_body radius:TARGET_RADIUS offset:cpvzero];
+		_shape = [ChipmunkStaticCircleShape circleWithBody:_body radius:POINT_RADIUS offset:cpvzero];
 		_shape.elasticity = 0.0f;
 		_shape.friction = 0.0f;		
 		_shape.collisionType = [PointTarget class];
@@ -27,6 +30,10 @@
 		switch (_type) {
 			case 1:
 				_sprite = [CCSprite spriteWithFile:@"ptPickup.png"];
+				break;
+				
+			case 2:
+				_sprite = [CCSprite spriteWithFile:@"jewel.png"];
 				break;
 		}
 		
@@ -39,7 +46,7 @@
 	return (self);
 }
 
--(void)updateCovered:(BOOL)covered {
+-(void)updCovered:(BOOL)covered {
 	isCovered = covered;
 	
 	if ([self isCovered])

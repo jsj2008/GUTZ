@@ -46,7 +46,7 @@
 	
 }
 
--(void)updateCovered:(BOOL)covered {
+-(void)updCovered:(BOOL)covered {
 	isCovered = covered;
 	
 	if ([self isCovered])
@@ -56,6 +56,10 @@
 		[_sprite setOpacity:255];
 }
 
+
+-(void)remove {
+	chipmunkObjects = nil;
+}
 
 -(void)dealloc {
 	[_sprite release];

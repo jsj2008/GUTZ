@@ -27,7 +27,6 @@ package com.sparklemountain.gutz.designer.model.vo {
 		// <[=-=-=-=-=-=-=-=-=-=-=-=][=-=-=-=-=-=-=-=-=-=-=-=]>
 		
 		// <*] class constructor [*>
-		
 		public function HealthVO(i:int, type:int, asset:MovieClip, pos:Point) {
 		//~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~*~~~*~._
 			

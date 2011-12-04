@@ -12,13 +12,16 @@
 #import "cocos2d.h"
 
 
-#define POINT_RADIUS 16.0f
+#define POINT_RADIUS 6.0f
 
 @interface PointTarget : BaseTarget <ChipmunkObject> {
 	int _type;
+	int points;
 }
 
--(id)initAtPos:(CGPoint)pos type:(int)kind;
--(void)updateCovered:(BOOL)covered;
+@property (nonatomic) int points;
+
+-(id)initAtPos:(CGPoint)pos type:(int)kind points:(int)pts;
+-(void)updCovered:(BOOL)covered;
 
 @end

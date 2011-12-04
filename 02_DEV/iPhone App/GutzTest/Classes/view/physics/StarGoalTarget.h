@@ -14,6 +14,10 @@
 
 #define STAR_RADIUS 16.0f
 
-@interface StarGoalTarget : BaseTarget <ChipmunkObject>
+@interface StarGoalTarget : BaseTarget <ChipmunkObject> {
+	
+}
+
+-(void)updCovered:(BOOL)covered;
 
 @end

@@ -2,9 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>walls</key>
-	<array>
-	</array>
+	<key>bg</key>
+	<integer>1</integer>
+	<key>player</key>
+	<integer>0</integer>
 	<key>goals</key>
 	<array>
 		<dict>
@@ -13,30 +14,172 @@
 			<key>type</key>
 			<integer>1</integer>
 			<key>x</key>
-			<integer>66</integer>
+			<integer>162</integer>
+			<key>y</key>
+			<integer>443</integer>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>1</integer>
+			<key>type</key>
+			<integer>2</integer>
+			<key>x</key>
+			<integer>162</integer>
+			<key>y</key>
+			<integer>43</integer>
+		</dict>
+	</array>
+	<key>waypts</key>
+	<array>
+	</array>
+	<key>pickups</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>0</integer>
+			<key>type</key>
+			<integer>1</integer>
+			<key>x</key>
+			<integer>157</integer>
+			<key>y</key>
+			<integer>337</integer>
+		</dict>
+	</array>
+	<key>healths</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>0</integer>
+			<key>type</key>
+			<integer>2</integer>
+			<key>x</key>
+			<integer>159</integer>
+			<key>y</key>
+			<integer>228</integer>
+		</dict>
+	</array>
+	<key>stars</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>0</integer>
+			<key>x</key>
+			<integer>158</integer>
+			<key>y</key>
+			<integer>389</integer>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>1</integer>
+			<key>x</key>
+			<integer>160</integer>
+			<key>y</key>
+			<integer>286</integer>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>2</integer>
+			<key>x</key>
+			<integer>117</integer>
+			<key>y</key>
+			<integer>72</integer>
+		</dict>
+	</array>
+	<key>walls</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>0</integer>
+			<key>type</key>
+			<integer>1</integer>
+			<key>angle</key>
+			<integer>3</integer>
+			<key>spikes</key>
+			<integer>2</integer>
+			<key>x</key>
+			<integer>108</integer>
+			<key>y</key>
+			<integer>347</integer>
+			<key>friction</key>
+			<real>0.5</real>
+			<key>bounce</key>
+			<real>0.1</real>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>1</integer>
+			<key>type</key>
+			<integer>1</integer>
+			<key>angle</key>
+			<integer>1</integer>
+			<key>spikes</key>
+			<integer>2</integer>
+			<key>x</key>
+			<integer>221</integer>
 			<key>y</key>
 			<integer>350</integer>
-		</dict>
-		<dict>
-			<key>id</key>
-			<integer>1</integer>
-			<key>type</key>
-			<integer>2</integer>
-			<key>x</key>
-			<integer>219</integer>
-			<key>y</key>
-			<integer>317</integer>
+			<key>friction</key>
+			<real>0.5</real>
+			<key>bounce</key>
+			<real>0.1</real>
 		</dict>
 		<dict>
 			<key>id</key>
 			<integer>2</integer>
 			<key>type</key>
 			<integer>1</integer>
+			<key>angle</key>
+			<integer>0</integer>
+			<key>spikes</key>
+			<integer>2</integer>
 			<key>x</key>
-			<integer>125</integer>
+			<integer>167</integer>
 			<key>y</key>
-			<integer>208</integer>
+			<integer>167</integer>
+			<key>friction</key>
+			<real>0.5</real>
+			<key>bounce</key>
+			<real>0.1</real>
 		</dict>
+		<dict>
+			<key>id</key>
+			<integer>3</integer>
+			<key>type</key>
+			<integer>1</integer>
+			<key>angle</key>
+			<integer>1</integer>
+			<key>spikes</key>
+			<integer>2</integer>
+			<key>x</key>
+			<integer>22</integer>
+			<key>y</key>
+			<integer>173</integer>
+			<key>friction</key>
+			<real>0.5</real>
+			<key>bounce</key>
+			<real>0.1</real>
+		</dict>
+	</array>
+	<key>studs</key>
+	<array>
+	</array>
+	<key>traps</key>
+	<array>
+	</array>
+	<key>darts</key>
+	<array>
+	</array>
+	<key>bombs</key>
+	<array>
+	</array>
+	<key>punters</key>
+	<array>
+	</array>
+	<key>handwheels</key>
+	<array>
+	</array>
+	<key>conveyors</key>
+	<array>
 	</array>
 </dict>
 </plist>

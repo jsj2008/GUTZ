@@ -76,6 +76,7 @@ package com.sparklemountain.gutz.designer {
 		public static const PICKUP_TYPE:String = "</integer>\n\t\t\t<key>type</key>\n\t\t\t<integer>";
 		public static const PICKUP_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
 		public static const PICKUP_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
+		public static const PICKUP_POINTS:String = "</integer>\n\t\t\t<key>points</key>\n\t\t\t<integer>";
 		public static const PICKUP_POSTTAG:String ="</integer>\n\t\t</dict>\n";
 		public static const PICKUP_POSTGRP:String = "\t</array>\n";
 		
@@ -86,6 +87,20 @@ package com.sparklemountain.gutz.designer {
 		public static const HEALTH_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
 		public static const HEALTH_POSTTAG:String ="</integer>\n\t\t</dict>\n";
 		public static const HEALTH_POSTGRP:String = "\t</array>\n";
+		
+		public static const STAR_PREGRP:String = "\t<key>stars</key>\n\t<array>\n";
+		public static const STAR_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
+		public static const STAR_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
+		public static const STAR_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
+		public static const STAR_POSTTAG:String ="</integer>\n\t\t</dict>\n";
+		public static const STAR_POSTGRP:String = "\t</array>\n";
+		
+		public static const BOMB_PREGRP:String = "\t<key>bombs</key>\n\t<array>\n";
+		public static const BOMB_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
+		public static const BOMB_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
+		public static const BOMB_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
+		public static const BOMB_POSTTAG:String ="</integer>\n\t\t</dict>\n";
+		public static const BOMB_POSTGRP:String = "\t</array>\n";
 		
 		public static const WYPT_PREGRP:String = "\t<key>waypts</key>\n\t<array>\n";
 		public static const WYPT_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
@@ -118,6 +133,15 @@ package com.sparklemountain.gutz.designer {
 		public static const DART_POSTTAG:String ="</real>\n\t\t</dict>\n";
 		public static const DART_POSTGRP:String = "\t</array>\n";
 		
+		public static const PUNT_PREGRP:String = "\t<key>punters</key>\n\t<array>\n";
+		public static const PUNT_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
+		public static const PUNT_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
+		public static const PUNT_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
+		public static const PUNT_ITV:String = "</integer>\n\t\t\t<key>interval</key>\n\t\t\t<real>";
+		public static const PUNT_FORCE:String = "</real>\n\t\t\t<key>force</key>\n\t\t\t<real>";
+		public static const PUNT_POSTTAG:String ="</real>\n\t\t</dict>\n";
+		public static const PUNT_POSTGRP:String = "\t</array>\n";
+		
 		public static const STUD_PREGRP:String = "\t<key>studs</key>\n\t<array>\n";
 		public static const STUD_PRETAG:String = "\t\t<dict>\n\t\t\t<key>id</key>\n\t\t\t<integer>";
 		public static const STUD_TYPE:String = "</integer>\n\t\t\t<key>type</key>\n\t\t\t<integer>";
@@ -142,7 +166,7 @@ package com.sparklemountain.gutz.designer {
 		public static const CONVEYOR_POS_X:String = "</integer>\n\t\t\t<key>x</key>\n\t\t\t<integer>";
 		public static const CONVEYOR_POS_Y:String = "</integer>\n\t\t\t<key>y</key>\n\t\t\t<integer>";
 		public static const CONVEYOR_WIDTH:String = "</integer>\n\t\t\t<key>width</key>\n\t\t\t<integer>";
-		public static const CONVEYOR_SPD:String = "</integer>\n\t\t\t<key>speed</key>\n\t\t\t<real>";
+		public static const CONVEYOR_DIR:String = "</integer>\n\t\t\t<key>speed</key>\n\t\t\t<real>";
 		public static const CONVEYOR_POSTTAG:String ="</real>\n\t\t</dict>\n";
 		public static const CONVEYOR_POSTGRP:String = "\t</array>\n";
 		

@@ -12,12 +12,15 @@
 @implementation LevelDataPlistParser
 
 @synthesize arrHealthData;
+@synthesize arrStarData;
 @synthesize arrPointData;
 @synthesize arrWallData;
 @synthesize arrGoalData;
 @synthesize arrTrapData;
+@synthesize arrBombData;
 @synthesize arrStudData;
 @synthesize arrDartData;
+@synthesize arrPunterData;
 @synthesize arrHandWheelData;
 @synthesize arrConveyorData;
 
@@ -37,12 +40,15 @@
 	if ((self = [super initWithFile:[NSString stringWithFormat:@"LevelData_%02d", ind] path:@""])) {
 		
 		arrHealthData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"healths"]];
+		arrStarData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"stars"]];
 		arrPointData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"pickups"]];
 		arrWallData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"walls"]];
 		arrGoalData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"goals"]];
 		arrTrapData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"traps"]];
+		arrBombData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"bombs"]];
 		arrStudData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"studs"]];
 		arrDartData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"darts"]];
+		arrPunterData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"punters"]];
 		arrHandWheelData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"handwheels"]];
 		arrConveyorData = [[NSArray alloc] initWithArray:[[super dicTopLvl] objectForKey:@"conveyors"]];
 	}

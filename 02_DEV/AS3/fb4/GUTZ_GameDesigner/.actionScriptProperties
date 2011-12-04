@@ -15,7 +15,9 @@
   </compiler>
   <applications>
     <application path="GUTZ_GameDesigner.mxml">
-      <airExcludes/>
+      <airExcludes>
+        <airExclude path="srcview/source/bin-deploy"/>
+      </airExcludes>
     </application>
   </applications>
   <modules/>
