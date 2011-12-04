@@ -65,10 +65,13 @@
 	ChipmunkShape *_playerShape;
 	ChipmunkConstraint *_playerSlideConstraint;
 	ChipmunkConstraint *_playerSpringConstraint;
+	NSDictionary *_dictPlayerFrames;
 	NSTimer *_playerFrameTimer;
 	int _playerFrame;
+	int _playerFrameState;
 	CCSprite *_playerSprite;
 	CCSprite *_fireArrowSprite;
+	NSArray *_arrActiveFrames;
 	
 	StartTarget *_startTarget;
 	GoalTarget *_goalTarget;

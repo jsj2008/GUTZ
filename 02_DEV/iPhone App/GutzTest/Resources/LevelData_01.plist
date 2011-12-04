@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bg</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>player</key>
 	<integer>0</integer>
 	<key>goals</key>
@@ -16,7 +16,7 @@
 			<key>x</key>
 			<integer>158</integer>
 			<key>y</key>
-			<integer>414</integer>
+			<integer>402</integer>
 		</dict>
 		<dict>
 			<key>id</key>
@@ -24,9 +24,9 @@
 			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>157</integer>
+			<integer>159</integer>
 			<key>y</key>
-			<integer>59</integer>
+			<integer>69</integer>
 		</dict>
 	</array>
 	<key>waypts</key>
@@ -40,9 +40,9 @@
 			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>159</integer>
+			<integer>160</integer>
 			<key>y</key>
-			<integer>316</integer>
+			<integer>319</integer>
 			<key>points</key>
 			<integer>10</integer>
 		</dict>
@@ -52,9 +52,9 @@
 			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>160</integer>
+			<integer>159</integer>
 			<key>y</key>
-			<integer>147</integer>
+			<integer>154</integer>
 			<key>points</key>
 			<integer>10</integer>
 		</dict>
@@ -70,7 +70,7 @@
 			<key>x</key>
 			<integer>160</integer>
 			<key>y</key>
-			<integer>240</integer>
+			<integer>243</integer>
 		</dict>
 	</array>
 	<key>walls</key>

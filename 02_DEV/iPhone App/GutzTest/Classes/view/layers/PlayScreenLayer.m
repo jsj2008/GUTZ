@@ -298,11 +298,17 @@ static NSString *PLAYER_TYPE = @"PLAYER_TYPE";
 	//[_space add:_blob];
 	
 	_playerFrame = 0;
-	_playerFrameTimer = [NSTimer scheduledTimerWithTimeInterval:0.15f target:self selector:@selector(onFrameChange:) userInfo:nil repeats:YES];
+	_playerFrameState = 0;
 	_playerSprite = [CCSprite spriteWithFile:@"player_f0.png"];
 	[_playerSprite setPosition:_startTarget._sprite.position];
 	[self addChild:_playerSprite];
 	
+	NSArray *arrIdle = [NSArray arrayWithObjects:@"player_f0.png", @"player_f1.png", @"player_f2.png", @"player_f3.png", @"player_f4.png", @"player_f5.png", @"player_f6.png", nil];
+	NSArray *arrSplat = [NSArray arrayWithObjects:@"player_f9.png", @"player_f11.png", @"player_f12.png", @"player_f13.png", nil];
+	NSArray *arrStretch = [NSArray arrayWithObjects:@"player_f8.png", @"player_f10.png", nil];
+	
+	_dictPlayerFrames = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:arrIdle, arrSplat, arrStretch, nil] forKeys:[NSArray arrayWithObjects:@"idle", @"splat", @"stretch", nil]];
+	_arrActiveFrames = [[NSArray alloc] initWithArray:[_dictPlayerFrames objectForKey:@"idle"]];
 	
 	_playerBody = [ChipmunkBody bodyWithMass:4.5f andMoment:cpMomentForCircle(4.5f, 0, 24.0f, cpvzero)];
 	_playerBody.pos = _startTarget._sprite.position;
@@ -317,6 +323,7 @@ static NSString *PLAYER_TYPE = @"PLAYER_TYPE";
 	[_space add:_playerBody];
 	[_space add:_playerShape];
 	
+	_playerFrameTimer = [NSTimer scheduledTimerWithTimeInterval:0.15f target:self selector:@selector(onFrameChange:) userInfo:nil repeats:YES];
 	
 	vHitCoords = _startTarget._sprite.position;
 	[_fireArrowSprite setPosition:vHitCoords];
@@ -440,11 +447,15 @@ static NSString *PLAYER_TYPE = @"PLAYER_TYPE";
 -(void)onFrameChange:(id)sender {
 	_playerFrame++;
 	
-	if (_playerFrame == 6)
+	if (_playerFrame == [_arrActiveFrames count])
 		_playerFrame = 0;
-		
+	
+	if (_playerFrameState > 0) {
+		[_playerFrameTimer invalidate];
+		_playerFrameTimer = nil;
+	}
 	[self removeChild:_playerSprite cleanup:NO];
-	_playerSprite = [CCSprite spriteWithFile:[NSString stringWithFormat:@"player_f%d.png", _playerFrame]];
+	_playerSprite = [CCSprite spriteWithFile:[_arrActiveFrames objectAtIndex:_playerFrame]];
 	[_playerSprite setPosition:_playerBody.pos];
 	[_playerSprite setScale:(CCRANDOM_0_1() * 0.1f) + 0.95f];
 	[self addChild:_playerSprite];
@@ -506,7 +517,7 @@ static NSString *PLAYER_TYPE = @"PLAYER_TYPE";
 	
 	//CGRect rect = CGRectMake(0, -480, wins.width, wins.height + 480);
 	CGRect rect = CGRectMake(0, 0, wins.width, wins.height);
-	[_space addBounds:rect thickness:532 elasticity:0.0f friction:1.0f layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:borderType];
+	[_space addBounds:rect thickness:532 elasticity:0.0f friction:2.0f layers:CP_ALL_LAYERS group:CP_NO_GROUP collisionType:borderType];
 	
 	_multiGrab = [[ChipmunkMultiGrab alloc] initForSpace:_space withSmoothing:cpfpow(0.5, 60.0) withGrabForce:20000];
 	_multiGrab.layers = GRABABLE_LAYER;
@@ -555,7 +566,30 @@ static NSString *PLAYER_TYPE = @"PLAYER_TYPE";
 		
 	if (!_isCleared) {
 		[_blob updSprites];
+		
+		int ang;
+		
+		switch (_playerFrameState) {
+			case 0:
+				ang = 180;
+				break;
+				
+			case 1:
+				ang = -90;
+				break;
+				
+			case 2:
+				ang = 0;
+				break;
+				
+			case 3:
+				ang = 270;
+				break;
+				
+		}
+		
 		[_playerSprite setPosition:_playerBody.pos];
+		[_playerSprite setRotation:CC_RADIANS_TO_DEGREES(cpvtoangle(cpvneg(cpvsub(vHitCoords, _playerBody.pos)))) + ang];
 		[_fireArrowSprite setRotation:CC_RADIANS_TO_DEGREES(cpvtoangle(cpvneg(cpvsub(vHitCoords, _playerBody.pos)))) + 90];
 		
 		for (RangedTrap *trap in arrTraps)
@@ -1007,6 +1041,13 @@ static NSString *PLAYER_TYPE = @"PLAYER_TYPE";
 		[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_light_splat.mp3"];
 	}
 	
+	_playerFrameState = 2;
+	_playerFrame = 0;
+	[_arrActiveFrames dealloc];
+	_arrActiveFrames = [[NSArray alloc] initWithObjects:@"player_f9.png", @"player_f11.png", @"player_f12.png", @"player_f13.png", nil];
+	[_playerFrameTimer invalidate];
+	_playerFrameTimer = nil;
+	_playerFrameTimer = [NSTimer scheduledTimerWithTimeInterval:0.15f target:self selector:@selector(onFrameChange:) userInfo:nil repeats:YES];
 	
 	vHitCoords = cpArbiterGetPoint(arbiter, 0);
 	vHitForce = cpvclamp(cpArbiterTotalImpulse(arbiter), 144.0f);
@@ -1199,8 +1240,40 @@ static NSString *PLAYER_TYPE = @"PLAYER_TYPE";
 	for (UITouch *touch in _arrDrawPts)
 		[_multiGrab endLocation:cpvadd([[CCDirector sharedDirector] convertToGL:[touch locationInView:[touch view]]], cpvneg(_ptViewOffset))];
 	
+	
+	
+	NSMutableArray *arrSplatter = [[NSMutableArray alloc] init];
+	
+	for (int i=0; i<21; i++) {
+		NSString *slime = [NSString stringWithFormat:@"slime_f%d.png", i];
+		NSLog(@"SLIME:[%@]", slime);
+		[arrSplatter addObject:[CCSprite spriteWithFile:slime]];
+	}
+		
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:0.67f];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_finish_splatter.mp3"];
+	
+	
+	float delayTime = 0.0f;
+	
+	for (int i=0; i<[arrSplatter count]; i++) {
+		
+		CCSprite *sprite = [arrSplatter objectAtIndex:i];		
+		[sprite setPosition:ccp(160, 240)];
+		[sprite setScale:0.0f];
+		[self addChild:sprite];
+		[sprite runAction:[CCSequence actions:[CCDelayTime actionWithDuration:delayTime], [CCScaleTo actionWithDuration:0.15 scale:1 + (CCRANDOM_0_1() * 2)], [CCEaseIn actionWithAction:[CCMoveBy actionWithDuration:0.2f position:ccp((CCRANDOM_0_1() * 320) - 160, (CCRANDOM_0_1() * 480) - 240)] rate:0.5f], nil]];
+		delayTime += 0.025f;
+	}
+	
+	[[SimpleAudioEngine sharedEngine] setEffectsVolume:(CCRANDOM_0_1() * 0.33f) + 0.33f];
+	[[SimpleAudioEngine sharedEngine] playEffect:@"sfx_light_splat.mp3"];
+
+	
+	
+	
 	[self schedule:@selector(flashBG) interval:0.1];
-	[self performSelector:@selector(onResetArea:) withObject:self afterDelay:0.5];
+	[self performSelector:@selector(onResetArea:) withObject:self afterDelay:1];
 }
 
 
@@ -1402,7 +1475,16 @@ TouchLocation(UITouch *touch) {
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event; {
 	_isDrawing = NO;
 	
+	_playerFrameState = 1;
+	_playerFrame = 0;
+	[_arrActiveFrames dealloc];
+	_arrActiveFrames = [[NSArray alloc] initWithObjects:@"player_f7.png", @"player_f8.png", nil];
 	
+	[_playerFrameTimer invalidate];
+	_playerFrameTimer = nil;
+	_playerFrameTimer = [NSTimer scheduledTimerWithTimeInterval:0.15f target:self selector:@selector(onFrameChange:) userInfo:nil repeats:YES];
+	
+	//_arrActiveFrames = [_dictPlayerFrames objectForKey:@"stretch"];
 	[_fireArrowSprite setRotation:CC_RADIANS_TO_DEGREES(cpvtoangle(cpvsub(vHitCoords, _playerBody.pos)))];
 	for (UITouch *touch in touches) {
 		
@@ -1448,6 +1530,15 @@ TouchLocation(UITouch *touch) {
 	
 	cpVect slope = cpvnormalize(cpvsub(vHitCoords, _playerBody.pos));
 	float dist = cpvdist(vHitCoords, _playerBody.pos);
+	
+	_playerFrameState = 3;
+	_playerFrame = 0;
+	[_arrActiveFrames dealloc];
+	_arrActiveFrames = [[NSArray alloc] initWithObjects:@"player_f10.png", nil];
+	
+	[_playerFrameTimer invalidate];
+	_playerFrameTimer = nil;
+	_playerFrameTimer = [NSTimer scheduledTimerWithTimeInterval:0.15f target:self selector:@selector(onFrameChange:) userInfo:nil repeats:YES];
 	
 	//if (slope.x != -1 || slope.x != 1) {
 		NSLog(@"PlayScreenLayer.ccTouchesEnded(%f, %f) %f", slope.x, slope.y, dist);

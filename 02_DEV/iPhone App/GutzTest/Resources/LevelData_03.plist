@@ -14,9 +14,9 @@
 			<key>type</key>
 			<integer>1</integer>
 			<key>x</key>
-			<integer>43</integer>
+			<integer>266</integer>
 			<key>y</key>
-			<integer>401</integer>
+			<integer>391</integer>
 		</dict>
 		<dict>
 			<key>id</key>
@@ -24,9 +24,9 @@
 			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>275</integer>
+			<integer>50</integer>
 			<key>y</key>
-			<integer>48</integer>
+			<integer>49</integer>
 		</dict>
 	</array>
 	<key>waypts</key>
@@ -40,9 +40,9 @@
 			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>101</integer>
+			<integer>203</integer>
 			<key>y</key>
-			<integer>374</integer>
+			<integer>346</integer>
 			<key>points</key>
 			<integer>10</integer>
 		</dict>
@@ -52,9 +52,9 @@
 			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>96</integer>
+			<integer>124</integer>
 			<key>y</key>
-			<integer>206</integer>
+			<integer>295</integer>
 			<key>points</key>
 			<integer>10</integer>
 		</dict>
@@ -64,9 +64,9 @@
 			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>152</integer>
+			<integer>222</integer>
 			<key>y</key>
-			<integer>117</integer>
+			<integer>134</integer>
 			<key>points</key>
 			<integer>10</integer>
 		</dict>
@@ -76,9 +76,9 @@
 			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>98</integer>
+			<integer>140</integer>
 			<key>y</key>
-			<integer>144</integer>
+			<integer>93</integer>
 			<key>points</key>
 			<integer>10</integer>
 		</dict>
@@ -88,9 +88,9 @@
 			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>210</integer>
+			<integer>125</integer>
 			<key>y</key>
-			<integer>80</integer>
+			<integer>225</integer>
 			<key>points</key>
 			<integer>10</integer>
 		</dict>
@@ -100,33 +100,9 @@
 			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>157</integer>
+			<integer>219</integer>
 			<key>y</key>
-			<integer>357</integer>
-			<key>points</key>
-			<integer>10</integer>
-		</dict>
-		<dict>
-			<key>id</key>
-			<integer>6</integer>
-			<key>type</key>
-			<integer>2</integer>
-			<key>x</key>
-			<integer>225</integer>
-			<key>y</key>
-			<integer>279</integer>
-			<key>points</key>
-			<integer>10</integer>
-		</dict>
-		<dict>
-			<key>id</key>
-			<integer>7</integer>
-			<key>type</key>
-			<integer>2</integer>
-			<key>x</key>
-			<integer>160</integer>
-			<key>y</key>
-			<integer>240</integer>
+			<integer>196</integer>
 			<key>points</key>
 			<integer>10</integer>
 		</dict>
@@ -140,17 +116,17 @@
 			<key>id</key>
 			<integer>0</integer>
 			<key>x</key>
-			<integer>286</integer>
+			<integer>50</integer>
 			<key>y</key>
-			<integer>316</integer>
+			<integer>242</integer>
 		</dict>
 		<dict>
 			<key>id</key>
 			<integer>1</integer>
 			<key>x</key>
-			<integer>38</integer>
+			<integer>294</integer>
 			<key>y</key>
-			<integer>183</integer>
+			<integer>180</integer>
 		</dict>
 	</array>
 	<key>walls</key>

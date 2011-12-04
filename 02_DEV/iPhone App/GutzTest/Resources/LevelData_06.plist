@@ -14,9 +14,9 @@
 			<key>type</key>
 			<integer>1</integer>
 			<key>x</key>
-			<integer>34</integer>
+			<integer>49</integer>
 			<key>y</key>
-			<integer>443</integer>
+			<integer>428</integer>
 		</dict>
 		<dict>
 			<key>id</key>
@@ -24,9 +24,9 @@
 			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>45</integer>
+			<integer>183</integer>
 			<key>y</key>
-			<integer>45</integer>
+			<integer>83</integer>
 		</dict>
 	</array>
 	<key>waypts</key>
@@ -34,49 +34,69 @@
 	</array>
 	<key>pickups</key>
 	<array>
-	</array>
-	<key>healths</key>
-	<array>
 		<dict>
 			<key>id</key>
 			<integer>0</integer>
 			<key>type</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>146</integer>
+			<integer>121</integer>
 			<key>y</key>
-			<integer>160</integer>
+			<integer>384</integer>
+			<key>points</key>
+			<integer>10</integer>
 		</dict>
 		<dict>
 			<key>id</key>
 			<integer>1</integer>
 			<key>type</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>x</key>
-			<integer>236</integer>
+			<integer>123</integer>
 			<key>y</key>
-			<integer>402</integer>
+			<integer>338</integer>
+			<key>points</key>
+			<integer>10</integer>
 		</dict>
 		<dict>
 			<key>id</key>
 			<integer>2</integer>
 			<key>type</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>x</key>
-			<integer>237</integer>
+			<integer>123</integer>
 			<key>y</key>
-			<integer>367</integer>
+			<integer>295</integer>
+			<key>points</key>
+			<integer>10</integer>
 		</dict>
 		<dict>
 			<key>id</key>
 			<integer>3</integer>
 			<key>type</key>
-			<integer>3</integer>
+			<integer>2</integer>
 			<key>x</key>
-			<integer>232</integer>
+			<integer>204</integer>
 			<key>y</key>
-			<integer>323</integer>
+			<integer>237</integer>
+			<key>points</key>
+			<integer>10</integer>
 		</dict>
+		<dict>
+			<key>id</key>
+			<integer>4</integer>
+			<key>type</key>
+			<integer>2</integer>
+			<key>x</key>
+			<integer>254</integer>
+			<key>y</key>
+			<integer>185</integer>
+			<key>points</key>
+			<integer>10</integer>
+		</dict>
+	</array>
+	<key>healths</key>
+	<array>
 	</array>
 	<key>stars</key>
 	<array>
@@ -84,25 +104,25 @@
 			<key>id</key>
 			<integer>0</integer>
 			<key>x</key>
-			<integer>131</integer>
+			<integer>123</integer>
 			<key>y</key>
-			<integer>443</integer>
+			<integer>240</integer>
 		</dict>
 		<dict>
 			<key>id</key>
 			<integer>1</integer>
 			<key>x</key>
-			<integer>182</integer>
+			<integer>279</integer>
 			<key>y</key>
-			<integer>281</integer>
+			<integer>241</integer>
 		</dict>
 		<dict>
 			<key>id</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>112</integer>
+			<integer>221</integer>
 			<key>y</key>
-			<integer>45</integer>
+			<integer>135</integer>
 		</dict>
 	</array>
 	<key>walls</key>
@@ -113,13 +133,13 @@
 			<key>type</key>
 			<integer>1</integer>
 			<key>angle</key>
-			<integer>0</integer>
+			<integer>3</integer>
 			<key>spikes</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>85</integer>
+			<integer>158</integer>
 			<key>y</key>
-			<integer>397</integer>
+			<integer>337</integer>
 			<key>friction</key>
 			<real>0.5</real>
 			<key>bounce</key>
@@ -128,24 +148,6 @@
 		<dict>
 			<key>id</key>
 			<integer>1</integer>
-			<key>type</key>
-			<integer>2</integer>
-			<key>angle</key>
-			<integer>3</integer>
-			<key>spikes</key>
-			<integer>2</integer>
-			<key>x</key>
-			<integer>293</integer>
-			<key>y</key>
-			<integer>357</integer>
-			<key>friction</key>
-			<real>0.5</real>
-			<key>bounce</key>
-			<real>0.1</real>
-		</dict>
-		<dict>
-			<key>id</key>
-			<integer>2</integer>
 			<key>type</key>
 			<integer>1</integer>
 			<key>angle</key>
@@ -153,63 +155,9 @@
 			<key>spikes</key>
 			<integer>2</integer>
 			<key>x</key>
-			<integer>184</integer>
+			<integer>76</integer>
 			<key>y</key>
-			<integer>236</integer>
-			<key>friction</key>
-			<real>0.5</real>
-			<key>bounce</key>
-			<real>0.1</real>
-		</dict>
-		<dict>
-			<key>id</key>
-			<integer>3</integer>
-			<key>type</key>
-			<integer>1</integer>
-			<key>angle</key>
-			<integer>0</integer>
-			<key>spikes</key>
-			<integer>2</integer>
-			<key>x</key>
-			<integer>151</integer>
-			<key>y</key>
-			<integer>116</integer>
-			<key>friction</key>
-			<real>0.5</real>
-			<key>bounce</key>
-			<real>0.1</real>
-		</dict>
-		<dict>
-			<key>id</key>
-			<integer>4</integer>
-			<key>type</key>
-			<integer>2</integer>
-			<key>angle</key>
-			<integer>1</integer>
-			<key>spikes</key>
-			<integer>2</integer>
-			<key>x</key>
-			<integer>31</integer>
-			<key>y</key>
-			<integer>217</integer>
-			<key>friction</key>
-			<real>0.5</real>
-			<key>bounce</key>
-			<real>0.1</real>
-		</dict>
-		<dict>
-			<key>id</key>
-			<integer>5</integer>
-			<key>type</key>
-			<integer>1</integer>
-			<key>angle</key>
-			<integer>3</integer>
-			<key>spikes</key>
-			<integer>2</integer>
-			<key>x</key>
-			<integer>292</integer>
-			<key>y</key>
-			<integer>114</integer>
+			<integer>192</integer>
 			<key>friction</key>
 			<real>0.5</real>
 			<key>bounce</key>

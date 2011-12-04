@@ -9,12 +9,26 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "GutzTest/Classes/view/layers/PlayScreenLayer.m"
-         timestampString = "344652519.867765"
+         timestampString = "344672760.884144"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1131"
-         endingLineNumber = "1131"
+         startingLineNumber = "1171"
+         endingLineNumber = "1171"
          landmarkName = "-clearArena:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         isPathRelative = "1"
+         filePath = "GutzTest/Classes/view/layers/PlayScreenLayer.m"
+         timestampString = "344674655.635041"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "1253"
+         endingLineNumber = "1253"
+         landmarkName = "-restartArena:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
